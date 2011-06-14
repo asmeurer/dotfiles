@@ -1,0 +1,5 @@
+These are some of my .files
+
+Files in the root of the directory are hard linked to corresponding files in ~/
+
+Files in other/ are for various other things.
