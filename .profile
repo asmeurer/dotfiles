@@ -74,7 +74,6 @@ export LSCOLORS=eAfAcAdAbAegedabagacad
 export PATH
 export EDITOR='edit -w --resume'
 export PYTHONSTARTUP=$HOME/.pythonrc.py
-export SYMPY_GROUND_TYPES=gmpy
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
 alias emacs='/usr/bin/emacs'
