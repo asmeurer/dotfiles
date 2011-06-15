@@ -37,6 +37,5 @@
 	default = matching
 [github]
 	user = asmeurer
-	token = 2927afd5e06ef4c7401be97e3b3a8dee
 [rerere]
 	enabled = true
