@@ -105,5 +105,7 @@ export PYTHONPATH=${PYTHONPATH}:/sw/lib/qt4-x11/lib/python2.6/site-packages
 MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
+eval "`pip completion --bash`"
+
 # This line needs to stay at the bottom of the file.
 source ~/.git-completion.bash
