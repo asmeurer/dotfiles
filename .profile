@@ -40,7 +40,8 @@ alias ls='ls -AG@Flha'
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
-alias grep='grep -i --color=auto'
+alias grep='grep -i --color=always'
+alias less='less -R'
 alias cdsympy='cd ~/Documents/python/sympy/sympy'
 alias cds='cd ~/Documents/python/sympy/sympy'
 alias cdss='cd ~/Documents/python/sympy/sympy-scratch'
