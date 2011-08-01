@@ -4,4 +4,8 @@ set meta-flag on
 set convert-meta off
 set output-meta on
 set bell-style visible
+# See http://docs.freebsd.org/info/readline/readline.info.Readline_Init_File.html for more information
 "\ep": history-search-backward
+"\eP": history-search-forward
+# Type this to reload this file
+\C-x\C-r": re-read-init-file
