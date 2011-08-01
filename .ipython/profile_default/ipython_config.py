@@ -29,7 +29,7 @@ c = get_config()
 # c.TerminalIPythonApp.pylab = None
 
 # Suppress warning messages about legacy config files
-# c.TerminalIPythonApp.ignore_old_config = False
+c.TerminalIPythonApp.ignore_old_config = True
 
 # If a command or file is given via the command-line, e.g. 'ipython foo.py
 # c.TerminalIPythonApp.force_interact = False
@@ -169,7 +169,7 @@ c = get_config()
 # TerminalInteractiveShell will inherit config from: InteractiveShell
 
 # auto editing of files with syntax errors.
-# c.TerminalInteractiveShell.autoedit_syntax = False
+c.TerminalInteractiveShell.autoedit_syntax = True
 
 # Use colors for displaying information about objects. Because this information
 # is passed through a pager (like 'less'), and some pagers get confused with
@@ -183,7 +183,7 @@ c = get_config()
 # c.TerminalInteractiveShell.separate_in = '\n'
 
 # Set the color scheme (NoColor, Linux, or LightBG).
-# c.TerminalInteractiveShell.colors = 'LightBG'
+c.TerminalInteractiveShell.colors = 'Linux'
 
 # Autoindent IPython code entered interactively.
 # c.TerminalInteractiveShell.autoindent = True
@@ -217,7 +217,7 @@ c = get_config()
 # it is not applied if there are no more arguments on the line, and '2' for
 # 'full' autocall, where all callable objects are automatically called (even if
 # no arguments are present). The default is '1'.
-# c.TerminalInteractiveShell.autocall = 1
+c.TerminalInteractiveShell.autocall = 0
 
 # Number of lines of your screen, used to control printing of very long strings.
 # Strings longer than this number of lines will be sent through a pager instead
@@ -256,7 +256,7 @@ c.TerminalInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l":
 # Set to confirm when you try to exit IPython with an EOF (Control-D in Unix,
 # Control-Z/Enter in Windows). By typing 'exit' or 'quit', you can force a
 # direct exit without any confirmation.
-# c.TerminalInteractiveShell.confirm_exit = True
+c.TerminalInteractiveShell.confirm_exit = False
 
 # 
 # c.TerminalInteractiveShell.ipython_dir = ''
