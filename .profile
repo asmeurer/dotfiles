@@ -74,7 +74,6 @@ PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
 PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 export LSCOLORS=eAfAcAdAbAegedabagacad
-export PATH
 export EDITOR='edit -w --resume'
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
@@ -87,17 +86,15 @@ alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Comma
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
-export PATH
 
 # Setting PATH for MacPython 2.6
 # The orginal version is saved in .profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.6/bin"
-export PATH
+
 
 # Setting PATH for MacPython 2.5
 # The orginal version is saved in .profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.5/bin"
-export PATH
 
 PATH="${PATH}:/Applications/sage"
 export PATH
