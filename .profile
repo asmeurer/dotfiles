@@ -72,6 +72,7 @@ GIT_PS1_SHOWUPSTREAM="auto"
 PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
 PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
+PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export PATH
 export EDITOR='edit -w --resume'
