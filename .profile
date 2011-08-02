@@ -20,19 +20,34 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias python=/sw/bin/python
-alias systempython=/Library/Frameworks/Python.framework/Versions/Current/bin/python
-alias systempython-32='arch -i386 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
-alias systempython-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
-alias systempython2.7=/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
-alias systempython2.7-32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
-alias systempython2.7-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
-alias systempython2.6=/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6
-alias systempython2.6-32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
-alias systempython2.6-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
-alias systempython2.5=/Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5
-alias systempython2.5-32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
-alias systempython2.5-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
-alias systempython2.4=/Library/Frameworks/Python.framework/Versions/2.4/bin/python2.4
+export SYSTEMPYTHON='/Library/Frameworks/Python.framework/Versions/Current/bin/python'
+export SYSTEMPYTHON_32='arch -i386 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
+export SYSTEMPYTHON_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
+export SYSTEMPYTHON27='/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
+export SYSTEMPYTHON27_32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
+export SYSTEMPYTHON27_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
+export SYSTEMPYTHON26='/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
+export SYSTEMPYTHON26_32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
+export SYSTEMPYTHON26_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
+export SYSTEMPYTHON25='/Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
+export SYSTEMPYTHON25_32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
+export SYSTEMPYTHON25_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
+export SYSTEMPYTHON24='/Library/Frameworks/Python.framework/Versions/2.4/bin/python2.4'
+
+alias systempython="$SYSTEMPYTHON"
+alias systempython-32="$SYSTEMPYTHON_32"
+alias systempython-64="$SYSTEMPYTHON_64"
+alias systempython2.7="$SYSTEMPYTHON27"
+alias systempython2.7-32="$SYSTEMPYTHON27_32"
+alias systempython2.7-64="$SYSTEMPYTHON27_64"
+alias systempython2.6="$SYSTEMPYTHON26"
+alias systempython2.6-32="$SYSTEMPYTHON26_32"
+alias systempython2.6-64="$SYSTEMPYTHON26_64"
+alias systempython2.5="$SYSTEMPYTHON25"
+alias systempython2.5-32="$SYSTEMPYTHON25_32"
+alias systempython2.5-64="$SYSTEMPYTHON25_64"
+alias systempython2.4="$SYSTEMPYTHON24"
+
 
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
