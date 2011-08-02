@@ -119,6 +119,8 @@ PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.6/bin"
 # The orginal version is saved in .profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.5/bin"
 
+PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.0/bin/"
+
 PATH="${PATH}:/Applications/sage"
 export PATH
 
