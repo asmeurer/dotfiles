@@ -21,9 +21,17 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias python=/sw/bin/python
 alias systempython=/Library/Frameworks/Python.framework/Versions/Current/bin/python
+alias systempython-32='arch -i386 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
+alias systempython-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
 alias systempython2.7=/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+alias systempython2.7-32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
+alias systempython2.7-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
 alias systempython2.6=/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6
+alias systempython2.6-32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
+alias systempython2.6-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
 alias systempython2.5=/Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5
+alias systempython2.5-32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
+alias systempython2.5-64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
 alias systempython2.4=/Library/Frameworks/Python.framework/Versions/2.4/bin/python2.4
 
 # Prevents overriding files with >.  Use >! to override.
