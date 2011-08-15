@@ -57,6 +57,14 @@ set -o ignoreeof
 # Fixes minor spelling errors in cd pathnames.
 shopt -s cdspell
 
+# Fix minor spelling errors on word completion if the given name does not exist
+# Requires bash 4 or greater
+if test $BASH_VERSINFO -ge 4; 
+    then shopt -s dirspell;
+fi
+
+# Complete hostnames after @
+shopt -s hostcomplete
 
 alias ls='ls -AG@Flha'
 
