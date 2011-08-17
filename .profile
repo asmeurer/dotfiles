@@ -109,6 +109,7 @@ PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
 PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
 PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
+PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export EDITOR='edit -w --resume'
 export PYTHONSTARTUP=$HOME/.pythonrc.py
