@@ -94,7 +94,7 @@ alias alldoctestall='SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.7 ./bin/doctest; SY
 
 alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integrals/tests/test_risch.py sympy/integrals/tests/test_rde.py sympy/integrals/tests/test_prde.py'
 
-export PS1='\[\e[1;31;40m\]\h:\[\e[0m\]\[\e[1;34;40m\]\W\[\e[0m\]\[\e[1;31;40m\]\u\[\e[0;33m\]$(__git_ps1 "%s")\[\e[31;40m\]\$\[\e[0m\]'
+export PS1='\[\e[1;34;40m\]\W\[\e[0m\]\[\e[0;33m\]$(__git_ps1 "%s")\[\e[31;40m\]\$\[\e[0m\]'
 
 
 # Date PS1
