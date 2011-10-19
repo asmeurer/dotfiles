@@ -245,7 +245,7 @@ c.TerminalInteractiveShell.readline_parse_and_bind = ['tab: complete',
 '"\\M-p": history-search-backward','"\\M-P": history-search-forward',
 '"\\C-p": history-search-backward', '"\\C-n": history-search-forward',
 '"\\C-k": kill-line', '"\\C-u": unix-line-discard',
-'"\\C-P": history-search-forward', '"\\C-d": "\\C-u\\C-k\\C-d"']
+'"\\C-P": history-search-forward', '"\\C-d": "\\C-a\\C-k\\C-d"']
 
 # The part of the banner to be printed after the profile
 # c.TerminalInteractiveShell.banner2 = ''
