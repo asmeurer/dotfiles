@@ -59,7 +59,7 @@ shopt -s cdspell
 
 # Fix minor spelling errors on word completion if the given name does not exist
 # Requires bash 4 or greater
-if test $BASH_VERSINFO -ge 4; 
+if test $BASH_VERSINFO -ge 4;
     then shopt -s dirspell;
 fi
 
@@ -110,6 +110,7 @@ PATH=$PATH:/usr/texbin
 PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
+export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export EDITOR='edit -w --resume'
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
