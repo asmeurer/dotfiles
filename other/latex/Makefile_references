@@ -2,6 +2,10 @@ FILEPREFIX = put_the_file_prefix_here
 
 all:latexopen
 
+norefs:
+	pdflatex $(FILEPREFIX).tex
+	pdflatex $(FILEPREFIX).tex
+
 latex:
 	pdflatex $(FILEPREFIX).tex
 	bibtex $(FILEPREFIX)
