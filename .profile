@@ -111,7 +111,7 @@ PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
-export EDITOR='edit -w --resume'
+export EDITOR='vim'
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
