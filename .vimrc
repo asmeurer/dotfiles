@@ -94,3 +94,12 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+" Always show line numbers
+set number
+
+" Always enable spell checking
+set spell
+
+" Clear trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
