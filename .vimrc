@@ -115,3 +115,6 @@ let python_highlight_all=1
 
 " Ignore case in searches by default
 set ic
+
+" Use the Mac OS X clipboard
+set clipboard=unnamed
