@@ -106,3 +106,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Choose a good color scheme
 colorscheme slate
+
+" Make sure to use all terminal colors
+set t_Co=256
+
+" Settings for the custom python.vim syntax highlighting
+let python_highlight_all=1
+
+" Ignore case in searches by default
+set ic
