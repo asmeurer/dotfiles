@@ -75,7 +75,6 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
 alias grep='grep -i --color=always'
-alias less='less -R'
 alias mkdir='mkdir -p'
 alias cdsympy='cd ~/Documents/python/sympy/sympy'
 alias cds='cd ~/Documents/python/sympy/sympy'
@@ -113,6 +112,7 @@ PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export EDITOR='vim'
+export LESS='-RI' # Make less search case insensitive, and always use raw input mode (to show colors)
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
