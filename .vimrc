@@ -119,3 +119,6 @@ set ic
 
 " Use the Mac OS X clipboard
 set clipboard=unnamed
+
+" Set the tab key to indent 4 spaces
+set softtabstop=4
