@@ -122,3 +122,10 @@ set clipboard=unnamed
 
 " Set the tab key to indent 4 spaces
 set softtabstop=4
+
+" Show tabs as >---
+set listchars=tab:>-
+" This enables it
+set list
+" Use spaces instead of tabs
+set expandtab
