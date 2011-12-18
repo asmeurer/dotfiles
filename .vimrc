@@ -129,3 +129,6 @@ set listchars=tab:>-
 set list
 " Use spaces instead of tabs
 set expandtab
+
+" Make the command :C clear the current search
+command C let @/=""
