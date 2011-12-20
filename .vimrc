@@ -132,3 +132,6 @@ set expandtab
 
 " Make the command :C clear the current search
 command C let @/=""
+
+" Set the spelling language to American English
+set spelllang=en_us
