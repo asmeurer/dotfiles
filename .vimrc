@@ -138,3 +138,9 @@ command C let @/=""
 
 " Set the spelling language to American English
 set spelllang=en_us
+
+" Settings for the tag list plugin
+let Tlist_GainFocus_On_ToggleOpen=1
+nnoremap <silent> \ :TlistToggle<CR>
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Close_On_Select=1
