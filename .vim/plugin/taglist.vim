@@ -1342,7 +1342,7 @@ function! s:Tlist_Window_Create()
     " Initialize the taglist window
     call s:Tlist_Window_Init()
 
-    if Tlist_Nospell
+    if g:Tlist_Nospell
         set nospell
     endif
 endfunction
