@@ -105,11 +105,11 @@ set spell
 " Clear trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Choose a good color scheme
-colorscheme slate
-
 " Make sure to use all terminal colors
 set t_Co=256
+
+" Choose a good color scheme
+colorscheme slate
 
 " Settings for the custom python.vim syntax highlighting
 let python_highlight_all=1
@@ -121,7 +121,10 @@ set ic
 set clipboard=unnamed
 
 " Set the tab key to indent 4 spaces
+set shiftwidth=4
 set softtabstop=4
+set smartindent
+set autoindent
 
 " Show tabs as >---
 set listchars=tab:>-
