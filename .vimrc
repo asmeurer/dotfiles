@@ -144,3 +144,4 @@ let Tlist_GainFocus_On_ToggleOpen=1
 nnoremap <silent> \ :TlistToggle<CR>
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Close_On_Select=1
+let Tlist_Nospell = 1 " Note: I added this option to the plugin
