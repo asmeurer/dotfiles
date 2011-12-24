@@ -145,3 +145,7 @@ nnoremap <silent> \ :TlistToggle<CR>
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Close_On_Select=1
 let Tlist_Nospell = 1 " Note: I added this option to the plugin
+
+" Let the cursor go one past the end of the line and let it go arbitrarily far
+" in visual block mode.
+set virtualedit=onemore,block
