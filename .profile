@@ -111,7 +111,7 @@ PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
-export EDITOR='vim'
+export EDITOR='emacs'
 export LESS='-RI' # Make less search case insensitive, and always use raw input mode (to show colors)
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
