@@ -1,0 +1,66 @@
+;; Emacs config file
+
+;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
+
+
+;; ========== Line by line scrolling ========== 
+
+;; This makes the buffer scroll by only a single line when the up or
+;; down cursor keys push the cursor (tool-bar-mode) outside the
+;; buffer. The standard emacs behaviour is to reposition the cursor in
+;; the center of the screen, but this can make the scrolling confusing
+
+(setq scroll-step 1)
+
+;; ========== Support Wheel Mouse Scrolling ==========
+
+(mouse-wheel-mode t)
+
+;; ========== Enable Line and Column Numbering ==========
+
+;; Show line-number in the mode line
+(line-number-mode 1)
+
+;; Show column-number in the mode line
+(column-number-mode 1)
+
+;; ========== Set the fill column ==========
+
+(setq-default fill-column 78)
+
+;; ===== Turn on Auto Fill mode automatically in all modes =====
+
+;; Auto-fill-mode the the automatic wrapping of lines and insertion of
+;; newlines when the cursor goes over the column limit.
+
+;; This should actually turn on auto-fill-mode by default in all major
+;; modes. The other way to do this is to turn on the fill for specific modes
+;; via hooks.
+
+;; TODO: Turn this on only for text modes and similar
+
+(setq auto-fill-mode 1)
+
+;; ===== Make Text mode the default mode for new buffers =====
+
+(setq default-major-mode 'text-mode)
+
+;; ===== Turn on flyspell-mode ====
+
+;; TODO: Turn this on only for relevant file types
+
+(setq flyspell-mode 1)
+
+;; ===== Use four spaces instead of tabs ====
+
+(setq c-basic-indent 2)
+(setq tab-width 4)
+(setq-default indent-tabs-mode nil)
+
+;; ===== Trailing whitespace ======
+
+(setq-default highlight-trailing-whitespace)
+
+;; ===== Highlight Marked Text =====
+
+(setq-default transient-mark-mode t)
