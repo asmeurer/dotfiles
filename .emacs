@@ -65,6 +65,13 @@
 
 (setq-default transient-mark-mode t)
 
+;; ===== Abbreviations =====
+
+;; For some reason this doesn't work
+
+(define-abbrev global-abbrev-table "Ondrej" "Ondřej")
+(define-abbrev global-abbrev-table "Certik" "Čertík")
+
 ;; ===== Values set by M-x customize =====
 
 (custom-set-variables
