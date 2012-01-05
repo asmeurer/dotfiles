@@ -72,6 +72,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(abbrev-mode t)
  '(colon-double-space t)
  '(comment-empty-lines (quote (quote eol)))
  '(gud-gdb-command-name "gdb --annotate=1")
