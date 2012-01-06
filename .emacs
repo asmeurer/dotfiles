@@ -12,10 +12,6 @@
 
 (setq scroll-step 1)
 
-;; ========== Support Wheel Mouse Scrolling ==========
-
-(mouse-wheel-mode t)
-
 ;; ========== Enable Line and Column Numbering ==========
 
 ;; Show line-number in the mode line

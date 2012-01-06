@@ -23,6 +23,9 @@ alias python=/sw/bin/python
 export SYSTEMPYTHON='/Library/Frameworks/Python.framework/Versions/Current/bin/python'
 export SYSTEMPYTHON_32='arch -i386 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
 export SYSTEMPYTHON_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
+export SYSTEMPYTHON32='/Library/Frameworks/Python.framework/Versions/3.2/bin/python3.2'
+export SYSTEMPYTHON32_32='arch -i386 /Library/Frameworks/Python.framework/Versions/3.2/bin/python3.2'
+export SYSTEMPYTHON32_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/3.2/bin/python3.2'
 export SYSTEMPYTHON27='/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
 export SYSTEMPYTHON27_32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
 export SYSTEMPYTHON27_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
@@ -37,6 +40,9 @@ export SYSTEMPYTHON24='/Library/Frameworks/Python.framework/Versions/2.4/bin/pyt
 alias systempython="$SYSTEMPYTHON"
 alias systempython-32="$SYSTEMPYTHON_32"
 alias systempython-64="$SYSTEMPYTHON_64"
+alias systempython3.2="$SYSTEMPYTHON32"
+alias systempython3.2-32="$SYSTEMPYTHON32_32"
+alias systempython3.2-64="$SYSTEMPYTHON32_64"
 alias systempython2.7="$SYSTEMPYTHON27"
 alias systempython2.7-32="$SYSTEMPYTHON27_32"
 alias systempython2.7-64="$SYSTEMPYTHON27_64"
@@ -135,6 +141,11 @@ PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.6/bin"
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.5/bin"
 
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.0/bin/"
+
+# Setting PATH for Python 3.2
+# The orginal version is saved in .profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.2/bin:${PATH}"
+export PATH
 
 PATH="${PATH}:/Applications/sage"
 export PATH
