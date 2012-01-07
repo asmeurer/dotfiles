@@ -12,6 +12,7 @@ if [ $? -eq 1 ] ; then
     PATH=$PATH:/usr/local/bin
     export PATH
 fi
+
 export TIGCC="/usr/local/tigcc"
 export PATH="${PATH}:${TIGCC}/bin"
 export SUDO_PS1="\[\h:\w\] \u\\$ "
@@ -122,7 +123,6 @@ export LESS='-RI' # Make less search case insensitive, and always use raw input 
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
-alias emacs='/usr/bin/emacs'
 alias homework='cd ~/Documents/Homework/Fall\ 2011/'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 
@@ -148,6 +148,10 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.2/bin:${PATH}"
 export PATH
 
 PATH="${PATH}:/Applications/sage"
+export PATH
+
+# Use the git version of emacs
+PATH="/Users/aaronmeurer/Documents/emacs/src:$PATH"
 export PATH
 
 export PATH=`/usr/local/bin/uniqpath`
