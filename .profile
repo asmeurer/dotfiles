@@ -123,6 +123,7 @@ export LESS='-RI' # Make less search case insensitive, and always use raw input 
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
+alias emacs='emacs -nw' # Don't use the X11 version, which just hangs anyway
 alias homework='cd ~/Documents/Homework/Fall\ 2011/'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 
