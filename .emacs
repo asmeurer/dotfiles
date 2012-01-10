@@ -117,6 +117,13 @@
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 
+;; ===== auto-complete-mode ====
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/ac-dict")
+(ac-config-default)
+(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+
 ;; ===== Values set by M-x customize =====
 
 (custom-set-variables
