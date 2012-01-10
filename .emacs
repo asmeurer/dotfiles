@@ -75,22 +75,23 @@
 (define-abbrev global-abbrev-table "Ondrej" "Ondřej")
 (define-abbrev global-abbrev-table "Certik" "Čertík")
 
-
 ;; ===== Extensions stuff =======
 ;; ==============================
 
+;; Commented out stuff "doesn't work"
+
 ;; ===== python-mode ====
 
-(add-to-list 'load-path "~/.emacs.d/python-mode")
-(setq py-install-directory "~/.emacs.d/python-mode")
-(require 'python-mode)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+;; (add-to-list 'load-path "~/.emacs.d/python-mode")
+;; (setq py-install-directory "~/.emacs.d/python-mode")
+;; (require 'python-mode)
+;; (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 
-;; ===== ipython ====
-;; Note, this is linked to in ~/.emacs.d/lisp from the ipython git repo, not
-;; the dotfiles repo
-
-(require 'ipython)
+;; ;; ===== ipython ====
+;; ;; Note, this is linked to in ~/.emacs.d/lisp from the ipython git repo, not
+;; ;; the dotfiles repo
+;;
+;; (require 'ipython)
 
 ;; ===== Stuff for the pymacs extension ====
 
@@ -99,6 +100,14 @@
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-exec "pymacs" nil t)
 (autoload 'pymacs-load "pymacs" nil t)
+
+;; ;; ===== Enable the anything extension ====
+;;
+;; (require 'anything)
+;; (require 'anything-ipython)
+;; (when (require 'anything-show-completion nil t)
+;;    (use-anything-show-completion 'anything-ipython-complete
+;;                                  '(length initial-pattern)))
 
 ;; ===== Values set by M-x customize =====
 
