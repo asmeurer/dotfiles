@@ -51,6 +51,7 @@
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (add-hook 'message-mode-hook 'turn-on-flyspell)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
+(add-hook 'LaTeX-mode-hook 'turn-on-flyspell)
 (add-hook 'c-mode-common-hook 'flyspell-prog-mode)
 (add-hook 'tcl-mode-hook 'flyspell-prog-mode)
 (add-hook 'python-mode-hook 'flyspell-prog-mode)
