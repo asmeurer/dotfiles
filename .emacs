@@ -46,9 +46,19 @@
 
 ;; ===== Turn on flyspell-mode ====
 
-;; TODO: Turn this on only for relevant file types
-
-(setq flyspell-mode 1)
+;; Use the turn-on-flyspell one to enable it everywhere, and the
+;; flyspell-prog-mode to enable it only in comments/strings
+(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+(add-hook 'message-mode-hook 'turn-on-flyspell)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
+(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
+(add-hook 'tcl-mode-hook 'flyspell-prog-mode)
+(add-hook 'python-mode-hook 'flyspell-prog-mode)
+(add-hook 'lisp-mode-hook 'flyspell-prog-mode)
+(defun turn-on-flyspell ()
+   "Force flyspell-mode on using a positive arg.  For use in hooks."
+   (interactive)
+   (flyspell-mode 1))
 
 ;; ===== Clear trailing whitespace on save ====
 
