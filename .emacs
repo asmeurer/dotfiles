@@ -10,7 +10,7 @@
 
 ;; This makes the buffer scroll by only a single line when the up or
 ;; down cursor keys push the cursor (tool-bar-mode) outside the
-;; buffer. The standard emacs behaviour is to reposition the cursor in
+;; buffer. The standard emacs behavior is to re-position the cursor in
 ;; the center of the screen, but this can make the scrolling confusing
 
 (setq scroll-step 1)
@@ -55,6 +55,7 @@
 (add-hook 'tcl-mode-hook 'flyspell-prog-mode)
 (add-hook 'python-mode-hook 'flyspell-prog-mode)
 (add-hook 'lisp-mode-hook 'flyspell-prog-mode)
+(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
 (defun turn-on-flyspell ()
    "Force flyspell-mode on using a positive arg.  For use in hooks."
    (interactive)
