@@ -89,6 +89,13 @@
 ;; ===== Extensions stuff =======
 ;; ==============================
 
+;; ==== Markdown mode =====
+
+(add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
+
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
 ;; Commented out stuff "doesn't work"
 
 ;; ===== python-mode ====
