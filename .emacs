@@ -98,6 +98,11 @@
 
 ;; Commented out stuff "doesn't work"
 
+;; ===== pos-tip =====
+;; Gives better tool-tips to the auto-complete-mode extension.
+
+(require 'pos-tip)
+
 ;; ===== python-mode ====
 
 ;; (add-to-list 'load-path "~/.emacs.d/python-mode")
