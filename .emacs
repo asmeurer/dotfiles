@@ -109,6 +109,14 @@
 ;;    (use-anything-show-completion 'anything-ipython-complete
 ;;                                  '(length initial-pattern)))
 
+;; ===== Enable ropemacs =====
+
+;; Uncomment these to prevent ropemacs from changing default keybindings
+;; (setq ropemacs-enable-shortcuts nil)
+;; (setq ropemacs-local-prefix "C-c C-p")
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
+
 ;; ===== Values set by M-x customize =====
 
 (custom-set-variables
