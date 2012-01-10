@@ -151,6 +151,8 @@
  '(colon-double-space t)
  '(comment-empty-lines (quote (quote eol)))
  '(gud-gdb-command-name "gdb --annotate=1")
+ '(ispell-highlight-face (quote flyspell-incorrect))
+ '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(pcomplete-ignore-case t)
