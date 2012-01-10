@@ -154,6 +154,11 @@
 (ac-set-trigger-key "TAB")
 (ac-flyspell-workaround)
 
+;; ==== AUCTeX ====
+
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+
 ;; TODO: Do something like at
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
 ;; to make this also be smart about Python (e.g., complete after . in a module
