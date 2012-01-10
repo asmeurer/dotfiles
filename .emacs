@@ -134,6 +134,11 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/ac-dict")
 (ac-config-default)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(ac-set-trigger-key "TAB")
+;; TODO: Do something like at
+;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
+;; to make this also be smart about Python (e.g., complete after . in a module
+;; name).
 
 ;; ===== Values set by M-x customize =====
 
