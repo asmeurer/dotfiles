@@ -6,7 +6,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; ========== Line by line scrolling ========== 
+;; ========== Line by line scrolling ==========
 
 ;; This makes the buffer scroll by only a single line when the up or
 ;; down cursor keys push the cursor (tool-bar-mode) outside the
@@ -49,6 +49,10 @@
 ;; TODO: Turn this on only for relevant file types
 
 (setq flyspell-mode 1)
+
+;; ===== Clear trailing whitespace on save ====
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; ===== Use four spaces instead of tabs ====
 
