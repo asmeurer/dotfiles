@@ -62,6 +62,10 @@
    (interactive)
    (flyspell-mode 1))
 
+;; ===== Automatically indent with RET =====
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
 ;; ===== Clear trailing whitespace on save ====
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
