@@ -147,6 +147,8 @@
 (ac-config-default)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 (ac-set-trigger-key "TAB")
+(ac-flyspell-workaround)
+
 ;; TODO: Do something like at
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
 ;; to make this also be smart about Python (e.g., complete after . in a module
