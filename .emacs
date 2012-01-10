@@ -2,6 +2,9 @@
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
+;; ========== Add a directory to the emacs load-path for extensions =========
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; ========== Line by line scrolling ========== 
 
@@ -67,6 +70,14 @@
 
 (define-abbrev global-abbrev-table "Ondrej" "Ondřej")
 (define-abbrev global-abbrev-table "Certik" "Čertík")
+
+;; ===== Stuff for the pymacs extension ====
+
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
 
 ;; ===== Values set by M-x customize =====
 
