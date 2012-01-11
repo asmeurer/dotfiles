@@ -98,6 +98,17 @@
 (define-abbrev global-abbrev-table "Ondrej" "Ondřej")
 (define-abbrev global-abbrev-table "Certik" "Čertík")
 
+;; ===== Flymake for tex-mode ====
+
+;; flymake-mode for tex uses texify by default, which only works in Windows (miktex)
+
+;; If the LaTeX is too old to have this option, you can use this instead:
+;; (defun flymake-get-tex-args (file-name)
+;;   (list "chktex" (list "-q" "-v0" file-name)))
+
+(defun flymake-get-tex-args (file-name)
+    (list "pdflatex" (list "-file-line-error" "-draftmode" "-interaction=nonstopmode" file-name)))
+
 ;; ===== Enable mouse support (?) ====
 
 (require 'xt-mouse)
