@@ -139,7 +139,7 @@
 ;;
 ;;  (eval-after-load "isearch" '(require 'isearch+))
 ;;
- 
+
 ;;(@* "Overview of Features")
 ;;
 ;;; Overview of Features ---------------------------------------------
@@ -245,7 +245,7 @@
 ;;  * You can, by default, select text with the mouse, then hit `C-s'
 ;;    etc. to search for it.  This is controlled by user option
 ;;    `isearchp-mouse-2-flag'.
- 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Change Log:
@@ -407,7 +407,7 @@
 (defvar isearchp-initiate-edit-commands) ; Below.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
- 
+
 ;;(@* "Faces and Variables")
 
 ;;; Faces and Variables ----------------------------------------------
@@ -473,29 +473,29 @@ Don't forget to mention your Emacs and library versions."))
   (defcustom isearchp-initiate-edit-commands
     '(backward-char                     ; `C-b'
       left-char                         ; `left' (Emacs 24+)
-      ;; backward-delete-char                ; `DEL'
-      ;; backward-delete-char-untabify       ; `DEL'
-      ;; backward-kill-paragraph             ; `C-backspace'
-      ;; backward-kill-sentence              ; `C-x DEL'
-      ;; backward-kill-sexp                  ; `C-M-backspace'
-      ;; backward-kill-word                  ; `M-DEL'
-      ;; backward-list                       ; `C-M-p'
-      ;; backward-page                       ; `C-x ['
-      ;; backward-paragraph                  ; `C-up', `M-{'
-      ;; backward-sentence                   ; `M-a'
+      backward-delete-char                ; `DEL'
+       backward-delete-char-untabify       ; `DEL'
+       backward-kill-paragraph             ; `C-backspace'
+       backward-kill-sentence              ; `C-x DEL'
+       backward-kill-sexp                  ; `C-M-backspace'
+       backward-kill-word                  ; `M-DEL'
+       backward-list                       ; `C-M-p'
+       backward-page                       ; `C-x ['
+       backward-paragraph                  ; `C-up', `M-{'
+       backward-sentence                   ; `M-a'
       backward-sexp                     ; `C-M-b', `C-M-left'
-      ;; backward-to-indentation             ; Not bound by default
-      ;; backward-up-list                    ; `C-M-u', `C-M-up'
+       backward-to-indentation             ; Not bound by default
+       backward-up-list                    ; `C-M-u', `C-M-up'
       backward-word                     ; `M-b', `M-left'
       left-word                         ; `C-left'
-      ;; delete-backward-char
-      ;; kill-backward-up-list               ; Not bound by default
-      ;; beginning-of-buffer                 ; `M-<', `C-home'
-      ;; beginning-of-defun                  ; `C-M-a', `C-M-home', 
-      ;; beginning-of-line                   ; `C-a', `home'
-      ;; beginning-of-line+                  ; `C-a', `home'
-      ;; beginning-of-line-text              ; Not bound by default
-      ;; beginning-of-visual-line            ; `C-a', `home'
+       delete-backward-char
+       kill-backward-up-list               ; Not bound by default
+       beginning-of-buffer                 ; `M-<', `C-home'
+       beginning-of-defun                  ; `C-M-a', `C-M-home',
+       beginning-of-line                   ; `C-a', `home'
+       beginning-of-line+                  ; `C-a', `home'
+       beginning-of-line-text              ; Not bound by default
+       beginning-of-visual-line            ; `C-a', `home'
       )
     "*Commands whose key bindings initiate Isearch edit.
 When invoked by a key sequence, Isearch edits the search string,
@@ -547,7 +547,7 @@ outside of Isearch."
 
 ;; An alternative to binding `isearch-edit-string' (but less flexible):
 ;; (setq search-exit-option 'edit) ; M- = edit search string, not exit.
- 
+
 ;;(@* "Keys and Hooks")
 
 ;;; Keys and Hooks ---------------------------------------------------
@@ -630,7 +630,7 @@ This is used only for Transient Mark mode."
 
 (when (boundp 'isearch-update-post-hook) ; Emacs 24+
   (add-hook 'isearch-update-post-hook 'isearchp-highlight-lighter))
- 
+
 ;;(@* "Commands")
 
 ;;; Commands ---------------------------------------------------------
@@ -949,7 +949,7 @@ not necessarily fontify the whole buffer."
 ;;;           (pop cmds))
 ;;;         (setq succ-msg  (and cmds (isearch-message-state (car cmds))))
 ;;;         (backward-char (- (length isearch-string) (length succ-msg)))))))
- 
+
 ;;(@* "Non-Interactive Functions")
 
 ;;; Non-Interactive Functions
@@ -1219,7 +1219,7 @@ Non-nil ONLY-ONE-P means read only one sexp and return it."
       (unless (member (car tail) new)  (push (car tail) new))
       (pop tail))
     (nreverse new)))
- 
+
 ;;(@* "Character-Property Search")
 
 ;;; Character-Property Search ----------------------------------------
