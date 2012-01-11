@@ -25,10 +25,10 @@
 
 (column-number-mode 1)
 
-;; Show line numbers to the left of the text
+;; Disable all the version control stuff
+;; Makes emacs load much faster inside git repos
 
-(global-linum-mode 1)
-(setq linum-format "%d ")
+(setq vc-handled-backends nil)
 
 ;; ========== Set the fill column ==========
 
@@ -181,11 +181,13 @@
  '(abbrev-mode t t)
  '(colon-double-space t)
  '(comment-empty-lines (quote (quote eol)))
+ '(global-linum-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
- '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
+ '(linum-format "%d ")
+ '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case nil)
