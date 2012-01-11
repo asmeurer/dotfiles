@@ -144,13 +144,34 @@
 ;;
 ;; (require 'ipython)
 
-;; ===== Stuff for the pymacs extension ====
+;; The following lazily enables ropemacs (and only loads pymacs with it).
+;; Use C-x p l to load ropemacs.  Uncomment the stuff below it to always load them (slow).
 
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
+(defun load-ropemacs ()
+  "Load pymacs and ropemacs"
+      (interactive)
+          (require 'pymacs)
+              (pymacs-load "ropemacs" "rope-")
+                  ;; Automatically save project python buffers before refactorings
+                  (setq ropemacs-confirm-saving 'nil)
+                        )
+(global-set-key "\C-xpl" 'load-ropemacs)
+
+;; ;; ===== Stuff for the pymacs extension ====
+;;
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-exec "pymacs" nil t)
+;; (autoload 'pymacs-load "pymacs" nil t)
+;;
+;; ;; ===== Enable ropemacs =====
+;;
+;; ;; Uncomment these to prevent ropemacs from changing default keybindings
+;; ;; (setq ropemacs-enable-shortcuts nil)
+;; ;; (setq ropemacs-local-prefix "C-c C-p")
+;; (require 'pymacs)
+;; (pymacs-load "ropemacs" "rope-")
 
 ;; ;; ===== Enable the anything extension ====
 ;;
@@ -160,13 +181,6 @@
 ;;    (use-anything-show-completion 'anything-ipython-complete
 ;;                                  '(length initial-pattern)))
 
-;; ===== Enable ropemacs =====
-
-;; Uncomment these to prevent ropemacs from changing default keybindings
-;; (setq ropemacs-enable-shortcuts nil)
-;; (setq ropemacs-local-prefix "C-c C-p")
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
 
 ;; ===== auto-complete-mode ====
 
