@@ -18,10 +18,17 @@
 ;; ========== Enable Line and Column Numbering ==========
 
 ;; Show line-number in the mode line
+
 (line-number-mode 1)
 
 ;; Show column-number in the mode line
+
 (column-number-mode 1)
+
+;; Show line numbers to the left of the text
+
+(global-linum-mode 1)
+(setq linum-format "%d ")
 
 ;; ========== Set the fill column ==========
 
