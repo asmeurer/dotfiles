@@ -206,6 +206,10 @@
 (add-to-list 'load-path "~/Documents/predictive")
 (require 'predictive)
 
+;; ===== isearch+ =====
+
+(require 'isearch+)
+
 ;; =======================================
 ;; ===== Values set by M-x customize =====
 
