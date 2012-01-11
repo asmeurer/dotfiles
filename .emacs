@@ -227,6 +227,7 @@
  '(pcomplete-ignore-case t)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case nil)
+ '(scroll-step 1)
  '(sentence-end-double-space nil)
  '(show-trailing-whitespace t)
  '(tags-case-fold-search t))
