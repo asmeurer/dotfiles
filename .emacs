@@ -98,6 +98,11 @@
 (define-abbrev global-abbrev-table "Ondrej" "Ondřej")
 (define-abbrev global-abbrev-table "Certik" "Čertík")
 
+;; ===== Enable mouse support (?) ====
+
+(require 'xt-mouse)
+(xterm-mouse-mode)
+
 ;; ===== Extensions stuff =======
 ;; ==============================
 
