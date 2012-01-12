@@ -2,6 +2,35 @@
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
+;; ==== Set F7 to delete whole line ====
+
+;; iTerm2 doesn't send C-S-Backspace to emacs, so set it up as a keyboard
+;; shortcut to F7 in the iTerm2 prefs. See
+;; http://code.google.com/p/iterm2/issues/detail?id=1702.
+
+;; TODO: kill-whole-line kills a newline too, which I don't like. So write a
+;; custom routine.
+
+(defun kill-total-line ()
+    (interactive)
+    (let ((kill-whole-line t))
+      (end-of-line)
+      (kill-line 0)
+      )
+    )
+
+(global-set-key [f7] 'kill-total-line)
+
+;; define the function to kill the characters from the cursor
+;; to the beginning of the current line
+(defun backward-kill-line (arg)
+    "Kill chars backward until encountering the end of a line."
+      (interactive "p")
+        (kill-line 0))
+
+;; I don't use C-u for it's normal use, but I do use this macro.
+(global-set-key "\C-u" 'backward-kill-line)
+
 ;; ========== Add a directory to the emacs load-path for extensions =========
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
