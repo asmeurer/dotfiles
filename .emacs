@@ -275,6 +275,7 @@
  '(comment-empty-lines (quote (quote eol)))
  '(custom-unlispify-tag-names nil)
  '(global-linum-mode t)
+ '(global-subword-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(ispell-silently-savep t)
