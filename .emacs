@@ -2,6 +2,23 @@
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
+;; ==== Put autosave and backup files in ~/.emacs.d ====
+
+;; Thanks to
+;; http://stackoverflow.com/questions/2020941/emacs-newbie-how-can-i-hide-the-buffer-files-that-emacs-creates
+;;
+;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
+
+(defvar backup-dir (expand-file-name "~/.emacs.d/backup/"))
+(defvar autosave-dir (expand-file-name "~/.emacs.d/autosave/"))
+(setq backup-directory-alist (list (cons ".*" backup-dir)))
+(setq auto-save-list-file-prefix autosave-dir)
+(setq auto-save-file-name-transforms `((".*" ,autosave-dir t)))
+
+;; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs.d/autosave/" t)
+(make-directory "~/.emacs.d/backup/" t)
+
 ;; ==== Set F7 to delete whole line ====
 
 ;; iTerm2 doesn't send C-S-Backspace to emacs, so set it up as a keyboard
