@@ -273,6 +273,7 @@
  '(abbrev-mode t t)
  '(colon-double-space t)
  '(comment-empty-lines (quote (quote eol)))
+ '(custom-unlispify-tag-names nil)
  '(global-linum-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
  '(ispell-highlight-face (quote flyspell-incorrect))
