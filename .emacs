@@ -285,12 +285,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
+ '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(colon-double-space t)
  '(comment-empty-lines (quote (quote eol)))
  '(cua-enable-cua-keys nil)
  '(cua-enable-modeline-indications t)
  '(cua-keep-region-after-copy t)
  '(cua-mode t nil (cua-base))
+ '(custom-safe-themes (quote ("7cc2ed6fc6b1d9ef1f245745ded639d934e28bb55f70add829ff6bc4bf337da2" default)))
+ '(custom-theme-directory "~/.emacs.d/themes")
  '(custom-unlispify-tag-names nil)
  '(global-linum-mode t)
  '(global-subword-mode t)
@@ -312,4 +315,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highlight-indent-face ((t (:background "color-233")))))
+ )
