@@ -268,6 +268,14 @@
 
 (add-hook 'python-mode-hook 'highlight-indentation)
 
+;; ==== Tabbar mode ====
+
+;; Disabled because I couldn't figure out how to make it do what I want
+;; (always show all files by filename)
+
+;; (add-to-list 'load-path "~/Documents/tabbar")
+;; (require 'tabbar)
+
 ;; =======================================
 ;; ===== Values set by M-x customize =====
 
