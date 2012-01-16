@@ -2,6 +2,12 @@
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
+;; ==== Fix Shift-Up to do selection ====
+
+;; See http://lists.gnu.org/archive/html/help-gnu-emacs/2011-05/msg00211.html
+
+(define-key input-decode-map "\e[1;2A" [S-up])
+
 ;; ==== Put autosave and backup files in ~/.emacs.d ====
 
 ;; Thanks to
