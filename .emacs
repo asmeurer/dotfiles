@@ -69,8 +69,15 @@
       (interactive "p")
         (kill-line 0))
 
-;; I don't use C-u for it's normal use, but I do use this macro.
+;; I don't use C-u's normal use, but I do use this macro.
+
 (global-set-key "\C-u" 'backward-kill-line)
+
+;; You can still get the original meaning of C-u (universal-argument) with C-c
+;; u Note, I was going to do C-S-u, but apparently terminals can't distinguish
+;; the shift with control
+
+(global-set-key (kbd "C-c u") 'universal-argument)
 
 ;; ========== Add a directory to the emacs load-path for extensions =========
 
