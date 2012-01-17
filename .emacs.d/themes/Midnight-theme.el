@@ -1,12 +1,12 @@
 (deftheme Midnight
-  "Theme meant for green text on semi-transparent black background. Based on XCode's midnight theme.")
-
-(custom-theme-set-variables
- 'Midnight
- )
+  "Theme meant for green text on semi-transparent black
+  background. Loosely based on XCode's midnight theme.")
 
 (custom-theme-set-faces
  'Midnight
- '(highlight-indent-face ((t (:background "color-233")))))
+ '(highlight-indent-face ((t (:background "color-233"))))
+ '(font-lock-string-face ((t (:foreground "red"))))
+ '(font-lock-comment-face ((t (:foreground "white"))))
+ '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground "brightyellow")))))
 
 (provide-theme 'Midnight)
