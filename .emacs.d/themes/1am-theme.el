@@ -1,6 +1,6 @@
-(deftheme Midnight
+(deftheme 1am
   "Theme meant for green text on semi-transparent black
-  background. Loosely based on XCode's midnight theme.")
+  background. Loosely based on XCode's midnight theme (hence the name).")
 
 (custom-theme-set-faces
  'Midnight
