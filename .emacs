@@ -2,6 +2,17 @@
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
+;; ==== Make DEL delete four spaces at the beginning of a line ====
+
+;; (defun remove-indentation-spaces ()
+;;   "remove TAB-WIDTH spaces from the beginning of this line"
+;;   (interactive)
+;;   (if (save-excursion (re-search-backward "[^ \t]" (line-beginning-position) t))
+;;       (delete-backward-char 1)
+;;     (indent-rigidly (line-beginning-position) (line-end-position) (- tab-width))))
+;;
+;; (global-set-key (kbd "DEL") 'remove-indentation-spaces)
+
 ;; ==== Useful tools for removing duplicate lines ====
 
 (defun uniquify-all-lines-region (start end)
