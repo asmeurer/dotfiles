@@ -280,6 +280,7 @@
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 (ac-set-trigger-key "TAB")
 (ac-flyspell-workaround)
+(setq ac-ignore-case nil)
 
 ;; TODO: Do something like at
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
