@@ -277,7 +277,7 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/Documents/auto-complete/dict")
 (ac-config-default)
-;;(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 (ac-set-trigger-key "TAB")
 (ac-flyspell-workaround)
 
