@@ -348,7 +348,9 @@
  '(read-file-name-completion-ignore-case nil)
  '(require-final-newline (quote ask))
  '(scroll-step 1)
- '(sentence-end-double-space nil)
+ '(sentence-end-double-space t)
+ '(show-paren-mode t)
+ '(show-paren-style (quote mixed))
  '(show-trailing-whitespace t)
  '(tags-case-fold-search t))
 (custom-set-faces
@@ -356,4 +358,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(show-paren-match ((t (:background "blue")))))
