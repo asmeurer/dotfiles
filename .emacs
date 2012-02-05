@@ -256,6 +256,11 @@
 
 ;; Commented out stuff "doesn't work"
 
+;; ===== flymake-cursor =====
+;; Shows flymake errors in the mode line (since I can't use the mouse)
+
+(require 'flymake-cursor)
+
 ;; ===== pos-tip =====
 ;; Gives better tool-tips to the auto-complete-mode extension.
 
