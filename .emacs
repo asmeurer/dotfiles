@@ -372,6 +372,7 @@
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
  '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(auto-save-list-file-prefix "/Users/aaronmeurer/.emacs.d/autosave/")
  '(colon-double-space t)
  '(comment-empty-lines (quote (quote eol)))
  '(cua-enable-cua-keys nil)
@@ -392,8 +393,9 @@
  '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
  '(read-buffer-completion-ignore-case t)
- '(read-file-name-completion-ignore-case nil)
+ '(read-file-name-completion-ignore-case t)
  '(require-final-newline (quote ask))
+ '(save-place t nil (saveplace))
  '(scroll-step 1)
  '(sentence-end-double-space t)
  '(show-paren-mode t)
