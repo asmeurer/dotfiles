@@ -7,6 +7,32 @@
 (setq c-default-style "cc-mode"
       c-basic-offset 4)
 
+;;
+;; TeXcount setup for TeXcount version 2.3
+;;
+(defun texcount-setup ()
+  (defun latex-word-count ()
+    (interactive)
+    (let*
+        ( (this-file (buffer-file-name))
+          (enc-str (symbol-name buffer-file-coding-system))
+          (enc-opt
+           (cond
+            ((string-match "utf-8" enc-str) "-utf8")
+            ((string-match "latin" enc-str) "-latin1")
+            ("-encoding=guess")
+            ) )
+          (word-count
+           (with-output-to-string
+             (with-current-buffer standard-output
+               (call-process "texcount" nil t nil "-0" enc-opt this-file)
+               ) ) ) )
+      (message word-count)
+      ) )
+  (define-key latex-mode-map "\C-cw" 'latex-word-count)
+  )
+(add-hook 'latex-mode-hook 'latex-setup t)
+
 ;; ==== Make DEL delete four spaces at the beginning of a line ====
 
 ;; (defun remove-indentation-spaces ()
