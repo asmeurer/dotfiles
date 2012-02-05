@@ -68,6 +68,9 @@
 
 (define-key input-decode-map "\e[1;2A" [S-up])
 
+(defadvice terminal-init-xterm (after select-shift-up activate)
+  (define-key input-decode-map "\e[1;2A" [S-up]))
+
 ;; ==== Put autosave and backup files in ~/.emacs.d ====
 
 ;; Thanks to
