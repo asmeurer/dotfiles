@@ -187,9 +187,17 @@
 (add-hook 'lisp-mode-hook 'flyspell-prog-mode)
 (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
 (defun turn-on-flyspell ()
-   "Force flyspell-mode on using a positive arg.  For use in hooks."
-   (interactive)
-   (flyspell-mode 1))
+  "Force flyspell-mode on using a positive arg.  For use in hooks."
+  (interactive)
+  (flyspell-mode 1))
+
+;; ===== Turn on flymake-mode ====
+
+(add-hook 'c-mode-common-hook 'turn-on-flymake)
+(defun turn-on-flymake ()
+  "Force flymake-mode on. For us in hooks."
+  (interactive)
+  (flymake-mode 1))
 
 ;; ===== Automatically indent with RET =====
 
