@@ -1,6 +1,11 @@
-; Emacs config file
+;; Emacs config file
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
+
+;; Use better indentation for C files
+
+(setq c-default-style "cc-mode"
+      c-basic-offset 4)
 
 ;; ==== Make DEL delete four spaces at the beginning of a line ====
 
