@@ -396,6 +396,8 @@
  '(read-file-name-completion-ignore-case t)
  '(require-final-newline (quote ask))
  '(save-place t nil (saveplace))
+ '(save-place-save-skipped nil)
+ '(save-place-skip-check-regexp "\\`/\\(?:cdrom\\|\\|COMMIT_EDITMSG\\|floppy\\|mnt\\|\\(?:[^@/:]*@\\)?[^@/:]*[^@/:.]:\\)")
  '(scroll-step 1)
  '(sentence-end-double-space t)
  '(show-paren-mode t)
