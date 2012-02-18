@@ -228,6 +228,13 @@
 (define-abbrev global-abbrev-table "Ondrej" "Ondřej")
 (define-abbrev global-abbrev-table "Certik" "Čertík")
 
+;; ===== Things for C mode ====
+
+;; Automatically add newlines when typing braces and such
+(setq c-auto-newline t)
+;; Make delete undo it all at once
+(setq c-hungry-delete-key t)
+
 ;; ===== Flymake for tex-mode ====
 
 ;; flymake-mode for tex uses texify by default, which only works in Windows (miktex)
