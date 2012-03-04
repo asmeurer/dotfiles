@@ -254,6 +254,13 @@
 (xterm-mouse-mode t)
 (defun track-mouse (e))
 
+;; ===== Highlight tabs ====
+(standard-display-ascii ?\t ">>>|")
+(add-hook 'text-mode-hook
+          (lambda ()
+            (font-lock-add-keywords
+             nil
+             '(("\t" 0 'trailing-whitespace prepend)))))
 
 ;; ===== Extensions stuff =======
 ;; ==============================
