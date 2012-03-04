@@ -124,6 +124,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
 alias emacs='emacsclient -a "" -nw' # Don't use the X11 version, which just hangs anyway
+alias e=emacs
 alias homework='cd ~/Documents/Homework/Spring\ 2012/'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 
