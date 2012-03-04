@@ -371,6 +371,7 @@
 (require 'highlight-indentation)
 
 (add-hook 'python-mode-hook 'highlight-indentation)
+(add-hook 'c-mode-common-hook 'highlight-indentation)
 
 ;; ==== Tabbar mode ====
 
