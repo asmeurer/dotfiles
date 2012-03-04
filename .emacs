@@ -199,6 +199,13 @@
   (interactive)
   (flymake-mode 1))
 
+(add-hook 'c-mode-common-hook 'flymake-keyboard-shortcuts)
+(defun flymake-keyboard-shortcuts ()
+  "Add keyboard shortcuts for flymake goto next/prev error."
+  (interactive)
+  (local-set-key "\M-n" 'flymake-goto-next-error)
+  (local-set-key "\M-p" 'flymake-goto-prev-error))
+
 ;; ===== Automatically indent with RET =====
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
