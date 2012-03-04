@@ -250,6 +250,10 @@
 
 (require 'xt-mouse)
 (xterm-mouse-mode)
+(require 'mouse)
+(xterm-mouse-mode t)
+(defun track-mouse (e))
+
 
 ;; ===== Extensions stuff =======
 ;; ==============================
