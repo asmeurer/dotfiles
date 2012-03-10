@@ -119,8 +119,8 @@
 (global-set-key "\C-u" 'backward-kill-line)
 
 ;; You can still get the original meaning of C-u (universal-argument) with C-c
-;; u Note, I was going to do C-S-u, but apparently terminals can't distinguish
-;; the shift with control
+;; u.  Note, I was going to do C-S-u, but apparently terminals can't
+;; distinguish the shift with control
 
 (global-set-key (kbd "C-c u") 'universal-argument)
 
@@ -229,8 +229,6 @@
 (setq-default transient-mark-mode t)
 
 ;; ===== Abbreviations =====
-
-;; For some reason this doesn't work
 
 (define-abbrev global-abbrev-table "Ondrej" "Ondřej")
 (define-abbrev global-abbrev-table "Certik" "Čertík")
