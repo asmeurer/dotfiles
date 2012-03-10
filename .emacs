@@ -447,6 +447,7 @@
  '(show-paren-mode t)
  '(show-paren-style (quote mixed))
  '(show-trailing-whitespace t)
+ '(speedbar-visiting-tag-hook (quote (speedbar-highlight-one-tag-line speedbar-recenter)))
  '(tags-case-fold-search t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
