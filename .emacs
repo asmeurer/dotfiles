@@ -378,6 +378,9 @@
 
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
+(add-hook 'latex-mode-hook 'turn-on-reftex)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
 
 ;; ==== Predictive ====
 
