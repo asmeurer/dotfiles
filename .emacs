@@ -251,6 +251,23 @@
 (defun flymake-get-tex-args (file-name)
     (list "pdflatex" (list "-file-line-error" "-draftmode" "-interaction=nonstopmode" file-name)))
 
+;; Enable auto-fill-mode for relevant file types
+
+(defun turn-on-auto-fill ()
+  "Force auto-fill-mode on. For us in hooks."
+  (interactive)
+  (auto-fill-mode 1))
+
+(add-hook 'message-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+(add-hook 'c-mode-common-hook 'turn-on-auto-fill)
+(add-hook 'tcl-mode-hook 'turn-on-auto-fill)
+(add-hook 'python-mode-hook 'turn-on-auto-fill)
+(add-hook 'lisp-mode-hook 'turn-on-auto-fill)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-auto-fill)
+(add-hook 'markdown-mode-hook 'turn-on-auto-fill)
+
 ;; ===== Enable mouse support (?) ====
 
 (require 'xt-mouse)
