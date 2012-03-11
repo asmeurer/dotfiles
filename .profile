@@ -114,10 +114,6 @@ alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integr
 # /Applications/Utilities/
 
 # Directory codes are
-# sympy other (like sympy-live or sympy.wiki) - Yellow
-# Note, this one must be tested before the above ones
-DIR_SYMPY_OTHER='/Users/aaronmeurer/Documents/python/sympy'
-TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 # sympy - Red
 DIR_SYMPY='/Users/aaronmeurer/Documents/python/sympy/sympy'
 TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
@@ -127,6 +123,10 @@ TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]
 # sympy-bot - Purple
 DIR_SYMPY_BOT='/Users/aaronmeurer/Documents/python/sympy/sympy-bot'
 TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+# sympy other (like sympy-live or sympy.wiki) - Yellow
+# Note, this one must be tested after the above ones
+DIR_SYMPY_OTHER='/Users/aaronmeurer/Documents/python/sympy'
+TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 # dotfiles - Green
 DIR_DOTFILES='/Users/aaronmeurer/Documents/dotfiles'
 TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
@@ -145,7 +145,7 @@ set_tab_color () {
 
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_GREEN' '$DIR_DOTFILES $TAB_PURPLE' '$DIR_HOMEWORK $TAB_BLUE'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_GREEN' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_PURPLE' '$DIR_HOMEWORK $TAB_BLUE'
     do
         set -- $dir_tab
         # Dereference the variable name
@@ -157,6 +157,10 @@ set_tab_color () {
         then
             FOUND='yes'
             echo -n -e $COLOR
+        fi
+        if [[ $FOUND == 'yes' ]]
+            then
+            break
         fi
     done
 
