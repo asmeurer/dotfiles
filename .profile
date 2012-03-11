@@ -100,7 +100,74 @@ alias alldoctestall='SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.7 ./bin/doctest; SY
 
 alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integrals/tests/test_risch.py sympy/integrals/tests/test_rde.py sympy/integrals/tests/test_prde.py'
 
-export PS1='\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]'
+# Color tabs based on directories in iTerm 2
+
+# Colors are done as "\033]6;1;bg;red;brightness;NNN\a\033]6;1;bg;blue;brightness;NNN\a\033]6;1;bg;green;brightness;NNN\a"
+# Where you have                   ^              ^                ^              ^                  ^               ^
+#                                  |              |                |              |                  |               |
+#                                 red------->color value          blue------>color value           green------->color value
+#                                              (0-255)                         (0-255)                            (0-255)
+
+# The easiest way to get the color codes for a color is to just type the color
+# name into WolframAlpha, and it will just tell you.  Or, if you have a
+# particular color on-screen that you want, you can use DigitalColor Meter in
+# /Applications/Utilities/
+
+# Directory codes are
+# sympy other (like sympy-live or sympy.wiki) - Yellow
+# Note, this one must be tested before the above ones
+DIR_SYMPY_OTHER='/Users/aaronmeurer/Documents/python/sympy'
+TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+# sympy - Red
+DIR_SYMPY='/Users/aaronmeurer/Documents/python/sympy/sympy'
+TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+# sympy-scratch - Orange
+DIR_SYMPY_SCRATCH='/Users/aaronmeurer/Documents/python/sympy/sympy-scratch'
+TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;128\a"
+# sympy-bot - Purple
+DIR_SYMPY_BOT='/Users/aaronmeurer/Documents/python/sympy/sympy-bot'
+TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+# dotfiles - Green
+DIR_DOTFILES='/Users/aaronmeurer/Documents/dotfiles'
+TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+# homework - Blue
+export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Spring 2012" # Used later by homework alias
+TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+# Other - default (metal)
+# Can't actually get metal yet
+# (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
+# similar shade of gray
+TAB_GRAY="\033]6;1;bg;red;brightness;200\a\033]6;1;bg;blue;brightness;200\a\033]6;1;bg;green;brightness;200\a"
+
+
+set_tab_color () {
+    FOUND='no'
+
+    # TODO: Is there a better way to do this?
+    # Yes, using associative arrays
+    for dir_tab in '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_GREEN' '$DIR_DOTFILES $TAB_PURPLE' '$DIR_HOMEWORK $TAB_BLUE'
+    do
+        set -- $dir_tab
+        # Dereference the variable name
+        # We do things this way because set won't handle directories with
+        # spaces correctly, no matter what we do.
+        SEARCH_DIR=`eval echo $1`
+        COLOR=`eval echo $2`
+        if grep -q "$SEARCH_DIR/.*" <<< "$PWD/"
+        then
+            FOUND='yes'
+            echo -n -e $COLOR
+        fi
+    done
+
+    if [[ $FOUND == 'no' ]]
+    then
+        echo -n -e $TAB_GRAY
+    fi
+}
+
+
+export PS1='\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]$(set_tab_color)'
 
 
 # Date PS1
@@ -125,7 +192,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
 alias emacs='emacsclient -a "" -nw' # Don't use the X11 version, which just hangs anyway
 alias e=emacs
-alias homework='cd ~/Documents/Homework/Spring\ 2012/'
+alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 
 
