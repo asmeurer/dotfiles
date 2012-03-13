@@ -2,6 +2,11 @@
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
+;; Don't show the splash screen on startup.  Aside from me not needing it
+;; anymore, this fixes a bug with emacsclient.
+
+(setq inhibit-splash-screen t)
+
 ;; Use better indentation for C files
 
 (setq c-default-style "cc-mode"
