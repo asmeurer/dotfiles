@@ -221,8 +221,7 @@
 
 ;; ===== Use four spaces instead of tabs ====
 
-(setq c-basic-indent 2)
-(setq tab-width 4)
+(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
 ;; ===== Trailing whitespace ======
