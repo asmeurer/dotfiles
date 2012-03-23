@@ -402,7 +402,11 @@
 
 
 (add-to-list 'load-path "~/Documents/auto-complete")
+(add-to-list 'load-path "~/Documents/popup-el")
+(add-to-list 'load-path "~/Documents/fuzzy-el")
 (require 'auto-complete-config)
+(require 'popup)
+(require 'fuzzy)
 (add-to-list 'ac-dictionary-directories "~/Documents/auto-complete/dict")
 (ac-config-default)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
