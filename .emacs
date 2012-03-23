@@ -217,7 +217,34 @@
 
 ;; ===== Clear trailing whitespace on save ====
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; This trick makes C-x C-s clear whitespace, *but*, if there was whitespace
+;; between the cursor and the end of the line, it puts it back after the save
+;; (but still marks the file as saved).  This way, you can save while typing
+;; and it won't move the cursor back into the word you just typed if you had a
+;; space there, but it always clears whitespace in the saved file.
+;; Additionally, this makes C-x C-s clear whitespace even if no changes have
+;; been made to the file yet.  To save a file without clearing whitespace, use
+;; M-x save-buffer.
+
+(defun my-save-buffer-dtws (arg)
+  "save buffer delete trailing white space, preserve white space before
+    point if point is past text"
+  (interactive "p")
+  (let ((save (when (and (looking-at "\\s-*$")
+                         (looking-back "\\s-+"
+                                       (line-beginning-position) t))
+                (match-string 0))))
+    (delete-trailing-whitespace)
+    (save-buffer arg)
+    (when save
+      (insert save)
+      (set-buffer-modified-p nil))))
+
+(global-set-key [remap save-buffer] 'my-save-buffer-dtws)
+
+;; Normally you would just do this:
+
+;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; ===== Use four spaces instead of tabs ====
 
