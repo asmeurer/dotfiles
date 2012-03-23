@@ -248,8 +248,18 @@
 
 ;; ===== Use four spaces instead of tabs ====
 
+(setq c-basic-offset 4)
+(setq tab-width 4)
 (setq-default tab-width 4)
+(setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
+(setq indent-tabs-mode nil)
+(setq-default indent-line-function 'insert-tab)
+(setq indent-line-function 'insert-tab)
+(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76
+                        80))
+(setq-default py-indent-offset 4)
+(setq-default python-indent 4)
 
 ;; ===== Trailing whitespace ======
 
