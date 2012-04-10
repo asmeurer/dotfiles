@@ -220,7 +220,8 @@ PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.0/bin/"
 PATH="/Library/Frameworks/Python.framework/Versions/3.2/bin:${PATH}"
 export PATH
 
-PATH="${PATH}:/Applications/sage"
+# Sage
+PATH="${PATH}:/Applications/Sage-4.8-OSX-64bit-10.6.app/Contents/Resources/sage"
 export PATH
 
 # Use the git version of emacs
