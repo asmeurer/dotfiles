@@ -1,5 +1,20 @@
 ;; Emacs config file
 
+;; ====== TODO ======
+;;
+;; - Make C-u delete the previous newline when the cursor is at the beginning of
+;;   the line.
+;; - Highlight 'single quoted' text and "double quoted" text differently in
+;;   Python.
+;; - Get some kind of flymake working for LaTeX.
+;; - Smarter completion for Python.
+;; - Export all face changes to the theme.
+;; - Fix TeXcount.
+;; - Fix bug with isearch when the search is not found and you type delete.
+;; - Make isearch always wrap around on the first search.
+;; - Find a better regex solution (icicles maybe).
+;; - Fix mouse scrolling.
+
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
 ;; Don't show the splash screen on startup.  Aside from me not needing it
