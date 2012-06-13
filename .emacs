@@ -444,8 +444,8 @@
 
 ;; ==== Predictive ====
 
-(add-to-list 'load-path "~/Documents/predictive")
-(require 'predictive)
+;; (add-to-list 'load-path "~/Documents/predictive")
+;; (require 'predictive)
 
 ;; ===== isearch+ =====
 
