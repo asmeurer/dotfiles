@@ -67,6 +67,10 @@ export EDITOR='emacsclient -a "" -nw'
 export LESS='-RI' # Make less search case insensitive, and always use raw input mode (to show colors)
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
+# Use the git version of emacs
+PATH="/home/asmeurer/Documents/emacs/src:$PATH"
+export PATH
+
 alias emacs='emacsclient -a "" -nw' # Don't use the X11 version, which just hangs anyway
 alias e=emacs
 
