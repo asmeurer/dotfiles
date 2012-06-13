@@ -531,8 +531,8 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; ==== Predictive ====
 
-(add-to-list 'load-path "~/Documents/predictive")
-(require 'predictive)
+;; (add-to-list 'load-path "~/Documents/predictive")
+;; (require 'predictive)
 
 ;; ===== isearch+ =====
 
