@@ -434,13 +434,13 @@
 ;; to make this also be smart about Python (e.g., complete after . in a module
 ;; name).
 
-;; ==== AUCTeX ====
+;; ;; ==== AUCTeX ====
 
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-(add-hook 'latex-mode-hook 'turn-on-reftex)
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(setq reftex-plug-into-AUCTeX t)
+;; (load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
+;; (add-hook 'latex-mode-hook 'turn-on-reftex)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;; (setq reftex-plug-into-AUCTeX t)
 
 ;; ==== Predictive ====
 
