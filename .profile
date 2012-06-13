@@ -18,7 +18,6 @@ export SUDO_PS1="\[\h:\w\] \u\\$ "
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias python=/sw/bin/python
 
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
