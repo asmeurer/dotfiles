@@ -40,7 +40,7 @@ shopt -s hostcomplete
 # Don't complete on empty lines (it hangs bash and is not very useful)
 shopt -s no_empty_cmd_completion
 
-alias ls='ls -AG@Flha'
+alias ls='ls -AGFlha --color'
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
