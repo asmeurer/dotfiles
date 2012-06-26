@@ -49,6 +49,8 @@ alias cds='cd ~/Dropbox/sympy'
 alias cdd='cd ~/Documents'
 alias pudb='python -m pudb.run'
 
+alias open='xdg-open'
+
 export PS1='\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]'
 
 
