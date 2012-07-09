@@ -193,6 +193,10 @@
 
 (setq default-major-mode 'text-mode)
 
+;; ===== ido mode =====
+
+(require 'ido)
+
 ;; ===== Turn on flyspell-mode ====
 
 ;; Use the turn-on-flyspell one to enable it everywhere, and the
@@ -491,6 +495,9 @@
  '(global-linum-mode t)
  '(global-subword-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
+ '(ido-enable-flex-matching t)
+ '(ido-everywhere t)
+ '(ido-mode (quote both) nil (ido))
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
@@ -517,5 +524,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(flymake-errline ((t (:foreground "LightPink" :underline "red"))))
- '(flymake-warnline ((t nil))))
+ '(flymake-errline ((t (:foreground "LightPink" :underline "red"))) t)
+ '(flymake-warnline ((t nil)) t)
+ '(ido-first-match ((t (:underline t :weight bold)))))
