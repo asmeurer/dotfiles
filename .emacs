@@ -421,6 +421,15 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 ;; ===== Extensions stuff =======
 ;; ==============================
 
+(add-to-list 'load-path "~/Documents/smex") ;; The git clone
+(require 'smex)
+(smex-initialize)
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;; ==== Markdown mode =====
 
 (add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
