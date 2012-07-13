@@ -623,4 +623,10 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
  ;; If there is more than one, they won't work right.
  '(flymake-errline ((t (:foreground "LightPink" :underline "red"))) t)
  '(flymake-warnline ((t nil)) t)
- '(ido-first-match ((t (:underline t :weight bold)))))
+ '(ido-first-match ((t (:underline t :weight bold))))
+ '(rst-level-1-face ((t (:foreground "cyan"))) t)
+ '(rst-level-2-face ((t (:inherit rst-level-1-face :foreground "yellow"))) t)
+ '(rst-level-3-face ((t (:inherit rst-level-2-face))) t)
+ '(rst-level-4-face ((t (:inherit rst-level-2-face))) t)
+ '(rst-level-5-face ((t (:inherit rst-level-2-face))) t)
+ '(rst-level-6-face ((t (:inherit rst-level-2-face))) t))
