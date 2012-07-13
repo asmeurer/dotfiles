@@ -279,12 +279,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (add-hook 'message-mode-hook 'turn-on-flyspell)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'LaTeX-mode-hook 'turn-on-flyspell)
-(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
-(add-hook 'tcl-mode-hook 'flyspell-prog-mode)
-(add-hook 'python-mode-hook 'flyspell-prog-mode)
-(add-hook 'lisp-mode-hook 'flyspell-prog-mode)
-(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
-(add-hook 'html-mode-hook 'flyspell-prog-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode) ; All programming languages
 (defun turn-on-flyspell ()
   "Force flyspell-mode on using a positive arg.  For use in hooks."
   (interactive)
@@ -396,11 +391,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (add-hook 'message-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
-(add-hook 'c-mode-common-hook 'turn-on-auto-fill)
-(add-hook 'tcl-mode-hook 'turn-on-auto-fill)
-(add-hook 'python-mode-hook 'turn-on-auto-fill)
-(add-hook 'lisp-mode-hook 'turn-on-auto-fill)
-(add-hook 'emacs-lisp-mode-hook 'turn-on-auto-fill)
+(add-hook 'prog-mode-hook 'turn-on-auto-fill) ; All programming languages
 (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
 
 ;; ===== Enable mouse support (?) ====
@@ -556,8 +547,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 (require 'highlight-indentation)
 
-(add-hook 'python-mode-hook 'highlight-indentation)
-(add-hook 'c-mode-common-hook 'highlight-indentation)
+(add-hook 'prog-mode-hook 'highlight-indentation)
 
 ;; ==== Tabbar mode ====
 
