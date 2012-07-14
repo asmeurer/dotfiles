@@ -152,6 +152,10 @@
 ;; ===== Set C-x C-c to do the right thing in emacsclient
 ;; TODO
 
+;; ===== Make the *scratch* buffer use text mode by default ====
+
+(setq initial-major-mode 'text-mode)
+
 ;; ========== Add a directory to the emacs load-path for extensions =========
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
