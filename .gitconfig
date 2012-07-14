@@ -39,3 +39,6 @@
 	user = asmeurer
 [rerere]
 	enabled = true
+
+[credential]
+	helper = cache
