@@ -498,6 +498,10 @@
 (ac-flyspell-workaround)
 (ac-linum-workaround)
 (setq ac-ignore-case nil)
+(setq ac-use-menu-map t)
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+
 
 ;; TODO: Do something like at
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
