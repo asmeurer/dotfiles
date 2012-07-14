@@ -424,6 +424,12 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+;; ==== ido-ubiquitous =====
+;; ==== Gives ido mode really everywhere =====
+
+(add-to-list 'load-path "~/Documents/ido-ubiquitous")
+(require 'ido-ubiquitous)
+
 ;; ==== Markdown mode =====
 
 (add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
