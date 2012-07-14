@@ -496,6 +496,7 @@
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 (ac-set-trigger-key "TAB")
 (ac-flyspell-workaround)
+(ac-linum-workaround)
 (setq ac-ignore-case nil)
 
 ;; TODO: Do something like at
