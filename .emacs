@@ -413,6 +413,8 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 ;; ===== Extensions stuff =======
 ;; ==============================
 
+;; ==== smex (ido for M-x) ======
+
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
 (require 'smex)
 (smex-initialize)
