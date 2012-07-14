@@ -227,6 +227,7 @@ export PATH
 
 # Use the git version of emacs
 PATH="/Users/aaronmeurer/Documents/emacs/src:$PATH"
+PATH="/Users/aaronmeurer/Documents/emacs/lib-src:$PATH"
 export PATH
 
 export PATH=`/usr/local/bin/uniqpath`
