@@ -508,6 +508,14 @@
 ;; to make this also be smart about Python (e.g., complete after . in a module
 ;; name).
 
+;; ===== Scroll bars ======
+
+;; This is related to auto-complete-mode (same developer)
+
+(add-to-list 'load-path "~/Documents/yascroll-el")
+(require 'yascroll)
+;;(global-yascroll-bar-mode 1)
+
 ;; ==== AUCTeX ====
 
 (load "auctex.el" nil t t)
