@@ -65,6 +65,10 @@
 ;;
 ;; (global-set-key (kbd "DEL") 'remove-indentation-spaces)
 
+;; ==== Automatically update table of contents in rst-mode ====
+
+(add-hook 'rst-adjust-hook 'rst-toc-update)
+
 ;; ==== Useful tools for removing duplicate lines ====
 
 (defun remove-duplicate-lines-region (start end)
