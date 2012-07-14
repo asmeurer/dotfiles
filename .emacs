@@ -134,10 +134,15 @@
 
 ;; define the function to kill the characters from the cursor
 ;; to the beginning of the current line
+
 (defun backward-kill-line (arg)
-    "Kill chars backward until encountering the end of a line."
+    "Kill chars backward until encountering the beginning of a line.  If the
+cursor is already at the beginning, delete the newline.  Acts like the reverse
+    of kill-line (C-k)."
       (interactive "p")
         (kill-line 0))
+
+
 
 ;; I don't use C-u's normal use, but I do use this macro.
 
