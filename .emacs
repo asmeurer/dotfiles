@@ -14,6 +14,7 @@
 ;; - Make isearch always wrap around on the first search.
 ;; - Find a better regex solution (icicles maybe).
 ;; - Fix mouse scrolling.
+;; - Fix inconsistency between C-x # and C-x C-c in emacsclient.
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
