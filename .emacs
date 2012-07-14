@@ -149,6 +149,9 @@
 
 (global-set-key (kbd "C-c u") 'universal-argument)
 
+;; ===== Set C-x C-c to do the right thing in emacsclient
+;; TODO
+
 ;; ========== Add a directory to the emacs load-path for extensions =========
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
