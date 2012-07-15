@@ -270,6 +270,12 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 ;; ===== ido mode =====
 
 (require 'ido)
+;; Display ido results vertically, rather than horizontally
+(setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+(defun ido-disable-line-trucation () (set (make-local-variable
+                                           'truncate-lines) nil))
+(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+
 
 ;; ===== Turn on flyspell-mode ====
 
