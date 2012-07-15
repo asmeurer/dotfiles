@@ -452,6 +452,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 (add-to-list 'load-path "~/Documents/ido-ubiquitous")
 (require 'ido-ubiquitous)
+(ido-ubiquitous)
 
 ;; ==== Markdown mode =====
 
