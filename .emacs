@@ -154,6 +154,24 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 (global-set-key (kbd "C-c u") 'universal-argument)
 
+;; ===== Set M-Spc to also delete newlines =====
+;; Requires Emacs 24 to work
+
+;; (defun remove-indentation-spaces ()
+;;   "remove TAB-WIDTH spaces from the beginning of this line"
+;;   (interactive)
+;;   (if (save-excursion (re-search-backward "[^ \t]" (line-beginning-position) t))
+;;       (delete-backward-char 1)
+;;     (indent-rigidly (line-beginning-position) (line-end-position) (- tab-width))))
+;;
+
+(defun just-one-space-with-newline ()
+  "Call just-one-space with a negative argument"
+  (interactive)
+  (just-one-space -1))
+
+(global-set-key (kbd "M-SPC") 'just-one-space-with-newline)
+
 ;; ===== Set C-x C-c to do the right thing in emacsclient
 ;; TODO
 
