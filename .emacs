@@ -508,6 +508,15 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
+;; ==== MediaWiki Mode ====
+
+(add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
+
+(require 'mediawiki)
+
+(autoload 'mediawiki-mode "mediawiki.el" "Major mode for editing MediaWiki files" t)
+(setq auto-mode-alist (cons '("\\.mediawiki" . mediawiki-mode) auto-mode-alist))
+
 ;; Commented out stuff "doesn't work"
 
 ;; ===== flymake-cursor =====
