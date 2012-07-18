@@ -131,7 +131,7 @@ TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]
 DIR_DOTFILES='/Users/aaronmeurer/Documents/dotfiles'
 TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 # homework - Blue
-export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Spring 2012" # Used later by homework alias
+export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Grad/Fall 2012" # Used later by homework alias
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
 # Other - default (metal)
 # Can't actually get metal yet
