@@ -702,6 +702,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
  '(flymake-errline ((t (:foreground "LightPink" :underline "red"))) t)
  '(flymake-warnline ((t nil)) t)
  '(ido-first-match ((t (:underline t :weight bold))))
+ '(linum ((t (:inherit (shadow default) :foreground "grey"))))
  '(rst-level-1-face ((t (:foreground "cyan"))) t)
  '(rst-level-2-face ((t (:inherit rst-level-1-face :foreground "yellow"))) t)
  '(rst-level-3-face ((t (:inherit rst-level-2-face))) t)
