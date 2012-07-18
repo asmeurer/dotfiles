@@ -685,7 +685,6 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
  '(require-final-newline (quote ask))
  '(save-place t nil (saveplace))
  '(save-place-save-skipped nil)
- '(save-place-skip-check-regexp "\\`/\\(?:cdrom\\|floppy\\|mnt\\|\\(?:[^@/:]*@\\)?[^@/:]*[^@/:.]\\|.*COMMIT_EDITMSG:\\)")
  '(scroll-step 1)
  '(sentence-end-double-space t)
  '(show-paren-mode t)
