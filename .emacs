@@ -680,6 +680,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
  '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
  '(python-guess-indent nil)
+ '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
  '(require-final-newline (quote ask))
