@@ -113,6 +113,17 @@
 (make-directory "~/.emacs.d/autosave/" t)
 (make-directory "~/.emacs.d/backup/" t)
 
+;; ==== Save command histories ====
+
+;; See
+;; http://stackoverflow.com/questions/1229142/how-can-i-save-my-mini-buffer-history-in-emacs
+(setq savehist-additional-variables
+      '(kill-ring search-ring regexp-search-ring))
+
+(setq savehist-file "~/.emacs.d/savehist")
+
+(savehist-mode 1)
+
 ;; ==== Set F7 to delete whole line ====
 
 ;; iTerm2 doesn't send C-S-Backspace to emacs, so set it up as a keyboard
