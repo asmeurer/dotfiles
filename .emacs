@@ -443,6 +443,35 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (xterm-mouse-mode t)
 (defun track-mouse (e))
 
+;; Scrolling.
+;; Note that this is Mac OS X style "upside down" scrolling.
+
+;; For some reason, a single scroll reports two <mouse-4> or <mouse-5> events,
+;; so we must use this hack to scroll by one line at a time
+
+;; TODO: (interactive "@") causes scrolling to follow the mouse, but it
+;; switches buffers.  Figure out how to make it not switch.  See http://stackoverflow.com/questions/11532149/emacs-make-custom-scrolling-function-follow-mouse-but-not-change-keyboard-focus.
+
+(setq mouse-wheel-follow-mouse 't)
+
+(defvar alternating-scroll-down-next t)
+(defvar alternating-scroll-up-next t)
+
+(defun alternating-scroll-down-line ()
+  (interactive "@")
+    (when alternating-scroll-down-next
+          (scroll-down-line))
+      (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
+
+(defun alternating-scroll-up-line ()
+  (interactive "@")
+    (when alternating-scroll-up-next
+          (scroll-up-line))
+      (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
+
+(global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
+(global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+
 ;; ===== Highlight tabs ====
 (standard-display-ascii ?\t ">>>|")
 (add-hook 'text-mode-hook
