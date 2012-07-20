@@ -1,4 +1,4 @@
-personal_ws-1.1 en 44 
+personal_ws-1.1 en 47 
 Unevaluated
 SymPy's
 pseudocode
@@ -13,10 +13,12 @@ filesystem
 timeline
 docstrings
 Meijer
+Refactor
 recursing
 Meurer
 quandles
 usernames
+rebuildable
 whitespace
 NumPy
 Commutativity
@@ -34,6 +36,7 @@ doctest
 unmount
 else's
 associativity
+multinomial
 mortalities
 SymPy
 Certík
