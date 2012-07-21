@@ -1,4 +1,4 @@
-personal_ws-1.1 en 47 
+personal_ws-1.1 en 49 
 Unevaluated
 SymPy's
 pseudocode
@@ -33,6 +33,7 @@ attractor
 antiderivative
 modularity
 doctest
+subclasses
 unmount
 else's
 associativity
@@ -45,4 +46,5 @@ username
 commutatives
 GitHub
 boolean
+canonicalization
 multiprogramming
