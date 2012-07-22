@@ -11,12 +11,12 @@
  '(flymake-errline ((t (:foreground "red" :underline "red"))))
  '(flymake-warnline ((t nil)))
  '(flymake-warnline ((t (:foreground "LightBlue2" :underline "LightBlue2"))))
- '(rst-level-1-face ((t (:foreground "cyan"))))
- '(rst-level-2-face ((t (:inherit rst-level-1-face))))
- '(rst-level-3-face ((t (:inherit rst-level-1-face))))
- '(rst-level-4-face ((t (:inherit rst-level-1-face))))
- '(rst-level-5-face ((t (:inherit rst-level-1-face))))
- '(rst-level-6-face ((t (:inherit rst-level-1-face))))
+ '(rst-level-1-face ((t (:foreground "cyan"))) t)
+ '(rst-level-2-face ((t (:inherit rst-level-1-face :foreground "yellow"))) t)
+ '(rst-level-3-face ((t (:inherit rst-level-1-face))) t)
+ '(rst-level-4-face ((t (:inherit rst-level-1-face))) t)
+ '(rst-level-5-face ((t (:inherit rst-level-1-face))) t)
+ '(rst-level-6-face ((t (:inherit rst-level-1-face))) t)
  '(show-paren-match ((t (:background "blue")))))
 
 
