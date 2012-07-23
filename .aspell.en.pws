@@ -1,4 +1,4 @@
-personal_ws-1.1 en 49 
+personal_ws-1.1 en 51 
 Unevaluated
 SymPy's
 pseudocode
@@ -12,6 +12,7 @@ bitmask
 filesystem
 timeline
 docstrings
+docstring
 Meijer
 Refactor
 recursing
@@ -30,6 +31,7 @@ workflow
 refactoring
 Risch
 attractor
+refactored
 antiderivative
 modularity
 doctest
