@@ -137,7 +137,7 @@ TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
 # similar shade of gray
-TAB_GRAY="\033]6;1;bg;red;brightness;200\a\033]6;1;bg;blue;brightness;200\a\033]6;1;bg;green;brightness;200\a"
+TAB_GRAY="\033]6;1;bg;red;brightness;160\a\033]6;1;bg;blue;brightness;160\a\033]6;1;bg;green;brightness;160\a"
 
 
 set_tab_color () {
