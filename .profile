@@ -191,7 +191,8 @@ PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export EDITOR='emacs'
-export LESS='-RI' # Make less search case insensitive, and always use raw input mode (to show colors)
+export LESS='-RIC' # Make less search case insensitive, always use raw input
+                   # mode (to show colors), and never scroll output
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
