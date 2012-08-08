@@ -194,6 +194,10 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; ===== Ask for y/n instead of yes/no =====
+;; Thanks to http://asmeurersympy.wordpress.com/2012/07/09/emacs-7-months-later/#comment-584
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; ========== Line by line scrolling ==========
 
 ;; This makes the buffer scroll by only a single line when the up or
