@@ -705,7 +705,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
- '(linum-format "%d ")
+ '(linum-format "%d⎢")
  '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
  '(python-guess-indent nil)
