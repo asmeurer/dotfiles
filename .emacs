@@ -723,6 +723,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
  '(speedbar-visiting-tag-hook (quote (speedbar-highlight-one-tag-line speedbar-recenter)))
  '(tab-width 4)
  '(tags-case-fold-search t)
+ '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(window-combination-limit nil)
  '(window-combination-resize t))
 (custom-set-faces
