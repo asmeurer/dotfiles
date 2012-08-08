@@ -487,6 +487,20 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
 
+;; ===== Disable certain annoying beeps =====
+
+;; See
+;; http://stackoverflow.com/questions/11679700/emacs-disable-beep-when-trying-to-move-beyond-the-end-of-the-document/11679758#11679758
+
+(defun my-bell-function ()
+  (unless (memq this-command
+                '(isearch-abort abort-recursive-edit exit-minibuffer
+                                keyboard-quit mwheel-scroll down up next-line
+                                previous-line backward-char forward-char
+                                alternating-scroll-up-line alternating-scroll-down-line))
+    (ding)))
+(setq ring-bell-function 'my-bell-function)
+
 ;; ===== Highlight tabs ====
 (standard-display-ascii ?\t ">>>|")
 (add-hook 'text-mode-hook
