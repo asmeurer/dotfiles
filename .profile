@@ -219,7 +219,7 @@ PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.0/bin/"
 
 # Setting PATH for Python 3.2
 # The orginal version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.2/bin:${PATH}"
+PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.2/bin/"
 export PATH
 
 # Sage
