@@ -45,7 +45,7 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 alias grep='grep -i --color=always'
 alias mkdir='mkdir -p'
-alias cds='cd ~/Dropbox/sympy'
+alias cds='cd ~/Documents/sympy'
 alias cdd='cd ~/Documents'
 alias pudb='python -m pudb.run'
 
