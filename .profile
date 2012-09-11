@@ -239,5 +239,7 @@ export MKL_NUM_THREADS
 
 eval "`pip completion --bash`"
 
+source ~/Documents/ipython/docs/examples/core/ipython-completion.bash
+
 # This line needs to stay at the bottom of the file.
 source ~/.git-completion.bash
