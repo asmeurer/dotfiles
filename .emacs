@@ -487,6 +487,30 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
 
+;; Try to make Python's auto-indent of line continuations smarter
+;; Taken from
+;; http://stackoverflow.com/questions/4293074/in-emacs-python-mode-customize-multi-line-statement-indentation.
+
+(defadvice python-calculate-indentation (around ignore-parens activate)
+  "Indent lines inside parentheses like backslash-continued lines."
+  (let ((syntax (save-excursion (beginning-of-line) (syntax-ppss))))
+    (if (or (eq 'string (syntax-ppss-context syntax))
+            (not (python-continuation-line-p))
+            (not (cadr syntax)))
+        ad-do-it (setq ad-return-value
+                       (save-excursion
+                         (beginning-of-line)
+                         (forward-line -1)
+                         (if (python-continuation-line-p)
+                             (current-indentation)
+                           (python-beginning-of-statement)
+                           (+ (current-indentation) python-continuation-offset
+                              (if (python-open-block-statement-p t)
+                                  python-indent
+                                0))))))))
+
+(ad-activate 'python-calculate-indentation)
+
 ;; ===== Disable certain annoying beeps =====
 
 ;; See
