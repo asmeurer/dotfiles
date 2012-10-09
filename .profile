@@ -1,5 +1,5 @@
 echo
-/sw/bin/fortune
+/sw/bin/fortune -a
 echo
 
 
