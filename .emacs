@@ -682,7 +682,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; ===== isearch+ =====
 
-(require 'isearch+)
+;(require 'isearch+)
 
 ;; ==== Highlight indentation =====
 
