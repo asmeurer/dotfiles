@@ -21,6 +21,9 @@
 % pdfborder=0in will disable the red links
 \usepackage[pdfborder=0in]{hyperref}
 
+% Try to line break equations
+\usepackage{breqn}
+
 %\usepackage[noend,boxed,fillcomment]{algorithm2e}
 
 % Use Times New Roman
@@ -41,6 +44,10 @@
 \begin{document}
 % \newcommands go here
 % like \newcommand{\R}{\mathbb{R}}
+\newcommand{\overbar}[1]{\mkern
+  1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu} % http://tex.stackexchange.com/a/22134/2111
+
+
 \title{}
 \author{Aaron Meurer}
 \date{}
