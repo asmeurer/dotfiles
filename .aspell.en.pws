@@ -19,7 +19,6 @@ interoperates
 GitHub
 doctests
 unevaluated
-Unevaluated
 computable
 pseudocode
 SymPy's
@@ -67,6 +66,7 @@ commutatives
 antiderivative
 Commutativity
 usernames
+homomorphism
 natively
 integrands
 else's
