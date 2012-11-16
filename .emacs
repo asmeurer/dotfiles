@@ -650,9 +650,12 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (ac-linum-workaround)
 (setq ac-ignore-case nil)
 (setq ac-use-menu-map t)
-(define-key ac-menu-map "\C-n" 'ac-next)
-(define-key ac-menu-map "\C-p" 'ac-previous)
-
+(substitute-key-definition 'ac-next 'next-line ac-menu-map)
+(substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
+(define-key ac-menu-map (kbd "C-n") 'ac-next)
+(define-key ac-menu-map (kbd "\C-p") 'ac-previous)
+(substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
+(define-key ac-menu-map (kbd "C-c s") 'ac-isearch)
 
 ;; TODO: Do something like at
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
