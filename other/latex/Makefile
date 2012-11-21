@@ -2,7 +2,7 @@ FILEPREFIX = put_the_file_prefix_here
 
 .PHONY : all latex latexopen pdf open nonstopmode nonstopmodeopen clean
 
-all:latexopen
+all:latex
 
 latex:
 	pdflatex $(FILEPREFIX).tex
