@@ -677,6 +677,7 @@ It either tries \"lacheck\" or \"chktex\"."
 (define-key ac-menu-map (kbd "C-c s") 'ac-isearch)
 (add-hook 'latex-mode-hook 'auto-complete-mode)
 (add-hook 'LaTeX-mode-hook 'auto-complete-mode)
+(add-hook 'prog-mode-hook 'auto-complete-mode)
 
 ;; TODO: Do something like at
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
