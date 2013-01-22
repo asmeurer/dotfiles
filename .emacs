@@ -344,12 +344,16 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 ;; ===== Turn on flymake-mode ====
 
 (add-hook 'c-mode-common-hook 'turn-on-flymake)
+(add-hook 'latex-mode-hook 'turn-on-flymake)
+(add-hook 'LaTeX-mode-hook 'turn-on-flymake)
 (defun turn-on-flymake ()
-  "Force flymake-mode on. For us in hooks."
+  "Force flymake-mode on. For use in hooks."
   (interactive)
   (flymake-mode 1))
 
 (add-hook 'c-mode-common-hook 'flymake-keyboard-shortcuts)
+(add-hook 'latex-mode-hook 'flymake-keyboard-shortcuts)
+(add-hook 'LaTeX-mode-hook 'flymake-keyboard-shortcuts)
 (defun flymake-keyboard-shortcuts ()
   "Add keyboard shortcuts for flymake goto next/prev error."
   (interactive)
@@ -430,14 +434,29 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; flymake-mode for tex uses texify by default, which only works in Windows (miktex)
 
-;; If the LaTeX is too old to have this option, you can use this instead:
-;; (defun flymake-get-tex-args (file-name)
-;;   (list "chktex" (list "-q" "-v0" file-name)))
+;; Borrowed from https://github.com/MassimoLauria/dotemacs/blob/master/init-latex.el
+(defun init-latex--flymake-setup ()
+  "Setup flymake for latex using one of the checker available on the system.
+It either tries \"lacheck\" or \"chktex\"."
+  (interactive)
+  (cond ((executable-find "lacheck")
+         (defun flymake-get-tex-args (file-name)
+           (list "lacheck" (list file-name))))
+        ((executable-find "chktex")
+         (defun flymake-get-tex-args (file-name)
+           (list "chktex" (list "-q" "-v0" file-name))))
+        (t nil)))
 
-(defun flymake-get-tex-args (file-name)
-    (list "pdflatex" (list "-file-line-error" "-draftmode" "-interaction=nonstopmode" file-name)))
+(eval-after-load "flymake" '(init-latex--flymake-setup))
 
-;; Enable auto-fill-mode for relevant file types
+(defun my-flymake-show-help ()
+  (when (get-char-property (point) 'flymake-overlay)
+    (let ((help (get-char-property (point) 'help-echo)))
+      (if help (message "%s" help)))))
+
+(add-hook 'post-command-hook 'my-flymake-show-help)
+
+;; ===== Enable auto-fill-mode for relevant file types =====
 
 (defun turn-on-auto-fill ()
   "Force auto-fill-mode on. For us in hooks."
