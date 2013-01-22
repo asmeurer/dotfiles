@@ -23,6 +23,7 @@
 	weekreport = shortlog --since=1.weeks --author=asmeurer
 	br = branch
 	detach = !git checkout $(git rev-parse HEAD)
+	bl = blame -CCC -M
 
 [sendemail]
 	o = sympy-patches@googlegroups.com
