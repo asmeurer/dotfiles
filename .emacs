@@ -2,8 +2,6 @@
 
 ;; ====== TODO ======
 ;;
-;; - Make C-u delete the previous newline when the cursor is at the beginning of
-;;   the line.
 ;; - Highlight 'single quoted' text and "double quoted" text differently in
 ;;   Python.
 ;; - Get some kind of flymake working for LaTeX.
@@ -157,7 +155,15 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; I don't use C-u's normal use, but I do use this macro.
 
-(global-set-key "\C-u" 'backward-kill-line)
+(defun backward-kill-line-or-newline ()
+  "Same as backward-kill-line except if the cursor is at the beginning of the
+  line, kill the character after the cursor.  Effectively the reverse of
+  kill-line (C-k)"
+  (interactive)
+  (if (equal (point) (line-beginning-position))
+      (backward-delete-char 1) (backward-kill-line 1)))
+
+(global-set-key "\C-u" 'backward-kill-line-or-newline)
 
 ;; You can still get the original meaning of C-u (universal-argument) with C-c
 ;; u.  Note, I was going to do C-S-u, but apparently terminals can't
