@@ -249,3 +249,4 @@ eval "$(hub alias -s)"
 # This line needs to stay at the bottom of the file.
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
+source ~/Documents/hub/etc/hub.bash_completion.sh
