@@ -1,4 +1,4 @@
-personal_ws-1.1 en 75 
+personal_ws-1.1 en 76 
 monomials
 SymPy
 refactoring
@@ -26,8 +26,9 @@ Assumedly
 Liouvillian
 cardinality
 Ondrej
-Meijer
+singletonized
 unmerged
+Meijer
 whitespace
 attractor
 unmounting
