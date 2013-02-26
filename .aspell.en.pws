@@ -1,4 +1,4 @@
-personal_ws-1.1 en 76 
+personal_ws-1.1 en 77 
 monomials
 SymPy
 refactoring
@@ -18,6 +18,7 @@ benchmarking
 interoperates
 GitHub
 doctests
+uploader
 unevaluated
 computable
 pseudocode
