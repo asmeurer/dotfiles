@@ -200,6 +200,7 @@ alias emacsclient='emacsclient -a "" -nw' # Don't use the X11 version, which jus
 alias e=emacs
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
+alias free='diskutil info / | grep free'
 
 sizeup () {
     du -a -h $1 | gsort -h
