@@ -722,6 +722,17 @@ It either tries \"lacheck\" or \"chktex\"."
 
 (add-hook 'prog-mode-hook 'highlight-indentation)
 
+;; ==== Undo-tree ====
+;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
+
+(add-to-list 'load-path "~/Documents/undo-tree")
+(require 'undo-tree)
+
+;; ;; Compress saved undo files
+;; (defadvice undo-tree-make-history-save-file-name
+;;     (after undo-tree activate)
+;;       (setq concat ad-return-value ".gz"))
+
 ;; ==== Tabbar mode ====
 
 ;; Disabled because I couldn't figure out how to make it do what I want
@@ -758,6 +769,7 @@ It either tries \"lacheck\" or \"chktex\"."
  '(desktop-save-mode nil)
  '(global-linum-mode t)
  '(global-subword-mode t)
+ '(global-undo-tree-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
@@ -783,6 +795,7 @@ It either tries \"lacheck\" or \"chktex\"."
  '(speedbar-visiting-tag-hook (quote (speedbar-highlight-one-tag-line speedbar-recenter)))
  '(tab-width 4)
  '(tags-case-fold-search t)
+ ;'(undo-tree-auto-save-history t)
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(window-combination-limit nil)
  '(window-combination-resize t))
