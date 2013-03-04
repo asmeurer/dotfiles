@@ -167,9 +167,12 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; You can still get the original meaning of C-u (universal-argument) with C-c
 ;; u.  Note, I was going to do C-S-u, but apparently terminals can't
-;; distinguish the shift with control
+;; distinguish the shift with control.  But see below for a workaround.
 
 (global-set-key (kbd "C-c u") 'universal-argument)
+
+;; I have iTerm 2 set to make Shift-Control-U send f8.
+(global-set-key [f8] 'universal-argument)
 
 ;; ===== Set M-Spc to also delete newlines =====
 ;; Requires Emacs 24 to work
