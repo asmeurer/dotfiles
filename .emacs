@@ -864,6 +864,9 @@ It either tries \"lacheck\" or \"chktex\"."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ace-jump-face-background ((t (:foreground "gray"))))
+ '(ace-jump-face-foreground ((t (:foreground "magenta"))))
  '(flymake-errline ((t (:foreground "LightPink" :underline "red"))) t)
  '(flymake-warnline ((t nil)) t)
- '(ido-first-match ((t (:underline t :weight bold)))))
+ '(ido-first-match ((t (:underline t :weight bold))))
+ '(show-paren-match ((t (:background "blue")))))
