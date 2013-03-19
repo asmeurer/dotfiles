@@ -859,6 +859,7 @@ It either tries \"lacheck\" or \"chktex\"."
  '(delete-selection-mode t)
  '(desktop-locals-to-save (quote (desktop-locals-to-save truncate-lines case-fold-search case-replace fill-column overwrite-mode change-log-default-name line-number-mode column-number-mode size-indication-mode buffer-file-coding-system indent-tabs-mode tab-width indicate-buffer-boundaries indicate-empty-lines show-trailing-whitespace buffer-undo-list)))
  '(desktop-save-mode nil)
+ '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
  '(global-linum-mode t)
  '(global-subword-mode t)
  '(global-undo-tree-mode t)
