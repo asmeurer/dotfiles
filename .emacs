@@ -700,14 +700,14 @@ It either tries \"lacheck\" or \"chktex\"."
 ;; ===== mmm-mode ======
 ;; Enables sub-modes inside of parts of a buffer
 
-;; See http://stackoverflow.com/q/15493342/161801.
+(add-to-list 'load-path "~/Documents/mmm-mode")
+(require 'mmm-auto)
+(setq mmm-global-mode 'maybe)
 
-;; Commented out because there are too many cases where code is rendered as
-;; docstrings
+;; Make Python docstrings use rst-mode.  See
+;; http://stackoverflow.com/q/15493342/161801.  Commented out because there
+;; are too many cases where code is rendered as docstrings
 
-;; (add-to-list 'load-path "~/Documents/mmm-mode")
-;; (require 'mmm-auto)
-;; (setq mmm-global-mode 'maybe)
 ;; (mmm-add-classes
 ;;  '((python-rst
 ;;     :submode rst-mode
