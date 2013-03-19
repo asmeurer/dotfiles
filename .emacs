@@ -564,6 +564,29 @@ It either tries \"lacheck\" or \"chktex\"."
 ;; ===== Extensions stuff =======
 ;; ==============================
 
+;; ==== ace jump mode ======
+
+(add-to-list 'load-path "~/Documents/ace-jump-mode")
+(autoload
+    'ace-jump-mode
+      "ace-jump-mode"
+        "Emacs quick move minor mode"
+          t)
+
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
+(setq ace-jump-mode-case-fold t)
+
+;; enable a more powerful jump back function from ace jump mode
+
+(autoload
+    'ace-jump-mode-pop-mark
+      "ace-jump-mode"
+        "Ace jump back:-)"
+          t)
+(eval-after-load "ace-jump-mode"
+    '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x C-x") 'ace-jump-mode-pop-mark)
+
 ;; ==== smex (ido for M-x) ======
 
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
