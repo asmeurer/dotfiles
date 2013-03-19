@@ -655,6 +655,14 @@ It either tries \"lacheck\" or \"chktex\"."
 ;; The following lazily enables ropemacs (and only loads pymacs with it).
 ;; Use C-x p l to load ropemacs.  Uncomment the stuff below it to always load them (slow).
 
+;; ==== python.el ====
+
+(add-to-list 'load-path "~/Documents/python.el")
+(require 'python)
+;; TODO: instead of changing the source to avoid paren indentation, change it
+;; here using defadvice.  See http://stackoverflow.com/a/4150438/161801.
+
+;; ==== ropemacs ====
 (defun load-ropemacs ()
   "Load pymacs and ropemacs"
   (interactive)
