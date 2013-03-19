@@ -856,7 +856,6 @@ It either tries \"lacheck\" or \"chktex\"."
  '(speedbar-visiting-tag-hook (quote (speedbar-highlight-one-tag-line speedbar-recenter)))
  '(tab-width 4)
  '(tags-case-fold-search t)
- ;'(undo-tree-auto-save-history t)
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(window-combination-limit nil)
  '(window-combination-resize t))
