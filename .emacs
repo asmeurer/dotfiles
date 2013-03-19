@@ -621,6 +621,12 @@ It either tries \"lacheck\" or \"chktex\"."
 (autoload 'mediawiki-mode "mediawiki.el" "Major mode for editing MediaWiki files" t)
 (setq auto-mode-alist (cons '("\\.mediawiki" . mediawiki-mode) auto-mode-alist))
 
+;; ==== YAML Mode ====
+
+(add-to-list 'load-path "~/Documents/yaml-mode")
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 ;; Commented out stuff "doesn't work"
 
 ;; ===== flymake-cursor =====
