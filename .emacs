@@ -841,7 +841,7 @@ It either tries \"lacheck\" or \"chktex\"."
  '(linum-format "%d⎢")
  '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
- '(python-guess-indent nil)
+ '(python-fill-docstring-style (quote onetwo))
  '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
