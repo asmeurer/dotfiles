@@ -697,6 +697,27 @@ It either tries \"lacheck\" or \"chktex\"."
 ;;    (use-anything-show-completion 'anything-ipython-complete
 ;;                                  '(length initial-pattern)))
 
+;; ===== mmm-mode ======
+;; Enables sub-modes inside of parts of a buffer
+
+;; See http://stackoverflow.com/q/15493342/161801.
+
+;; Commented out because there are too many cases where code is rendered as
+;; docstrings
+
+;; (add-to-list 'load-path "~/Documents/mmm-mode")
+;; (require 'mmm-auto)
+;; (setq mmm-global-mode 'maybe)
+;; (mmm-add-classes
+;;  '((python-rst
+;;     :submode rst-mode
+;;     :front "^ *[ru]?\"\"\"$"
+;;     :back "^ *\"\"\"$"
+;;     :include-front t
+;;     :include-back t
+;;     :end-not-begin t
+;;     :)))
+;; (mmm-add-mode-ext-class 'python-mode nil 'python-rst)
 
 ;; ===== auto-complete-mode ====
 
