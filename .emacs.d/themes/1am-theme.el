@@ -17,7 +17,8 @@
  '(rst-level-4-face ((t (:inherit rst-level-1-face))) t)
  '(rst-level-5-face ((t (:inherit rst-level-1-face))) t)
  '(rst-level-6-face ((t (:inherit rst-level-1-face))) t)
- '(show-paren-match ((t (:background "blue")))))
+ '(show-paren-match ((t (:background "blue"))))
+ '(mmm-default-submode-face ((t nil))))
 
 
 (provide-theme '1am)
