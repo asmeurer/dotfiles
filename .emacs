@@ -756,10 +756,32 @@ It either tries \"lacheck\" or \"chktex\"."
 (add-hook 'prog-mode-hook 'auto-complete-mode)
 (add-hook 'text-mode-hook 'auto-complete-mode)
 
-;; TODO: Do something like at
-;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
-;; to make this also be smart about Python (e.g., complete after . in a module
-;; name).
+;; ==== deferred ====
+;; This is needed for EPC
+
+(add-to-list 'load-path "~/Documents/emacs-deferred")
+(require 'deferred)
+
+;; ==== ctable ====
+;; This is needed for EPC
+
+(add-to-list 'load-path "~/Documents/emacs-ctable")
+(require 'ctable)
+
+;; ==== EPC =====
+;; This is needed for Jedi
+
+(add-to-list 'load-path "~/Documents/emacs-epc")
+(require 'epc)
+
+;; ==== Jedi ====
+;; Python completion using Jedi and auto-complete-mode
+
+;; (add-to-list 'load-path "~/Documents/emacs-jedi")
+;; (require 'jedi)
+;; (autoload 'jedi:setup "jedi" nil t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:setup-keys t)
 
 ;; ===== Scroll bars ======
 
