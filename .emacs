@@ -577,15 +577,16 @@ It either tries \"lacheck\" or \"chktex\"."
 (setq ace-jump-mode-case-fold t)
 
 ;; enable a more powerful jump back function from ace jump mode
+;; Commented out because it doesn't work if you haven't been using ace
 
-(autoload
-    'ace-jump-mode-pop-mark
-      "ace-jump-mode"
-        "Ace jump back:-)"
-          t)
-(eval-after-load "ace-jump-mode"
-    '(ace-jump-mode-enable-mark-sync))
-(define-key global-map (kbd "C-x C-x") 'ace-jump-mode-pop-mark)
+;; (autoload
+;;     'ace-jump-mode-pop-mark
+;;       "ace-jump-mode"
+;;         "Ace jump back:-)"
+;;           t)
+;; (eval-after-load "ace-jump-mode"
+;;     '(ace-jump-mode-enable-mark-sync))
+;; (define-key global-map (kbd "C-x C-x") 'ace-jump-mode-pop-mark)
 
 ;; ==== smex (ido for M-x) ======
 
