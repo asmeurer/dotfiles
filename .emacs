@@ -792,9 +792,6 @@ It either tries \"lacheck\" or \"chktex\"."
 ;; (require 'yascroll)
 ;; (global-yascroll-bar-mode 1)
 
-;; ==== Word count mode ====
-(require 'word-count)
-
 ;; ==== AUCTeX ====
 
 (load "auctex.el" nil t t)
