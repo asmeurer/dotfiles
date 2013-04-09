@@ -237,6 +237,26 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 (setq-default fill-column 78)
 
+;; ======== Unfill commands (opposite of M-q) =====
+;; Taken from http://ergoemacs.org/emacs/emacs_unfill-paragraph.html
+
+;; This works by using fill-paragraph on a really large fill-column. It may
+;; not work for *really* long paragraphs.
+
+(defun unfill-paragraph ()
+  "Replace newline chars in current paragraph by single spaces.
+This command does the reverse of `fill-paragraph'."
+  (interactive)
+  (let ((fill-column 90002000))
+    (fill-paragraph nil)))
+
+(defun unfill-region (start end)
+  "Replace newline chars in region by single spaces.
+This command does the reverse of `fill-region'."
+  (interactive "r")
+  (let ((fill-column 90002000))
+    (fill-region start end)))
+
 ;; ======== Save undo history to file =======
 ;; Taken from
 ;; http://stackoverflow.com/questions/2985050/is-there-any-way-to-have-emacs-save-your-undo-history-between-sessions
