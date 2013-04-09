@@ -779,10 +779,10 @@ It either tries \"lacheck\" or \"chktex\"."
 ;; Python completion using Jedi and auto-complete-mode
 
 ;; (add-to-list 'load-path "~/Documents/emacs-jedi")
+;; (setq jedi:setup-keys t)
 ;; (require 'jedi)
 ;; (autoload 'jedi:setup "jedi" nil t)
 ;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:setup-keys t)
 
 ;; ===== Scroll bars ======
 
