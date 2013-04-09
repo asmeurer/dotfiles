@@ -1,6 +1,5 @@
-personal_ws-1.1 en 111 
+personal_ws-1.1 en 122 
 backends
-Univariate
 univariate
 restrictable
 IPython
@@ -21,11 +20,14 @@ Fortran
 Groebner
 doctests
 attractor
+Piecewise
 Bronstein
+assistantship
 parsers
 tuple
 uploader
 asymptote
+CASs
 integrand
 lexicographically
 quantized
@@ -66,10 +68,13 @@ canonicalization
 subexpression
 rebuildable
 benchmarking
+representable
+musculoskeletal
 WolframAlpha
 Analytical
 analytical
 Commutativity
+submitter's
 indices
 multivalued
 monomial
@@ -77,16 +82,20 @@ IPython's
 PDE
 workflow
 NumPy
+combinatorics
+multibody
 quirkinesses
 reimplementing
+frontends
 exponentials
 nonelementary
 username
 Bronstein's
+subfields
 filesystem
+PDEs
 computable
 monomials
-PDEs
 unmount
 Meurer
 SymPy's
@@ -106,7 +115,9 @@ integrands
 homomorphism
 refactored
 refactoring
+CAS
 associativity
 interoperability
 usernames
 pseudocode
+formalisms
