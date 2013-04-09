@@ -808,6 +808,21 @@ It either tries \"lacheck\" or \"chktex\"."
 
 ;(require 'isearch+)
 
+;; ===== expand-region =====
+
+(add-to-list 'load-path "~/Documents/expand-region.el")
+(require 'expand-region)
+(global-set-key (kbd "M-=") 'er/expand-region)
+
+;; ==== multiple-cursors ====
+
+(add-to-list 'load-path "~/Documents/multiple-cursors.el")
+(require 'multiple-cursors)
+;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
+
+(global-set-key [f6] 'mc/mark-next-like-this)
+(global-set-key [f5] 'mc/mark-previous-like-this)
+
 ;; ==== Highlight indentation =====
 
 (require 'highlight-indentation)
