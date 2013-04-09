@@ -1,2 +1,6 @@
 [extensions]
 fetch =
+[ui]
+# Name data to appear in commits
+username = Aaron Meurer <asmeurer@gmail.com>
+ssh = ssh -C
