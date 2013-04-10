@@ -863,6 +863,13 @@ It either tries \"lacheck\" or \"chktex\"."
 ;;     (after undo-tree activate)
 ;;       (setq concat ad-return-value ".gz"))
 
+;; ==== goto-last-change.el
+;; http://www.emacswiki.org/emacs/download/goto-last-change.el
+;; http://superuser.com/a/184402/39697
+
+(require 'goto-last-change)
+(global-set-key (kbd "C-x C-\\") 'goto-last-change)
+
 ;; ==== Tabbar mode ====
 
 ;; Disabled because I couldn't figure out how to make it do what I want
