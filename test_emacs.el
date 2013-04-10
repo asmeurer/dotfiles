@@ -52,3 +52,11 @@
 (autoload 'jedi:setup "jedi" nil t)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
+
+;; Uncomment these lines to prevent Emacs from kernel panicking.
+
+;; (defun jedi:stop-all-servers ()
+;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
+;;                         jedi:server-pool--table))
+;;
+;; (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
