@@ -50,8 +50,11 @@
 (add-to-list 'load-path "~/Documents/emacs-jedi")
 (require 'jedi)
 (autoload 'jedi:setup "jedi" nil t)
-(add-hook 'python-mode-hook 'jedi:setup)
+(global-auto-complete-mode +1)
 (setq jedi:setup-keys t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+(add-to-list 'ac-sources 'ac-source-jedi-direct)
 
 (defun jedi:stop-all-servers ()
     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
