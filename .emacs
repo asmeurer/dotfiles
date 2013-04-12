@@ -634,9 +634,11 @@ It either tries \"lacheck\" or \"chktex\"."
 
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
 files" t)
+(autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
+Markdown" t)
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
-(add-to-list 'auto-mode-alist '("PULLREQ_EDITMSG" . markdown-mode))
-(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . markdown-mode))
+(add-to-list 'auto-mode-alist '("PULLREQ_EDITMSG" . gfm-mode))
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . gfm-mode))
 
 ;; ==== MediaWiki Mode ====
 
