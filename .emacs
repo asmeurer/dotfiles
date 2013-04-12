@@ -632,8 +632,11 @@ It either tries \"lacheck\" or \"chktex\"."
 
 (add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
 
-(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
-(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
+files" t)
+(add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
+(add-to-list 'auto-mode-alist '("PULLREQ_EDITMSG" . markdown-mode))
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . markdown-mode))
 
 ;; ==== MediaWiki Mode ====
 
