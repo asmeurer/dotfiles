@@ -772,6 +772,7 @@ It either tries \"lacheck\" or \"chktex\"."
 (substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
 (define-key ac-menu-map (kbd "C-n") 'ac-next)
 (define-key ac-menu-map (kbd "\C-p") 'ac-previous)
+(define-key ac-menu-map (kbd "<backtab>") 'ac-previous)
 (substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
 (define-key ac-menu-map (kbd "C-c s") 'ac-isearch)
 (add-hook 'latex-mode-hook 'auto-complete-mode)
