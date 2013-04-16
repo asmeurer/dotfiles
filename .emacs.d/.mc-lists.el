@@ -5,10 +5,16 @@
 (setq mc/cmds-to-run-for-all
       '(
         backward-kill-line-or-newline
+        fill-paragraph
+        forward-sexp
+        jedi:dot-complete
+        just-one-space-with-newline
+        my-save-buffer-dtws
         ))
 
 (setq mc/cmds-to-run-once
       '(
         alternating-scroll-down-line
         alternating-scroll-up-line
+        python-indent-dedent-line-backspace
         ))
