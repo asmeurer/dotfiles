@@ -374,9 +374,12 @@ This command does the reverse of `fill-region'."
 
 ;; ===== Turn on flymake-mode ====
 
+(add-to-list 'load-path "~/Documents/flymake-easy")
+
 (add-hook 'c-mode-common-hook 'turn-on-flymake)
 (add-hook 'latex-mode-hook 'turn-on-flymake)
 (add-hook 'LaTeX-mode-hook 'turn-on-flymake)
+;(add-hook 'python-mode-hook 'turn-on-flymake)
 (defun turn-on-flymake ()
   "Force flymake-mode on. For use in hooks."
   (interactive)
@@ -385,11 +388,16 @@ This command does the reverse of `fill-region'."
 (add-hook 'c-mode-common-hook 'flymake-keyboard-shortcuts)
 (add-hook 'latex-mode-hook 'flymake-keyboard-shortcuts)
 (add-hook 'LaTeX-mode-hook 'flymake-keyboard-shortcuts)
+(add-hook 'python-mode-hook 'flymake-keyboard-shortcuts)
 (defun flymake-keyboard-shortcuts ()
   "Add keyboard shortcuts for flymake goto next/prev error."
   (interactive)
   (local-set-key "\M-n" 'flymake-goto-next-error)
   (local-set-key "\M-p" 'flymake-goto-prev-error))
+
+(add-to-list 'load-path "~/Documents/flymake-python-pyflakes")
+(require 'flymake-python-pyflakes)
+(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
 ;; ===== Automatically indent with RET =====
 
