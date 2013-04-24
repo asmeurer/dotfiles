@@ -64,7 +64,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
-export EDITOR='emacsclient -a "" -nw'
+export EDITOR='emacs'
 export LESS='-RI' # Make less search case insensitive, and always use raw input mode (to show colors)
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
@@ -72,7 +72,6 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 PATH="/home/asmeurer/Documents/emacs/src:$PATH"
 export PATH
 
-alias emacs='emacsclient -a "" -nw' # Don't use the X11 version, which just hangs anyway
 alias e=emacs
 
 eval "`pip completion --bash`"
