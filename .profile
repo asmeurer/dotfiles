@@ -206,6 +206,14 @@ sizeup () {
     du -a -h $1 | gsort -h
 }
 
+hub_dir="/Users/aaronmeurer/Documents/hub"
+hub () {
+    ruby -I "${hub_dir}/lib" "${hub_dir}/bin/hub" "$@"
+}
+
+# Alias git to hub
+eval "$(hub alias -s)"
+
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
@@ -248,9 +256,6 @@ export MKL_NUM_THREADS
 eval "`pip completion --bash`"
 
 source ~/Documents/ipython/examples/core/ipython-completion.bash
-
-# Alias git to hub
-eval "$(hub alias -s)"
 
 # This line needs to stay at the bottom of the file.
 source ~/.git-completion.bash
