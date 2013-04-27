@@ -2,6 +2,9 @@ echo
 /sw/bin/fortune -a
 echo
 
+# Use italics supported terminfo
+tic ~/Documents/gist-3187620/xterm-256color-italic.terminfo
+export TERM=xterm-256color-italic
 
 ##
 # DELUXE-USR-LOCAL-BIN-INSERT
