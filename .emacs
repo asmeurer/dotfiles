@@ -814,30 +814,30 @@ Markdown" t)
 ;; ==== Jedi ====
 ;; Python completion using Jedi and auto-complete-mode
 
-(add-to-list 'load-path "~/Documents/emacs-jedi")
-(require 'jedi)
-(autoload 'jedi:setup "jedi" nil t)
-(global-auto-complete-mode +1)
-(setq jedi:setup-keys t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(add-to-list 'ac-sources 'ac-source-jedi-direct)
-
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-;;          WARNING!!!
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-
-;; The following is needed or else Mac OS X will kernel panic. See
-;; https://github.com/tkf/emacs-jedi/issues/37.
-
-;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
-;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
-
-(defun jedi:stop-all-servers ()
-    (maphash (lambda (_ mngr) (epc:stop-epc mngr))
-                        jedi:server-pool--table))
-
-(add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
+;; (add-to-list 'load-path "~/Documents/emacs-jedi")
+;; (require 'jedi)
+;; (autoload 'jedi:setup "jedi" nil t)
+;; (global-auto-complete-mode +1)
+;; (setq jedi:setup-keys t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:complete-on-dot t)
+;; (add-to-list 'ac-sources 'ac-source-jedi-direct)
+;;
+;; ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
+;; ;;          WARNING!!!
+;; ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
+;;
+;; ;; The following is needed or else Mac OS X will kernel panic. See
+;; ;; https://github.com/tkf/emacs-jedi/issues/37.
+;;
+;; ;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
+;; ;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
+;;
+;; (defun jedi:stop-all-servers ()
+;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
+;;                         jedi:server-pool--table))
+;;
+;; (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
 
 ;; ===== Scroll bars ======
 
