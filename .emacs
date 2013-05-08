@@ -967,6 +967,7 @@ Markdown" t)
  '(tab-width 4)
  '(tags-case-fold-search t)
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
+ '(which-function-mode t)
  '(window-combination-limit nil)
  '(window-combination-resize t))
 (custom-set-faces
