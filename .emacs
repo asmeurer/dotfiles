@@ -975,9 +975,12 @@ Markdown" t)
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ace-jump-face-background ((t (:foreground "gray"))))
- '(ace-jump-face-foreground ((t (:foreground "magenta"))))
- '(flymake-errline ((t (:foreground "LightPink" :underline "red"))) t)
- '(flymake-warnline ((t nil)) t)
+ '(ace-jump-face-background ((t (:foreground "gray"))) t)
+ '(ace-jump-face-foreground ((t (:foreground "magenta"))) t)
+ '(flymake-errline ((t (:foreground "LightPink" :underline "red"))))
+ '(flymake-warnline ((t nil)))
  '(ido-first-match ((t (:underline t :weight bold))))
+ '(rst-level-1 ((t (:foreground "grey85"))))
+ '(rst-level-2 ((t (:foreground "grey78"))))
+ '(rst-level-3 ((t (:foreground "grey71"))))
  '(show-paren-match ((t (:background "blue")))))
