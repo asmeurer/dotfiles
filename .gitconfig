@@ -24,6 +24,8 @@
 	br = branch
 	detach = !git checkout $(git rev-parse HEAD)
 	bl = blame -CCC -M
+    lg = log --graph --topo-order --use-mailmap
+    sw = show --color-words
 
 [sendemail]
 	o = sympy-patches@googlegroups.com
