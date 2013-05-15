@@ -54,6 +54,20 @@
   )
 (add-hook 'latex-mode-hook 'latex-setup t)
 
+;; Commands to interact with the Mac OS X clipboard
+
+(defun osx-copy (beg end)
+  (interactive "r")
+  (call-process-region beg end  "pbcopy"))
+
+(defun osx-paste (beg end)
+  (interactive "r")
+  (if (region-active-p) (delete-region beg end) nil)
+  (call-process "pbpaste" nil t nil))
+
+(define-key global-map (kbd "C-x C-w") 'osx-copy)
+(define-key global-map (kbd "C-x C-y") 'osx-paste)
+
 ;; ==== Make DEL delete four spaces at the beginning of a line ====
 
 ;; (defun remove-indentation-spaces ()
