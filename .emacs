@@ -208,6 +208,13 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 ;; I have iTerm 2 set to make Shift-Control-U send f8.
 (global-set-key [f8] 'universal-argument)
 
+;; ==== Switch to new buffer on C-x 2 or C-x 3 ====
+;; Thanks to http://stackoverflow.com/a/6465599/161801
+
+(defadvice split-window (after move-point-to-new-window activate)
+  "Moves the point to the newly created window after splitting."
+  (other-window 1))
+
 ;; ===== Set M-Spc to also delete newlines =====
 ;; Requires Emacs 24 to work
 
