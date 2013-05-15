@@ -167,8 +167,6 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
       (interactive "p")
         (kill-line 0))
 
-
-
 ;; I don't use C-u's normal use, but I do use this macro.
 
 (defun backward-kill-line-or-newline ()
@@ -179,7 +177,27 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
   (if (equal (point) (line-beginning-position))
       (backward-delete-char 1) (backward-kill-line 1)))
 
-(global-set-key "\C-u" 'backward-kill-line-or-newline)
+;; Furthermore, I want C-k and C-u to kill a region if it exists
+
+;; See http://stackoverflow.com/a/8956311/161801
+
+(defun kill-line-or-region (beg end)
+  "kill region if active only or kill line normally"
+  (interactive "r")
+  (if (region-active-p)
+      (call-interactively 'kill-region)
+    (call-interactively 'kill-line)))
+
+(global-set-key (kbd "C-k") 'kill-line-or-region)
+
+(defun backward-kill-line-or-region (beg end)
+  "kill region if active only or kill line normally"
+  (interactive "r")
+  (if (region-active-p)
+      (call-interactively 'kill-region)
+    (call-interactively 'backward-kill-line-or-newline)))
+
+(global-set-key "\C-u" 'backward-kill-line-or-region)
 
 ;; You can still get the original meaning of C-u (universal-argument) with C-c
 ;; u.  Note, I was going to do C-S-u, but apparently terminals can't
