@@ -849,6 +849,8 @@ Markdown" t)
 ;; Enables sub-modes inside of parts of a buffer
 
 (add-to-list 'load-path "~/Documents/mmm-mode")
+(if (locate-library "mmm-auto")
+        (autoload 'mmm-auto "mmm-auto" "Start mmm mode" t))
 (require 'mmm-auto)
 (setq mmm-global-mode 'maybe)
 
