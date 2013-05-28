@@ -804,6 +804,12 @@ Markdown" t)
 ;; TODO: instead of changing the source to avoid paren indentation, change it
 ;; here using defadvice.  See http://stackoverflow.com/a/4150438/161801.
 
+;; Require emacs trunk python.el
+;; (add-hook 'python-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'imenu-create-index-function)
+;;                  #'python-imenu-create-index)))
+
 ;; ==== ropemacs ====
 (defun load-ropemacs ()
   "Load pymacs and ropemacs"
