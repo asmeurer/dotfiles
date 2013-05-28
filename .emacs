@@ -432,7 +432,9 @@ This command does the reverse of `fill-region'."
 
 ;; ===== ido mode =====
 
-(require 'ido)
+(if (locate-library "ido")
+        (autoload 'ido "ido" "Start ido" t))
+;(require 'ido)
 ;; Display ido results vertically, rather than horizontally
 (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 (defun ido-disable-line-trucation () (set (make-local-variable
