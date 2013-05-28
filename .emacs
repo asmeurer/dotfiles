@@ -51,7 +51,7 @@
                ) ) ) )
       (message word-count)
       ) )
-  (define-key latex-mode-map "\C-cw" 'latex-word-count)
+  (define-key 'latex-mode-map "\C-c w" 'latex-word-count)
   )
 (add-hook 'latex-mode-hook 'latex-setup t)
 
