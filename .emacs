@@ -637,14 +637,16 @@ It either tries \"lacheck\" or \"chktex\"."
 (defun alternating-scroll-down-line ()
   (interactive "@")
     (when alternating-scroll-down-next
-          (scroll-down-line))
-      (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
+;      (run-hook-with-args 'window-scroll-functions )
+      (scroll-down-line))
+    (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
 
 (defun alternating-scroll-up-line ()
   (interactive "@")
     (when alternating-scroll-up-next
-          (scroll-up-line))
-      (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
+;      (run-hook-with-args 'window-scroll-functions)
+      (scroll-up-line))
+    (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
 (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
