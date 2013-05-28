@@ -1,10 +1,11 @@
-personal_ws-1.1 en 123 
+personal_ws-1.1 en 132 
 backends
 univariate
 restrictable
 IPython
 API
 whitespace
+invariants
 ODEs
 IRC
 webpage
@@ -23,6 +24,7 @@ attractor
 Piecewise
 Bronstein
 assistantship
+subexpressions
 parsers
 Uncomment
 tuple
@@ -30,6 +32,7 @@ uploader
 asymptote
 CASs
 integrand
+programmatically
 lexicographically
 quantized
 quantization
@@ -68,6 +71,7 @@ modularity
 canonicalization
 subexpression
 rebuildable
+combinatorial
 benchmarking
 representable
 musculoskeletal
@@ -91,6 +95,7 @@ frontends
 exponentials
 nonelementary
 username
+TODO
 Bronstein's
 subfields
 filesystem
@@ -105,8 +110,11 @@ writeup
 docstring
 boolean
 cardinality
+unsanitized
 tuples
+noncommutative
 backend
+denested
 recursing
 subclasses
 nonrelativistic
@@ -122,3 +130,4 @@ interoperability
 usernames
 pseudocode
 formalisms
+equalities
