@@ -210,12 +210,16 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 (global-set-key [f8] 'universal-argument)
 
 ;; ==== Switch to new buffer on C-x 2 or C-x 3 ====
-;; Thanks to http://stackoverflow.com/a/6465599/161801
+;; Thanks to http://stackoverflow.com/a/6465415/161801.
 
-(defadvice split-window (after move-point-to-new-window activate)
-  "Moves the point to the newly created window after splitting."
-  (other-window 1))
-
+(global-set-key "\C-x2" (lambda ()
+                          (interactive)
+                          (split-window-vertically)
+                          (other-window 1)))
+(global-set-key "\C-x3" (lambda ()
+                          (interactive)
+                          (split-window-horizontally)
+                          (other-window 1)))
 
 ;; ==== Smarter isearch + occur =====
 
