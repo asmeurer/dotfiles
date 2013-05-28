@@ -500,6 +500,8 @@ This command does the reverse of `fill-region'."
 (require 'flymake-python-pyflakes)
 (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
+;; TODO: Check out https://github.com/lunaryorn/flycheck
+
 ;; ===== Automatically indent with RET =====
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
