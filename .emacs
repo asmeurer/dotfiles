@@ -911,47 +911,82 @@ Markdown" t)
 ;; This is needed for EPC
 
 (add-to-list 'load-path "~/Documents/emacs-deferred")
-(require 'deferred)
+;(require 'deferred)
 
 ;; ==== ctable ====
 ;; This is needed for EPC
 
 (add-to-list 'load-path "~/Documents/emacs-ctable")
-(require 'ctable)
+;(require 'ctable)
 
 ;; ==== EPC =====
 ;; This is needed for Jedi
 
 (add-to-list 'load-path "~/Documents/emacs-epc")
-(require 'epc)
+;(require 'epc)
 
 ;; ==== Jedi ====
 ;; Python completion using Jedi and auto-complete-mode
 
-;; (add-to-list 'load-path "~/Documents/emacs-jedi")
-;; (require 'jedi)
-;; (autoload 'jedi:setup "jedi" nil t)
-;; (global-auto-complete-mode +1)
-;; (setq jedi:setup-keys t)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:complete-on-dot t)
-;; (add-to-list 'ac-sources 'ac-source-jedi-direct)
-;;
-;; ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-;; ;;          WARNING!!!
-;; ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-;;
-;; ;; The following is needed or else Mac OS X will kernel panic. See
-;; ;; https://github.com/tkf/emacs-jedi/issues/37.
-;;
-;; ;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
-;; ;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
-;;
-;; (defun jedi:stop-all-servers ()
-;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
-;;                         jedi:server-pool--table))
-;;
-;; (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
+(add-to-list 'load-path "~/Documents/emacs-jedi")
+(require 'jedi) ; We have to require jedi or else the kernel panic workaround
+                ; below won't work and we won't be able to exit emacs.
+(autoload 'jedi:setup "jedi" nil t)
+(global-auto-complete-mode +1)
+(setq jedi:setup-keys t)
+;; C-. doesn't work, so it's defined in iTerm 2 shortcuts
+(eval-after-load "python"
+  '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:goto-definition))
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+(add-to-list 'ac-sources 'ac-source-jedi-direct)
+;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
+(setq jedi:install-imenu t)
+
+;; !!!!!!!!!!!!!!!!!!!!!!!!!!
+;;          WARNING!!!
+;; !!!!!!!!!!!!!!!!!!!!!!!!!!
+
+;; The following is needed or else Mac OS X will kernel panic. See
+;; https://github.com/tkf/emacs-jedi/issues/37.
+
+;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
+;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
+
+(defun jedi:stop-all-servers ()
+    (maphash (lambda (_ mngr) (epc:stop-epc mngr))
+                        jedi:server-pool--table))
+
+(add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
+
+;; (eval-after-load "jedi"
+;;   '(setq jedi:server-command (list "cat" (expand-file-name
+;;                                           "jedi-port.log" jedi:source-dir))
+;;          jedi:server-args nil))
+
+;; ==== popwin ====
+;; Make annoying popup windows go away better
+
+(add-to-list 'load-path "~/Documents/popwin-el")
+(require 'popwin)
+(popwin-mode 1)
+
+;; ==== direx ====
+;; Required for Python imenu direx below
+
+(add-to-list 'load-path "~/Documents/direx-el")
+(autoload 'direx "direx" t)
+(push '(direx:direx-mode :position left :width 25 :dedicated t)
+            popwin:special-display-config)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+
+;; ==== Emacs Jedi Direx ====
+;; A nice imenu for Python
+
+(add-to-list 'load-path "~/Documents/emacs-jedi-direx")
+(require 'jedi-direx)
+(eval-after-load "python"
+  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
 
 ;; ===== Scroll bars ======
 
