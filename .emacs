@@ -626,7 +626,8 @@ It either tries \"lacheck\" or \"chktex\"."
 ;; so we must use this hack to scroll by one line at a time
 
 ;; TODO: (interactive "@") causes scrolling to follow the mouse, but it
-;; switches buffers.  Figure out how to make it not switch.  See http://stackoverflow.com/questions/11532149/emacs-make-custom-scrolling-function-follow-mouse-but-not-change-keyboard-focus.
+;; switches buffers.  Figure out how to make it not switch.  See
+;; http://stackoverflow.com/questions/11532149/emacs-make-custom-scrolling-function-follow-mouse-but-not-change-keyboard-focus.
 
 (setq mouse-wheel-follow-mouse 't)
 
