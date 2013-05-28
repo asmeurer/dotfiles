@@ -383,3 +383,7 @@ c.TerminalInteractiveShell.confirm_exit = False
 # c.PlainTextFormatter.singleton_printers = {}
 
 #import pudb.ipython
+
+# Only complete __all__ names on import
+
+c.IPCompleter.limit_to__all__ = True
