@@ -1060,6 +1060,13 @@ Markdown" t)
 ;; (add-to-list 'load-path "~/Documents/tabbar")
 ;; (require 'tabbar)
 
+;; ===== E2WM (Emacs Window Manager) ====
+;; For its imenu implementation
+
+(add-to-list 'load-path "~/Documents/emacs-window-layout")
+(add-to-list 'load-path "~/Documents/emacs-window-manager")
+(require 'e2wm)
+
 ;; =======================================
 ;; ===== Values set by M-x customize =====
 
