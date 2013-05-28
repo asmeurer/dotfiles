@@ -15,6 +15,7 @@
 ;; - Fix inconsistency between C-x # and C-x C-c in emacsclient.
 ;; - Make C-SPC unset the mark when selection is active.
 ;; - Find a way to let the cursor move off screen.
+;; - Make newlines not indent if the line already has text
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
