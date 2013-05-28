@@ -182,18 +182,18 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; See http://stackoverflow.com/a/8956311/161801
 
-(defun kill-line-or-region (beg end)
+(defun kill-line-or-region ()
   "kill region if active only or kill line normally"
-  (interactive "r")
+  (interactive)
   (if (region-active-p)
       (call-interactively 'kill-region)
     (call-interactively 'kill-line)))
 
 (global-set-key (kbd "C-k") 'kill-line-or-region)
 
-(defun backward-kill-line-or-region (beg end)
+(defun backward-kill-line-or-region ()
   "kill region if active only or kill line normally"
-  (interactive "r")
+  (interactive)
   (if (region-active-p)
       (call-interactively 'kill-region)
     (call-interactively 'backward-kill-line-or-newline)))
