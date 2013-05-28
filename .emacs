@@ -992,9 +992,9 @@ Markdown" t)
 
 ;; This is related to auto-complete-mode (same developer)
 
-;; (add-to-list 'load-path "~/Documents/yascroll-el")
-;; (require 'yascroll)
-;; (global-yascroll-bar-mode 1)
+(add-to-list 'load-path "~/Documents/yascroll-el")
+(require 'yascroll)
+(global-yascroll-bar-mode 1)
 
 ;; ==== AUCTeX ====
 
