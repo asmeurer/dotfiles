@@ -1000,6 +1000,11 @@ Markdown" t)
 (require 'yascroll)
 (global-yascroll-bar-mode 1)
 
+;; ==== RTF mode ====
+(autoload 'rtf-mode "rtf-mode" "RTF mode" t)
+(add-to-list 'auto-mode-alist
+               '("\\.rtf$" . rtf-mode))
+
 ;; ==== AUCTeX ====
 
 (load "auctex.el" nil t t)
