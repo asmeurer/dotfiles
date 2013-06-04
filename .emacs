@@ -1005,6 +1005,12 @@ Markdown" t)
 (add-to-list 'auto-mode-alist
                '("\\.rtf$" . rtf-mode))
 
+;; ==== batch mode ====
+
+(autoload 'batch-mode "batch-mode" "batch mode" t)
+(add-to-list 'auto-mode-alist
+             '("\\.bat$" . batch-mode))
+
 ;; ==== AUCTeX ====
 
 (load "auctex.el" nil t t)
