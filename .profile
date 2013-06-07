@@ -218,6 +218,15 @@ hub () {
     ruby -I "${hub_dir}/lib" "${hub_dir}/bin/hub" "$@"
 }
 
+recompile-emacs () {
+    cd ~/Documents/emacs
+    git pull
+    ./autogen.sh
+    ./configure --without-x
+    make bootstrap
+    make all
+}
+
 # Alias git to hub
 eval "$(hub alias -s)"
 
