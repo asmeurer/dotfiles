@@ -221,6 +221,8 @@ hub () {
 recompile-emacs () {
     cd ~/Documents/emacs
     git pull
+    git clean -df
+    git clean -Xdf
     ./autogen.sh
     ./configure --without-x
     make bootstrap
