@@ -137,6 +137,9 @@ TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1
 # Continuum - Black
 DIR_CONTINUUM='/Users/aaronmeurer/Documents/Continuum'
 TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+# Conda - White
+DIR_CONDA='/Users/aaronmeurer/Documents/Continuum/conda'
+TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
 # homework - Blue
 export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Grad/Spring 2013" # Used later by homework alias
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
@@ -150,9 +153,12 @@ TAB_GRAY="\033]6;1;bg;red;brightness;160\a\033]6;1;bg;blue;brightness;160\a\033]
 set_tab_color () {
     FOUND='no'
 
+    # To make this work correctly with subdirectories, put higher level
+    # directories later in the list.
+
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONTINUUM $TAB_BLACK'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONTINUUM $TAB_BLACK'
     do
         set -- $dir_tab
         # Dereference the variable name
