@@ -23,7 +23,6 @@ export SUDO_PS1="\[\h:\w\] \u\\$ "
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias python=/sw/bin/python
 export SYSTEMPYTHON='/Library/Frameworks/Python.framework/Versions/Current/bin/python'
 export SYSTEMPYTHON_32='arch -i386 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
 export SYSTEMPYTHON_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
