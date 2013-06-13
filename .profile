@@ -16,8 +16,6 @@ if [ $? -eq 1 ] ; then
     export PATH
 fi
 
-export TIGCC="/usr/local/tigcc"
-export PATH="${PATH}:${TIGCC}/bin"
 export SUDO_PS1="\[\h:\w\] \u\\$ "
 
 alias rm='rm -i'
