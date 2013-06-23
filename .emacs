@@ -568,6 +568,8 @@ This command does the reverse of `fill-region'."
 
 (define-abbrev global-abbrev-table "Ondrej" "Ondřej")
 (define-abbrev global-abbrev-table "Certik" "Čertík")
+(define-abbrev global-abbrev-table "Ondrej's" "Ondřej's")
+(define-abbrev global-abbrev-table "Certik's" "Čertík's")
 
 ;; ===== Things for C mode ====
 
