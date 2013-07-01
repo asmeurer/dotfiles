@@ -213,7 +213,12 @@ alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Comma
 alias free='diskutil info / | grep free'
 
 sizeup () {
-    du -a -h -x "$1" | gsort -h
+    if [[ -z "$1" ]]; then
+        DIR=.
+    else
+        DIR="$1"
+    fi
+    du -a -h -x "$DIR" | gsort -h
 }
 
 hub_dir="/Users/aaronmeurer/Documents/hub"
