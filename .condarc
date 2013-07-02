@@ -1,0 +1,5 @@
+channels:
+ - http://conda.binstar.org/asmeurer
+ - defaults
+
+changeps1: no
