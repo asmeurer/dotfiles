@@ -19,6 +19,16 @@
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
+;; ===== auto-compile ====
+;; Should automatically recompile .el files
+;; This should stay at the top of this file.
+
+;; ;; -*- no-byte-compile: t -*-
+;; (add-to-list 'load-path "~/Documents/auto-compile")
+;; (require 'auto-compile)
+;; (auto-compile-on-load-mode 1)
+;; (auto-compile-on-save-mode 1)
+
 ;; Don't show the splash screen on startup.  Aside from me not needing it
 ;; anymore, this fixes a bug with emacsclient.
 
