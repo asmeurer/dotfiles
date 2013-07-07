@@ -17,7 +17,7 @@
 	co = checkout
 	pu = push github
 	logl = log --pretty=oneline --abbrev-commit
-	gr = grep -i --color
+	gr = grep -i --color -n
 	backup = !git-backup.sh
 	fe = fetch --all
 	weekreport = shortlog --since=1.weeks --author=asmeurer
