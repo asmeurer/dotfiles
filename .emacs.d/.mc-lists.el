@@ -4,9 +4,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        TeX-insert-backslash
         backward-kill-line-or-newline
         fill-paragraph
         forward-sexp
+        indent-for-tab-command
         jedi:dot-complete
         just-one-space-with-newline
         my-save-buffer-dtws
