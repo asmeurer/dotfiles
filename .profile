@@ -5,6 +5,9 @@ echo
 # Use italics supported terminfo
 tic ~/Documents/gists/gist-3187620/xterm-256color-italic.terminfo
 export TERM=xterm-256color-italic
+alias ssh='TERM=xterm-256color ssh'
+alias vagrant='TERM=xterm-256color vagrant'
+
 
 ##
 # DELUXE-USR-LOCAL-BIN-INSERT
