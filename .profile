@@ -1,5 +1,5 @@
 echo
-/sw/bin/fortune -a
+/sw/bin/fortune
 echo
 
 # Use italics supported terminfo
