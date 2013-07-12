@@ -1,4 +1,4 @@
-personal_ws-1.1 en 148 
+personal_ws-1.1 en 150 
 backends
 univariate
 restrictable
@@ -92,6 +92,7 @@ multivalued
 monomial
 IPython's
 PDE
+portably
 workflow
 NumPy
 deprecations
@@ -141,6 +142,7 @@ refactored
 refactoring
 CAS
 associativity
+nondeterminism
 interoperability
 usernames
 pseudocode
