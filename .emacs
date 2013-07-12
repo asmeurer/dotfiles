@@ -962,10 +962,9 @@ Markdown" t)
 (autoload 'jedi:setup "jedi" nil t)
 (global-auto-complete-mode +1)
 (setq  jedi:use-shortcuts t)
-;; C-. doesn't work, so it's defined in iTerm 2 shortcuts
-;; Commented out because we can use M-. now
-;; (eval-after-load "python"
-;;   '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:goto-definition))
+;; C-TAB doesn't work, so it's defined in iTerm 2 shortcuts
+(eval-after-load "python"
+  '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:complete))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 (add-to-list 'ac-sources 'ac-source-jedi-direct)
