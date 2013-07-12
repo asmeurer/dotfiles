@@ -785,6 +785,12 @@ Markdown" t)
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
+;; ===== Coffeescript ====
+
+(add-to-list 'load-path "~/Documents/coffee-mode")
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(autoload 'coffee-mode "coffee-mode" "Coffee Mode" t)
+
 ;; Commented out stuff "doesn't work"
 
 ;; ===== flymake-cursor =====
