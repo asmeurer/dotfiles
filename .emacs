@@ -970,6 +970,7 @@ Markdown" t)
 (add-to-list 'ac-sources 'ac-source-jedi-direct)
 ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
 (setq jedi:install-imenu t)
+(setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
 
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
 ;;          WARNING!!!
