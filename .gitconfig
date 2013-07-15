@@ -26,6 +26,7 @@
 	bl = blame -CCC -M
     lg = log --graph --topo-order --use-mailmap
     sw = show --color-words
+    psh = !git pull && git push
 
 [sendemail]
 	o = sympy-patches@googlegroups.com
