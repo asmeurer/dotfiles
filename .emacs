@@ -957,21 +957,21 @@ Markdown" t)
 ;; ==== Jedi ====
 ;; Python completion using Jedi and auto-complete-mode
 
-;; (add-to-list 'load-path "~/Documents/emacs-jedi")
-;; (require 'jedi) ; We have to require jedi or else the kernel panic workaround
-;;                 ; below won't work and we won't be able to exit emacs.
-;; (autoload 'jedi:setup "jedi" nil t)
-;; (global-auto-complete-mode +1)
-;; (setq  jedi:use-shortcuts t)
-;; ;; C-TAB doesn't work, so it's defined in iTerm 2 shortcuts
-;; (eval-after-load "python"
-;;   '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:complete))
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:complete-on-dot t)
-;; (add-to-list 'ac-sources 'ac-source-jedi-direct)
-;; ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
-;; (setq jedi:install-imenu t)
-;; (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
+(add-to-list 'load-path "~/Documents/emacs-jedi")
+(require 'jedi) ; We have to require jedi or else the kernel panic workaround
+                ; below won't work and we won't be able to exit emacs.
+(autoload 'jedi:setup "jedi" nil t)
+(global-auto-complete-mode +1)
+(setq  jedi:use-shortcuts t)
+;; C-TAB doesn't work, so it's defined in iTerm 2 shortcuts
+(eval-after-load "python"
+  '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:complete))
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+(add-to-list 'ac-sources 'ac-source-jedi-direct)
+;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
+(setq jedi:install-imenu t)
+(setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
 
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
 ;;          WARNING!!!
@@ -983,11 +983,11 @@ Markdown" t)
 ;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
 ;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
 
-;; (defun jedi:stop-all-servers ()
-;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
-;;                         jedi:server-pool--table))
-;;
-;; (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
+(defun jedi:stop-all-servers ()
+    (maphash (lambda (_ mngr) (epc:stop-epc mngr))
+                        jedi:server-pool--table))
+
+(add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
 
 ;; (eval-after-load "jedi"
 ;;   '(setq jedi:server-command (list "cat" (expand-file-name
@@ -1013,10 +1013,10 @@ Markdown" t)
 ;; ==== Emacs Jedi Direx ====
 ;; A nice imenu for Python
 
-;; (add-to-list 'load-path "~/Documents/emacs-jedi-direx")
-;; (require 'jedi-direx)
-;; (eval-after-load "python"
-;;   '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+(add-to-list 'load-path "~/Documents/emacs-jedi-direx")
+(require 'jedi-direx)
+(eval-after-load "python"
+  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
 
 ;; ===== Scroll bars ======
 
