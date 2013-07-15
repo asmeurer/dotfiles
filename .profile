@@ -275,7 +275,7 @@ PATH="/Users/aaronmeurer/Documents/emacs/lib-src:$PATH"
 PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
-PATH="$PATH:$HOME/anaconda/bin"
+PATH="$HOME/anaconda/bin:$PATH"
 
 export PATH
 
