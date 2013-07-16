@@ -285,7 +285,7 @@ export PATH=`/usr/local/bin/uniqpath`
 MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
-eval "`pip completion --bash`"
+# eval "`pip completion --bash`"
 
 source ~/Documents/ipython/examples/core/ipython-completion.bash
 
