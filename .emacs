@@ -1032,18 +1032,18 @@ Markdown" t)
 (global-set-key (kbd "C-x r C-x") 'rm-exchange-point-and-mark)
 (global-set-key (kbd "C-x r C-w") 'rm-kill-region)
 (global-set-key (kbd "C-x r M-w") 'rm-kill-ring-save)
-(global-set-key (kbd "C-w")
-  '(lambda(b e) (interactive "r")
-     (if rm-mark-active
-       (rm-kill-region b e) (kill-region b e))))
-(global-set-key (kbd "M-w")
-  '(lambda(b e) (interactive "r")
-     (if rm-mark-active
-       (rm-kill-ring-save b e) (kill-ring-save b e))))
-(global-set-key (kbd "C-x C-x")
-  '(lambda(&optional p) (interactive "p")
-     (if rm-mark-active
-       (rm-exchange-point-and-mark p) (exchange-point-and-mark p))))
+;; (global-set-key (kbd "C-w")
+;;   '(lambda(b e) (interactive "r")
+;;      (if rm-mark-active
+;;        (rm-kill-region b e) (kill-region b e))))
+;; (global-set-key (kbd "M-w")
+;;   '(lambda(b e) (interactive "r")
+;;      (if rm-mark-active
+;;        (rm-kill-ring-save b e) (kill-ring-save b e))))
+;; (global-set-key (kbd "C-x C-x")
+;;   '(lambda(&optional p) (interactive "p")
+;;      (if rm-mark-active
+;;        (rm-exchange-point-and-mark p) (exchange-point-and-mark p))))
 (autoload 'rm-set-mark "rect-mark"
   "Set mark for rectangle." t)
 (autoload 'rm-exchange-point-and-mark "rect-mark"
