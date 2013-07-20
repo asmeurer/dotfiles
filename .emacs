@@ -1109,6 +1109,10 @@ Markdown" t)
 (add-to-list 'load-path "~/Documents/undo-tree")
 (require 'undo-tree)
 
+;; C-S-/ has to pass through this escape code with iTerm2.
+
+(global-set-key (kbd "C-[ [ a b") 'undo-tree-redo)
+
 ;; ;; Compress saved undo files
 ;; (defadvice undo-tree-make-history-save-file-name
 ;;     (after undo-tree activate)
