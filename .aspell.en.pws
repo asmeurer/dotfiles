@@ -1,4 +1,4 @@
-personal_ws-1.1 en 151 
+personal_ws-1.1 en 152 
 backends
 univariate
 restrictable
@@ -23,9 +23,9 @@ Fortran
 Groebner
 doctests
 attractor
+whitelist
 Piecewise
 Bronstein
-whitelist
 assistantship
 subexpressions
 scalable
@@ -107,6 +107,7 @@ exponentials
 nonelementary
 username
 TODO
+bizarreness
 Bronstein's
 subfields
 filesystem
