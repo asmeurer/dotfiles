@@ -456,6 +456,8 @@ This command does the reverse of `fill-region'."
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
 ;; sort ido filelist by mtime instead of alphabetically
+
+;; TODO: Sort by closeness to current directory, then time
 (add-hook 'ido-make-file-list-hook 'ido-sort-mtime)
 (add-hook 'ido-make-dir-list-hook 'ido-sort-mtime)
 (defun ido-sort-mtime ()
