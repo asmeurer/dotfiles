@@ -3,3 +3,5 @@ channels:
   - defaults
 
 changeps1: no
+
+binstar_upload: yes
