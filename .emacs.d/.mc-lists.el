@@ -6,14 +6,17 @@
       '(
         TeX-insert-backslash
         backward-kill-line-or-newline
+        backward-kill-line-or-region
         end-of-buffer
         fill-paragraph
         forward-sexp
         indent-for-tab-command
         jedi:dot-complete
         just-one-space-with-newline
+        kill-line-or-region
         my-save-buffer-dtws
         osx-paste
+        yaml-electric-dash-and-dot
         ))
 
 (setq mc/cmds-to-run-once
