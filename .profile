@@ -276,6 +276,7 @@ PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
 PATH="$HOME/anaconda/bin:$PATH"
+eval "$(register-python-argcomplete conda)"
 
 export PATH
 
