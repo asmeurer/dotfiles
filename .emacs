@@ -520,7 +520,7 @@ This command does the reverse of `fill-region'."
 
 ;; ===== Automatically indent with RET =====
 
-(defun newline-and-indent-end-of-line ()
+(defun newline-and-indent-conditionally ()
   "Acts like newline, unless the point is at the end of the line, then acts
 like newline-and-indent"
   (interactive)
@@ -528,7 +528,7 @@ like newline-and-indent"
         (newline)
       (newline-and-indent)))
 
-(define-key global-map (kbd "RET") 'newline-and-indent-end-of-line)
+(define-key global-map (kbd "RET") 'newline-and-indent-conditionally)
 
 ;; ===== Clear trailing whitespace on save ====
 
