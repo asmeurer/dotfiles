@@ -275,7 +275,7 @@ PATH="/Users/aaronmeurer/Documents/emacs/lib-src:$PATH"
 PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
-PATH="$HOME/anaconda/bin:$PATH"
+PATH="$HOME/anaconda3/bin:$HOME/anaconda/bin:$PATH"
 eval "$(register-python-argcomplete conda)"
 
 export PATH
