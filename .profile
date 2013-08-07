@@ -214,6 +214,7 @@ alias e=emacs
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 alias free='diskutil info / | grep free'
+alias rehash='hash -r'
 
 sizeup () {
     if [[ -z "$1" ]]; then
