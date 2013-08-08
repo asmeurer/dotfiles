@@ -295,3 +295,5 @@ source ~/Documents/ipython/examples/core/ipython-completion.bash
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
 source ~/Documents/hub/etc/hub.bash_completion.sh
+
+hash -r
