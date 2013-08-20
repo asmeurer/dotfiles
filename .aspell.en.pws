@@ -1,4 +1,4 @@
-personal_ws-1.1 en 155 
+personal_ws-1.1 en 160 
 backends
 univariate
 restrictable
@@ -14,6 +14,7 @@ webpage
 Assumedly
 Analytics
 submodule
+Optimizations
 else's
 computability
 Diagonalization
@@ -64,6 +65,7 @@ Mathematica
 multinomial
 singletonized
 antiderivative
+rebase
 Refactor
 unmerged
 docstrings
@@ -81,6 +83,7 @@ subexpression
 booleans
 rebuildable
 combinatorial
+rebasing
 benchmarking
 representable
 musculoskeletal
@@ -99,6 +102,7 @@ portably
 workflow
 NumPy
 deprecations
+iteratively
 combinatorics
 multibody
 quirkinesses
@@ -130,6 +134,7 @@ satisfiable
 conda
 LaTeX
 unsanitized
+bulleted
 tuples
 noncommutative
 eigenvectors
