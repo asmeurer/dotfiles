@@ -391,7 +391,10 @@ c.TerminalInteractiveShell.confirm_exit = False
 #
 # c.PlainTextFormatter.singleton_printers = {}
 
-#import pudb.ipython
+# try:
+#     import pudb.ipython
+# except ImportError:
+#     pass
 
 # Only complete __all__ names on import
 
