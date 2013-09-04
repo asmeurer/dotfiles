@@ -736,6 +736,7 @@ It either tries \"lacheck\" or \"chktex\"."
           t)
 
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-x C-@") 'ace-jump-mode)
 (setq ace-jump-mode-case-fold t)
 
 ;; enable a more powerful jump back function from ace jump mode
