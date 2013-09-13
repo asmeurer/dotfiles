@@ -984,6 +984,10 @@ Markdown" t)
 (setq jedi:install-imenu t)
 (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
 
+(setq jedi:server-args
+            '("--log-level" "DEBUG"
+                      "--log-traceback"))
+
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
 ;;          WARNING!!!
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!
