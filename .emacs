@@ -994,11 +994,11 @@ Markdown" t)
 ;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
 ;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
 
-(defun jedi:stop-all-servers ()
-    (maphash (lambda (_ mngr) (epc:stop-epc mngr))
-                        jedi:server-pool--table))
-
-(add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
+;; (defun jedi:stop-all-servers ()
+;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
+;;                         jedi:server-pool--table))
+;;
+;; (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
 
 ;; (eval-after-load "jedi"
 ;;   '(setq jedi:server-command (list "cat" (expand-file-name
