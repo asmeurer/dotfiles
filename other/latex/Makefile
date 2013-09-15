@@ -10,10 +10,15 @@ latex:
 
 latexopen: latex open
 
+latexopenopen: latex open openiterm
+
 pdf: nonstopmodeopen
 
 open:
 	open -a Skim $(FILEPREFIX).pdf
+
+openiterm:
+	open -a iTerm\ 2
 
 nonstopmode:
 	pdflatex -interaction nonstopmode $(FILEPREFIX).tex
