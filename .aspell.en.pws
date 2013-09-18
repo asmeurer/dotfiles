@@ -1,4 +1,4 @@
-personal_ws-1.1 en 160 
+personal_ws-1.1 en 161 
 backends
 univariate
 restrictable
@@ -27,6 +27,7 @@ Groebner
 doctests
 attractor
 whitelist
+piecewise
 Piecewise
 Bronstein
 assistantship
