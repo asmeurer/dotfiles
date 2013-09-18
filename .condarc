@@ -1,5 +1,6 @@
 channels:
   - http://conda.binstar.io/asmeurer
+  - http://conda.binstar.io/minrk
   - defaults
 
 changeps1: no
