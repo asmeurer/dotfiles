@@ -1,8 +1,9 @@
-personal_ws-1.1 en 161 
+personal_ws-1.1 en 168 
 backends
 univariate
 restrictable
 IPython
+vectorized
 API
 subprocess
 unsatisfiability
@@ -28,7 +29,6 @@ doctests
 attractor
 whitelist
 piecewise
-Piecewise
 Bronstein
 assistantship
 subexpressions
@@ -41,10 +41,13 @@ asymptote
 CASs
 diagonalize
 integrand
+invertibility
 programmatically
 lexicographically
 quantized
 quantization
+nonnegative
+vectorizing
 namespace
 unmounting
 hypergeometric
@@ -91,6 +94,7 @@ musculoskeletal
 WolframAlpha
 Analytical
 analytical
+documentable
 nullspace
 Commutativity
 submitter's
@@ -121,6 +125,7 @@ filesystem
 PDEs
 computable
 monomials
+nonpositive
 unmount
 Meurer
 SymPy's
@@ -135,6 +140,7 @@ satisfiable
 conda
 LaTeX
 unsanitized
+invertible
 bulleted
 tuples
 noncommutative
@@ -160,3 +166,4 @@ pseudocode
 unnormalized
 formalisms
 equalities
+initializer
