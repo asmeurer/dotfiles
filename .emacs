@@ -305,7 +305,22 @@ This function ...
   (interactive)
   (just-one-space -1))
 
-(global-set-key (kbd "M-SPC") 'just-one-space-with-newline)
+(defun just-zero-space-with-newline ()
+  "Remove all spaces around point"
+  (interactive)
+  (just-one-space -1)
+  (just-one-space 0))
+
+;; Thanks to http://stackoverflow.com/a/19581323/161801
+(defun my-just-one-space ()
+  "Call just-one-space-with-newline the first time and
+  just-zero-space-with-newline the second time"
+  (interactive)
+  (if (memq last-command '(my-just-one-space))
+  (call-interactively 'just-zero-space-with-newline)
+  (call-interactively 'just-one-space-with-newline)))
+
+(global-set-key (kbd "M-SPC") 'my-just-one-space)
 
 ;; ===== Set C-x C-c to do the right thing in emacsclient
 ;; TODO
