@@ -16,6 +16,7 @@
 ;; - Make C-SPC unset the mark when selection is active.
 ;; - Find a way to let the cursor move off screen.
 ;; - Make newlines not indent if the line already has text
+;; - Make SyntaxErrors in Python show the relevant character
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
