@@ -913,16 +913,17 @@ Markdown" t)
 ;; http://stackoverflow.com/q/15493342/161801.  Commented out because there
 ;; are too many cases where code is rendered as docstrings
 
-;; (mmm-add-classes
-;;  '((python-rst
-;;     :submode rst-mode
-;;     :front "^ *[ru]?\"\"\"$"
-;;     :back "^ *\"\"\"$"
-;;     :include-front t
-;;     :include-back t
-;;     :end-not-begin t
-;;     :)))
-;; (mmm-add-mode-ext-class 'python-mode nil 'python-rst)
+(mmm-add-classes
+ '((python-rst
+    :submode rst-mode
+    :front "[ru]?\"\"\""
+    :back "\"\"\""
+    :include-front nil
+    :include-back nil
+    :end-not-begin t
+    :face mmm-code-submode-face
+    :)))
+(mmm-add-mode-ext-class 'python-mode nil 'python-rst)
 
 ;; ==== doctest-mode ====
 ;; Note, this needs to go below mmm-mode above.
@@ -1214,6 +1215,8 @@ Markdown" t)
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
+ '(mmm-global-mode (quote maybe))
+ '(mmm-submode-decoration-level 2)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
