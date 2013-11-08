@@ -80,6 +80,7 @@ shopt -s hostcomplete
 shopt -s no_empty_cmd_completion
 
 alias ls='ls -AG@Flha'
+alias  l='ls -AG@Flha'
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
