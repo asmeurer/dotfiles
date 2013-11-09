@@ -77,5 +77,8 @@ alias e=emacs
 
 eval "`pip completion --bash`"
 
+# added by Miniconda3 2.0.3 installer
+export PATH="/home/asmeurer/anaconda/bin:$PATH"
+
 # This line needs to stay at the bottom of the file.
 source ~/.git-completion.bash
