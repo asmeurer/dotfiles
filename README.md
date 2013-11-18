@@ -10,3 +10,7 @@ http://superuser.com/questions/302312/how-to-properly-store-dotfiles-in-
 a-centralized-git-repository.
 
 Files in other/ are for various other things.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/asmeurer/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
