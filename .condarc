@@ -7,3 +7,5 @@ channels:
 changeps1: no
 
 binstar_upload: yes
+
+always_yes: True
