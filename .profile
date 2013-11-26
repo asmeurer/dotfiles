@@ -273,6 +273,8 @@ export PATH
 PATH="/Users/aaronmeurer/Documents/emacs/src:$PATH"
 PATH="/Users/aaronmeurer/Documents/emacs/lib-src:$PATH"
 
+PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
+
 # Haskell
 PATH="$HOME/Library/Haskell/bin:$PATH"
 

@@ -507,32 +507,40 @@ This command does the reverse of `fill-region'."
 
 ;; ===== Turn on flymake-mode ====
 
-(add-to-list 'load-path "~/Documents/flymake-easy")
+;; We don't use this any more, instead, we use flycheck (which comes from
+;; cask).
 
-(add-hook 'c-mode-common-hook 'turn-on-flymake)
-(add-hook 'latex-mode-hook 'turn-on-flymake)
-(add-hook 'LaTeX-mode-hook 'turn-on-flymake)
-;(add-hook 'python-mode-hook 'turn-on-flymake)
-(defun turn-on-flymake ()
-  "Force flymake-mode on. For use in hooks."
-  (interactive)
-  (flymake-mode 1))
+;; (add-to-list 'load-path "~/Documents/flymake-easy")
+;;
+;; (add-hook 'c-mode-common-hook 'turn-on-flymake)
+;; (add-hook 'latex-mode-hook 'turn-on-flymake)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-flymake)
+;; ;(add-hook 'python-mode-hook 'turn-on-flymake)
+;; (defun turn-on-flymake ()
+;;   "Force flymake-mode on. For use in hooks."
+;;   (interactive)
+;;   (flymake-mode 1))
+;;
+;; (add-hook 'c-mode-common-hook 'flymake-keyboard-shortcuts)
+;; (add-hook 'latex-mode-hook 'flymake-keyboard-shortcuts)
+;; (add-hook 'LaTeX-mode-hook 'flymake-keyboard-shortcuts)
+;; (add-hook 'python-mode-hook 'flymake-keyboard-shortcuts)
+;; (defun flymake-keyboard-shortcuts ()
+;;   "Add keyboard shortcuts for flymake goto next/prev error."
+;;   (interactive)
+;;   (local-set-key "\M-n" 'flymake-goto-next-error)
+;;   (local-set-key "\M-p" 'flymake-goto-prev-error))
+;;
+;; (add-to-list 'load-path "~/Documents/flymake-python-pyflakes")
+;; (require 'flymake-python-pyflakes)
+;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
-(add-hook 'c-mode-common-hook 'flymake-keyboard-shortcuts)
-(add-hook 'latex-mode-hook 'flymake-keyboard-shortcuts)
-(add-hook 'LaTeX-mode-hook 'flymake-keyboard-shortcuts)
-(add-hook 'python-mode-hook 'flymake-keyboard-shortcuts)
-(defun flymake-keyboard-shortcuts ()
-  "Add keyboard shortcuts for flymake goto next/prev error."
-  (interactive)
-  (local-set-key "\M-n" 'flymake-goto-next-error)
-  (local-set-key "\M-p" 'flymake-goto-prev-error))
+;; ===== Flycheck ====
 
-(add-to-list 'load-path "~/Documents/flymake-python-pyflakes")
-(require 'flymake-python-pyflakes)
-(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
+;; This is installed from cask
 
-;; TODO: Check out https://github.com/lunaryorn/flycheck
+(global-set-key "\M-n" 'flycheck-next-error)
+(global-set-key "\M-p" 'flycheck-previous-error)
 
 ;; ===== Automatically indent with RET =====
 
@@ -618,27 +626,27 @@ like newline-and-indent"
 
 ;; flymake-mode for tex uses texify by default, which only works in Windows (miktex)
 
-;; Borrowed from https://github.com/MassimoLauria/dotemacs/blob/master/init-latex.el
-(defun init-latex--flymake-setup ()
-  "Setup flymake for latex using one of the checker available on the system.
-It either tries \"lacheck\" or \"chktex\"."
-  (interactive)
-  (cond ((executable-find "lacheck")
-         (defun flymake-get-tex-args (file-name)
-           (list "lacheck" (list file-name))))
-        ((executable-find "chktex")
-         (defun flymake-get-tex-args (file-name)
-           (list "chktex" (list "-q" "-v0" file-name))))
-        (t nil)))
-
-(eval-after-load "flymake" '(init-latex--flymake-setup))
-
-(defun my-flymake-show-help ()
-  (when (get-char-property (point) 'flymake-overlay)
-    (let ((help (get-char-property (point) 'help-echo)))
-      (if help (message "%s" help)))))
-
-(add-hook 'post-command-hook 'my-flymake-show-help)
+;; ;; Borrowed from https://github.com/MassimoLauria/dotemacs/blob/master/init-latex.el
+;; (defun init-latex--flymake-setup ()
+;;   "Setup flymake for latex using one of the checker available on the system.
+;; It either tries \"lacheck\" or \"chktex\"."
+;;   (interactive)
+;;   (cond ((executable-find "lacheck")
+;;          (defun flymake-get-tex-args (file-name)
+;;            (list "lacheck" (list file-name))))
+;;         ((executable-find "chktex")
+;;          (defun flymake-get-tex-args (file-name)
+;;            (list "chktex" (list "-q" "-v0" file-name))))
+;;         (t nil)))
+;;
+;; (eval-after-load "flymake" '(init-latex--flymake-setup))
+;;
+;; (defun my-flymake-show-help ()
+;;   (when (get-char-property (point) 'flymake-overlay)
+;;     (let ((help (get-char-property (point) 'help-echo)))
+;;       (if help (message "%s" help)))))
+;;
+;; (add-hook 'post-command-hook 'my-flymake-show-help)
 
 ;; ===== Enable auto-fill-mode for relevant file types =====
 
@@ -741,6 +749,12 @@ It either tries \"lacheck\" or \"chktex\"."
 
 ;; ===== Extensions stuff =======
 ;; ==============================
+
+;; ==== Cask ====
+
+(add-to-list 'load-path "~/Documents/cask")
+(require 'cask)
+(cask-initialize "~/")
 
 ;; ==== ace jump mode ======
 
@@ -1204,6 +1218,8 @@ Markdown" t)
     (desktop-locals-to-save truncate-lines case-fold-search case-replace fill-column overwrite-mode change-log-default-name line-number-mode column-number-mode size-indication-mode buffer-file-coding-system indent-tabs-mode tab-width indicate-buffer-boundaries indicate-empty-lines show-trailing-whitespace buffer-undo-list)))
  '(desktop-save-mode nil)
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
+ '(flycheck-python-flake8-executable "pyflakes")
+ '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
  '(global-undo-tree-mode t)
@@ -1251,8 +1267,10 @@ Markdown" t)
  '(ace-jump-face-background ((t (:foreground "gray"))) t)
  '(ace-jump-face-foreground ((t (:foreground "magenta"))) t)
  '(diff-added ((t (:inherit diff-changed))))
- '(flymake-errline ((t (:foreground "LightPink" :underline "red"))))
- '(flymake-warnline ((t nil)))
+ '(flycheck-error ((t (:inherit flymake-errline :underline t))))
+ '(flycheck-warning ((t (:inherit flymake-warnline :underline t))))
+ '(flymake-errline ((t (:foreground "LightPink" :underline "red"))) t)
+ '(flymake-warnline ((t nil)) t)
  '(ido-first-match ((t (:underline t :weight bold))))
  '(match ((t (:inherit isearch))))
  '(mmm-code-submode-face ((t (:weight bold))))
