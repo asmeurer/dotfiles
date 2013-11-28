@@ -2,6 +2,7 @@ channels:
   - http://conda.binstar.io/asmeurer
   - http://conda.binstar.io/minrk
   - http://conda.binstar.io/travis
+  - http://conda.binstar.org/twiecki
   - defaults
 
 changeps1: no
