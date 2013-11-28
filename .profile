@@ -291,9 +291,22 @@ export PATH=`/usr/local/bin/uniqpath`
 MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
-# eval "`pip completion --bash`"
+eval "`pip completion --bash`"
 
 source ~/Documents/ipython/examples/core/ipython-completion.bash
+
+# https://github.com/fabric/fabric/issues/6#issuecomment-15182638
+
+_fab_completion() {
+    COMPREPLY=()
+
+    local cur="${COMP_WORDS[COMP_CWORD]}"
+
+    local tasks=$(fab --shortlist 2>/dev/null)
+    COMPREPLY=( $(compgen -W "${tasks}" -- ${cur}) )
+}
+
+complete -F _fab_completion fab
 
 # This line needs to stay at the bottom of the file.
 source ~/.git-completion.bash
