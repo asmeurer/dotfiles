@@ -283,6 +283,13 @@ PATH="$HOME/anaconda3/bin:$HOME/anaconda3/envs/python2/bin:$PATH"
 eval "$(register-python-argcomplete conda)"
 source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
 
+conda-build-all() {
+    for CONDA_PY in 26 27 33; do
+        export CONDA_PY
+        conda build $@
+    done
+}
+
 export PATH
 
 export PATH=`/usr/local/bin/uniqpath`
