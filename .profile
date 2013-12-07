@@ -233,6 +233,7 @@ hub () {
 
 recompile-emacs () {
     cd ~/Documents/emacs
+    git reset --hard
     git clean -df
     git clean -Xdf
     git pull
