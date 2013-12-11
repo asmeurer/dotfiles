@@ -226,6 +226,10 @@ sizeup () {
     du -a -h -x "$DIR" | gsort -h
 }
 
+saydone () {
+    ($@; say done)
+}
+
 hub_dir="/Users/aaronmeurer/Documents/hub"
 hub () {
     ruby -I "${hub_dir}/lib" "${hub_dir}/bin/hub" "$@"
