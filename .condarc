@@ -1,8 +1,8 @@
 channels:
   - https://conda.binstar.org/dhirschfeld
-  - http://conda.binstar.io/asmeurer
-  - http://conda.binstar.io/minrk
-  - http://conda.binstar.io/travis
+  - http://conda.binstar.org/asmeurer
+  - http://conda.binstar.org/minrk
+  - http://conda.binstar.org/travis
   - http://conda.binstar.org/twiecki
   - defaults
 
