@@ -1,9 +1,9 @@
 channels:
   - https://conda.binstar.org/dhirschfeld
-  - http://conda.binstar.org/asmeurer
-  - http://conda.binstar.org/minrk
-  - http://conda.binstar.org/travis
-  - http://conda.binstar.org/twiecki
+  - https://conda.binstar.org/asmeurer
+  - https://conda.binstar.org/minrk
+  - https://conda.binstar.org/travis
+  - https://conda.binstar.org/twiecki
   - defaults
 
 changeps1: no
