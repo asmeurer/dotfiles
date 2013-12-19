@@ -1217,6 +1217,7 @@ Markdown" t)
    (quote
     (desktop-locals-to-save truncate-lines case-fold-search case-replace fill-column overwrite-mode change-log-default-name line-number-mode column-number-mode size-indication-mode buffer-file-coding-system indent-tabs-mode tab-width indicate-buffer-boundaries indicate-empty-lines show-trailing-whitespace buffer-undo-list)))
  '(desktop-save-mode nil)
+ '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
  '(flycheck-python-flake8-executable "pyflakes")
  '(global-flycheck-mode t nil (flycheck))
