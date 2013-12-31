@@ -245,6 +245,7 @@ recompile-emacs () {
     ./configure --without-x
     make bootstrap
     make all
+    cd -
 }
 
 # Alias git to hub
