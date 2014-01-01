@@ -290,38 +290,11 @@ This function ...
 
 (define-key isearch-mode-map (kbd "M-o") 'ska-isearch-occur)
 
-;; ===== Set M-Spc to also delete newlines =====
-;; Requires Emacs 24 to work
-
-;; (defun remove-indentation-spaces ()
-;;   "remove TAB-WIDTH spaces from the beginning of this line"
-;;   (interactive)
-;;   (if (save-excursion (re-search-backward "[^ \t]" (line-beginning-position) t))
-;;       (delete-backward-char 1)
-;;     (indent-rigidly (line-beginning-position) (line-end-position) (- tab-width))))
-;;
-
-(defun just-one-space-with-newline ()
-  "Call just-one-space with a negative argument"
+(defun cycle-spacing-with-newline ()
   (interactive)
-  (just-one-space -1))
+  (cycle-spacing -1))
 
-(defun just-zero-space-with-newline ()
-  "Remove all spaces around point"
-  (interactive)
-  (just-one-space -1)
-  (just-one-space 0))
-
-;; Thanks to http://stackoverflow.com/a/19581323/161801
-(defun my-just-one-space ()
-  "Call just-one-space-with-newline the first time and
-  just-zero-space-with-newline the second time"
-  (interactive)
-  (if (memq last-command '(my-just-one-space))
-  (call-interactively 'just-zero-space-with-newline)
-  (call-interactively 'just-one-space-with-newline)))
-
-(global-set-key (kbd "M-SPC") 'my-just-one-space)
+(global-set-key (kbd "M-SPC") 'cycle-spacing-with-newline)
 
 ;; ===== Set C-x C-c to do the right thing in emacsclient
 ;; TODO
