@@ -4,6 +4,8 @@ channels:
   - https://conda.binstar.org/minrk
   - https://conda.binstar.org/travis
   - https://conda.binstar.org/twiecki
+  - https://conda.binstar.org/r
+  - https://conda.binstar.org/trent
   - defaults
 
 changeps1: no
