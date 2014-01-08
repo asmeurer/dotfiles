@@ -285,7 +285,7 @@ PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
 PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
-PATH="$HOME/anaconda3/bin:$HOME/anaconda3/envs/python2/bin:$PATH"
+PATH="$HOME/anaconda3/bin:$HOME/anaconda3/envs/binstar/bin:$PATH"
 eval "$(register-python-argcomplete conda)"
 source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
 
