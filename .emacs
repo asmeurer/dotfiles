@@ -838,6 +838,12 @@ Markdown" t)
 
 (add-to-list 'load-path "~/Documents/python.el")
 (require 'python)
+
+;; As long as we use this fork of python.el, we have to avoid electric mode in
+;; Python mode (assumedly this is fixed in the version that comes with emacs)
+
+(add-hook 'python-hook (electric-indent-mode 0))
+
 ;; TODO: instead of changing the source to avoid paren indentation, change it
 ;; here using defadvice.  See http://stackoverflow.com/a/4150438/161801.
 
