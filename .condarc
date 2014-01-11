@@ -6,6 +6,7 @@ channels:
   - https://conda.binstar.org/twiecki
   - https://conda.binstar.org/r
   - https://conda.binstar.org/trent
+  - https://conda.binstar.org/public
   - defaults
 
 changeps1: no
