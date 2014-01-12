@@ -33,11 +33,11 @@ def main():
     they're supposed to go.""",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('-s/--source', action='store', default='.', help="""The
+    parser.add_argument('-s', '--source', action='store', default='.', help="""The
     source of the files to link""")
-    parser.add_argument('-d/--destination', action='store', help="""The
+    parser.add_argument('-d', '--destination', action='store', help="""The
     destination of the files to link""", default='~')
-    parser.add_argument("-i/--ignorefile", action='store', help="""File containing
+    parser.add_argument("-i", "--ignorefile", action='store', help="""File containing
     list of paths to ignore (the file itself and this script are always
     ignored)""", default="IGNORE")
 
