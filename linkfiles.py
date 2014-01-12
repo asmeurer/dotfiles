@@ -26,10 +26,9 @@ other
 import sys
 import os
 import glob
+import argparse
 
 def main():
-    import argparse
-
     parser = argparse.ArgumentParser(description="""Link the dotfiles to where
     they're supposed to go.""",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
