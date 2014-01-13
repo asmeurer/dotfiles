@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+# Strip duplicates out of path definition
+
+my $path = $ENV{PATH};		# current $PATH
+my %seen = ();			# nothing seen yet
+my @uniq = ();			# will hold unique elements
+my @paths = split /:/, $path;	# split path elements into array
+foreach (@paths) {		# check each element
+  unless ($seen{$_}) {		# seen it yet?
+    $seen{$_} = 1;		# no, but we have now
+    push (@uniq, $_);		# save this unique element
+  }
+}
+$path = join(":", @uniq);	# splice back together
+print $path;

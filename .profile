@@ -298,7 +298,7 @@ conda-build-all() {
 
 export PATH
 
-export PATH=`/usr/local/bin/uniqpath`
+export PATH=`~/uniqpath`
 
 # export PYTHONPATH=${PYTHONPATH}:/sw/lib/qt4-x11/lib/python2.6/site-packages:/usr/local/lib/python
 MKL_NUM_THREADS=1
