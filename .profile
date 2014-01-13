@@ -286,7 +286,12 @@ PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
 PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
-PATH="$HOME/anaconda3/bin:$HOME/anaconda3/envs/binstar/bin:$PATH"
+if [ $COMPUTER = "Aaron’s Retina MacBook Pro" ]; then
+    PATH="$HOME/anaconda3/bin:$HOME/anaconda3/envs/binstar/bin:$PATH"
+else
+    PATH="$HOME/anaconda/bin:$HOME/anaconda/envs/binstar/bin:$PATH"
+fi
+
 eval "$(register-python-argcomplete conda)"
 source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
 
