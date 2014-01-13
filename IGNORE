@@ -1,4 +1,5 @@
-.git
+.git/*
+.gitignore
 .DS_Store
 *~
 .*~
