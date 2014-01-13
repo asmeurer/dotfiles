@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BTRCurrentIP</key>
+	<string>10.0.11.138</string>
+	<key>BTRCurrentPort</key>
+	<string>62085</string>
+	<key>BTRLastPort</key>
+	<integer>62085</integer>
+	<key>BTRMessageChangeScrollDirection</key>
+	<integer>0</integer>
+	<key>BTRMouseSpeed</key>
+	<string>1.000000</string>
+	<key>BTRScrollSpeed</key>
+	<string>1.000000</string>
+	<key>BTTBSTInstalled</key>
+	<false/>
+	<key>BTTConvertedDevices</key>
+	<true/>
+	<key>BTTDidRegisterForUpdateStats</key>
+	<string>0.9951</string>
+	<key>BTTFeedbackLocal</key>
+	<false/>
+	<key>BTTIdentifier</key>
+	<string>906ce869a1766b460a85de2dc6845ca5</string>
+	<key>BTTIdentifierX</key>
+	<string>e295b6dad88e70252fd3b0d38e743bc4</string>
+	<key>BTTNewFeedbackReporterIntroducedZ</key>
+	<integer>1</integer>
+	<key>BTTNumberOfStarts</key>
+	<integer>1819</integer>
+	<key>BTTRemoteConnectedOnce</key>
+	<integer>1</integer>
+	<key>BTTRemoteDeviceDictionary</key>
+	<dict>
+		<key>165cc272b4bdf1b33e838f4d57c0e7a6</key>
+		<true/>
+		<key>219519670cf75b8b4dd5cb557c50dc15</key>
+		<true/>
+	</dict>
+	<key>BTTRemoteEnabled</key>
+	<integer>1</integer>
+	<key>BTTRemoteIntroduced</key>
+	<integer>1</integer>
+	<key>BTTRemoteUUID</key>
+	<string>BAD4A8D3-CC7C-4526-82EA-9E177135F265</string>
+	<key>BTTRemoteVolumeButtonWarningShown</key>
+	<integer>1</integer>
+	<key>BTTStartTime</key>
+	<date>2014-01-13T22:43:33Z</date>
+	<key>BTTUpdatedToBTRCapable</key>
+	<integer>1</integer>
+	<key>BTTUserFeedbackInformation</key>
+	<string>r](371026523.536030)[com.google.Chrome.canary][com.googlecode.iterm2](371026583.534400)|101:-1|101:-1|100:-1(371026703.532348)|101:-1[com.google.Chrome.canary][com.apple.ActivityMonitor](371026763.530637)[com.apple.finder](371026823.529704)[com.google.Chrome.canary][com.googlecode.iterm2][com.google.Chrome.canary](371026883.528128)|101:-1[com.apple.archiveutility][com.apple.archiveutility][com.google.Chrome.canary][com.apple.ActivityMonitor](371027543.514461)[com.apple.finder][com.apple.coreservices.uiagent][com.Growl.GrowlHelperApp][com.google.Chrome.canary][info.colloquy](371027603.512894)[info.colloquy][com.apple.loginwindow](371029433.010667)[info.colloquy][com.hegenberg.BetterTouchTool](371068089.519538)</string>
+	<key>FRFeedbackReporter.lastCrashCheckDate</key>
+	<date>2014-01-13T22:43:38Z</date>
+	<key>NSColorPanelMode</key>
+	<string>6</string>
+	<key>NSNavBrowserPreferedColumnContentWidth</key>
+	<real>186</real>
+	<key>NSNavLastRootDirectory</key>
+	<string>/System/Library/CoreServices</string>
+	<key>NSSplitView Subview Frames leftrightsplit</key>
+	<array>
+		<string>0.000000, 0.000000, 185.000000, 553.000000, NO</string>
+		<string>186.000000, 0.000000, 756.000000, 553.000000, NO</string>
+	</array>
+	<key>NSSplitView Subview Frames topbottomsplit</key>
+	<array>
+		<string>0.000000, 0.000000, 185.000000, 330.000000, NO</string>
+		<string>0.000000, 340.000000, 185.000000, 213.000000, NO</string>
+	</array>
+	<key>NSTableView Columns NSNavOutlineColumnSearchSettings</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErC2Rpc3BsYXlOYW1lhg==
+		</data>
+		<string>252</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB21vZERhdGWG
+		</data>
+		<string>88</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDGNyZWF0aW9uRGF0ZYY=
+		</data>
+		<string>95</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDmxhc3RPcGVuZWREYXRlhg==
+		</data>
+		<string>95</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErE2tpbmRXaXRob3V0UGxhdGZvcm2G
+		</data>
+		<string>62</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHNob3J0VmVyc2lvboY=
+		</data>
+		<string>62</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCWxhYmVsTmFtZYY=
+		</data>
+		<string>62</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHBoeXNpY2FsU2l6ZYY=
+		</data>
+		<string>60</string>
+	</array>
+	<key>NSTableView Columns NSNavOutlineColumnSettings.v1</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErC2Rpc3BsYXlOYW1lhg==
+		</data>
+		<string>259</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB21vZERhdGWG
+		</data>
+		<string>88</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDGNyZWF0aW9uRGF0ZYY=
+		</data>
+		<string>95</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDmxhc3RPcGVuZWREYXRlhg==
+		</data>
+		<string>95</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErE2tpbmRXaXRob3V0UGxhdGZvcm2G
+		</data>
+		<string>62</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHNob3J0VmVyc2lvboY=
+		</data>
+		<string>62</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCWxhYmVsTmFtZYY=
+		</data>
+		<string>62</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHBoeXNpY2FsU2l6ZYY=
+		</data>
+		<string>60</string>
+	</array>
+	<key>NSTableView Columns applicationtable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBGljb26G
+		</data>
+		<string>23</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErA2FwcIY=
+		</data>
+		<string>159</string>
+	</array>
+	<key>NSTableView Columns bttremote_table</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBGljb26G
+		</data>
+		<string>64</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>300</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBW9yZGVyhg==
+		</data>
+		<string>64</string>
+	</array>
+	<key>NSTableView Columns keyboardtable_new</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCFNob3J0Y3V0hg==
+		</data>
+		<string>263</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>387</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB2VuYWJsZWSG
+		</data>
+		<string>53</string>
+	</array>
+	<key>NSTableView Columns leaptable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>300</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB25vdGVzdHCG
+		</data>
+		<string>180</string>
+	</array>
+	<key>NSTableView Columns leaptable3</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErC2xlYXBnZXN0dXJlhg==
+		</data>
+		<string>218</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>300</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErC2xlYXBtb2RrZXlzhg==
+		</data>
+		<string>75</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCG5vdGVzdHB4hg==
+		</data>
+		<string>85</string>
+	</array>
+	<key>NSTableView Columns magicmousetable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tbW9ka2V5c4Y=
+		</data>
+		<string>79</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<string>263</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>326</string>
+	</array>
+	<key>NSTableView Columns magicmousetable_n</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tbW9ka2V5c4Y=
+		</data>
+		<string>40</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB2hlbHBjb2yG
+		</data>
+		<string>20</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>365</string>
+	</array>
+	<key>NSTableView Columns magicmousetable_n2</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tbW9ka2V5c4Y=
+		</data>
+		<string>54</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB2hlbHBjb2yG
+		</data>
+		<string>20</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>296</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB25vdGVzbW2G
+		</data>
+		<string>89</string>
+	</array>
+	<key>NSTableView Columns magicmousetable_n3</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>296</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tbW9ka2V5c4Y=
+		</data>
+		<string>60</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB25vdGVzbW2G
+		</data>
+		<string>83</string>
+	</array>
+	<key>NSTableView Columns normalmousetable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tbW9ka2V5c4Y=
+		</data>
+		<string>60</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<string>241</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>252</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBW5vdGVzhg==
+		</data>
+		<string>111</string>
+	</array>
+	<key>NSTableView Columns normalmousetablenew</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW5tZ2VzdHVyZYY=
+		</data>
+		<string>251</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>252</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tbW9ka2V5c4Y=
+		</data>
+		<string>87</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBW5vdGVzhg==
+		</data>
+		<string>105</string>
+	</array>
+	<key>NSTableView Columns plugintable_n2</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwbW9ka2V5c4Y=
+		</data>
+		<string>58</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>300</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB25vdGVzdHCG
+		</data>
+		<string>81</string>
+	</array>
+	<key>NSTableView Columns plugintable_n4</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCWFydHJpZ2dlcoY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>300</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwbW9ka2V5c4Y=
+		</data>
+		<string>58</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB25vdGVzdHCG
+		</data>
+		<string>81</string>
+	</array>
+	<key>NSTableView Columns touchpadtable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwbW9ka2V5c4Y=
+		</data>
+		<string>79</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<string>263</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>326</string>
+	</array>
+	<key>NSTableView Columns touchpadtable_n</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwbW9ka2V5c4Y=
+		</data>
+		<string>40</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB2hlbHBjb2yG
+		</data>
+		<string>20</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>365</string>
+	</array>
+	<key>NSTableView Columns touchpadtable_n2</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwbW9ka2V5c4Y=
+		</data>
+		<string>58</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB2hlbHBjb2yG
+		</data>
+		<string>20</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>300</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB25vdGVzdHCG
+		</data>
+		<string>81</string>
+	</array>
+	<key>NSTableView Columns touchpadtable_n3</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<string>240</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErBmFjdGlvboY=
+		</data>
+		<string>300</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB25vdGVzdHCG
+		</data>
+		<string>79</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwbW9ka2V5c4Y=
+		</data>
+		<string>60</string>
+	</array>
+	<key>NSTableView Hidden Columns NSNavOutlineColumnSearchSettings</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErB21vZERhdGWG
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDGNyZWF0aW9uRGF0ZYY=
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErE2tpbmRXaXRob3V0UGxhdGZvcm2G
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHNob3J0VmVyc2lvboY=
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCWxhYmVsTmFtZYY=
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHBoeXNpY2FsU2l6ZYY=
+		</data>
+	</array>
+	<key>NSTableView Hidden Columns NSNavOutlineColumnSettings.v1</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDGNyZWF0aW9uRGF0ZYY=
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDmxhc3RPcGVuZWREYXRlhg==
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErE2tpbmRXaXRob3V0UGxhdGZvcm2G
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHNob3J0VmVyc2lvboY=
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCWxhYmVsTmFtZYY=
+		</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErDHBoeXNpY2FsU2l6ZYY=
+		</data>
+	</array>
+	<key>NSTableView Hidden Columns applicationtable</key>
+	<array/>
+	<key>NSTableView Hidden Columns bttremote_table</key>
+	<array/>
+	<key>NSTableView Hidden Columns keyboardtable_new</key>
+	<array/>
+	<key>NSTableView Hidden Columns leaptable</key>
+	<array/>
+	<key>NSTableView Hidden Columns leaptable3</key>
+	<array/>
+	<key>NSTableView Hidden Columns magicmousetable</key>
+	<array/>
+	<key>NSTableView Hidden Columns magicmousetable_n</key>
+	<array/>
+	<key>NSTableView Hidden Columns magicmousetable_n2</key>
+	<array/>
+	<key>NSTableView Hidden Columns magicmousetable_n3</key>
+	<array/>
+	<key>NSTableView Hidden Columns normalmousetable</key>
+	<array/>
+	<key>NSTableView Hidden Columns normalmousetablenew</key>
+	<array/>
+	<key>NSTableView Hidden Columns plugintable_n2</key>
+	<array/>
+	<key>NSTableView Hidden Columns plugintable_n4</key>
+	<array/>
+	<key>NSTableView Hidden Columns touchpadtable</key>
+	<array/>
+	<key>NSTableView Hidden Columns touchpadtable_n</key>
+	<array/>
+	<key>NSTableView Hidden Columns touchpadtable_n2</key>
+	<array/>
+	<key>NSTableView Hidden Columns touchpadtable_n3</key>
+	<array/>
+	<key>NSTableView Sort Ordering NSNavOutlineColumnSearchSettings</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErC2Rpc3BsYXlOYW1lhg==
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering NSNavOutlineColumnSettings.v1</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErC2Rpc3BsYXlOYW1lhg==
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering applicationtable</key>
+	<array/>
+	<key>NSTableView Sort Ordering bttremote_table</key>
+	<array/>
+	<key>NSTableView Sort Ordering keyboardtable_new</key>
+	<array/>
+	<key>NSTableView Sort Ordering leaptable</key>
+	<array/>
+	<key>NSTableView Sort Ordering leaptable3</key>
+	<array/>
+	<key>NSTableView Sort Ordering magicmousetable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering magicmousetable_n</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering magicmousetable_n2</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering magicmousetable_n3</key>
+	<array/>
+	<key>NSTableView Sort Ordering normalmousetable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCW1tZ2VzdHVyZYY=
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering normalmousetablenew</key>
+	<array/>
+	<key>NSTableView Sort Ordering plugintable_n2</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering plugintable_n4</key>
+	<array/>
+	<key>NSTableView Sort Ordering touchpadtable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering touchpadtable_n</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErCXRwZ2VzdHVyZYY=
+		</data>
+		<true/>
+	</array>
+	<key>NSTableView Sort Ordering touchpadtable_n2</key>
+	<array/>
+	<key>NSTableView Sort Ordering touchpadtable_n3</key>
+	<array/>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>846 431 384 129 0 0 1440 878 </string>
+	<key>NSWindow Frame SUUpdateAlertFrame</key>
+	<string>431 172 863 585 0 0 1440 878 </string>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>http://mavericksalpha.boastr.net</string>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+	<key>SULastCheckTime</key>
+	<date>2014-01-13T16:31:13Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>WebKitDefaultFontSize</key>
+	<integer>11</integer>
+	<key>WebKitStandardFont</key>
+	<string>Lucida Grande</string>
+	<key>aggressiveMode</key>
+	<true/>
+	<key>alreadyAskedForInitialWindowSnappingSettings</key>
+	<true/>
+	<key>bindings</key>
+	<dict>
+		<key>Colloquy</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>55,125</string>
+			<key>three finger swipe up</key>
+			<string>55,126</string>
+		</dict>
+		<key>Firefox</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>Global</key>
+		<dict/>
+		<key>Graphing Calculator</key>
+		<dict>
+			<key>zoom in</key>
+			<string>55,4</string>
+			<key>zoom out</key>
+			<string>55,4</string>
+		</dict>
+		<key>Safari</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>56,55,33</string>
+			<key>three finger swipe right</key>
+			<string>56,55,30</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>Terminal</key>
+		<dict>
+			<key>three finger swipe left</key>
+			<string>56,55,33</string>
+			<key>three finger swipe right</key>
+			<string>56,55,30</string>
+		</dict>
+		<key>TextWrangler</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>58,55,30</string>
+			<key>three finger swipe up</key>
+			<string>58,55,33</string>
+		</dict>
+		<key>TimeTracker</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>116</string>
+			<key>three finger swipe right</key>
+			<string>121</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>WebKit</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>56,55,33</string>
+			<key>three finger swipe right</key>
+			<string>56,55,30</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>Xcode</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>texmaker</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>58,121</string>
+			<key>three finger swipe right</key>
+			<string>58,116</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+	</dict>
+	<key>bringMovingWindowToFront</key>
+	<true/>
+	<key>checkForCrashreports</key>
+	<true/>
+	<key>checkThreeFingerThumb</key>
+	<true/>
+	<key>checkedLoginItemsOnce</key>
+	<true/>
+	<key>clickedOnNowAvailableImage</key>
+	<integer>1</integer>
+	<key>convertedModifierKeys</key>
+	<true/>
+	<key>copied</key>
+	<true/>
+	<key>dValues</key>
+	<string>65</string>
+	<key>dVersions</key>
+	<string>0.9681</string>
+	<key>didRestartAfterEventTapFault</key>
+	<integer>-1</integer>
+	<key>disableOneFingerScrolling</key>
+	<false/>
+	<key>dragMaxLeft</key>
+	<false/>
+	<key>dragMaxRight</key>
+	<false/>
+	<key>dragMaxTop</key>
+	<false/>
+	<key>enableSpotifyCompatibility</key>
+	<false/>
+	<key>fourFingerTapTime</key>
+	<real>0.33000001311302185</real>
+	<key>horizontalZooming</key>
+	<false/>
+	<key>installedOpenHotkeyN</key>
+	<true/>
+	<key>lastSelectedTab</key>
+	<integer>1</integer>
+	<key>launchOnStartup</key>
+	<true/>
+	<key>leftIgnore</key>
+	<real>0.079999998211860657</real>
+	<key>lowerIgnore</key>
+	<real>0.43000000715255737</real>
+	<key>macbook</key>
+	<integer>0</integer>
+	<key>macbookTrackpadPrefs</key>
+	<dict>
+		<key>Clicking</key>
+		<false/>
+		<key>DragLock</key>
+		<false/>
+		<key>Dragging</key>
+		<false/>
+		<key>HIDMouseKeysOn</key>
+		<false/>
+		<key>HIDScrollZoomModifierMask</key>
+		<integer>262144</integer>
+		<key>JitterNoClick</key>
+		<true/>
+		<key>JitterNoMove</key>
+		<true/>
+		<key>MouseKeysStopsTrackpad</key>
+		<false/>
+		<key>TrackpadCornerSecondaryClick</key>
+		<integer>0</integer>
+		<key>TrackpadFiveFingerPinchGesture</key>
+		<integer>2</integer>
+		<key>TrackpadFourFingerHorizSwipeGesture</key>
+		<integer>2</integer>
+		<key>TrackpadFourFingerPinchGesture</key>
+		<integer>2</integer>
+		<key>TrackpadFourFingerVertSwipeGesture</key>
+		<integer>2</integer>
+		<key>TrackpadHorizScroll</key>
+		<true/>
+		<key>TrackpadMomentumScroll</key>
+		<true/>
+		<key>TrackpadPinch</key>
+		<true/>
+		<key>TrackpadRightClick</key>
+		<true/>
+		<key>TrackpadRotate</key>
+		<true/>
+		<key>TrackpadScroll</key>
+		<true/>
+		<key>TrackpadThreeFingerDrag</key>
+		<false/>
+		<key>TrackpadThreeFingerHorizSwipeGesture</key>
+		<integer>0</integer>
+		<key>TrackpadThreeFingerTapGesture</key>
+		<integer>0</integer>
+		<key>TrackpadThreeFingerVertSwipeGesture</key>
+		<integer>0</integer>
+		<key>TrackpadTwoFingerDoubleTapGesture</key>
+		<integer>1</integer>
+		<key>TrackpadTwoFingerFromRightEdgeSwipeGesture</key>
+		<integer>3</integer>
+		<key>USBMouseStopsTrackpad</key>
+		<false/>
+	</dict>
+	<key>magicTrackpadPrefs</key>
+	<dict>
+		<key>MouseButtonDivision</key>
+		<integer>55</integer>
+		<key>MouseButtonMode</key>
+		<string>TwoButton</string>
+		<key>MouseHorizontalScroll</key>
+		<true/>
+		<key>MouseMomentumScroll</key>
+		<true/>
+		<key>MouseOneFingerDoubleTapGesture</key>
+		<integer>0</integer>
+		<key>MouseTwoFingerDoubleTapGesture</key>
+		<integer>3</integer>
+		<key>MouseTwoFingerHorizSwipeGesture</key>
+		<integer>2</integer>
+		<key>MouseVerticalScroll</key>
+		<true/>
+		<key>UserPreferences</key>
+		<true/>
+	</dict>
+	<key>magicTrackpadUsed</key>
+	<false/>
+	<key>magicmouseConnected</key>
+	<false/>
+	<key>maxRight</key>
+	<false/>
+	<key>maxTop</key>
+	<false/>
+	<key>nextMonitorMoveWarningShowed</key>
+	<true/>
+	<key>oldScale</key>
+	<real>1</real>
+	<key>onetwoFingerTapTime</key>
+	<real>0.18000000715255737</real>
+	<key>pluginDictionary</key>
+	<dict>
+		<key>1</key>
+		<dict>
+			<key>Apple Remote Plugin</key>
+			<dict>
+				<key>1</key>
+				<string>Up</string>
+				<key>10</key>
+				<string>Play/Pause, Holding (only on aluminum remote)</string>
+				<key>11</key>
+				<string>Menu</string>
+				<key>12</key>
+				<string>Menu, Holding</string>
+				<key>13</key>
+				<string>Center</string>
+				<key>14</key>
+				<string>Center, Holding</string>
+				<key>2</key>
+				<string>Up, Holding</string>
+				<key>3</key>
+				<string>Down</string>
+				<key>4</key>
+				<string>Down, Holding</string>
+				<key>5</key>
+				<string>Left</string>
+				<key>6</key>
+				<string>Left, Holding</string>
+				<key>7</key>
+				<string>Right</string>
+				<key>8</key>
+				<string>Right, Holding</string>
+				<key>9</key>
+				<string>Play/Pause (only on aluminum remote)</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>presets</key>
+	<array>
+		<dict>
+			<key>fileName</key>
+			<string>bttdata2</string>
+			<key>presetName</key>
+			<string>Default</string>
+		</dict>
+	</array>
+	<key>remoteMode</key>
+	<false/>
+	<key>restartAfterSleep</key>
+	<true/>
+	<key>rightIgnore</key>
+	<real>0.93000000715255737</real>
+	<key>savedWindowInformation</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
+	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
+	EA9OU0tleWVkQXJjaGl2ZXLRFhdUcm9vdIABCBEaIy0yNztBRlFYWVtga3SDh4+Yqq2y
+	AAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=
+	</data>
+	<key>showLeapTab</key>
+	<integer>0</integer>
+	<key>showMagicMouseTab</key>
+	<integer>0</integer>
+	<key>showNormalMiceTab</key>
+	<integer>0</integer>
+	<key>showPrefsAtNextLaunch</key>
+	<false/>
+	<key>showicon</key>
+	<false/>
+	<key>simpleOrAdvanced</key>
+	<integer>1</integer>
+	<key>swipeIntensity</key>
+	<real>0.43000000715255737</real>
+	<key>tapPressure12</key>
+	<real>0.33000001311302185</real>
+	<key>tapPressure3</key>
+	<real>0.20000000298023224</real>
+	<key>threeFingerTapTime</key>
+	<real>0.18000000715255737</real>
+	<key>touchpadBindings</key>
+	<dict>
+		<key>Colloquy</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>55,125</string>
+			<key>three finger swipe up</key>
+			<string>55,126</string>
+		</dict>
+		<key>Firefox</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>Global</key>
+		<dict>
+			<key>eleven finger tap</key>
+			<string>Show Spaces</string>
+			<key>four finger swipe left</key>
+			<string>59,123</string>
+			<key>four finger swipe right</key>
+			<string>59,124</string>
+			<key>three finger click</key>
+			<string>Middleclick</string>
+		</dict>
+		<key>Graphing Calculator</key>
+		<dict>
+			<key>zoom in</key>
+			<string>55,4</string>
+			<key>zoom out</key>
+			<string>55,4</string>
+		</dict>
+		<key>Safari</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>56,55,33</string>
+			<key>three finger swipe right</key>
+			<string>56,55,30</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>Terminal</key>
+		<dict>
+			<key>three finger swipe left</key>
+			<string>56,55,33</string>
+			<key>three finger swipe right</key>
+			<string>56,55,30</string>
+		</dict>
+		<key>TextWrangler</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>58,55,30</string>
+			<key>three finger swipe up</key>
+			<string>58,55,33</string>
+		</dict>
+		<key>TimeTracker</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>116</string>
+			<key>three finger swipe right</key>
+			<string>121</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>WebKit</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>56,55,33</string>
+			<key>three finger swipe right</key>
+			<string>56,55,30</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>Xcode</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+		<key>texmaker</key>
+		<dict>
+			<key>three finger swipe down</key>
+			<string>121</string>
+			<key>three finger swipe left</key>
+			<string>58,121</string>
+			<key>three finger swipe right</key>
+			<string>58,116</string>
+			<key>three finger swipe up</key>
+			<string>116</string>
+		</dict>
+	</dict>
+	<key>touchpadTapPressure34</key>
+	<real>0.34999999403953552</real>
+	<key>tpCTRLResize</key>
+	<false/>
+	<key>tpFNMove</key>
+	<false/>
+	<key>tpThreeFingerDoubleTapDelay</key>
+	<real>1.1000000238418579</real>
+	<key>tpTipTapSensitivity</key>
+	<real>0.43493150684931509</real>
+	<key>trackpadConnected</key>
+	<true/>
+	<key>twoFingerDoubleTapDelay</key>
+	<real>1.1000000238418579</real>
+	<key>updateToBeta</key>
+	<true/>
+	<key>upperIgnore</key>
+	<real>1</real>
+	<key>useCADClick</key>
+	<true/>
+	<key>useCount</key>
+	<integer>2655</integer>
+	<key>useCount1000Reached</key>
+	<true/>
+	<key>useCount200Reached</key>
+	<true/>
+	<key>useCount50Reached</key>
+	<true/>
+	<key>usePartsForOne</key>
+	<true/>
+	<key>usePartsForThree</key>
+	<false/>
+	<key>usePartsForTwo</key>
+	<true/>
+	<key>v054DefaultsChanged</key>
+	<true/>
+	<key>v621DefaultsChanged</key>
+	<true/>
+	<key>version</key>
+	<string>0.9951</string>
+	<key>warningString</key>
+	<string>These apps may conflict with BetterTouchTool (most likely they will not, but if you have problems try deactivating them): 
+universalaccessd, </string>
+	<key>windowActionOnMouseMonitor</key>
+	<true/>
+	<key>windowToMove</key>
+	<integer>0</integer>
+</dict>
+</plist>
