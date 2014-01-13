@@ -328,8 +328,9 @@ _fab_completion() {
 complete -F _fab_completion fab
 
 # This line needs to stay at the bottom of the file.
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
+export GIT_PS1_STATESEPARATOR=''
+source ~/Documents/git/contrib/completion/git-completion.bash
+source ~/Documents/git/contrib/completion/git-prompt.sh
 source ~/Documents/hub/etc/hub.bash_completion.sh
 
 hash -r
