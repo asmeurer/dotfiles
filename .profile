@@ -8,6 +8,7 @@ export TERM=xterm-256color-italic
 alias ssh='TERM=xterm-256color ssh'
 alias vagrant='TERM=xterm-256color vagrant'
 
+COMPUTER=`scutil --get ComputerName`
 
 ##
 # DELUXE-USR-LOCAL-BIN-INSERT
