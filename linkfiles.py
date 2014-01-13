@@ -35,8 +35,8 @@ import glob
 import argparse
 import errno
 
-from os import walk, symlink
-from os.path import join, relpath, abspath, exists, expanduser
+from os import walk, symlink, makedirs
+from os.path import join, relpath, abspath, exists, expanduser, split
 
 def fullpath(path):
     return abspath(expanduser(path))
@@ -87,6 +87,7 @@ def main():
                 print(fullpath(source), "to", fullpath(destination))
 
                 if not args.dry_run:
+                    makedirs(split(fullpath(destination))[0], exist_ok=True)
                     try:
                         symlink(fullpath(source), fullpath(destination))
                     except OSError as e:
