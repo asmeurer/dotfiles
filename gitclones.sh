@@ -8,6 +8,7 @@ cd ~/Documents/
 git clone git@github.com:github/hub.git
 git clone git@github.com:git/git.git
 git clone git@github.com:ipython/ipython.git
+git clone git@github.com:mirrors/emacs.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum
