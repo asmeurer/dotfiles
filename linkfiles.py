@@ -33,6 +33,7 @@ from __future__ import print_function
 import sys
 import glob
 import argparse
+import errno
 
 from os import walk, symlink
 from os.path import join, relpath, abspath, exists, expanduser
@@ -86,9 +87,13 @@ def main():
                 print(fullpath(source), "to", fullpath(destination))
 
                 if not args.dry_run:
-                    symlink(fullpath(source), fullpath(destination))
-
-
+                    try:
+                        symlink(fullpath(source), fullpath(destination))
+                    except OSError as e:
+                        if e.errno == errno.EEXIST:
+                            print("Could not link: destination file already exists")
+                        else:
+                            raise
 
 if __name__ == '__main__':
     sys.exit(main())
