@@ -35,7 +35,10 @@ import glob
 import argparse
 
 from os import walk, symlink
-from os.path import join, relpath, abspath, exists
+from os.path import join, relpath, abspath, exists, expanduser
+
+def fullpath(path):
+    return abspath(expanduser(path))
 
 from itertools import chain
 
@@ -70,8 +73,8 @@ def main():
     for dirpath, dirnames, filenames in walk(args.source):
         dest_head = join(args.destination, relpath(dirpath, start=args.source))
         for file in filenames:
-            fullpath = join(dirpath, file)
-            if any(abspath(fullpath).startswith(i) for i in ignore):
+            source = join(dirpath, file)
+            if any(abspath(source).startswith(i) for i in ignore):
                 continue
             else:
                 destination = join(dest_head, relpath(join(dirpath, file),
@@ -80,10 +83,10 @@ def main():
                     print("Would link:", end=' ')
                 else:
                     print("Linking:", end=' ')
-                print(abspath(fullpath), "to", destination)
+                print(fullpath(source), "to", fullpath(destination))
 
                 if not args.dry_run:
-                    symlink(abspath(fullpath), destination)
+                    symlink(fullpath(source), fullpath(destination))
 
 
 
