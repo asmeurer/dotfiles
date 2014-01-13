@@ -24,6 +24,7 @@ other
 TODO:
 
 - Support linking directories
+- Warn when linking a file not tracked by git
 
 """
 
