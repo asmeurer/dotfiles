@@ -13,3 +13,4 @@ git clone git@github.com:mirrors/emacs.git
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum
 git clone git@github.com:pydata/conda.git
+git clone git@github.com:pydata/conda-recipes.git
