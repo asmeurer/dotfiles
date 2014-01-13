@@ -60,11 +60,12 @@ def main():
         with open(args.ignorefile) as f:
             ignore = f.read().strip().split()
         ignore = list(map(abspath, chain(*map(glob.glob, ignore))))
+        ignore.append(abspath(args.ignorefile))
     else:
         ignore = []
         print("No ignore file found")
 
-    ignore.append(__file__)
+    ignore.append(abspath(__file__))
 
     for dirpath, dirnames, filenames in walk(args.source):
         dest_head = join(args.destination, relpath(dirpath, start=args.source))
