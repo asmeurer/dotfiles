@@ -87,7 +87,9 @@ def main():
                 print(fullpath(source), "to", fullpath(destination))
 
                 if not args.dry_run:
-                    makedirs(split(fullpath(destination))[0], exist_ok=True)
+                    dir = split(fullpath(destination))[0], exist_ok=True
+                    if not exists(dir):
+                        makedirs(dir, exist_ok=True)
                     try:
                         symlink(fullpath(source), fullpath(destination))
                     except OSError as e:
