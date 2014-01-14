@@ -21,6 +21,7 @@ git clone git@github.com:winterTTr/ace-jump-mode.git
 git clone git@github.com:nonsequitur/smex.git
 git clone git@github.com:technomancy/ido-ubiquitous.git
 git clone git://jblevins.org/git/markdown-mode.git
+fink install -y bzr-py27
 bzr branch lp:mediawiki-el
 git clone git@github.com:yoshiki/yaml-mode.git
 git clone git@github.com:defunkt/coffee-mode.git
