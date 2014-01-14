@@ -9,6 +9,7 @@ git clone git@github.com:github/hub.git
 git clone git@github.com:git/git.git
 git clone git@github.com:ipython/ipython.git
 git clone git@github.com:mirrors/emacs.git
+git clone git@github.com:inducer/pudb.git
 
 # Needed in .emacs:
 # TODO: byte compile some stuff
