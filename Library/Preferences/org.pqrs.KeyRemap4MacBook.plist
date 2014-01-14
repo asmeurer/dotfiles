@@ -41,6 +41,8 @@
 		<integer>1</integer>
 		<key>notsave.automatically_enable_keyboard_device</key>
 		<integer>1</integer>
+		<key>notsave.automatically_enable_pointing_device</key>
+		<integer>1</integer>
 		<key>option.emacsmode_controlS</key>
 		<integer>1</integer>
 		<key>option.emacsmode_controlSlash</key>
