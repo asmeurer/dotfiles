@@ -44,7 +44,7 @@ git clone git@github.com:kiwanami/emacs-ctable.git
 git clone git@github.com:kiwanami/emacs-epc.git
 git clone git@github.com:tkf/emacs-jedi.git
 cd emacs-jedi
-conda create -n env jedi
+conda create -p env jedi
 cd ~/Documents/
 git clone git@github.com:m2ym/popwin-el.git
 git clone git@github.com:m2ym/direx-el.git
