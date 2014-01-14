@@ -929,10 +929,10 @@ Markdown" t)
 ;; ==== doctest-mode ====
 ;; Note, this needs to go below mmm-mode above.
 
-(add-to-list 'load-path "~/Documents/python-mode/python-mode")
-(add-to-list 'auto-mode-alist '("\\.doctest$" . doctest-mode))
-(autoload 'doctest-mode "doctest-mode" "doctest mode" t)
-(autoload 'doctest-register-mmm-classes "doctest-mode")
+;; (add-to-list 'load-path "~/Documents/python-mode/python-mode")
+;; (add-to-list 'auto-mode-alist '("\\.doctest$" . doctest-mode))
+;; (autoload 'doctest-mode "doctest-mode" "doctest mode" t)
+;; (autoload 'doctest-register-mmm-classes "doctest-mode")
 ;; (doctest-register-mmm-classes t t)
 
 ;; ===== auto-complete-mode ====
