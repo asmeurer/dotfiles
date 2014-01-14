@@ -777,6 +777,7 @@ like newline-and-indent"
 
 (add-to-list 'load-path "~/Documents/ido-ubiquitous")
 (require 'ido-ubiquitous)
+(ido-mode)
 (ido-ubiquitous)
 
 ;; ==== Markdown mode =====
