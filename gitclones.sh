@@ -12,7 +12,9 @@ git clone git@github.com:mirrors/emacs.git
 
 # Needed in .emacs:
 # TODO: byte compile some stuff
-git clone git://git.sv.gnu.org/auctex.git
+# git clone git://git.sv.gnu.org/auctex.git
+# cd auctex
+# ./autogen.sh
 git clone git@github.com:dacap/keyfreq.git
 git clone git@github.com:cask/cask.git
 cd ~

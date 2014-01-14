@@ -1086,12 +1086,14 @@ Markdown" t)
 
 ;; ==== AUCTeX ====
 
-(add-to-list 'load-path "~/Documents/auctex")
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-(add-hook 'latex-mode-hook 'turn-on-reftex)
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(setq reftex-plug-into-AUCTeX t)
+;; Disabled until I can figure out how to reliable reinstall it in gitclones.sh
+
+;; (add-to-list 'load-path "~/Documents/auctex")
+;; (load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
+;; (add-hook 'latex-mode-hook 'turn-on-reftex)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;; (setq reftex-plug-into-AUCTeX t)
 
 ;; ==== Predictive ====
 
