@@ -11,6 +11,18 @@ a-centralized-git-repository.
 
 Files in other/ are for various other things.
 
+# Linking
+
+First, you have to install Anaconda, and Fink, and git (to even get this in
+the first place).
+
+Run
+
+    ./linkfiles.py
+
+and then
+
+    ./gitclones.sh
+
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/asmeurer/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
