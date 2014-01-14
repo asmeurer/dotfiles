@@ -433,12 +433,12 @@ This command does the reverse of `fill-region'."
 
 (setq default-major-mode 'text-mode)
 
-;; ===== keyfreq =====
-
-(add-to-list 'load-path "~/Documents/keyfreq")
-(require 'keyfreq)
-(keyfreq-mode 1)
-(keyfreq-autosave-mode 1)
+;; ;; ===== keyfreq =====
+;;
+;; (add-to-list 'load-path "~/Documents/keyfreq")
+;; (require 'keyfreq)
+;; (keyfreq-mode 1)
+;; (keyfreq-autosave-mode 1)
 
 ;; ===== ido mode =====
 
