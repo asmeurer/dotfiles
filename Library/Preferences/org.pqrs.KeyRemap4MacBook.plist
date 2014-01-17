@@ -73,9 +73,13 @@
 		<integer>1</integer>
 		<key>remap.app_tweetdeck_emacs_bindings</key>
 		<integer>1</integer>
+		<key>remap.controlL2controlL_escape</key>
+		<integer>1</integer>
 		<key>remap.f12_to_forwarddelete</key>
 		<integer>1</integer>
 		<key>remap.fn2controlL_optionL2fn</key>
+		<integer>1</integer>
+		<key>remap.simultaneouskeypresses_ss_to_capslock</key>
 		<integer>1</integer>
 	</dict>
 	<key>config_1234636905_427208</key>
