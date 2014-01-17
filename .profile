@@ -302,6 +302,10 @@ conda-build-all() {
     done
 }
 
+conda-remove-test() {
+    conda remove -n test --all
+}
+
 export PATH
 
 export PATH=`~/uniqpath`
