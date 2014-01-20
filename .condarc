@@ -17,4 +17,4 @@ always_yes: TRUE
 
 use_pip: no
 
-binstar_personal: false
+binstar_personal: true
