@@ -217,6 +217,7 @@ alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 alias free='diskutil info / | GREP -i Free'
 alias rehash='hash -r'
+alias cdpwd='cd `pwd`'
 
 sizeup () {
     if [[ -z "$1" ]]; then
