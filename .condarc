@@ -1,5 +1,5 @@
 channels:
-  - https://conda.binstar.org/asmeurer
+  - asmeurer
   - https://conda.binstar.org/dhirschfeld
   - https://conda.binstar.org/minrk
   - https://conda.binstar.org/travis
@@ -13,6 +13,8 @@ changeps1: no
 
 binstar_upload: yes
 
-always_yes: True
+always_yes: TRUE
 
 use_pip: no
+
+binstar_personal: false
