@@ -198,6 +198,7 @@ GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_STATESEPARATOR=''
 PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
 PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
@@ -333,7 +334,6 @@ _fab_completion() {
 complete -F _fab_completion fab
 
 # This line needs to stay at the bottom of the file.
-export GIT_PS1_STATESEPARATOR=''
 source ~/Documents/git/contrib/completion/git-completion.bash
 source ~/Documents/git/contrib/completion/git-prompt.sh
 source ~/Documents/hub/etc/hub.bash_completion.sh
