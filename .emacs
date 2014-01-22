@@ -444,12 +444,7 @@ This command does the reverse of `fill-region'."
 
 (if (locate-library "ido")
         (autoload 'ido "ido" "Start ido" t))
-;(require 'ido)
-;; Display ido results vertically, rather than horizontally
-(setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
-(defun ido-disable-line-trucation () (set (make-local-variable
-                                           'truncate-lines) nil))
-(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+(require 'ido)
 
 ;; sort ido filelist by mtime instead of alphabetically
 
@@ -470,6 +465,39 @@ This command does the reverse of `fill-region'."
               (lambda (x) (and (char-equal
                                 (string-to-char x) ?.) x))
               ido-temp-list))))
+
+;; ===== ido-vertical-mode =====
+
+;; This used to be done by this
+;; Display ido results vertically, rather than horizontally
+;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+;; (defun ido-disable-line-trucation () (set (make-local-variable
+;;                                            'truncate-lines) nil))
+;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+
+(add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
+(require 'ido-vertical-mode)
+;(ido-mode 1)
+(ido-vertical-mode 1)
+
+;; ==== smex (ido for M-x) ======
+
+(add-to-list 'load-path "~/Documents/smex") ;; The git clone
+(require 'smex)
+(smex-initialize)
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; ==== ido-ubiquitous =====
+;; ==== Gives ido mode really everywhere =====
+
+(add-to-list 'load-path "~/Documents/ido-ubiquitous")
+(require 'ido-ubiquitous)
+(ido-mode)
+(ido-ubiquitous)
 
 ;; ===== Turn on flyspell-mode ====
 
@@ -761,24 +789,6 @@ like newline-and-indent"
 ;;     '(ace-jump-mode-enable-mark-sync))
 ;; (define-key global-map (kbd "C-x C-x") 'ace-jump-mode-pop-mark)
 
-;; ==== smex (ido for M-x) ======
-
-(add-to-list 'load-path "~/Documents/smex") ;; The git clone
-(require 'smex)
-(smex-initialize)
-
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;; ==== ido-ubiquitous =====
-;; ==== Gives ido mode really everywhere =====
-
-(add-to-list 'load-path "~/Documents/ido-ubiquitous")
-(require 'ido-ubiquitous)
-(ido-mode)
-(ido-ubiquitous)
 
 ;; ==== Markdown mode =====
 
