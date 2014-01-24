@@ -71,9 +71,9 @@
   (interactive "r")
   (call-process-region beg end  "pbcopy"))
 
-(defun osx-paste (beg end)
-  (interactive "r")
-  (if (region-active-p) (delete-region beg end) nil)
+(defun osx-paste ()
+  (interactive)
+  (if (region-active-p) (delete-region (region-beginning) (region-end)) nil)
   (call-process "pbpaste" nil t nil))
 
 (define-key global-map (kbd "C-x C-w") 'osx-copy)
