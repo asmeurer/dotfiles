@@ -289,6 +289,19 @@ This function ...
 
 (define-key isearch-mode-map (kbd "M-o") 'ska-isearch-occur)
 
+;; Automatically wrap isearch.
+;; http://stackoverflow.com/q/285660/161801
+
+(defadvice isearch-search (after isearch-no-fail activate)
+  (unless isearch-success
+    (ad-disable-advice 'isearch-search 'after 'isearch-no-fail)
+    (ad-activate 'isearch-search)
+    (isearch-repeat (if isearch-forward 'forward))
+    (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
+    (ad-activate 'isearch-search)))
+
+;; Better M-SPC behavior
+
 (defun cycle-spacing-with-newline ()
   (interactive)
   (cycle-spacing -1))
