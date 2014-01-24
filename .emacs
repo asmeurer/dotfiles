@@ -9,7 +9,6 @@
 ;; - Export all face changes to the theme.
 ;; - Fix TeXcount.
 ;; - Fix bug with isearch when the search is not found and you type delete.
-;; - Make isearch always wrap around on the first search.
 ;; - Find a better regex solution (icicles maybe).
 ;; - Fix mouse scrolling.
 ;; - Fix inconsistency between C-x # and C-x C-c in emacsclient.
