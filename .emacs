@@ -9,7 +9,6 @@
 ;; - Export all face changes to the theme.
 ;; - Fix TeXcount.
 ;; - Fix bug with isearch when the search is not found and you type delete.
-;; - Make isearch always wrap around on the first search.
 ;; - Find a better regex solution (icicles maybe).
 ;; - Fix mouse scrolling.
 ;; - Fix inconsistency between C-x # and C-x C-c in emacsclient.
@@ -72,9 +71,9 @@
   (interactive "r")
   (call-process-region beg end  "pbcopy"))
 
-(defun osx-paste (beg end)
-  (interactive "r")
-  (if (region-active-p) (delete-region beg end) nil)
+(defun osx-paste ()
+  (interactive)
+  (if (region-active-p) (delete-region (region-beginning) (region-end)) nil)
   (call-process "pbpaste" nil t nil))
 
 (define-key global-map (kbd "C-x C-w") 'osx-copy)
@@ -289,6 +288,19 @@ This function ...
              (setq ska-isearch-occur-opened nil)))
 
 (define-key isearch-mode-map (kbd "M-o") 'ska-isearch-occur)
+
+;; Automatically wrap isearch.
+;; http://stackoverflow.com/q/285660/161801
+
+(defadvice isearch-search (after isearch-no-fail activate)
+  (unless isearch-success
+    (ad-disable-advice 'isearch-search 'after 'isearch-no-fail)
+    (ad-activate 'isearch-search)
+    (isearch-repeat (if isearch-forward 'forward))
+    (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
+    (ad-activate 'isearch-search)))
+
+;; Better M-SPC behavior
 
 (defun cycle-spacing-with-newline ()
   (interactive)
