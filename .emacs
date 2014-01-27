@@ -1126,6 +1126,13 @@ Markdown" t)
 
 ;(require 'isearch+)
 
+;; ==== pcre2el (Perl compatible regular expressions) ====
+
+;; Use pcre-query-replace-regexp
+
+(add-to-list 'load-path "~/Documents/pcre2el")
+(require 'pcre2el)
+
 ;; ===== expand-region =====
 
 (add-to-list 'load-path "~/Documents/expand-region.el")
