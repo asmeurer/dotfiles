@@ -57,6 +57,7 @@ git clone http://www.dr-qubit.org/git/undo-tree.git
 git clone git@github.com:kiwanami/emacs-window-layout.git
 git clone git@github.com:kiwanami/emacs-window-manager.git
 git clone git@github.com:gempesaw/ido-vertical-mode.el.git
+git clone git@github.com:joddie/pcre2el.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum
