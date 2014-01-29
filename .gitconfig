@@ -47,3 +47,5 @@
 
 [credential]
 	helper = cache
+[core]
+	precomposeunicode = true
