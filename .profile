@@ -183,6 +183,8 @@ set_tab_color () {
     then
         echo -n -e $TAB_GRAY
     fi
+    # Clear cruft from the tab title (http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#s3)
+    echo -n -e "\033]0;\007"
 }
 
 
