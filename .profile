@@ -319,6 +319,7 @@ MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
 eval "`pip completion --bash`"
+eval "`nikola tabcompletion`"
 
 source ~/Documents/ipython/examples/core/ipython-completion.bash
 
