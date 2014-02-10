@@ -519,6 +519,22 @@ This command does the reverse of `fill-region'."
 (ido-mode)
 (ido-ubiquitous)
 
+;; ==== Buffer move ====
+;; From http://www.emacswiki.org/cgi-bin/wiki/buffer-move.el
+;; (it's in .emacs.d/lisp
+
+;; iTerm2 has these set for the respective C-S-arrow
+
+(global-set-key (kbd "C-[ [ a c") 'buf-move-up)
+(global-set-key (kbd "C-[ [ a d") 'buf-move-down)
+(global-set-key (kbd "C-[ [ a e") 'buf-move-left)
+(global-set-key (kbd "C-[ [ a f") 'buf-move-right)
+
+;; (global-set-key (kbd "<C-S-up>")     'buf-move-up)
+;; (global-set-key (kbd "<C-S-down>")   'buf-move-down)
+;; (global-set-key (kbd "<C-S-left>")   'buf-move-left)
+;; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
+
 ;; ===== Turn on flyspell-mode ====
 
 ;; Use the turn-on-flyspell one to enable it everywhere, and the
