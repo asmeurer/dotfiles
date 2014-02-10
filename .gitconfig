@@ -39,7 +39,7 @@
 [i18n]
 	commitEncoding = utf-8
 [push]
-	default = matching
+	default = tracking
 [github]
 	user = asmeurer
 [rerere]
