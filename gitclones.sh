@@ -58,6 +58,7 @@ git clone git@github.com:kiwanami/emacs-window-layout.git
 git clone git@github.com:kiwanami/emacs-window-manager.git
 git clone git@github.com:gempesaw/ido-vertical-mode.el.git
 git clone git@github.com:joddie/pcre2el.git
+git clone git@github.com:syohex/emacs-anzu.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum

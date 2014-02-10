@@ -300,6 +300,14 @@ This function ...
     (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
     (ad-activate 'isearch-search)))
 
+;; === Anzu ====
+
+;; Show the total number of search results
+
+(add-to-list 'load-path "~/Documents/emacs-anzu")
+(require 'anzu)
+(global-anzu-mode +1)
+
 ;; Better M-SPC behavior
 
 (defun cycle-spacing-with-newline ()
