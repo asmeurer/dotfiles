@@ -5,11 +5,11 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>105 1567 400 129 -335 800 1920 1058 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
-	<string>183 210 578 392 0 0 1280 778 </string>
+	<string>351 290 578 392 0 0 1280 778 </string>
 	<key>SUFeedURL</key>
 	<string>https://pqrs.org/macosx/keyremap4macbook/files/appcast-devel.xml</string>
 	<key>SULastCheckTime</key>
-	<date>2014-02-07T20:58:41Z</date>
+	<date>2014-02-11T15:44:30Z</date>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
