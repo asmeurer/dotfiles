@@ -486,6 +486,17 @@ This command does the reverse of `fill-region'."
                                 (string-to-char x) ?.) x))
               ido-temp-list))))
 
+;; ==== Use ssh over tramp ====
+;; See http://stackoverflow.com/a/4725727/161801
+
+(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+;; To use this, use C-x C-f C-x C-f (you need to do it twice to get out of
+;; ido). Then enter
+;; /sudo:root@host[#port]:/path/to/file
+;;
+;; Note that it says root, but you should use your own password.
+
+
 ;; ===== ido-vertical-mode =====
 
 ;; This used to be done by this
