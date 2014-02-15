@@ -300,6 +300,14 @@ This function ...
     (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
     (ad-activate 'isearch-search)))
 
+;; === Anzu ====
+
+;; Show the total number of search results
+
+(add-to-list 'load-path "~/Documents/emacs-anzu")
+(require 'anzu)
+(global-anzu-mode +1)
+
 ;; Better M-SPC behavior
 
 (defun cycle-spacing-with-newline ()
@@ -478,6 +486,17 @@ This command does the reverse of `fill-region'."
                                 (string-to-char x) ?.) x))
               ido-temp-list))))
 
+;; ==== Use ssh over tramp ====
+;; See http://stackoverflow.com/a/4725727/161801
+
+(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+;; To use this, use C-x C-f C-x C-f (you need to do it twice to get out of
+;; ido). Then enter
+;; /sudo:root@host[#port]:/path/to/file
+;;
+;; Note that it says root, but you should use your own password.
+
+
 ;; ===== ido-vertical-mode =====
 
 ;; This used to be done by this
@@ -510,6 +529,22 @@ This command does the reverse of `fill-region'."
 (require 'ido-ubiquitous)
 (ido-mode)
 (ido-ubiquitous)
+
+;; ==== Buffer move ====
+;; From http://www.emacswiki.org/cgi-bin/wiki/buffer-move.el
+;; (it's in .emacs.d/lisp
+
+;; iTerm2 has these set for the respective C-S-arrow
+
+(global-set-key (kbd "C-[ [ a c") 'buf-move-up)
+(global-set-key (kbd "C-[ [ a d") 'buf-move-down)
+(global-set-key (kbd "C-[ [ a e") 'buf-move-left)
+(global-set-key (kbd "C-[ [ a f") 'buf-move-right)
+
+;; (global-set-key (kbd "<C-S-up>")     'buf-move-up)
+;; (global-set-key (kbd "<C-S-down>")   'buf-move-down)
+;; (global-set-key (kbd "<C-S-left>")   'buf-move-left)
+;; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
 ;; ===== Turn on flyspell-mode ====
 
