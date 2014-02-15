@@ -15,7 +15,7 @@
 	di = diff --color-words
 	st = status
 	co = checkout
-	pu = push github
+	pu = push github :
 	logl = log --pretty=oneline --abbrev-commit
 	gr = grep -i --color -n
 	backup = !git-backup.sh
