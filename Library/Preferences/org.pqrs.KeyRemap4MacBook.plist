@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>105 1567 400 129 -335 800 1920 1058 </string>
+	<string>520 562 400 129 0 0 1440 878 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
-	<string>336 1299 578 392 -335 800 1920 1058 </string>
+	<string>431 365 578 392 0 0 1440 878 </string>
 	<key>SUFeedURL</key>
 	<string>https://pqrs.org/macosx/keyremap4macbook/files/appcast-devel.xml</string>
 	<key>SULastCheckTime</key>
-	<date>2014-02-14T16:11:15Z</date>
+	<date>2014-01-26T18:53:18Z</date>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>

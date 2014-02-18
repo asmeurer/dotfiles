@@ -1,4 +1,4 @@
-personal_ws-1.1 en 171 
+personal_ws-1.1 en 173 
 backends
 univariate
 restrictable
@@ -44,6 +44,7 @@ CASs
 diagonalize
 integrand
 invertibility
+multiplicatively
 programmatically
 lexicographically
 quantized
@@ -70,9 +71,9 @@ hypertangent
 Mathematica
 multinomial
 singletonized
+trackable
 antiderivative
 rebase
-trackable
 Refactor
 unmerged
 docstrings
@@ -95,13 +96,14 @@ benchmarking
 representable
 musculoskeletal
 WolframAlpha
-Analytical
 analytical
+Analytical
 documentable
 nullspace
 Commutativity
 submitter's
 indices
+iterables
 multivalued
 monomial
 IPython's
