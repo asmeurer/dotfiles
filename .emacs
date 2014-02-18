@@ -961,27 +961,27 @@ Markdown" t)
 ;; ===== mmm-mode ======
 ;; Enables sub-modes inside of parts of a buffer
 
-(add-to-list 'load-path "~/Documents/mmm-mode")
-(if (locate-library "mmm-auto")
-        (autoload 'mmm-auto "mmm-auto" "Start mmm mode" t))
-(require 'mmm-auto)
-(setq mmm-global-mode 'maybe)
-
-;; Make Python docstrings use rst-mode.  See
-;; http://stackoverflow.com/q/15493342/161801.  Commented out because there
-;; are too many cases where code is rendered as docstrings
-
-(mmm-add-classes
- '((python-rst
-    :submode rst-mode
-    :front "[ru]?\"\"\""
-    :back "\"\"\""
-    :include-front nil
-    :include-back nil
-    :end-not-begin t
-    :face mmm-code-submode-face
-    :)))
-(mmm-add-mode-ext-class 'python-mode nil 'python-rst)
+;; (add-to-list 'load-path "~/Documents/mmm-mode")
+;; (if (locate-library "mmm-auto")
+;;         (autoload 'mmm-auto "mmm-auto" "Start mmm mode" t))
+;; (require 'mmm-auto)
+;; (setq mmm-global-mode 'maybe)
+;;
+;; ;; Make Python docstrings use rst-mode.  See
+;; ;; http://stackoverflow.com/q/15493342/161801.  Commented out because there
+;; ;; are too many cases where code is rendered as docstrings
+;;
+;; (mmm-add-classes
+;;  '((python-rst
+;;     :submode rst-mode
+;;     :front "[ru]?\"\"\""
+;;     :back "\"\"\""
+;;     :include-front nil
+;;     :include-back nil
+;;     :end-not-begin t
+;;     :face mmm-code-submode-face
+;;     :)))
+;; (mmm-add-mode-ext-class 'python-mode nil 'python-rst)
 
 ;; ==== doctest-mode ====
 ;; Note, this needs to go below mmm-mode above.
@@ -1273,8 +1273,8 @@ Markdown" t)
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
- '(mmm-global-mode (quote maybe) nil (mmm-mode))
- '(mmm-submode-decoration-level 2)
+; '(mmm-global-mode (quote maybe) nil (mmm-mode))
+; '(mmm-submode-decoration-level 2)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
@@ -1315,7 +1315,7 @@ Markdown" t)
  '(flymake-warnline ((t nil)) t)
  '(ido-first-match ((t (:underline t :weight bold))))
  '(match ((t (:inherit isearch))))
- '(mmm-code-submode-face ((t (:weight bold))))
+; '(mmm-code-submode-face ((t (:weight bold))))
  '(rst-level-1 ((t (:foreground "grey85"))))
  '(rst-level-2 ((t (:foreground "grey78"))))
  '(rst-level-3 ((t (:foreground "grey71"))))
