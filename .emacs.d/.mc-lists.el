@@ -23,5 +23,6 @@
       '(
         alternating-scroll-down-line
         alternating-scroll-up-line
+        newline-and-indent-conditionally
         python-indent-dedent-line-backspace
         ))
