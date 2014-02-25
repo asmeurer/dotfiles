@@ -231,6 +231,13 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
                           (split-window-horizontally)
                           (other-window 1)))
 
+;; Use a longer Unicode character for the vertical border
+;; http://stackoverflow.com/a/18211568/161801
+
+(set-display-table-slot standard-display-table
+                        'vertical-border
+                        (make-glyph-code ?│))
+
 ;; ==== Smarter isearch + occur =====
 
 ;; Taken from http://www.emacswiki.org/emacs/OccurFromIsearch. Type M-o when
