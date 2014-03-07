@@ -291,9 +291,9 @@ PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
 if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
-    PATH="$HOME/anaconda3/bin:$HOME/anaconda3/envs/binstar/bin:$PATH"
+    PATH="$HOME/anaconda3/bin:$PATH"
 else
-    PATH="$HOME/anaconda/bin:$HOME/anaconda/envs/binstar/bin:$PATH"
+    PATH="$HOME/anaconda/bin:$PATH"
 fi
 
 eval "$(register-python-argcomplete conda)"
