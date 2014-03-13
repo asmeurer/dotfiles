@@ -4,6 +4,8 @@ set meta-flag on
 set convert-meta off
 set output-meta on
 set bell-style visible
+# Makes - and _ complete to one another
+set completion-map-case on
 # See http://docs.freebsd.org/info/readline/readline.info.Readline_Init_File.html for more information
 "\ep": history-search-backward
 "\eP": history-search-forward
