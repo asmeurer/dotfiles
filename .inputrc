@@ -11,6 +11,6 @@ set completion-map-case on
 "\ep": history-search-backward
 "\eP": history-search-forward
 # Type this to reload this file
-\C-x\C-r": re-read-init-file
+"\C-x\C-r": re-read-init-file
 # Prevent "Display all NNN possibilities? (y or n)" on tab complete
 set completion-query-items 0
