@@ -20,4 +20,4 @@ use_pip: false
 
 binstar_personal: true
 
-channel_alias: https://conda.alpha.binstar.org/
+channel_alias: http://conda.alpha.binstar.org/
