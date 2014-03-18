@@ -518,6 +518,16 @@ This command does the reverse of `fill-region'."
 ;(ido-mode 1)
 (ido-vertical-mode 1)
 
+;; ==== XTERM title =====
+;; Set the XTERM title from within emacs
+
+(add-to-list 'load-path "~/Documents/xterm-frobs")
+(add-to-list 'load-path "~/Documents/xterm-title")
+(when (and (not window-system)
+           (string-match "^xterm" (getenv "TERM")))
+  (require 'xterm-title)
+  (xterm-title-mode 1))
+
 ;; ==== smex (ido for M-x) ======
 
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
