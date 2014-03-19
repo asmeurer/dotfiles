@@ -528,8 +528,8 @@ This command does the reverse of `fill-region'."
   (require 'xterm-title)
   (xterm-title-mode 1))
 
-(setq frame-title-format "Emacs - %b")
-(setq icon-title-format "Emacs - %b")
+(setq frame-title-format "Emacs - %b")  ; Window title
+(setq icon-title-format "Emacs - %b")   ; Tab title
 ;; ==== smex (ido for M-x) ======
 
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
