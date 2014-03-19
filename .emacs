@@ -528,6 +528,8 @@ This command does the reverse of `fill-region'."
   (require 'xterm-title)
   (xterm-title-mode 1))
 
+(setq frame-title-format "Emacs - %b")
+(setq icon-title-format "Emacs - %b")
 ;; ==== smex (ido for M-x) ======
 
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
@@ -1316,7 +1318,10 @@ Markdown" t)
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(which-function-mode t)
  '(window-combination-limit nil)
- '(window-combination-resize t))
+ '(window-combination-resize t)
+ '(xterm-mouse-mode t)
+ '(xterm-title-frame-title-format "%b")
+ '(xterm-title-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
