@@ -20,6 +20,7 @@ git clone git@github.com:dacap/keyfreq.git
 git clone git@github.com:cask/cask.git
 cd ~
 cask
+cask update
 cd ~/Documents/
 git clone git@github.com:winterTTr/ace-jump-mode.git
 git clone git@github.com:nonsequitur/smex.git
