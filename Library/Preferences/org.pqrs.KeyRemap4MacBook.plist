@@ -9,7 +9,7 @@
 	<key>SUFeedURL</key>
 	<string>https://pqrs.org/macosx/keyremap4macbook/files/appcast-devel.xml</string>
 	<key>SULastCheckTime</key>
-	<date>2014-03-12T14:45:50Z</date>
+	<date>2014-03-21T00:30:11Z</date>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -71,15 +71,13 @@
 		<integer>1</integer>
 		<key>private.controlmusic2music</key>
 		<integer>1</integer>
-		<key>private.fncontrol2optioncontrol</key>
-		<integer>1</integer>
 		<key>remap.app_tweetdeck_emacs_bindings</key>
 		<integer>1</integer>
 		<key>remap.controlL2controlL_escape</key>
 		<integer>1</integer>
 		<key>remap.f12_to_forwarddelete</key>
 		<integer>1</integer>
-		<key>remap.fn2controlR</key>
+		<key>remap.fn2controlL</key>
 		<integer>1</integer>
 		<key>remap.simultaneouskeypresses_ss_to_capslock</key>
 		<integer>1</integer>
