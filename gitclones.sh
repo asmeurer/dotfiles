@@ -20,6 +20,7 @@ git clone git@github.com:dacap/keyfreq.git
 git clone git@github.com:cask/cask.git
 cd ~
 cask
+cask update
 cd ~/Documents/
 git clone git@github.com:winterTTr/ace-jump-mode.git
 git clone git@github.com:nonsequitur/smex.git
@@ -59,6 +60,8 @@ git clone git@github.com:kiwanami/emacs-window-manager.git
 git clone git@github.com:gempesaw/ido-vertical-mode.el.git
 git clone git@github.com:joddie/pcre2el.git
 git clone git@github.com:syohex/emacs-anzu.git
+git clone git@github.com:emacsmirror/xterm-frobs.git
+git clone git@github.com:emacsmirror/xterm-title.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum

@@ -231,6 +231,13 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
                           (split-window-horizontally)
                           (other-window 1)))
 
+;; Use a longer Unicode character for the vertical border
+;; http://stackoverflow.com/a/18211568/161801
+
+(set-display-table-slot standard-display-table
+                        'vertical-border
+                        (make-glyph-code ?│))
+
 ;; ==== Smarter isearch + occur =====
 
 ;; Taken from http://www.emacswiki.org/emacs/OccurFromIsearch. Type M-o when
@@ -511,6 +518,20 @@ This command does the reverse of `fill-region'."
 ;(ido-mode 1)
 (ido-vertical-mode 1)
 
+
+;; ;; ==== XTERM title =====
+;; ;; Set the XTERM title from within emacs
+;; Commented out because it makes emacs really slow
+;;
+;; (add-to-list 'load-path "~/Documents/xterm-frobs")
+;; (add-to-list 'load-path "~/Documents/xterm-title")
+;; (when (and (not window-system)
+;;            (string-match "^xterm" (getenv "TERM")))
+;;   (require 'xterm-title)
+;;   (xterm-title-mode 1))
+;;
+;; (setq frame-title-format "Emacs - %b")  ; Window title
+;; (setq icon-title-format "Emacs - %b")   ; Tab titleterm
 ;; ==== smex (ido for M-x) ======
 
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
@@ -1273,8 +1294,7 @@ Markdown" t)
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
-; '(mmm-global-mode (quote maybe) nil (mmm-mode))
-; '(mmm-submode-decoration-level 2)
+ '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
@@ -1300,7 +1320,10 @@ Markdown" t)
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(which-function-mode t)
  '(window-combination-limit nil)
- '(window-combination-resize t))
+ '(window-combination-resize t)
+ '(xterm-mouse-mode t)
+ '(xterm-title-frame-title-format "%b")
+ '(xterm-title-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -1312,10 +1335,9 @@ Markdown" t)
  '(flycheck-error ((t (:inherit flymake-errline :underline t))))
  '(flycheck-warning ((t (:inherit flymake-warnline :underline t))))
  '(flymake-errline ((t (:foreground "LightPink" :underline "red"))) t)
- '(flymake-warnline ((t nil)) t)
+ '(flymake-warnline ((t (:inherit warning))) t)
  '(ido-first-match ((t (:underline t :weight bold))))
  '(match ((t (:inherit isearch))))
-; '(mmm-code-submode-face ((t (:weight bold))))
  '(rst-level-1 ((t (:foreground "grey85"))))
  '(rst-level-2 ((t (:foreground "grey78"))))
  '(rst-level-3 ((t (:foreground "grey71"))))

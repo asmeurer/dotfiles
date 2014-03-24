@@ -4,10 +4,13 @@ set meta-flag on
 set convert-meta off
 set output-meta on
 set bell-style visible
+# Makes - and _ complete to one another
+set completion-map-case on
 # See http://docs.freebsd.org/info/readline/readline.info.Readline_Init_File.html for more information
+# Also https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
 "\ep": history-search-backward
 "\eP": history-search-forward
 # Type this to reload this file
-\C-x\C-r": re-read-init-file
+"\C-x\C-r": re-read-init-file
 # Prevent "Display all NNN possibilities? (y or n)" on tab complete
 set completion-query-items 0
