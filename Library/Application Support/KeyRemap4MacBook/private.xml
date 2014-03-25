@@ -30,4 +30,15 @@
     <modifier_not>ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R</modifier_not>
     <autogen>__ConsumerToKey__ ConsumerKeyCode::POWER, KeyCode::FORWARD_DELETE</autogen>
   </item>
+
+
+  <item>
+    <name>Fn+Control to Option+Control</name>
+    <identifier>private.fncontrol2optioncontrol</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CONTROL_L, ModifierFlag::CONTROL_R,
+      KeyCode::OPTION_L,  ModifierFlag::CONTROL_L,
+  </autogen>
+  </item>
 </root>
