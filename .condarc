@@ -8,7 +8,6 @@ channels:
   - r
   - trent
   - defaults
-  - public
 
 changeps1: no
 
