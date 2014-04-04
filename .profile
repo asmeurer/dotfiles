@@ -302,7 +302,7 @@ source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
 conda-build-all() {
     for CONDA_PY in 26 27 33 34; do
         export CONDA_PY
-        conda-build $@
+        conda build $@
     done
 }
 
