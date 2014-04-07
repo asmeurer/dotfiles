@@ -20,7 +20,7 @@ if [ $? -eq 1 ] ; then
     export PATH
 fi
 
-export SUDO_PS1="\[\h:\w\] \u\\$ "
+export SUDO_PS1="\[\h:\w\] \u\$ "
 
 alias rm='rm -i'
 alias cp='cp -i'
