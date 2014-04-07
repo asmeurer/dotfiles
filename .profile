@@ -314,7 +314,7 @@ source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
 conda-build-all() {
     for CONDA_PY in 26 27 33 34; do
         export CONDA_PY
-        conda-build $@
+        conda build $@
     done
 }
 
@@ -331,7 +331,9 @@ MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
 eval "`pip completion --bash`"
-eval "`nikola tabcompletion`"
+if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
+    eval "`~/anaconda3/envs/blog-nikola/bin/nikola tabcompletion`"
+fi
 
 source ~/Documents/ipython/examples/core/ipython-completion.bash
 
