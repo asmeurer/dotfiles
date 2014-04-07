@@ -297,6 +297,8 @@ else
 fi
 
 eval "$(register-python-argcomplete conda)"
+. /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
+
 source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
 
 conda-build-all() {
