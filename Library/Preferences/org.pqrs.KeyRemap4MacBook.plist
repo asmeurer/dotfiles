@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>105 1567 400 129 -335 800 1920 1058 </string>
+	<string>371 246 400 129 0 0 1280 778 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
-	<string>351 290 578 392 0 0 1280 778 </string>
+	<string>365 1299 578 392 -306 800 1920 1058 </string>
 	<key>SUFeedURL</key>
 	<string>https://pqrs.org/macosx/keyremap4macbook/files/appcast-devel.xml</string>
 	<key>SULastCheckTime</key>
-	<date>2014-03-21T00:30:11Z</date>
+	<date>2014-03-28T20:03:49Z</date>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -77,9 +77,7 @@
 		<integer>1</integer>
 		<key>remap.f12_to_forwarddelete</key>
 		<integer>1</integer>
-		<key>remap.fn2controlL</key>
-		<integer>1</integer>
-		<key>remap.simultaneouskeypresses_ss_to_capslock</key>
+		<key>remap.fn2controlL_optionL2fn</key>
 		<integer>1</integer>
 	</dict>
 	<key>config_1234636905_427208</key>
