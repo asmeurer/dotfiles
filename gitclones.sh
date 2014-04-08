@@ -45,6 +45,7 @@ git clone git@github.com:kiwanami/emacs-deferred.git
 git clone git@github.com:kiwanami/emacs-ctable.git
 git clone git@github.com:kiwanami/emacs-epc.git
 git clone git@github.com:tkf/emacs-jedi.git
+git clone git@github.com:tkf/emacs-python-environment.git
 cd emacs-jedi
 conda create -p env jedi epc
 cd ~/Documents/

@@ -1061,6 +1061,11 @@ Markdown" t)
 (add-to-list 'load-path "~/Documents/emacs-epc")
 ;(require 'epc)
 
+;; ==== python-environment
+;; This is needed for Jedi
+
+(add-to-list 'load-path "~/Documents/emacs-python-environment")
+
 ;; ==== Jedi ====
 ;; Python completion using Jedi and auto-complete-mode
 
