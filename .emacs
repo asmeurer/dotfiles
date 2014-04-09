@@ -581,6 +581,10 @@ This command does the reverse of `fill-region'."
   (interactive)
   (flyspell-mode 1))
 
+;; Use aspell with flyspell
+
+(setq ispell-list-command "list")
+
 ;; ===== Turn on flymake-mode ====
 
 ;; We don't use this any more, instead, we use flycheck (which comes from
@@ -1296,7 +1300,7 @@ Markdown" t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "/sw/bin/ispell")
+ '(ispell-program-name "~/anaconda/envs/aspell/bin/aspell")
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
