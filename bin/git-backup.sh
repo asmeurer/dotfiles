@@ -7,5 +7,5 @@
 # back into uncommited changes.  This also means that new files added
 # with `git add` without any commited changes will become untracked
 # files.
-git commit -a -m "Backup Commit (WIP) `date "+%Y-%m-%d %H:%M:%S %a"`" --edit
+git commit -a -m "Backup Commit (WIP) `date "+%Y-%m-%d %H:%M:%S %a"`" "$1"
 git reset HEAD^
