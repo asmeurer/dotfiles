@@ -255,6 +255,7 @@ recompile-emacs () {
 
 # Alias git to hub
 eval "$(hub alias -s)"
+alias it='git'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
