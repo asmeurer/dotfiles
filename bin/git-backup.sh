@@ -7,5 +7,8 @@
 # back into uncommited changes.  This also means that new files added
 # with `git add` without any commited changes will become untracked
 # files.
+
+# This doesn't show the editor by default. If you want to add a message, use
+# git backup --edit.
 git commit -a -m "Backup Commit (WIP) `date "+%Y-%m-%d %H:%M:%S %a"`" "$1"
 git reset HEAD^
