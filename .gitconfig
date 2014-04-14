@@ -24,7 +24,7 @@
 	br = branch
 	detach = !git checkout $(git rev-parse HEAD)
 	bl = blame -CCC -M
-    lg = log --graph --topo-order --use-mailmap
+    lg = log --graph --topo-order --use-mailmap --stat
     sw = show --color-words
     psh = !git pull --no-edit && git push
     com = commit
