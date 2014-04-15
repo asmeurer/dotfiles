@@ -324,9 +324,16 @@ conda-build-all() {
     done
 }
 
-conda-remove-test() {
-    conda remove -n test --all
-}
+if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
+    conda-remove-test() {
+        rm -rf ~/anaconda3/envs/test
+    }
+else
+    conda-remove-test() {
+        rm -rf ~/anaconda/envs/test
+    }
+fi
+
 
 export PATH
 
