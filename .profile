@@ -254,6 +254,7 @@ recompile-emacs () {
 
 # Alias git to hub
 eval "$(hub alias -s)"
+alias it='git'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
@@ -290,13 +291,13 @@ PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
 if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
-    PATH="$HOME/anaconda3/bin:$PATH"
     # Aspell
     PATH="$HOME/anaconda3/envs/aspell/bin:$PATH"
+    PATH="$HOME/anaconda3/bin:$PATH"
 else
-    PATH="$HOME/anaconda/bin:$PATH"
     # Aspell
     PATH="$HOME/anaconda/envs/aspell/bin:$PATH"
+    PATH="$HOME/anaconda/bin:$PATH"
 fi
 
 
@@ -322,9 +323,16 @@ conda-build-all() {
     done
 }
 
-conda-remove-test() {
-    conda remove -n test --all
-}
+if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
+    conda-remove-test() {
+        rm -rf ~/anaconda3/envs/test
+    }
+else
+    conda-remove-test() {
+        rm -rf ~/anaconda/envs/test
+    }
+fi
+
 
 export PATH
 
