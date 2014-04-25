@@ -157,7 +157,6 @@ TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;
 # similar shade of gray
 TAB_GRAY="\033]6;1;bg;red;brightness;130\a\033]6;1;bg;blue;brightness;130\a\033]6;1;bg;green;brightness;130\a"
 
-
 set_tab_color () {
     FOUND='no'
 
