@@ -2,6 +2,9 @@ echo
 /sw/bin/fortune
 echo
 
+# Don't waste time doing mail checking
+unset MAILCHECK
+
 # Use italics supported terminfo
 tic ~/Documents/gists/gist-3187620/xterm-256color-italic.terminfo
 export TERM=xterm-256color-italic
