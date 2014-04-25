@@ -368,4 +368,6 @@ source ~/Documents/git/contrib/completion/git-completion.bash
 source ~/Documents/git/contrib/completion/git-prompt.sh
 source ~/Documents/hub/etc/hub.bash_completion.sh
 
+source ~/.iterm_shell_integration.sh
+
 hash -r
