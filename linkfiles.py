@@ -36,7 +36,7 @@ import argparse
 import errno
 
 from os import walk, symlink, makedirs
-from os.path import join, relpath, abspath, exists, expanduser, split
+from os.path import join, relpath, abspath, exists, lexists, expanduser, split
 
 def fullpath(path):
     return abspath(expanduser(path))
@@ -80,23 +80,18 @@ def main():
             else:
                 destination = join(dest_head, relpath(join(dirpath, file),
                     dirpath))
-                if args.dry_run:
-                    print("Would link:", end=' ')
-                else:
-                    print("Linking:", end=' ')
-                print(fullpath(source), "to", fullpath(destination))
+                if not lexists(fullpath(destination)):
+                    if args.dry_run:
+                        print("Would link:", end=' ')
+                    else:
+                        print("Linking:", end=' ')
+                    print(fullpath(source), "to", fullpath(destination))
 
-                if not args.dry_run:
-                    dir = split(fullpath(destination))[0]
-                    if not exists(dir):
-                        makedirs(dir, exist_ok=True)
-                    try:
+                    if not args.dry_run:
+                        dir = split(fullpath(destination))[0]
+                        if not exists(dir):
+                            makedirs(dir, exist_ok=True)
                         symlink(fullpath(source), fullpath(destination))
-                    except OSError as e:
-                        if e.errno == errno.EEXIST:
-                            print("Could not link: destination file already exists")
-                        else:
-                            raise
 
 if __name__ == '__main__':
     sys.exit(main())
