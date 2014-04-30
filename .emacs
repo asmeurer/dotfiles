@@ -583,11 +583,14 @@ This command does the reverse of `fill-region'."
 
 ;; Use aspell with flyspell
 
-(setq ispell-list-command "list")
+;; (setq ispell-list-command "list")
 ;; Make aspell faster. Possibilities, from fastest to slowest, are ultra,
 ;; fast, normal, bad-spellers (normal is the default). Faster modes have
 ;; poorer suggestions.
-;(setq ispell-extra-args "--sug-mode=ultra")
+;; (setq-default ispell-extra-args "--sug-mode=ultra")
+
+(setq-default ispell-program-name "hunspell")
+(setq ispell-really-hunspell t)
 
 ;; ===== Turn on flymake-mode ====
 
@@ -1304,7 +1307,6 @@ Markdown" t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "aspell")
  '(ispell-silently-savep t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
