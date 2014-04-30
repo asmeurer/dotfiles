@@ -592,6 +592,7 @@ This command does the reverse of `fill-region'."
 (setq-default ispell-program-name "hunspell")
 (setq ispell-really-hunspell t)
 
+
 ;; ===== Turn on flymake-mode ====
 
 ;; We don't use this any more, instead, we use flycheck (which comes from
@@ -1307,7 +1308,9 @@ Markdown" t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(ispell-highlight-face (quote flyspell-incorrect))
+ '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
+ '(ispell-use-ptys-p t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
  '(menu-bar-mode nil)
