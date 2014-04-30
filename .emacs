@@ -569,17 +569,17 @@ This command does the reverse of `fill-region'."
 
 ;; ===== Turn on flyspell-mode ====
 
-;; ;; Use the turn-on-flyspell one to enable it everywhere, and the
-;; ;; flyspell-prog-mode to enable it only in comments/strings
-;; (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
-;; (add-hook 'message-mode-hook 'turn-on-flyspell)
-;; (add-hook 'text-mode-hook 'turn-on-flyspell)
-;; (add-hook 'LaTeX-mode-hook 'turn-on-flyspell)
-;; (add-hook 'prog-mode-hook 'flyspell-prog-mode) ; All programming languages
-;; (defun turn-on-flyspell ()
-;;   "Force flyspell-mode on using a positive arg.  For use in hooks."
-;;   (interactive)
-;;   (flyspell-mode 1))
+;; Use the turn-on-flyspell one to enable it everywhere, and the
+;; flyspell-prog-mode to enable it only in comments/strings
+(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+(add-hook 'message-mode-hook 'turn-on-flyspell)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
+(add-hook 'LaTeX-mode-hook 'turn-on-flyspell)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode) ; All programming languages
+(defun turn-on-flyspell ()
+  "Force flyspell-mode on using a positive arg.  For use in hooks."
+  (interactive)
+  (flyspell-mode 1))
 
 ;; Use aspell with flyspell
 
