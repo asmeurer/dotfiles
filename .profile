@@ -297,12 +297,12 @@ PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Anaconda
 if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
-    # Aspell
-    PATH="$HOME/anaconda3/envs/aspell/bin:$PATH"
+    # Hunspell
+    PATH="$HOME/anaconda3/envs/hunspell/bin:$PATH"
     PATH="$HOME/anaconda3/bin:$PATH"
 else
-    # Aspell
-    PATH="$HOME/anaconda/envs/aspell/bin:$PATH"
+    # Hunspell
+    PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
     PATH="$HOME/anaconda/bin:$PATH"
 fi
 
