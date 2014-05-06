@@ -63,6 +63,7 @@ git clone git@github.com:joddie/pcre2el.git
 git clone git@github.com:syohex/emacs-anzu.git
 git clone git@github.com:emacsmirror/xterm-frobs.git
 git clone git@github.com:emacsmirror/xterm-title.git
+git clone git@github.com:mhayashi1120/Emacs-langtool.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum
