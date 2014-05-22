@@ -151,7 +151,13 @@ c.TerminalIPythonApp.ignore_old_config = True
 # c.InteractiveShellApp.exec_lines = []
 
 # A list of dotted module names of IPython extensions to load.
-# c.InteractiveShellApp.extensions = []
+try:
+    import memory_profiler
+    c.InteractiveShellApp.extensions = [
+        'memory_profiler',
+    ]
+except ImportError:
+    pass
 
 # dotted module name of an IPython extension to load.
 # c.InteractiveShellApp.extra_extension = ''
