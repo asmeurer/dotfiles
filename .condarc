@@ -1,8 +1,8 @@
 channels:
+  - zwelch
   - pyzo
   - asmeurer
   - dhirschfeld
-  - minrk
   - travis
   - twiecki
   - r
