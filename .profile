@@ -318,7 +318,7 @@ _activate_complete ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}";
     if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
-        COMPREPLY=($(compgen -W "`cd $HOME/anaconda/envs && LS -d *`" -- "$cur" ));
+        COMPREPLY=($(compgen -W "`cd $HOME/anaconda3/envs && LS -d *`" -- "$cur" ));
     else
         COMPREPLY=($(compgen -W "`cd $HOME/anaconda/envs && LS -d *`" -- "$cur" ));
     fi
