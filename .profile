@@ -310,15 +310,21 @@ fi
 eval "$(register-python-argcomplete conda)"
 . /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
 
+
+alias act="source activate"
 # # complete source activate. Thanks to Paul Kienzle from NIST for the
 # # suggestion.
-# _activate_complete ()
-# {
-#     local cur="${COMP_WORDS[COMP_CWORD]}";
-#     COMPREPLY=($(compgen -W "`cd $HOME/anaconda/envs && LS -d *`" -- "$cur" ));
-# }
-# complete -F _activate_complete "source activate"
-# complete -F _activate_complete ". activate"
+_activate_complete ()
+{
+    local cur="${COMP_WORDS[COMP_CWORD]}";
+    if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
+        COMPREPLY=($(compgen -W "`cd $HOME/anaconda/envs && LS -d *`" -- "$cur" ));
+    else
+        COMPREPLY=($(compgen -W "`cd $HOME/anaconda/envs && LS -d *`" -- "$cur" ));
+    fi
+}
+
+complete -F _activate_complete "act"
 
 source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
 
