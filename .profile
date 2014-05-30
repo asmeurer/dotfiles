@@ -312,6 +312,7 @@ eval "$(register-python-argcomplete conda)"
 
 
 alias act="source activate"
+alias deact="source deactivate"
 # # complete source activate. Thanks to Paul Kienzle from NIST for the
 # # suggestion.
 _activate_complete ()
