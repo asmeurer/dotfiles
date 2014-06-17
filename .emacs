@@ -1161,12 +1161,12 @@ Markdown" t)
 ;; (require 'yascroll)
 ;; (global-yascroll-bar-mode 1)
 
-;; Discover mode
+;; ;; Discover mode
 
-;; http://www.masteringemacs.org/articles/2013/12/21/discoverel-discover-emacs-context-menus/
+;; ;; http://www.masteringemacs.org/articles/2013/12/21/discoverel-discover-emacs-context-menus/
 
-(require 'discover)
-(global-discover-mode 1)
+;; (require 'discover)
+;; (global-discover-mode 1)
 
 ;; ==== rectangle-mark-mode ====
 
