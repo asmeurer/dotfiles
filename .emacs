@@ -1349,7 +1349,6 @@ Markdown" t)
  '(which-function-mode t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
- '(xterm-mouse-mode t)
  '(xterm-title-frame-title-format "%b")
  '(xterm-title-mode t))
 (custom-set-faces
