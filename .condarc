@@ -1,13 +1,14 @@
 channels:
+  - asmeurer
+  - defaults
   - zwelch
   - pyzo
-  - asmeurer
   - dhirschfeld
   - travis
   - twiecki
   - r
   - trent
-  - defaults
+  - binstar
 
 changeps1: no
 
