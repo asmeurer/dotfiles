@@ -64,6 +64,8 @@ git clone git@github.com:syohex/emacs-anzu.git
 git clone git@github.com:emacsmirror/xterm-frobs.git
 git clone git@github.com:emacsmirror/xterm-title.git
 git clone git@github.com:mhayashi1120/Emacs-langtool.git
+git clone git@github.com:benma/visual-regexp.el.git
+git clone git@github.com:benma/visual-regexp-steroids.el.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum
