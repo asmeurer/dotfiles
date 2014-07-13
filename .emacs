@@ -1197,12 +1197,12 @@ Markdown" t)
 ;; (require 'yascroll)
 ;; (global-yascroll-bar-mode 1)
 
-;; Discover mode
+;; ;; Discover mode
 
-;; http://www.masteringemacs.org/articles/2013/12/21/discoverel-discover-emacs-context-menus/
+;; ;; http://www.masteringemacs.org/articles/2013/12/21/discoverel-discover-emacs-context-menus/
 
-(require 'discover)
-(global-discover-mode 1)
+;; (require 'discover)
+;; (global-discover-mode 1)
 
 ;; ==== rectangle-mark-mode ====
 
@@ -1375,6 +1375,7 @@ Markdown" t)
  '(linum-format "%d⎢")
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
+ '(next-screen-context-lines 10)
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
  '(python-indent-guess-indent-offset nil)
@@ -1401,7 +1402,6 @@ Markdown" t)
  '(which-function-mode t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
- '(xterm-mouse-mode t)
  '(xterm-title-frame-title-format "%b")
  '(xterm-title-mode t))
 (custom-set-faces
