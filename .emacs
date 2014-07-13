@@ -39,6 +39,34 @@
 (setq c-default-style "cc-mode"
       c-basic-offset 4)
 
+
+;; Make a custom minor for global keyboard shortcut overrides. Use
+;; (define-key my-keys-minor-mode-map (kbd "C-i") 'some-function)
+;; instead of
+;; (global-set-key "\C-i" 'some-function)
+;; See http://stackoverflow.com/a/683575/161801.
+
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+
+(define-minor-mode my-keys-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  t " my-keys" 'my-keys-minor-mode-map)
+
+(defun my-minibuffer-setup-hook ()
+  (my-keys-minor-mode 0))
+
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+
+(my-keys-minor-mode 1)
+
+(defadvice load (after give-my-keybindings-priority)
+  "Try to ensure that my keybindings always have priority."
+  (if (not (eq (car (car minor-mode-map-alist)) 'my-keys-minor-mode))
+      (let ((mykeys (assq 'my-keys-minor-mode minor-mode-map-alist)))
+        (assq-delete-all 'my-keys-minor-mode minor-mode-map-alist)
+        (add-to-list 'minor-mode-map-alist mykeys))))
+(ad-activate 'load)
+
 ;;
 ;; TeXcount setup for TeXcount version 2.3
 ;;
@@ -166,7 +194,7 @@
       )
     )
 
-(global-set-key [f7] 'kill-total-line)
+(define-key my-keys-minor-mode-map [f7] 'kill-total-line)
 
 ;; define the function to kill the characters from the cursor
 ;; to the beginning of the current line
@@ -199,7 +227,7 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
       (call-interactively 'kill-region)
     (call-interactively 'kill-line)))
 
-(global-set-key (kbd "C-k") 'kill-line-or-region)
+(define-key my-keys-minor-mode-map (kbd "C-k") 'kill-line-or-region)
 
 (defun backward-kill-line-or-region ()
   "kill region if active only or kill line normally"
@@ -208,25 +236,25 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
       (call-interactively 'kill-region)
     (call-interactively 'backward-kill-line-or-newline)))
 
-(global-set-key "\C-u" 'backward-kill-line-or-region)
+(define-key my-keys-minor-mode-map (kbd "\C-u") 'backward-kill-line-or-region)
 
 ;; You can still get the original meaning of C-u (universal-argument) with C-c
 ;; u.  Note, I was going to do C-S-u, but apparently terminals can't
 ;; distinguish the shift with control.  But see below for a workaround.
 
-(global-set-key (kbd "C-c u") 'universal-argument)
+(define-key my-keys-minor-mode-map (kbd "C-c u") 'universal-argument)
 
 ;; I have iTerm 2 set to make Shift-Control-U send f8.
-(global-set-key [f8] 'universal-argument)
+(define-key my-keys-minor-mode-map [f8] 'universal-argument)
 
 ;; ==== Switch to new buffer on C-x 2 or C-x 3 ====
 ;; Thanks to http://stackoverflow.com/a/6465415/161801.
 
-(global-set-key "\C-x2" (lambda ()
+(define-key my-keys-minor-mode-map (kbd "\C-x2") (lambda ()
                           (interactive)
                           (split-window-vertically)
                           (other-window 1)))
-(global-set-key "\C-x3" (lambda ()
+(define-key my-keys-minor-mode-map (kbd "\C-x3") (lambda ()
                           (interactive)
                           (split-window-horizontally)
                           (other-window 1)))
@@ -240,8 +268,8 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; Make M-S-[ and M-S-] *always* move paragraphs
 
-(global-set-key "\M-{" 'endless/backward-paragraph)
-(global-set-key "\M-}" 'endless/forward-paragraph)
+(define-key my-keys-minor-mode-map (kbd "\M-{") 'endless/backward-paragraph)
+(define-key my-keys-minor-mode-map (kbd "\M-}") 'endless/forward-paragraph)
 
 (defun endless/forward-paragraph (&optional n)
   "Advance just past next blank line."
@@ -357,7 +385,7 @@ This function ...
   (interactive)
   (cycle-spacing -1))
 
-(global-set-key (kbd "M-SPC") 'cycle-spacing-with-newline)
+(define-key my-keys-minor-mode-map (kbd "M-SPC") 'cycle-spacing-with-newline)
 
 ;; ===== Set C-x C-c to do the right thing in emacsclient
 ;; TODO
@@ -574,10 +602,10 @@ This command does the reverse of `fill-region'."
 (require 'smex)
 (smex-initialize)
 
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
+(define-key my-keys-minor-mode-map (kbd "M-x") 'smex)
+(define-key my-keys-minor-mode-map (kbd "C-x M-x") 'smex-major-mode-commands)
 ;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+(define-key my-keys-minor-mode-map (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; ==== ido-ubiquitous =====
 ;; ==== Gives ido mode really everywhere =====
@@ -593,15 +621,15 @@ This command does the reverse of `fill-region'."
 
 ;; iTerm2 has these set for the respective C-S-arrow
 
-(global-set-key (kbd "C-[ [ a c") 'buf-move-up)
-(global-set-key (kbd "C-[ [ a d") 'buf-move-down)
-(global-set-key (kbd "C-[ [ a e") 'buf-move-left)
-(global-set-key (kbd "C-[ [ a f") 'buf-move-right)
+(define-key my-keys-minor-mode-map (kbd "C-[ [ a c") 'buf-move-up)
+(define-key my-keys-minor-mode-map (kbd "C-[ [ a d") 'buf-move-down)
+(define-key my-keys-minor-mode-map (kbd "C-[ [ a e") 'buf-move-left)
+(define-key my-keys-minor-mode-map (kbd "C-[ [ a f") 'buf-move-right)
 
-;; (global-set-key (kbd "<C-S-up>")     'buf-move-up)
-;; (global-set-key (kbd "<C-S-down>")   'buf-move-down)
-;; (global-set-key (kbd "<C-S-left>")   'buf-move-left)
-;; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
+;; (define-key my-keys-minor-mode-map (kbd "<C-S-up>")     'buf-move-up)
+;; (define-key my-keys-minor-mode-map (kbd "<C-S-down>")   'buf-move-down)
+;; (define-key my-keys-minor-mode-map (kbd "<C-S-left>")   'buf-move-left)
+;; (define-key my-keys-minor-mode-map (kbd "<C-S-right>")  'buf-move-right)
 
 ;; ===== Turn on flyspell-mode ====
 
@@ -670,8 +698,8 @@ This command does the reverse of `fill-region'."
 
 ;; This is installed from cask
 
-(global-set-key "\M-n" 'flycheck-next-error)
-(global-set-key "\M-p" 'flycheck-previous-error)
+(define-key my-keys-minor-mode-map (kbd "\M-n") 'flycheck-next-error)
+(define-key my-keys-minor-mode-map (kbd "\M-p") 'flycheck-previous-error)
 
 ;; ===== Automatically indent with RET =====
 
@@ -710,7 +738,7 @@ like newline-and-indent"
       (insert save)
       (set-buffer-modified-p nil))))
 
-(global-set-key [remap save-buffer] 'my-save-buffer-dtws)
+(define-key my-keys-minor-mode-map [remap save-buffer] 'my-save-buffer-dtws)
 
 ;; Normally you would just do this:
 
@@ -829,8 +857,8 @@ like newline-and-indent"
       (scroll-up-line))
     (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
-(global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
-(global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+(define-key my-keys-minor-mode-map (kbd "<mouse-4>") 'alternating-scroll-down-line)
+(define-key my-keys-minor-mode-map (kbd "<mouse-5>") 'alternating-scroll-up-line)
 
 ;; ;; Try to make Python's auto-indent of line continuations smarter
 ;; ;; Taken from
@@ -1008,7 +1036,7 @@ Markdown" t)
                   ;; Automatically save project python buffers before refactorings
   (setq ropemacs-confirm-saving 'nil)
   )
-(global-set-key "\C-xpl" 'load-ropemacs)
+(define-key my-keys-minor-mode-map (kbd "\C-xpl") 'load-ropemacs)
 
 ;; ;; ===== Stuff for the pymacs extension ====
 ;;
@@ -1179,7 +1207,7 @@ Markdown" t)
 (autoload 'direx "direx" t)
 (push '(direx:direx-mode :position left :width 25 :dedicated t)
             popwin:special-display-config)
-(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+(define-key my-keys-minor-mode-map (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
 
 ;; ==== Emacs Jedi Direx ====
 ;; A nice imenu for Python
@@ -1208,7 +1236,7 @@ Markdown" t)
 
 ;; Because C-x SPC is already used by ace-jump-mode
 
-(global-set-key (kbd "C-x r C-SPC") 'rectangle-mark-mode)
+(define-key my-keys-minor-mode-map (kbd "C-x r C-SPC") 'rectangle-mark-mode)
 
 ;; ==== RTF mode ====
 
@@ -1271,7 +1299,7 @@ Markdown" t)
 
 (add-to-list 'load-path "~/Documents/expand-region.el")
 (require 'expand-region)
-(global-set-key (kbd "M-=") 'er/expand-region)
+(define-key my-keys-minor-mode-map (kbd "M-=") 'er/expand-region)
 
 ;; ==== multiple-cursors ====
 
@@ -1279,8 +1307,8 @@ Markdown" t)
 (require 'multiple-cursors)
 ;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
 
-(global-set-key [f6] 'mc/mark-next-like-this)
-(global-set-key [f5] 'mc/mark-previous-like-this)
+(define-key my-keys-minor-mode-map [f6] 'mc/mark-next-like-this)
+(define-key my-keys-minor-mode-map [f5] 'mc/mark-previous-like-this)
 
 ;; ==== Highlight indentation =====
 
@@ -1296,7 +1324,7 @@ Markdown" t)
 
 ;; C-S-/ has to pass through this escape code with iTerm2.
 
-(global-set-key (kbd "C-[ [ a b") 'undo-tree-redo)
+(define-key my-keys-minor-mode-map (kbd "C-[ [ a b") 'undo-tree-redo)
 
 ;; ;; Compress saved undo files
 ;; (defadvice undo-tree-make-history-save-file-name
@@ -1308,7 +1336,7 @@ Markdown" t)
 ;; http://superuser.com/a/184402/39697
 
 (require 'goto-last-change)
-(global-set-key (kbd "C-x C-\\") 'goto-last-change)
+(define-key my-keys-minor-mode-map (kbd "C-x C-\\") 'goto-last-change)
 
 ;; ==== Tabbar mode ====
 
