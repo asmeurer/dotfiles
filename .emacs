@@ -240,8 +240,8 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; Make M-S-[ and M-S-] *always* move paragraphs
 
-(global-set-key "\M-{" 'endless/backward-paragraph)
-(global-set-key "\M-}" 'endless/forward-paragraph)
+;; (global-set-key "\M-{" 'endless/backward-paragraph)
+;; (global-set-key "\M-}" 'endless/forward-paragraph)
 
 (defun endless/forward-paragraph (&optional n)
   "Advance just past next blank line."
