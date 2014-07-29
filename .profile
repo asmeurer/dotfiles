@@ -151,11 +151,12 @@ export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a
 # homework - Blue
 export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+export DIR_CONDA_RECIPES="/Users/aaronmeurer/Documents/Continuum/conda-recipes"
 # Other - default (metal)
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
 # similar shade of gray
-TAB_GRAY="\033]6;1;bg;red;brightness;130\a\033]6;1;bg;blue;brightness;130\a\033]6;1;bg;green;brightness;130\a"
+TAB_GRAY="\033]6;1;bg;red;brightness;110\a\033]6;1;bg;blue;brightness;110\a\033]6;1;bg;green;brightness;110\a"
 
 set_tab_color () {
     FOUND='no'
@@ -165,7 +166,7 @@ set_tab_color () {
 
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD' '$TAB_TEAL' '$DIR_CONTINUUM $TAB_BLACK'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK'
     do
         set -- $dir_tab
         # Dereference the variable name
