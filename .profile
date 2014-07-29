@@ -201,7 +201,7 @@ export PS1='\[\r\]\[\e[1;30;40m\]$CONDA_DEFAULT_ENV\[\e[1;37;40m\]\W\[\e[1;36;40
 #export PS1='\[\e[1;31;40m\]\h:\[\e[0m\]\[\e[1;34;40m\]\W\[\e[0m\]\[\e[1;31;40m\] \u\[\e[1;30;40m\]`date "+%Y"`\[\e[0m\]\[\e[1;37;40m\]`date "+%m"`\[\e[0m\]\[\e[1;30;40m\]`date "+%d"`\[\e[0m\]\[\e[1;37;40m\]`date "+%H"`\[\e[0m\]\[\e[1;30;40m\]`date "+%M"`\[\e[0m\]\[\e[1;37;40m\]`date "+%S"`\[\e[0m\]\[\e[0;33m\]$(__git_ps1 "(%s)")\[\e[31;40m\]\$\[\e[0m\]'
 # old PS1
 #export PS1="\[\e[31;40m\]\h:\W \u$\[\e[0m\]$"
-GIT_PS1_SHOWSTASHSTATE=1
+#GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
