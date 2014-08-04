@@ -97,7 +97,7 @@ alias cdss='cd ~/Documents/python/sympy/sympy-scratch'
 alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
 
 cdd () {
-    cd "/Users/aaronmeurer/Documents/Continuum/$@"
+    cd "/Users/aaronmeurer/Documents/$@"
 }
 
 _cdd_complete ()
