@@ -79,6 +79,25 @@
 (define-key global-map (kbd "C-x C-w") 'osx-copy)
 (define-key global-map (kbd "C-x C-y") 'osx-paste)
 
+;; Better zapping
+
+;; Load zap-up-to-char from the misc package that comes with emacs
+(autoload 'zap-up-to-char "misc"
+  "Kill up to, but not including ARGth occurrence of CHAR.
+
+  \(fn arg char)"
+'interactive)
+
+;; Make M-z zap-up-to-char (doesn't include char)
+(global-set-key "\M-z" 'zap-up-to-char)
+;; Make M-Z zap in reverse
+(defun reverse-zap-up-to-char (char)
+  "Like zap-up-to-char with argument -1"
+  (interactive "cZap back to char: ")
+  (zap-up-to-char -1 char))
+
+(global-set-key "\M-Z" 'reverse-zap-up-to-char)
+
 ;; ==== Make DEL delete four spaces at the beginning of a line ====
 
 ;; (defun remove-indentation-spaces ()
