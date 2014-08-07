@@ -22,7 +22,7 @@
 ;;; Comentary:
 
 ;; The batch-mode provides syntax hilighting and auto-indentation for
-;; DOS batch files (.bat).  and auto-idendation.  
+;; DOS batch files (.bat).  and auto-idendation.
 
 ;; Agnar Renolen, <agnar.renolen@emap.no>
 
@@ -60,7 +60,7 @@
      ; the argument of the goto statement is a label
      '( "\\<goto\\>[ \t]*\\([a-zA-Z0-9_]+\\)" (1
 					      font-lock-constant-face))
-     
+
      ; the keywords of batch (which are not built-in commands)
      (concat "\\<\\(cmdextversion\\|"
 	     "d\\(efined\\|isableextensions\\|o\\)\\|"
@@ -84,7 +84,7 @@
 		   "t\\(i\\(me\\|tle\\)\\|ree\\|ype\\)\\|"
 		   "v\\(er\\(\\|ify\\)\\|ol\\)\\|xcopy\\)\\>")
 	   'font-lock-builtin-face)
-     
+
      ; variables are embeded in percent chars
      '( "%[a-zA-Z0-9_]+%?" . font-lock-variable-name-face)
      ; labels are formatted as constants
@@ -114,18 +114,18 @@
   (setq major-mode 'batch-mode)
   (setq mode-name "Avenue")
   (set (make-local-variable 'indent-line-function) 'batch-indent-line)
-  (set (make-local-variable 'comment-start) "::")
+  (set (make-local-variable 'comment-start) "rem")
   (set (make-local-variable 'comment-end)   "")
   ;;(set (make-local-variable 'comment-start-skip) "rem[ \t]*")
   (set (make-local-variable 'font-lock-defaults)
        '(batch-font-lock-keywords nil t nil))
   (set-syntax-table batch-mode-syntax-table)
   (run-hooks 'batch-mode-hook))
-  
+
 (defun batch-indent-line ()
   "Indent current line as batch script"
   (let ((indent (batch-calculate-indent))
-	beg shift-amt 
+	beg shift-amt
 	(old-pos (- (point-max) (point))))
     (beginning-of-line)
     (setq beg (point))
@@ -143,7 +143,7 @@
 	  (if (> (- (point-max) old-pos) (point))
 	      (goto-char (- (point-max) old-pos)))))
     shift-amt))
-    
+
 (defun batch-calculate-indent ()
   "Return appropriate indentation for the current line as batch code."
   (save-excursion
@@ -161,7 +161,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.bat\\'" . batch-mode))
 (add-to-list 'auto-mode-alist '("\\.cmd\\'" . batch-mode))
-  
+
 (provide 'batch-mode)
 
 ;;; batch-mode.el ends here
