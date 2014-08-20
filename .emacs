@@ -654,7 +654,7 @@ This command does the reverse of `fill-region'."
 ;; conda install languagetool
 
 (add-to-list 'load-path "~/Documents/Emacs-langtool")
-(require 'langtool)
+(autoload 'langtool-check "langtool")
 (setq langtool-language-tool-jar "~/anaconda/envs/languagetool/languagetool/languagetool-commandline.jar")
 (setq langtool-disabled-rules '("WHITESPACE_RULE"))
 
@@ -952,7 +952,7 @@ Markdown" t)
 
 (add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
 
-(require 'mediawiki)
+;; (require 'mediawiki)
 
 (autoload 'mediawiki-mode "mediawiki.el" "Major mode for editing MediaWiki files" t)
 (setq auto-mode-alist (cons '("\\.mediawiki" . mediawiki-mode) auto-mode-alist))
@@ -1147,8 +1147,8 @@ Markdown" t)
 ;; Python completion using Jedi and auto-complete-mode
 
 (add-to-list 'load-path "~/Documents/emacs-jedi")
-(require 'jedi) ; We have to require jedi or else the kernel panic workaround
-                ; below won't work and we won't be able to exit emacs.
+;; (require 'jedi) ; We have to require jedi or else the kernel panic workaround
+;;                 ; below won't work and we won't be able to exit emacs.
 (autoload 'jedi:setup "jedi" nil t)
 (global-auto-complete-mode +1)
 (setq  jedi:use-shortcuts t)
@@ -1206,10 +1206,12 @@ Markdown" t)
 ;; ==== Emacs Jedi Direx ====
 ;; A nice imenu for Python
 
-(add-to-list 'load-path "~/Documents/emacs-jedi-direx")
-(require 'jedi-direx)
-(eval-after-load "python"
-  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+;; Commented out because it is slow to load, and I don't use it.
+
+;; (add-to-list 'load-path "~/Documents/emacs-jedi-direx")
+;; (require 'jedi-direx)
+;; (eval-after-load "python"
+;;   '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
 
 ;; ===== Scroll bars ======
 
@@ -1292,7 +1294,7 @@ Markdown" t)
 ;; ===== expand-region =====
 
 (add-to-list 'load-path "~/Documents/expand-region.el")
-(require 'expand-region)
+(autoload 'er/expand-region "expand-region")
 (global-set-key (kbd "M-=") 'er/expand-region)
 
 ;; ==== multiple-cursors ====
@@ -1340,12 +1342,12 @@ Markdown" t)
 ;; (add-to-list 'load-path "~/Documents/tabbar")
 ;; (require 'tabbar)
 
-;; ===== E2WM (Emacs Window Manager) ====
-;; For its imenu implementation
-
-(add-to-list 'load-path "~/Documents/emacs-window-layout")
-(add-to-list 'load-path "~/Documents/emacs-window-manager")
-(require 'e2wm)
+;; ;; ===== E2WM (Emacs Window Manager) ====
+;; ;; For its imenu implementation
+;;
+;; (add-to-list 'load-path "~/Documents/emacs-window-layout")
+;; (add-to-list 'load-path "~/Documents/emacs-window-manager")
+;; (require 'e2wm)
 
 ;; =======================================
 ;; ===== Values set by M-x customize =====
@@ -1421,6 +1423,7 @@ Markdown" t)
  '(show-paren-mode t)
  '(show-paren-style (quote mixed))
  '(show-trailing-whitespace t)
+ '(smex-mode t nil (smex))
  '(speedbar-visiting-tag-hook (quote (speedbar-highlight-one-tag-line speedbar-recenter)))
  '(split-height-threshold 80)
  '(split-width-threshold 50)
