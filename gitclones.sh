@@ -24,6 +24,12 @@ cask update
 cd ~/Documents/
 git clone git@github.com:winterTTr/ace-jump-mode.git
 git clone git@github.com:nonsequitur/smex.git
+# Until https://github.com/nonsequitur/smex/pull/12 is merged
+cd smex
+git remote add haxney git@github.com:haxney/smex.git
+git fetch haxney
+git checkout haxney/customize
+cd ~/Documents/
 git clone git@github.com:technomancy/ido-ubiquitous.git
 git clone git://jblevins.org/git/markdown-mode.git
 fink --yes install bzr-py27

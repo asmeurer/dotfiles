@@ -590,13 +590,16 @@ This command does the reverse of `fill-region'."
 ;; ==== smex (ido for M-x) ======
 
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
-(require 'smex)
-(smex-initialize)
+;; Commented out because it's in the customize section below
 
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;; (autoload 'smex "smex")
+;;(require 'smex)
+;; (smex-initialize)
+
+;; (global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
+;; ;; This is your old M-x.
+;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; ==== ido-ubiquitous =====
 ;; ==== Gives ido mode really everywhere =====
