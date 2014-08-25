@@ -1331,8 +1331,16 @@ Markdown" t)
 ;; http://www.emacswiki.org/emacs/download/goto-last-change.el
 ;; http://superuser.com/a/184402/39697
 
-(require 'goto-last-change)
-(global-set-key (kbd "C-x C-\\") 'goto-last-change)
+;; (require 'goto-last-change)
+
+;; goto-last-change doesn't work with undo-tree, but the following is a pretty
+;; good equivalent.
+(defun undo-redo ()
+  (interactive)
+  (progn
+    (undo-tree-undo)
+    (undo-tree-redo)))
+(global-set-key (kbd "C-x C-\\") 'undo-redo)
 
 ;; ==== Tabbar mode ====
 
@@ -1439,6 +1447,7 @@ Markdown" t)
  '(window-combination-resize t)
  '(xterm-title-frame-title-format "%b")
  '(xterm-title-mode t))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
