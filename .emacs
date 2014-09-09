@@ -615,6 +615,7 @@ This command does the reverse of `fill-region'."
 
 ;; iTerm2 has these set for the respective C-S-arrow
 
+(require 'buffer-move)
 (global-set-key (kbd "C-[ [ a c") 'buf-move-up)
 (global-set-key (kbd "C-[ [ a d") 'buf-move-down)
 (global-set-key (kbd "C-[ [ a e") 'buf-move-left)
