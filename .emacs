@@ -970,6 +970,13 @@ Markdown" t)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (autoload 'coffee-mode "coffee-mode" "Coffee Mode" t)
 
+;; ===== sass ======
+(add-to-list 'load-path "~/Documents/haml-mode")
+(add-to-list 'load-path "~/Documents/sass-mode")
+(autoload 'haml-mode "haml-mode" "Haml Mode" t)
+(autoload 'sass-mode "sass-mode" "Sass Mode" t)
+(add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode))
+
 ;; Commented out stuff "doesn't work"
 
 ;; ===== flymake-cursor =====

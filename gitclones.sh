@@ -73,6 +73,8 @@ git clone git@github.com:mhayashi1120/Emacs-langtool.git
 git clone git@github.com:benma/visual-regexp.el.git
 git clone git@github.com:benma/visual-regexp-steroids.el.git
 git clone git@github.com:juergenhoetzel/profile-dotemacs.git
+git clone git@github.com:nex3/sass-mode.git
+git clone git@github.com:nex3/haml-mode.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum
