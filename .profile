@@ -86,6 +86,10 @@ shopt -s no_empty_cmd_completion
 alias ls='ls -AG@Flha'
 alias  l='ls -AG@Flha'
 
+# Typos
+alias it='git'
+alias sl=ls
+
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
@@ -284,7 +288,6 @@ recompile-emacs () {
 
 # Alias git to hub
 eval "$(hub alias -s)"
-alias it='git'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
