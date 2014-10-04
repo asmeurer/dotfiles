@@ -28,6 +28,8 @@
     sw = show --color-words
     psh = !git pull --no-edit && git push
     com = commit
+    dif = diff
+    difff = diff
 
 [sendemail]
 	o = sympy-patches@googlegroups.com
