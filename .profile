@@ -1,5 +1,5 @@
 echo
-/sw/bin/fortune
+fortune
 echo
 
 # Don't waste time doing mail checking
