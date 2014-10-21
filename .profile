@@ -322,6 +322,9 @@ export PATH
 PATH="/Users/aaronmeurer/Documents/emacs/src:$PATH"
 PATH="/Users/aaronmeurer/Documents/emacs/lib-src:$PATH"
 
+# Don't use the git version of emacs
+PATH="/Users/aaronmeurer/anaconda/envs/emacs/bin:$PATH"
+
 PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
 
 # Haskell
