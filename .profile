@@ -1,5 +1,5 @@
 echo
-fortune
+~/anaconda/envs/fortune/bin/fortune
 echo
 
 # Don't waste time doing mail checking
