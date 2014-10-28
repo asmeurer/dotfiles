@@ -75,6 +75,8 @@ git clone git@github.com:benma/visual-regexp-steroids.el.git
 git clone git@github.com:juergenhoetzel/profile-dotemacs.git
 git clone git@github.com:nex3/sass-mode.git
 git clone git@github.com:nex3/haml-mode.git
+git clone git@github.com:Bruce-Connor/aggressive-indent-mode.git
+git clone git@github.com:Bruce-Connor/names.git
 
 mkdir -p ~/Documents/Continuum
 cd ~/Documents/Continuum

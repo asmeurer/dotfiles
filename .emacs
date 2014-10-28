@@ -1015,6 +1015,19 @@ Markdown" t)
 
 (add-hook 'python-hook (electric-indent-mode 0))
 
+;; ==== names ====
+;; A requirement of aggressive-indent-mode
+(add-to-list 'load-path "~/Documents/names")
+
+;; ==== aggressive-indent-mode ====
+
+(add-to-list 'load-path "~/Documents/aggressive-indent-mode")
+(require 'aggressive-indent)
+(global-aggressive-indent-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
+
+
+
 ;; TODO: instead of changing the source to avoid paren indentation, change it
 ;; here using defadvice.  See http://stackoverflow.com/a/4150438/161801.
 
@@ -1035,7 +1048,7 @@ Markdown" t)
   (interactive)
   (require 'pymacs)
   (pymacs-load "ropemacs" "rope-")
-                  ;; Automatically save project python buffers before refactorings
+  ;; Automatically save project python buffers before refactorings
   (setq ropemacs-confirm-saving 'nil)
   )
 (global-set-key "\C-xpl" 'load-ropemacs)
