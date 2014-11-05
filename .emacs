@@ -1295,8 +1295,10 @@ Markdown" t)
 
 ;; Use pcre-query-replace-regexp
 
-(add-to-list 'load-path "~/Documents/pcre2el")
-(require 'pcre2el)
+;; Installed with cask
+;;
+;; (add-to-list 'load-path "~/Documents/pcre2el")
+;; (require 'pcre2el)
 (pcre-mode 1)
 
 
