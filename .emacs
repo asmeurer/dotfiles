@@ -1320,8 +1320,9 @@ Markdown" t)
 
 ;; ==== multiple-cursors ====
 
-(add-to-list 'load-path "~/Documents/multiple-cursors.el")
-(require 'multiple-cursors)
+;; Installed by cask
+;; (add-to-list 'load-path "~/Documents/multiple-cursors.el")
+;; (require 'multiple-cursors)
 ;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
 
 (global-set-key [f6] 'mc/mark-next-like-this)
@@ -1336,8 +1337,9 @@ Markdown" t)
 ;; ==== Undo-tree ====
 ;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
 
-(add-to-list 'load-path "~/Documents/undo-tree")
-(require 'undo-tree)
+;; Installed by cask
+;; (add-to-list 'load-path "~/Documents/undo-tree")
+;; (require 'undo-tree)
 
 ;; C-S-/ has to pass through this escape code with iTerm2.
 
