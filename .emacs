@@ -558,22 +558,6 @@ This command does the reverse of `fill-region'."
 ;;
 ;; Note that it says root, but you should use your own password.
 
-
-;; ===== ido-vertical-mode =====
-
-;; This used to be done by this
-;; Display ido results vertically, rather than horizontally
-;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
-;; (defun ido-disable-line-trucation () (set (make-local-variable
-;;                                            'truncate-lines) nil))
-;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
-
-(add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
-(require 'ido-vertical-mode)
-;(ido-mode 1)
-(ido-vertical-mode 1)
-
-
 ;; ;; ==== XTERM title =====
 ;; ;; Set the XTERM title from within emacs
 ;; Commented out because it makes emacs really slow
@@ -909,6 +893,22 @@ like newline-and-indent"
 (add-to-list 'load-path "~/Documents/cask")
 (require 'cask)
 (cask-initialize "~/")
+
+;; ;; ===== ido-vertical-mode =====
+;;
+;; ;; This used to be done by this
+;; ;; Display ido results vertically, rather than horizontally
+;; ;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+;; ;; (defun ido-disable-line-trucation () (set (make-local-variable
+;; ;;                                            'truncate-lines) nil))
+;; ;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+;;
+;; Commented out because it's installed by Cask
+;;
+;; (add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
+;; (require 'ido-vertical-mode)
+;; ;(ido-mode 1)
+(ido-vertical-mode 1)
 
 ;; ==== ace jump mode ======
 
