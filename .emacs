@@ -362,14 +362,6 @@ This function ...
     (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
     (ad-activate 'isearch-search)))
 
-;; === Anzu ====
-
-;; Show the total number of search results
-
-(add-to-list 'load-path "~/Documents/emacs-anzu")
-(require 'anzu)
-(global-anzu-mode +1)
-
 ;; Better M-SPC behavior
 
 (defun cycle-spacing-with-newline ()
@@ -1288,6 +1280,16 @@ Markdown" t)
 ;; ===== isearch+ =====
 
 ;(require 'isearch+)
+
+;; === Anzu ====
+
+;; Show the total number of search results
+
+;; Installed with cask
+;;
+;; (add-to-list 'load-path "~/Documents/emacs-anzu")
+;; (require 'anzu)
+(global-anzu-mode +1)
 
 ;; ==== pcre2el (Perl compatible regular expressions) ====
 

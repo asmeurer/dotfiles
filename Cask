@@ -10,3 +10,4 @@
 (depends-on "multiple-cursors")
 (depends-on "aggressive-indent")
 (depends-on "mediawiki")
+(depends-on "anzu")
