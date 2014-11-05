@@ -8,3 +8,4 @@
 (depends-on "undo-tree")
 (depends-on "multiple-cursors")
 (depends-on "aggressive-indent")
+(depends-on "mediawiki")

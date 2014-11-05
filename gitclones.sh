@@ -32,8 +32,6 @@ git checkout haxney/customize
 cd ~/Documents/
 git clone git@github.com:technomancy/ido-ubiquitous.git
 git clone git://jblevins.org/git/markdown-mode.git
-fink --yes install bzr-py27
-bzr branch lp:mediawiki-el
 git clone git@github.com:yoshiki/yaml-mode.git
 git clone git@github.com:defunkt/coffee-mode.git
 git clone git@github.com:fgallina/python.el.git

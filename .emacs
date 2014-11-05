@@ -951,10 +951,10 @@ Markdown" t)
 
 ;; ==== MediaWiki Mode ====
 
-(add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
-
-;; (require 'mediawiki)
-
+;; (add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
+;;
+;; ;; (require 'mediawiki)
+;;
 (autoload 'mediawiki-mode "mediawiki.el" "Major mode for editing MediaWiki files" t)
 (setq auto-mode-alist (cons '("\\.mediawiki" . mediawiki-mode) auto-mode-alist))
 
