@@ -1,3 +1,4 @@
+;; -*-lisp-*-
 (source gnu)
 (source melpa)
 
