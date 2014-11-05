@@ -7,3 +7,4 @@
 (depends-on "ido-vertical-mode")
 (depends-on "undo-tree")
 (depends-on "multiple-cursors")
+(depends-on "aggressive-indent")

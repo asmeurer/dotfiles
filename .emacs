@@ -1015,14 +1015,16 @@ Markdown" t)
 
 (add-hook 'python-hook (electric-indent-mode 0))
 
-;; ==== names ====
-;; A requirement of aggressive-indent-mode
-(add-to-list 'load-path "~/Documents/names")
+;; ;; ==== names ====
+;; ;; A requirement of aggressive-indent-mode
+;; (add-to-list 'load-path "~/Documents/names")
 
-;; ==== aggressive-indent-mode ====
-
-(add-to-list 'load-path "~/Documents/aggressive-indent-mode")
-(require 'aggressive-indent)
+;; ;; ==== aggressive-indent-mode ====
+;;
+;; Installed by cask
+;;
+;; (add-to-list 'load-path "~/Documents/aggressive-indent-mode")
+;; (require 'aggressive-indent)
 (global-aggressive-indent-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
