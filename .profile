@@ -246,14 +246,15 @@ PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
-export EDITOR='emacs'
+export EMACSCLIENT='emacsclient -a "" -nw'
+export EDITOR="$EMACSCLIENT"
 export LESS='-RIC' # Make less search case insensitive, always use raw input
                    # mode (to show colors), and never scroll output
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
-alias emacsclient='emacsclient -a "" -nw' # Don't use the X11 version, which just hangs anyway
-alias e=emacs
+alias emacsclient="$EMACSCLIENT"
+alias e=emacsclient
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 alias free='diskutil info / | GREP -i Free'
