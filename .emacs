@@ -187,6 +187,15 @@
 
 (global-set-key [f7] 'kill-total-line)
 
+;; Make M-g TAB (move-to-column) fill spaces past the end of the line
+;; From http://emacsredux.com/blog/2013/07/09/go-to-column/
+
+(defun go-to-column (column)
+  (interactive "nColumn: ")
+  (move-to-column column t))
+
+(global-set-key (kbd "M-g TAB") 'go-to-column)
+
 ;; define the function to kill the characters from the cursor
 ;; to the beginning of the current line
 
