@@ -1262,13 +1262,13 @@ Markdown" t)
 
 (autoload 'rtf-mode "rtf-mode" "RTF mode" t)
 (add-to-list 'auto-mode-alist
-               '("\\.rtf$" . rtf-mode))
+             '("\\.rtf$" . rtf-mode))
 
-;; ==== batch mode ====
-
-(autoload 'batch-mode "batch-mode" "batch mode" t)
+;; ==== ntcmd =====
+;; Mode for editing .bat files (Windows batch files)
+(autoload 'ntcmd-mode "ntcmd" "ntcmd mode" t)
 (add-to-list 'auto-mode-alist
-             '("\\.bat$" . batch-mode))
+             '("\\.bat$" . ntcmd-mode))
 
 ;; ==== AUCTeX ====
 
