@@ -247,7 +247,7 @@ PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export TTY=$(basename `tty`)
-export EMACSCLIENT="emacsclient -a '' -nw --socket-name=$TTY"
+export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 export EDITOR="$EMACSCLIENT"
 export LESS='-RIC' # Make less search case insensitive, always use raw input
                    # mode (to show colors), and never scroll output
