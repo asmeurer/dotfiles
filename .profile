@@ -276,9 +276,7 @@ saydone () {
 }
 
 hub_dir="/Users/aaronmeurer/Documents/hub"
-hub () {
-    ruby -I "${hub_dir}/lib" "${hub_dir}/bin/hub" "$@"
-}
+PATH="$PATH:$hub_dir"
 
 recompile-emacs () {
     cd ~/Documents/emacs
@@ -331,6 +329,9 @@ PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
 
 # Haskell
 PATH="$HOME/Library/Haskell/bin:$PATH"
+
+# Go
+PATH="$PATH:/usr/local/go/bin"
 
 # Anaconda
 if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
