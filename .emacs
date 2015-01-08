@@ -200,11 +200,11 @@
 ;; to the beginning of the current line
 
 (defun backward-kill-line (arg)
-    "Kill chars backward until encountering the beginning of a line.  If the
+  "Kill chars backward until encountering the beginning of a line.  If the
 cursor is already at the beginning, delete the newline.  Acts like the reverse
     of kill-line (C-k)."
-      (interactive "p")
-        (kill-line 0))
+  (interactive "p")
+  (kill-line 0))
 
 ;; I don't use C-u's normal use, but I do use this macro.
 
@@ -381,6 +381,18 @@ This function ...
 
 ;; ===== Set C-x C-c to do the right thing in emacsclient
 ;; TODO
+
+;; ;; ==== emacs chrome server ====
+;;
+;; (add-to-list 'load-path "~/Documents/emacs_chrome/servers")
+;; (when (require 'edit-server nil t)
+;;   (edit-server-start))
+;;
+;; (setq edit-server-url-major-mode-alist
+;;       '(("github\\.com" . markdown-mode)))
+;;
+;; (add-hook 'edit-server-start-hook 'edit-server-edit-mode)
+
 
 ;; ===== Make the *scratch* buffer use text mode by default ====
 
