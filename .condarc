@@ -1,9 +1,10 @@
 # Emacs, this is -*-yaml-*-
 channels:
-  - lidavidm
-  - wakari
+   # - s3://repo.continuum.io/pkgs/free/
   - asmeurer
   - defaults
+  - lidavidm
+  - javascript
   - zwelch
   - pyzo
   - dhirschfeld
@@ -12,6 +13,7 @@ channels:
   - r
   - trent
   - binstar
+  - conda
 
 changeps1: no
 
