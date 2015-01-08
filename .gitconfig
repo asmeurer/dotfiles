@@ -51,6 +51,3 @@
 	helper = cache
 [core]
 	precomposeunicode = true
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f

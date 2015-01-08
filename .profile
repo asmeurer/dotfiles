@@ -225,17 +225,6 @@ set_tab_color () {
     echo -n -e "\033]0;\007"
 }
 
-underline_exit () {
-    es=$?
-    # See
-    # https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash
-    # This won't actually show up as red because the prompt colors take over :(
-    undred='\e[4;31m' # Red
-    if test $es
-    then
-       echo -n -e $undred
-    fi
-}
 
 export PS1='\[\r\]\[\e[1;30;40m\]$CONDA_DEFAULT_ENV\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]\[$(set_tab_color)\]'
 #export PS1='\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]'
@@ -261,7 +250,7 @@ export TTY=$(basename `tty`)
 export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 export EDITOR="$EMACSCLIENT"
 export LESS='-RIC' # Make less search case insensitive, always use raw input
-# mode (to show colors), and never scroll output
+                   # mode (to show colors), and never scroll output
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
@@ -357,7 +346,6 @@ fi
 
 
 eval "$(register-python-argcomplete conda)"
-eval "$(register-python-argcomplete conda-build)"
 . /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
 
 
