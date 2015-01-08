@@ -1343,11 +1343,11 @@ Markdown" t)
 (global-set-key [f6] 'mc/mark-next-like-this)
 (global-set-key [f5] 'mc/mark-previous-like-this)
 
-;; ==== Highlight indentation =====
-
-(require 'highlight-indentation)
-
-(add-hook 'prog-mode-hook 'highlight-indentation)
+;; ;; ==== Highlight indentation =====
+;;
+;; (require 'highlight-indentation)
+;;
+;; (add-hook 'prog-mode-hook 'highlight-indentation)
 
 ;; ==== Undo-tree ====
 ;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
