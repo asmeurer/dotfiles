@@ -644,43 +644,6 @@ This command does the reverse of `fill-region'."
 (setq langtool-language-tool-jar "~/anaconda/envs/languagetool/languagetool/languagetool-commandline.jar")
 (setq langtool-disabled-rules '("WHITESPACE_RULE"))
 
-;; ===== Turn on flymake-mode ====
-
-;; We don't use this any more, instead, we use flycheck (which comes from
-;; cask).
-
-;; (add-to-list 'load-path "~/Documents/flymake-easy")
-;;
-;; (add-hook 'c-mode-common-hook 'turn-on-flymake)
-;; (add-hook 'latex-mode-hook 'turn-on-flymake)
-;; (add-hook 'LaTeX-mode-hook 'turn-on-flymake)
-;; ;(add-hook 'python-mode-hook 'turn-on-flymake)
-;; (defun turn-on-flymake ()
-;;   "Force flymake-mode on. For use in hooks."
-;;   (interactive)
-;;   (flymake-mode 1))
-;;
-;; (add-hook 'c-mode-common-hook 'flymake-keyboard-shortcuts)
-;; (add-hook 'latex-mode-hook 'flymake-keyboard-shortcuts)
-;; (add-hook 'LaTeX-mode-hook 'flymake-keyboard-shortcuts)
-;; (add-hook 'python-mode-hook 'flymake-keyboard-shortcuts)
-;; (defun flymake-keyboard-shortcuts ()
-;;   "Add keyboard shortcuts for flymake goto next/prev error."
-;;   (interactive)
-;;   (local-set-key "\M-n" 'flymake-goto-next-error)
-;;   (local-set-key "\M-p" 'flymake-goto-prev-error))
-;;
-;; (add-to-list 'load-path "~/Documents/flymake-python-pyflakes")
-;; (require 'flymake-python-pyflakes)
-;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
-
-;; ===== Flycheck ====
-
-;; This is installed from cask
-
-(global-set-key "\M-n" 'flycheck-next-error)
-(global-set-key "\M-p" 'flycheck-previous-error)
-
 ;; ===== Automatically indent with RET =====
 
 (defun newline-and-indent-conditionally ()
@@ -894,6 +857,50 @@ like newline-and-indent"
 (add-to-list 'load-path "~/Documents/cask")
 (require 'cask)
 (cask-initialize "~/")
+
+
+;; ===== Turn on flymake-mode ====
+
+;; We don't use this any more, instead, we use flycheck (which comes from
+;; cask).
+
+;; (add-to-list 'load-path "~/Documents/flymake-easy")
+;;
+;; (add-hook 'c-mode-common-hook 'turn-on-flymake)
+;; (add-hook 'latex-mode-hook 'turn-on-flymake)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-flymake)
+;; ;(add-hook 'python-mode-hook 'turn-on-flymake)
+;; (defun turn-on-flymake ()
+;;   "Force flymake-mode on. For use in hooks."
+;;   (interactive)
+;;   (flymake-mode 1))
+;;
+;; (add-hook 'c-mode-common-hook 'flymake-keyboard-shortcuts)
+;; (add-hook 'latex-mode-hook 'flymake-keyboard-shortcuts)
+;; (add-hook 'LaTeX-mode-hook 'flymake-keyboard-shortcuts)
+;; (add-hook 'python-mode-hook 'flymake-keyboard-shortcuts)
+;; (defun flymake-keyboard-shortcuts ()
+;;   "Add keyboard shortcuts for flymake goto next/prev error."
+;;   (interactive)
+;;   (local-set-key "\M-n" 'flymake-goto-next-error)
+;;   (local-set-key "\M-p" 'flymake-goto-prev-error))
+;;
+;; (add-to-list 'load-path "~/Documents/flymake-python-pyflakes")
+;; (require 'flymake-python-pyflakes)
+;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
+
+;; ===== Flycheck ====
+
+;; This is installed from cask
+
+(global-set-key "\M-n" 'flycheck-next-error)
+(global-set-key "\M-p" 'flycheck-previous-error)
+
+;; ===== flycheck-pyflakes ======
+
+(require 'flycheck-pyflakes)
+(add-to-list 'flycheck-disabled-checkers 'python-flake8)
+(add-to-list 'flycheck-disabled-checkers 'python-pylint)
 
 ;; ;; ===== ido-vertical-mode =====
 ;;
@@ -1428,7 +1435,6 @@ Markdown" t)
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
- '(flycheck-python-flake8-executable "pyflakes")
  '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
