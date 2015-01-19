@@ -12,3 +12,4 @@
 (depends-on "mediawiki")
 (depends-on "anzu")
 (depends-on "pcre2el")
+(depends-on "ess")
