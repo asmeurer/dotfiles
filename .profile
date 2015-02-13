@@ -261,6 +261,7 @@ alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Comma
 alias free='diskutil info / | GREP -i Free'
 alias rehash='hash -r'
 alias cdpwd='cd `pwd`'
+alias ipython=ptipython
 
 sizeup () {
     if [[ -z "$1" ]]; then
