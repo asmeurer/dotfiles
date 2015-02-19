@@ -196,6 +196,13 @@
 
 (global-set-key (kbd "M-g TAB") 'go-to-column)
 
+;; Make C-x f work like C-x C-f, since I always accidentally type the former
+;; and never need set-fill-column.
+(global-set-key (kbd "C-x f") 'ido-find-file)
+
+;; Make C-c C-x work the same as C-x C-c, since I always mistype them.
+(global-set-key (kbd "C-c C-x") 'save-buffers-kill-terminal)
+
 ;; define the function to kill the characters from the cursor
 ;; to the beginning of the current line
 
