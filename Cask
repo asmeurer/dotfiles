@@ -14,4 +14,3 @@
 (depends-on "anzu")
 (depends-on "pcre2el")
 (depends-on "ess")
-(depends-on "company-jedi")
