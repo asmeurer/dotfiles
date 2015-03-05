@@ -1161,30 +1161,30 @@ Markdown" t)
 ;; ==== deferred ====
 ;; This is needed for EPC
 
-(add-to-list 'load-path "~/Documents/emacs-deferred")
-;(require 'deferred)
+;; (add-to-list 'load-path "~/Documents/emacs-deferred")
+                                        ;(require 'deferred)
 
 ;; ==== ctable ====
 ;; This is needed for EPC
 
-(add-to-list 'load-path "~/Documents/emacs-ctable")
-;(require 'ctable)
+;; (add-to-list 'load-path "~/Documents/emacs-ctable")
+                                        ;(require 'ctable)
 
 ;; ==== EPC =====
 ;; This is needed for Jedi
 
-(add-to-list 'load-path "~/Documents/emacs-epc")
-;(require 'epc)
+;; (add-to-list 'load-path "~/Documents/emacs-epc")
+                                        ;(require 'epc)
 
 ;; ==== python-environment
 ;; This is needed for Jedi
 
-(add-to-list 'load-path "~/Documents/emacs-python-environment")
+;; (add-to-list 'load-path "~/Documents/emacs-python-environment")
 
 ;; ==== Jedi ====
 ;; Python completion using Jedi and auto-complete-mode
 
-(add-to-list 'load-path "~/Documents/emacs-jedi")
+;; (add-to-list 'load-path "~/Documents/emacs-jedi")
 ;; (require 'jedi) ; We have to require jedi or else the kernel panic workaround
 ;;                 ; below won't work and we won't be able to exit emacs.
 (autoload 'jedi:setup "jedi" nil t)
