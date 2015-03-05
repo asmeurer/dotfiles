@@ -1134,52 +1134,55 @@ Markdown" t)
 (add-to-list 'load-path "~/Documents/auto-complete")
 (add-to-list 'load-path "~/Documents/popup-el")
 (add-to-list 'load-path "~/Documents/fuzzy-el")
-(require 'auto-complete-config)
-(require 'popup)
-(require 'fuzzy)
-(add-to-list 'ac-dictionary-directories "~/Documents/auto-complete/dict")
-(ac-config-default)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-(ac-set-trigger-key "TAB")
-(define-key ac-completing-map "\r" nil)
-(ac-flyspell-workaround)
-(ac-linum-workaround)
+;; (require 'auto-complete-config)
+;; (require 'popup)
+;; (require 'fuzzy)
+;; (add-to-list 'ac-dictionary-directories "~/Documents/auto-complete/dict")
+;; (ac-config-default)
+;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+;; (ac-set-trigger-key "TAB")
+;; (define-key ac-completing-map "\r" nil)
+;; (ac-flyspell-workaround)
+;; (ac-linum-workaround)
 (setq ac-ignore-case nil)
 (setq ac-use-menu-map t)
-(substitute-key-definition 'ac-next 'next-line ac-menu-map)
-(substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
-(define-key ac-menu-map (kbd "C-n") 'ac-next)
-(define-key ac-menu-map (kbd "\C-p") 'ac-previous)
-(define-key ac-menu-map (kbd "<backtab>") 'ac-previous)
-(substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
-(define-key ac-menu-map (kbd "C-c s") 'ac-isearch)
-(add-hook 'latex-mode-hook 'auto-complete-mode)
-(add-hook 'LaTeX-mode-hook 'auto-complete-mode)
-(add-hook 'prog-mode-hook 'auto-complete-mode)
-(add-hook 'text-mode-hook 'auto-complete-mode)
+;; (substitute-key-definition 'ac-next 'next-line ac-menu-map)
+;; (substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
+;; (define-key ac-menu-map (kbd "C-n") 'ac-next)
+;; (define-key ac-menu-map (kbd "\C-p") 'ac-previous)
+;; (define-key ac-menu-map (kbd "<backtab>") 'ac-previous)
+;; (substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
+;; (define-key ac-menu-map (kbd "C-c s") 'ac-isearch)
+
+
+(global-company-mode)
+;; (add-hook 'latex-mode-hook 'company-mode)
+;; (add-hook 'LaTeX-mode-hook 'company-mode)
+;; (add-hook 'prog-mode-hook 'company-mode)
+;; (add-hook 'text-mode-hook 'company-mode)
 
 ;; ==== deferred ====
 ;; This is needed for EPC
 
-(add-to-list 'load-path "~/Documents/emacs-deferred")
-;(require 'deferred)
+;; (add-to-list 'load-path "~/Documents/emacs-deferred")
+                                        ;(require 'deferred)
 
 ;; ==== ctable ====
 ;; This is needed for EPC
 
-(add-to-list 'load-path "~/Documents/emacs-ctable")
-;(require 'ctable)
+;; (add-to-list 'load-path "~/Documents/emacs-ctable")
+                                        ;(require 'ctable)
 
 ;; ==== EPC =====
 ;; This is needed for Jedi
 
-(add-to-list 'load-path "~/Documents/emacs-epc")
-;(require 'epc)
+;; (add-to-list 'load-path "~/Documents/emacs-epc")
+                                        ;(require 'epc)
 
 ;; ==== python-environment
 ;; This is needed for Jedi
 
-(add-to-list 'load-path "~/Documents/emacs-python-environment")
+;; (add-to-list 'load-path "~/Documents/emacs-python-environment")
 
 ;; ==== Jedi ====
 ;; Python completion using Jedi and auto-complete-mode
@@ -1187,15 +1190,20 @@ Markdown" t)
 (add-to-list 'load-path "~/Documents/emacs-jedi")
 ;; (require 'jedi) ; We have to require jedi or else the kernel panic workaround
 ;;                 ; below won't work and we won't be able to exit emacs.
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+
 (autoload 'jedi:setup "jedi" nil t)
-(global-auto-complete-mode +1)
+;; (global-auto-complete-mode +1)
 (setq  jedi:use-shortcuts t)
 ;; C-TAB doesn't work, so it's defined in iTerm 2 shortcuts
 (eval-after-load "python"
-  '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:complete))
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(add-to-list 'ac-sources 'ac-source-jedi-direct)
+  '(define-key python-mode-map (kbd "M-[ 1 6") 'company-complete))
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:complete-on-dot t)
+;; (add-to-list 'ac-sources 'ac-source-jedi-direct)
 ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
 (setq jedi:install-imenu t)
 (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
@@ -1423,6 +1431,9 @@ Markdown" t)
  '(auto-save-list-file-prefix "/Users/aaronmeurer/.emacs.d/autosave/")
  '(colon-double-space t)
  '(comment-empty-lines (quote (quote eol)))
+ '(company-auto-complete (quote (quote company-explicit-action-p)))
+ '(company-idle-delay 0)
+ '(company-minimum-prefix-length 0)
  '(cua-enable-cua-keys nil)
  '(cua-enable-modeline-indications t)
  '(cua-enable-region-auto-help nil)
@@ -1442,6 +1453,7 @@ Markdown" t)
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
+ '(global-company-mode t)
  '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
@@ -1457,12 +1469,12 @@ Markdown" t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t)
  '(jedi:environment-root nil)
- '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index))
- '(jedi:install-imenu t)
+ '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index) t)
+ '(jedi:install-imenu t t)
  '(jedi:server-command
    (quote
     ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
- '(jedi:use-shortcuts t)
+ '(jedi:use-shortcuts t t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
  '(menu-bar-mode nil)
