@@ -1331,7 +1331,11 @@ Markdown" t)
 ;; (add-to-list 'load-path "~/Documents/pcre2el")
 ;; (require 'pcre2el)
 (pcre-mode 1)
+(defun turn-off-pcre ()
+  (interactive)
+  (pcre-mode 0))
 
+(add-hook 'hexl-mode-hook 'turn-off-pcre)
 
 ;; Visual regexp
 
