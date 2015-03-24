@@ -632,13 +632,13 @@ This command does the reverse of `fill-region'."
   (interactive)
   (flyspell-mode 1))
 
-(defun turn-on-flyspell ()
-  "Force flyspell-mode on using a positive arg.  For use in hooks."
+(defun turn-off-flyspell ()
+  "Force flyspell-mode off using a zero arg.  For use in hooks."
   (interactive)
   (flyspell-mode 0))
 
 ;; Disable in hexlmode
-(add-hook 'hexl-mode 'turn-off-flyspell)
+(add-hook 'hexl-mode-hook 'turn-off-flyspell)
 
 ;; Use aspell with flyspell
 
