@@ -981,6 +981,31 @@ Markdown" t)
 (autoload 'mediawiki-mode "mediawiki.el" "Major mode for editing MediaWiki files" t)
 (setq auto-mode-alist (cons '("\\.mediawiki" . mediawiki-mode) auto-mode-alist))
 
+;; ==== Use hexl mode for binary files ====
+
+;; http://emacs.stackexchange.com/a/10297/118
+
+(defun buffer-binary-p (&optional buffer)
+  "Return whether BUFFER or the current buffer is binary.
+
+A binary buffer is defined as containing at least on null byte.
+
+Returns either nil, or the position of the first null byte."
+  (with-current-buffer (or buffer (current-buffer))
+    (save-excursion
+      (goto-char (point-min))
+      (search-forward (string ?\x00) nil t 1))))
+
+(defun hexl-if-binary ()
+  "If `hexl-mode' is not already active, and the current buffer
+is binary, activate `hexl-mode'."
+  (interactive)
+  (unless (eq major-mode 'hexl-mode)
+    (when (buffer-binary-p)
+      (hexl-mode))))
+
+(add-hook 'find-file-hooks 'hexl-if-binary)
+
 ;; ==== YAML Mode ====
 
 (add-to-list 'load-path "~/Documents/yaml-mode")
