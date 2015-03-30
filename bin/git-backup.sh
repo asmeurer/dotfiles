@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # This commits any unstaged changes in a git repository, then
 # immideiatly reverts them back to being unstaged.  The idea is that
 # this will backup the changes so that they can be recovered via `git
