@@ -378,6 +378,24 @@ This function ...
     (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
     (ad-activate 'isearch-search)))
 
+;; Make some of the isearch keybindings more sane
+
+(define-key isearch-mode-map (kbd "<tab>") 'isearch-complete)
+
+;; Make delete in isearch delete the failed portion completely.
+;; http://emacs.stackexchange.com/a/10360/118
+(defun mydelete ()
+  "Delete the failed portion of the search string, or the last char if successful."
+  (interactive)
+  (with-isearch-suspended
+   (setq isearch-new-string
+         (substring
+          isearch-string 0 (or (isearch-fail-pos) (1- (length isearch-string))))
+         isearch-new-message
+         (mapconcat 'isearch-text-char-description isearch-new-string ""))))
+
+(define-key isearch-mode-map (kbd "DEL") 'mydelete)
+
 ;; Better M-SPC behavior
 
 (defun cycle-spacing-with-newline ()
