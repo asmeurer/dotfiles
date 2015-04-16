@@ -187,3 +187,6 @@ SciPy
 formatter
 subdirectory
 untracked
+prepended
+uncompress
+Miniconda
