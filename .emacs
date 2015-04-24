@@ -382,8 +382,8 @@ This function ...
 
 (define-key isearch-mode-map (kbd "<tab>") 'isearch-complete)
 
-;; Make delete in isearch delete the failed portion completely.
-;; http://emacs.stackexchange.com/a/10360/118
+;; ;; Make delete in isearch delete the failed portion completely.
+;; ;; http://emacs.stackexchange.com/a/10360/118
 (defun mydelete ()
   "Delete the failed portion of the search string, or the last char if successful."
   (interactive)
@@ -1353,7 +1353,10 @@ is binary, activate `hexl-mode'."
 
 ;; ===== isearch+ =====
 
-;(require 'isearch+)
+(eval-after-load "isearch" '(require 'isearch+))
+
+;; Disable bell ringing in isearch+
+(setq isearchp-ring-bell-function nil)
 
 ;; === Anzu ====
 
@@ -1506,18 +1509,19 @@ is binary, activate `hexl-mode'."
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
+ '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
- '(jedi:complete-on-dot t)
+ '(jedi:complete-on-dot t t)
  '(jedi:environment-root nil)
- '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index))
- '(jedi:install-imenu t)
+ '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index) t)
+ '(jedi:install-imenu t t)
  '(jedi:server-command
    (quote
     ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
- '(jedi:use-shortcuts t)
+ '(jedi:use-shortcuts t t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
  '(menu-bar-mode nil)
