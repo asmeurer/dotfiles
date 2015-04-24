@@ -7,6 +7,7 @@
         TeX-insert-backslash
         backward-kill-line-or-newline
         backward-kill-line-or-region
+        buf-move-left
         end-of-buffer
         fill-paragraph
         forward-sexp
