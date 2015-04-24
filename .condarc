@@ -1,4 +1,5 @@
 # Emacs, this is -*-yaml-*-
+
 channels:
    # - s3://repo.continuum.io/pkgs/free/
   - asmeurer
@@ -14,6 +15,7 @@ channels:
   - trent
   - binstar
   - conda
+  - scopatz
 
 changeps1: no
 
