@@ -4,17 +4,12 @@
 ;;
 ;; - Highlight 'single quoted' text and "double quoted" text differently in
 ;;   Python.
-;; - Get some kind of flymake working for LaTeX.
-;; - Smarter completion for Python.
 ;; - Export all face changes to the theme.
 ;; - Fix TeXcount.
 ;; - Fix bug with isearch when the search is not found and you type delete.
-;; - Find a better regex solution (icicles maybe).
-;; - Fix mouse scrolling.
 ;; - Fix inconsistency between C-x # and C-x C-c in emacsclient.
 ;; - Make C-SPC unset the mark when selection is active.
 ;; - Find a way to let the cursor move off screen.
-;; - Make newlines not indent if the line already has text
 ;; - Make SyntaxErrors in Python show the relevant character
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
