@@ -16,3 +16,4 @@
 (depends-on "ess")
 (depends-on "bug-hunter")
 (depends-on "isearch+")
+(depends-on "paredit")
