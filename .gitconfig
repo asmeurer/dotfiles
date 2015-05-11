@@ -1,29 +1,29 @@
 [user]
-	name = Aaron Meurer
-	email = asmeurer@gmail.com
+    name = Aaron Meurer
+    email = asmeurer@gmail.com
 
 [color]
-	diff  = auto
-	status= auto
-	branch= auto
-	interactive = true
+    diff  = auto
+    status= auto
+    branch= auto
+    interactive = true
 
 [color "diff"]
-	new = white
+    new = white
 [alias]
-	ci = commit --interactive
-	di = diff --color-words
-	st = status
-	co = checkout
-	pu = push github :
-	logl = log --pretty=oneline --abbrev-commit
-	gr = grep -i --color -n -E
-	backup = !git-backup.sh
-	fe = fetch --all
-	weekreport = shortlog --since=1.weeks --author=asmeurer
-	br = branch
-	detach = !git checkout $(git rev-parse HEAD)
-	bl = blame -CCC -M
+    ci = commit --interactive
+    di = diff --color-words
+    st = status
+    co = checkout
+    pu = push github :
+    logl = log --pretty=oneline --abbrev-commit
+    gr = grep -i --color -n -E
+    backup = !git-backup.sh
+    fe = fetch --all
+    weekreport = shortlog --since=1.weeks --author=asmeurer
+    br = branch
+    detach = !git checkout $(git rev-parse HEAD)
+    bl = blame -CCC -M
     lg = log --graph --topo-order --use-mailmap --stat --decorate
     sw = show --color-words
     psh = !git pull --no-edit && git push
@@ -32,22 +32,22 @@
     difff = diff
 
 [sendemail]
-	o = sympy-patches@googlegroups.com
-	envelopesender = asmeurer@gmail.com
-	smtpserver = smtp.gmail.com
-	smtpuser = asmeurer@gmail.com
-	smtpssl = true
-	aliasfiletype = mailrc
+    o = sympy-patches@googlegroups.com
+    envelopesender = asmeurer@gmail.com
+    smtpserver = smtp.gmail.com
+    smtpuser = asmeurer@gmail.com
+    smtpssl = true
+    aliasfiletype = mailrc
 [i18n]
-	commitEncoding = utf-8
+    commitEncoding = utf-8
 [push]
-	default = tracking
+    default = tracking
 [github]
-	user = asmeurer
+    user = asmeurer
 [rerere]
-	enabled = true
+    enabled = true
 
 [credential]
-	helper = cache
+    helper = cache
 [core]
-	precomposeunicode = true
+    precomposeunicode = true
