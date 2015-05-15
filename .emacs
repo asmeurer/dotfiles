@@ -823,13 +823,17 @@ like newline-and-indent"
 
 (defun alternating-scroll-up-line ()
   (interactive "@")
-    (when alternating-scroll-up-next
-;      (run-hook-with-args 'window-scroll-functions)
-      (scroll-up-line))
-    (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
+  (when alternating-scroll-up-next
+                                        ;      (run-hook-with-args 'window-scroll-functions)
+    (scroll-up-line))
+  (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
 (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+
+;; Makes scrolling keep the cursor in the same position on the screen. See http://superuser.com/q/184340/39697
+
+(setq scroll-preserve-screen-position t)
 
 ;; ;; Try to make Python's auto-indent of line continuations smarter
 ;; ;; Taken from
