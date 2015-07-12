@@ -131,5 +131,56 @@ $FORMATTER_DICT['carriage_return'] = print_carriage_return
 
 $PROMPT = '{carriage_return}{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
 
+###########
+# Aliases #
+###########
+
+aliases['rm'] = 'rm -i'
+aliases['cp'] = 'cp -i'
+aliases['mv'] = 'mv -i'
+def ssh(args, stdin=None):
+    $TERM = 'xterm-256color'
+    ssh @(args) < @(stdin)
+
+aliases['ssh'] = ssh
+del ssh
+
+def vagrant(args, stdin=None):
+    $TERM = 'xterm-256color'
+    vagrant @(args) < @(stdin)
+
+aliases['vagrant'] = vagrant
+del vagrant
+
+aliases['ls'] = 'ls -AG@Flha'
+aliases[' l'] = 'ls -AG@Flha'
+aliases['grep'] = 'grep -i --color=always'
+aliases['mkdir'] = 'mkdir -p'
+aliases['cdsympy'] = 'cd ~/Documents/python/sympy/sympy'
+aliases['cds'] = 'cd ~/Documents/python/sympy/sympy'
+aliases['cdss'] = 'cd ~/Documents/python/sympy/sympy-scratch'
+aliases['cdsss'] = 'cd ~/Documents/python/sympy/sympy-scratch2'
+aliases['emacsclient'] = $EMACSCLIENT
+aliases['e'] = 'emacsclient'
+aliases['free'] = 'diskutil info / | GREP -i Free'
+aliases['rehash'] = 'hash -r'
+aliases['cdpwd'] = 'cd `pwd`'
+
+# Typos
+alias it='git'
+alias sl=ls
+
+def cdd(args, stdin=None):
+    cd @("/Users/aaronmeurer/Documents/" + ''.join(args))
+
+aliases['cdd'] = cdd
+del cdd
+
+def cds(args, stdin=None):
+    cd @("/Users/aaronmeurer/Documents/Continuum/" + ''.join(args))
+
+aliases['cds'] = cds
+del cds
+
 source-bash ~/Documents/git/contrib/completion/git-completion.bash
 source-bash ~/Documents/git/contrib/completion/git-prompt.sh
