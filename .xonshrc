@@ -1,0 +1,119 @@
+# -*-mode: python; flycheck-mode: nil -*-
+
+def cwd_dirname():
+    from os.path import basename
+    from os import getcwd
+    return basename(getcwd())
+
+$FORMATTER_DICT['cwd_dirname'] = cwd_dirname
+
+$GIT_PS1_SHOWDIRTYSTATE=1
+$GIT_PS1_SHOWUNTRACKEDFILES=1
+$GIT_PS1_SHOWUPSTREAM="auto"
+$GIT_PS1_STATESEPARATOR=''
+
+def git_prompt_bash():
+    return $(bash -i -c 'source ~/Documents/git/contrib/completion/git-prompt.sh; __git_ps1 "%s"')
+
+$FORMATTER_DICT['git_prompt_bash'] = git_prompt_bash
+
+$FORMATTER_DICT['CONDA_DEFAULT_ENV'] = lambda: __xonsh_env__.get('CONDA_DEFAULT_ENV', '')
+
+# Color tabs based on directories in iTerm 2
+
+# Colors are done as "\033]6;1;bg;red;brightness;NNN\a\033]6;1;bg;blue;brightness;NNN\a\033]6;1;bg;green;brightness;NNN\a"
+# Where you have                   ^              ^                ^              ^                  ^               ^
+#                                  |              |                |              |                  |               |
+#                                 red------->color value          blue------>color value           green------->color value
+#                                              (0-255)                         (0-255)                            (0-255)
+
+# The easiest way to get the color codes for a color is to just type the color
+# name into WolframAlpha, and it will just tell you.  Or, if you have a
+# particular color on-screen that you want, you can use DigitalColor Meter in
+# /Applications/Utilities/
+
+# XXX: Make sure the directory names end in /
+
+# sympy - Red
+DIR_SYMPY = '/Users/aaronmeurer/Documents/python/sympy/sympy/'
+TAB_RED = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+
+# sympy-scratch - Orange
+DIR_SYMPY_SCRATCH = '/Users/aaronmeurer/Documents/python/sympy/sympy-scratch/'
+TAB_ORANGE = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;128\a"
+
+# sympy-bot - Purple
+DIR_SYMPY_BOT = '/Users/aaronmeurer/Documents/python/sympy/sympy-bot/'
+TAB_PURPLE = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+
+# sympy other (like sympy-live or sympy.wiki) - Yellow
+# Note, this one must be tested after the above ones
+DIR_SYMPY_OTHER = '/Users/aaronmeurer/Documents/python/sympy/'
+TAB_YELLOW = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+
+# dotfiles - Green
+DIR_DOTFILES = '/Users/aaronmeurer/Documents/dotfiles/'
+TAB_GREEN = "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+
+# Continuum - Black
+DIR_CONTINUUM = '/Users/aaronmeurer/Documents/Continuum/'
+TAB_BLACK = "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+
+# Conda - White
+DIR_CONDA = '/Users/aaronmeurer/Documents/Continuum/conda/'
+TAB_WHITE = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
+
+# Conda - White
+DIR_CONDA_BUILD = '/Users/aaronmeurer/Documents/Continuum/conda-build/'
+TAB_TEAL = "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a\033]6;1;bg;green;brightness;128\a"
+
+# homework - Blue
+DIR_HOMEWORK = "/Users/aaronmeurer/Documents/Homework/Grad/Fall 2013/"
+TAB_BLUE = "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+
+# conda-recipes - Purple (defined above)
+DIR_CONDA_RECIPES="/Users/aaronmeurer/Documents/Continuum/conda-recipes/"
+
+# Other - default (gray)
+# We can't clear the tab, so just match the color of the default tabs.
+# (https://gitlab.com/gnachman/iterm2/issues/1904)
+
+TAB_GRAY = "\033]6;1;bg;red;brightness;206\a\033]6;1;bg;blue;brightness;206\a\033]6;1;bg;green;brightness;206\a"
+
+from collections import OrderedDict
+DIR_TAB_COLOR = OrderedDict([
+    (DIR_SYMPY, TAB_RED),
+    (DIR_SYMPY_SCRATCH, TAB_ORANGE),
+    (DIR_SYMPY_BOT, TAB_PURPLE),
+    (DIR_SYMPY_OTHER, TAB_YELLOW),
+    (DIR_DOTFILES, TAB_GREEN),
+    (DIR_HOMEWORK, TAB_BLUE),
+    (DIR_CONDA, TAB_WHITE),
+    (DIR_CONDA_BUILD, TAB_TEAL),
+    (DIR_CONDA_RECIPES, TAB_PURPLE),
+    (DIR_CONTINUUM, TAB_BLACK),
+])
+del OrderedDict
+
+def set_tab_color():
+    # To make this work correctly with subdirectories, put higher level
+    # directories later in the list. Hence, we use an OrderedDict
+    from os import getcwd
+    import sys
+
+    for dir, color in DIR_TAB_COLOR.items():
+        if (getcwd() + '/').startswith(dir):
+            sys.stdout.write(color)
+            break
+    else:
+        sys.stdout.write(TAB_GRAY)
+    # Clear cruft from the tab title (http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#s3)
+    sys.stdout.write("\033]0;\007")
+    return ''
+
+$FORMATTER_DICT['set_tab_color'] = set_tab_color
+
+$PROMPT = '{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
+
+source-bash ~/Documents/git/contrib/completion/git-completion.bash
+source-bash ~/Documents/git/contrib/completion/git-prompt.sh
