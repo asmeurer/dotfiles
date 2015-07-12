@@ -21,12 +21,10 @@ changeps1: no
 
 binstar_upload: yes
 
-always_yes: TRUE
+always_yes: yes
 
 # use_pip: false
 
 binstar_personal: true
-
-channel_alias: http://conda.alpha.binstar.org/
 
 show_channel_urls: yes
