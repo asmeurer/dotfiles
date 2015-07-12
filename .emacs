@@ -1532,7 +1532,7 @@ is binary, activate `hexl-mode'."
  '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
- '(require-final-newline (quote ask))
+ '(require-final-newline t)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(save-place t nil (saveplace))
  '(save-place-save-skipped nil)
