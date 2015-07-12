@@ -1208,6 +1208,7 @@ is binary, activate `hexl-mode'."
 (add-hook 'prog-mode-hook 'auto-complete-mode)
 (add-hook 'text-mode-hook 'auto-complete-mode)
 
+
 ;; ==== deferred ====
 ;; This is needed for EPC
 
@@ -1513,14 +1514,14 @@ is binary, activate `hexl-mode'."
  '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
- '(jedi:complete-on-dot t t)
+ '(jedi:complete-on-dot t)
  '(jedi:environment-root nil)
- '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index) t)
- '(jedi:install-imenu t t)
+ '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index))
+ '(jedi:install-imenu t)
  '(jedi:server-command
    (quote
     ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
- '(jedi:use-shortcuts t t)
+ '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(linum-format "%d⎢")
  '(menu-bar-mode nil)
