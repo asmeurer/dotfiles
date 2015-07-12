@@ -1533,7 +1533,7 @@ is binary, activate `hexl-mode'."
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
  '(require-final-newline t)
- '(safe-local-variable-values (quote ((encoding . utf-8))))
+ '(safe-local-variable-values (quote ((flycheck-mode) (encoding . utf-8))))
  '(save-place t nil (saveplace))
  '(save-place-save-skipped nil)
  '(scroll-step 1)
