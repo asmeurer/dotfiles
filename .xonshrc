@@ -112,7 +112,12 @@ def set_tab_color():
     return ''
 
 $FORMATTER_DICT['set_tab_color'] = set_tab_color
-$FORMATTER_DICT['carriage_return'] = '\r'
+def print_carriage_return():
+    import sys
+    sys.stdout.write('\r')
+    return ''
+
+$FORMATTER_DICT['carriage_return'] = print_carriage_return
 
 $PROMPT = '{carriage_return}{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
 
