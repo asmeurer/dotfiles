@@ -1,5 +1,15 @@
 # -*-mode: python; flycheck-mode: nil -*-
 
+# Some useful functions to have in the namespace. Anything that needs to be
+# imported for utility should be deleted or done inside a function so it
+# doesn't clutter up the interactive namespace.
+
+from pprint import pprint
+
+##############
+# The prompt #
+##############
+
 def cwd_dirname():
     from os.path import basename
     from os import getcwd
