@@ -112,8 +112,9 @@ def set_tab_color():
     return ''
 
 $FORMATTER_DICT['set_tab_color'] = set_tab_color
+$FORMATTER_DICT['carriage_return'] = '\r'
 
-$PROMPT = '{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
+$PROMPT = '{carriage_return}{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
 
 source-bash ~/Documents/git/contrib/completion/git-completion.bash
 source-bash ~/Documents/git/contrib/completion/git-prompt.sh
