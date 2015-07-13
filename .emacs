@@ -985,6 +985,7 @@ files" t)
 (autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
 Markdown" t)
 (add-to-list 'auto-mode-alist '("\\.md" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown" . gfm-mode))
 (add-to-list 'auto-mode-alist '("PULLREQ_EDITMSG" . gfm-mode))
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . gfm-mode))
 (add-to-list 'auto-mode-alist '("TAG_EDITMSG" . gfm-mode))
