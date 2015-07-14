@@ -176,11 +176,11 @@ def cdd(args, stdin=None):
 aliases['cdd'] = cdd
 del cdd
 
-def cds(args, stdin=None):
+def cdc(args, stdin=None):
     cd @("/Users/aaronmeurer/Documents/Continuum/" + ''.join(args))
 
-aliases['cds'] = cds
-del cds
+aliases['cdc'] = cdc
+del cdc
 
 source-bash ~/Documents/git/contrib/completion/git-completion.bash
 source-bash ~/Documents/git/contrib/completion/git-prompt.sh
