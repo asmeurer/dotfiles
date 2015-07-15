@@ -24,11 +24,6 @@
 ;; (auto-compile-on-load-mode 1)
 ;; (auto-compile-on-save-mode 1)
 
-;; Load newer versions emacs lisp code. Put first so that it applies to things
-;; loaded in this file.
-
-(setq load-prefer-newer t)
-
 ;; Don't show the splash screen on startup.  Aside from me not needing it
 ;; anymore, this fixes a bug with emacsclient.
 
@@ -836,17 +831,6 @@ like newline-and-indent"
 (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
 
-;; ;; Scroll restore. See http://stackoverflow.com/a/26416113/161801
-;; (require 'scroll-restore)
-;; (scroll-restore-mode 1)
-;; ;; Allow scroll-restore to modify the cursor face
-;; (setq scroll-restore-handle-cursor t)
-;; ;; Make the cursor invisible while POINT is off-screen
-;; (setq scroll-restore-cursor-type nil)
-;; ;; Jump back to the original cursor position after scrolling
-;; (setq scroll-restore-jump-back t)
-
-
 ;; Makes scrolling keep the cursor in the same position on the screen. See http://superuser.com/q/184340/39697
 
 (setq scroll-preserve-screen-position t)
@@ -899,19 +883,6 @@ like newline-and-indent"
 
 ;; ===== Extensions stuff =======
 ;; ==============================
-
-;; ==== el-get ====
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
 
 ;; ==== Cask ====
 
@@ -1004,18 +975,6 @@ like newline-and-indent"
 ;;     '(ace-jump-mode-enable-mark-sync))
 ;; (define-key global-map (kbd "C-x C-x") 'ace-jump-mode-pop-mark)
 
-
-;; ==== gmail-mode ====
-;; Edit gmail in emacs (requires the Edit with Emacs Chrome extension and a
-;; server). Uses ham-mode
-(add-to-list 'load-path "~/Documents/gmail-mode")
-
-(autoload 'gmail-message-mode "gmail-message-mode.el" "Edit gmail messages")
-
-;; ==== ham-mode (html as markdown) ====
-(add-to-list 'load-path "~/Documents/ham-mode")
-
-(autoload 'ham-mode "ham-mode.el" "Html as Markdown")
 
 ;; ==== Markdown mode =====
 

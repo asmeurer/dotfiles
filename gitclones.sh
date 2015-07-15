@@ -73,9 +73,6 @@ git clone git@github.com:benma/visual-regexp-steroids.el.git
 git clone git@github.com:juergenhoetzel/profile-dotemacs.git
 git clone git@github.com:nex3/sass-mode.git
 git clone git@github.com:nex3/haml-mode.git
-git clone git@github.com:Bruce-Connor/gmail-mode.git
-git clone git@github.com:Bruce-Connor/ham-mode.git
-git clone git@github.com:Bruce-Connor/html-to-markdown.git
 git clone git@github.com:Bruce-Connor/aggressive-indent-mode.git
 git clone git@github.com:Bruce-Connor/names.git
 

@@ -14,8 +14,6 @@
 (depends-on "anzu")
 (depends-on "pcre2el")
 (depends-on "ess")
-(depends-on "scroll-restore")
-
 (depends-on "bug-hunter")
 (depends-on "isearch+")
 (depends-on "paredit")
