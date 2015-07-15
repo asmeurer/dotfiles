@@ -4,6 +4,11 @@
 # imported for utility should be deleted or done inside a function so it
 # doesn't clutter up the interactive namespace.
 
+catimg
+echo
+fortune
+echo
+
 from pprint import pprint
 
 ##############
