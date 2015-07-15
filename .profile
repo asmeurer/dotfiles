@@ -1,3 +1,4 @@
+~/anaconda/bin/catimg
 echo
 ~/anaconda/envs/fortune/bin/fortune
 echo
