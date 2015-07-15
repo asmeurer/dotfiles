@@ -21,7 +21,6 @@ def cwd_dirname():
     try:
         cwd = getcwd()
     except FileNotFoundError:
-        echo $FORMATTER_DICT
         return "{BOLD_YELLOW}{BACKGROUND_BLACK}!!Current working directory not found!!{NO_COLOR}".format(**$FORMATTER_DICT)
     return basename(getcwd())
 
