@@ -243,6 +243,7 @@ GIT_PS1_STATESEPARATOR=''
 PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
 PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
+PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-darwin
 PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
