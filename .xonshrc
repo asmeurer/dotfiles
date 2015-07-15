@@ -28,7 +28,7 @@ $GIT_PS1_SHOWUPSTREAM="auto"
 $GIT_PS1_STATESEPARATOR=''
 
 def git_prompt_bash():
-    return $(bash -i -c 'source ~/Documents/git/contrib/completion/git-prompt.sh; __git_ps1 "%s"')
+    return $(bash -c 'source ~/Documents/git/contrib/completion/git-prompt.sh; __git_ps1 "%s"')
 
 $FORMATTER_DICT['git_prompt_bash'] = git_prompt_bash
 
