@@ -18,6 +18,11 @@ from pprint import pprint
 def cwd_dirname():
     from os.path import basename
     from os import getcwd
+    try:
+        cwd = getcwd()
+    except FileNotFoundError:
+        echo $FORMATTER_DICT
+        return "{BOLD_YELLOW}{BACKGROUND_BLACK}!!Current working directory not found!!{NO_COLOR}".format(**$FORMATTER_DICT)
     return basename(getcwd())
 
 $FORMATTER_DICT['cwd_dirname'] = cwd_dirname
@@ -116,8 +121,12 @@ def set_tab_color():
     from os import getcwd
     import sys
 
+    try:
+        cwd = getcwd()
+    except FileNotFoundError:
+        return ''
     for dir, color in DIR_TAB_COLOR.items():
-        if (getcwd() + '/').startswith(dir):
+        if (cwd + '/').startswith(dir):
             sys.stdout.write(color)
             break
     else:
@@ -127,6 +136,7 @@ def set_tab_color():
     return ''
 
 $FORMATTER_DICT['set_tab_color'] = set_tab_color
+
 def print_carriage_return():
     import sys
     sys.stdout.write('\r')
