@@ -175,10 +175,17 @@ aliases['cds'] = 'cd ~/Documents/python/sympy/sympy'
 aliases['cdss'] = 'cd ~/Documents/python/sympy/sympy-scratch'
 aliases['cdsss'] = 'cd ~/Documents/python/sympy/sympy-scratch2'
 aliases['emacsclient'] = $EMACSCLIENT
-aliases['e'] = 'emacsclient'
-aliases['free'] = 'diskutil info / | GREP -i Free'
+aliases['e'] = $EMACSCLIENT
 aliases['rehash'] = 'hash -r'
-aliases['cdpwd'] = 'cd `pwd`'
+# aliases['cdpwd'] = 'cd `pwd`'
+
+def free(args, stdin=None):
+    disk_info = $(diskutil info /)
+    return [i for i in disk_info.splitlines() if "Free" in i][0] + '\n'
+
+aliases['free'] = free
+del free
+
 
 # Typos
 alias it='git'
