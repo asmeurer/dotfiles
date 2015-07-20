@@ -188,8 +188,10 @@ del free
 
 
 # Typos
-alias it='git'
-alias sl=ls
+aliases['it'] = 'git'
+aliases['gi'] = 'git'
+aliases['tit'] = 'git'
+aliases['sl'] = 'ls'
 
 def cdd(args, stdin=None):
     cd @("/Users/aaronmeurer/Documents/" + ''.join(args))

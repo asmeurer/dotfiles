@@ -94,6 +94,8 @@ alias  l='ls -AG@Flha'
 
 # Typos
 alias it='git'
+alias tit='git'
+alias gi='git'
 alias sl=ls
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
