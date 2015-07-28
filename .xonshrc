@@ -143,6 +143,12 @@ def print_carriage_return():
 
 $FORMATTER_DICT['carriage_return'] = print_carriage_return
 
+
+def iterm2_shell_integration_prompt_command():
+    return $(bash -c 'source /Users/aaronmeurer/.iterm2_shell_integration.bash; preexec_invoke_cmd')
+
+$FORMATTER_DICT['iterm2_shell_integration_prompt_command'] = iterm2_shell_integration_prompt_command
+
 $PROMPT = '{carriage_return}{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
 
 ###########
@@ -207,3 +213,5 @@ del cdc
 
 source-bash ~/Documents/git/contrib/completion/git-completion.bash
 source-bash ~/Documents/git/contrib/completion/git-prompt.sh
+
+# $SHELL_TYPE = 'prompt_toolkit'
