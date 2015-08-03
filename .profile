@@ -84,6 +84,10 @@ shopt -s hostcomplete
 # Don't complete on empty lines (it hangs bash and is not very useful)
 shopt -s no_empty_cmd_completion
 
+# Enable more advanced globbing
+shopt -s globstar
+shopt -s extglob
+
 # Make commands of the same name resume a stopped job instead of starting a
 # new process when one exists. Useful if I accidentally suspend emacs and
 # forget about it.
