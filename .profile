@@ -84,6 +84,10 @@ shopt -s hostcomplete
 # Don't complete on empty lines (it hangs bash and is not very useful)
 shopt -s no_empty_cmd_completion
 
+# Enable more advanced globbing
+shopt -s globstar
+shopt -s extglob
+
 # Make commands of the same name resume a stopped job instead of starting a
 # new process when one exists. Useful if I accidentally suspend emacs and
 # forget about it.
@@ -253,8 +257,8 @@ export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export TTY=$(basename `tty`)
 export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 export EDITOR="$EMACSCLIENT"
-export LESS='-RIC' # Make less search case insensitive, always use raw input
-                   # mode (to show colors), and never scroll output
+export LESS='-RI' # Make less search case insensitive, always use raw input
+                   # mode (to show colors)
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
