@@ -112,7 +112,11 @@ c.TerminalIPythonApp.ignore_old_config = True
 # c.TerminalIPythonApp.quick = False
 
 # A list of dotted module names of IPython extensions to load.
-# c.TerminalIPythonApp.extensions = []
+try:
+    import iterm2_tools.ipython
+    c.TerminalIPythonApp.extensions.append('iterm2_tools.ipython')
+except ImportError:
+    pass
 
 # Whether to install the default config files into the profile dir. If a new
 # profile is being created, and IPython contains config files for that profile,
