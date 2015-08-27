@@ -4,6 +4,8 @@
 # imported for utility should be deleted or done inside a function so it
 # doesn't clutter up the interactive namespace.
 
+$PATH.insert(0, "/Users/aaronmeurer/anaconda/bin")
+
 catimg
 echo
 fortune
@@ -180,6 +182,7 @@ aliases['cdsympy'] = 'cd ~/Documents/python/sympy/sympy'
 aliases['cds'] = 'cd ~/Documents/python/sympy/sympy'
 aliases['cdss'] = 'cd ~/Documents/python/sympy/sympy-scratch'
 aliases['cdsss'] = 'cd ~/Documents/python/sympy/sympy-scratch2'
+$EMACSCLIENT = "emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 aliases['emacsclient'] = $EMACSCLIENT
 aliases['e'] = $EMACSCLIENT
 aliases['rehash'] = 'hash -r'
