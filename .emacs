@@ -1249,7 +1249,7 @@ is binary, activate `hexl-mode'."
 (setq jedi:complete-on-dot t)
 (add-to-list 'ac-sources 'ac-source-jedi-direct)
 ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
-(setq jedi:install-imenu t)
+(setq jedi:install-imenu nil)
 (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
 
 (setq jedi:server-args
