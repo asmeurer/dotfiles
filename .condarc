@@ -17,7 +17,6 @@ channels:
   - conda
   - scopatz
   - dynd
-  - jakirkham
 
 changeps1: no
 
