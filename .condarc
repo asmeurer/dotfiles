@@ -24,7 +24,7 @@ binstar_upload: yes
 
 always_yes: yes
 
-# use_pip: false
+use_pip: true
 
 binstar_personal: true
 
