@@ -24,6 +24,7 @@
       '(
         alternating-scroll-down-line
         alternating-scroll-up-line
+        beginning-of-buffer
         newline-and-indent-conditionally
         python-indent-dedent-line-backspace
         ))
