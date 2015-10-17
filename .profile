@@ -119,7 +119,7 @@ cdd () {
 _cdd_complete ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS $HOME/Documents/ | lam -s \" - -s \")" -- "$cur" ));
+    COMPREPLY=($(compgen -W "$(LS $HOME/Documents/ | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
 }
 
 complete -F _cdd_complete "cdd"
@@ -131,7 +131,7 @@ cdc () {
 _cdc_complete ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS $HOME/Documents/Continuum | lam -s \" - -s \")" -- "$cur" ));
+    COMPREPLY=($(compgen -W "$(LS $HOME/Documents/Continuum | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
 }
 
 complete -F _cdc_complete "cdc"
@@ -364,7 +364,7 @@ alias deact="source deactivate"
 _activate_complete ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS $HOME/anaconda/envs | lam -s \" - -s \")" -- "$cur" ));
+    COMPREPLY=($(compgen -W "$(LS $HOME/anaconda/envs | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
 }
 
 complete -F _activate_complete "act"
