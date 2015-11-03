@@ -17,3 +17,4 @@
 (depends-on "bug-hunter")
 (depends-on "isearch+")
 (depends-on "paredit")
+(depends-on "saveplace")
