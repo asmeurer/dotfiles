@@ -341,16 +341,14 @@ PATH="$HOME/Library/Haskell/bin:$PATH"
 # Go
 PATH="$PATH:/usr/local/go/bin"
 
+# Hunspell
+PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
+
 # Anaconda
-if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
-    # Hunspell
-    PATH="$HOME/anaconda3/envs/hunspell/bin:$PATH"
-    PATH="$HOME/anaconda3/bin:$PATH"
-else
-    # Hunspell
-    PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
-    PATH="$HOME/anaconda/bin:$PATH"
-fi
+# Note: we must us anaconda3 here, because that is the real directory name
+# (anaconda is just a symlink). Otherwise, activate will not remove it from
+# the PATH.
+PATH="$HOME/anaconda3/bin:$PATH"
 
 
 eval "$(register-python-argcomplete conda)"
@@ -378,16 +376,9 @@ conda-build-all() {
     done
 }
 
-if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
-    conda-remove-test() {
-        rm -rf ~/anaconda3/envs/test
-    }
-else
-    conda-remove-test() {
-        rm -rf ~/anaconda/envs/test
-    }
-fi
-
+conda-remove-test() {
+    rm -rf ~/anaconda/envs/test
+}
 
 export PATH
 
@@ -398,9 +389,7 @@ MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
 eval "`pip completion --bash`"
-if [[ $COMPUTER == "Aaron’s Retina MacBook Pro" ]]; then
-    eval "`~/anaconda3/envs/blog-nikola/bin/nikola tabcompletion`"
-fi
+eval "`~/anaconda/envs/blog-nikola/bin/nikola tabcompletion`"
 
 source ~/Documents/ipython/examples/core/ipython-completion.bash
 
