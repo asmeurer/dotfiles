@@ -257,7 +257,7 @@ export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export TTY=$(basename `tty`)
 export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 export EDITOR="$EMACSCLIENT"
-export LESS='-RI' # Make less search case insensitive, always use raw input
+export LESS='-RIN' # Make less search case insensitive, always use raw input
                    # mode (to show colors)
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
