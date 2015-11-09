@@ -1518,7 +1518,7 @@ is binary, activate `hexl-mode'."
  '(jedi:complete-on-dot t)
  '(jedi:environment-root nil)
  '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index))
- '(jedi:install-imenu t)
+ '(jedi:install-imenu nil)
  '(jedi:server-command
    (quote
     ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
