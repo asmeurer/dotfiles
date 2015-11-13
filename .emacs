@@ -831,6 +831,11 @@ like newline-and-indent"
 (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
 
+;; Make mouse 2 (three finger click in iTerm2) do a yank. The default doesn't
+;; work in the terminal emacs.
+
+(global-set-key (kbd "<mouse-2>") 'mouse-yank-at-click)
+
 ;; Makes scrolling keep the cursor in the same position on the screen. See http://superuser.com/q/184340/39697
 
 (setq scroll-preserve-screen-position t)
