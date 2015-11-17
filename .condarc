@@ -17,6 +17,7 @@ channels:
   - conda
   - scopatz
   - dynd
+  - pyne
 
 changeps1: no
 
