@@ -1553,7 +1553,7 @@ is binary, activate `hexl-mode'."
  '(undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(vr/match-separator-use-custom-face t)
- '(which-function-mode t)
+; '(which-function-mode t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
  '(xterm-title-frame-title-format "%b")
