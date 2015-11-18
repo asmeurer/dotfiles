@@ -1406,8 +1406,8 @@ is binary, activate `hexl-mode'."
 (add-to-list 'load-path "~/Documents/visual-regexp-steroids.el/")
 (require 'visual-regexp-steroids)
 ;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
-(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
-(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
+(define-key global-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
+(define-key global-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;; ===== expand-region =====
 
