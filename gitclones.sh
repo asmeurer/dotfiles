@@ -45,9 +45,11 @@ clone-or-pull git@github.com:winterTTr/ace-jump-mode.git
 clone-or-pull git@github.com:nonsequitur/smex.git
 # Until https://github.com/nonsequitur/smex/pull/12 is merged
 cd smex
-git remote add haxney git@github.com:haxney/smex.git
+# ignore remote already exists.
+git remote add haxney git@github.com:haxney/smex.git || true
 git fetch haxney
-git checkout haxney/customize
+git checkout customize
+git branch --set-upstream-to=haxney/customize customize
 cd ~/Documents/
 clone-or-pull git@github.com:technomancy/ido-ubiquitous.git
 clone-or-pull git://jblevins.org/git/markdown-mode.git
@@ -55,9 +57,12 @@ clone-or-pull git@github.com:yoshiki/yaml-mode.git
 clone-or-pull git@github.com:defunkt/coffee-mode.git
 clone-or-pull git@github.com:fgallina/python.el.git
 cd python.el
-git remote add github git@github.com:asmeurer/python.el.git
+# ignore remote already exists
+git remote add github git@github.com:asmeurer/python.el.git || true
 git fetch github
 git checkout indentation
+# ignore remote
+git branch --set-upstream-to=github/indentation indentation
 cd ~/Documents/
 clone-or-pull git@github.com:purcell/mmm-mode.git
 # TODO: doctest-mode
@@ -70,7 +75,8 @@ clone-or-pull git@github.com:kiwanami/emacs-epc.git
 clone-or-pull git@github.com:tkf/emacs-jedi.git
 clone-or-pull git@github.com:tkf/emacs-python-environment.git
 cd emacs-jedi
-conda create -p env jedi epc
+echo "Creating conda environment for jedi"
+conda install -m -p env jedi epc
 cd ~/Documents/
 clone-or-pull git@github.com:m2ym/popwin-el.git
 clone-or-pull git@github.com:m2ym/direx-el.git
