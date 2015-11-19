@@ -100,8 +100,3 @@ clone-or-pull git@github.com:nex3/sass-mode.git
 clone-or-pull git@github.com:nex3/haml-mode.git
 clone-or-pull git@github.com:Bruce-Connor/aggressive-indent-mode.git
 clone-or-pull git@github.com:Bruce-Connor/names.git
-
-mkdir -p ~/Documents/Continuum
-cd ~/Documents/Continuum
-clone-or-pull git@github.com:pydata/conda.git
-clone-or-pull git@github.com:pydata/conda-recipes.git
