@@ -1,5 +1,5 @@
 #/usr/bin/env bash
-set -xe
+set -e
 
 clone-or-pull () {
     dir=$(python -c "
@@ -7,10 +7,12 @@ print('$2' or '$1'.rsplit('.git', 1)[0].split('/')[-1])
 ")
     if [[ -d $dir ]]
     then
+        echo "Pulling $dir"
         cd $dir
         git pull
         cd ..
     else
+        echo "Cloning $dir"
         git clone $1
     fi
 }
@@ -34,7 +36,9 @@ clone-or-pull git@github.com:inducer/pudb.git
 clone-or-pull git@github.com:dacap/keyfreq.git
 clone-or-pull git@github.com:cask/cask.git
 cd ~
+echo "Running cask"
 cask
+echo "Running cask update"
 cask update
 cd ~/Documents/
 clone-or-pull git@github.com:winterTTr/ace-jump-mode.git
