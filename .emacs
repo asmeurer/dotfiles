@@ -380,6 +380,7 @@ This function ...
 ;; Make delete in isearch delete the failed portion completely.
 ;; http://emacs.stackexchange.com/a/10360/118
 ;; https://gist.github.com/johnmastro/508fb22a2b4e1ce754e0
+
 (defun isearch-delete-something ()
   "Delete non-matching text or the last character."
   ;; Mostly copied from `isearch-del-char' and Drew's answer on the page above
@@ -1319,11 +1320,12 @@ is binary, activate `hexl-mode'."
 
 ;; ===== Scroll bars ======
 
-;; ;; This is related to auto-complete-mode (same developer)
-;;
-;; (add-to-list 'load-path "~/Documents/yascroll-el")
-;; (require 'yascroll)
-;; (global-yascroll-bar-mode 1)
+;; This is related to auto-complete-mode (same developer)
+
+(add-to-list 'load-path "~/Documents/yascroll-el")
+(require 'cl)
+(require 'yascroll)
+(global-yascroll-bar-mode 1)
 
 ;; ;; Discover mode
 
@@ -1566,7 +1568,8 @@ is binary, activate `hexl-mode'."
  '(window-combination-limit nil)
  '(window-combination-resize t)
  '(xterm-title-frame-title-format "%b")
- '(xterm-title-mode t))
+ '(xterm-title-mode t)
+ '(yascroll:delay-to-hide nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
