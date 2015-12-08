@@ -1522,7 +1522,6 @@ is binary, activate `hexl-mode'."
  '(global-subword-mode t)
  '(global-undo-tree-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
-; '(helm-match-plugin-mode t nil (helm-match-plugin))
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
