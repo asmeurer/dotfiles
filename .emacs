@@ -1567,6 +1567,7 @@ is binary, activate `hexl-mode'."
  '(undo-tree-auto-save-history t)
  '(undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
+ '(vr/default-regexp-modifiers (quote (:I t :M t :S nil :U t)))
  '(vr/match-separator-use-custom-face t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
