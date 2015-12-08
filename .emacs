@@ -373,6 +373,11 @@ This function ...
     (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
     (ad-activate 'isearch-search)))
 
+;; Make vr--isearch always case insensitive
+(defadvice vr--isearch (around add-case-insensitive (forward string &optional bound noerror count) activate)
+  (setq string (concat "(?i)" string))
+  ad-do-it)
+
 ;; Make some of the isearch keybindings more sane
 
 (define-key isearch-mode-map (kbd "<tab>") 'isearch-complete)
