@@ -18,3 +18,4 @@
 (depends-on "isearch+")
 (depends-on "paredit")
 (depends-on "saveplace")
+(depends-on "cython-mode")
