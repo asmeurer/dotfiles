@@ -15,8 +15,10 @@ channels:
   - binstar
   - conda
   - scopatz
+  - xonsh
   - dynd
   - pyne
+  - menpo
 
 changeps1: no
 
