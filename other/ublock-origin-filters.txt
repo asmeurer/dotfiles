@@ -1,0 +1,283 @@
+fortune.com##HEADER[class="main-header"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+
+www.bakadesuyo.com##DIV[class="sumome-popup-form"]
+www.scientificamerican.com##DIV[class="toasterAd"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+bootstrapbreakthroughs.com##DIV[id="drip-4728"][class="drip-tab bottom right"]
+news.nationalgeographic.com##DIV[id="custom_lightbox"]
+venturebeat.com##DIV[id="lightbox"][class="dialog wide"]
+getpebble.com##DIV[id="ki-ih"][class="ki-e8 ki-ih"]
+www.chatterblock.com##DIV[class="bootbox modal fade in"]
+www.chatterblock.com##DIV[class="modal-backdrop fade in"]
+www.slidethecity.com##DIV[id="ticketSocketRemoteNewsletterSignupFormModal"][class="modal fade in"]
+www.pinterest.com##DIV[class="Module UnauthBanner"]
+99u.com##DIV[id="sub-footer"][class="scale source-org vcard cfix"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+www.educationdatalab.org.uk##DIV[id="navigation"]
+waitbutwhy.com##IMG[src="http://28oa9i1t08037ue3m1l0i861.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/wbw_shorterad.jpg"]
+waitbutwhy.com##DIV[class="sumome-share-client sumome-share-client-left-page sumome-share-client-counts sumome-share-client-light sumome-share-client-medium"]
+time.com##DIV[id="ti-page-panel"][class="normal shadow"]
+www.portlandmonthlymag.com##DIV[id="c9-popup"][class="c9-shown "]
+www.opendatascience.com##DIV[id="modal-758"][class="aqua-5"]
+espn.go.com##SECTION[id="global-scoreboard"][class="hide-fullbtn no-datepicker"]
+blog.alinelerner.com##DIV[class="sumome-scrollbox-form"]
+www.psychol.cam.ac.uk##DIV[id="viewlet-cookiepolicy"]
+hbr.org##SECTION[id="intromercial-handle"][class="backdrop-darker window-block"]
+radar.oreilly.com##DIV[id="newsletter-popup-overlay"]
+www.atlasobscura.com##DIV[id="wonders-signup-wrap-revised"][class="content-box modal js-email-signup-wrap in"]
+www.atlasobscura.com##DIV[id="facebook-page-plugin"][class="shown"]
+www.elle.com##DIV[id="campaign_133364_container_overlay"][class="bcx_container bcx_fade bcx_overlay"]
+do512.com##DIV[class="ds-modals"]
+www.theallium.com##DIV[id="arevicofancy-wrap"]
+www.theguardian.com##HEADER[id="header"][class="l-header u-cf l-header--is-slim"]
+www.theguardian.com##DIV[class="site-message__inner js-site-message-inner"]
+grahamcluley.com##DIV[id="catapult-cookie-bar"]
+community.spiceworks.com##DIV[id="photo-join-modal"][class="modal in"]
+www.robvanderwoude.com##DIV[class="cc_banner cc_container cc_container--open"]
+www.robvanderwoude.com##DIV[class="cc_banner cc_container cc_container--open"]
+
+fortune.com##HEADER[class="main-header"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+
+www.bakadesuyo.com##DIV[class="sumome-popup-form"]
+www.scientificamerican.com##DIV[class="toasterAd"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+bootstrapbreakthroughs.com##DIV[id="drip-4728"][class="drip-tab bottom right"]
+news.nationalgeographic.com##DIV[id="custom_lightbox"]
+venturebeat.com##DIV[id="lightbox"][class="dialog wide"]
+getpebble.com##DIV[id="ki-ih"][class="ki-e8 ki-ih"]
+www.chatterblock.com##DIV[class="bootbox modal fade in"]
+www.chatterblock.com##DIV[class="modal-backdrop fade in"]
+www.slidethecity.com##DIV[id="ticketSocketRemoteNewsletterSignupFormModal"][class="modal fade in"]
+www.pinterest.com##DIV[class="Module UnauthBanner"]
+99u.com##DIV[id="sub-footer"][class="scale source-org vcard cfix"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+www.educationdatalab.org.uk##DIV[id="navigation"]
+waitbutwhy.com##IMG[src="http://28oa9i1t08037ue3m1l0i861.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/wbw_shorterad.jpg"]
+waitbutwhy.com##DIV[class="sumome-share-client sumome-share-client-left-page sumome-share-client-counts sumome-share-client-light sumome-share-client-medium"]
+time.com##DIV[id="ti-page-panel"][class="normal shadow"]
+www.portlandmonthlymag.com##DIV[id="c9-popup"][class="c9-shown "]
+www.opendatascience.com##DIV[id="modal-758"][class="aqua-5"]
+espn.go.com##SECTION[id="global-scoreboard"][class="hide-fullbtn no-datepicker"]
+blog.alinelerner.com##DIV[class="sumome-scrollbox-form"]
+www.psychol.cam.ac.uk##DIV[id="viewlet-cookiepolicy"]
+hbr.org##SECTION[id="intromercial-handle"][class="backdrop-darker window-block"]
+radar.oreilly.com##DIV[id="newsletter-popup-overlay"]
+www.atlasobscura.com##DIV[id="wonders-signup-wrap-revised"][class="content-box modal js-email-signup-wrap in"]
+www.atlasobscura.com##DIV[id="facebook-page-plugin"][class="shown"]
+www.elle.com##DIV[id="campaign_133364_container_overlay"][class="bcx_container bcx_fade bcx_overlay"]
+do512.com##DIV[class="ds-modals"]
+www.theallium.com##DIV[id="arevicofancy-wrap"]
+www.theguardian.com##HEADER[id="header"][class="l-header u-cf l-header--is-slim"]
+www.theguardian.com##DIV[class="site-message__inner js-site-message-inner"]
+grahamcluley.com##DIV[id="catapult-cookie-bar"]
+community.spiceworks.com##DIV[id="photo-join-modal"][class="modal in"]
+www.macworld.com##UL[id="primarySocialSharing"][class="sharing-tools"]
+www.washingtonpost.com##DIV[class="social-tools-wrapper"]
+www.washingtonpost.com##DIV[id="fdqPgA1OUnQomp"][class="moat-trackable pb-f-theme-normal full pb-feature pb-layout-item pb-f-page-subscription fixed-overlay-subscription"]
+@@|https://wbillpay.verizonwireless.com/vzw/secure/setPrivacy.action|$document
+babieslearninglanguage.blogspot.ie##DIV[id="cookieChoiceInfo"][class="cookie-choices-info singleton-element"]
+
+fortune.com##HEADER[class="main-header"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+
+www.bakadesuyo.com##DIV[class="sumome-popup-form"]
+www.scientificamerican.com##DIV[class="toasterAd"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+bootstrapbreakthroughs.com##DIV[id="drip-4728"][class="drip-tab bottom right"]
+news.nationalgeographic.com##DIV[id="custom_lightbox"]
+venturebeat.com##DIV[id="lightbox"][class="dialog wide"]
+getpebble.com##DIV[id="ki-ih"][class="ki-e8 ki-ih"]
+www.chatterblock.com##DIV[class="bootbox modal fade in"]
+www.chatterblock.com##DIV[class="modal-backdrop fade in"]
+www.slidethecity.com##DIV[id="ticketSocketRemoteNewsletterSignupFormModal"][class="modal fade in"]
+www.pinterest.com##DIV[class="Module UnauthBanner"]
+99u.com##DIV[id="sub-footer"][class="scale source-org vcard cfix"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+www.educationdatalab.org.uk##DIV[id="navigation"]
+waitbutwhy.com##IMG[src="http://28oa9i1t08037ue3m1l0i861.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/wbw_shorterad.jpg"]
+waitbutwhy.com##DIV[class="sumome-share-client sumome-share-client-left-page sumome-share-client-counts sumome-share-client-light sumome-share-client-medium"]
+time.com##DIV[id="ti-page-panel"][class="normal shadow"]
+www.portlandmonthlymag.com##DIV[id="c9-popup"][class="c9-shown "]
+www.opendatascience.com##DIV[id="modal-758"][class="aqua-5"]
+espn.go.com##SECTION[id="global-scoreboard"][class="hide-fullbtn no-datepicker"]
+blog.alinelerner.com##DIV[class="sumome-scrollbox-form"]
+www.psychol.cam.ac.uk##DIV[id="viewlet-cookiepolicy"]
+hbr.org##SECTION[id="intromercial-handle"][class="backdrop-darker window-block"]
+radar.oreilly.com##DIV[id="newsletter-popup-overlay"]
+www.atlasobscura.com##DIV[id="wonders-signup-wrap-revised"][class="content-box modal js-email-signup-wrap in"]
+www.atlasobscura.com##DIV[id="facebook-page-plugin"][class="shown"]
+www.elle.com##DIV[id="campaign_133364_container_overlay"][class="bcx_container bcx_fade bcx_overlay"]
+do512.com##DIV[class="ds-modals"]
+www.theallium.com##DIV[id="arevicofancy-wrap"]
+www.theguardian.com##HEADER[id="header"][class="l-header u-cf l-header--is-slim"]
+www.theguardian.com##DIV[class="site-message__inner js-site-message-inner"]
+grahamcluley.com##DIV[id="catapult-cookie-bar"]
+community.spiceworks.com##DIV[id="photo-join-modal"][class="modal in"]
+www.robvanderwoude.com##DIV[class="cc_banner cc_container cc_container--open"]
+www.robvanderwoude.com##DIV[class="cc_banner cc_container cc_container--open"]
+
+fortune.com##HEADER[class="main-header"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+
+www.bakadesuyo.com##DIV[class="sumome-popup-form"]
+www.scientificamerican.com##DIV[class="toasterAd"]
+www.johndcook.com##HEADER[id="masthead"][class="site-header reduced"]
+bootstrapbreakthroughs.com##DIV[id="drip-4728"][class="drip-tab bottom right"]
+news.nationalgeographic.com##DIV[id="custom_lightbox"]
+venturebeat.com##DIV[id="lightbox"][class="dialog wide"]
+getpebble.com##DIV[id="ki-ih"][class="ki-e8 ki-ih"]
+www.chatterblock.com##DIV[class="bootbox modal fade in"]
+www.chatterblock.com##DIV[class="modal-backdrop fade in"]
+www.slidethecity.com##DIV[id="ticketSocketRemoteNewsletterSignupFormModal"][class="modal fade in"]
+www.pinterest.com##DIV[class="Module UnauthBanner"]
+99u.com##DIV[id="sub-footer"][class="scale source-org vcard cfix"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+snip.ly##DIV[id="sniplyBar"][class="animated sized bean bottom desktop"]
+www.educationdatalab.org.uk##DIV[id="navigation"]
+waitbutwhy.com##IMG[src="http://28oa9i1t08037ue3m1l0i861.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/wbw_shorterad.jpg"]
+waitbutwhy.com##DIV[class="sumome-share-client sumome-share-client-left-page sumome-share-client-counts sumome-share-client-light sumome-share-client-medium"]
+time.com##DIV[id="ti-page-panel"][class="normal shadow"]
+www.portlandmonthlymag.com##DIV[id="c9-popup"][class="c9-shown "]
+www.opendatascience.com##DIV[id="modal-758"][class="aqua-5"]
+espn.go.com##SECTION[id="global-scoreboard"][class="hide-fullbtn no-datepicker"]
+blog.alinelerner.com##DIV[class="sumome-scrollbox-form"]
+www.psychol.cam.ac.uk##DIV[id="viewlet-cookiepolicy"]
+hbr.org##SECTION[id="intromercial-handle"][class="backdrop-darker window-block"]
+radar.oreilly.com##DIV[id="newsletter-popup-overlay"]
+www.atlasobscura.com##DIV[id="wonders-signup-wrap-revised"][class="content-box modal js-email-signup-wrap in"]
+www.atlasobscura.com##DIV[id="facebook-page-plugin"][class="shown"]
+www.elle.com##DIV[id="campaign_133364_container_overlay"][class="bcx_container bcx_fade bcx_overlay"]
+do512.com##DIV[class="ds-modals"]
+www.theallium.com##DIV[id="arevicofancy-wrap"]
+www.theguardian.com##HEADER[id="header"][class="l-header u-cf l-header--is-slim"]
+www.theguardian.com##DIV[class="site-message__inner js-site-message-inner"]
+grahamcluley.com##DIV[id="catapult-cookie-bar"]
+community.spiceworks.com##DIV[id="photo-join-modal"][class="modal in"]
+www.macworld.com##UL[id="primarySocialSharing"][class="sharing-tools"]
+www.washingtonpost.com##DIV[id="signup-banner"][class="banner"]
+www.washingtonpost.com##DIV[id="signup-banner"][class="banner"]
+www.washingtonpost.com##DIV[id="signup-banner"][class="banner"]
+www.washingtonpost.com##DIV[id="f2KuKh1WZCSrop"][class="moat-trackable pb-f-theme-normal pb-3 pb-feature pb-layout-item pb-f-page-header-v2 abt-mastHead2-logoLarge-false"]
+www.washingtonpost.com##DIV[id="f0KLyP5WZCSrop"][class="moat-trackable pb-f-theme-normal pb-3 pb-feature pb-layout-item pb-f-page-subscription fixed-overlay-subscription"]
+www.wired.com##HEADER[id="global-header"][class="bg-white overflow-hide text-c clearfix fixed top right left headroom hr-not-top hr-pinned"]
+www.wired.com##HEADER[id="global-header"][class="bg-white overflow-hide text-c clearfix fixed top right left headroom hr-not-top"]
+www.wired.com##HEADER[id="global-header"][class="bg-white overflow-hide text-c clearfix fixed top right left headroom hr-not-top hr-unpinned"]
+www.wired.com##UL[id="share-card"][class="border-t-big pad-t-med no-marg headroom hr-not-top sticky hr-unpinned"]
+www.wired.com##UL[id="share-card"][class="border-t-big pad-t-med no-marg headroom hr-not-top sticky hr-pinned"]
+www.wired.com##UL[id="share-card"][class="border-t-big pad-t-med no-marg headroom sticky hr-not-top"]
+www.wired.com##UL[id="share-card"][class="border-t-big pad-t-med no-marg headroom sticky hr-not-top hr-unpinned"]
+www.wired.com##UL[id="share-card"][class="border-t-big pad-t-med no-marg headroom sticky hr-not-top hr-pinned"]
+www.wired.com##UL[id="share-card"][class="border-t-big pad-t-med no-marg headroom hr-not-top hr-unpinned"]
+www.wired.com##UL[id="share-card"]
+www.wired.com##DIV[class="fallback fallback-short border box-shadow"]
+www.wired.com##DIV[id="latest-news"][class="card smart short-order-2 overflow-hide med-no-marg big-no-marg squish-normal seamless squish no-marg"]
+www.macworld.com##UL[id="primarySocialSharing"][class="sharing-tools sidecar"]
+www.macworld.com##DIV[id="newsletters"][class="module radius_5"]
+www.macworld.com##DIV[class="side-module side-product-list side-module-popular-products"]
+www.macworld.com##DIV[class="promo apart resources"]
+www.yahoo.com##DIV[class="y-mod header ct-box-hd yui-sv-hd"]
+www.yahoo.com##DIV[id="uh-underlay"][class="navbar-underlay"]
+www.yahoo.com##NAV[class="GridSpread"]
+www.yahoo.com##DIV[class="W-100 Pos-a Start-0"]
+www.yahoo.com##DIV[class="sticky"]
+www.bloomberg.com##DIV[id="full-header"][class="sticky-header stuck"]
+www.quora.com##DIV[id="__w2_hXawfnS_modal_signup_wrapper"]
+www.quora.com##DIV[id="__*_modal_signup_wrapper"]
+www.quora.com##DIV[id="__*_modal_signup_wrapper"]
+www.quora.com##DIV[id="__.*_modal_signup_wrapper"]
+
+! 10/1/2015, 6:47:51 PM http://www.cnn.com/2015/10/01/us/oregon-college-shooting/index.html
+www.cnn.com###breaking-news > .l-container > .breaking-news
+
+! 10/26/2015, 5:05:43 PM http://fusion.net/story/211064/john-goodenough-electric-cars-lithium-batteries/
+fusion.net###fusion-email-signup-modal
+
+! 10/29/2015, 12:26:30 PM http://blog.dilbert.com/post/132144998646/cows-our-greatest-enemies
+blog.dilbert.com##body > div:nth-of-type(1) > .\{\}.cc_banner-wrapper > .cc_container--open.cc_container.cc_banner > .cookie-choices-info
+
+! 11/6/2015, 1:38:12 PM http://www.economist.com/help/pagefair
+||www.economist.com/ec-overlay/init/emptyframe
+
+! 11/6/2015, 1:38:18 PM http://www.economist.com/help/pagefair
+www.economist.com###simplemodal-container > .simplemodal-wrap
+
+! 11/6/2015, 1:38:25 PM http://www.economist.com/help/pagefair
+www.economist.com###simplemodal-container
+
+! 11/6/2015, 3:32:28 PM http://dilbert.com/search_results?page=2&terms=laziness
+dilbert.com##body > div:nth-of-type(1) > .cc_banner-wrapper > .cc_container--open.cc_container.cc_banner > .cookie-choices-info
+
+! 11/10/2015, 12:00:21 PM http://europe.newsweek.com/hundreds-christian-fighters-scramble-defend-syrian-town-isis-advance-336227
+||sns.europe.newsweek.com/newsletter?popup=1
+
+! 11/10/2015, 4:29:01 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-favorite.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:29:25 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-follow.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:29:48 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-favorited_mention.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:30:51 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-retweeted_mention.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:31:13 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-retweet.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:31:29 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-favorite.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:31:44 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-favorited_mention.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:32:00 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-follow.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:32:22 PM https://twitter.com/i/notifications?filter=all
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-retweeted_retweet.stream-item-activity.clearfix.stream-item-content
+
+! 11/10/2015, 4:33:07 PM https://twitter.com/i/notifications?filter=all
+twitter.com## .has-activity-supplement-facepile.stream-item-activity-notification.stream-item-list_member_added.stream-item-activity.clearfix.stream-item-content
+
+! 11/12/2015, 2:04:03 PM http://www.bostonglobe.com/business/2015/11/11/behind-scenes-sexiest-job-century/Kc1cvXIu31DfHhVmyRQeIJ/story.html
+www.bostonglobe.com###email-login
+
+! 11/23/2015, 10:54:26 AM http://www.cnn.com/2015/11/23/europe/paris-attacks-brussels-lockdown-cats/
+www.cnn.com##.user-msg
+
+! 11/26/2015, 8:29:56 PM https://hootsuite.com/dashboard#/
+hootsuite.com##._ui-widget-overlay.ui-widget-overlay
+
+! 11/26/2015, 8:30:10 PM https://hootsuite.com/dashboard#/
+hootsuite.com###lockStreamScreenPopup
+
+! 11/26/2015, 8:30:19 PM https://hootsuite.com/dashboard#/
+hootsuite.com##.x-standardModal.rc-ModalBase.ui-draggable.ui-corner-all.ui-widget-content.ui-widget.ui-dialog > .-modal > .x-default.-modalDialog > .-content > .x-default.-header.ui-helper-clearfix.ui-corner-all.ui-widget-header.ui-dialog-titlebar
+
+! 11/26/2015, 8:30:27 PM https://hootsuite.com/dashboard#/
+hootsuite.com##.x-standardModal.rc-ModalBase.ui-draggable.ui-corner-all.ui-widget-content.ui-widget.ui-dialog
+
+! 12/9/2015, 10:07:20 AM http://www.huffingtonpost.com/entry/police-officer-comforts-dying-horse_5667e2a0e4b080eddf562e09
+www.huffingtonpost.com##.popup-window__newsletter > .popup-window__newsletter_container
+
+! 12/19/2015, 2:05:09 PM http://nimbus.c9w.net/wifi/promos/f603bc51296f4ea8bc26f8716153ff6d/?__v=Y3A9U0tQJTNEMCUyNm1ib3hTZXNzaW9uJTNEbWJianlkaXRkcmVydGJzcGU0Ym94cnVpJTI2U1RPJTNEOTAlMjZTQ0MlM0RDQ0dBVVMwMDElMjZTUlQlM0QxNDQwJTI2aG90c3BvdElEJTNEaG90c3BvdCZfX3N2X2lkPWhvdHNwb3QmX19jaWQ9MTA0ZjUwZTU1NWQ4NGRhZGExMWU0YmMwZmFlOTQ0ZTEmX19wdmRyY25mPTQ1Jl9fZmlkPWY2MDNiYzUxMjk2ZjRlYThiYzI2Zjg3MTYxNTNmZjZkJl9fdmVudWVfaWQ9Ym9pbmdvX2F1cw==&uid=m1_379c6a10f461751d1d7008c756603e82&login_url=https%3A%2F%2Fportal.boingohotspot.net%2Fen%2Faus%2Fsales%3F__c9adg%3D104f50e555d84dada11e4bc0fae944e1%26mboxDefault%3D1%26__c9auth%3D1
+nimbus.c9w.net###VideoModule_message_media-video-placeholder_jwplayer_display
+
+! 12/19/2015, 2:05:15 PM http://nimbus.c9w.net/wifi/promos/f603bc51296f4ea8bc26f8716153ff6d/?__v=Y3A9U0tQJTNEMCUyNm1ib3hTZXNzaW9uJTNEbWJianlkaXRkcmVydGJzcGU0Ym94cnVpJTI2U1RPJTNEOTAlMjZTQ0MlM0RDQ0dBVVMwMDElMjZTUlQlM0QxNDQwJTI2aG90c3BvdElEJTNEaG90c3BvdCZfX3N2X2lkPWhvdHNwb3QmX19jaWQ9MTA0ZjUwZTU1NWQ4NGRhZGExMWU0YmMwZmFlOTQ0ZTEmX19wdmRyY25mPTQ1Jl9fZmlkPWY2MDNiYzUxMjk2ZjRlYThiYzI2Zjg3MTYxNTNmZjZkJl9fdmVudWVfaWQ9Ym9pbmdvX2F1cw==&uid=m1_379c6a10f461751d1d7008c756603e82&login_url=https%3A%2F%2Fportal.boingohotspot.net%2Fen%2Faus%2Fsales%3F__c9adg%3D104f50e555d84dada11e4bc0fae944e1%26mboxDefault%3D1%26__c9auth%3D1
+nimbus.c9w.net###VideoModule_message_media-video-placeholder_video
+
+! 12/28/2015, 5:35:16 PM https://twitter.com/i/notifications
+twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification.stream-item-favorited_retweet.stream-item-activity.clearfix.stream-item-content
+
+! 1/13/2016, 12:16:19 PM http://blog.dilbert.com/post/137221841136/charisma-vs-danger-master-persuader-series
+blog.dilbert.com##body > div:nth-of-type(2) > .\{\}.cc_banner-wrapper > .cc_container--open.cc_container.cc_banner > .cookie-choices-info
