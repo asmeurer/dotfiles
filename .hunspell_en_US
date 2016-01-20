@@ -223,3 +223,7 @@ symbolics
 ebook
 antipattern
 noncommutativity
+pre-transformation
+denest
+doctesting
+matplotlib
