@@ -8,7 +8,7 @@
 		<string></string>
 	</dict>
 	<key>BTRCurrentIP</key>
-	<string>10.31.47.124</string>
+	<string>10.34.88.184</string>
 	<key>BTRCurrentPort</key>
 	<string>50230</string>
 	<key>BTRLastPort</key>
@@ -38,7 +38,7 @@
 	<key>BTTNewFeedbackReporterIntroducedZ</key>
 	<integer>1</integer>
 	<key>BTTNumberOfStarts</key>
-	<integer>29795</integer>
+	<integer>29796</integer>
 	<key>BTTRemoteConnectedOnce</key>
 	<true/>
 	<key>BTTRemoteDeviceDictionary</key>
@@ -65,7 +65,7 @@
 	<key>BTTRemoteVolumeButtonWarningShown</key>
 	<integer>1</integer>
 	<key>BTTStartTime</key>
-	<date>2016-01-20T20:54:36Z</date>
+	<date>2016-01-20T21:00:11Z</date>
 	<key>BTTUpdatedToBTRCapable</key>
 	<integer>1</integer>
 	<key>BTTUserFeedbackInformation</key>
@@ -922,7 +922,7 @@
 	<key>dragMaxTop</key>
 	<false/>
 	<key>enableSpotifyCompatibility</key>
-	<true/>
+	<false/>
 	<key>fourFingerTapTime</key>
 	<real>0.33000001311302185</real>
 	<key>horizontalZooming</key>
