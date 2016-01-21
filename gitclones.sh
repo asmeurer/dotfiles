@@ -100,3 +100,8 @@ clone-or-pull git@github.com:nex3/sass-mode.git
 clone-or-pull git@github.com:nex3/haml-mode.git
 clone-or-pull git@github.com:Bruce-Connor/aggressive-indent-mode.git
 clone-or-pull git@github.com:Bruce-Connor/names.git
+
+echo "Running prefsync"
+conda install prefsync
+prefsync ~/Library/Preferences/com.hegenberg.BetterTouchTool.plist Library/Preferences/com.hegenberg.BetterTouchTool.plist
+prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist Library/Preferences/org.pqrs.Karabiner.plist
