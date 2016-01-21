@@ -105,3 +105,5 @@ echo "Running prefsync"
 conda install prefsync
 prefsync ~/Library/Preferences/com.hegenberg.BetterTouchTool.plist Library/Preferences/com.hegenberg.BetterTouchTool.plist
 prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist Library/Preferences/org.pqrs.Karabiner.plist
+
+conda install catimg fortune emacs
