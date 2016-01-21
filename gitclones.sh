@@ -13,7 +13,7 @@ print('$2' or '$1'.rsplit('.git', 1)[0].split('/')[-1])
         cd ..
     else
         echo "Cloning $dir"
-        git clone $1
+        git clone $1 $2
     fi
 }
 
