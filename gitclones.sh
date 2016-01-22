@@ -25,7 +25,7 @@ cd ~/Documents/
 clone-or-pull git@github.com:github/hub.git
 clone-or-pull git@github.com:git/git.git
 clone-or-pull git@github.com:ipython/ipython.git
-clone-or-pull git@github.com:mirrors/emacs.git
+clone-or-pull git://git.sv.gnu.org/emacs.git
 clone-or-pull git@github.com:inducer/pudb.git
 
 # Needed in .emacs:
