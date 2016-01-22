@@ -103,5 +103,5 @@ clone-or-pull git@github.com:Bruce-Connor/names.git
 
 echo "Running prefsync"
 conda install prefsync
-prefsync ~/Library/Preferences/com.hegenberg.BetterTouchTool.plist Library/Preferences/com.hegenberg.BetterTouchTool.plist
-prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist Library/Preferences/org.pqrs.Karabiner.plist
+prefsync ~/Library/Preferences/com.hegenberg.BetterTouchTool.plist ~/Documents/dotfiles/Library/Preferences/com.hegenberg.BetterTouchTool.plist
+prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
