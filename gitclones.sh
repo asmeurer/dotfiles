@@ -111,3 +111,4 @@ prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Lib
 
 conda install catimg fortune emacs argcomplete
 conda create -n fortune fortune
+activate-global-python-argcomplete
