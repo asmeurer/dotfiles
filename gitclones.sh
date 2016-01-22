@@ -23,6 +23,10 @@ clone-or-pull git@gist.github.com:3187620.git gist-3187620
 
 cd ~/Documents/
 clone-or-pull git@github.com:github/hub.git
+cd hub
+./script/build
+cp hub /usr/local/bin
+cd ~/Documents
 clone-or-pull git@github.com:git/git.git
 clone-or-pull git@github.com:ipython/ipython.git
 clone-or-pull git://git.sv.gnu.org/emacs.git
@@ -107,4 +111,3 @@ prefsync ~/Library/Preferences/com.hegenberg.BetterTouchTool.plist ~/Documents/d
 prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
 
 conda install catimg fortune emacs
-
