@@ -111,3 +111,4 @@ prefsync ~/Library/Preferences/com.hegenberg.BetterTouchTool.plist ~/Documents/d
 prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
 
 conda install catimg fortune emacs argcomplete
+conda create -n fortune fortune
