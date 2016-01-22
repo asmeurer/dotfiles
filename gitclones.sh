@@ -110,3 +110,4 @@ conda install prefsync
 prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
 
 conda install catimg fortune emacs argcomplete
+conda create -n fortune fortune
