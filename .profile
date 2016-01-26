@@ -99,6 +99,7 @@ alias  l='ls -AG@Flha'
 # Typos
 alias it='git'
 alias tit='git'
+alias bit='git'
 alias gi='git'
 alias sl=ls
 
