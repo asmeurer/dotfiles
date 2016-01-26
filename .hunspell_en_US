@@ -228,3 +228,5 @@ denest
 doctesting
 matplotlib
 unorderable
+unhashable
+hashable
