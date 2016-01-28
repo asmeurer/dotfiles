@@ -116,22 +116,24 @@ DIR_TAB_COLOR = OrderedDict([
 ])
 del OrderedDict
 
-def set_tab_color():
+def get_tab_color():
     # To make this work correctly with subdirectories, put higher level
     # directories later in the list. Hence, we use an OrderedDict
     from os import getcwd
-    import sys
 
     try:
         cwd = getcwd()
     except FileNotFoundError:
         return ''
+
     for dir, color in DIR_TAB_COLOR.items():
         if (cwd + '/').startswith(dir):
-            sys.stdout.write(color)
-            break
-    else:
-        sys.stdout.write(TAB_GRAY)
+            return color
+    return TAB_GRAY
+
+def set_tab_color():
+    import sys
+    sys.stdout.write(get_tab_color())
     # Clear cruft from the tab title (http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#s3)
     sys.stdout.write("\033]0;\007")
     return ''
