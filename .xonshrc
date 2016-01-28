@@ -56,20 +56,20 @@ $FORMATTER_DICT['CONDA_DEFAULT_ENV'] = lambda: __xonsh_env__.get('CONDA_DEFAULT_
 # XXX: Make sure the directory names end in /
 
 # sympy - Red
-DIR_SYMPY = '/Users/aaronmeurer/Documents/python/sympy/sympy/'
+DIR_SYMPY = '/Users/aaronmeurer/Documents/Python/sympy/sympy/'
 TAB_RED = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
 
 # sympy-scratch - Orange
-DIR_SYMPY_SCRATCH = '/Users/aaronmeurer/Documents/python/sympy/sympy-scratch/'
+DIR_SYMPY_SCRATCH = '/Users/aaronmeurer/Documents/Python/sympy/sympy-scratch/'
 TAB_ORANGE = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;128\a"
 
 # sympy-bot - Purple
-DIR_SYMPY_BOT = '/Users/aaronmeurer/Documents/python/sympy/sympy-bot/'
+DIR_SYMPY_BOT = '/Users/aaronmeurer/Documents/Python/sympy/sympy-bot/'
 TAB_PURPLE = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
 
 # sympy other (like sympy-live or sympy.wiki) - Yellow
 # Note, this one must be tested after the above ones
-DIR_SYMPY_OTHER = '/Users/aaronmeurer/Documents/python/sympy/'
+DIR_SYMPY_OTHER = '/Users/aaronmeurer/Documents/Python/sympy/'
 TAB_YELLOW = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 
 # dotfiles - Green
