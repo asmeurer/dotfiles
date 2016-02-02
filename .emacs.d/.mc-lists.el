@@ -27,4 +27,5 @@
         beginning-of-buffer
         newline-and-indent-conditionally
         python-indent-dedent-line-backspace
+        suspend-frame
         ))
