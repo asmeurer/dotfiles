@@ -6,7 +6,9 @@
  '(highlight-indent-face ((t (:background "color-233"))))
  '(font-lock-string-face ((t (:foreground "red"))))
  '(font-lock-comment-face ((t (:foreground "white"))))
- '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground "brightyellow"))))
+ '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground
+                                    "brightyellow"))))
+ '(minibuffer-prompt ((t (:foreground "red"))))
  '(flymake-errline ((t nil)))
  '(flymake-errline ((t (:foreground "red" :underline "red"))))
  '(flymake-warnline ((t nil)))
