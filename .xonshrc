@@ -197,12 +197,14 @@ def free(args, stdin=None):
 aliases['free'] = free
 del free
 
-
 # Typos
 aliases['it'] = 'git'
 aliases['gi'] = 'git'
 aliases['tit'] = 'git'
 aliases['sl'] = 'ls'
+
+# Fun
+aliases['👏'] = 'trace'
 
 def cdd(args, stdin=None):
     cd @("/Users/aaronmeurer/Documents/" + ''.join(args))
