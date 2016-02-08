@@ -110,5 +110,6 @@ activate-global-python-argcomplete --user
 
 echo "Running prefsync"
 prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
+prefsync ~/Library/Preferences/org.orange-carb.SlimBatteryMonitor.plist ~/Documents/dotfiles/Library/Preferences/org.orange-carb.SlimBatteryMonitor.plist
 
 conda install -m -n fortune fortune
