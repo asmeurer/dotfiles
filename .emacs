@@ -361,6 +361,21 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
   (interactive "p")
   (endless/forward-paragraph (- n)))
 
+;; Make C-U C-SPC work smarter. See
+;; http://endlessparentheses.com/faster-pop-to-mark-command.html
+
+(defun modi/multi-pop-to-mark (orig-fun &rest args)
+  "Call ORIG-FUN until the cursor moves.
+Try the repeated popping up to 10 times."
+  (let ((p (point)))
+    (dotimes (i 10)
+      (when (= p (point))
+        (apply orig-fun args)))))
+(advice-add 'pop-to-mark-command :around
+            #'modi/multi-pop-to-mark)
+
+(setq set-mark-command-repeat-pop t)
+
 ;; ==== Smarter isearch + occur =====
 
 ;; Taken from http://www.emacswiki.org/emacs/OccurFromIsearch. Type M-o when
