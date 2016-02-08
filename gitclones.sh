@@ -105,7 +105,7 @@ clone-or-pull git@github.com:nex3/haml-mode.git
 clone-or-pull git@github.com:Bruce-Connor/aggressive-indent-mode.git
 clone-or-pull git@github.com:Bruce-Connor/names.git
 
-conda install catimg fortune emacs argcomplete prefsync hunspell-en
+conda install catimg fortune emacs argcomplete prefsync hunspell-en pyflakes
 activate-global-python-argcomplete --user
 
 echo "Running prefsync"
