@@ -19,3 +19,4 @@
 (depends-on "paredit")
 (depends-on "saveplace")
 (depends-on "cython-mode")
+(depends-on "goto-chg")

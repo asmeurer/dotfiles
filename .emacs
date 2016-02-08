@@ -1532,14 +1532,18 @@ is binary, activate `hexl-mode'."
 
 ;; (require 'goto-last-change)
 
-;; goto-last-change doesn't work with undo-tree, but the following is a pretty
-;; good equivalent.
-(defun undo-redo ()
-  (interactive)
-  (progn
-    (undo-tree-undo)
-    (undo-tree-redo)))
-(global-set-key (kbd "C-x C-\\") 'undo-redo)
+;; ;; goto-last-change doesn't work with undo-tree, but the following is a pretty
+;; ;; good equivalent.
+;; (defun undo-redo ()
+;;   (interactive)
+;;   (progn
+;;     (undo-tree-undo)
+;;     (undo-tree-redo)))
+;; (global-set-key (kbd "C-x C-\\") 'undo-redo)
+
+(require 'goto-chg)
+(global-set-key [(control ?.)] 'goto-last-change)
+(global-set-key (kbd "C-,") 'goto-last-change-reverse)
 
 ;; ==== Tabbar mode ====
 
