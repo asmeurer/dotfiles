@@ -33,7 +33,6 @@ from __future__ import print_function
 import sys
 import glob
 import argparse
-import errno
 
 from os import walk, symlink, makedirs
 from os.path import join, relpath, abspath, exists, lexists, expanduser, split
