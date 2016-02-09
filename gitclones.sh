@@ -106,7 +106,7 @@ clone-or-pull git@github.com:Bruce-Connor/aggressive-indent-mode.git
 clone-or-pull git@github.com:Bruce-Connor/names.git
 
 conda install catimg fortune emacs argcomplete prefsync hunspell-en pyflakes \
-      mpmath ipython
+      mpmath ipython conda-build
 activate-global-python-argcomplete --user
 
 echo "Running prefsync"
