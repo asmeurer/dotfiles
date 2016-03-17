@@ -29,6 +29,17 @@
 
 (setq inhibit-splash-screen t)
 
+
+;; ========== Add a directory to the emacs load-path for extensions =========
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+;; ==== Cask ====
+
+(add-to-list 'load-path "~/Documents/cask")
+(require 'cask)
+(cask-initialize "~/")
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -492,10 +503,6 @@ This function ...
 ;; ===== Make the *scratch* buffer use text mode by default ====
 
 (setq initial-major-mode 'text-mode)
-
-;; ========== Add a directory to the emacs load-path for extensions =========
-
-(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; ===== Ask for y/n instead of yes/no =====
 ;; Thanks to http://asmeurersympy.wordpress.com/2012/07/09/emacs-7-months-later/#comment-584
@@ -974,14 +981,8 @@ like newline-and-indent"
              '(("\t" 0 'trailing-whitespace prepend)))))
 
 ;; ===== Extensions stuff =======
+
 ;; ==============================
-
-;; ==== Cask ====
-
-(add-to-list 'load-path "~/Documents/cask")
-(require 'cask)
-(cask-initialize "~/")
-
 
 ;; ===== Turn on flymake-mode ====
 
