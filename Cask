@@ -20,3 +20,4 @@
 (depends-on "saveplace")
 (depends-on "cython-mode")
 (depends-on "goto-chg")
+(depends-on "ido-sort-mtime")
