@@ -16,7 +16,9 @@
         just-one-space-with-newline
         kill-line-or-region
         my-save-buffer-dtws
+        newline-and-indent-conditionally
         osx-paste
+        python-indent-electric-colon
         yaml-electric-dash-and-dot
         ))
 
@@ -25,7 +27,6 @@
         alternating-scroll-down-line
         alternating-scroll-up-line
         beginning-of-buffer
-        newline-and-indent-conditionally
-        python-indent-dedent-line-backspace
+        smex
         suspend-frame
         ))
