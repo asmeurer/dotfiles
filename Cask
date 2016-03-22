@@ -21,3 +21,4 @@
 (depends-on "cython-mode")
 (depends-on "goto-chg")
 (depends-on "ido-sort-mtime")
+(depends-on "auctex")
