@@ -1632,7 +1632,7 @@ is binary, activate `hexl-mode'."
  '(save-place t nil (saveplace))
  '(save-place-save-skipped nil)
  '(scroll-step 1)
- '(sentence-end-double-space t)
+ '(sentence-end-double-space nil)
  '(show-paren-mode t)
  '(show-paren-style (quote mixed))
  '(show-trailing-whitespace t)
