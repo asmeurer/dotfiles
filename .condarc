@@ -1,6 +1,7 @@
 # Emacs, this is -*-yaml-*-
 
 channels:
+  - conda-forge
    # - s3://repo.continuum.io/pkgs/free/
   - asmeurer
   - defaults
