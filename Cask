@@ -1,4 +1,3 @@
-;; -*-lisp-*-
 (source gnu)
 (source melpa)
 
@@ -22,3 +21,4 @@
 (depends-on "goto-chg")
 (depends-on "ido-sort-mtime")
 (depends-on "auctex")
+(depends-on "cask-mode")
