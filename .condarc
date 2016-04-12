@@ -1,25 +1,12 @@
 # Emacs, this is -*-yaml-*-
 
 channels:
-  - conda-forge
-   # - s3://repo.continuum.io/pkgs/free/
   - asmeurer
   - defaults
-  - lidavidm
-  - javascript
-  - zwelch
-  - pyzo
-  - dhirschfeld
-  - twiecki
+  - conda-forge
   - r
-  - trent
-  - binstar
-  - conda
-  - scopatz
   - xonsh
-  - dynd
   - pyne
-  - menpo
 
 changeps1: no
 
