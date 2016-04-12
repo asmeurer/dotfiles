@@ -1491,6 +1491,10 @@ is binary, activate `hexl-mode'."
 (define-key global-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
 (define-key global-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
+;; ===== Smart comment =====
+
+(global-set-key (kbd "M-;") 'smart-comment)
+
 ;; ===== expand-region =====
 
 (add-to-list 'load-path "~/Documents/expand-region.el")
