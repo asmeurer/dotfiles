@@ -65,8 +65,6 @@
 		<integer>1</integer>
 		<key>option.emacsmode_ex_controlU_delete</key>
 		<integer>1</integer>
-		<key>option.emacsmode_ex_controlX</key>
-		<integer>1</integer>
 		<key>option.emacsmode_optionBF</key>
 		<integer>1</integer>
 		<key>option.emacsmode_optionD</key>
