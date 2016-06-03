@@ -28,3 +28,12 @@ Both modes:
   https://github.com/scopatz/xonsh/issues/374
 
 - [ ] The colors can be unreadable (especially environment variable blue)
+
+- [ ] Fuzzy cd (bash cdspell)
+
+- [ ] Warning on > clobber (bash noclobber)
+
+- [ ] auto resume (commands of the same name resume instead of starting a new
+  process). Not a blocker, but bash has it and it seems like it would be cool.
+
+- [ ] Custom completion (like completion for cdd)
