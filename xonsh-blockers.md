@@ -26,3 +26,5 @@ Both modes:
 
 - [ ] iTerm2 shell integration. I'll need to implement this.
   https://github.com/scopatz/xonsh/issues/374
+
+- [ ] The colors can be unreadable (especially environment variable blue)
