@@ -200,6 +200,13 @@ def free(args, stdin=None):
 aliases['free'] = free
 del free
 
+def sizeup(args, stdin=None):
+    dir = stdin or '.'
+    du -a -h -x dir | gsort -h
+
+aliases['sizeup'] = sizeup
+del sizeup
+
 # Typos
 aliases['it'] = 'git'
 aliases['gi'] = 'git'
