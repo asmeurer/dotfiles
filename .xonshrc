@@ -216,17 +216,6 @@ def saydone(args, stdin=None):
 aliases['saydone'] = saydone
 del saydone
 
-# Typos
-aliases['it'] = 'git'
-aliases['gi'] = 'git'
-aliases['tit'] = 'git'
-aliases['bit'] = 'git'
-
-aliases['sl'] = 'ls'
-
-# Fun
-aliases['👏'] = 'trace'
-
 def cdd(args, stdin=None):
     cd @("/Users/aaronmeurer/Documents/" + ''.join(args))
 
@@ -238,6 +227,17 @@ def cdc(args, stdin=None):
 
 aliases['cdc'] = cdc
 del cdc
+
+# Typos
+aliases['it'] = 'git'
+aliases['gi'] = 'git'
+aliases['tit'] = 'git'
+aliases['bit'] = 'git'
+
+aliases['sl'] = 'ls'
+
+# Fun
+aliases['👏'] = 'trace'
 
 source-bash ~/Documents/git/contrib/completion/git-completion.bash
 source-bash ~/Documents/git/contrib/completion/git-prompt.sh
