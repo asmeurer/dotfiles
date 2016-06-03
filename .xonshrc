@@ -207,6 +207,9 @@ def sizeup(args, stdin=None):
 aliases['sizeup'] = sizeup
 del sizeup
 
+def saydone(args, stdin=None):
+    !(
+
 # Typos
 aliases['it'] = 'git'
 aliases['gi'] = 'git'
