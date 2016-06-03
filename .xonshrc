@@ -207,7 +207,7 @@ def sizeup(args, stdin=None):
 aliases['sizeup'] = sizeup
 del sizeup
 
-# TODO: Does this do the right thing is the command fails, and if it is
+# TODO: Does this do the right thing if the command fails, and if it is
 # backgrounded?
 def saydone(args, stdin=None):
     @(args)
