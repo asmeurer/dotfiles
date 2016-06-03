@@ -34,3 +34,5 @@ Both modes:
 - [ ] Warning on > clobber (bash noclobber)
 
 - [ ] Custom completion (like completion for cdd)
+
+- [ ] Aliases execute my bash profile
