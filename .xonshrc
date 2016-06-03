@@ -221,4 +221,8 @@ del cdc
 source-bash ~/Documents/git/contrib/completion/git-completion.bash
 source-bash ~/Documents/git/contrib/completion/git-prompt.sh
 
+# Xonsh specific
+
+# Always show a traceback when xonsh errors
+$XONSH_SHOW_TRACEBACK=True
 # $SHELL_TYPE = 'prompt_toolkit'
