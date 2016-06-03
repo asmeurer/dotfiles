@@ -204,6 +204,8 @@ del free
 aliases['it'] = 'git'
 aliases['gi'] = 'git'
 aliases['tit'] = 'git'
+aliases['bit'] = 'git'
+
 aliases['sl'] = 'ls'
 
 # Fun
