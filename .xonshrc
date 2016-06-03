@@ -33,9 +33,9 @@ $GIT_PS1_SHOWUNTRACKEDFILES=1
 $GIT_PS1_SHOWUPSTREAM="auto"
 $GIT_PS1_STATESEPARATOR=''
 
-export LSCOLORS=eAfAcAdAbAegedabagacad
-export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
-export TTY=$(basename $(tty))
+$LSCOLORS="eAfAcAdAbAegedabagacad"
+$CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
+$TTY=$(basename $(tty))
 
 def git_prompt_bash():
     return $(bash -c 'source ~/Documents/git/contrib/completion/git-prompt.sh; __git_ps1 "%s"')
