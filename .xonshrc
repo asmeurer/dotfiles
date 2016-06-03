@@ -191,7 +191,6 @@ aliases['cdsss'] = 'cd ~/Documents/python/sympy/sympy-scratch2'
 $EMACSCLIENT = "emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 aliases['emacsclient'] = $EMACSCLIENT
 aliases['e'] = $EMACSCLIENT
-aliases['rehash'] = 'hash -r'
 # aliases['cdpwd'] = 'cd `pwd`'
 
 def free(args, stdin=None):
