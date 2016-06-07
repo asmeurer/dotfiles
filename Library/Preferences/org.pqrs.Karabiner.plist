@@ -15,7 +15,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-08T07:13:47Z</date>
+	<date>2016-05-27T22:15:17Z</date>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -52,8 +52,6 @@
 		<key>notsave.automatically_enable_keyboard_device</key>
 		<integer>1</integer>
 		<key>notsave.automatically_enable_pointing_device</key>
-		<integer>1</integer>
-		<key>option.emacsmode_controlS</key>
 		<integer>1</integer>
 		<key>option.emacsmode_controlSlash</key>
 		<integer>1</integer>
