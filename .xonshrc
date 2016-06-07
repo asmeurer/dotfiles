@@ -33,6 +33,10 @@ $GIT_PS1_SHOWUNTRACKEDFILES=1
 $GIT_PS1_SHOWUPSTREAM="auto"
 $GIT_PS1_STATESEPARATOR=''
 
+$LSCOLORS="eAfAcAdAbAegedabagacad"
+$CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
+$TTY=$(basename $(tty))
+
 def git_prompt_bash():
     return $(bash -c 'source ~/Documents/git/contrib/completion/git-prompt.sh; __git_ps1 "%s"')
 
@@ -187,7 +191,6 @@ aliases['cdsss'] = 'cd ~/Documents/python/sympy/sympy-scratch2'
 $EMACSCLIENT = "emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 aliases['emacsclient'] = $EMACSCLIENT
 aliases['e'] = $EMACSCLIENT
-aliases['rehash'] = 'hash -r'
 # aliases['cdpwd'] = 'cd `pwd`'
 
 def free(args, stdin=None):
@@ -197,14 +200,21 @@ def free(args, stdin=None):
 aliases['free'] = free
 del free
 
-# Typos
-aliases['it'] = 'git'
-aliases['gi'] = 'git'
-aliases['tit'] = 'git'
-aliases['sl'] = 'ls'
+def sizeup(args, stdin=None):
+    dir = stdin or '.'
+    du -a -h -x dir | gsort -h
 
-# Fun
-aliases['👏'] = 'trace'
+aliases['sizeup'] = sizeup
+del sizeup
+
+# TODO: Does this do the right thing if the command fails, and if it is
+# backgrounded?
+def saydone(args, stdin=None):
+    @(args)
+    say "done"
+
+aliases['saydone'] = saydone
+del saydone
 
 def cdd(args, stdin=None):
     cd @("/Users/aaronmeurer/Documents/" + ''.join(args))
@@ -218,7 +228,22 @@ def cdc(args, stdin=None):
 aliases['cdc'] = cdc
 del cdc
 
+# Typos
+aliases['it'] = 'git'
+aliases['gi'] = 'git'
+aliases['tit'] = 'git'
+aliases['bit'] = 'git'
+
+aliases['sl'] = 'ls'
+
+# Fun
+aliases['👏'] = 'trace'
+
 source-bash ~/Documents/git/contrib/completion/git-completion.bash
 source-bash ~/Documents/git/contrib/completion/git-prompt.sh
 
+# Xonsh specific
+
+# Always show a traceback when xonsh errors
+$XONSH_SHOW_TRACEBACK=True
 # $SHELL_TYPE = 'prompt_toolkit'

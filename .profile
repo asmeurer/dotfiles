@@ -91,7 +91,7 @@ shopt -s extglob
 # Make commands of the same name resume a stopped job instead of starting a
 # new process when one exists. Useful if I accidentally suspend emacs and
 # forget about it.
-export auto_resume=1
+export auto_resume=exact
 
 alias ls='ls -AG@Flha'
 alias  l='ls -AG@Flha'

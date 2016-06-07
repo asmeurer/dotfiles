@@ -15,7 +15,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-27T22:15:17Z</date>
+	<date>2016-05-26T01:43:41Z</date>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -84,7 +84,9 @@
 		<key>remap.fn2controlL</key>
 		<integer>1</integer>
 		<key>repeat.initial_wait</key>
-		<integer>250</integer>
+		<integer>583</integer>
+		<key>repeat.wait</key>
+		<integer>33</integer>
 	</dict>
 	<key>config_1234636905_427208</key>
 	<dict/>
