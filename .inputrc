@@ -14,3 +14,5 @@ set bell-style visible
 "\C-x\C-r": re-read-init-file
 # Prevent "Display all NNN possibilities? (y or n)" on tab complete
 set completion-query-items 0
+"\e[A": previous-history
+"\e[B": next-history
