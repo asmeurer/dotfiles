@@ -53,3 +53,7 @@
     helper = cache
 [core]
     precomposeunicode = true
+[pager]
+	log = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+	show = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+	diff = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
