@@ -15,7 +15,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-26T01:43:41Z</date>
+	<date>2016-06-10T06:10:13Z</date>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -100,22 +100,56 @@
 		<integer>1</integer>
 	</dict>
 	<key>isCheckUpdate</key>
-	<integer>2</integer>
+	<true/>
 	<key>isQuitByHand</key>
+	<false/>
+	<key>isShowSettingNameInStatusBar</key>
+	<false/>
+	<key>isStatusWindowEnabled</key>
+	<true/>
+	<key>isStatusWindowShowCapsLock</key>
+	<false/>
+	<key>isStatusWindowShowPointingButtonLock</key>
+	<true/>
+	<key>isStatusWindowShowStickyModifier</key>
 	<false/>
 	<key>isStatusbarEnable</key>
 	<integer>1</integer>
+	<key>kAXNotifierDisabledInJavaApps</key>
+	<true/>
+	<key>kAXNotifierDisabledInMicrosoftOffice</key>
+	<true/>
+	<key>kAXNotifierDisabledInPreview</key>
+	<true/>
+	<key>kAXNotifierDisabledInQtApps</key>
+	<true/>
+	<key>kAXNotifierEnableDebuggingLog</key>
+	<false/>
+	<key>kIsAXNotifierEnabled</key>
+	<true/>
 	<key>kIsMigratedOverwriteKeyRepeat</key>
 	<true/>
 	<key>kIsOverwriteKeyRepeat</key>
 	<false/>
+	<key>kIsStatusWindowUseModifierSymbols</key>
+	<false/>
+	<key>kKarabinerPreferencesCheckboxFont</key>
+	<integer>0</integer>
+	<key>kResumeAtLogin</key>
+	<true/>
+	<key>kUsePreparedSettings</key>
+	<true/>
 	<key>selectedIndex</key>
 	<integer>1</integer>
 	<key>statusWindowFontSize</key>
 	<integer>1</integer>
+	<key>statusWindowOpacity</key>
+	<integer>80</integer>
 	<key>statusWindowPosition</key>
 	<integer>1</integer>
 	<key>statusWindowTheme</key>
 	<integer>1</integer>
+	<key>statusWindowType</key>
+	<integer>0</integer>
 </dict>
 </plist>
