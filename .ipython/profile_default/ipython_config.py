@@ -409,3 +409,7 @@ c.TerminalInteractiveShell.confirm_exit = False
 # Only complete __all__ names on import
 
 c.IPCompleter.limit_to__all__ = True
+
+# Prompt Toolkit settings
+
+c.TerminalInteractiveShell.display_completions_in_columns = True
