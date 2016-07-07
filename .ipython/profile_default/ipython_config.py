@@ -179,7 +179,7 @@ except ImportError:
 # TerminalInteractiveShell will inherit config from: InteractiveShell
 
 # auto editing of files with syntax errors.
-c.TerminalInteractiveShell.autoedit_syntax = True
+# c.TerminalInteractiveShell.autoedit_syntax = False
 
 # Use colors for displaying information about objects. Because this information
 # is passed through a pager (like 'less'), and some pagers get confused with
@@ -409,3 +409,7 @@ c.TerminalInteractiveShell.confirm_exit = False
 # Only complete __all__ names on import
 
 c.IPCompleter.limit_to__all__ = True
+
+# Prompt Toolkit settings
+
+c.TerminalInteractiveShell.display_completions_in_columns = True
