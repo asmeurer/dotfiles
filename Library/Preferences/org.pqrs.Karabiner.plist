@@ -53,6 +53,8 @@
 		<integer>1</integer>
 		<key>notsave.automatically_enable_pointing_device</key>
 		<integer>1</integer>
+		<key>option.emacsmode_controlS</key>
+		<integer>1</integer>
 		<key>option.emacsmode_controlSlash</key>
 		<integer>1</integer>
 		<key>option.emacsmode_controlV</key>
@@ -89,7 +91,12 @@
 		<integer>33</integer>
 	</dict>
 	<key>config_1234636905_427208</key>
-	<dict/>
+	<dict>
+		<key>repeat.initial_wait</key>
+		<integer>583</integer>
+		<key>repeat.wait</key>
+		<integer>33</integer>
+	</dict>
 	<key>config_default</key>
 	<dict>
 		<key>option.keypad2spaces_modifier_control</key>
