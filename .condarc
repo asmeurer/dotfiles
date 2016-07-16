@@ -5,7 +5,6 @@ channels:
   - defaults
   - conda-forge
   - r
-  - xonsh
   - pyne
   - jjhelmus
 
