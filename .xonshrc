@@ -233,6 +233,7 @@ aliases['it'] = 'git'
 aliases['gi'] = 'git'
 aliases['tit'] = 'git'
 aliases['bit'] = 'git'
+aliases['gt'] = 'git'
 
 aliases['sl'] = 'ls'
 

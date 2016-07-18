@@ -101,6 +101,7 @@ alias it='git'
 alias tit='git'
 alias bit='git'
 alias gi='git'
+alias gt='git'
 alias sl=ls
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
