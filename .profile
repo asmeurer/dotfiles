@@ -416,3 +416,6 @@ source ~/Documents/hub/etc/hub.bash_completion.sh
 source /Users/aaronmeurer/.iterm2_shell_integration.bash
 
 hash -r
+
+# added by travis gem
+[ -f /Users/aaronmeurer/.travis/travis.sh ] && source /Users/aaronmeurer/.travis/travis.sh
