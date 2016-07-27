@@ -200,8 +200,7 @@ def free(args, stdin=None):
 aliases['free'] = free
 del free
 
-def sizeup(args, stdin=None):
-    dir = stdin or '.'
+def sizeup(args, stdin='.'):
     du -a -h -x dir | gsort -h
 
 aliases['sizeup'] = sizeup
