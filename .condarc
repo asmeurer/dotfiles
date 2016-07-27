@@ -1,8 +1,8 @@
 # Emacs, this is -*-yaml-*-
 
 channels:
-  - defaults
   - conda-forge
+  - defaults
   - asmeurer
   - r
   - pyne

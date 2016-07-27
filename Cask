@@ -23,4 +23,3 @@
 (depends-on "auctex")
 (depends-on "cask-mode")
 (depends-on "smart-comment")
-(depends-on "flycheck-proselint")
