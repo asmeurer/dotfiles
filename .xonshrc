@@ -157,7 +157,8 @@ def iterm2_shell_integration_prompt_command():
 
 $FORMATTER_DICT['iterm2_shell_integration_prompt_command'] = iterm2_shell_integration_prompt_command
 
-$PROMPT = '{carriage_return}{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
+$PROMPT = '{CONDA_DEFAULT_ENV}{BOLD_WHITE}{BACKGROUND_BLACK}{cwd_dirname}{NO_COLOR}{BOLD_CYAN}{git_prompt_bash}{NO_COLOR}{BACKGROUND_RED}🐚 {NO_COLOR}{set_tab_color}'
+
 
 ###########
 # Aliases #
