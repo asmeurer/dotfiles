@@ -84,9 +84,7 @@
 		<key>remap.fn2controlL</key>
 		<integer>1</integer>
 		<key>repeat.initial_wait</key>
-		<integer>583</integer>
-		<key>repeat.wait</key>
-		<integer>33</integer>
+		<integer>250</integer>
 	</dict>
 	<key>config_1234636905_427208</key>
 	<dict>
