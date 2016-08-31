@@ -6,7 +6,6 @@ channels:
   - asmeurer
   - r
   - pyne
-  - jjhelmus
 
 channel_priority: False
 
