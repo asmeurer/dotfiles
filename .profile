@@ -104,6 +104,7 @@ alias gi='git'
 alias gt='git'
 alias sl=ls
 
+PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
@@ -251,7 +252,6 @@ GIT_PS1_STATESEPARATOR=''
 PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
 PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
-PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-darwin
 PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
 PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
