@@ -9,7 +9,6 @@
  '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground
                                     "brightyellow"))))
  '(minibuffer-prompt ((t (:foreground "red"))))
- '(trailing-whitespace ((t (:background "red1"))))
  '(flycheck-error ((t (:inherit flymake-errline :underline t))))
  '(flycheck-warning ((t (:inherit flymake-warnline :underline t))))
  '(flymake-errline ((t (:foreground "LightPink" :underline "red"))))
