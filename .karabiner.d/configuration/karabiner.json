@@ -1,0 +1,12 @@
+{
+    "profiles": [
+        {
+            "name": "Default profile",
+            "selected": true,
+            "simple_modifications": {
+                "fn": "left_control",
+                "f12": "delete_forward"
+            }
+        }
+    ]
+}
