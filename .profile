@@ -187,9 +187,11 @@ TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1
 # Conda - White
 DIR_CONDA='/Users/aaronmeurer/Documents/Continuum/conda'
 TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
-# Conda - White
+# Conda-build - Teal
 DIR_CONDA_BUILD='/Users/aaronmeurer/Documents/Continuum/conda-build'
 export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a\033]6;1;bg;green;brightness;128\a"
+# Blog - Teal
+DIR_BLOG='/Users/aaronmeurer/Documents/blog'
 # homework - Blue
 export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
@@ -208,7 +210,7 @@ set_tab_color () {
 
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL'
     do
         set -- $dir_tab
         # Dereference the variable name
@@ -222,7 +224,7 @@ set_tab_color () {
             echo -n -e $COLOR
         fi
         if [[ $FOUND == 'yes' ]]
-            then
+        then
             break
         fi
     done

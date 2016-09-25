@@ -88,9 +88,12 @@ TAB_BLACK = "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6
 DIR_CONDA = '/Users/aaronmeurer/Documents/Continuum/conda/'
 TAB_WHITE = "\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
 
-# Conda - White
+# Conda-build - Teal
 DIR_CONDA_BUILD = '/Users/aaronmeurer/Documents/Continuum/conda-build/'
 TAB_TEAL = "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a\033]6;1;bg;green;brightness;128\a"
+
+# Blog - Teal
+DIR_BLOG = '/Users/aaronmeurer/Documents/blog/'
 
 # homework - Blue
 DIR_HOMEWORK = "/Users/aaronmeurer/Documents/Homework/Grad/Fall 2013/"
@@ -117,6 +120,7 @@ DIR_TAB_COLOR = OrderedDict([
     (DIR_CONDA_BUILD, TAB_TEAL),
     (DIR_CONDA_RECIPES, TAB_PURPLE),
     (DIR_CONTINUUM, TAB_BLACK),
+    (DIR_BLOG, TAB_TEAL),
 ])
 del OrderedDict
 
