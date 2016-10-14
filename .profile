@@ -371,8 +371,6 @@ _activate_complete ()
 
 complete -F _activate_complete "act"
 
-source /Users/aaronmeurer/Documents/Continuum/conda/conda/conda-bash.sh
-
 conda-build-all() {
     for CONDA_PY in 26 27 33 34; do
         export CONDA_PY
@@ -394,8 +392,6 @@ export MKL_NUM_THREADS
 
 eval "`pip completion --bash`"
 eval "`~/anaconda/envs/blog-nikola/bin/nikola tabcompletion`"
-
-source ~/Documents/ipython/examples/core/ipython-completion.bash
 
 # https://github.com/fabric/fabric/issues/6#issuecomment-15182638
 
