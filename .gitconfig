@@ -33,6 +33,7 @@
     dif = diff
     difff = diff
     pusho = push --set-upstream origin HEAD
+    reset--hard = !git backup && git reset --hard
 
 [sendemail]
     o = sympy-patches@googlegroups.com
