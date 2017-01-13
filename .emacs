@@ -1648,6 +1648,8 @@ is binary, activate `hexl-mode'."
  '(show-paren-style (quote mixed))
  '(show-trailing-whitespace t)
  '(smex-mode t nil (smex))
+ '(sml-modeline-len 17)
+ '(sml-modeline-mode t)
  '(speedbar-visiting-tag-hook (quote (speedbar-highlight-one-tag-line speedbar-recenter)))
  '(split-height-threshold 80)
  '(split-width-threshold 50)
