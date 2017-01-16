@@ -35,13 +35,6 @@
     pusho = push --set-upstream origin HEAD
     reset--hard = !git backup && git reset --hard
 
-[sendemail]
-    o = sympy-patches@googlegroups.com
-    envelopesender = asmeurer@gmail.com
-    smtpserver = smtp.gmail.com
-    smtpuser = asmeurer@gmail.com
-    smtpssl = true
-    aliasfiletype = mailrc
 [i18n]
     commitEncoding = utf-8
 [push]
@@ -56,6 +49,6 @@
 [core]
     precomposeunicode = true
 [pager]
-	log = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
-	show = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
-	diff = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+    log = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+    show = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+    diff = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
