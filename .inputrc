@@ -16,3 +16,5 @@ set bell-style visible
 set completion-query-items 0
 "\e[A": previous-history
 "\e[B": next-history
+# Allow better pasting in the terminal
+set enable-bracketed-paste on
