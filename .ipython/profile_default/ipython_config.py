@@ -413,3 +413,9 @@ c.IPCompleter.limit_to__all__ = True
 # Prompt Toolkit settings
 
 c.TerminalInteractiveShell.display_completions = 'multicolumn'
+
+# def shell_initialized(ipython):
+#     ipython.pt_cli.application.enable_history_search = lambda: False
+
+# import IPython
+# IPython.get_ipython().events.register('shell_initialized', shell_initialized)

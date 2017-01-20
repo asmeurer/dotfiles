@@ -1,4 +1,4 @@
-~/anaconda/bin/catimg
+PYTHONPATH=~/Documents/catimg ~/anaconda/bin/catimg
 echo
 ~/anaconda/envs/fortune/bin/fortune
 echo
