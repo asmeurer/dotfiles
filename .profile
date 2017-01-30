@@ -100,6 +100,7 @@ alias  l='ls -AG@Flha'
 alias it='git'
 alias tit='git'
 alias bit='git'
+alias fit='git'
 alias gi='git'
 alias gt='git'
 alias sl=ls
