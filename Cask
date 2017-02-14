@@ -24,3 +24,4 @@
 (depends-on "cask-mode")
 (depends-on "smart-comment")
 (depends-on "sml-modeline")
+(depends-on "dockerfile-mode")
