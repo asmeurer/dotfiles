@@ -264,6 +264,7 @@ c.TerminalInteractiveShell.readline_parse_and_bind = [
     '"\\C-u": unix-line-discard',
     '"\\C-P": history-search-forward',
     '"\\C-d": "\\C-a\\C-k\\C-d"',
+    'set enable-bracketed-paste on',
 ]
 
 # The part of the banner to be printed after the profile
