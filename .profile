@@ -75,7 +75,8 @@ shopt -s cdspell
 # Fix minor spelling errors on word completion if the given name does not exist
 # Requires bash 4 or greater
 if test $BASH_VERSINFO -ge 4;
-    then shopt -s dirspell;
+then
+    shopt -s dirspell;
 fi
 
 # Complete hostnames after @
