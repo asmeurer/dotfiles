@@ -46,7 +46,7 @@
     enabled = true
 
 [credential]
-    helper = cache
+	helper = osxkeychain
 [core]
     precomposeunicode = true
 [pager]
