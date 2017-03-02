@@ -32,6 +32,7 @@
     com = commit
     dif = diff
     difff = diff
+    iff = diff
     pulll = pull
     pusho = push --set-upstream origin HEAD
     reset--hard = !git backup && git reset --hard
