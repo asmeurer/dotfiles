@@ -105,6 +105,9 @@ clone-or-pull git@github.com:nex3/haml-mode.git
 clone-or-pull git@github.com:Bruce-Connor/aggressive-indent-mode.git
 clone-or-pull git@github.com:Bruce-Connor/names.git
 
+clone-or-pull git@github.com:asmeurer/mypython
+ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython
+
 conda install \
       catimg fortune emacs argcomplete prefsync hunspell-en pyflakes \
       mpmath ipython conda-build anaconda xonsh
