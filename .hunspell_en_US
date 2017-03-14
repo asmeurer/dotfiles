@@ -302,3 +302,6 @@ tracebacks
 prepending
 nuclide
 symlink
+multiline
+readline
+recurse
