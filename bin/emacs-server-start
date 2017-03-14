@@ -1,3 +1,4 @@
 #!/bin/sh
 emacs -nw --daemon="$TTY"
+emacsclient -n -nw --socket-name="$TTY"
 emacsclient -nw --socket-name="$TTY" "$@"
