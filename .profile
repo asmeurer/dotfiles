@@ -116,6 +116,7 @@ alias cdsympy='cd ~/Documents/python/sympy/sympy'
 alias cds='cd ~/Documents/python/sympy/sympy'
 alias cdss='cd ~/Documents/python/sympy/sympy-scratch'
 alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
+alias isympy='mypython -c %sympy'
 
 cdd () {
     cd "/Users/aaronmeurer/Documents/$@"
