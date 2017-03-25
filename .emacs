@@ -1196,6 +1196,7 @@ is binary, activate `hexl-mode'."
 ;; (require 'aggressive-indent)
 (global-aggressive-indent-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
 
 
 
