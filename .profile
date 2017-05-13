@@ -209,7 +209,7 @@ DIR_MYPYTHON="/Users/aaronmeurer/Documents/mypython"
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
 # similar shade of gray
-TAB_GRAY="\033]6;1;bg;red;brightness;110\a\033]6;1;bg;blue;brightness;110\a\033]6;1;bg;green;brightness;110\a"
+TAB_GRAY="\033]6;1;bg;red;brightness;50\a\033]6;1;bg;blue;brightness;50\a\033]6;1;bg;green;brightness;50\a"
 
 set_tab_color () {
     FOUND='no'

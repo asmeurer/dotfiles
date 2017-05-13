@@ -1590,6 +1590,7 @@ is binary, activate `hexl-mode'."
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "/Users/aaronmeurer/.emacs.d/autosave/")
  '(colon-double-space t)
+ '(comment-column 0)
  '(comment-empty-lines (quote (quote eol)))
  '(cua-enable-cua-keys nil)
  '(cua-enable-modeline-indications t)

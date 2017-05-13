@@ -95,9 +95,7 @@
 	<key>config_1234636905_427208</key>
 	<dict>
 		<key>repeat.initial_wait</key>
-		<integer>583</integer>
-		<key>repeat.wait</key>
-		<integer>33</integer>
+		<integer>250</integer>
 	</dict>
 	<key>config_default</key>
 	<dict>
