@@ -4,6 +4,8 @@
 <dict>
 	<key>MigrationUtilitiesCurrentBundleIdentifer</key>
 	<string>org.pqrs.Karabiner</string>
+	<key>NSStatusItem Preferred Position Item-0</key>
+	<real>642</real>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>520 562 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -53,6 +55,8 @@
 		<integer>1</integer>
 		<key>notsave.automatically_enable_pointing_device</key>
 		<integer>1</integer>
+		<key>option.emacsmode_controlS</key>
+		<integer>1</integer>
 		<key>option.emacsmode_controlSlash</key>
 		<integer>1</integer>
 		<key>option.emacsmode_controlV</key>
@@ -84,7 +88,9 @@
 		<key>remap.fn2controlL</key>
 		<integer>1</integer>
 		<key>repeat.initial_wait</key>
-		<integer>250</integer>
+		<integer>583</integer>
+		<key>repeat.wait</key>
+		<integer>33</integer>
 	</dict>
 	<key>config_1234636905_427208</key>
 	<dict>
@@ -135,7 +141,7 @@
 	<key>kKarabinerPreferencesCheckboxFont</key>
 	<integer>0</integer>
 	<key>kResumeAtLogin</key>
-	<true/>
+	<false/>
 	<key>kUsePreparedSettings</key>
 	<true/>
 	<key>selectedIndex</key>
