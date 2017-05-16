@@ -55,8 +55,6 @@
 		<integer>1</integer>
 		<key>notsave.automatically_enable_pointing_device</key>
 		<integer>1</integer>
-		<key>option.emacsmode_controlS</key>
-		<integer>1</integer>
 		<key>option.emacsmode_controlSlash</key>
 		<integer>1</integer>
 		<key>option.emacsmode_controlV</key>
@@ -88,9 +86,7 @@
 		<key>remap.fn2controlL</key>
 		<integer>1</integer>
 		<key>repeat.initial_wait</key>
-		<integer>583</integer>
-		<key>repeat.wait</key>
-		<integer>33</integer>
+		<integer>250</integer>
 	</dict>
 	<key>config_1234636905_427208</key>
 	<dict>
@@ -119,7 +115,7 @@
 	<key>isStatusWindowShowStickyModifier</key>
 	<false/>
 	<key>isStatusbarEnable</key>
-	<integer>1</integer>
+	<true/>
 	<key>kAXNotifierDisabledInJavaApps</key>
 	<true/>
 	<key>kAXNotifierDisabledInMicrosoftOffice</key>
@@ -141,7 +137,7 @@
 	<key>kKarabinerPreferencesCheckboxFont</key>
 	<integer>0</integer>
 	<key>kResumeAtLogin</key>
-	<false/>
+	<true/>
 	<key>kUsePreparedSettings</key>
 	<true/>
 	<key>selectedIndex</key>
