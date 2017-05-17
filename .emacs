@@ -1627,7 +1627,7 @@ is binary, activate `hexl-mode'."
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
- '(ispell-use-ptys-p nil)
+ '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t t)
  '(jedi:environment-root nil)
  '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index) t)
