@@ -25,4 +25,3 @@
 (depends-on "smart-comment")
 (depends-on "sml-modeline")
 (depends-on "dockerfile-mode")
-(depends-on "deferred")

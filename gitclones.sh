@@ -78,7 +78,6 @@ clone-or-pull git@github.com:kiwanami/emacs-ctable.git
 clone-or-pull git@github.com:kiwanami/emacs-epc.git
 clone-or-pull git@github.com:tkf/emacs-jedi.git
 clone-or-pull git@github.com:tkf/emacs-python-environment.git
-clone-or-pull git@github.com:tkf/emacs-deferred-flyspell.git
 cd emacs-jedi
 echo "Creating conda environment for jedi"
 conda install -m -p env jedi epc
