@@ -736,6 +736,9 @@ This command does the reverse of `fill-region'."
 
 ;; ===== Turn on flyspell-mode ====
 
+(require 'flyspell-lazy)
+(flyspell-lazy-mode 1)
+
 ;; Use the turn-on-flyspell one to enable it everywhere, and the
 ;; flyspell-prog-mode to enable it only in comments/strings
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
@@ -1612,6 +1615,11 @@ is binary, activate `hexl-mode'."
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
  '(flyspell-issue-welcome-flag nil)
+ '(flyspell-lazy-changes-threshold 10)
+ '(flyspell-lazy-idle-seconds 1)
+ '(flyspell-lazy-mode t)
+ '(flyspell-lazy-size-threshold 20)
+ '(flyspell-lazy-window-idle-seconds 3)
  '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
