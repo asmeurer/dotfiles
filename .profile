@@ -268,15 +268,15 @@ PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export TTY=$(basename `tty`)
-# export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
-export EDITOR=e
+export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
+export EDITOR="$EMACSCLIENT"
 export LESS='-RIq' # Make less search case insensitive, always use raw input
-# mode (to show colors), don't ring the bell incessantly
+                   # mode (to show colors), don't ring the bell incessantly
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
-# alias emacsclient="$EMACSCLIENT"
-# alias e=emacsclient
+alias emacsclient="$EMACSCLIENT"
+alias e=emacsclient
 alias killemacs='pkill -SIGUSR2 emacs'
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'

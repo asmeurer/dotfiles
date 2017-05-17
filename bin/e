@@ -1,9 +1,0 @@
-#!/bin/sh
-export E
-(emacsclient -nw --socket-name="$TTY" "$@")
-E=$?
-if [ $E -ne 0 ]; then
-    (emacs -nw --daemon="$TTY")
-    (emacsclient -nw --socket-name="$TTY" "$@")
-fi
-exit $E
