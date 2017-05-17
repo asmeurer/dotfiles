@@ -736,6 +736,10 @@ This command does the reverse of `fill-region'."
 
 ;; ===== Turn on flyspell-mode ====
 
+(add-to-list 'load-path "~/Documents/emacs-deferred-flyspell")
+(require 'deferred-flyspell)
+(deferred-flyspell:config)
+
 ;; Use the turn-on-flyspell one to enable it everywhere, and the
 ;; flyspell-prog-mode to enable it only in comments/strings
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
