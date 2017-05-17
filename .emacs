@@ -1611,6 +1611,7 @@ is binary, activate `hexl-mode'."
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
+ '(flyspell-issue-welcome-flag nil)
  '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
