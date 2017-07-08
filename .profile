@@ -108,6 +108,7 @@ alias sl=ls
 
 PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
+unset MANPATH
 
 alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
 alias grep='grep -i --color=always'
