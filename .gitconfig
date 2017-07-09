@@ -33,6 +33,7 @@
     dif = diff
     difff = diff
     iff = diff
+    idff = diff
     DIFF = diff
     pulll = pull
     pusho = push --set-upstream origin HEAD
