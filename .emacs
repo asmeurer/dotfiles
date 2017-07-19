@@ -1187,6 +1187,12 @@ is binary, activate `hexl-mode'."
 
 (add-hook 'python-hook (electric-indent-mode 0))
 
+(add-to-list 'auto-mode-alist '("\\.xsh" . python-mode))
+;; XXX: Doesn't work
+(add-hook 'python-mode-hook '((if (string= (file-name-extension
+                                            (buffer-file-name)) "xsh")
+                                  (flycheck-mode nil))))
+
 ;; ;; ==== names ====
 ;; ;; A requirement of aggressive-indent-mode
 ;; (add-to-list 'load-path "~/Documents/names")

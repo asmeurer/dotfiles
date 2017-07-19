@@ -7,13 +7,13 @@ channels:
   - r
   - pyne
 
-channel_priority: False
+channel_priority: false
 
 changeps1: no
 
 binstar_upload: yes
 
-always_yes: yes
+always_yes: true
 
 use_pip: true
 

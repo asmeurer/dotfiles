@@ -27,7 +27,12 @@ cd hub
 ./script/build
 cp hub ~/bin/
 cd ~/Documents
+
 clone-or-pull git@github.com:git/git.git
+cd ~/Documents/git/contrib/diff-highlight/
+make
+cd ~/Documents
+
 clone-or-pull git@github.com:ipython/ipython.git
 clone-or-pull git://git.sv.gnu.org/emacs.git
 clone-or-pull git@github.com:inducer/pudb.git
