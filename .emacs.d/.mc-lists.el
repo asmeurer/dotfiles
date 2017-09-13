@@ -27,6 +27,7 @@
         alternating-scroll-down-line
         alternating-scroll-up-line
         beginning-of-buffer
+        describe-key
         smex
         suspend-frame
         ))
