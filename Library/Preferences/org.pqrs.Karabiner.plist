@@ -4,24 +4,6 @@
 <dict>
 	<key>MigrationUtilitiesCurrentBundleIdentifer</key>
 	<string>org.pqrs.Karabiner</string>
-	<key>NSStatusItem Preferred Position Item-0</key>
-	<real>642</real>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>520 562 400 129 0 0 1440 877 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 364 620 392 0 0 1440 877 </string>
-	<key>NSWindow Frame SUUpdateAlertFrame</key>
-	<string>431 364 578 392 0 0 1440 877 </string>
-	<key>SUFeedURL</key>
-	<string>https://pqrs.org/osx/karabiner/files/appcast.xml</string>
-	<key>SUHasLaunchedBefore</key>
-	<true/>
-	<key>SULastCheckTime</key>
-	<date>2016-07-20T19:50:57Z</date>
-	<key>WebKitDefaultFontSize</key>
-	<integer>11</integer>
-	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
 	<key>configList</key>
 	<array>
 		<dict>
@@ -102,8 +84,6 @@
 	</dict>
 	<key>isCheckUpdate</key>
 	<true/>
-	<key>isQuitByHand</key>
-	<false/>
 	<key>isShowSettingNameInStatusBar</key>
 	<false/>
 	<key>isStatusWindowEnabled</key>
@@ -127,8 +107,6 @@
 	<key>kAXNotifierEnableDebuggingLog</key>
 	<false/>
 	<key>kIsAXNotifierEnabled</key>
-	<true/>
-	<key>kIsMigratedOverwriteKeyRepeat</key>
 	<true/>
 	<key>kIsOverwriteKeyRepeat</key>
 	<false/>

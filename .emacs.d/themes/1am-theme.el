@@ -41,6 +41,7 @@
  '(vr/group-1 ((t (:background "color-53"))))
  '(vr/group-2 ((t (:background "color-57"))))
  '(vr/match-0 ((t (:background "color-17"))))
- '(vr/match-1 ((t (:background "color-20")))))
+ '(vr/match-1 ((t (:background "color-20"))))
+ '(font-latex-sectioning-5-face ((t (:foreground "blue1" :weight bold)))))
 
 (provide-theme '1am)
