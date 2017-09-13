@@ -1208,13 +1208,7 @@ is binary, activate `hexl-mode'."
 (add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'makefile-mode)
 
-;; ===== Indent tools ====
 
-(require 'indent-tools)
-(global-set-key (kbd "C-c >") 'indent-tools-hydra/body)
-(add-hook 'python-mode-hook
-          (lambda () (define-key python-mode-map (kbd "C-c >") 'indent-tools-hydra/body))
-          )
 
 ;; TODO: instead of changing the source to avoid paren indentation, change it
 ;; here using defadvice.  See http://stackoverflow.com/a/4150438/161801.
