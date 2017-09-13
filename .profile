@@ -104,6 +104,7 @@ alias bit='git'
 alias fit='git'
 alias gi='git'
 alias gt='git'
+alias gti='git'
 alias sl=ls
 
 PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
