@@ -425,4 +425,6 @@ source ~/Documents/hub/etc/hub.bash_completion.sh
 
 source /Users/aaronmeurer/.iterm2_shell_integration.bash
 
+export GPG_TTY=$(tty)
+
 hash -r
