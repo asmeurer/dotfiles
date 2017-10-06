@@ -25,7 +25,7 @@ cd ~/Documents/
 clone-or-pull git@github.com:github/hub.git
 cd hub
 ./script/build
-cp hub ~/bin/
+cp bin/hub ~/bin/
 cd ~/Documents
 
 clone-or-pull git@github.com:git/git.git
