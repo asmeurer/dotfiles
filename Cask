@@ -26,3 +26,4 @@
 (depends-on "sml-modeline")
 (depends-on "dockerfile-mode")
 (depends-on "flyspell-lazy")
+(depends-on "cmake-font-lock")
