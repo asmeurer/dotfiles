@@ -7,7 +7,7 @@ channels:
   - r
   - pyne
 
-channel_priority: false
+# channel_priority: false
 
 changeps1: no
 
