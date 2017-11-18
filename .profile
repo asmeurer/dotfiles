@@ -107,7 +107,7 @@ alias gt='git'
 alias gti='git'
 alias sl=ls
 
-PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
+PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 unset MANPATH
 
