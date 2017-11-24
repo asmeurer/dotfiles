@@ -188,6 +188,10 @@
 
 (add-hook 'rst-mode-hook (lambda () (clear-abbrev-table rst-mode-abbrev-table)))
 
+;; Prevent emacs from asking about saving abbrevs every time it closes. Any
+;; abbrevs that should be saved persistantly should be added to this file.
+(setq save-abbrevs nil)
+
 ;; ==== Useful tools for removing duplicate lines ====
 
 (defun remove-duplicate-lines-region (start end)
