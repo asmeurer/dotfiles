@@ -183,6 +183,15 @@
 
 (add-hook 'rst-adjust-hook 'rst-toc-update)
 
+;; Disabled abbrevs in rst-mode that add things to words like "contents"
+;; whenever they are typed.
+
+(add-hook 'rst-mode-hook (lambda () (clear-abbrev-table rst-mode-abbrev-table)))
+
+;; Prevent emacs from asking about saving abbrevs every time it closes. Any
+;; abbrevs that should be saved persistantly should be added to this file.
+(setq save-abbrevs nil)
+
 ;; ==== Useful tools for removing duplicate lines ====
 
 (defun remove-duplicate-lines-region (start end)
