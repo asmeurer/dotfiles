@@ -1196,11 +1196,10 @@ is binary, activate `hexl-mode'."
 
 (add-hook 'python-hook (electric-indent-mode 0))
 
-(add-to-list 'auto-mode-alist '("\\.xsh" . python-mode))
-;; XXX: Doesn't work
-(add-hook 'python-mode-hook '((if (string= (file-name-extension
-                                            (buffer-file-name)) "xsh")
-                                  (flycheck-mode nil))))
+(define-derived-mode xonsh-mode python-mode "Xonsh Mode"
+  "A mode for .xsh files.")
+
+(add-to-list 'auto-mode-alist '("\\.xsh\\'" . xonsh-mode))
 
 ;; ;; ==== names ====
 ;; ;; A requirement of aggressive-indent-mode
