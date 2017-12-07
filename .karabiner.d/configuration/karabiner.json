@@ -2469,6 +2469,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "right_control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -2493,6 +2497,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "right_control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -2517,6 +2525,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "right_control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -2541,6 +2553,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "right_control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
