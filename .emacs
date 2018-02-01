@@ -1700,6 +1700,7 @@ is binary, activate `hexl-mode'."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-fold-unfolded-face ((t nil)))
  '(sml-modeline-end-face ((t (:background "black" :foreground "white"))))
  '(sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area))))
  '(yascroll:thumb-text-area ((t (:background "slateblue" :foreground "white")))))
