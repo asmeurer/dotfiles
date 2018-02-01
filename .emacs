@@ -1470,6 +1470,10 @@ is binary, activate `hexl-mode'."
 ;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 ;; (setq reftex-plug-into-AUCTeX t)
 
+;; ==== latex-extra ====
+
+(add-hook 'LaTeX-mode-hook #'latex-extra-mode)
+
 ;; ==== Predictive ====
 
 ;; (add-to-list 'load-path "~/Documents/predictive")
@@ -1658,6 +1662,7 @@ is binary, activate `hexl-mode'."
     ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
  '(jedi:use-shortcuts t t)
  '(large-file-warning-threshold nil)
+ '(latex/view-after-compile nil)
  '(linum-format "%d⎢")
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
