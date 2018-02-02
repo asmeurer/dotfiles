@@ -93,7 +93,8 @@ clone-or-pull git@github.com:tkf/emacs-jedi-direx.git
 clone-or-pull git@github.com:m2ym/yascroll-el.git
 clone-or-pull git@github.com:magnars/expand-region.el.git
 clone-or-pull git@github.com:magnars/multiple-cursors.el.git
-clone-or-pull http://www.dr-qubit.org/git/undo-tree.git
+# clone-or-pull http://www.dr-qubit.org/git/undo-tree.git
+clone-or-pull git@github.com:emacsmirror/undo-tree.git
 clone-or-pull git@github.com:kiwanami/emacs-window-layout.git
 clone-or-pull git@github.com:kiwanami/emacs-window-manager.git
 clone-or-pull git@github.com:gempesaw/ido-vertical-mode.el.git
