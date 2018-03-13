@@ -640,7 +640,7 @@ This command does the reverse of `fill-region'."
 
 ;; TODO: Turn this on only for text modes and similar
 
-(setq auto-fill-mode 1)
+;; (setq auto-fill-mode 1)
 
 ;; ===== Make Text mode the default mode for new buffers =====
 
@@ -897,15 +897,22 @@ like newline-and-indent"
 ;; ===== Enable auto-fill-mode for relevant file types =====
 
 (defun turn-on-auto-fill ()
-  "Force auto-fill-mode on. For us in hooks."
+  "Force auto-fill-mode on. For use in hooks."
   (interactive)
   (auto-fill-mode 1))
+
+(defun turn-off-auto-fill ()
+  "Force auto-fill-mode off. For us in hooks."
+  (interactive)
+  (auto-fill-mode -1))
 
 (add-hook 'message-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 (add-hook 'prog-mode-hook 'turn-on-auto-fill) ; All programming languages
 (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
+
+(add-hook 'makefile-mode-hook 'turn-off-auto-fill)
 
 ;; ===== Enable mouse support (?) ====
 
