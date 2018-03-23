@@ -369,7 +369,38 @@ PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
 PATH="$HOME/anaconda3/bin:$PATH"
 
 
-eval "$(register-python-argcomplete conda)"
+# This is the output of 'register-python-argcomplete conda'. We use this
+# instead of
+#
+# eval "$(register-python-argcomplete conda)"
+#
+# for performance.
+
+_python_argcomplete() {
+    local IFS=$'\013'
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                     COMP_LINE="$COMP_LINE" \
+                     COMP_POINT="$COMP_POINT" \
+                     COMP_TYPE="$COMP_TYPE" \
+                     _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                     _ARGCOMPLETE=1 \
+                     _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                     "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "conda"
+
+# END output of 'register-python-argcomplete conda'
+
+
 . /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
 
 
