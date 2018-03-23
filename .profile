@@ -405,7 +405,6 @@ MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
 eval "`pip completion --bash`"
-eval "`~/anaconda/envs/blog-nikola/bin/nikola tabcompletion`"
 
 # https://github.com/fabric/fabric/issues/6#issuecomment-15182638
 
