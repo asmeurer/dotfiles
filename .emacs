@@ -41,6 +41,49 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; ==== use-package ====
+
+;; Bootstrap use-package. From
+;; https://swsnr.de/posts/my-emacs-configuration-with-use-package
+
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Alternate use-package init, from git (https://jwiegley.github.io/use-package/installation/)
+
+(add-to-list 'load-path "~/Documents/use-package")
+(require 'use-package)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/Documents/use-package/"))
+
+;; Make packages always auto-install
+(setq use-package-always-ensure t)
+;; It doesn't seem to work for some reason, so we use :ensure t below.
+
+;; Install various packages
+
+;; ==== flycheck ====
+
+(use-package flycheck
+             :bind (("M-n" . flycheck-next-error)
+                    ("M-p" . flycheck-previous-error))
+             :custom (flycheck-disabled-checkers '(python-flake8 python-pylint)))
+
+;; ===== flycheck-pyflakes ======
+
+(use-package flycheck-pyflakes)
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1043,18 +1086,6 @@ like newline-and-indent"
 ;; (require 'flymake-python-pyflakes)
 ;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
-;; ===== Flycheck ====
-
-;; This is installed from cask
-
-(global-set-key "\M-n" 'flycheck-next-error)
-(global-set-key "\M-p" 'flycheck-previous-error)
-
-;; ===== flycheck-pyflakes ======
-
-(require 'flycheck-pyflakes)
-(add-to-list 'flycheck-disabled-checkers 'python-flake8)
-(add-to-list 'flycheck-disabled-checkers 'python-pylint)
 
 ;; ;; ===== ido-vertical-mode =====
 ;;
@@ -1674,6 +1705,7 @@ is binary, activate `hexl-mode'."
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(next-screen-context-lines 10)
+ '(package-selected-packages (quote (flycheck-pyflakes use-package flycheck)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
  '(python-indent-guess-indent-offset nil)

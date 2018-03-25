@@ -1,8 +1,6 @@
 (source gnu)
 (source melpa)
 
-(depends-on "flycheck")
-(depends-on "flycheck-pyflakes")
 (depends-on "helm")
 (depends-on "discover")
 (depends-on "ido-vertical-mode")
