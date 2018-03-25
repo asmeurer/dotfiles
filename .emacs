@@ -1639,8 +1639,6 @@ is binary, activate `hexl-mode'."
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
- '(esup-run-as-batch-p nil)
- '(esup-server-port 62211)
  '(flyspell-issue-welcome-flag nil)
  '(flyspell-lazy-changes-threshold 10)
  '(flyspell-lazy-idle-seconds 1)

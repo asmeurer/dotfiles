@@ -28,4 +28,3 @@
 (depends-on "flyspell-lazy")
 (depends-on "cmake-font-lock")
 (depends-on "latex-extra")
-(depends-on "esup")
