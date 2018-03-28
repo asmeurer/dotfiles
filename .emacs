@@ -162,9 +162,18 @@
 ;; Commented out because it doesn't seem to be working. But I don't need it
 ;; for now.
 
-;; (use-package mediawiki
-;;   :ensure t
-;;   :mode ("\\.mediawiki\\" . mediawiki-mode))
+(use-package mediawiki
+  :mode ("\\.mediawiki\\'" . mediawiki-mode))
+
+;; === Anzu ====
+
+;; Show the total number of search results
+
+;; (add-to-list 'load-path "~/Documents/emacs-anzu")
+;; (require 'anzu)
+(use-package anzu)
+;; :config
+;; (global-anzu-mode +1))
 
 ;; ==== Cask ====
 
