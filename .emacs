@@ -1660,6 +1660,7 @@ is binary, activate `hexl-mode'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
+ '(aggressive-indent-excluded-modes (quote (markdown-mode python-mode makefile-mode)))
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "/Users/aaronmeurer/.emacs.d/autosave/")
@@ -1685,6 +1686,7 @@ is binary, activate `hexl-mode'."
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
+ '(flycheck-disabled-checkers (quote (python-flake8 python-pylint)))
  '(flyspell-issue-welcome-flag nil)
  '(flyspell-lazy-changes-threshold 10)
  '(flyspell-lazy-idle-seconds 1)
@@ -1696,6 +1698,7 @@ is binary, activate `hexl-mode'."
  '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
+ '(global-undo-tree-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
@@ -1742,6 +1745,8 @@ is binary, activate `hexl-mode'."
  '(split-window-keep-point t)
  '(tab-width 4)
  '(tags-case-fold-search t)
+ '(undo-tree-auto-save-history t)
+ '(undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(vr/default-regexp-modifiers (quote (:I t :M t :S nil :U t)))
  '(vr/match-separator-use-custom-face t)
