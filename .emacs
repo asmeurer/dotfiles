@@ -242,6 +242,18 @@
   (flyspell-lazy-use-flyspell-word nil)
   (flyspell-lazy-window-idle-seconds 3))
 
+;; ==== cmake-font-lock ====
+;; Enables syntax highlighting for cmake files
+(use-package cmake-font-lock)
+
+;; ==== latex-extra ====
+
+;; https://github.com/Malabarba/latex-extra
+
+;; Enables content folding (hit TAB on section headers) and some other
+;; features as well.
+(use-package latex-extra
+  :hook (LaTeX-mode . latex-extra-mode))
 
 ;; ==== Cask ====
 
@@ -1606,10 +1618,6 @@ is binary, activate `hexl-mode'."
 (autoload 'ntcmd-mode "ntcmd" "ntcmd mode" t)
 (add-to-list 'auto-mode-alist
              '("\\.bat$" . ntcmd-mode))
-
-;; ==== latex-extra ====
-
-(add-hook 'LaTeX-mode-hook #'latex-extra-mode)
 
 ;; ==== Predictive ====
 
