@@ -3,7 +3,6 @@
 
 ;; (depends-on "helm")
 ;; (depends-on "discover")
-(depends-on "sml-modeline")
 (depends-on "dockerfile-mode")
 (depends-on "flyspell-lazy")
 (depends-on "cmake-font-lock")

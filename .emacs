@@ -212,6 +212,18 @@
   :bind
   ("M-;" . smart-comment))
 
+;; ==== sml-modeline ====
+;; Puts a progress bar on the mode line
+
+(use-package sml-modeline
+  :custom
+  (sml-modeline-len 17)
+  (sml-modeline-mode t)
+  :custom-face
+  (sml-modeline-end-face ((t (:background "black" :foreground "white"))))
+  (sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area)))))
+
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1772,7 +1784,5 @@ is binary, activate `hexl-mode'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(TeX-fold-unfolded-face ((t nil)))
- '(sml-modeline-end-face ((t (:background "black" :foreground "white"))))
- '(sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area))))
  '(yascroll:thumb-text-area ((t (:background "slateblue" :foreground "white")))))
 (put 'downcase-region 'disabled nil)
