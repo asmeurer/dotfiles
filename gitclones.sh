@@ -59,7 +59,6 @@ git fetch haxney
 git checkout customize
 git branch --set-upstream-to=haxney/customize customize
 cd ~/Documents/
-clone-or-pull git@github.com:technomancy/ido-ubiquitous.git
 clone-or-pull git://jblevins.org/git/markdown-mode.git
 clone-or-pull git@github.com:yoshiki/yaml-mode.git
 clone-or-pull git@github.com:defunkt/coffee-mode.git

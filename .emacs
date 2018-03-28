@@ -255,6 +255,12 @@
 (use-package latex-extra
   :hook (LaTeX-mode . latex-extra-mode))
 
+;; ==== ido-completing-read+ ====
+
+;; Formerly ido-ubiquitous
+
+(use-package ido-completing-read+)
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -903,14 +909,6 @@ This command does the reverse of `fill-region'."
 ;; (global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
 ;; ;; This is your old M-x.
 ;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;; ==== ido-ubiquitous =====
-;; ==== Gives ido mode really everywhere =====
-
-(add-to-list 'load-path "~/Documents/ido-ubiquitous")
-(require 'ido-ubiquitous)
-(ido-mode)
-(ido-ubiquitous)
 
 ;; ==== Buffer move ====
 ;; From http://www.emacswiki.org/cgi-bin/wiki/buffer-move.el
