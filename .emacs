@@ -117,7 +117,11 @@
 
 (use-package undo-tree
   :bind
-  ("C-[ [ a b" . undo-tree-redo))
+  ("C-[ [ a b" . undo-tree-redo)
+  :custom
+  ((global-undo-tree-mode t)
+   (undo-tree-auto-save-history t)
+   (undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))))
 
 ;; ;; Compress saved undo files
 ;; (defadvice undo-tree-make-history-save-file-name
@@ -1687,7 +1691,6 @@ is binary, activate `hexl-mode'."
  '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
- '(global-undo-tree-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
@@ -1734,8 +1737,6 @@ is binary, activate `hexl-mode'."
  '(split-window-keep-point t)
  '(tab-width 4)
  '(tags-case-fold-search t)
- '(undo-tree-auto-save-history t)
- '(undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(vr/default-regexp-modifiers (quote (:I t :M t :S nil :U t)))
  '(vr/match-separator-use-custom-face t)
