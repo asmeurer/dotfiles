@@ -95,7 +95,6 @@ clone-or-pull git@github.com:kiwanami/emacs-window-layout.git
 clone-or-pull git@github.com:kiwanami/emacs-window-manager.git
 clone-or-pull git@github.com:emacsmirror/xterm-frobs.git
 clone-or-pull git@github.com:emacsmirror/xterm-title.git
-clone-or-pull git@github.com:mhayashi1120/Emacs-langtool.git
 clone-or-pull git@github.com:benma/visual-regexp.el.git
 clone-or-pull git@github.com:benma/visual-regexp-steroids.el.git
 clone-or-pull git@github.com:juergenhoetzel/profile-dotemacs.git

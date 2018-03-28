@@ -963,14 +963,6 @@ This command does the reverse of `fill-region'."
 (setq-default ispell-program-name "hunspell")
 (setq ispell-really-hunspell t)
 
-;; ==== Language tool ====
-;; conda install languagetool
-
-(add-to-list 'load-path "~/Documents/Emacs-langtool")
-(autoload 'langtool-check "langtool")
-(setq langtool-language-tool-jar "~/anaconda/envs/languagetool/languagetool/languagetool-commandline.jar")
-(setq langtool-disabled-rules '("WHITESPACE_RULE"))
-
 ;; ===== Automatically indent with RET =====
 
 (defun newline-and-indent-conditionally ()
