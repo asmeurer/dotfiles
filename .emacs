@@ -270,6 +270,22 @@
   :bind
   ("C-x SPC" . avy-goto-char))
 
+;; ==== Markdown mode =====
+
+(add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
+
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
+files" t)
+(autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
+Markdown" t)
+(use-package markdown-mode
+  :mode
+  ("\\.md" . gfm-mode)
+  ("\\.markdown" . gfm-mode)
+  ("PULLREQ_EDITMSG" . gfm-mode)
+  ("COMMIT_EDITMSG" . gfm-mode)
+  ("TAG_EDITMSG" . gfm-mode))
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -1229,20 +1245,6 @@ like newline-and-indent"
 ;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
 
-;; ==== Markdown mode =====
-
-(add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
-
-(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
-files" t)
-(autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
-Markdown" t)
-(add-to-list 'auto-mode-alist '("\\.md" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown" . gfm-mode))
-(add-to-list 'auto-mode-alist '("PULLREQ_EDITMSG" . gfm-mode))
-(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . gfm-mode))
-(add-to-list 'auto-mode-alist '("TAG_EDITMSG" . gfm-mode))
-
 ;; ==== Use hexl mode for binary files ====
 
 ;; http://emacs.stackexchange.com/a/10297/118
@@ -1699,7 +1701,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell")
+ '(ispell-program-name "hunspell" t)
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t t)
