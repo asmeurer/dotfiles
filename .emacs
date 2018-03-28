@@ -84,6 +84,56 @@
 
 (use-package flycheck-pyflakes)
 
+
+;; ;; ===== ido-vertical-mode =====
+;;
+;; ;; This used to be done by this
+;; ;; Display ido results vertically, rather than horizontally
+;; ;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+;; ;; (defun ido-disable-line-trucation () (set (make-local-variable
+;; ;;                                            'truncate-lines) nil))
+;; ;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+;;
+;; Commented out because it's installed by use-package
+;;
+;; (add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
+;; (require 'ido-vertical-mode)
+;; ;(ido-mode 1)
+(use-package ido-vertical-mode
+  :config
+  (ido-vertical-mode 1))
+
+
+;; ==== Undo-tree ====
+;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
+
+;; Installed by use-package
+;; (add-to-list 'load-path "~/Documents/undo-tree")
+;; (require 'undo-tree)
+
+;; C-S-/ has to pass through this escape code with iTerm2.
+
+(use-package undo-tree
+  :bind
+  ("C-[ [ a b" . undo-tree-redo))
+
+;; ;; Compress saved undo files
+;; (defadvice undo-tree-make-history-save-file-name
+;;     (after undo-tree activate)
+;;       (setq concat ad-return-value ".gz"))
+
+;; ==== multiple-cursors ====
+
+;; Installed by use-package
+;; (add-to-list 'load-path "~/Documents/multiple-cursors.el")
+;; (require 'multiple-cursors)
+;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
+
+(use-package multiple-cursors
+  :bind
+  (([f6] . mc/mark-next-like-this)
+   ([f5] . mc/mark-previous-like-this)))
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1087,22 +1137,6 @@ like newline-and-indent"
 ;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
 
-;; ;; ===== ido-vertical-mode =====
-;;
-;; ;; This used to be done by this
-;; ;; Display ido results vertically, rather than horizontally
-;; ;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
-;; ;; (defun ido-disable-line-trucation () (set (make-local-variable
-;; ;;                                            'truncate-lines) nil))
-;; ;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
-;;
-;; Commented out because it's installed by Cask
-;;
-;; (add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
-;; (require 'ido-vertical-mode)
-;; ;(ido-mode 1)
-(ido-vertical-mode 1)
-
 ;; ==== ace jump mode ======
 
 (add-to-list 'load-path "~/Documents/ace-jump-mode")
@@ -1570,37 +1604,11 @@ is binary, activate `hexl-mode'."
 (autoload 'er/expand-region "expand-region")
 (global-set-key (kbd "M-=") 'er/expand-region)
 
-;; ==== multiple-cursors ====
-
-;; Installed by cask
-;; (add-to-list 'load-path "~/Documents/multiple-cursors.el")
-;; (require 'multiple-cursors)
-;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
-
-(global-set-key [f6] 'mc/mark-next-like-this)
-(global-set-key [f5] 'mc/mark-previous-like-this)
-
 ;; ;; ==== Highlight indentation =====
 ;;
 ;; (require 'highlight-indentation)
 ;;
 ;; (add-hook 'prog-mode-hook 'highlight-indentation)
-
-;; ==== Undo-tree ====
-;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
-
-;; Installed by cask
-;; (add-to-list 'load-path "~/Documents/undo-tree")
-;; (require 'undo-tree)
-
-;; C-S-/ has to pass through this escape code with iTerm2.
-
-(global-set-key (kbd "C-[ [ a b") 'undo-tree-redo)
-
-;; ;; Compress saved undo files
-;; (defadvice undo-tree-make-history-save-file-name
-;;     (after undo-tree activate)
-;;       (setq concat ad-return-value ".gz"))
 
 ;; ==== goto-last-change.el
 ;; http://www.emacswiki.org/emacs/download/goto-last-change.el

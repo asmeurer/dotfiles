@@ -15,6 +15,7 @@
         jedi:dot-complete
         just-one-space-with-newline
         kill-line-or-region
+        kill-total-line
         my-save-buffer-dtws
         newline-and-indent-conditionally
         osx-paste
