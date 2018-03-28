@@ -90,14 +90,9 @@ clone-or-pull git@github.com:m2ym/direx-el.git
 clone-or-pull git@github.com:tkf/emacs-jedi-direx.git
 clone-or-pull git@github.com:m2ym/yascroll-el.git
 clone-or-pull git@github.com:magnars/expand-region.el.git
-clone-or-pull git@github.com:magnars/multiple-cursors.el.git
-# clone-or-pull http://www.dr-qubit.org/git/undo-tree.git
 clone-or-pull git@github.com:emacsmirror/undo-tree.git
 clone-or-pull git@github.com:kiwanami/emacs-window-layout.git
 clone-or-pull git@github.com:kiwanami/emacs-window-manager.git
-clone-or-pull git@github.com:gempesaw/ido-vertical-mode.el.git
-clone-or-pull git@github.com:joddie/pcre2el.git
-clone-or-pull git@github.com:syohex/emacs-anzu.git
 clone-or-pull git@github.com:emacsmirror/xterm-frobs.git
 clone-or-pull git@github.com:emacsmirror/xterm-title.git
 clone-or-pull git@github.com:mhayashi1120/Emacs-langtool.git
@@ -106,8 +101,6 @@ clone-or-pull git@github.com:benma/visual-regexp-steroids.el.git
 clone-or-pull git@github.com:juergenhoetzel/profile-dotemacs.git
 clone-or-pull git@github.com:nex3/sass-mode.git
 clone-or-pull git@github.com:nex3/haml-mode.git
-clone-or-pull git@github.com:Bruce-Connor/aggressive-indent-mode.git
-clone-or-pull git@github.com:Bruce-Connor/names.git
 clone-or-pull git@github.com:emacsmirror/isearch-plus.git
 
 clone-or-pull git@github.com:asmeurer/mypython
