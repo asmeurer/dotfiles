@@ -286,6 +286,11 @@ Markdown" t)
   ("COMMIT_EDITMSG" . gfm-mode)
   ("TAG_EDITMSG" . gfm-mode))
 
+;; ==== YAML Mode ====
+
+(use-package yaml-mode)
+;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -1269,12 +1274,6 @@ is binary, activate `hexl-mode'."
       (hexl-mode))))
 
 (add-hook 'find-file-hooks 'hexl-if-binary)
-
-;; ==== YAML Mode ====
-
-(add-to-list 'load-path "~/Documents/yaml-mode")
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;; ===== Coffeescript ====
 
