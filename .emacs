@@ -224,6 +224,9 @@
   (sml-modeline-end-face ((t (:background "black" :foreground "white"))))
   (sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area)))))
 
+;; ==== dockerfile-mode ====
+
+(use-package dockerfile-mode)
 
 ;; ==== Cask ====
 
