@@ -42,6 +42,12 @@ clone-or-pull git@github.com:inducer/pudb.git
 # clone-or-pull git://git.sv.gnu.org/auctex.git
 # cd auctex
 # ./autogen.sh
+
+clone-or-pull git@github.com:jwiegley/use-package.git
+cd ~/Documents/use-package
+make
+cd ~
+
 clone-or-pull git@github.com:dacap/keyfreq.git
 clone-or-pull git@github.com:cask/cask.git
 cd ~

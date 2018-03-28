@@ -43,19 +43,19 @@
 
 ;; ==== use-package ====
 
-;; Bootstrap use-package. From
-;; https://swsnr.de/posts/my-emacs-configuration-with-use-package
-
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-
-(package-initialize)
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; ;; Bootstrap use-package. From
+;; ;; https://swsnr.de/posts/my-emacs-configuration-with-use-package
+;;
+;; (require 'package)
+;; (setq package-enable-at-startup nil)
+;; (add-to-list 'package-archives
+;;              '("melpa" . "https://melpa.org/packages/"))
+;;
+;; (package-initialize)
+;;
+;; (unless (package-installed-p 'use-package)
+;;   (package-refresh-contents)
+;;   (package-install 'use-package))
 
 ;; Alternate use-package init, from git (https://jwiegley.github.io/use-package/installation/)
 
