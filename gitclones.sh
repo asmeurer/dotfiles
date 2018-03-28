@@ -49,13 +49,6 @@ make
 cd ~
 
 clone-or-pull git@github.com:dacap/keyfreq.git
-clone-or-pull git@github.com:cask/cask.git
-cd ~
-echo "Running cask"
-cask
-echo "Running cask update"
-cask update
-cd ~/Documents/
 clone-or-pull git@github.com:winterTTr/ace-jump-mode.git
 clone-or-pull git@github.com:nonsequitur/smex.git
 # Until https://github.com/nonsequitur/smex/pull/12 is merged

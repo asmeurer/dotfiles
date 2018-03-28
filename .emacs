@@ -255,12 +255,6 @@
 (use-package latex-extra
   :hook (LaTeX-mode . latex-extra-mode))
 
-;; ==== Cask ====
-
-(add-to-list 'load-path "~/Documents/cask")
-(require 'cask)
-(cask-initialize "~/")
-
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -1227,7 +1221,7 @@ like newline-and-indent"
 ;; ===== Turn on flymake-mode ====
 
 ;; We don't use this any more, instead, we use flycheck (which comes from
-;; cask).
+;; use-package).
 
 ;; (add-to-list 'load-path "~/Documents/flymake-easy")
 ;;
