@@ -116,6 +116,7 @@ clone-or-pull git@github.com:nex3/sass-mode.git
 clone-or-pull git@github.com:nex3/haml-mode.git
 clone-or-pull git@github.com:Bruce-Connor/aggressive-indent-mode.git
 clone-or-pull git@github.com:Bruce-Connor/names.git
+clone-or-pull git@github.com:emacsmirror/isearch-plus.git
 
 clone-or-pull git@github.com:asmeurer/mypython
 ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython

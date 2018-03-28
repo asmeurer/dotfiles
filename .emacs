@@ -1579,6 +1579,10 @@ is binary, activate `hexl-mode'."
 
 ;; ===== isearch+ =====
 
+;; This cannot be installed with use-package because it is on the wiki, and
+;; melpa no longer lists wiki packages.
+(add-to-list 'load-path "~/Documents/isearch-plus")
+
 (eval-after-load "isearch" '(require 'isearch+))
 
 ;; Disable bell ringing in isearch+
