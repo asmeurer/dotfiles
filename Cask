@@ -3,9 +3,6 @@
 
 ;; (depends-on "helm")
 ;; (depends-on "discover")
-(depends-on "ido-sort-mtime")
-(depends-on "auctex")
-(depends-on "cask-mode")
 (depends-on "smart-comment")
 (depends-on "sml-modeline")
 (depends-on "dockerfile-mode")
