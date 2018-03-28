@@ -261,6 +261,15 @@
 
 (use-package ido-completing-read+)
 
+;; ==== avy ====
+
+;; Replacement for ace-jump-mode. Type C-x SPC then some characters to
+;; navigate around
+
+(use-package avy
+  :bind
+  ("C-x SPC" . avy-goto-char))
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -1220,32 +1229,6 @@ like newline-and-indent"
 ;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
 
-;; ==== ace jump mode ======
-
-(add-to-list 'load-path "~/Documents/ace-jump-mode")
-(autoload
-    'ace-jump-mode
-      "ace-jump-mode"
-        "Emacs quick move minor mode"
-          t)
-
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
-;; (define-key global-map (kbd "C-x C-@") 'ace-jump-mode)
-(setq ace-jump-mode-case-fold t)
-
-;; enable a more powerful jump back function from ace jump mode
-;; Commented out because it doesn't work if you haven't been using ace
-
-;; (autoload
-;;     'ace-jump-mode-pop-mark
-;;       "ace-jump-mode"
-;;         "Ace jump back:-)"
-;;           t)
-;; (eval-after-load "ace-jump-mode"
-;;     '(ace-jump-mode-enable-mark-sync))
-;; (define-key global-map (kbd "C-x C-x") 'ace-jump-mode-pop-mark)
-
-
 ;; ==== Markdown mode =====
 
 (add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
@@ -1716,7 +1699,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell" t)
+ '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t t)
@@ -1733,7 +1716,7 @@ is binary, activate `hexl-mode'."
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(next-screen-context-lines 10)
- '(package-selected-packages (quote (flycheck-pyflakes use-package flycheck)))
+ '(package-selected-packages (quote (avy flycheck-pyflakes use-package flycheck)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
  '(python-indent-guess-indent-offset nil)

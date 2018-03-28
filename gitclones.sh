@@ -49,7 +49,6 @@ make
 cd ~
 
 clone-or-pull git@github.com:dacap/keyfreq.git
-clone-or-pull git@github.com:winterTTr/ace-jump-mode.git
 clone-or-pull git@github.com:nonsequitur/smex.git
 # Until https://github.com/nonsequitur/smex/pull/12 is merged
 cd smex
