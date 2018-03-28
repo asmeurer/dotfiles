@@ -175,6 +175,16 @@
 ;; :config
 ;; (global-anzu-mode +1))
 
+;; ==== pcre2el (Perl compatible regular expressions) ====
+
+;; Use pcre-query-replace-regexp
+
+;; (add-to-list 'load-path "~/Documents/pcre2el")
+;; (require 'pcre2el)
+(use-package pcre2el
+  :config
+  (pcre-mode 1))
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1573,26 +1583,6 @@ is binary, activate `hexl-mode'."
 
 ;; Disable bell ringing in isearch+
 (setq isearchp-ring-bell-function nil)
-
-;; === Anzu ====
-
-;; Show the total number of search results
-
-;; Installed with cask
-;;
-;; (add-to-list 'load-path "~/Documents/emacs-anzu")
-;; (require 'anzu)
-(global-anzu-mode +1)
-
-;; ==== pcre2el (Perl compatible regular expressions) ====
-
-;; Use pcre-query-replace-regexp
-
-;; Installed with cask
-;;
-;; (add-to-list 'load-path "~/Documents/pcre2el")
-;; (require 'pcre2el)
-(pcre-mode 1)
 
 ;; Visual regexp
 

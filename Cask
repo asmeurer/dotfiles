@@ -3,7 +3,6 @@
 
 ;; (depends-on "helm")
 ;; (depends-on "discover")
-(depends-on "pcre2el")
 (depends-on "ess")
 (depends-on "bug-hunter")
 (depends-on "isearch+")
