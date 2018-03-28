@@ -76,9 +76,11 @@
 ;; ==== flycheck ====
 
 (use-package flycheck
-             :bind (("M-n" . flycheck-next-error)
-                    ("M-p" . flycheck-previous-error))
-             :custom (flycheck-disabled-checkers '(python-flake8 python-pylint)))
+  :bind
+  (("M-n" . flycheck-next-error)
+   ("M-p" . flycheck-previous-error))
+  :custom
+  (flycheck-disabled-checkers '(python-flake8 python-pylint)))
 
 ;; ===== flycheck-pyflakes ======
 
@@ -1674,7 +1676,6 @@ is binary, activate `hexl-mode'."
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
- '(flycheck-disabled-checkers (quote (python-flake8 python-pylint)))
  '(flyspell-issue-welcome-flag nil)
  '(flyspell-lazy-changes-threshold 10)
  '(flyspell-lazy-idle-seconds 1)
