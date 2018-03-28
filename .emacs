@@ -197,7 +197,8 @@
   (ido-sort-mtime-mode 1))
 
 ;; ==== auctex ====
-(use-package auctex)
+(use-package tex
+  :ensure auctex)
 
 ;; ==== cask-mode ====
 
