@@ -191,6 +191,21 @@
 ;; ==== cython-mode ====
 (use-package cython-mode)
 
+;; ==== ido-sort-mtime ====
+(use-package ido-sort-mtime
+  :config
+  (ido-sort-mtime-mode 1))
+
+;; ==== auctex ====
+(use-package auctex)
+
+;; ==== cask-mode ====
+
+;; We don't use cask any more but cask-mode can still be useful for editing
+;; the Cask files
+
+(use-package cask-mode)
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1557,17 +1572,6 @@ is binary, activate `hexl-mode'."
 (autoload 'ntcmd-mode "ntcmd" "ntcmd mode" t)
 (add-to-list 'auto-mode-alist
              '("\\.bat$" . ntcmd-mode))
-
-;; ==== AUCTeX ====
-
-;; Disabled until I can figure out how to reliable reinstall it in gitclones.sh
-
-;; (add-to-list 'load-path "~/Documents/auctex")
-;; (load "auctex.el" nil t t)
-;; (load "preview-latex.el" nil t t)
-;; (add-hook 'latex-mode-hook 'turn-on-reftex)
-;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-;; (setq reftex-plug-into-AUCTeX t)
 
 ;; ==== latex-extra ====
 
