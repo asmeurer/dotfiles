@@ -1636,9 +1636,9 @@ is binary, activate `hexl-mode'."
 ;;     (undo-tree-redo)))
 ;; (global-set-key (kbd "C-x C-\\") 'undo-redo)
 
-(require 'goto-chg)
-(global-set-key [(control ?.)] 'goto-last-change)
-(global-set-key (kbd "C-,") 'goto-last-change-reverse)
+;; (require 'goto-chg)
+;; (global-set-key [(control ?.)] 'goto-last-change)
+;; (global-set-key (kbd "C-,") 'goto-last-change-reverse)
 
 ;; ==== Tabbar mode ====
 
