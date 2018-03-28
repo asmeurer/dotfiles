@@ -206,6 +206,12 @@
 
 (use-package cask-mode)
 
+;; ===== Smart comment =====
+
+(use-package smart-comment
+  :bind
+  ("M-;" . smart-comment))
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1608,10 +1614,6 @@ is binary, activate `hexl-mode'."
 ;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
 (define-key global-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
 (define-key global-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
-
-;; ===== Smart comment =====
-
-(global-set-key (kbd "M-;") 'smart-comment)
 
 ;; ===== expand-region =====
 
