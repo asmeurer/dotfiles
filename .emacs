@@ -150,7 +150,7 @@
   :config
   (global-aggressive-indent-mode 1)
   :custom
-  (aggressive-indent-excluded-modes '(markdown-mode)))
+  (aggressive-indent-excluded-modes '(markdown-mode python-mode makefile-mode)))
 
 ;; ==== Cask ====
 
