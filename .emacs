@@ -134,6 +134,18 @@
   (([f6] . mc/mark-next-like-this)
    ([f5] . mc/mark-previous-like-this)))
 
+;; ==== aggressive-indent-mode ====
+;;
+;; Installed by use-package
+;;
+;; (add-to-list 'load-path "~/Documents/aggressive-indent-mode")
+;; (require 'aggressive-indent)
+(use-package aggressive-indent
+  :config
+  (global-aggressive-indent-mode 1)
+  :custom
+  (aggressive-indent-excluded-modes '(markdown-mode)))
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1272,22 +1284,6 @@ is binary, activate `hexl-mode'."
   "A mode for .xsh files.")
 
 (add-to-list 'auto-mode-alist '("\\.xsh\\'" . xonsh-mode))
-
-;; ;; ==== names ====
-;; ;; A requirement of aggressive-indent-mode
-;; (add-to-list 'load-path "~/Documents/names")
-
-;; ;; ==== aggressive-indent-mode ====
-;;
-;; Installed by cask
-;;
-;; (add-to-list 'load-path "~/Documents/aggressive-indent-mode")
-;; (require 'aggressive-indent)
-(global-aggressive-indent-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'makefile-mode)
-
 
 
 ;; TODO: instead of changing the source to avoid paren indentation, change it
