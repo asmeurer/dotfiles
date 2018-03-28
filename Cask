@@ -3,8 +3,6 @@
 
 ;; (depends-on "helm")
 ;; (depends-on "discover")
-(depends-on "bug-hunter")
-(depends-on "isearch+")
 (depends-on "paredit")
 (depends-on "saveplace")
 (depends-on "cython-mode")

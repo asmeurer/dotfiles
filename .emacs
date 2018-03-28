@@ -185,6 +185,9 @@
   :config
   (pcre-mode 1))
 
+;; ==== bug-hunter ====
+(use-package bug-hunter)
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
