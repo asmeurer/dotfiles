@@ -152,6 +152,20 @@
   :custom
   (aggressive-indent-excluded-modes '(markdown-mode python-mode makefile-mode)))
 
+;; ==== MediaWiki Mode ====
+
+;; (add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
+;;
+;; ;; (require 'mediawiki)
+;;
+
+;; Commented out because it doesn't seem to be working. But I don't need it
+;; for now.
+
+;; (use-package mediawiki
+;;   :ensure t
+;;   :mode ("\\.mediawiki\\" . mediawiki-mode))
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1194,15 +1208,6 @@ Markdown" t)
 (add-to-list 'auto-mode-alist '("PULLREQ_EDITMSG" . gfm-mode))
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . gfm-mode))
 (add-to-list 'auto-mode-alist '("TAG_EDITMSG" . gfm-mode))
-
-;; ==== MediaWiki Mode ====
-
-;; (add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
-;;
-;; ;; (require 'mediawiki)
-;;
-(autoload 'mediawiki-mode "mediawiki.el" "Major mode for editing MediaWiki files" t)
-(setq auto-mode-alist (cons '("\\.mediawiki" . mediawiki-mode) auto-mode-alist))
 
 ;; ==== Use hexl mode for binary files ====
 
