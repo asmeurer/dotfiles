@@ -291,6 +291,14 @@ Markdown" t)
 (use-package yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
+;; ===== Coffeescript ====
+
+(use-package coffee-mode)
+
+;; ===== sass ======
+
+(use-package sass-mode)
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -1274,19 +1282,6 @@ is binary, activate `hexl-mode'."
       (hexl-mode))))
 
 (add-hook 'find-file-hooks 'hexl-if-binary)
-
-;; ===== Coffeescript ====
-
-(add-to-list 'load-path "~/Documents/coffee-mode")
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(autoload 'coffee-mode "coffee-mode" "Coffee Mode" t)
-
-;; ===== sass ======
-(add-to-list 'load-path "~/Documents/haml-mode")
-(add-to-list 'load-path "~/Documents/sass-mode")
-(autoload 'haml-mode "haml-mode" "Haml Mode" t)
-(autoload 'sass-mode "sass-mode" "Sass Mode" t)
-(add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode))
 
 ;; Commented out stuff "doesn't work"
 
