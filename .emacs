@@ -188,6 +188,9 @@
 ;; ==== bug-hunter ====
 (use-package bug-hunter)
 
+;; ==== cython-mode ====
+(use-package cython-mode)
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -1327,11 +1330,6 @@ is binary, activate `hexl-mode'."
 ;;           (lambda ()
 ;;             (set (make-local-variable 'imenu-create-index-function)
 ;;                  #'python-imenu-create-index)))
-
-;; ;; ==== Cython mode ====
-;;
-;; (add-to-list 'load-path "~/Documents/cython/Tools/cython-mode.el")
-;; (require 'cython-mode)
 
 ;; ==== ropemacs ====
 (defun load-ropemacs ()
