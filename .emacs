@@ -898,7 +898,10 @@ This command does the reverse of `fill-region'."
 ;; (setq icon-title-format "Emacs - %b")   ; Tab titleterm
 ;; ==== smex (ido for M-x) ======
 
+;; We use a custom branch of smex
+;; (https://github.com/nonsequitur/smex/pull/12) that allows autoloading
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
+
 ;; Commented out because it's in the customize section below
 
 ;; (autoload 'smex "smex")
