@@ -228,6 +228,21 @@
 
 (use-package dockerfile-mode)
 
+;; ===== Turn on flyspell-mode ====
+
+(use-package flyspell-lazy
+  :config
+  (flyspell-lazy-mode 1)
+  :custom
+  (flyspell-lazy-changes-threshold 10)
+  (flyspell-lazy-idle-seconds 1)
+  (flyspell-lazy-less-feedback t)
+  (flyspell-lazy-mode t)
+  (flyspell-lazy-size-threshold 5)
+  (flyspell-lazy-use-flyspell-word nil)
+  (flyspell-lazy-window-idle-seconds 3))
+
+
 ;; ==== Cask ====
 
 (add-to-list 'load-path "~/Documents/cask")
@@ -930,10 +945,7 @@ This command does the reverse of `fill-region'."
 ;; (global-set-key (kbd "<C-S-left>")   'buf-move-left)
 ;; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
-;; ===== Turn on flyspell-mode ====
-
-(require 'flyspell-lazy)
-(flyspell-lazy-mode 1)
+;; ==== flyspell ====
 
 ;; Use the turn-on-flyspell one to enable it everywhere, and the
 ;; flyspell-prog-mode to enable it only in comments/strings
