@@ -383,6 +383,14 @@ Markdown" t)
   :bind
   ("M-=" . er/expand-region))
 
+;; ==== auto-package-update ====
+
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  ;; (setq auto-package-update-hide-results t)
+  (auto-package-update-maybe))
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
