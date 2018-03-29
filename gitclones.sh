@@ -75,7 +75,6 @@ cd emacs-jedi
 echo "Creating conda environment for jedi"
 conda install -m -p env jedi epc
 cd ~/Documents/
-clone-or-pull git@github.com:magnars/expand-region.el.git
 clone-or-pull git@github.com:kiwanami/emacs-window-layout.git
 clone-or-pull git@github.com:kiwanami/emacs-window-manager.git
 clone-or-pull git@github.com:juergenhoetzel/profile-dotemacs.git

@@ -377,6 +377,12 @@ Markdown" t)
     (setq string (concat "(?i)" string))
     ad-do-it))
 
+;; ===== expand-region =====
+
+(use-package expand-region
+  :bind
+  ("M-=" . er/expand-region))
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -1538,12 +1544,6 @@ is binary, activate `hexl-mode'."
 ;; (add-to-list 'load-path "~/Documents/predictive")
 ;; (require 'predictive)
 
-;; ===== expand-region =====
-
-(add-to-list 'load-path "~/Documents/expand-region.el")
-(autoload 'er/expand-region "expand-region")
-(global-set-key (kbd "M-=") 'er/expand-region)
-
 ;; ;; ==== Highlight indentation =====
 ;;
 ;; (require 'highlight-indentation)
@@ -1647,7 +1647,7 @@ is binary, activate `hexl-mode'."
  '(jedi:install-imenu nil)
  '(jedi:server-command
    (quote
-    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
+    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")) t)
  '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
