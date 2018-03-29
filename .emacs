@@ -357,6 +357,35 @@ Markdown" t)
   :hook
   (python-mode . jedi:setup))
 
+;; ==== popwin ====
+;; Make annoying popup windows go away better
+
+(use-package popwin
+  :config
+  (popwin-mode 1))
+
+;; ==== Visual regexp ====
+
+(use-package visual-regexp
+  :bind
+  (("C-c r" . vr/replace)
+   ("C-c q" . vr/query-replace)
+   ;; if you use multiple-cursors, this is for you:
+   ("C-c m" . vr/mc-mark)))
+
+(use-package visual-regexp-steroids
+  :bind
+  ;; use visual-regexp-steroids's isearch instead of the built-in regexp
+  ;; isearch
+  (("C-r"  . vr/isearch-backward) ;; C-M-r
+   ("C-s" . vr/isearch-forward)) ;; C-M-s
+
+  :config
+  ;; Make vr--isearch always case insensitive
+  (defadvice vr--isearch (around add-case-insensitive (forward string &optional bound noerror count) activate)
+    (setq string (concat "(?i)" string))
+    ad-do-it))
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -781,11 +810,6 @@ This function ...
     (isearch-repeat (if isearch-forward 'forward))
     (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
     (ad-activate 'isearch-search)))
-
-;; Make vr--isearch always case insensitive
-(defadvice vr--isearch (around add-case-insensitive (forward string &optional bound noerror count) activate)
-  (setq string (concat "(?i)" string))
-  ad-do-it)
 
 ;; Make some of the isearch keybindings more sane
 
@@ -1465,21 +1489,14 @@ is binary, activate `hexl-mode'."
 ;; (autoload 'doctest-register-mmm-classes "doctest-mode")
 ;; (doctest-register-mmm-classes t t)
 
-;; ==== popwin ====
-;; Make annoying popup windows go away better
-
-(add-to-list 'load-path "~/Documents/popwin-el")
-(require 'popwin)
-(popwin-mode 1)
-
-;; ==== direx ====
-;; Required for Python imenu direx below
-
-(add-to-list 'load-path "~/Documents/direx-el")
-(autoload 'direx "direx" t)
-(push '(direx:direx-mode :position left :width 25 :dedicated t)
-            popwin:special-display-config)
-(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+;; ;; ==== direx ====
+;; ;; Required for Python imenu direx below
+;;
+;; (add-to-list 'load-path "~/Documents/direx-el")
+;; (autoload 'direx "direx" t)
+;; (push '(direx:direx-mode :position left :width 25 :dedicated t)
+;;       popwin:special-display-config)
+;; (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
 
 ;; ==== Emacs Jedi Direx ====
 ;; A nice imenu for Python
@@ -1495,9 +1512,9 @@ is binary, activate `hexl-mode'."
 
 ;; This is related to auto-complete-mode (same developer)
 
-(add-to-list 'load-path "~/Documents/yascroll-el")
-(require 'cl)
-(require 'yascroll)
+;; (add-to-list 'load-path "~/Documents/yascroll-el")
+;; (require 'cl)
+;; (require 'yascroll)
 ;; (global-yascroll-bar-mode 1)
 
 ;; ;; Discover mode
@@ -1540,22 +1557,6 @@ is binary, activate `hexl-mode'."
 
 ;; Disable bell ringing in isearch+
 (setq isearchp-ring-bell-function nil)
-
-;; Visual regexp
-
-(add-to-list 'load-path "~/Documents/visual-regexp.el") ;; if the files are not already in the load path
-(require 'visual-regexp)
-(define-key global-map (kbd "C-c r") 'vr/replace)
-(define-key global-map (kbd "C-c q") 'vr/query-replace)
-;; if you use multiple-cursors, this is for you:
-(define-key global-map (kbd "C-c m") 'vr/mc-mark)
-
-;; if the files are not already in the load path
-(add-to-list 'load-path "~/Documents/visual-regexp-steroids.el/")
-(require 'visual-regexp-steroids)
-;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
-(define-key global-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
-(define-key global-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;; ===== expand-region =====
 
