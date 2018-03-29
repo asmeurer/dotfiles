@@ -312,6 +312,7 @@ Markdown" t)
   (substitute-key-definition 'ac-next 'next-line ac-menu-map)
   (substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
   (substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
+  (global-auto-complete-mode +1)
   :bind
   (:map
    ac-menu-map
@@ -325,10 +326,36 @@ Markdown" t)
    :map
    ac-mode-map ("M-TAB" . auto-complete))
   :hook
-  (latex-mode-hook . auto-complete-mode)
-  (LaTeX-mode-hook . auto-complete-mode)
-  (prog-mode-hook . auto-complete-mode)
-  (text-mode-hook . auto-complete-mode))
+  (latex-mode . auto-complete-mode)
+  (LaTeX-mode . auto-complete-mode)
+  (prog-mode . auto-complete-mode)
+  (text-mode . auto-complete-mode))
+
+
+;; ==== Jedi ====
+;; Python completion using Jedi and auto-complete-mode
+
+(use-package jedi
+  :config
+  (setq jedi:use-shortcuts t)
+  (setq jedi:complete-on-dot t)
+  (add-to-list 'ac-sources 'ac-source-jedi-direct)
+  ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
+  (setq jedi:install-imenu nil)
+  (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
+  (setq jedi:server-args
+        '("--log-level" "DEBUG"
+          "--log-traceback"))
+  :custom
+  (jedi:server-command
+   '("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py"))
+  :bind
+  (:map
+   python-mode-map
+   ;; M-TAB
+   ("C-M-i" . jedi:complete))
+  :hook
+  (python-mode . jedi:setup))
 
 ;; ===== iTerm2 keys ====
 
@@ -1438,73 +1465,6 @@ is binary, activate `hexl-mode'."
 ;; (autoload 'doctest-register-mmm-classes "doctest-mode")
 ;; (doctest-register-mmm-classes t t)
 
-;; ==== deferred ====
-;; This is needed for EPC
-
-(add-to-list 'load-path "~/Documents/emacs-deferred")
-;(require 'deferred)
-
-;; ==== ctable ====
-;; This is needed for EPC
-
-(add-to-list 'load-path "~/Documents/emacs-ctable")
-;(require 'ctable)
-
-;; ==== EPC =====
-;; This is needed for Jedi
-
-(add-to-list 'load-path "~/Documents/emacs-epc")
-;(require 'epc)
-
-;; ==== python-environment
-;; This is needed for Jedi
-
-(add-to-list 'load-path "~/Documents/emacs-python-environment")
-
-;; ==== Jedi ====
-;; Python completion using Jedi and auto-complete-mode
-
-(add-to-list 'load-path "~/Documents/emacs-jedi")
-;; (require 'jedi) ; We have to require jedi or else the kernel panic workaround
-;;                 ; below won't work and we won't be able to exit emacs.
-(autoload 'jedi:setup "jedi" nil t)
-(global-auto-complete-mode +1)
-(setq  jedi:use-shortcuts t)
-;; C-TAB doesn't work, so it's defined in iTerm 2 shortcuts
-(eval-after-load "python"
-  '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:complete))
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(add-to-list 'ac-sources 'ac-source-jedi-direct)
-;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
-(setq jedi:install-imenu nil)
-(setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
-
-(setq jedi:server-args
-            '("--log-level" "DEBUG"
-                      "--log-traceback"))
-
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-;;          WARNING!!!
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-
-;; The following is needed or else Mac OS X will kernel panic. See
-;; https://github.com/tkf/emacs-jedi/issues/37.
-
-;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
-;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
-
-;; (defun jedi:stop-all-servers ()
-;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
-;;                         jedi:server-pool--table))
-;;
-;; (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
-
-;; (eval-after-load "jedi"
-;;   '(setq jedi:server-command (list "cat" (expand-file-name
-;;                                           "jedi-port.log" jedi:source-dir))
-;;          jedi:server-args nil))
-
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
 
@@ -1700,14 +1660,14 @@ is binary, activate `hexl-mode'."
  '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
- '(jedi:complete-on-dot t t)
+ '(jedi:complete-on-dot t)
  '(jedi:environment-root nil)
- '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index) t)
- '(jedi:install-imenu nil t)
+ '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index))
+ '(jedi:install-imenu nil)
  '(jedi:server-command
    (quote
     ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
- '(jedi:use-shortcuts t t)
+ '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
  '(linum-format "%d⎢")
