@@ -299,6 +299,37 @@ Markdown" t)
 
 (use-package sass-mode)
 
+;; ===== auto-complete-mode ====
+
+(use-package auto-complete
+  :config
+  (ac-config-default)
+  (ac-set-trigger-key "TAB")
+  (ac-flyspell-workaround)
+  (ac-linum-workaround)
+  (setq ac-ignore-case nil)
+  (setq ac-use-menu-map t)
+  (substitute-key-definition 'ac-next 'next-line ac-menu-map)
+  (substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
+  (substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
+  :bind
+  (:map
+   ac-menu-map
+   ("C-n" . ac-next)
+   ("\C-p" . ac-previous)
+   ("<backtab>" . ac-previous)
+   ("C-c s" . ac-isearch)
+   :map
+   ac-completing-map
+   ("\r" . nil)
+   :map
+   ac-mode-map ("M-TAB" . auto-complete))
+  :hook
+  (latex-mode-hook . auto-complete-mode)
+  (LaTeX-mode-hook . auto-complete-mode)
+  (prog-mode-hook . auto-complete-mode)
+  (text-mode-hook . auto-complete-mode))
+
 ;; ===== iTerm2 keys ====
 
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
@@ -1313,6 +1344,8 @@ is binary, activate `hexl-mode'."
 
 ;; ==== python.el ====
 
+;; We use a fork with a branch that uses less stupid indentation for
+;; continuation lines.
 (add-to-list 'load-path "~/Documents/python.el")
 (require 'python)
 
@@ -1404,37 +1437,6 @@ is binary, activate `hexl-mode'."
 ;; (autoload 'doctest-mode "doctest-mode" "doctest mode" t)
 ;; (autoload 'doctest-register-mmm-classes "doctest-mode")
 ;; (doctest-register-mmm-classes t t)
-
-;; ===== auto-complete-mode ====
-
-
-(add-to-list 'load-path "~/Documents/auto-complete")
-(add-to-list 'load-path "~/Documents/popup-el")
-(add-to-list 'load-path "~/Documents/fuzzy-el")
-(require 'auto-complete-config)
-(require 'popup)
-(require 'fuzzy)
-(add-to-list 'ac-dictionary-directories "~/Documents/auto-complete/dict")
-(ac-config-default)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-(ac-set-trigger-key "TAB")
-(define-key ac-completing-map "\r" nil)
-(ac-flyspell-workaround)
-(ac-linum-workaround)
-(setq ac-ignore-case nil)
-(setq ac-use-menu-map t)
-(substitute-key-definition 'ac-next 'next-line ac-menu-map)
-(substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
-(define-key ac-menu-map (kbd "C-n") 'ac-next)
-(define-key ac-menu-map (kbd "\C-p") 'ac-previous)
-(define-key ac-menu-map (kbd "<backtab>") 'ac-previous)
-(substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
-(define-key ac-menu-map (kbd "C-c s") 'ac-isearch)
-(add-hook 'latex-mode-hook 'auto-complete-mode)
-(add-hook 'LaTeX-mode-hook 'auto-complete-mode)
-(add-hook 'prog-mode-hook 'auto-complete-mode)
-(add-hook 'text-mode-hook 'auto-complete-mode)
-
 
 ;; ==== deferred ====
 ;; This is needed for EPC
@@ -1695,7 +1697,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell" t)
+ '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t t)

@@ -58,6 +58,7 @@ git fetch haxney
 git checkout customize
 git branch --set-upstream-to=haxney/customize customize
 cd ~/Documents/
+
 clone-or-pull git@github.com:defunkt/coffee-mode.git
 clone-or-pull git@github.com:fgallina/python.el.git
 cd python.el
@@ -70,9 +71,6 @@ git branch --set-upstream-to=github/indentation indentation
 cd ~/Documents/
 clone-or-pull git@github.com:purcell/mmm-mode.git
 # TODO: doctest-mode
-clone-or-pull git@github.com:auto-complete/auto-complete.git
-clone-or-pull git@github.com:auto-complete/popup-el.git
-clone-or-pull git@github.com:auto-complete/fuzzy-el.git
 clone-or-pull git@github.com:kiwanami/emacs-deferred.git
 clone-or-pull git@github.com:kiwanami/emacs-ctable.git
 clone-or-pull git@github.com:kiwanami/emacs-epc.git
