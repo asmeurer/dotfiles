@@ -75,18 +75,9 @@ cd emacs-jedi
 echo "Creating conda environment for jedi"
 conda install -m -p env jedi epc
 cd ~/Documents/
-clone-or-pull git@github.com:m2ym/popwin-el.git
-clone-or-pull git@github.com:m2ym/direx-el.git
-clone-or-pull git@github.com:tkf/emacs-jedi-direx.git
-clone-or-pull git@github.com:m2ym/yascroll-el.git
 clone-or-pull git@github.com:magnars/expand-region.el.git
-clone-or-pull git@github.com:emacsmirror/undo-tree.git
 clone-or-pull git@github.com:kiwanami/emacs-window-layout.git
 clone-or-pull git@github.com:kiwanami/emacs-window-manager.git
-clone-or-pull git@github.com:emacsmirror/xterm-frobs.git
-clone-or-pull git@github.com:emacsmirror/xterm-title.git
-clone-or-pull git@github.com:benma/visual-regexp.el.git
-clone-or-pull git@github.com:benma/visual-regexp-steroids.el.git
 clone-or-pull git@github.com:juergenhoetzel/profile-dotemacs.git
 clone-or-pull git@github.com:nex3/sass-mode.git
 clone-or-pull git@github.com:nex3/haml-mode.git
