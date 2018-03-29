@@ -50,6 +50,7 @@
 ;; (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
+
 ;;
 ;; (package-initialize)
 ;;
@@ -174,16 +175,6 @@
 (use-package anzu)
 ;; :config
 ;; (global-anzu-mode +1))
-
-;; ==== pcre2el (Perl compatible regular expressions) ====
-
-;; Use pcre-query-replace-regexp
-
-;; (add-to-list 'load-path "~/Documents/pcre2el")
-;; (require 'pcre2el)
-(use-package pcre2el
-  :config
-  (pcre-mode 1))
 
 ;; ==== bug-hunter ====
 (use-package bug-hunter)
