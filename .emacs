@@ -180,7 +180,11 @@
 (use-package bug-hunter)
 
 ;; ==== cython-mode ====
-(use-package cython-mode)
+(use-package cython-mode
+  :mode
+  ("\\.pyx\\'"
+   "\\.pxd\\'"
+   "\\.pxi\\'"))
 
 ;; ==== ido-sort-mtime ====
 (use-package ido-sort-mtime
@@ -189,7 +193,8 @@
 
 ;; ==== auctex ====
 (use-package tex
-  :ensure auctex)
+  :ensure auctex
+  :defer t)
 
 ;; ==== cask-mode ====
 
@@ -288,7 +293,8 @@ Markdown" t)
 
 ;; ===== sass ======
 
-(use-package sass-mode)
+(use-package sass-mode
+  :mode "\\.sass\\'")
 
 ;; ===== auto-complete-mode ====
 
