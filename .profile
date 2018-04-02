@@ -105,6 +105,8 @@ alias fit='git'
 alias gi='git'
 alias gt='git'
 alias gti='git'
+alias got='git'
+alias gut='git'
 alias sl=ls
 
 PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
@@ -367,7 +369,38 @@ PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
 PATH="$HOME/anaconda3/bin:$PATH"
 
 
-eval "$(register-python-argcomplete conda)"
+# This is the output of 'register-python-argcomplete conda'. We use this
+# instead of
+#
+# eval "$(register-python-argcomplete conda)"
+#
+# for performance.
+
+_python_argcomplete() {
+    local IFS=$'\013'
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                     COMP_LINE="$COMP_LINE" \
+                     COMP_POINT="$COMP_POINT" \
+                     COMP_TYPE="$COMP_TYPE" \
+                     _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                     _ARGCOMPLETE=1 \
+                     _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                     "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "conda"
+
+# END output of 'register-python-argcomplete conda'
+
+
 . /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
 
 
@@ -402,8 +435,21 @@ export PATH=`~/uniqpath`
 MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
-eval "`pip completion --bash`"
-eval "`~/anaconda/envs/blog-nikola/bin/nikola tabcompletion`"
+# The output of 'pip completion --bash'. Copied here instead of using
+#
+# eval "`pip completion --bash`"
+#
+# for performance reasons.
+
+# pip bash completion start
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                             COMP_CWORD=$COMP_CWORD \
+                             PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
+# pip bash completion end
 
 # https://github.com/fabric/fabric/issues/6#issuecomment-15182638
 

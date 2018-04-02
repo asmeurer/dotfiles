@@ -41,11 +41,361 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; ==== Cask ====
+;; ==== use-package ====
 
-(add-to-list 'load-path "~/Documents/cask")
-(require 'cask)
-(cask-initialize "~/")
+;; ;; Bootstrap use-package. From
+;; ;; https://swsnr.de/posts/my-emacs-configuration-with-use-package
+;;
+;; (require 'package)
+;; (setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+
+;;
+;; (package-initialize)
+;;
+;; (unless (package-installed-p 'use-package)
+;;   (package-refresh-contents)
+;;   (package-install 'use-package))
+
+;; Alternate use-package init, from git (https://jwiegley.github.io/use-package/installation/)
+
+(add-to-list 'load-path "~/Documents/use-package")
+(require 'use-package)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/Documents/use-package/"))
+
+;; Make packages always auto-install
+(setq use-package-always-ensure t)
+;; It doesn't seem to work for some reason, so we use :ensure t below.
+
+;; Install various packages
+
+;; ==== flycheck ====
+
+(use-package flycheck
+  :bind
+  (("M-n" . flycheck-next-error)
+   ("M-p" . flycheck-previous-error))
+  :custom
+  (flycheck-disabled-checkers '(python-flake8 python-pylint)))
+
+;; ===== flycheck-pyflakes ======
+
+(use-package flycheck-pyflakes)
+
+
+;; ;; ===== ido-vertical-mode =====
+;;
+;; ;; This used to be done by this
+;; ;; Display ido results vertically, rather than horizontally
+;; ;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+;; ;; (defun ido-disable-line-trucation () (set (make-local-variable
+;; ;;                                            'truncate-lines) nil))
+;; ;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+;;
+;; Commented out because it's installed by use-package
+;;
+;; (add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
+;; (require 'ido-vertical-mode)
+;; ;(ido-mode 1)
+(use-package ido-vertical-mode
+  :config
+  (ido-vertical-mode 1))
+
+
+;; ==== Undo-tree ====
+;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
+
+;; Installed by use-package
+;; (add-to-list 'load-path "~/Documents/undo-tree")
+;; (require 'undo-tree)
+
+;; C-S-/ has to pass through this escape code with iTerm2.
+
+(use-package undo-tree
+  :bind
+  ("C-[ [ a b" . undo-tree-redo)
+  :custom
+  ((global-undo-tree-mode t)
+   (undo-tree-auto-save-history t)
+   (undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))))
+
+;; ;; Compress saved undo files
+;; (defadvice undo-tree-make-history-save-file-name
+;;     (after undo-tree activate)
+;;       (setq concat ad-return-value ".gz"))
+
+;; ==== multiple-cursors ====
+
+;; Installed by use-package
+;; (add-to-list 'load-path "~/Documents/multiple-cursors.el")
+;; (require 'multiple-cursors)
+;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
+
+(use-package multiple-cursors
+  :bind
+  (([f6] . mc/mark-next-like-this)
+   ([f5] . mc/mark-previous-like-this)))
+
+;; ==== aggressive-indent-mode ====
+;;
+;; Installed by use-package
+;;
+;; (add-to-list 'load-path "~/Documents/aggressive-indent-mode")
+;; (require 'aggressive-indent)
+(use-package aggressive-indent
+  :config
+  (global-aggressive-indent-mode 1)
+  :custom
+  (aggressive-indent-excluded-modes '(markdown-mode python-mode makefile-mode diff-mode)))
+
+;; ==== MediaWiki Mode ====
+
+;; (add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
+;;
+;; ;; (require 'mediawiki)
+;;
+
+;; Commented out because it doesn't seem to be working. But I don't need it
+;; for now.
+
+(use-package mediawiki
+  :mode ("\\.mediawiki\\'" . mediawiki-mode))
+
+;; === Anzu ====
+
+;; Show the total number of search results
+
+;; (add-to-list 'load-path "~/Documents/emacs-anzu")
+;; (require 'anzu)
+(use-package anzu)
+;; :config
+;; (global-anzu-mode +1))
+
+;; ==== bug-hunter ====
+(use-package bug-hunter)
+
+;; ==== cython-mode ====
+(use-package cython-mode
+  :mode
+  ("\\.pyx\\'"
+   "\\.pxd\\'"
+   "\\.pxi\\'"))
+
+;; ==== ido-sort-mtime ====
+(use-package ido-sort-mtime
+  :config
+  (ido-sort-mtime-mode 1))
+
+;; ==== auctex ====
+(use-package tex
+  :ensure auctex
+  :defer t)
+
+;; ==== cask-mode ====
+
+;; We don't use cask any more but cask-mode can still be useful for editing
+;; the Cask files
+
+(use-package cask-mode)
+
+;; ===== Smart comment =====
+
+(use-package smart-comment
+  :bind
+  ("M-;" . smart-comment))
+
+;; ==== sml-modeline ====
+;; Puts a progress bar on the mode line
+
+(use-package sml-modeline
+  :custom
+  (sml-modeline-len 17)
+  (sml-modeline-mode t)
+  :custom-face
+  (sml-modeline-end-face ((t (:background "black" :foreground "white"))))
+  (sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area)))))
+
+;; ==== dockerfile-mode ====
+
+(use-package dockerfile-mode)
+
+;; ===== Turn on flyspell-mode ====
+
+(use-package flyspell-lazy
+  :config
+  (flyspell-lazy-mode 1)
+  :custom
+  (flyspell-lazy-changes-threshold 10)
+  (flyspell-lazy-idle-seconds 1)
+  (flyspell-lazy-less-feedback t)
+  (flyspell-lazy-mode t)
+  (flyspell-lazy-size-threshold 5)
+  (flyspell-lazy-use-flyspell-word nil)
+  (flyspell-lazy-window-idle-seconds 3))
+
+;; ==== cmake-font-lock ====
+;; Enables syntax highlighting for cmake files
+(use-package cmake-font-lock)
+
+;; ==== latex-extra ====
+
+;; https://github.com/Malabarba/latex-extra
+
+;; Enables content folding (hit TAB on section headers) and some other
+;; features as well.
+(use-package latex-extra
+  :hook (LaTeX-mode . latex-extra-mode))
+
+;; ==== ido-completing-read+ ====
+
+;; Formerly ido-ubiquitous
+
+(use-package ido-completing-read+)
+
+;; ==== avy ====
+
+;; Replacement for ace-jump-mode. Type C-x SPC then some characters to
+;; navigate around
+
+(use-package avy
+  :bind
+  ("C-x SPC" . avy-goto-char))
+
+;; ==== Markdown mode =====
+
+(add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
+
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
+files" t)
+(autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
+Markdown" t)
+(use-package markdown-mode
+  :mode
+  ("\\.md" . gfm-mode)
+  ("\\.markdown" . gfm-mode)
+  ("PULLREQ_EDITMSG" . gfm-mode)
+  ("COMMIT_EDITMSG" . gfm-mode)
+  ("TAG_EDITMSG" . gfm-mode))
+
+;; ==== YAML Mode ====
+
+(use-package yaml-mode)
+;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+;; ===== Coffeescript ====
+
+(use-package coffee-mode)
+
+;; ===== sass ======
+
+(use-package sass-mode
+  :mode "\\.sass\\'")
+
+;; ===== auto-complete-mode ====
+
+(use-package auto-complete
+  :config
+  (ac-config-default)
+  (ac-set-trigger-key "TAB")
+  (ac-flyspell-workaround)
+  (ac-linum-workaround)
+  (setq ac-ignore-case nil)
+  (setq ac-use-menu-map t)
+  (substitute-key-definition 'ac-next 'next-line ac-menu-map)
+  (substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
+  (substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
+  (global-auto-complete-mode +1)
+  :bind
+  (:map
+   ac-menu-map
+   ("C-n" . ac-next)
+   ("\C-p" . ac-previous)
+   ("<backtab>" . ac-previous)
+   ("C-c s" . ac-isearch)
+   :map
+   ac-completing-map
+   ("\r" . nil)
+   :map
+   ac-mode-map ("M-TAB" . auto-complete))
+  :hook
+  (latex-mode . auto-complete-mode)
+  (LaTeX-mode . auto-complete-mode)
+  (prog-mode . auto-complete-mode)
+  (text-mode . auto-complete-mode))
+
+
+;; ==== Jedi ====
+;; Python completion using Jedi and auto-complete-mode
+
+(use-package jedi
+  :config
+  (setq jedi:use-shortcuts t)
+  (setq jedi:complete-on-dot t)
+  (add-to-list 'ac-sources 'ac-source-jedi-direct)
+  ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
+  (setq jedi:install-imenu nil)
+  (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
+  (setq jedi:server-args
+        '("--log-level" "DEBUG"
+          "--log-traceback"))
+  :custom
+  (jedi:server-command
+   '("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py"))
+  :bind
+  (:map
+   python-mode-map
+   ;; M-TAB
+   ("C-M-i" . jedi:complete))
+  :hook
+  (python-mode . jedi:setup))
+
+;; ==== popwin ====
+;; Make annoying popup windows go away better
+
+(use-package popwin
+  :config
+  (popwin-mode 1))
+
+;; ==== Visual regexp ====
+
+(use-package visual-regexp
+  :bind
+  (("C-c r" . vr/replace)
+   ("C-c q" . vr/query-replace)
+   ;; if you use multiple-cursors, this is for you:
+   ("C-c m" . vr/mc-mark)))
+
+(use-package visual-regexp-steroids
+  :bind
+  ;; use visual-regexp-steroids's isearch instead of the built-in regexp
+  ;; isearch
+  (("C-r"  . vr/isearch-backward) ;; C-M-r
+   ("C-s" . vr/isearch-forward)) ;; C-M-s
+
+  :config
+  ;; Make vr--isearch always case insensitive
+  (defadvice vr--isearch (around add-case-insensitive (forward string &optional bound noerror count) activate)
+    (setq string (concat "(?i)" string))
+    ad-do-it))
+
+;; ===== expand-region =====
+
+(use-package expand-region
+  :bind
+  ("M-=" . er/expand-region))
+
+;; ==== auto-package-update ====
+
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  ;; (setq auto-package-update-hide-results t)
+  (auto-package-update-maybe))
 
 ;; ===== iTerm2 keys ====
 
@@ -472,11 +822,6 @@ This function ...
     (ad-enable-advice 'isearch-search 'after 'isearch-no-fail)
     (ad-activate 'isearch-search)))
 
-;; Make vr--isearch always case insensitive
-(defadvice vr--isearch (around add-case-insensitive (forward string &optional bound noerror count) activate)
-  (setq string (concat "(?i)" string))
-  ad-do-it)
-
 ;; Make some of the isearch keybindings more sane
 
 (define-key isearch-mode-map (kbd "<tab>") 'isearch-complete)
@@ -640,7 +985,7 @@ This command does the reverse of `fill-region'."
 
 ;; TODO: Turn this on only for text modes and similar
 
-(setq auto-fill-mode 1)
+;; (setq auto-fill-mode 1)
 
 ;; ===== Make Text mode the default mode for new buffers =====
 
@@ -658,28 +1003,6 @@ This command does the reverse of `fill-region'."
 (if (locate-library "ido")
         (autoload 'ido "ido" "Start ido" t))
 (require 'ido)
-
-;; sort ido filelist by mtime instead of alphabetically
-
-;; ;; TODO: Sort by closeness to current directory, then time
-;; (add-hook 'ido-make-file-list-hook 'ido-sort-mtime)
-;; (add-hook 'ido-make-dir-list-hook 'ido-sort-mtime)
-;; (defun ido-sort-mtime ()
-;;   (setq ido-temp-list
-;;         (sort ido-temp-list
-;;               (lambda (a b)
-;;                 (time-less-p
-;;                  (sixth
-;;                   (file-attributes (concat ido-current-directory b)))
-;;                  (sixth
-;;                   (file-attributes (concat ido-current-directory a)))))))
-;;   (ido-to-end  ;; move . files to end (again)
-;;    (delq nil (mapcar
-;;               (lambda (x) (and (char-equal
-;;                                 (string-to-char x) ?.) x))
-;;               ido-temp-list))))
-
-(ido-sort-mtime-mode 1)
 
 ;; ==== Use ssh over tramp ====
 ;; See http://stackoverflow.com/a/4725727/161801
@@ -706,7 +1029,10 @@ This command does the reverse of `fill-region'."
 ;; (setq icon-title-format "Emacs - %b")   ; Tab titleterm
 ;; ==== smex (ido for M-x) ======
 
+;; We use a custom branch of smex
+;; (https://github.com/nonsequitur/smex/pull/12) that allows autoloading
 (add-to-list 'load-path "~/Documents/smex") ;; The git clone
+
 ;; Commented out because it's in the customize section below
 
 ;; (autoload 'smex "smex")
@@ -717,14 +1043,6 @@ This command does the reverse of `fill-region'."
 ;; (global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
 ;; ;; This is your old M-x.
 ;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;; ==== ido-ubiquitous =====
-;; ==== Gives ido mode really everywhere =====
-
-(add-to-list 'load-path "~/Documents/ido-ubiquitous")
-(require 'ido-ubiquitous)
-(ido-mode)
-(ido-ubiquitous)
 
 ;; ==== Buffer move ====
 ;; From http://www.emacswiki.org/cgi-bin/wiki/buffer-move.el
@@ -743,10 +1061,7 @@ This command does the reverse of `fill-region'."
 ;; (global-set-key (kbd "<C-S-left>")   'buf-move-left)
 ;; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
-;; ===== Turn on flyspell-mode ====
-
-(require 'flyspell-lazy)
-(flyspell-lazy-mode 1)
+;; ==== flyspell ====
 
 ;; Use the turn-on-flyspell one to enable it everywhere, and the
 ;; flyspell-prog-mode to enable it only in comments/strings
@@ -779,23 +1094,15 @@ This command does the reverse of `fill-region'."
 (setq-default ispell-program-name "hunspell")
 (setq ispell-really-hunspell t)
 
-;; ==== Language tool ====
-;; conda install languagetool
-
-(add-to-list 'load-path "~/Documents/Emacs-langtool")
-(autoload 'langtool-check "langtool")
-(setq langtool-language-tool-jar "~/anaconda/envs/languagetool/languagetool/languagetool-commandline.jar")
-(setq langtool-disabled-rules '("WHITESPACE_RULE"))
-
 ;; ===== Automatically indent with RET =====
 
 (defun newline-and-indent-conditionally ()
   "Acts like newline, unless the point is at the end of the line, then acts
 like newline-and-indent"
   (interactive)
-    (if (eq (point) (line-beginning-position))
-        (newline)
-      (newline-and-indent)))
+  (if (eq (point) (line-beginning-position))
+      (newline)
+    (newline-and-indent)))
 
 (define-key global-map (kbd "RET") 'newline-and-indent-conditionally)
 
@@ -897,15 +1204,22 @@ like newline-and-indent"
 ;; ===== Enable auto-fill-mode for relevant file types =====
 
 (defun turn-on-auto-fill ()
-  "Force auto-fill-mode on. For us in hooks."
+  "Force auto-fill-mode on. For use in hooks."
   (interactive)
   (auto-fill-mode 1))
+
+(defun turn-off-auto-fill ()
+  "Force auto-fill-mode off. For us in hooks."
+  (interactive)
+  (auto-fill-mode -1))
 
 (add-hook 'message-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 (add-hook 'prog-mode-hook 'turn-on-auto-fill) ; All programming languages
 (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
+
+(add-hook 'makefile-mode-hook 'turn-off-auto-fill)
 
 ;; ===== Enable mouse support (?) ====
 
@@ -1009,7 +1323,7 @@ like newline-and-indent"
 ;; ===== Turn on flymake-mode ====
 
 ;; We don't use this any more, instead, we use flycheck (which comes from
-;; cask).
+;; use-package).
 
 ;; (add-to-list 'load-path "~/Documents/flymake-easy")
 ;;
@@ -1036,83 +1350,6 @@ like newline-and-indent"
 ;; (require 'flymake-python-pyflakes)
 ;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
-;; ===== Flycheck ====
-
-;; This is installed from cask
-
-(global-set-key "\M-n" 'flycheck-next-error)
-(global-set-key "\M-p" 'flycheck-previous-error)
-
-;; ===== flycheck-pyflakes ======
-
-(require 'flycheck-pyflakes)
-(add-to-list 'flycheck-disabled-checkers 'python-flake8)
-(add-to-list 'flycheck-disabled-checkers 'python-pylint)
-
-;; ;; ===== ido-vertical-mode =====
-;;
-;; ;; This used to be done by this
-;; ;; Display ido results vertically, rather than horizontally
-;; ;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
-;; ;; (defun ido-disable-line-trucation () (set (make-local-variable
-;; ;;                                            'truncate-lines) nil))
-;; ;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
-;;
-;; Commented out because it's installed by Cask
-;;
-;; (add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
-;; (require 'ido-vertical-mode)
-;; ;(ido-mode 1)
-(ido-vertical-mode 1)
-
-;; ==== ace jump mode ======
-
-(add-to-list 'load-path "~/Documents/ace-jump-mode")
-(autoload
-    'ace-jump-mode
-      "ace-jump-mode"
-        "Emacs quick move minor mode"
-          t)
-
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
-;; (define-key global-map (kbd "C-x C-@") 'ace-jump-mode)
-(setq ace-jump-mode-case-fold t)
-
-;; enable a more powerful jump back function from ace jump mode
-;; Commented out because it doesn't work if you haven't been using ace
-
-;; (autoload
-;;     'ace-jump-mode-pop-mark
-;;       "ace-jump-mode"
-;;         "Ace jump back:-)"
-;;           t)
-;; (eval-after-load "ace-jump-mode"
-;;     '(ace-jump-mode-enable-mark-sync))
-;; (define-key global-map (kbd "C-x C-x") 'ace-jump-mode-pop-mark)
-
-
-;; ==== Markdown mode =====
-
-(add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
-
-(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
-files" t)
-(autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
-Markdown" t)
-(add-to-list 'auto-mode-alist '("\\.md" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown" . gfm-mode))
-(add-to-list 'auto-mode-alist '("PULLREQ_EDITMSG" . gfm-mode))
-(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . gfm-mode))
-(add-to-list 'auto-mode-alist '("TAG_EDITMSG" . gfm-mode))
-
-;; ==== MediaWiki Mode ====
-
-;; (add-to-list 'load-path "~/Documents/mediawiki-el") ;; The bzr clone
-;;
-;; ;; (require 'mediawiki)
-;;
-(autoload 'mediawiki-mode "mediawiki.el" "Major mode for editing MediaWiki files" t)
-(setq auto-mode-alist (cons '("\\.mediawiki" . mediawiki-mode) auto-mode-alist))
 
 ;; ==== Use hexl mode for binary files ====
 
@@ -1138,25 +1375,6 @@ is binary, activate `hexl-mode'."
       (hexl-mode))))
 
 (add-hook 'find-file-hooks 'hexl-if-binary)
-
-;; ==== YAML Mode ====
-
-(add-to-list 'load-path "~/Documents/yaml-mode")
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-
-;; ===== Coffeescript ====
-
-(add-to-list 'load-path "~/Documents/coffee-mode")
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(autoload 'coffee-mode "coffee-mode" "Coffee Mode" t)
-
-;; ===== sass ======
-(add-to-list 'load-path "~/Documents/haml-mode")
-(add-to-list 'load-path "~/Documents/sass-mode")
-(autoload 'haml-mode "haml-mode" "Haml Mode" t)
-(autoload 'sass-mode "sass-mode" "Sass Mode" t)
-(add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode))
 
 ;; Commented out stuff "doesn't work"
 
@@ -1188,6 +1406,8 @@ is binary, activate `hexl-mode'."
 
 ;; ==== python.el ====
 
+;; We use a fork with a branch that uses less stupid indentation for
+;; continuation lines.
 (add-to-list 'load-path "~/Documents/python.el")
 (require 'python)
 
@@ -1201,22 +1421,6 @@ is binary, activate `hexl-mode'."
 
 (add-to-list 'auto-mode-alist '("\\.xsh\\'" . xonsh-mode))
 
-;; ;; ==== names ====
-;; ;; A requirement of aggressive-indent-mode
-;; (add-to-list 'load-path "~/Documents/names")
-
-;; ;; ==== aggressive-indent-mode ====
-;;
-;; Installed by cask
-;;
-;; (add-to-list 'load-path "~/Documents/aggressive-indent-mode")
-;; (require 'aggressive-indent)
-(global-aggressive-indent-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'makefile-mode)
-
-
 
 ;; TODO: instead of changing the source to avoid paren indentation, change it
 ;; here using defadvice.  See http://stackoverflow.com/a/4150438/161801.
@@ -1226,11 +1430,6 @@ is binary, activate `hexl-mode'."
 ;;           (lambda ()
 ;;             (set (make-local-variable 'imenu-create-index-function)
 ;;                  #'python-imenu-create-index)))
-
-;; ;; ==== Cython mode ====
-;;
-;; (add-to-list 'load-path "~/Documents/cython/Tools/cython-mode.el")
-;; (require 'cython-mode)
 
 ;; ==== ropemacs ====
 (defun load-ropemacs ()
@@ -1301,119 +1500,14 @@ is binary, activate `hexl-mode'."
 ;; (autoload 'doctest-register-mmm-classes "doctest-mode")
 ;; (doctest-register-mmm-classes t t)
 
-;; ===== auto-complete-mode ====
-
-
-(add-to-list 'load-path "~/Documents/auto-complete")
-(add-to-list 'load-path "~/Documents/popup-el")
-(add-to-list 'load-path "~/Documents/fuzzy-el")
-(require 'auto-complete-config)
-(require 'popup)
-(require 'fuzzy)
-(add-to-list 'ac-dictionary-directories "~/Documents/auto-complete/dict")
-(ac-config-default)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-(ac-set-trigger-key "TAB")
-(define-key ac-completing-map "\r" nil)
-(ac-flyspell-workaround)
-(ac-linum-workaround)
-(setq ac-ignore-case nil)
-(setq ac-use-menu-map t)
-(substitute-key-definition 'ac-next 'next-line ac-menu-map)
-(substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
-(define-key ac-menu-map (kbd "C-n") 'ac-next)
-(define-key ac-menu-map (kbd "\C-p") 'ac-previous)
-(define-key ac-menu-map (kbd "<backtab>") 'ac-previous)
-(substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
-(define-key ac-menu-map (kbd "C-c s") 'ac-isearch)
-(add-hook 'latex-mode-hook 'auto-complete-mode)
-(add-hook 'LaTeX-mode-hook 'auto-complete-mode)
-(add-hook 'prog-mode-hook 'auto-complete-mode)
-(add-hook 'text-mode-hook 'auto-complete-mode)
-
-
-;; ==== deferred ====
-;; This is needed for EPC
-
-(add-to-list 'load-path "~/Documents/emacs-deferred")
-;(require 'deferred)
-
-;; ==== ctable ====
-;; This is needed for EPC
-
-(add-to-list 'load-path "~/Documents/emacs-ctable")
-;(require 'ctable)
-
-;; ==== EPC =====
-;; This is needed for Jedi
-
-(add-to-list 'load-path "~/Documents/emacs-epc")
-;(require 'epc)
-
-;; ==== python-environment
-;; This is needed for Jedi
-
-(add-to-list 'load-path "~/Documents/emacs-python-environment")
-
-;; ==== Jedi ====
-;; Python completion using Jedi and auto-complete-mode
-
-(add-to-list 'load-path "~/Documents/emacs-jedi")
-;; (require 'jedi) ; We have to require jedi or else the kernel panic workaround
-;;                 ; below won't work and we won't be able to exit emacs.
-(autoload 'jedi:setup "jedi" nil t)
-(global-auto-complete-mode +1)
-(setq  jedi:use-shortcuts t)
-;; C-TAB doesn't work, so it's defined in iTerm 2 shortcuts
-(eval-after-load "python"
-  '(define-key python-mode-map (kbd "M-[ 1 6") 'jedi:complete))
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(add-to-list 'ac-sources 'ac-source-jedi-direct)
-;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
-(setq jedi:install-imenu nil)
-(setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
-
-(setq jedi:server-args
-            '("--log-level" "DEBUG"
-                      "--log-traceback"))
-
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-;;          WARNING!!!
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!
-
-;; The following is needed or else Mac OS X will kernel panic. See
-;; https://github.com/tkf/emacs-jedi/issues/37.
-
-;; If you cannot exit emacs because it tells you that jedi:stop-all-servers is
-;; not defined, type (setq kill-emacs-hook nil) and type C-x C-e.
-
-;; (defun jedi:stop-all-servers ()
-;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
-;;                         jedi:server-pool--table))
+;; ;; ==== direx ====
+;; ;; Required for Python imenu direx below
 ;;
-;; (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
-
-;; (eval-after-load "jedi"
-;;   '(setq jedi:server-command (list "cat" (expand-file-name
-;;                                           "jedi-port.log" jedi:source-dir))
-;;          jedi:server-args nil))
-
-;; ==== popwin ====
-;; Make annoying popup windows go away better
-
-(add-to-list 'load-path "~/Documents/popwin-el")
-(require 'popwin)
-(popwin-mode 1)
-
-;; ==== direx ====
-;; Required for Python imenu direx below
-
-(add-to-list 'load-path "~/Documents/direx-el")
-(autoload 'direx "direx" t)
-(push '(direx:direx-mode :position left :width 25 :dedicated t)
-            popwin:special-display-config)
-(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+;; (add-to-list 'load-path "~/Documents/direx-el")
+;; (autoload 'direx "direx" t)
+;; (push '(direx:direx-mode :position left :width 25 :dedicated t)
+;;       popwin:special-display-config)
+;; (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
 
 ;; ==== Emacs Jedi Direx ====
 ;; A nice imenu for Python
@@ -1429,9 +1523,9 @@ is binary, activate `hexl-mode'."
 
 ;; This is related to auto-complete-mode (same developer)
 
-(add-to-list 'load-path "~/Documents/yascroll-el")
-(require 'cl)
-(require 'yascroll)
+;; (add-to-list 'load-path "~/Documents/yascroll-el")
+;; (require 'cl)
+;; (require 'yascroll)
 ;; (global-yascroll-bar-mode 1)
 
 ;; ;; Discover mode
@@ -1459,110 +1553,16 @@ is binary, activate `hexl-mode'."
 (add-to-list 'auto-mode-alist
              '("\\.bat$" . ntcmd-mode))
 
-;; ==== AUCTeX ====
-
-;; Disabled until I can figure out how to reliable reinstall it in gitclones.sh
-
-;; (add-to-list 'load-path "~/Documents/auctex")
-;; (load "auctex.el" nil t t)
-;; (load "preview-latex.el" nil t t)
-;; (add-hook 'latex-mode-hook 'turn-on-reftex)
-;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-;; (setq reftex-plug-into-AUCTeX t)
-
-;; ==== latex-extra ====
-
-(add-hook 'LaTeX-mode-hook #'latex-extra-mode)
-
 ;; ==== Predictive ====
 
 ;; (add-to-list 'load-path "~/Documents/predictive")
 ;; (require 'predictive)
-
-;; ===== isearch+ =====
-
-(eval-after-load "isearch" '(require 'isearch+))
-
-;; Disable bell ringing in isearch+
-(setq isearchp-ring-bell-function nil)
-
-;; === Anzu ====
-
-;; Show the total number of search results
-
-;; Installed with cask
-;;
-;; (add-to-list 'load-path "~/Documents/emacs-anzu")
-;; (require 'anzu)
-(global-anzu-mode +1)
-
-;; ==== pcre2el (Perl compatible regular expressions) ====
-
-;; Use pcre-query-replace-regexp
-
-;; Installed with cask
-;;
-;; (add-to-list 'load-path "~/Documents/pcre2el")
-;; (require 'pcre2el)
-(pcre-mode 1)
-
-;; Visual regexp
-
-(add-to-list 'load-path "~/Documents/visual-regexp.el") ;; if the files are not already in the load path
-(require 'visual-regexp)
-(define-key global-map (kbd "C-c r") 'vr/replace)
-(define-key global-map (kbd "C-c q") 'vr/query-replace)
-;; if you use multiple-cursors, this is for you:
-(define-key global-map (kbd "C-c m") 'vr/mc-mark)
-
-;; if the files are not already in the load path
-(add-to-list 'load-path "~/Documents/visual-regexp-steroids.el/")
-(require 'visual-regexp-steroids)
-;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
-(define-key global-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
-(define-key global-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
-
-;; ===== Smart comment =====
-
-(global-set-key (kbd "M-;") 'smart-comment)
-
-;; ===== expand-region =====
-
-(add-to-list 'load-path "~/Documents/expand-region.el")
-(autoload 'er/expand-region "expand-region")
-(global-set-key (kbd "M-=") 'er/expand-region)
-
-;; ==== multiple-cursors ====
-
-;; Installed by cask
-;; (add-to-list 'load-path "~/Documents/multiple-cursors.el")
-;; (require 'multiple-cursors)
-;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
-
-(global-set-key [f6] 'mc/mark-next-like-this)
-(global-set-key [f5] 'mc/mark-previous-like-this)
 
 ;; ;; ==== Highlight indentation =====
 ;;
 ;; (require 'highlight-indentation)
 ;;
 ;; (add-hook 'prog-mode-hook 'highlight-indentation)
-
-;; ==== Undo-tree ====
-;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
-
-;; Installed by cask
-;; (add-to-list 'load-path "~/Documents/undo-tree")
-;; (require 'undo-tree)
-
-;; C-S-/ has to pass through this escape code with iTerm2.
-
-(global-set-key (kbd "C-[ [ a b") 'undo-tree-redo)
-
-;; ;; Compress saved undo files
-;; (defadvice undo-tree-make-history-save-file-name
-;;     (after undo-tree activate)
-;;       (setq concat ad-return-value ".gz"))
 
 ;; ==== goto-last-change.el
 ;; http://www.emacswiki.org/emacs/download/goto-last-change.el
@@ -1579,9 +1579,9 @@ is binary, activate `hexl-mode'."
 ;;     (undo-tree-redo)))
 ;; (global-set-key (kbd "C-x C-\\") 'undo-redo)
 
-(require 'goto-chg)
-(global-set-key [(control ?.)] 'goto-last-change)
-(global-set-key (kbd "C-,") 'goto-last-change-reverse)
+;; (require 'goto-chg)
+;; (global-set-key [(control ?.)] 'goto-last-change)
+;; (global-set-key (kbd "C-,") 'goto-last-change-reverse)
 
 ;; ==== Tabbar mode ====
 
@@ -1607,6 +1607,7 @@ is binary, activate `hexl-mode'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
+ '(aggressive-indent-excluded-modes (quote (markdown-mode python-mode makefile-mode)))
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "/Users/aaronmeurer/.emacs.d/autosave/")
@@ -1632,6 +1633,7 @@ is binary, activate `hexl-mode'."
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(doctest-optionflags (quote ("NORMALIZE_WHITESPACE" "ELLIPSIS")))
+ '(flycheck-disabled-checkers (quote (python-flake8 python-pylint)))
  '(flyspell-issue-welcome-flag nil)
  '(flyspell-lazy-changes-threshold 10)
  '(flyspell-lazy-idle-seconds 1)
@@ -1650,23 +1652,24 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell")
+ '(ispell-program-name "hunspell" t)
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
- '(jedi:complete-on-dot t t)
+ '(jedi:complete-on-dot t)
  '(jedi:environment-root nil)
- '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index) t)
- '(jedi:install-imenu nil t)
+ '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index))
+ '(jedi:install-imenu nil)
  '(jedi:server-command
    (quote
-    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
- '(jedi:use-shortcuts t t)
+    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")) t)
+ '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
  '(linum-format "%d⎢")
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(next-screen-context-lines 10)
+ '(package-selected-packages (quote (avy flycheck-pyflakes use-package flycheck)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
  '(python-indent-guess-indent-offset nil)
