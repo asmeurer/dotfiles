@@ -1661,7 +1661,7 @@ is binary, activate `hexl-mode'."
  '(jedi:install-imenu nil)
  '(jedi:server-command
    (quote
-    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")) t)
+    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
  '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
