@@ -1712,4 +1712,7 @@ is binary, activate `hexl-mode'."
  '(sml-modeline-end-face ((t (:background "black" :foreground "white"))))
  '(sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area))))
  '(yascroll:thumb-text-area ((t (:background "slateblue" :foreground "white")))))
-(put 'downcase-region 'disabled nil)
+
+;; Commands that are disabled by default (automatically created by emacs)
+
+(put 'ido-exit-minibuffer 'disabled nil)
