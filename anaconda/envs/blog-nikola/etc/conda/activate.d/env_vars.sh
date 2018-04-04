@@ -1,1 +1,1 @@
-eval "`~/anaconda/envs/blog-nikola/bin/nikola tabcompletion`"
+eval "$(~/anaconda/envs/blog-nikola/bin/nikola tabcompletion)"
