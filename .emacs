@@ -1652,7 +1652,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell" t)
+ '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t)
@@ -1661,7 +1661,7 @@ is binary, activate `hexl-mode'."
  '(jedi:install-imenu nil)
  '(jedi:server-command
    (quote
-    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")))
+    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")) t)
  '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
