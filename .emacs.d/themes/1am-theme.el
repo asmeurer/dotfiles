@@ -3,6 +3,7 @@
 
 (custom-theme-set-faces
  '1am
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#000f900" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "Menlo"))))
  '(highlight-indent-face ((t (:background "color-233"))))
  '(font-lock-string-face ((t (:foreground "red"))))
  '(font-lock-comment-face ((t (:foreground "white"))))
