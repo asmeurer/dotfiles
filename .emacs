@@ -319,9 +319,9 @@ Markdown" t)
    ("C-c s" . ac-isearch)
    :map
    ac-completing-map
-   ("\r" . nil)
-   :map
-   ac-mode-map ("M-TAB" . auto-complete))
+   ("\r" . nil))
+  ;; :map
+  ;; ac-mode-map ("M-TAB" . auto-complete)
   :hook
   (latex-mode . auto-complete-mode)
   (LaTeX-mode . auto-complete-mode)
@@ -346,11 +346,12 @@ Markdown" t)
   :custom
   (jedi:server-command
    '("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py"))
-  :bind
-  (:map
-   python-mode-map
-   ;; M-TAB
-   ("C-M-i" . jedi:complete))
+  ;; C-M-i is currently bound to flyspell-auto-correct-word
+  ;; :bind
+  ;; (:map
+  ;;  python-mode-map
+  ;;  ;; M-TAB
+  ;;  ("C-M-i" . jedi:complete))
   :hook
   (python-mode . jedi:setup))
 
