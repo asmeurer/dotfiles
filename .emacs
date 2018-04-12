@@ -319,9 +319,9 @@ Markdown" t)
    ("C-c s" . ac-isearch)
    :map
    ac-completing-map
-   ("\r" . nil)
-   :map
-   ac-mode-map ("M-TAB" . auto-complete))
+   ("\r" . nil))
+  ;; :map
+  ;; ac-mode-map ("M-TAB" . auto-complete)
   :hook
   (latex-mode . auto-complete-mode)
   (LaTeX-mode . auto-complete-mode)
@@ -346,11 +346,12 @@ Markdown" t)
   :custom
   (jedi:server-command
    '("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py"))
-  :bind
-  (:map
-   python-mode-map
-   ;; M-TAB
-   ("C-M-i" . jedi:complete))
+  ;; C-M-i is currently bound to flyspell-auto-correct-word
+  ;; :bind
+  ;; (:map
+  ;;  python-mode-map
+  ;;  ;; M-TAB
+  ;;  ("C-M-i" . jedi:complete))
   :hook
   (python-mode . jedi:setup))
 
@@ -857,6 +858,30 @@ This function ...
   (cycle-spacing -1))
 
 (global-set-key (kbd "M-SPC") 'cycle-spacing-with-newline)
+
+;; Make emacsclient open multiple files in separate windows
+;; https://emacs.stackexchange.com/questions/3283/make-emacsclient-open-multiple-files-in-separate-windows
+
+(defvar server-visit-files-custom-find:buffer-count)
+(defadvice server-visit-files
+    (around server-visit-files-custom-find
+            activate compile)
+  "Maintain a counter of visited files from a single client call."
+  (let ((server-visit-files-custom-find:buffer-count 0))
+    ad-do-it))
+(defun server-visit-hook-custom-find ()
+  "Arrange to visit the files from a client call in separate windows."
+  (if (zerop server-visit-files-custom-find:buffer-count)
+      (progn
+        (delete-other-windows)
+        (switch-to-buffer (current-buffer)))
+    (let ((buffer (current-buffer))
+          (window (split-window-sensibly)))
+      (switch-to-buffer buffer)
+      (balance-windows)))
+  (setq server-visit-files-custom-find:buffer-count
+        (1+ server-visit-files-custom-find:buffer-count)))
+(add-hook 'server-visit-hook 'server-visit-hook-custom-find)
 
 ;; ===== Set C-x C-c to do the right thing in emacsclient
 ;; TODO
