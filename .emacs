@@ -1724,7 +1724,7 @@ is binary, activate `hexl-mode'."
  '(vr/match-separator-use-custom-face t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
- '(xterm-extra-capabilities (quote (modifyOtherKeys reportBackground)))
+ '(xterm-extra-capabilities (quote (modifyOtherKeys)))
  '(xterm-mouse-mode t)
  '(xterm-title-frame-title-format "%b")
  '(xterm-title-mode t)
