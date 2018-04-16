@@ -403,6 +403,8 @@ Markdown" t)
 ;; Taken from the iterm mailing list. You need to set these up in the iTerm
 ;; settings to enable them. For example, C-. is "5.
 
+(setq xterm-query-timeout nil)
+
 (defun chopps-add-local-keys (&optional frame)
   (let ((keymap function-key-map))    ; was local-function-key-map (message "adding keys")
     (define-key keymap "\e[1;2A" [S-up])
@@ -1724,7 +1726,7 @@ is binary, activate `hexl-mode'."
  '(vr/match-separator-use-custom-face t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
- '(xterm-extra-capabilities (quote (modifyOtherKeys)))
+ '(xterm-extra-capabilities (quote check))
  '(xterm-mouse-mode t)
  '(xterm-title-frame-title-format "%b")
  '(xterm-title-mode t)
