@@ -11,6 +11,7 @@
 ;; - Make C-SPC unset the mark when selection is active.
 ;; - Find a way to let the cursor move off screen.
 ;; - Make SyntaxErrors in Python show the relevant character
+;; - Figure out escape codes entered in files ([<8;32;21m)
 
 ;; Thanks to http://homepages.inf.ed.ac.uk/s0243221/emacs/ for many of these
 
