@@ -1263,7 +1263,7 @@ like newline-and-indent"
 
 ;; TODO: (interactive "@") causes scrolling to follow the mouse, but it
 ;; switches buffers.  Figure out how to make it not switch.  See
-;; http://stackoverflow.com/questions/11532149/emacs-make-custom-scrolling-function-follow-mouse-but-not-change-keyboard-focus.
+;; https://stackoverflow.com/questions/11532149/emacs-make-custom-scrolling-function-follow-mouse-but-not-change-keyboard-focus.
 
 (setq mouse-wheel-follow-mouse 't)
 
