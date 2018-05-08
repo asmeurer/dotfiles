@@ -355,6 +355,7 @@ PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
 
 # Haskell
 PATH="$HOME/Library/Haskell/bin:$PATH"
+PATH="$HOME/.cabal/bin:$PATH"
 
 # Go
 PATH="$PATH:/usr/local/go/bin"
