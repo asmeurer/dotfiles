@@ -281,7 +281,11 @@ Markdown" t)
   ("\\.markdown" . gfm-mode)
   ("PULLREQ_EDITMSG" . gfm-mode)
   ("COMMIT_EDITMSG" . gfm-mode)
-  ("TAG_EDITMSG" . gfm-mode))
+  ("TAG_EDITMSG" . gfm-mode)
+  :bind
+  (:map markdown-mode-map
+        ([remap forward-paragraph] . nil)
+        ([remap backward-paragraph] . nil)))
 
 ;; ==== YAML Mode ====
 
