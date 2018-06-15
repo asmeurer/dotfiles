@@ -16,6 +16,8 @@
         just-one-space-with-newline
         kill-line-or-region
         kill-total-line
+        markdown-electric-backquote
+        markdown-enter-key
         my-save-buffer-dtws
         newline-and-indent-conditionally
         osx-paste
