@@ -29,7 +29,7 @@ c = get_config()
 # c.TerminalIPythonApp.pylab = None
 
 # Suppress warning messages about legacy config files
-c.TerminalIPythonApp.ignore_old_config = True
+# c.TerminalIPythonApp.ignore_old_config = True
 
 # If a command or file is given via the command-line, e.g. 'ipython foo.py
 # c.TerminalIPythonApp.force_interact = False
@@ -409,7 +409,7 @@ c.TerminalInteractiveShell.confirm_exit = False
 
 # Only complete __all__ names on import
 
-c.IPCompleter.limit_to__all__ = True
+# c.IPCompleter.limit_to__all__ = True
 
 # Prompt Toolkit settings
 
