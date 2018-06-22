@@ -284,8 +284,15 @@ Markdown" t)
   ("TAG_EDITMSG" . gfm-mode)
   :bind
   (:map markdown-mode-map
-        ([remap forward-paragraph] . nil)
-        ([remap backward-paragraph] . nil)))
+        ;; ([remap forward-paragraph] . nil)
+        ;; ([remap backward-paragraph] . nil)
+        ("M-}" . (lambda (&optional arg) (interactive "P") (let ((paragraph-separate "[ 	]*$")
+                                                                 (paragraph-start "\\|[ 	]*$"))
+                                                             (forward-paragraph arg))))
+        ("M-{" . (lambda (&optional arg) (interactive "P") (let ((paragraph-separate "[ 	]*$")
+                                                                 (paragraph-start "\\|[ 	]*$"))
+                                                             (backward-paragraph arg))))
+        ))
 
 ;; ==== YAML Mode ====
 
