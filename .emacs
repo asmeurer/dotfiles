@@ -1158,8 +1158,8 @@ like newline-and-indent"
   "save buffer delete trailing white space, preserve white space before
     point if point is past text"
   (interactive "p")
-  (let ((save (when (and (looking-at "\\s-*$")
-                         (looking-back "\\s-+"
+  (let ((save (when (and (looking-at "[ 	]*$")
+                         (looking-back "[ 	]+"
                                        (line-beginning-position) t))
                 (match-string 0))))
     (delete-trailing-whitespace)
