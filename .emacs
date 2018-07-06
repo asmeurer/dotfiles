@@ -1154,19 +1154,23 @@ like newline-and-indent"
 ;; been made to the file yet.  To save a file without clearing whitespace, use
 ;; M-x save-buffer.
 
+(defvar delete-trailing-whitespace-on-save-mode-blacklist '(diff-mode)
+  "List of modes to not delete trailing whitespace on save.")
+
 (defun my-save-buffer-dtws (arg)
   "save buffer delete trailing white space, preserve white space before
     point if point is past text"
   (interactive "p")
-  (let ((save (when (and (looking-at "[ 	]*$")
-                         (looking-back "[ 	]+"
-                                       (line-beginning-position) t))
-                (match-string 0))))
-    (delete-trailing-whitespace)
-    (save-buffer arg)
-    (when save
-      (insert save)
-      (set-buffer-modified-p nil))))
+  (when (not (apply 'derived-mode-p delete-trailing-whitespace-on-save-mode-blacklist))
+    (let ((save (when (and (looking-at "[ 	]*$")
+                           (looking-back "[ 	]+"
+                                         (line-beginning-position) t))
+                  (match-string 0))))
+      (delete-trailing-whitespace)
+      (save-buffer arg)
+      (when save
+        (insert save)
+        (set-buffer-modified-p nil)))))
 
 (global-set-key [remap save-buffer] 'my-save-buffer-dtws)
 
