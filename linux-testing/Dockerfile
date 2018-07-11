@@ -12,6 +12,11 @@ RUN conda install emacs \
     && conda clean --all
 RUN conda info
 
-RUN git clone git://github.com/sympy/sympy.git
+RUN git clone --progress --verbose git://github.com/sympy/sympy.git
+
+WORKDIR /root/sympy
+
+RUN git remote add github https://github.com/asmeurer/sympy
+RUN git fetch github
 
 ENTRYPOINT ["bash"]
