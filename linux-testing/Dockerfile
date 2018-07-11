@@ -6,6 +6,7 @@ RUN apt-get update \
     && apt-get install -y libc6-i386 libc6 linux-headers-amd64 git make git-core bash-completion freeglut3-dev\
     && apt-get -y clean
 
+RUN conda update conda
 RUN conda config --add channels conda-forge
 RUN conda config --set always_yes yes
 RUN conda install emacs mpmath ipython \
