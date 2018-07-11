@@ -8,7 +8,8 @@ RUN apt-get update \
 
 RUN conda config --add channels conda-forge
 RUN conda config --set always_yes yes
-RUN conda install emacs \
+RUN conda install emacs mpmath ipython \
+    && conda create -n python2 python=2 mpmath ipython \
     && conda clean --all
 RUN conda info
 
