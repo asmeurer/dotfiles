@@ -407,7 +407,7 @@ complete -o nospace -o default -F _python_argcomplete "conda"
 . /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
 
 
-alias act="source activate"
+alias act="source deactivate; source activate"
 alias deact="source deactivate"
 # # complete source activate. Thanks to Paul Kienzle from NIST for the
 # # suggestion.
