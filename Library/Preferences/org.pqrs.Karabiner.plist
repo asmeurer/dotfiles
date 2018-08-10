@@ -65,7 +65,11 @@
 		<integer>1</integer>
 		<key>remap.f12_to_forwarddelete</key>
 		<integer>1</integer>
+		<key>remap.fkeys_to_consumer_f1</key>
+		<integer>1</integer>
 		<key>remap.fn2controlL</key>
+		<integer>1</integer>
+		<key>remap.fn_fkeys_to_consumer_f1</key>
 		<integer>1</integer>
 		<key>repeat.initial_wait</key>
 		<integer>250</integer>
