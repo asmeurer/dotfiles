@@ -1449,8 +1449,8 @@ is binary, activate `hexl-mode'."
 
 ;; We use a fork with a branch that uses less stupid indentation for
 ;; continuation lines.
-(add-to-list 'load-path "~/Documents/python.el")
-(require 'python)
+;; (add-to-list 'load-path "~/Documents/python.el")
+;; (require 'python)
 
 ;; As long as we use this fork of python.el, we have to avoid electric mode in
 ;; Python mode (assumedly this is fixed in the version that comes with emacs)
