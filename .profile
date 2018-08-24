@@ -355,6 +355,9 @@ PATH="/Users/aaronmeurer/anaconda/envs/emacs/bin:$PATH"
 
 PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
 
+# GPGTools (put before /usr/local/bin/)
+PATH="/usr/local/MacGPG2/bin:$PATH"
+
 # Haskell
 PATH="$HOME/Library/Haskell/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
