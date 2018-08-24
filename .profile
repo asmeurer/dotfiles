@@ -477,3 +477,12 @@ source /Users/aaronmeurer/.iterm2_shell_integration.bash
 export GPG_TTY=$(tty)
 
 hash -r
+
+# added by travis gem
+[ -f /Users/aaronmeurer/.travis/travis.sh ] && source /Users/aaronmeurer/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/aaronmeurer/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/aaronmeurer/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/aaronmeurer/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/aaronmeurer/Downloads/google-cloud-sdk/completion.bash.inc'; fi
