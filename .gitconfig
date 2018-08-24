@@ -56,6 +56,8 @@
     log = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     show = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     diff = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+    branch = false
+    tag = false
 [gpg]
 	program = /usr/local/bin/krgpg
 [commit]
