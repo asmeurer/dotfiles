@@ -24,7 +24,7 @@ clone-or-pull git@gist.github.com:3187620.git gist-3187620
 cd ~/Documents/
 clone-or-pull git@github.com:github/hub.git
 cd hub
-./script/build
+make bin/hub
 cp bin/hub ~/bin/
 cd ~/Documents
 
