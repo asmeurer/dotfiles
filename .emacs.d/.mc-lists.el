@@ -22,6 +22,7 @@
         newline-and-indent-conditionally
         osx-paste
         python-indent-electric-colon
+        reverse-zap-up-to-char
         yaml-electric-dash-and-dot
         ))
 
