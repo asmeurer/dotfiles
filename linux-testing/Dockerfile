@@ -21,4 +21,6 @@ WORKDIR /root/sympy
 RUN git remote add github https://github.com/asmeurer/sympy
 RUN git fetch github
 
+WORKDIR /root
+
 ENTRYPOINT ["bash"]
