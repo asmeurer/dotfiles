@@ -11,3 +11,4 @@ gitclones.sh
 fink-packages
 xonsh-blockers.md
 Linux-testing/*
+linux-testing/*
