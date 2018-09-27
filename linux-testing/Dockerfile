@@ -9,7 +9,7 @@ RUN apt-get update \
 RUN conda update conda
 RUN conda config --add channels conda-forge
 RUN conda config --set always_yes yes
-RUN conda install emacs mpmath ipython \
+RUN conda install emacs mpmath ipython conda-build \
     && conda create -n python2 python=2 mpmath ipython \
     && conda clean --all
 RUN conda info
@@ -20,5 +20,7 @@ WORKDIR /root/sympy
 
 RUN git remote add github https://github.com/asmeurer/sympy
 RUN git fetch github
+
+WORKDIR /root
 
 ENTRYPOINT ["bash"]

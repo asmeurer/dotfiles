@@ -355,6 +355,9 @@ PATH="/Users/aaronmeurer/anaconda/envs/emacs/bin:$PATH"
 
 PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
 
+# GPGTools (put before /usr/local/bin/)
+PATH="/usr/local/MacGPG2/bin:$PATH"
+
 # Haskell
 PATH="$HOME/Library/Haskell/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
@@ -407,7 +410,7 @@ complete -o nospace -o default -F _python_argcomplete "conda"
 . /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
 
 
-alias act="source activate"
+alias act="source deactivate; source activate"
 alias deact="source deactivate"
 # # complete source activate. Thanks to Paul Kienzle from NIST for the
 # # suggestion.
@@ -477,3 +480,12 @@ source /Users/aaronmeurer/.iterm2_shell_integration.bash
 export GPG_TTY=$(tty)
 
 hash -r
+
+# added by travis gem
+[ -f /Users/aaronmeurer/.travis/travis.sh ] && source /Users/aaronmeurer/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/aaronmeurer/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/aaronmeurer/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/aaronmeurer/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/aaronmeurer/Downloads/google-cloud-sdk/completion.bash.inc'; fi
