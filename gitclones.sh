@@ -82,7 +82,7 @@ ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython
 
 conda install \
       catimg fortune emacs argcomplete prefsync hunspell-en pyflakes \
-      mpmath ipython conda-build anaconda xonsh hub
+      mpmath ipython conda-build anaconda xonsh hub bash
 
 activate-global-python-argcomplete --user
 
