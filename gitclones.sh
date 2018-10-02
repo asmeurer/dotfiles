@@ -21,11 +21,11 @@ mkdir -p ~/Documents/gists/
 cd ~/Documents/gists/
 clone-or-pull git@gist.github.com:3187620.git gist-3187620
 
-cd ~/Documents/
-clone-or-pull git@github.com:github/hub.git
-cd hub
-make bin/hub
-cp bin/hub ~/bin/
+# cd ~/Documents/
+# clone-or-pull git@github.com:github/hub.git
+# cd hub
+# make bin/hub
+# cp bin/hub ~/bin/
 cd ~/Documents
 
 clone-or-pull git@github.com:git/git.git
@@ -82,7 +82,7 @@ ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython
 
 conda install \
       catimg fortune emacs argcomplete prefsync hunspell-en pyflakes \
-      mpmath ipython conda-build anaconda xonsh
+      mpmath ipython conda-build anaconda xonsh hub
 
 activate-global-python-argcomplete --user
 
