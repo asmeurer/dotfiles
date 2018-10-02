@@ -109,6 +109,8 @@ alias got='git'
 alias gut='git'
 alias ggit='git'
 alias sl=ls
+# dc is a real command, but it's just some useless calculator
+alias dc=cd
 
 PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
