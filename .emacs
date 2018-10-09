@@ -1693,7 +1693,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell")
+ '(ispell-program-name "hunspell" t)
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t)
