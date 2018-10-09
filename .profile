@@ -435,6 +435,8 @@ conda-remove-test() {
     rm -rf ~/anaconda/envs/test
 }
 
+PATH="~/bin/:$PATH"
+
 export PATH
 
 export PATH=`~/uniqpath`
