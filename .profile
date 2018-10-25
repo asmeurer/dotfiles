@@ -63,6 +63,8 @@ alias systempython2.5-32="$SYSTEMPYTHON25_32"
 alias systempython2.5-64="$SYSTEMPYTHON25_64"
 alias systempython2.4="$SYSTEMPYTHON24"
 
+# Ignore duplicate entries in the command history
+HISTCONTROL=ignoredups:erasedups
 
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
