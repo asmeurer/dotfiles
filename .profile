@@ -434,7 +434,7 @@ conda-remove-test() {
     rm -rf ~/anaconda/envs/test
 }
 
-PATH="~/bin/:$PATH"
+PATH="/Users/aaronmeurer/bin/:$PATH"
 
 export PATH
 
