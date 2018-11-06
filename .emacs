@@ -1262,6 +1262,19 @@ like newline-and-indent"
 
 (add-hook 'makefile-mode-hook 'turn-off-auto-fill)
 
+;; Prevent autofill from happening in quoted strings. From
+;; https://stackoverflow.com/questions/23755506/emacs-fill-mode-for-python-that-doesnt-break-quoted-strings-causing-errors.
+
+(defun odd-number-of-single-quotes-this-paragraph-so-far ()
+  (oddp (how-many "'" (save-excursion (backward-paragraph) (point)) (point))))
+(defun odd-number-of-double-quotes-this-paragraph-so-far ()
+  (oddp (how-many "\"" (save-excursion (backward-paragraph) (point)) (point))))
+
+(add-to-list 'fill-nobreak-predicate
+             'odd-number-of-single-quotes-this-paragraph-so-far)
+(add-to-list 'fill-nobreak-predicate
+             'odd-number-of-double-quotes-this-paragraph-so-far)
+
 ;; ===== Enable mouse support (?) ====
 
 (require 'xt-mouse)
