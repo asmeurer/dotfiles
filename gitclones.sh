@@ -34,7 +34,7 @@ make
 cd ~/Documents
 
 clone-or-pull git@github.com:ipython/ipython.git
-clone-or-pull git://git.sv.gnu.org/emacs.git
+# clone-or-pull git://git.sv.gnu.org/emacs.git
 clone-or-pull git@github.com:inducer/pudb.git
 
 # Needed in .emacs:
