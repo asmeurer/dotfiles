@@ -13,5 +13,11 @@ while getopts "X" opt; do
     esac
 done
 
+# If a rebuild is made, do
+#
+# docker push asmeurer/linux-testing
+#
+# to push it up.
+docker pull asmeurer/linux-testing
 docker build -f Dockerfile . -t asmeurer/linux-testing
 docker run -e DISPLAY=docker.for.mac.localhost:0 -it asmeurer/linux-testing
