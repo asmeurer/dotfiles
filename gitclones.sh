@@ -86,7 +86,7 @@ conda install \
 
 activate-global-python-argcomplete --user
 
-echo "Running prefsync"
-prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
+# echo "Running prefsync"
+# prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
 
 conda install -m -n fortune fortune
