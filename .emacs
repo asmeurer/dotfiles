@@ -1703,6 +1703,12 @@ is binary, activate `hexl-mode'."
  '(gud-gdb-command-name "gdb --annotate=1")
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
+ '(ido-ignore-directories
+   (quote
+    ("\\`CVS/" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/")))
+ '(ido-ignore-files
+   (quote
+    ("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/")))
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
