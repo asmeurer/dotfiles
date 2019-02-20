@@ -1,0 +1,14 @@
+{
+  "CodeCell": {
+    "cm_config": {
+      "autoCloseBrackets": false
+    }
+  },
+  "Notebook": {
+    "Toolbar": false,
+    "Header": false
+  },
+  "load_extensions": {
+    "jupyter_emacskeys/init": true
+  }
+}
