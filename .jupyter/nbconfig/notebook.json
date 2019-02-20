@@ -9,6 +9,7 @@
     "Header": false
   },
   "load_extensions": {
+    "notify": true,
     "jupyter_emacskeys/init": true
   }
 }
