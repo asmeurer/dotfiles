@@ -10,6 +10,8 @@ set bell-style visible
 # Also https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
 "\ep": history-search-backward
 "\eP": history-search-forward
+"\e[1;9A": history-search-backward
+"\e[1;9B": history-search-forward
 # Type this to reload this file
 "\C-x\C-r": re-read-init-file
 # Prevent "Display all NNN possibilities? (y or n)" on tab complete
