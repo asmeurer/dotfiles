@@ -18,5 +18,9 @@ set bell-style visible
 set completion-query-items 0
 "\e[A": previous-history
 "\e[B": next-history
-# Allow better pasting in the terminal
+# allow better pasting in the terminal
 set enable-bracketed-paste on
+# Color files by types
+set colored-stats On
+# Color the common prefix
+set colored-completion-prefix On
