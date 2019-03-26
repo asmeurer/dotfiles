@@ -114,6 +114,7 @@ alias gir='git'
 alias hit='git'
 alias giut='git'
 alias gigt='git'
+alias g9t='git'
 
 alias sl=ls
 # dc is a real command, but it's just some useless calculator
