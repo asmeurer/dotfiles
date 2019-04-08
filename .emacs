@@ -649,11 +649,11 @@ Markdown" t)
 ;; to the beginning of the current line
 
 (defun backward-kill-line (arg)
-    "Kill chars backward until encountering the beginning of a line.  If the
+  "Kill chars backward until encountering the beginning of a line.  If the
 cursor is already at the beginning, delete the newline.  Acts like the reverse
     of kill-line (C-k)."
-      (interactive "p")
-        (kill-line 0))
+  (interactive "p")
+  (kill-line 0))
 
 ;; I don't use C-u's normal use, but I do use this macro.
 
@@ -1176,7 +1176,7 @@ like newline-and-indent"
 
 ;; Normally you would just do this:
 
-;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; ===== Use four spaces instead of tabs ====
 
@@ -1300,15 +1300,15 @@ like newline-and-indent"
 
 (defun alternating-scroll-down-line ()
   (interactive "@")
-    (when alternating-scroll-down-next
-;      (run-hook-with-args 'window-scroll-functions )
-      (scroll-down-line))
-    (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
+  (when alternating-scroll-down-next
+    ;; (run-hook-with-args 'window-scroll-functions)
+    (scroll-down-line))
+  (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
 
 (defun alternating-scroll-up-line ()
   (interactive "@")
   (when alternating-scroll-up-next
-                                        ;      (run-hook-with-args 'window-scroll-functions)
+    ;; (run-hook-with-args 'window-scroll-functions)
     (scroll-up-line))
   (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
