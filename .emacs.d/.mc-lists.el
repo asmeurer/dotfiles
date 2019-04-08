@@ -10,6 +10,7 @@
         buf-move-left
         end-of-buffer
         fill-paragraph
+        flycheck-next-error
         forward-sexp
         indent-for-tab-command
         jedi:dot-complete
