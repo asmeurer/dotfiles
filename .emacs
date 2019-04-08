@@ -717,8 +717,8 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 ;; Make M-S-[ and M-S-] *always* move paragraphs
 
-;; (global-set-key "\M-{" 'endless/backward-paragraph)
-;; (global-set-key "\M-}" 'endless/forward-paragraph)
+;; (global-set-key "\M-{" 'backward-paragraph)
+;; (global-set-key "\M-}" 'forward-paragraph)
 
 (defun endless/forward-paragraph (&optional n)
   "Advance just past next blank line."
@@ -1275,6 +1275,20 @@ like newline-and-indent"
 (add-to-list 'fill-nobreak-predicate
              'odd-number-of-double-quotes-this-paragraph-so-far)
 
+;; (defun my-make-continuation-line-by-fill ()
+;;   (when (eq major-mode 'python-mode)
+;;     (save-excursion
+;;       (forward-line -1)
+;;       (end-of-line)
+;;       (unless (member (char-before) (list 92 32))
+;;         (insert-and-inherit " ")
+;;         (unless (eq (char-after) ?\\)
+;;           (insert-and-inherit "\\"))))))
+;;
+;; (defadvice do-auto-fill (after my-make-continuation-line-by-fill activate)(my-make-continuation-line-by-fill))
+;;
+;; (ad-activate 'do-auto-fill)
+
 ;; ===== Enable mouse support (?) ====
 
 (require 'xt-mouse)
@@ -1651,6 +1665,11 @@ is binary, activate `hexl-mode'."
 ;; (add-to-list 'load-path "~/Documents/emacs-window-layout")
 ;; (add-to-list 'load-path "~/Documents/emacs-window-manager")
 ;; (require 'e2wm)
+
+;; ===== Keyboard macros =====
+
+;; Define a keyboard macro with F3 and use it with F4. To save it, use C-x C-k
+;; n and give it a name. Then use M-x insert-kbd-macro <name> here to save it
 
 ;; =======================================
 ;; ===== Values set by M-x customize =====
