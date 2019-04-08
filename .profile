@@ -135,13 +135,13 @@ alias isympy='mypython -c %sympy'
 alias top='top -o -cpu'
 
 cdd () {
-    cd "/Users/aaronmeurer/Documents/$@"
+    cd "/Users/aaronmeurer/Documents/$@" || return
 }
 
 _cdd_complete ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS $HOME/Documents/ | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
+    COMPREPLY=($(compgen -W "$(LS "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | lam -s \" - -s \")" -- "$cur" ));
 }
 
 complete -F _cdd_complete "cdd"
