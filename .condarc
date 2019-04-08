@@ -4,8 +4,6 @@ channels:
   - conda-forge
   - defaults
   - asmeurer
-  - r
-  - pyne
 
 # channel_priority: false
 
@@ -13,8 +11,8 @@ changeps1: no
 
 always_yes: true
 
-use_pip: true
-
 binstar_personal: true
 
 show_channel_urls: yes
+
+channel_priority: strict
