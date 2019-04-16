@@ -71,6 +71,7 @@ git branch --set-upstream-to=github/indentation indentation
 cd ~/Documents/
 clone-or-pull git@github.com:purcell/mmm-mode.git
 # TODO: doctest-mode
+mkdir -p emacs-jedi
 cd emacs-jedi
 echo "Creating conda environment for jedi"
 conda install -m -p env jedi epc
