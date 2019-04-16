@@ -294,8 +294,9 @@ export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export TTY=$(basename `tty`)
 export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
 export EDITOR="$EMACSCLIENT"
-export LESS='-RIq' # Make less search case insensitive, always use raw input
-                   # mode (to show colors), don't ring the bell incessantly
+# Make less search case insensitive, always use raw input mode (to show
+# colors), don't ring the bell incessantly
+export LESS='-RIq'
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
