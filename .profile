@@ -1,7 +1,17 @@
-PYTHONPATH=~/Documents/catimg ~/anaconda/bin/catimg
-echo
-~/anaconda/envs/fortune/bin/fortune
-echo
+if [[ $(uname) == "Darwin" ]]; then
+    MAC=1
+fi
+
+if [ -n "$MAC" ]; then
+    PYTHONPATH=~/Documents/catimg ~/anaconda/bin/catimg
+    echo
+    ~/anaconda/envs/fortune/bin/fortune
+    echo
+else
+    echo
+    fortune
+    echo
+fi
 
 # Don't waste time doing mail checking
 unset MAILCHECK
