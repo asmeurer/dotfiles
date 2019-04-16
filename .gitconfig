@@ -64,5 +64,6 @@
 	gpgSign = true
 [tag]
 	forceSignAnnotated = true
-[remote "origin"]
-	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
+# [remote "origin"]
+# 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
