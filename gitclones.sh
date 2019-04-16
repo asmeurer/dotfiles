@@ -79,6 +79,7 @@ cd ~/Documents/
 clone-or-pull git@github.com:juergenhoetzel/profile-dotemacs.git
 
 clone-or-pull git@github.com:asmeurer/mypython
+mkdir -p ~/bin/
 ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython
 
 conda install \
