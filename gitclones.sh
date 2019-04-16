@@ -82,13 +82,19 @@ clone-or-pull git@github.com:asmeurer/mypython
 mkdir -p ~/bin/
 ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython
 
-conda install \
-      catimg fortune emacs argcomplete prefsync hunspell-en pyflakes \
-      mpmath ipython conda-build anaconda xonsh hub bash
+
+CONDA_PKGS="emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build anaconda xonsh hub bash"
+if [[ $(uname) == "Darwin" ]]; then
+    CONDA_PKGS="$CONDA_PKGS catimg fortune prefsync"
+fi
+
+conda install "$CONDA_PKGS"
 
 activate-global-python-argcomplete --user
 
 # echo "Running prefsync"
 # prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
 
-conda install -m -n fortune fortune
+if [[ $(uname) == "Darwin" ]]; then
+    conda install -m -n fortune fortune
+fi
