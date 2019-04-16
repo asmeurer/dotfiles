@@ -88,7 +88,7 @@ if [[ $(uname) == "Darwin" ]]; then
     CONDA_PKGS="$CONDA_PKGS catimg fortune prefsync"
 fi
 
-conda install "$CONDA_PKGS"
+conda install $CONDA_PKGS
 
 activate-global-python-argcomplete --user
 
