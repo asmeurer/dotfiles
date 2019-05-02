@@ -1,0 +1,21 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    cursor_blink = False
+    cursor_color = "#aaaaaa"
+    font = DejaVu Sans Mono 12
+    scrollback_lines = 10000
+    use_system_font = False
+    visible_bell = True

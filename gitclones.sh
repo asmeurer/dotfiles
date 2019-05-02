@@ -46,7 +46,7 @@ clone-or-pull git@github.com:inducer/pudb.git
 clone-or-pull git@github.com:jwiegley/use-package.git
 cd ~/Documents/use-package
 make elc
-cd ~
+cd ~/Documents
 
 clone-or-pull git@github.com:dacap/keyfreq.git
 clone-or-pull git@github.com:nonsequitur/smex.git

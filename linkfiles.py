@@ -35,7 +35,8 @@ import glob
 import argparse
 
 from os import walk, symlink, makedirs
-from os.path import join, relpath, abspath, exists, lexists, expanduser, split
+from os.path import (join, relpath, abspath, exists, lexists, expanduser,
+                     split, islink)
 
 def fullpath(path):
     return abspath(expanduser(path))
@@ -91,6 +92,9 @@ def main():
                         if not exists(dir):
                             makedirs(dir, exist_ok=True)
                         symlink(fullpath(source), fullpath(destination))
+                elif not islink(fullpath(destination)):
+                    print("Warning:", fullpath(destination),
+                        "already exists and is not a symbolic link")
 
 if __name__ == '__main__':
     sys.exit(main())
