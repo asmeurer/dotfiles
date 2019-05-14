@@ -234,6 +234,10 @@ export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Grad/Fall 2013" # Use
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
 # mypython - Blue
 DIR_MYPYTHON="/Users/aaronmeurer/Documents/mypython"
+# work directories - Pink
+DIR_PYFLYBY="/Users/aaronmeurer/Documents/pyflyby"
+DIR_STRUCT_RET="/Users/aaronmeurer/Documents/struct-ret"
+TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;blue;brightness;152\a\033]6;1;bg;green;brightness;37\a"
 
 # Other - default (metal)
 # Can't actually get metal yet
@@ -249,7 +253,7 @@ set_tab_color () {
 
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_PINK' '$DIR_STRUCT_RET $TAB_PINK'
     do
         set -- $dir_tab
         # Dereference the variable name
