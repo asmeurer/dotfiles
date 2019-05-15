@@ -123,7 +123,7 @@
   :custom
   ((global-undo-tree-mode t)
    (undo-tree-auto-save-history t)
-   (undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))))
+   (undo-tree-history-directory-alist (quote ((".*" . "~/.emacs.d/undo-tree/"))))))
 
 ;; ;; Compress saved undo files
 ;; (defadvice undo-tree-make-history-save-file-name
@@ -357,7 +357,7 @@ Markdown" t)
           "--log-traceback"))
   :custom
   (jedi:server-command
-   '("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py"))
+   '("~/Documents/emacs-jedi/env/bin/python" "~/Documents/emacs-jedi/jediepcserver.py"))
   ;; C-M-i is currently bound to flyspell-auto-correct-word
   ;; :bind
   ;; (:map
@@ -1683,7 +1683,7 @@ is binary, activate `hexl-mode'."
  '(aggressive-indent-excluded-modes (quote (markdown-mode python-mode makefile-mode)))
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
- '(auto-save-list-file-prefix "/Users/aaronmeurer/.emacs.d/autosave/")
+ '(auto-save-list-file-prefix "~/.emacs.d/autosave/")
  '(colon-double-space t)
  '(comment-column 0)
  '(comment-empty-lines (quote (quote eol)))
@@ -1731,7 +1731,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell")
+ '(ispell-program-name "hunspell" t)
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t)
@@ -1740,7 +1740,7 @@ is binary, activate `hexl-mode'."
  '(jedi:install-imenu nil)
  '(jedi:server-command
    (quote
-    ("/Users/aaronmeurer/Documents/emacs-jedi/env/bin/python" "/Users/aaronmeurer/Documents/emacs-jedi/jediepcserver.py")) t)
+    ("~/Documents/emacs-jedi/env/bin/python" "~/Documents/emacs-jedi/jediepcserver.py")))
  '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
@@ -1773,7 +1773,7 @@ is binary, activate `hexl-mode'."
  '(tab-width 4)
  '(tags-case-fold-search t)
  '(undo-tree-auto-save-history t)
- '(undo-tree-history-directory-alist (quote ((".*" . "/Users/aaronmeurer/.emacs.d/undo-tree/"))))
+ '(undo-tree-history-directory-alist (quote ((".*" . "~/.emacs.d/undo-tree/"))))
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(vr/default-regexp-modifiers (quote (:I t :M t :S nil :U t)))
  '(vr/match-separator-use-custom-face t)
