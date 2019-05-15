@@ -94,7 +94,7 @@ def main():
                         symlink(fullpath(source), fullpath(destination))
                 elif not islink(fullpath(destination)):
                     print("Warning:", fullpath(destination),
-                        "already exists and is not a symbolic link")
+                        "already exists and is not a symbolic link", file=sys.stderr)
 
 if __name__ == '__main__':
     sys.exit(main())
