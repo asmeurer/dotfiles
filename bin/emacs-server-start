@@ -1,4 +1,4 @@
 #!/bin/sh
-emacs -nw --daemon="$TTY"
-emacsclient -n -nw --socket-name="$TTY"
-emacsclient -nw --socket-name="$TTY" "$@"
+emacs -nw --daemon="emacs-$TTY"
+emacsclient -n -nw --socket-name="emacs-$TTY"
+emacsclient -nw --socket-name="emacs-$TTY" "$@"
