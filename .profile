@@ -505,7 +505,9 @@ source ~/Documents/git/contrib/completion/git-completion.bash
 source ~/Documents/git/contrib/completion/git-prompt.sh
 source ~/Documents/hub/etc/hub.bash_completion.sh
 
-source $HOME/.iterm2_shell_integration.bash
+if [ -n "$MAC" ]; then
+    source $HOME/.iterm2_shell_integration.bash
+fi
 
 export GPG_TTY=$(tty)
 
