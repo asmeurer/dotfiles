@@ -17,7 +17,7 @@ print('$2' or '$1'.rsplit('.git', 1)[0].split('/')[-1])
     fi
 }
 
-ln -s ~/anaconda3 ~/anaconda
+ln -sf ~/anaconda3 ~/anaconda
 mkdir -p ~/Documents/gists/
 cd ~/Documents/gists/
 clone-or-pull git@gist.github.com:3187620.git gist-3187620
