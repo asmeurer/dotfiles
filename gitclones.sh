@@ -22,8 +22,8 @@ mkdir -p ~/Documents/gists/
 cd ~/Documents/gists/
 clone-or-pull git@gist.github.com:3187620.git gist-3187620
 
-# cd ~/Documents/
-# clone-or-pull git@github.com:github/hub.git
+cd ~/Documents/
+clone-or-pull git@github.com:github/hub.git
 # cd hub
 # make bin/hub
 # cp bin/hub ~/bin/
