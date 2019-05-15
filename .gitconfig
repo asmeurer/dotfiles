@@ -59,7 +59,7 @@
     branch = false
     tag = false
 [gpg]
-	program = /usr/local/bin/krgpg
+	program = krgpg
 [commit]
 	gpgSign = true
 [tag]
