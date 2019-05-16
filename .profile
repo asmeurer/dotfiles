@@ -155,7 +155,7 @@ cdd () {
 _cdd_complete ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | lam -s \" - -s \")" -- "$cur" ));
+    COMPREPLY=($(compgen -W "$("ls" "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | paste -d \" - -d \")" -- "$cur" ));
 }
 
 complete -F _cdd_complete "cdd"
