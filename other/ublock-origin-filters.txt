@@ -281,3 +281,531 @@ twitter.com##.has-activity-supplement-facepile.stream-item-activity-notification
 
 ! 1/13/2016, 12:16:19 PM http://blog.dilbert.com/post/137221841136/charisma-vs-danger-master-persuader-series
 blog.dilbert.com##body > div:nth-of-type(2) > .\{\}.cc_banner-wrapper > .cc_container--open.cc_container.cc_banner > .cookie-choices-info
+
+! 2/3/2016, 11:08:02 AM https://www.flickr.com/photos/tucapel/22143643188
+www.flickr.com###yui_3_16_0_1_1454515670508_136 > .show.mini-footer.signup-footer
+
+! 2/4/2016, 2:41:35 PM https://www.flickr.com/photos/rockjedai/22633741792
+www.flickr.com##.show.mini-footer.signup-footer
+
+! 4/15/2016, 7:28:44 PM http://www.theonion.com/
+www.theonion.com###drawer-pane > .pinned.ad-block-alt.newsletter-signup
+
+! 5/8/2016, 10:15:14 PM http://borderlands.wikia.com/wiki/Tiny_Tina's_Lootsplosion_Slot_Machine
+||borderlands.wikia.com/extensions/wikia/PotentialMemberPageExperiments/images/background-glue.jpg$image
+
+! 5/8/2016, 10:15:24 PM http://borderlands.wikia.com/wiki/Tiny_Tina's_Lootsplosion_Slot_Machine
+borderlands.wikia.com##.initialized.pmp-entry-point-en.pmp-entry-point-glue-bottom.pmp-entry-point
+
+! 5/20/2016, 10:02:13 PM https://twitter.com/
+twitter.com###global-actions > .js-moments-tab.moments
+
+! 6/24/2016, 5:24:29 PM http://biovea.net/us/product_detail.aspx?PID=5721&TI=GGLUS&C=N&gclid=CjwKEAjwtLO7BRDax4-I4_6G71USJAA6FjN1bUFporIIyTWhMADS9nuTk7PN23lEZb5y518RojpqehoCIybw_wcB
+||biovea.net/us/imgs/promoBanner/UK_5Off_GSHP5_Modal.png$image
+
+! 6/24/2016, 5:24:44 PM http://biovea.net/us/product_detail.aspx?PID=5721&TI=GGLUS&C=N&gclid=CjwKEAjwtLO7BRDax4-I4_6G71USJAA6FjN1bUFporIIyTWhMADS9nuTk7PN23lEZb5y518RojpqehoCIybw_wcB
+biovea.net###divPnlPopUpBanner
+
+! 6/30/2016, 5:54:29 PM https://twitter.com/
+twitter.com###stream-items-id > .separated-module.js-prompt-layout-container.js-stream-item.PromptbirdPrompt-streamItem
+
+! 7/23/2016, 10:46:06 PM http://www.macworld.com/article/3098047/ios/serious-problem-the-iphone-7-conundrum.html?utm_content=bufferb245c&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+||csmb.staticworld.net/images/furniture/techhive/toaster-striped-tall-bg-mw.png$image
+
+! 7/23/2016, 10:46:17 PM http://www.macworld.com/article/3098047/ios/serious-problem-the-iphone-7-conundrum.html?utm_content=bufferb245c&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+www.macworld.com###toaster
+
+! 7/23/2016, 10:47:50 PM http://www.macworld.com/article/3098047/ios/serious-problem-the-iphone-7-conundrum.html?utm_content=bufferb245c&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+www.macworld.com###toaster
+
+! 5/16/2017, 10:07:34 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorite.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:07:45 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-retweeted_mention.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:07:55 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-follow.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:08:05 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorited_mention.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:08:14 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-retweet.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:08:24 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorite.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:08:35 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-follow.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:08:44 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorited_mention.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:08:54 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-retweeted_mention.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:09:05 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-retweet.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:09:24 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorite.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:09:40 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-follow.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:10:01 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorited_retweet.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:10:13 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-retweeted_retweet.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:10:24 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorited_mention.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:10:34 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorite.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:10:42 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-follow.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:10:52 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-retweet.stream-item-activity.clearfix.stream-item-content
+
+! 5/16/2017, 10:11:05 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-favorited_retweet.stream-item-activity.clearfix.stream-item-content
+
+! 5/22/2017, 5:00:04 PM https://twitter.com/
+twitter.com##.dashboard-right.dashboard
+
+! 5/29/2017, 3:54:03 PM https://twitter.com/dropbox
+twitter.com##.is-visible.module.WhoToFollow
+
+! 6/13/2017, 2:19:14 PM https://www.cnet.com/news/managing-unexpected-log-outs-in-os-x/
+www.cnet.com###featuredVideo
+
+! 6/17/2017, 2:18:58 PM https://twitter.com/i/notifications
+twitter.com##.stream-item-activity-notification.stream-item-list_member_added.stream-item-activity.clearfix.stream-item-content
+
+! 6/30/2017, 6:50:47 PM https://twitter.com/search?f=tweets&q=from%3Aasmeurer%20markdown&src=typd
+twitter.com##.has-content.roaming-module.js-wtf-module.wtf-module.module
+
+! 6/30/2017, 6:51:24 PM https://twitter.com/search?f=tweets&q=from%3Aasmeurer%20markdown&src=typd
+twitter.com##.trends.Trends.module
+
+! 8/14/2017, 12:59:22 AM https://twitter.com/
+twitter.com##.js-toggleState.ProfileTweet-action--favorite.ProfileTweet-action > .js-actionFavorite.js-actionButton.ProfileTweet-actionButton > .ProfileTweet-actionCount
+
+! 8/14/2017, 12:59:44 AM https://twitter.com/
+twitter.com##.js-toggleRt.js-toggleState.ProfileTweet-action--retweet.ProfileTweet-action > .js-actionRetweet.js-actionButton.ProfileTweet-actionButton > .ProfileTweet-actionCount > .ProfileTweet-actionCountForPresentation
+
+! 8/14/2017, 1:00:21 AM https://twitter.com/fart
+twitter.com## .js-toggleRt.js-toggleState.ProfileTweet-action--retweet.ProfileTweet-action > .js-actionRetweet.js-actionButton.ProfileTweet-actionButton > .ProfileTweet-actionCount > .ProfileTweet-actionCountForPresentation
+
+! 8/14/2017, 1:00:47 AM https://twitter.com/fart
+twitter.com##.js-toggleState.ProfileTweet-action--favorite.ProfileTweet-action > .js-actionFavorite.js-actionButton.ProfileTweet-actionButton > .ProfileTweet-actionCount > .ProfileTweet-actionCountForPresentation
+
+! 8/14/2017, 1:02:35 AM https://twitter.com/fart/status/896203479764443136
+twitter.com## .js-actionFavorite.js-actionButton.ProfileTweet-actionButton > .ProfileTweet-actionCount > .ProfileTweet-actionCountForPresentation
+
+! 8/14/2017, 1:02:49 AM https://twitter.com/fart/status/896203479764443136
+twitter.com##.js-toggleRt.js-toggleState.ProfileTweet-action--retweet.ProfileTweet-action > .js-actionRetweet.js-actionButton.ProfileTweet-actionButton > .ProfileTweet-actionCount > .ProfileTweet-actionCountForPresentation
+
+! 8/14/2017, 1:03:17 AM https://twitter.com/MichaelRapaport/status/896385850300289025
+twitter.com##.request-favorited-popup > strong
+
+! 8/14/2017, 1:03:22 AM https://twitter.com/MichaelRapaport/status/896385850300289025
+twitter.com##.request-retweeted-popup > strong
+
+! 8/14/2017, 1:05:41 AM https://twitter.com/
+twitter.com##.ProfileCardStats
+
+! 8/14/2017, 1:06:03 AM https://twitter.com/asmeurer
+twitter.com##.is-active.ProfileNav-item--tweets.ProfileNav-item > .js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:06:10 AM https://twitter.com/asmeurer
+twitter.com##.ProfileNav-item--following.ProfileNav-item > .u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:06:15 AM https://twitter.com/asmeurer
+twitter.com##.ProfileNav-item--followers.ProfileNav-item > .u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:06:28 AM https://twitter.com/i/likes
+twitter.com##.ProfileNav-item--tweets.ProfileNav-item > .u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:06:33 AM https://twitter.com/i/likes
+twitter.com##.is-active.ProfileNav-item--favorites.ProfileNav-item > .js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:06:39 AM https://twitter.com/i/likes
+twitter.com##.ProfileNav-item--lists.ProfileNav-item > .u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:06:44 AM https://twitter.com/i/likes
+twitter.com##.is-CurrentUser.u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat
+
+! 8/14/2017, 1:06:57 AM https://twitter.com/asmeurer/lists
+twitter.com##.is-CurrentUser.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:07:04 AM https://twitter.com/asmeurer/lists
+twitter.com##.is-active.ProfileNav-item--lists.ProfileNav-item > .js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:07:09 AM https://twitter.com/asmeurer/lists
+twitter.com##.ProfileNav-item--favorites.ProfileNav-item > .u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:07:14 AM https://twitter.com/asmeurer/lists
+twitter.com##.ProfileNav-item--tweets.ProfileNav-item > .u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:07:21 AM https://twitter.com/asmeurer
+twitter.com##.ProfileNav-item--favorites.ProfileNav-item > .u-textUserColor.js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:07:35 AM https://twitter.com/following
+twitter.com##.is-active.ProfileNav-item--following.ProfileNav-item > .js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/14/2017, 1:08:04 AM https://twitter.com/followers
+twitter.com##.is-active.ProfileNav-item--followers.ProfileNav-item > .js-nav.js-tooltip.u-textCenter.u-borderUserColor.ProfileNav-stat--link.ProfileNav-stat > .ProfileNav-value
+
+! 8/17/2017, 12:41:42 AM https://twitter.com/asmeurer
+twitter.com##.clear.TweetImpressionsModule
+
+! 10/12/2017, 7:52:50 PM https://twitter.com/
+twitter.com##.TimelineTweetsModule.separated-module.js-has-navigable-stream.DismissibleModule.js-no-dedup.has-recap.stream-item.js-stream-item
+
+! 11/18/2017, 12:56:47 PM https://objective-see.com/products/blockblock.html
+objective-see.com###PopupSignupForm_0
+
+! 11/18/2017, 1:03:24 PM https://objective-see.com/products/oversight.html
+objective-see.com##.visible.showSweetAlert.sweet-alert
+
+! 11/18/2017, 1:03:31 PM https://objective-see.com/products/oversight.html
+objective-see.com##.sweet-overlay
+
+! 11/21/2017, 7:17:01 PM https://www.youtube.com/watch?v=DFejozPVWEM
+www.youtube.com##.ytd-app.style-scope:nth-of-type(1) > .ytd-popup-container.style-scope
+
+! 11/21/2017, 7:24:26 PM http://www.dailymotion.com/video/x15zccp
+www.dailymotion.com##.CookiePopup__popup____KSqw
+
+! 11/30/2017, 1:10:45 AM https://www.ledger.fr/2016/06/20/ledger-nano-s-secure-multi-currency-hardware-wallet/
+www.ledger.fr##.cc-color-override-2138806697.cc-left.cc-bottom.cc-theme-classic.cc-type-info.cc-floating.container.cc-window
+
+! 11/30/2017, 1:12:38 AM https://www.ledgerwallet.com/apps/bitcoin
+www.ledgerwallet.com###cookieconsent\:desc
+
+! 11/30/2017, 1:12:46 AM https://www.ledgerwallet.com/apps/bitcoin
+www.ledgerwallet.com##.cc-compliance
+
+! 11/30/2017, 1:12:52 AM https://www.ledgerwallet.com/apps/bitcoin
+www.ledgerwallet.com##.cc-color-override-2138806697.cc-left.cc-bottom.cc-theme-classic.cc-type-info.cc-floating.container.cc-window
+
+! 11/30/2017, 7:25:40 PM https://blockgeeks.com/guides/what-is-ethereum-classic/
+blockgeeks.com##.cp-modal-every-design-container.cp_id_3d85a.cp-modal-popup-container
+
+! 12/8/2017, 1:54:47 PM https://www.facebook.com/texasfirstbank/posts/10155890381184431
+www.facebook.com###u_0_c
+
+! 1/14/2018, 12:08:40 AM https://hackernoon.com/erc20-tokens-b3b50c95ad08
+hackernoon.com##.u-tintSpectrum.u-tintBgColor.u-xs-sizeFullViewportWidth.u-backgroundTransparentWhiteDarkest.u-fixed.u-textColorDarker.js-metabar.u-clearfix.metabar
+
+! 1/14/2018, 12:08:45 AM https://hackernoon.com/erc20-tokens-b3b50c95ad08
+hackernoon.com##.u-xs-height95.u-height105.u-tintBgColor.js-metabarSpacer.metabar--spacer.metabar
+
+! 1/14/2018, 12:08:53 AM https://hackernoon.com/erc20-tokens-b3b50c95ad08
+hackernoon.com##.js-stickyFooter.u-xs-paddingRight10.u-xs-paddingLeft10.u-zIndexMetabar.u-paddingBottom10.u-paddingTop10.u-borderBox.u-boxShadowTop.u-backgroundWhite.u-sizeFullWidth.u-bottom0.u-fixed
+
+##.tweet:has(.tweet-context > .Icon--heartBadge.Icon--small.Icon)
+
+! 2/12/2016, 2:20:35 PM http://blogs.scientificamerican.com/roots-of-unity/a-few-of-my-favorite-spaces-the-long-line/
+blogs.scientificamerican.com###global__toaster-ad
+
+! 3/28/2016, 11:27:25 AM https://www.icann.org/resources/pages/contact-verification-2013-05-03-en
+www.icann.org##.cookie-notification
+
+! 3/29/2016, 1:01:22 PM http://www.slate.com/articles/health_and_science/education/2016/03/andrew_hacker_s_the_math_myth_is_a_great_example_of_mathematics_illiteracy.html
+www.slate.com###plus-upsell-adblock > .notification
+
+! 3/29/2016, 1:01:29 PM http://www.slate.com/articles/health_and_science/education/2016/03/andrew_hacker_s_the_math_myth_is_a_great_example_of_mathematics_illiteracy.html
+www.slate.com###main_sidebar > .next-story
+
+! 3/29/2016, 1:02:06 PM http://www.slate.com/articles/health_and_science/education/2016/03/andrew_hacker_s_the_math_myth_is_a_great_example_of_mathematics_illiteracy.html
+www.slate.com###article_rollup
+
+! 3/29/2016, 2:04:58 PM http://fermatslibrary.com/s/how-to-explain-zero-knowledge-protocols-to-your-children
+fermatslibrary.com###emailCollectionModal > .modal-dialog > .modal-content > .modal-body
+
+! 4/8/2016, 12:50:46 PM https://answers.yahoo.com/question/index?qid=20140120100304AA7p77n
+answers.yahoo.com###yset-upsell-div
+
+! 4/8/2016, 12:51:05 PM https://answers.yahoo.com/question/index?qid=20140120100304AA7p77n
+answers.yahoo.com###yset-search-upsell-container
+
+! 4/8/2016, 12:52:39 PM https://www.answers.com/Q/What_do_you_get_when_you_cross_a_mathematician_with_a_rubber_band
+||ssl.p.jwpcdn.com/6/12/jwplayer.flash.swf
+
+! 4/12/2016, 2:02:33 PM https://harpers.org/archive/2015/09/the-neoliberal-arts/?single=1
+harpers.org###issuem-leaky-paywall-articles-remaining-nag
+
+! 4/18/2016, 2:18:36 PM https://twitter.com/
+twitter.com###global-actions > .js-moments-tab.moments > .js-dynamic-tooltip.js-tooltip.js-nav[href="/i/moments"]
+
+! 4/19/2016, 1:45:50 PM http://www.macworld.com/article/3057223/ios/rosencrantz-and-goldilocks-are-dead-who-would-want-an-iphone-se.html?utm_content=buffercec29&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+! 4/20/2016, 4:52:53 PM http://thefederalist.com/2016/04/20/the-intellectual-case-for-trump-ii-trump-is-the-culture-warrior-we-need/
+thefederalist.com###scrollable_box_asd
+
+! 4/22/2016, 4:33:09 PM https://hbr.org/2016/04/what-we-can-learn-from-one-of-the-worlds-most-mocked-cars
+hbr.org###main > .component:nth-of-type(4) > .article-content > div > .fixedsticky-on.sticky-tools.fixedsticky
+
+! 4/22/2016, 4:33:15 PM https://hbr.org/2016/04/what-we-can-learn-from-one-of-the-worlds-most-mocked-cars
+hbr.org###main > .component:nth-of-type(4) > .article-content > div > .fixedsticky-on.hide-for-small.sticky-progress-meter.fixedsticky > .sticky-backdrop > .row
+
+! 4/22/2016, 4:33:23 PM https://hbr.org/2016/04/what-we-can-learn-from-one-of-the-worlds-most-mocked-cars
+hbr.org###main > .component:nth-of-type(3) > .fixedsticky-on.fixedsticky-delegate.fixedsticky.sticky-top-header > .hide-for-print.top-header > .phs.backdrop-transparent-white.flex-row.top-header--bar
+
+! 4/22/2016, 4:33:35 PM https://hbr.org/2016/04/what-we-can-learn-from-one-of-the-worlds-most-mocked-cars
+hbr.org###main > .component:nth-of-type(2) > .hide-for-print.clearfix.persistent-banner
+
+! 4/26/2016, 2:26:45 PM https://develop.wolframcloud.com/app/objects/b468f354-82a4-4d3f-96ca-3f0357e35087
+develop.wolframcloud.com###mathematicaOnlineFileViewLayout > .infoWindow
+
+! 5/2/2016, 2:01:04 PM http://mobile.nytimes.com/2016/05/03/business/dealbook/bitcoin-craig-wright-satoshi-nakamoto.html?_r=0&referer=https://www.google.co.uk/
+mobile.nytimes.com##.growl-v2
+
+! 5/2/2016, 2:01:09 PM http://mobile.nytimes.com/2016/05/03/business/dealbook/bitcoin-craig-wright-satoshi-nakamoto.html?_r=0&referer=https://www.google.co.uk/
+mobile.nytimes.com##.growl-v2-gradient
+
+! 5/2/2016, 3:50:12 PM http://www.firstthings.com/article/2016/05/scientific-regress
+www.firstthings.com##.blockPage.newsletter.blockMsg.blockUI
+
+! 5/24/2016, 2:34:58 PM https://www.facebook.com/kennethreitz/videos/10154102920610132/
+www.facebook.com###u_0_9
+
+! 6/30/2016, 2:44:03 PM http://www.scientificamerican.com/article/multidimensional-sphere-packing-solutions-stack-up-as-a-major-mathematical-breakthrough/?WT.mc_id=SA_TW_MATH_BLOG
+www.scientificamerican.com###global__toaster-ad
+
+! 7/1/2016, 1:09:39 PM https://twitter.com/
+
+! 8/5/2016, 2:57:15 PM http://www.johndcook.com/blog/2016/08/05/trig-heat-equation/
+www.johndcook.com###masthead
+
+! 8/24/2016, 2:09:02 PM https://www.facebook.com/TheRealMikeRowe/posts/1260196947323779:0
+www.facebook.com###u_0_75
+
+! 8/25/2016, 3:56:39 PM https://www.thebeaverton.com/culture/item/2891-leslie-jones-signs-multi-picture-deal-to-remake-every-single-movie-online-trolls-grew-up-loving
+www.thebeaverton.com##.in.center-modal.ng-isolate-scope.fade.modal > .modal-md.modal-dialog > .modal-content
+
+! 8/25/2016, 3:56:46 PM https://www.thebeaverton.com/culture/item/2891-leslie-jones-signs-multi-picture-deal-to-remake-every-single-movie-online-trolls-grew-up-loving
+www.thebeaverton.com##.in.center-modal.ng-isolate-scope.fade.modal
+
+! 8/25/2016, 3:56:52 PM https://www.thebeaverton.com/culture/item/2891-leslie-jones-signs-multi-picture-deal-to-remake-every-single-movie-online-trolls-grew-up-loving
+www.thebeaverton.com##.in.modal-backdrop.fade
+
+! 9/21/2016, 2:29:00 PM http://www.rollingstone.com/culture/lists/25-funniest-people-on-twitter-right-now-w440895
+www.rollingstone.com##.main > .article-main > .content.grid > .content-rail > .lead-container > .lead
+
+! 9/23/2016, 4:14:09 PM https://www.facebook.com/tedcruzpage/posts/10154476728267464
+www.facebook.com###u_0_1d
+
+! 9/23/2016, 4:14:28 PM https://www.facebook.com/tedcruzpage/posts/10154476728267464
+www.facebook.com###u_0_1e
+
+! 10/25/2016, 11:50:49 AM https://twitter.com/
+twitter.com###page-container > .dashboard-right.dashboard > .roaming-module.LiveVideoHomePageModuleContainer > .module.LiveVideoHomePageModule
+
+! 11/14/2016, 5:06:34 PM https://twitter.com/
+
+! 1/9/2017, 2:51:48 PM https://www.washingtonpost.com/news/answer-sheet/wp/2017/01/07/poet-i-cant-answer-questions-on-texas-standardized-tests-about-my-own-poems/?postshare=5771483892326601&tid=ss_tw
+www.washingtonpost.com###nav-bar
+
+! 1/9/2017, 2:52:07 PM https://www.washingtonpost.com/news/answer-sheet/wp/2017/01/07/poet-i-cant-answer-questions-on-texas-standardized-tests-about-my-own-poems/?postshare=5771483892326601&tid=ss_tw
+www.washingtonpost.com##.utility-tools-wrapper
+
+! 1/9/2017, 2:52:22 PM https://www.washingtonpost.com/news/answer-sheet/wp/2017/01/07/poet-i-cant-answer-questions-on-texas-standardized-tests-about-my-own-poems/?postshare=5771483892326601&tid=ss_tw
+www.washingtonpost.com###f0PKQB4pssJM6q
+
+! 1/9/2017, 2:52:36 PM https://www.washingtonpost.com/news/answer-sheet/wp/2017/01/07/poet-i-cant-answer-questions-on-texas-standardized-tests-about-my-own-poems/?postshare=5771483892326601&tid=ss_tw
+www.washingtonpost.com###right-rail
+
+! 1/24/2017, 3:46:07 PM https://twitter.com/asmeurer
+
+! 1/24/2017, 3:47:28 PM https://twitter.com/asmeurer
+twitter.com##.is-visible.WhoToFollow
+
+! 1/24/2017, 3:47:44 PM https://twitter.com/everyunicode
+twitter.com##.is-visible.WhoToFollow
+
+! 1/24/2017, 3:48:14 PM https://twitter.com/iconjack
+twitter.com##.is-visible.WhoToFollow
+
+! 2/7/2017, 4:53:45 PM http://www.telegraph.co.uk/news/2017/02/07/steve-bannon-shares-fascists-obsession-cleansing-apocalyptic/?WT.mc_id=tmg_share_tw
+www.telegraph.co.uk##.message-active.component.adblocker-message
+
+! 2/14/2017, 4:47:40 PM http://99percentinvisible.org/episode/soul-city/
+99percentinvisible.org###cookie-policy
+
+! 2/14/2017, 4:47:54 PM http://99percentinvisible.org/episode/soul-city/
+99percentinvisible.org###player-playlist > .oc
+
+! 2/14/2017, 4:48:08 PM http://99percentinvisible.org/episode/soul-city/
+99percentinvisible.org##.sidebar
+
+! 2/14/2017, 4:48:21 PM http://99percentinvisible.org/episode/soul-city/
+99percentinvisible.org###post-navigation > .oc
+
+! 2/14/2017, 4:48:39 PM http://99percentinvisible.org/episode/soul-city/
+99percentinvisible.org###post-social
+
+! 2/27/2017, 6:12:27 PM https://medium.com/complex-systems-channel/ethical-values-a-multiscale-scientific-perspective-5b2b7900b234#.9wln5ul70
+medium.com##.js-stickyFooter.u-xs-paddingRight10.u-xs-paddingLeft10.u-zIndexMetabar.u-paddingBottom10.u-paddingTop10.u-borderBox.u-boxShadowTop.u-backgroundWhite.u-sizeFullWidth.u-bottom0.u-fixed
+
+! 2/27/2017, 6:12:41 PM https://medium.com/complex-systems-channel/ethical-values-a-multiscale-scientific-perspective-5b2b7900b234#.9wln5ul70
+medium.com##.u-transition--fadeIn300.u-fixed.u-sm-hide.u-foreground.js-postShareWidget > ul
+
+! 2/27/2017, 6:13:07 PM https://medium.com/complex-systems-channel/ethical-values-a-multiscale-scientific-perspective-5b2b7900b234#.9wln5ul70
+medium.com##.js-metabarMiddle.u-paddingRight20.u-paddingLeft20.u-maxWidth1000.u-marginAuto.metabar-inner
+
+! 2/28/2017, 2:48:02 PM https://twitter.com/traviscistatus
+twitter.com##.ProfileClusterFollow
+
+! 2/28/2017, 2:48:41 PM https://twitter.com/traviscistatus
+twitter.com##.trends.module.Trends
+
+! 2/28/2017, 2:48:46 PM https://twitter.com/traviscistatus
+twitter.com##.js-items-container.flex-module-inner > .u-cf
+
+! 4/7/2017, 3:11:53 PM http://knowyourmeme.com/memes/antonio-banderas-laptop-reaction
+knowyourmeme.com###sidebar
+
+! 4/7/2017, 3:12:09 PM http://knowyourmeme.com/memes/antonio-banderas-laptop-reaction
+knowyourmeme.com###ctoolbar
+
+! 4/26/2017, 7:22:23 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:22:34 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:24:15 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:38:38 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:38:57 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:39:08 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:39:20 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:39:36 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:39:46 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:40:13 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:40:25 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:40:42 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:40:53 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:41:05 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:41:20 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:41:33 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:41:46 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:41:56 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:42:04 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:42:14 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:42:30 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:43:08 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:43:26 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:43:38 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:43:49 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:44:00 PM https://twitter.com/i/notifications
+
+! 4/26/2017, 7:44:13 PM https://twitter.com/i/notifications
+
+! 7/17/2017, 2:44:50 PM https://www.facebook.com/uniladmag/videos/2852776568078717/
+www.facebook.com###u_0_6
+
+! 7/17/2017, 4:01:58 PM https://twitter.com/asmeurer
+twitter.com##.u-lg-size3of4.u-size2of3.Grid-cell > .Grid--withGutter.Grid > .u-size1of3.Grid-cell
+
+! 8/2/2017, 4:52:28 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com###piano__subscription-ribbon
+
+! 8/2/2017, 4:52:36 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com###piano__fixed-subscription-ribbon
+
+! 8/2/2017, 4:52:52 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com##.navigation__wrapper
+
+! 8/2/2017, 4:53:00 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com##.cookie-message
+
+! 8/2/2017, 4:53:14 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com##.blog-header--graphicdetail.blog-header
+
+! 8/2/2017, 4:53:29 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com##.latest-updates-panel__container--blog-post.latest-updates-panel__container
+
+! 8/2/2017, 4:53:52 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com##.stco__wrapper
+
+! 8/2/2017, 4:54:00 PM https://www.economist.com/blogs/graphicdetail/2017/08/daily-chart
+www.economist.com###bottom-page
+
+! 4/6/2018, 2:59:25 PM https://www.coinwarz.com/network-hashrate-charts/monero-network-hashrate-chart
+www.coinwarz.com###boxes
+
+! 5/14/2018, 11:45:30 AM https://medium.com/@homeytel/the-bitcoin-standard-the-decentralized-alternative-to-central-banking-by-saifedean-ammous-b5bd4d7be6cf
+medium.com##.overlay--lighter.overlay
+
+! 6/20/2018, 12:57:26 PM https://www.wired.com/story/tezos-blockchain-love-story-horror-story/
+www.wired.com##.paywall-container-component--growler.paywall-container-component
+
+! 6/20/2018, 12:58:01 PM https://www.wired.com/story/tezos-blockchain-love-story-horror-story/
+www.wired.com###logo-bar
+
+! 6/25/2018, 1:53:49 PM https://pastebin.com/bJjGvUTu
+pastebin.com###float-box-2
+
+! 6/25/2018, 1:54:13 PM https://pastebin.com/bJjGvUTu
+||pastebin.com/nein/skyscraper_safe.php$subdocument
+
+! 7/24/2018, 3:40:58 PM https://twitter.com/
+twitter.com###stream-item-who_to_follow_entry-1021870252626460671
+
+! 7/26/2018, 3:52:25 PM https://www.theonion.com/the-road-worrier-1827688879
+www.theonion.com###lightbox_overlay_div
+
+! 7/26/2018, 3:52:50 PM https://www.theonion.com/the-road-worrier-1827688879
+www.theonion.com###lightbox-iframe-9734705e-5fce-41d7-9c0d-f6c92a6b2357
+
+! 7/31/2018, 5:10:23 PM https://twitter.com/
+twitter.com##.separated-module.no-header-background-module.js-has-navigable-stream.DismissibleModule.js-no-dedup.js-dedupe-wtf-sidebar.stream-item.js-stream-item.WtfLargeCarouselStreamItem
+
+! 7/31/2018, 8:53:23 PM https://hackernoon.com/a-complete-beginners-guide-to-installing-a-bitcoin-full-node-on-linux-2018-edition-cb8e384479ea
+hackernoon.com##.overlay--lighter.overlay
+
+! 8/22/2018, 2:33:07 PM https://smile.amazon.com/Dangerous-Personalities-Profiler-Identify-Yourself/dp/1635653363/?sa-no-redirect=1
+smile.amazon.com###featureAwarenessWidget_feature_div
+
+! 9/17/2018, 1:27:03 PM https://www.fastcompany.com/90236664/how-to-negotiate-salary-with-a-tech-recruiter
+www.fastcompany.com###lightbox-iframe-f3c0ad52-e36e-4292-8b70-fc4ed3ad9757
+
+! 9/19/2018, 5:52:02 PM https://hackernoon.com/a-gentle-introduction-to-tmux-8d784c404340
+hackernoon.com##.js-stickyFooter.u-xs-paddingRight10.u-xs-paddingLeft10.u-zIndexMetabar.u-paddingBottom10.u-paddingTop10.u-borderBox.u-boxShadowTop.u-backgroundWhite.u-width100pct.u-bottom0.u-fixed
+
+! 10/9/2018, 12:46:27 PM https://lifehacker.com/how-to-negotiate-your-salary-1566202988
+lifehacker.com##.preloaded_lightbox
+
+! 4/4/2019 https://mobile.twitter.com
+mobile.twitter.com##.r-1ovo9ad.r-1n9sb9w.r-aqfbo4.css-1dbjc4n
+mobile.twitter.com##.r-1ovo9ad.r-1n9sb9w.r-aqfbo4.css-1dbjc4n
+mobile.twitter.com##div:nth-of-type(9) > .r-1adg3ll.r-qklmqi.r-my5ep6.css-1dbjc4n > .r-1j63xyz.r-o7ynqc.r-1loqt21.css-1dbjc4n > .r-1wqkr8a.r-utggzx.css-1dbjc4n > .r-thb0q2.r-18u37iz.css-1dbjc4n > .r-bcqeeo.r-5f2r5o.r-46vdb2.r-1iusvr4.css-1dbjc4n > .r-1mdbhws.r-156q2ks.r-1wtj0ep.r-18u37iz.css-1dbjc4n > div.r-1h0z5md.r-16y2uox.r-18u37iz.r-1iusvr4.css-1dbjc4n:nth-of-type(3) > .r-lrvibr.r-bztko3.r-11cpok1.r-1777fci.css-1dbjc4n.css-18t94o4 > .r-qvutc0.r-3s2u2q.r-clp7b1.r-o7ynqc.r-bcqeeo.r-ad9z0x.r-1h0z5md.r-16dba41.r-a023e6.r-1qd0xha.r-6koalj.r-1re7ezh.r-1awozwy.css-76zvg2 > .r-1udh08x.r-xoduu5.css-1dbjc4n > .r-qvutc0.r-axxi2z.r-1wgg2b2.r-d3hbe1.r-bcqeeo.r-1n0xq6e.r-ad9z0x.r-1qd0xha.css-16my406.css-76zvg2
