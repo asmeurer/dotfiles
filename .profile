@@ -199,36 +199,36 @@ alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integr
 
 # Directory codes are
 # sympy - Red
-DIR_SYMPY='$HOME/Documents/python/sympy/sympy'
+DIR_SYMPY="$HOME/Documents/python/sympy/sympy"
 TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
 # sympy-scratch - Orange
-DIR_SYMPY_SCRATCH='$HOME/Documents/python/sympy/sympy-scratch'
+DIR_SYMPY_SCRATCH="$HOME/Documents/python/sympy/sympy-scratch"
 TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;128\a"
 # sympy-bot - Purple
-DIR_SYMPY_BOT='$HOME/Documents/python/sympy/sympy-bot'
+DIR_SYMPY_BOT="$HOME/Documents/python/sympy/sympy-bot"
 TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
 # conda-recipes - Purple
 export DIR_CONDA_RECIPES="$HOME/Documents/Continuum/conda-recipes"
 # sympy other (like sympy-live or sympy.wiki) - Yellow
 # Note, this one must be tested after the above ones
-DIR_SYMPY_OTHER='$HOME/Documents/python/sympy'
+DIR_SYMPY_OTHER="$HOME/Documents/python/sympy"
 TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 # dotfiles - Green
-DIR_DOTFILES='$HOME/Documents/dotfiles'
+DIR_DOTFILES="$HOME/Documents/dotfiles"
 TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 # Continuum - Black
-DIR_CONTINUUM='$HOME/Documents/Continuum'
+DIR_CONTINUUM="$HOME/Documents/Continuum"
 TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
 # Conda - White
-DIR_CONDA='$HOME/Documents/Continuum/conda'
+DIR_CONDA="$HOME/Documents/Continuum/conda"
 TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
 # transmutagen - White
-DIR_TRANSMUTAGEN='$HOME/Documents/transmutagen'
+DIR_TRANSMUTAGEN="$HOME/Documents/transmutagen"
 # Conda-build - Teal
-DIR_CONDA_BUILD='$HOME/Documents/Continuum/conda-build'
+DIR_CONDA_BUILD="$HOME/Documents/Continuum/conda-build"
 export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a\033]6;1;bg;green;brightness;128\a"
 # Blog - Teal
-DIR_BLOG='$HOME/Documents/blog'
+DIR_BLOG="$HOME/Documents/blog"
 # homework - Blue
 export DIR_HOMEWORK="$HOME/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
