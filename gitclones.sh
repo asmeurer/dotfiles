@@ -17,12 +17,13 @@ print('$2' or '$1'.rsplit('.git', 1)[0].split('/')[-1])
     fi
 }
 
+ln -sf ~/anaconda3 ~/anaconda
 mkdir -p ~/Documents/gists/
 cd ~/Documents/gists/
 clone-or-pull git@gist.github.com:3187620.git gist-3187620
 
-# cd ~/Documents/
-# clone-or-pull git@github.com:github/hub.git
+cd ~/Documents/
+clone-or-pull git@github.com:github/hub.git
 # cd hub
 # make bin/hub
 # cp bin/hub ~/bin/
@@ -71,7 +72,7 @@ git branch --set-upstream-to=github/indentation indentation
 cd ~/Documents/
 clone-or-pull git@github.com:purcell/mmm-mode.git
 # TODO: doctest-mode
-mkdir -p emacs-jedi
+clone-or-pull git@github.com:tkf/emacs-jedi.git
 cd emacs-jedi
 echo "Creating conda environment for jedi"
 conda install -m -p env jedi epc

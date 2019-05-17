@@ -149,19 +149,19 @@ alias isympy='mypython -c %sympy'
 alias top='top -o -cpu'
 
 cdd () {
-    cd "/Users/aaronmeurer/Documents/$@" || return
+    cd "$HOME/Documents/$@" || return
 }
 
 _cdd_complete ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | lam -s \" - -s \")" -- "$cur" ));
+    COMPREPLY=($(compgen -W "$("ls" "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | paste -d \" - -d \")" -- "$cur" ));
 }
 
 complete -F _cdd_complete "cdd"
 
 cdc () {
-    cd "/Users/aaronmeurer/Documents/Continuum/$@"
+    cd "$HOME/Documents/Continuum/$@"
 }
 
 _cdc_complete ()
@@ -199,44 +199,44 @@ alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integr
 
 # Directory codes are
 # sympy - Red
-DIR_SYMPY='/Users/aaronmeurer/Documents/python/sympy/sympy'
+DIR_SYMPY='$HOME/Documents/python/sympy/sympy'
 TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
 # sympy-scratch - Orange
-DIR_SYMPY_SCRATCH='/Users/aaronmeurer/Documents/python/sympy/sympy-scratch'
+DIR_SYMPY_SCRATCH='$HOME/Documents/python/sympy/sympy-scratch'
 TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;128\a"
 # sympy-bot - Purple
-DIR_SYMPY_BOT='/Users/aaronmeurer/Documents/python/sympy/sympy-bot'
+DIR_SYMPY_BOT='$HOME/Documents/python/sympy/sympy-bot'
 TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
 # conda-recipes - Purple
-export DIR_CONDA_RECIPES="/Users/aaronmeurer/Documents/Continuum/conda-recipes"
+export DIR_CONDA_RECIPES="$HOME/Documents/Continuum/conda-recipes"
 # sympy other (like sympy-live or sympy.wiki) - Yellow
 # Note, this one must be tested after the above ones
-DIR_SYMPY_OTHER='/Users/aaronmeurer/Documents/python/sympy'
+DIR_SYMPY_OTHER='$HOME/Documents/python/sympy'
 TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 # dotfiles - Green
-DIR_DOTFILES='/Users/aaronmeurer/Documents/dotfiles'
+DIR_DOTFILES='$HOME/Documents/dotfiles'
 TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
 # Continuum - Black
-DIR_CONTINUUM='/Users/aaronmeurer/Documents/Continuum'
+DIR_CONTINUUM='$HOME/Documents/Continuum'
 TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
 # Conda - White
-DIR_CONDA='/Users/aaronmeurer/Documents/Continuum/conda'
+DIR_CONDA='$HOME/Documents/Continuum/conda'
 TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
 # transmutagen - White
-DIR_TRANSMUTAGEN='/Users/aaronmeurer/Documents/transmutagen'
+DIR_TRANSMUTAGEN='$HOME/Documents/transmutagen'
 # Conda-build - Teal
-DIR_CONDA_BUILD='/Users/aaronmeurer/Documents/Continuum/conda-build'
+DIR_CONDA_BUILD='$HOME/Documents/Continuum/conda-build'
 export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a\033]6;1;bg;green;brightness;128\a"
 # Blog - Teal
-DIR_BLOG='/Users/aaronmeurer/Documents/blog'
+DIR_BLOG='$HOME/Documents/blog'
 # homework - Blue
-export DIR_HOMEWORK="/Users/aaronmeurer/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
+export DIR_HOMEWORK="$HOME/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
 # mypython - Blue
-DIR_MYPYTHON="/Users/aaronmeurer/Documents/mypython"
+DIR_MYPYTHON="$HOME/Documents/mypython"
 # work directories - Pink
-DIR_PYFLYBY="/Users/aaronmeurer/Documents/pyflyby"
-DIR_STRUCT_RET="/Users/aaronmeurer/Documents/struct-ret"
+DIR_PYFLYBY="$HOME/Documents/pyflyby"
+DIR_STRUCT_RET="$HOME/Documents/struct-ret"
 TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;blue;brightness;152\a\033]6;1;bg;green;brightness;37\a"
 
 # Other - default (metal)
@@ -297,12 +297,12 @@ GIT_PS1_STATESEPARATOR=''
 PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
 PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
-PATH=$PATH:/Users/aaronmeurer/Documents/git-hg/bin
-PATH=$PATH:/Users/aaronmeurer/Documents/depot_tools # For building Chromium
+PATH=$PATH:$HOME/Documents/git-hg/bin
+PATH=$PATH:$HOME/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export TTY=$(basename `tty`)
-export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=$TTY"
+export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$TTY"
 export EDITOR="$EMACSCLIENT"
 # Make less search case insensitive, always use raw input mode (to show
 # colors), don't ring the bell incessantly
@@ -331,7 +331,7 @@ saydone () {
     ($@; say done)
 }
 
-hub_dir="/Users/aaronmeurer/Documents/hub"
+hub_dir="$HOME/Documents/hub"
 PATH="$PATH:$hub_dir"
 
 recompile-emacs () {
@@ -375,13 +375,13 @@ PATH="${PATH}:/Applications/Sage-5.2-OSX-64bit-10.6.app/Contents/Resources/sage"
 export PATH
 
 # Use the git version of emacs
-PATH="/Users/aaronmeurer/Documents/emacs/src:$PATH"
-PATH="/Users/aaronmeurer/Documents/emacs/lib-src:$PATH"
+PATH="$HOME/Documents/emacs/src:$PATH"
+PATH="$HOME/Documents/emacs/lib-src:$PATH"
 
 # Don't use the git version of emacs
-PATH="/Users/aaronmeurer/anaconda/envs/emacs/bin:$PATH"
+PATH="$HOME/anaconda/envs/emacs/bin:$PATH"
 
-PATH="$PATH:/Users/aaronmeurer/Documents/cask/bin"
+PATH="$PATH:$HOME/Documents/cask/bin"
 
 # GPGTools (put before /usr/local/bin/)
 PATH="/usr/local/MacGPG2/bin:$PATH"
@@ -435,7 +435,7 @@ complete -o nospace -o default -F _python_argcomplete "conda"
 # END output of 'register-python-argcomplete conda'
 
 
-. /Users/aaronmeurer/.bash_completion.d/python-argcomplete.sh
+. $HOME/.bash_completion.d/python-argcomplete.sh
 
 
 alias act="source deactivate; source activate"
@@ -461,7 +461,7 @@ conda-remove-test() {
     rm -rf ~/anaconda/envs/test
 }
 
-PATH="/Users/aaronmeurer/bin/:$PATH"
+PATH="$HOME/bin/:$PATH"
 
 export PATH
 
@@ -505,31 +505,33 @@ source ~/Documents/git/contrib/completion/git-completion.bash
 source ~/Documents/git/contrib/completion/git-prompt.sh
 source ~/Documents/hub/etc/hub.bash_completion.sh
 
-source /Users/aaronmeurer/.iterm2_shell_integration.bash
+if [ -n "$MAC" ]; then
+    source $HOME/.iterm2_shell_integration.bash
+fi
 
 export GPG_TTY=$(tty)
 
 hash -r
 
 # added by travis gem
-[ -f /Users/aaronmeurer/.travis/travis.sh ] && source /Users/aaronmeurer/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/aaronmeurer/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/aaronmeurer/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '$HOME/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '$HOME/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/aaronmeurer/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/aaronmeurer/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '$HOME/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '$HOME/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/aaronmeurer/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# __conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
-#     if [ -f "/Users/aaronmeurer/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/aaronmeurer/anaconda3/etc/profile.d/conda.sh"
+#     if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "$HOME/anaconda3/etc/profile.d/conda.sh"
 #     else
-#         export PATH="/Users/aaronmeurer/anaconda3/bin:$PATH"
+#         export PATH="$HOME/anaconda3/bin:$PATH"
 #     fi
 # fi
 # unset __conda_setup
