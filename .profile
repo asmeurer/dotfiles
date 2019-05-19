@@ -153,11 +153,19 @@ cdd () {
     cd "$HOME/Documents/$@" || return
 }
 
-_cdd_complete ()
-{
-    local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$("ls" "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | paste -d \" - -d \")" -- "$cur" ));
-}
+if [ -n "$MAC" ]; then
+    _cdd_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$("ls" "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | lam -s \" - -s \")" -- "$cur" ));
+    }
+else
+    _cdd_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$("ls" "$HOME/Documents/" | tr "[:upper:]" "[:lower:]" | paste -d \" - -d \")" -- "$cur" ));
+    }
+fi
 
 complete -F _cdd_complete "cdd"
 
@@ -165,11 +173,19 @@ cdc () {
     cd "$HOME/Documents/Continuum/$@"
 }
 
-_cdc_complete ()
-{
-    local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS $HOME/Documents/Continuum | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
-}
+if [ -n "$MAC" ]; then
+    _cdc_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$(LS $HOME/Documents/Continuum | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
+    }
+else
+    _cdc_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$(LS $HOME/Documents/Continuum | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
+    }
+fi
 
 complete -F _cdc_complete "cdc"
 
