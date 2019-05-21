@@ -335,6 +335,10 @@ alias free="diskutil info / | GREP -iE 'Available|Free'"
 alias rehash='hash -r'
 alias cdpwd='cd `pwd`'
 
+if [ -z "$MAC" ]; then
+    alias gsort=sort
+fi
+
 sizeup () {
     if [[ -z "$1" ]]; then
         DIR=.
