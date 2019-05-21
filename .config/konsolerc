@@ -1,0 +1,16 @@
+[Desktop Entry]
+DefaultProfile=Main.profile
+
+[Favorite Profiles]
+Favorites=Main.profile
+
+[MainWindow]
+Height 1440=1376
+State=AAAA/wAAAAD9AAAAAAAABN0AAAVKAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 2560=1245
+
+[TabBar]
+ExpandTabWidth=true
+ShowQuickButtons=true
+TabBarPosition=Top
