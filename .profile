@@ -107,7 +107,7 @@ export auto_resume=exact
 if [ -n "$MAC" ]; then
     alias ls='ls -AG@Flha'
 else
-    alias ls='ls -AGFlha'
+    alias ls='ls --color -AFlha'
 fi
 
 alias l=ls
