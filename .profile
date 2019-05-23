@@ -369,9 +369,6 @@ recompile-emacs () {
     cd -
 }
 
-# Alias git to hub
-eval "$(hub alias -s)"
-
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
@@ -424,6 +421,8 @@ PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
 # the PATH.
 PATH="$HOME/anaconda3/bin:$PATH"
 
+# Alias git to hub
+eval "$(hub alias -s)"
 
 # This is the output of 'register-python-argcomplete conda'. We use this
 # instead of
