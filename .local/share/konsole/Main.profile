@@ -15,5 +15,8 @@ TerminalRows=72
 CopyTextAsHTML=false
 MiddleClickPasteMode=1
 
+[Keyboard]
+KeyBindings=default
+
 [Scrolling]
 HistorySize=10000
