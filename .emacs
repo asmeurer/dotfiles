@@ -706,6 +706,55 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 ;; I have iTerm 2 set to make Shift-Control-U send f8.
 (global-set-key [f8] 'universal-argument)
 
+(global-set-key (kbd "C-S-u") 'universal-argument)
+
+;; ====== Set Terminal keyboard shortcuts =====
+
+;; To add a keyboard shortcut that isn't supported by the terminal, like
+;; C-S-*, add a shortcut for the respective escape sequence (%d is the ASCII
+;; code for the uppercase letter, e.g., C-S-u is \E[27;6;85~
+
+;; For konsole, the shortcuts are in .local/share/konsole/default.keytab, like
+;;
+;;     key U+Shift+Ctrl : "\E[27;6;85~"
+
+;; From https://emacs.stackexchange.com/questions/1020/problems-with-keybindings-when-using-terminal
+;; xterm with the resource ?.VT100.modifyOtherKeys: 1
+;; GNU Emacs >=24.4 sets xterm in this mode and define
+;; some of the escape sequences but not all of them.
+(defun character-apply-modifiers (c &rest modifiers)
+  "Apply modifiers to the character C.
+MODIFIERS must be a list of symbols amongst (meta control shift).
+Return an event vector."
+  (if (memq 'control modifiers) (setq c (if (or (and (<= ?@ c) (<= c ?_))
+                                                (and (<= ?a c) (<= c ?z)))
+                                            (logand c ?\x1f)
+                                          (logior (lsh 1 26) c))))
+  (if (memq 'meta modifiers) (setq c (logior (lsh 1 27) c)))
+  (if (memq 'shift modifiers) (setq c (logior (lsh 1 25) c)))
+  (vector c))
+(defun my-eval-after-load-xterm ()
+  (when (and (boundp 'xterm-extra-capabilities) (boundp 'xterm-function-map))
+    (let ((c 32))
+      (while (<= c 126)
+        (mapc (lambda (x)
+                (define-key xterm-function-map (format (car x) c)
+                  (apply 'character-apply-modifiers c (cdr x))))
+              '(;; with ?.VT100.formatOtherKeys: 0
+                ("\e\[27;3;%d~" meta)
+                ("\e\[27;5;%d~" control)
+                ("\e\[27;6;%d~" control shift)
+                ("\e\[27;7;%d~" control meta)
+                ("\e\[27;8;%d~" control meta shift)
+                ;; with ?.VT100.formatOtherKeys: 1
+                ("\e\[%d;3u" meta)
+                ("\e\[%d;5u" control)
+                ("\e\[%d;6u" control shift)
+                ("\e\[%d;7u" control meta)
+                ("\e\[%d;8u" control meta shift)))
+        (setq c (1+ c))))))
+(eval-after-load "xterm" '(my-eval-after-load-xterm))
+
 ;; ==== Switch to new buffer on C-x 2 or C-x 3 ====
 ;; Thanks to http://stackoverflow.com/a/6465415/161801.
 
