@@ -1749,7 +1749,10 @@ is binary, activate `hexl-mode'."
  '(jedi:imenu-create-index-function (quote jedi:create-flat-imenu-index))
  '(jedi:install-imenu nil)
  '(jedi:server-command
-   `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))
+   (\`
+    ("~/Documents/emacs-jedi/env/bin/python"
+     (\,
+      (expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))))
  '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
