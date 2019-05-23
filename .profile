@@ -183,7 +183,7 @@ else
     _cdc_complete ()
     {
         local cur="${COMP_WORDS[COMP_CWORD]}";
-        COMPREPLY=($(compgen -W "$(LS $HOME/Documents/Continuum | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
+        COMPREPLY=($(compgen -W "$("ls" $HOME/Documents/Continuum | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
     }
 fi
 
@@ -463,11 +463,19 @@ alias act="source deactivate; source activate"
 alias deact="source deactivate"
 # # complete source activate. Thanks to Paul Kienzle from NIST for the
 # # suggestion.
-_activate_complete ()
-{
-    local cur="${COMP_WORDS[COMP_CWORD]}";
-    COMPREPLY=($(compgen -W "$(LS $HOME/anaconda/envs | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
-}
+if [ -n "$MAC" ]; then
+    _activate_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$(LS $HOME/anaconda/envs | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
+    }
+else
+    _activate_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$("ls" $HOME/anaconda/envs | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
+    }
+fi
 
 complete -F _activate_complete "act"
 
