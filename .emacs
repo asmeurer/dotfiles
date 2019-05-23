@@ -42,6 +42,16 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; ==== Set the font as Menlo =====
+;; https://github.com/hbin/top-programming-fonts
+
+(set-frame-font "Menlo:pixelsize=18")
+
+(add-to-list 'default-frame-alist
+             (cons 'font "Menlo:pixelsize=18")
+             (cons 'width 123)
+             (cons 'height 72))
+
 ;; ==== use-package ====
 
 ;; ;; Bootstrap use-package. From
