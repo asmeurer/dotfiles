@@ -5,12 +5,15 @@ DefaultProfile=Main.profile
 Favorites=Main.profile
 
 [MainWindow]
-Height 1440=1376
-State=AAAA/wAAAAD9AAAAAAAABN0AAAVKAAAABAAAAAQAAAAIAAAACPwAAAAA
+Height 1440=895
+State=AAAA/wAAAAD9AAAAAAAACgAAAAVfAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 2560=1245
+Window-Maximized 1440x2560=true
+Window-Maximized 768x1024=true
 
 [TabBar]
 ExpandTabWidth=true
+NewTabBehavior=PutNewTabAfterCurrentTab
 ShowQuickButtons=true
 TabBarPosition=Top
