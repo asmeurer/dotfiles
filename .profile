@@ -336,7 +336,11 @@ alias e="$EMACSCLIENT"
 alias killemacs='pkill -SIGUSR2 emacs'
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
-alias free="diskutil info / | GREP -iE 'Available|Free'"
+if [ -n "$MAC" ]; then
+    alias free="diskutil info / | GREP -iE 'Available|Free'"
+else
+    alias free='df -h /'
+fi
 alias rehash='hash -r'
 alias cdpwd='cd `pwd`'
 
