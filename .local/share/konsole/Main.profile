@@ -14,6 +14,8 @@ TerminalRows=72
 [Interaction Options]
 CopyTextAsHTML=false
 MiddleClickPasteMode=1
+TrimLeadingSpacesInSelectedText=false
+TrimTrailingSpacesInSelectedText=true
 
 [Keyboard]
 KeyBindings=default
