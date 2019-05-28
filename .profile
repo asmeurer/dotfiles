@@ -150,6 +150,10 @@ alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
 alias isympy='mypython -c %sympy'
 alias top='top -o -cpu'
 
+if [ -z "$MAC" ]; then
+    alias open=xdg-open
+fi
+
 cdd () {
     cd "$HOME/Documents/$@" || return
 }
