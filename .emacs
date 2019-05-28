@@ -651,6 +651,10 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
 
 (global-set-key (kbd "C-S-u") 'universal-argument)
 
+;; Make Home and End go to the beginnng/end of the document, not line
+(global-set-key [home] 'beginning-of-buffer)
+(global-set-key [end] 'end-of-buffer)
+
 ;; ====== Set Terminal keyboard shortcuts =====
 
 ;; To add a keyboard shortcut that isn't supported by the terminal, like
