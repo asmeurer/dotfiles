@@ -1,6 +1,8 @@
 # Emacs, this is -*-yaml-*-
 
 channels:
+  - rapidsai
+  - nvidia
   - conda-forge
   - defaults
   - asmeurer
