@@ -451,7 +451,7 @@ Markdown" t)
   )
 (add-hook 'latex-mode-hook 'latex-setup t)
 
-;; Commands to interact with the Mac OS X clipboard
+;; Commands to interact with the clipboard
 
 (defun osx-copy (beg end)
   (interactive "r")
@@ -462,8 +462,23 @@ Markdown" t)
   (if (region-active-p) (delete-region (region-beginning) (region-end)) nil)
   (call-process "pbpaste" nil t nil))
 
-(define-key global-map (kbd "C-x C-w") 'osx-copy)
-(define-key global-map (kbd "C-x C-y") 'osx-paste)
+(defun linux-copy (beg end)
+  (interactive "r")
+  (call-process-region beg end  "xclip" nil nil nil "-selection" "c"))
+
+(defun linux-paste ()
+  (interactive)
+  (if (region-active-p) (delete-region (region-beginning) (region-end)) nil)
+  (call-process "xsel" nil t nil "-b"))
+
+(cond
+ ((string-equal system-type "darwin") ; Mac OS X
+  (define-key global-map (kbd "C-x C-w") 'osx-copy)
+  (define-key global-map (kbd "C-x C-y") 'osx-paste))
+ ((string-equal system-type "gnu/linux") ; linux
+  (define-key global-map (kbd "C-x C-w") 'linux-copy)
+  (define-key global-map (kbd "C-x C-y") 'linux-paste)))
+
 
 ;; Better zapping
 
