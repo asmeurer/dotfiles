@@ -5,11 +5,10 @@ DefaultProfile=Main.profile
 Favorites=Main.profile
 
 [MainWindow]
-Height 1440=895
-State=AAAA/wAAAAD9AAAAAAAACgAAAAVfAAAABAAAAAQAAAAIAAAACPwAAAAA
+Height 1440=1403
+State=AAAA/wAAAAD9AAAAAAAABNAAAAVZAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 2560=1245
-Window-Maximized 1440x2560=true
+Width 2560=1232
 Window-Maximized 768x1024=true
 
 [TabBar]

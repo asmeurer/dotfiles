@@ -487,7 +487,7 @@ Markdown" t)
   "Kill up to, but not including ARGth occurrence of CHAR.
 
   \(fn arg char)"
-'interactive)
+  'interactive)
 
 ;; Make M-z zap-up-to-char (doesn't include char)
 (global-set-key "\M-z" 'zap-up-to-char)
