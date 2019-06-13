@@ -6,9 +6,10 @@ Favorites=Main.profile
 
 [MainWindow]
 Height 1440=1403
-State=AAAA/wAAAAD9AAAAAAAABNAAAAVZAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAACawAAAVZAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 2560=1232
+Window-Maximized 1440x2560=true
 Window-Maximized 768x1024=true
 
 [TabBar]
