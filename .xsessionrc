@@ -1,0 +1,2 @@
+xinput set-prop "Logitech USB Optical Mouse" "libinput Scroll Method Enabled" 0, 0, 1  # This is button
+xinput set-prop "Logitech USB Optical Mouse" "libinput Button Scrolling Button" 2  # This is middle mouse. Already 2 by default
