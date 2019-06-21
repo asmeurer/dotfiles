@@ -153,6 +153,9 @@ alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
 alias isympy='mypython -c %sympy'
 alias top='top -o -cpu'
 
+# Set breakpoint() in Python to call pudb
+export PYTHONBREAKPOINT="pudb.set_trace"
+
 if [ -z "$MAC" ]; then
     alias open=xdg-open
 fi
