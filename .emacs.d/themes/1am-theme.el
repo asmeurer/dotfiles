@@ -17,7 +17,7 @@
  '(font-lock-variable-name-face ((t (:foreground "sienna"))))
  '(minibuffer-prompt ((t (:foreground "red"))))
  '(trailing-whitespace ((t (:background "red1"))))
- '(flycheck-error ((t (:foreground "LightPink" :underline "red"))))
+ '(flycheck-error ((t (:foreground "LightPink"))))
  '(flycheck-warning ((t (:inherit warning))))
  '(flymake-errline ((t (:foreground "LightPink" :underline "red"))))
  '(flymake-warnline ((t (:inherit warning))))
