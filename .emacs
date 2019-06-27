@@ -1825,6 +1825,7 @@ is binary, activate `hexl-mode'."
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
  '(linum-format "%d⎢")
+ '(mark-even-if-inactive nil)
  '(markdown-gfm-use-electric-backquote nil)
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
