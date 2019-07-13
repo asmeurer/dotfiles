@@ -33,6 +33,7 @@
         alternating-scroll-up-line
         beginning-of-buffer
         describe-key
+        kmacro-end-or-call-macro
         smex
         suspend-frame
         ))
