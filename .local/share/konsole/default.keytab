@@ -1,5 +1,5 @@
 keyboard "Default (XFree 4)"
-key ?+Shift+Ctrl : "\E[27;6;47~"
+key ?+Shift+Ctrl : "\E[27;6;63~"
 key Backspace+Ctrl : "\b"
 key Backspace-Ctrl : "\x7f"
 key Backtab+Ansi : "\E[Z"
