@@ -217,6 +217,8 @@
 ;; ===== Smart comment =====
 
 (use-package smart-comment
+  :custom
+  (smart-comment-end-action (quote smart-comment-line))
   :bind
   ("M-;" . smart-comment))
 
