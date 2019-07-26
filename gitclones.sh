@@ -83,6 +83,12 @@ clone-or-pull git@github.com:asmeurer/mypython
 mkdir -p ~/bin/
 ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython
 
+if [[ $(uname) == "Darwin" ]]; then
+    clone-or-pull git@github.com:jcs/xbanish.git
+    cd xbanish
+    make
+    cd ~/Documents/
+fi
 
 CONDA_PKGS="emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build anaconda xonsh hub bash"
 if [[ $(uname) == "Darwin" ]]; then
