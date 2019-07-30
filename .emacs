@@ -216,9 +216,20 @@
 
 ;; ===== Smart comment =====
 
+;; https://emacs.stackexchange.com/questions/16792/easiest-way-to-check-if-current-line-is-empty-ignoring-whitespace
+(defun current-line-empty-p ()
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[[:space:]]*$")))
+
+(defun smart-comment-end (arg)
+  "Same as smart-comment-line but comments if the line is empty"
+  (interactive "*P")
+  (if (current-line-empty-p) (comment-dwim arg) (smart-comment-line arg)))
+
 (use-package smart-comment
   :custom
-  (smart-comment-end-action (quote smart-comment-line))
+  (smart-comment-end-action 'smart-comment-end)
   :bind
   ("M-;" . smart-comment))
 
