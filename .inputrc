@@ -13,6 +13,9 @@ set bell-style none
 # iTerm2
 "\e[1;9A": history-search-backward
 "\e[1;9B": history-search-forward
+# Konsole
+"\e[1;3A": history-search-backward
+"\e[1;3B": history-search-forward
 # "\e\e[A": history-search-backward
 # "\e\e[B": history-search-forward
 # Type this to reload this file
