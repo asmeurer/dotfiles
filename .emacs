@@ -348,13 +348,15 @@ Markdown" t)
   :bind
   (:map
    ac-menu-map
-   ("C-n" . ac-next)
-   ("\C-p" . ac-previous)
+   ;; ("C-n" . ac-next)
+   ;; ("\C-p" . ac-previous)
    ("<backtab>" . ac-previous)
    ("C-c s" . ac-isearch)
    :map
    ac-completing-map
-   ("\r" . nil))
+   ("\r" . nil)
+   ("<up>" . nil)
+   ("<down>" . nil))
   ;; :map
   ;; ac-mode-map ("M-TAB" . auto-complete)
   :hook
