@@ -83,7 +83,7 @@ clone-or-pull git@github.com:asmeurer/mypython
 mkdir -p ~/bin/
 ln -s -f ~/Documents/mypython/bin/mypython ~/bin/mypython
 
-if [[ $(uname) == "Darwin" ]]; then
+if [[ $(uname) != "Darwin" ]]; then
     clone-or-pull git@github.com:jcs/xbanish.git
     cd xbanish
     make
