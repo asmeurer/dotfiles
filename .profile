@@ -136,6 +136,7 @@ alias goit='git'
 alias ghit='git'
 alias bgit='git'
 alias vgit='git'
+alias egit='git'
 
 alias sl=ls
 # dc is a real command, but it's just some useless calculator
