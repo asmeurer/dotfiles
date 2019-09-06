@@ -44,11 +44,6 @@ clone-or-pull git@github.com:inducer/pudb.git
 # cd auctex
 # ./autogen.sh
 
-clone-or-pull git@github.com:jwiegley/use-package.git
-cd ~/Documents/use-package
-make elc
-cd ~/Documents
-
 clone-or-pull git@github.com:dacap/keyfreq.git
 clone-or-pull git@github.com:nonsequitur/smex.git
 # Until https://github.com/nonsequitur/smex/pull/12 is merged
@@ -96,6 +91,11 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 conda install $CONDA_PKGS
+
+clone-or-pull git@github.com:jwiegley/use-package.git
+cd ~/Documents/use-package
+make elc
+cd ~/Documents
 
 activate-global-python-argcomplete --user
 
