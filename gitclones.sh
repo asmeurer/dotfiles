@@ -85,7 +85,7 @@ if [[ $(uname) != "Darwin" ]]; then
     cd ~/Documents/
 fi
 
-CONDA_PKGS="emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build anaconda xonsh hub bash"
+CONDA_PKGS="emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash"
 if [[ $(uname) == "Darwin" ]]; then
     CONDA_PKGS="$CONDA_PKGS catimg fortune prefsync"
 fi
