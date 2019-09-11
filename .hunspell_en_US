@@ -429,3 +429,6 @@ normalizer
 uninstallation
 completers
 disableable
+parsable
+satisfiable
+unsatisfiable
