@@ -1870,6 +1870,7 @@ is binary, activate `hexl-mode'."
  '(show-paren-mode t)
  '(show-paren-style (quote mixed))
  '(show-trailing-whitespace t)
+ '(smart-comment-end-action (quote smart-comment-end) t)
  '(smex-mode t nil (smex))
  '(sml-modeline-len 17)
  '(sml-modeline-mode t)
