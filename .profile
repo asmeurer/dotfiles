@@ -105,7 +105,7 @@ shopt -s extglob
 export auto_resume=exact
 
 if [ -n "$MAC" ]; then
-    alias ls='ls -AG@Flha'
+    alias ls='ls -AGFlha'
 else
     alias ls='ls --color -AFlha'
 fi
