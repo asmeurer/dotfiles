@@ -12,7 +12,7 @@
  '(font-lock-keyword-face ((t (:foreground "purple"))))
  '(font-lock-builtin-face ((t (:foreground "dark slate blue"))))
  '(font-lock-constant-face ((t (:foreground "dark cyan"))))
- '(font-lock-function-name-face ((t (:foreground "Blue1"))))
+ '(font-lock-function-name-face ((t (:foreground "Blue1" :weight bold))))
  '(font-lock-type-face ((t (:foreground "ForestGreen"))))
  '(font-lock-variable-name-face ((t (:foreground "sienna"))))
  '(minibuffer-prompt ((t (:foreground "red"))))
