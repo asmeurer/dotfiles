@@ -14,5 +14,7 @@
 #     backup = !git-backup.sh
 #     backups = !git fsck --unreachable | grep commit | cut -d' ' -f3 | xargs git log --merges --no-walk --grep='Backup Commit' --stat
 
-git stash save --keep-index "Backup Commit (WIP) `date "+%Y-%m-%d %H:%M:%S %a"`"
-git stash pop --index
+if ! git diff-index --quiet HEAD --; then
+    git stash save --keep-index "Backup Commit (WIP) $(date "+%Y-%m-%d %H:%M:%S %a")"
+    git stash pop --index
+fi
