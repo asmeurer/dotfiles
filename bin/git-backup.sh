@@ -2,7 +2,7 @@
 # This commits any unstaged changes in a git repository, then immediately
 # reverts them back to being unstaged.  The idea is that this will backup the
 # changes so that they can be recovered via `git fsck --unreachable` in case
-# they are accidently removed via `git reset --hard`.
+# they are accidentally removed via `git reset --hard`.
 
 # You can find backup commits with
 
