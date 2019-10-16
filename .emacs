@@ -446,6 +446,21 @@ Markdown" t)
   :hook
   (prog-mode . highlight-symbol-mode))
 
+;; ==== Auto dim =====
+
+;; (use-package auto-dim-other-buffers
+;;   :hook
+;;   (after-init . (lambda ()
+;;                   (when (fboundp 'auto-dim-other-buffers-mode)
+;;                     (auto-dim-other-buffers-mode t)))))
+
+;; ;; Enable this when https://github.com/gonewest818/dimmer.el/pull/16 is merged.
+;; (use-package dimmer
+;;   :defer 1
+;;   :config
+;;   ;; (setq dimmer-fraction 0.50)
+;;   (dimmer-mode t))
+
 ;; Use better indentation for C files
 
 (setq c-default-style "cc-mode"
