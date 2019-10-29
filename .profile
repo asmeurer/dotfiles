@@ -155,7 +155,11 @@ alias cds='cd ~/Documents/python/sympy/sympy'
 alias cdss='cd ~/Documents/python/sympy/sympy-scratch'
 alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
 alias isympy='mypython -c %sympy'
-alias top='top -o -cpu'
+if [ -z "$MAC" ]; then
+    alias top='top -o %CPU'
+else
+    alias top='top -o -cpu'
+fi
 
 # Set breakpoint() in Python to call pudb
 export PYTHONBREAKPOINT="pudb.set_trace"
