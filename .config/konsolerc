@@ -4,11 +4,12 @@ DefaultProfile=Main.profile
 [Favorite Profiles]
 Favorites=Main.profile
 
+[KonsoleWindow]
+SaveGeometryOnExit=false
+
 [MainWindow]
-Height 1440=1403
-State=AAAA/wAAAAD9AAAAAAAACawAAAVZAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAACawAAAVfAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 2560=1232
 Window-Maximized 1440x2560=true
 Window-Maximized 768x1024=true
 
