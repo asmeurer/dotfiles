@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="session" version="26">
+<kpartgui version="26" name="session">
  <MenuBar>
   <Menu name="file">
    <Action name="file_save_as" group="session-operations"/>
@@ -60,7 +60,8 @@
   <Action name="close-session"/>
  </Menu>
  <ActionProperties scheme="Default">
-  <Action name="copy-input-to-none" shortcut=""/>
-  <Action name="monitor-activity" shortcut=""/>
+  <Action shortcut="" name="copy-input-to-none"/>
+  <Action shortcut="" name="monitor-activity"/>
+  <Action shortcut="" name="monitor-silence"/>
  </ActionProperties>
 </kpartgui>
