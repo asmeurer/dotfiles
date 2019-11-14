@@ -446,6 +446,12 @@ Markdown" t)
   :hook
   (prog-mode . highlight-symbol-mode))
 
+;; ===== highlight-numbers ======
+
+(use-package highlight-numbers
+  :hook
+  (prog-mode . highlight-numbers-mode))
+
 ;; ==== Auto dim =====
 
 ;; (use-package auto-dim-other-buffers
