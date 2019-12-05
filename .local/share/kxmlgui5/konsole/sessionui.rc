@@ -1,46 +1,46 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="session" version="26">
+<kpartgui version="26" name="session">
  <MenuBar>
   <Menu name="file">
-   <Action group="session-operations" name="file_save_as"/>
+   <Action name="file_save_as" group="session-operations"/>
    <Separator group="session-operations"/>
-   <Action group="session-operations" name="file_print"/>
+   <Action name="file_print" group="session-operations"/>
    <Separator group="session-operations"/>
-   <Action group="session-operations" name="open-browser"/>
-   <Action group="session-tab-operations" name="close-session"/>
+   <Action name="open-browser" group="session-operations"/>
+   <Action name="close-session" group="session-tab-operations"/>
   </Menu>
   <Menu name="edit">
-   <Action group="session-edit-operations" name="edit_copy"/>
-   <Action group="session-edit-operations" name="edit_paste"/>
+   <Action name="edit_copy" group="session-edit-operations"/>
+   <Action name="edit_paste" group="session-edit-operations"/>
    <Separator group="session-edit-operations"/>
-   <Action group="session-edit-operations" name="select-all"/>
+   <Action name="select-all" group="session-edit-operations"/>
    <Separator group="session-edit-operations"/>
-   <Action group="session-edit-operations" name="copy-input-to"/>
-   <Action group="session-edit-operations" name="send-signal"/>
-   <Action group="session-edit-operations" name="rename-session"/>
-   <Action group="session-edit-operations" name="zmodem-upload"/>
+   <Action name="copy-input-to" group="session-edit-operations"/>
+   <Action name="send-signal" group="session-edit-operations"/>
+   <Action name="rename-session" group="session-edit-operations"/>
+   <Action name="zmodem-upload" group="session-edit-operations"/>
    <Separator group="session-edit-operations"/>
-   <Action group="session-edit-operations" name="edit_find"/>
-   <Action group="session-edit-operations" name="edit_find_next"/>
-   <Action group="session-edit-operations" name="edit_find_prev"/>
+   <Action name="edit_find" group="session-edit-operations"/>
+   <Action name="edit_find_next" group="session-edit-operations"/>
+   <Action name="edit_find_prev" group="session-edit-operations"/>
   </Menu>
   <Menu name="view">
-   <Action group="session-view-operations" name="monitor-silence"/>
-   <Action group="session-view-operations" name="monitor-activity"/>
+   <Action name="monitor-silence" group="session-view-operations"/>
+   <Action name="monitor-activity" group="session-view-operations"/>
    <Separator group="session-view-operations"/>
-   <Action group="session-view-operations" name="view-readonly"/>
+   <Action name="view-readonly" group="session-view-operations"/>
    <Separator group="session-view-operations"/>
-   <Action group="session-view-operations" name="enlarge-font"/>
-   <Action group="session-view-operations" name="reset-font-size"/>
-   <Action group="session-view-operations" name="shrink-font"/>
-   <Action group="session-view-operations" name="set-encoding"/>
+   <Action name="enlarge-font" group="session-view-operations"/>
+   <Action name="reset-font-size" group="session-view-operations"/>
+   <Action name="shrink-font" group="session-view-operations"/>
+   <Action name="set-encoding" group="session-view-operations"/>
    <Separator group="session-view-operations"/>
-   <Action group="session-view-operations" name="clear-history"/>
-   <Action group="session-view-operations" name="clear-history-and-reset"/>
+   <Action name="clear-history" group="session-view-operations"/>
+   <Action name="clear-history-and-reset" group="session-view-operations"/>
   </Menu>
   <Menu name="settings">
-   <Action group="session-settings" name="edit-current-profile"/>
-   <Action group="session-settings" name="switch-profile"/>
+   <Action name="edit-current-profile" group="session-settings"/>
+   <Action name="switch-profile" group="session-settings"/>
   </Menu>
  </MenuBar>
  <Menu name="session-popup-menu">
@@ -61,5 +61,7 @@
  </Menu>
  <ActionProperties scheme="Default">
   <Action shortcut="" name="copy-input-to-none"/>
+  <Action shortcut="" name="monitor-activity"/>
+  <Action shortcut="" name="monitor-silence"/>
  </ActionProperties>
 </kpartgui>

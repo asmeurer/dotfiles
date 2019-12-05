@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="konsole" version="10">
+<kpartgui version="10" name="konsole">
  <MenuBar>
   <Menu name="file">
    <text>File</text>
