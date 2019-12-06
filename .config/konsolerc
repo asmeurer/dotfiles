@@ -4,6 +4,9 @@ DefaultProfile=Main.profile
 [Favorite Profiles]
 Favorites=Main.profile
 
+[KFileDialog Settings]
+listViewIconSize=0
+
 [KonsoleWindow]
 SaveGeometryOnExit=false
 
@@ -12,6 +15,9 @@ State=AAAA/wAAAAD9AAAAAAAACawAAAVfAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Window-Maximized 1440x2560=true
 Window-Maximized 768x1024=true
+
+[Notification Messages]
+ShowPasteUnprintableWarning=false
 
 [TabBar]
 ExpandTabWidth=true

@@ -13,7 +13,7 @@ TerminalRows=72
 
 [Interaction Options]
 CopyTextAsHTML=false
-MiddleClickPasteMode=1
+MiddleClickPasteMode=0
 TrimLeadingSpacesInSelectedText=false
 TrimTrailingSpacesInSelectedText=true
 
@@ -22,3 +22,6 @@ KeyBindings=default
 
 [Scrolling]
 HistorySize=10000
+
+[Terminal Features]
+FlowControlEnabled=false
