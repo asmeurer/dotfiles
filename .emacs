@@ -1842,11 +1842,13 @@ is binary, activate `hexl-mode'."
  '(flyspell-lazy-size-threshold 5)
  '(flyspell-lazy-use-flyspell-word nil)
  '(flyspell-lazy-window-idle-seconds 3)
+ '(global-aggressive-indent-mode t)
  '(global-flycheck-mode t nil (flycheck))
  '(global-linum-mode t)
  '(global-subword-mode t)
  '(global-undo-tree-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
+ '(highlight-symbol-idle-delay 0)
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
  '(ido-ignore-directories
@@ -1858,7 +1860,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell" t)
+ '(ispell-program-name "hunspell")
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t)
@@ -1879,7 +1881,9 @@ is binary, activate `hexl-mode'."
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(next-screen-context-lines 10)
- '(package-selected-packages (quote (avy flycheck-pyflakes use-package flycheck)))
+ '(package-selected-packages
+   (quote
+    (highlight-numbers visible-mark avy flycheck-pyflakes use-package flycheck)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
  '(python-indent-guess-indent-offset nil)
