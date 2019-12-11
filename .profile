@@ -270,12 +270,25 @@ export DIR_HOMEWORK="$HOME/Documents/Homework/Grad/Fall 2013" # Used later by ho
 TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
 # mypython - Blue
 DIR_MYPYTHON="$HOME/Documents/mypython"
-# work directories - Pink
+# work directories
+
+# Pyflyby - White
 DIR_PYFLYBY="$HOME/Documents/pyflyby"
+
+# Old - Black
 DIR_STRUCT_RET="$HOME/Documents/struct-ret"
+
+# Numba - Pink
 DIR_NUMBA="$HOME/Documents/numba"
+TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;green;brightness;7\a\033]6;1;bg;blue;brightness;152n\a"
+
+# Zurich -
 DIR_ZURICH="$HOME/Documents/zurich-full"
-TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;green;brightness;37\a\033]6;1;bg;blue;brightness;152n\a"
+TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;114n\a"
+
+# versioned-hdf5 light blue
+DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5"
+TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255n\a"
 
 # Other - default (metal)
 # Can't actually get metal yet
@@ -291,7 +304,7 @@ set_tab_color () {
 
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_PINK' '$DIR_STRUCT_RET $TAB_PINK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_PINK'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_WHITE' '$DIR_STRUCT_RET $TAB_BLACK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_SALMON' '$DIR_VERSIONED_HDF5 $TAB_LIGHT_BLUE'
     do
         set -- $dir_tab
         # Dereference the variable name
