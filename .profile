@@ -222,10 +222,10 @@ alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integr
 
 # Color tabs based on directories in iTerm 2
 
-# Colors are done as "\033]6;1;bg;red;brightness;NNN\a\033]6;1;bg;blue;brightness;NNN\a\033]6;1;bg;green;brightness;NNN\a"
+# Colors are done as "\033]6;1;bg;red;brightness;NNN\a\033]6;1;bg;green;brightness;NNN\a\033]6;1;bg;blue;brightness;NNN\a"
 # Where you have                   ^              ^                ^              ^                  ^               ^
 #                                  |              |                |              |                  |               |
-#                                 red------->color value          blue------>color value           green------->color value
+#                                 red------->color value         green------>color value            blue------->color value
 #                                              (0-255)                         (0-255)                            (0-255)
 
 # The easiest way to get the color codes for a color is to just type the color
@@ -236,38 +236,38 @@ alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integr
 # Directory codes are
 # sympy - Red
 DIR_SYMPY="$HOME/Documents/python/sympy/sympy"
-TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
 # sympy-scratch - Orange
 DIR_SYMPY_SCRATCH="$HOME/Documents/python/sympy/sympy-scratch"
-TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;128\a"
+TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;8\a\033]6;1;bg;blue;brightness;0\a"
 # sympy-bot - Purple
 DIR_SYMPY_BOT="$HOME/Documents/python/sympy/sympy-bot"
-TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
 # conda-recipes - Purple
 export DIR_CONDA_RECIPES="$HOME/Documents/Continuum/conda-recipes"
 # sympy other (like sympy-live or sympy.wiki) - Yellow
 # Note, this one must be tested after the above ones
 DIR_SYMPY_OTHER="$HOME/Documents/python/sympy"
-TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;5\a\033]6;1;bg;blue;brightness;0\a"
 # dotfiles - Green
 DIR_DOTFILES="$HOME/Documents/dotfiles"
-TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;5\a\033]6;1;bg;blue;brightness;0\a"
 # Continuum - Black
 DIR_CONTINUUM="$HOME/Documents/Continuum"
-TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
 # Conda - White
 DIR_CONDA="$HOME/Documents/Continuum/conda"
-TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
+TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;5\a\033]6;1;bg;blue;brightness;255\a"
 # transmutagen - White
 DIR_TRANSMUTAGEN="$HOME/Documents/transmutagen"
 # Conda-build - Teal
 DIR_CONDA_BUILD="$HOME/Documents/Continuum/conda-build"
-export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a\033]6;1;bg;green;brightness;128\a"
+export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;8\a\033]6;1;bg;blue;brightness;128\a"
 # Blog - Teal
 DIR_BLOG="$HOME/Documents/blog"
 # homework - Blue
 export DIR_HOMEWORK="$HOME/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
-TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
 # mypython - Blue
 DIR_MYPYTHON="$HOME/Documents/mypython"
 # work directories - Pink
@@ -281,7 +281,7 @@ TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;blue;brightness;152\a\033]
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
 # similar shade of gray
-TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;blue;brightness;211\a\033]6;1;bg;green;brightness;211\a"
+TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;green;brightness;1\a\033]6;1;bg;blue;brightness;211\a"
 
 set_tab_color () {
     FOUND='no'
