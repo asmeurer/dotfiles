@@ -137,6 +137,7 @@ alias ghit='git'
 alias bgit='git'
 alias vgit='git'
 alias egit='git'
+alias qgit='git'
 
 alias sl=ls
 # dc is a real command, but it's just some useless calculator
@@ -154,7 +155,11 @@ alias cds='cd ~/Documents/python/sympy/sympy'
 alias cdss='cd ~/Documents/python/sympy/sympy-scratch'
 alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
 alias isympy='mypython -c %sympy'
-alias top='top -o -cpu'
+if [ -z "$MAC" ]; then
+    alias top='top -o %CPU'
+else
+    alias top='top -o -cpu'
+fi
 
 # Set breakpoint() in Python to call pudb
 export PYTHONBREAKPOINT="pudb.set_trace"
@@ -231,52 +236,66 @@ alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integr
 # Directory codes are
 # sympy - Red
 DIR_SYMPY="$HOME/Documents/python/sympy/sympy"
-TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
 # sympy-scratch - Orange
 DIR_SYMPY_SCRATCH="$HOME/Documents/python/sympy/sympy-scratch"
-TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;128\a"
+TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;0\a"
 # sympy-bot - Purple
 DIR_SYMPY_BOT="$HOME/Documents/python/sympy/sympy-bot"
-TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
 # conda-recipes - Purple
 export DIR_CONDA_RECIPES="$HOME/Documents/Continuum/conda-recipes"
 # sympy other (like sympy-live or sympy.wiki) - Yellow
 # Note, this one must be tested after the above ones
 DIR_SYMPY_OTHER="$HOME/Documents/python/sympy"
-TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
 # dotfiles - Green
 DIR_DOTFILES="$HOME/Documents/dotfiles"
-TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;255\a"
+TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
 # Continuum - Black
 DIR_CONTINUUM="$HOME/Documents/Continuum"
-TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;0\a\033]6;1;bg;green;brightness;0\a"
+TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
 # Conda - White
 DIR_CONDA="$HOME/Documents/Continuum/conda"
-TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;255\a"
+TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255\a"
 # transmutagen - White
 DIR_TRANSMUTAGEN="$HOME/Documents/transmutagen"
 # Conda-build - Teal
 DIR_CONDA_BUILD="$HOME/Documents/Continuum/conda-build"
-export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;128\a\033]6;1;bg;green;brightness;128\a"
+export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;128\a"
 # Blog - Teal
 DIR_BLOG="$HOME/Documents/blog"
 # homework - Blue
 export DIR_HOMEWORK="$HOME/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
-TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;blue;brightness;255\a\033]6;1;bg;green;brightness;0\a"
+TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
 # mypython - Blue
 DIR_MYPYTHON="$HOME/Documents/mypython"
-# work directories - Pink
+# work directories
+
+# Pyflyby - Violet
 DIR_PYFLYBY="$HOME/Documents/pyflyby"
+TAB_VIOLET="\033]6;1;bg;red;brightness;170\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
+
+# Old - Black
 DIR_STRUCT_RET="$HOME/Documents/struct-ret"
+
+# Numba - Pink
 DIR_NUMBA="$HOME/Documents/numba"
+TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;green;brightness;7\a\033]6;1;bg;blue;brightness;152n\a"
+
+# Zurich -
 DIR_ZURICH="$HOME/Documents/zurich-full"
-TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;blue;brightness;152\a\033]6;1;bg;green;brightness;37n\a"
+TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;114n\a"
+
+# versioned-hdf5 light blue
+DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5"
+TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255n\a"
 
 # Other - default (metal)
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
 # similar shade of gray
-TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;blue;brightness;211\a\033]6;1;bg;green;brightness;211\a"
+TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;green;brightness;211\a\033]6;1;bg;blue;brightness;211\a"
 
 set_tab_color () {
     FOUND='no'
@@ -286,7 +305,7 @@ set_tab_color () {
 
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_PINK' '$DIR_STRUCT_RET $TAB_PINK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_PINK'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_VIOLET' '$DIR_STRUCT_RET $TAB_BLACK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_SALMON' '$DIR_VERSIONED_HDF5 $TAB_LIGHT_BLUE'
     do
         set -- $dir_tab
         # Dereference the variable name
