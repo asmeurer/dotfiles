@@ -363,6 +363,8 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
 alias e="$EMACSCLIENT"
+alias m=mypython
+alias my=mypython
 alias killemacs='pkill -SIGUSR2 emacs'
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
