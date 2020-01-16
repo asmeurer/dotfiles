@@ -376,17 +376,13 @@ fi
 alias rehash='hash -r'
 alias cdpwd='cd `pwd`'
 
-if [ -z "$MAC" ]; then
-    alias gsort=sort
-fi
-
 sizeup () {
     if [[ -z "$1" ]]; then
         DIR=.
     else
         DIR="$1"
     fi
-    du -a -h -x "$DIR" | gsort -h
+    du -a -h -x "$DIR" | sort -h
 }
 
 saydone () {
