@@ -1459,6 +1459,15 @@ like newline-and-indent"
 
 (global-set-key (kbd "<mouse-2>") 'mouse-yank-at-click)
 
+;; Make clicking on line numbers work.
+
+(global-set-key (kbd "<left-margin> <mouse-1>") 'mouse-set-point)
+;; TODO: This doesn't actually work
+(global-set-key (kbd "<left-margin> <mouse-movement>") 'mouse-set-region)
+(global-set-key (kbd "<left-margin> <mouse-4>") 'alternating-scroll-down-line)
+(global-set-key (kbd "<left-margin> <mouse-5>") 'alternating-scroll-up-line)
+
+
 ;; Makes scrolling keep the cursor in the same position on the screen. See http://superuser.com/q/184340/39697
 
 (setq scroll-preserve-screen-position t)
