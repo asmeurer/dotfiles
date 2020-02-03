@@ -1387,6 +1387,9 @@ like newline-and-indent"
 
 (add-hook 'makefile-mode-hook 'turn-off-auto-fill)
 
+;; Always softwrap at word boundaries
+(global-visual-line-mode t)
+
 ;; Prevent autofill from happening in quoted strings. From
 ;; https://stackoverflow.com/questions/23755506/emacs-fill-mode-for-python-that-doesnt-break-quoted-strings-causing-errors.
 
