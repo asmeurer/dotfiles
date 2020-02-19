@@ -1,7 +1,29 @@
 #!/bin/sh
-# This script starts the daemon and starts and closes the emacsclient. The
-# extra start is to prevent emacsclient from freezing on startup. See
-# https://emacs.stackexchange.com/questions/3370/emacs-daemon-frozen-when-started-with-emacsclient-file
+
+# This script starts one emacs server per terminal tab. This is necessary when
+# using emacsclient with terminal emacs, because if more than one emacsclient
+# instance is open pointing to the same daemon, it can cause hangs (emacs is
+# not very good at concurrency).
+
+# To use this, run
+#
+#     emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$TTY
+
+# I recommend adding an alias for this in your bash profile, like
+#
+#     alias e="emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$TTY"
+
+# Then
+#
+#     $ e file
+#
+# will start the daemon if it hasn't already been started for that terminal,
+# and open emacs client in it. You can close emacsclient with C-x C-c as
+# usual. To kill the daemon entirely, use M-x save-buffers-kill-emacs.
+
 emacs -nw --daemon="emacs-$TTY"
+
+# The extra start is to prevent emacsclient from freezing on startup. See
+# https://emacs.stackexchange.com/questions/3370/emacs-daemon-frozen-when-started-with-emacsclient-file
 emacsclient -n -nw --socket-name="emacs-$TTY"
 emacsclient -nw --socket-name="emacs-$TTY" "$@"
