@@ -7,10 +7,11 @@
 
 # To use this, run
 #
-#     emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$TTY
+#     emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$(basename `tty`)
 
 # I recommend adding an alias for this in your bash profile, like
 #
+#     export TTY=$(basename `tty`)
 #     alias e="emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$TTY"
 
 # Then
@@ -23,6 +24,9 @@
 # M-x save-buffers-kill-emacs. You can also find the daemon with something
 # like ps aux | grep "emacs-$TTY" if you need to kill it manually (replace
 # $TTY with the tty of the terminal in question).
+
+TTY="$(basename "$(tty)")"
+export TTY
 
 emacs -nw --daemon="emacs-$TTY"
 
