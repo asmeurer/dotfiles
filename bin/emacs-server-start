@@ -19,7 +19,10 @@
 #
 # will start the daemon if it hasn't already been started for that terminal,
 # and open emacs client in it. You can close emacsclient with C-x C-c as
-# usual. To kill the daemon entirely, use M-x save-buffers-kill-emacs.
+# usual. To close the daemon (for instance, to reload your configuration), use
+# M-x save-buffers-kill-emacs. You can also find the daemon with something
+# like ps aux | grep "emacs-$TTY" if you need to kill it manually (replace
+# $TTY with the tty of the terminal in question).
 
 emacs -nw --daemon="emacs-$TTY"
 
