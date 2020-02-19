@@ -1,4 +1,7 @@
 #!/bin/sh
+# This script starts the daemon and starts and closes the emacsclient. The
+# extra start is to prevent emacsclient from freezing on startup. See
+# https://emacs.stackexchange.com/questions/3370/emacs-daemon-frozen-when-started-with-emacsclient-file
 emacs -nw --daemon="emacs-$TTY"
 emacsclient -n -nw --socket-name="emacs-$TTY"
 emacsclient -nw --socket-name="emacs-$TTY" "$@"
