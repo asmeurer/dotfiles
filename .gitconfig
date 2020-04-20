@@ -38,6 +38,7 @@
     pulll = pull
     pusho = push --set-upstream origin HEAD
     reset--hard = !git backup && git reset --hard
+    res--hard = !git backup && git reset --hard
 
 [i18n]
     commitEncoding = utf-8
