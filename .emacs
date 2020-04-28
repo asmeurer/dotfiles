@@ -1627,6 +1627,10 @@ is binary, activate `hexl-mode'."
 (add-to-list 'auto-mode-alist '("\\.xsh\\'" . xonsh-mode))
 
 
+;; Common files that should use conf-mode (ini files)
+
+(add-to-list 'auto-mode-alist '(".coveragerc" . conf-mode))
+
 ;; TODO: instead of changing the source to avoid paren indentation, change it
 ;; here using defadvice.  See http://stackoverflow.com/a/4150438/161801.
 
