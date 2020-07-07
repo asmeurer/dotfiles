@@ -822,6 +822,7 @@ Return an event vector."
     (define-key keymap "\e[1;10B" [M-S-down])
     (define-key keymap "\e[1;10C" [M-S-right])
     (define-key keymap "\e[1;10D" [M-S-left])
+    (define-key keymap "\e[32;2u" [S-space])
     (define-key keymap (kbd "ESC \" 5 R") '[S-return])
     (define-key keymap (kbd "ESC \" 5 r") '[C-return])
     (define-key keymap (kbd "ESC \" 2 R") '[C-S-return])
@@ -843,6 +844,10 @@ Return an event vector."
                                         ;    'isearch-del-char)
     ))
 (chopps-add-local-keys)
+
+;; Make S-space insert a space
+
+(global-set-key [S-space] (lambda () (interactive) (insert " ")))
 
 ;; ==== Switch to new buffer on C-x 2 or C-x 3 ====
 ;; Thanks to http://stackoverflow.com/a/6465415/161801.
