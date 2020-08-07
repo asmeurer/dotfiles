@@ -1417,15 +1417,15 @@ like newline-and-indent"
 ;; Prevent autofill from happening in quoted strings. From
 ;; https://stackoverflow.com/questions/23755506/emacs-fill-mode-for-python-that-doesnt-break-quoted-strings-causing-errors.
 
-(defun odd-number-of-single-quotes-this-paragraph-so-far ()
-  (and (derived-mode-p 'python-mode) (oddp (how-many "'" (save-excursion (backward-paragraph) (point)) (point)))))
-(defun odd-number-of-double-quotes-this-paragraph-so-far ()
-  (and (derived-mode-p 'python-mode) (oddp (how-many "\"" (save-excursion (backward-paragraph) (point)) (point)))))
-
-(add-to-list 'fill-nobreak-predicate
-             'odd-number-of-single-quotes-this-paragraph-so-far)
-(add-to-list 'fill-nobreak-predicate
-             'odd-number-of-double-quotes-this-paragraph-so-far)
+;; (defun odd-number-of-single-quotes-this-paragraph-so-far ()
+;;   (and (derived-mode-p 'python-mode) (oddp (how-many "'" (save-excursion (backward-paragraph) (point)) (point)))))
+;; (defun odd-number-of-double-quotes-this-paragraph-so-far ()
+;;   (and (derived-mode-p 'python-mode) (oddp (how-many "\"" (save-excursion (backward-paragraph) (point)) (point)))))
+;;
+;; (add-to-list 'fill-nobreak-predicate
+;;              'odd-number-of-single-quotes-this-paragraph-so-far)
+;; (add-to-list 'fill-nobreak-predicate
+;;              'odd-number-of-double-quotes-this-paragraph-so-far)
 
 ;; (defun my-make-continuation-line-by-fill ()
 ;;   (when (eq major-mode 'python-mode)
