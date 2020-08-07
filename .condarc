@@ -18,4 +18,6 @@ binstar_personal: true
 
 show_channel_urls: yes
 
-channel_priority: strict
+# channel_priority: strict
+
+auto_activate_base: false
