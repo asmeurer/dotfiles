@@ -1863,9 +1863,9 @@ is binary, activate `hexl-mode'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
- '(aggressive-indent-excluded-modes (quote (markdown-mode python-mode
-                                                          makefile-mode c-mode
-                                                          c++-mode)))
+ '(aggressive-indent-excluded-modes
+   (quote
+    (markdown-mode python-mode makefile-mode c-mode c++-mode)))
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "~/.emacs.d/autosave/")
@@ -1907,7 +1907,7 @@ is binary, activate `hexl-mode'."
  '(global-subword-mode t)
  '(global-undo-tree-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
- '(highlight-symbol-idle-delay 0)
+ '(highlight-symbol-idle-delay 0 t)
  '(ido-enable-flex-matching t)
  '(ido-everywhere t)
  '(ido-ignore-directories
@@ -1919,7 +1919,7 @@ is binary, activate `hexl-mode'."
  '(ido-mode (quote both) nil (ido))
  '(isearchp-drop-mismatch (quote replace-last))
  '(ispell-highlight-face (quote flyspell-incorrect))
- '(ispell-program-name "hunspell")
+ '(ispell-program-name "hunspell" t)
  '(ispell-silently-savep t)
  '(ispell-use-ptys-p t)
  '(jedi:complete-on-dot t)
@@ -1930,7 +1930,7 @@ is binary, activate `hexl-mode'."
    (\`
     ("~/Documents/emacs-jedi/env/bin/python"
      (\,
-      (expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))))
+      (expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))) t)
  '(jedi:use-shortcuts t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
@@ -1942,7 +1942,7 @@ is binary, activate `hexl-mode'."
  '(next-screen-context-lines 10)
  '(package-selected-packages
    (quote
-    (highlight-numbers visible-mark avy flycheck-pyflakes use-package flycheck)))
+    (highlight-symbol avy flycheck-pyflakes use-package flycheck)))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style (quote onetwo))
  '(python-indent-guess-indent-offset nil)
