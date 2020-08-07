@@ -5,8 +5,8 @@
     }
   },
   "Notebook": {
-    "Toolbar": false,
-    "Header": false
+    "Toolbar": true,
+    "Header": true
   },
   "load_extensions": {
     "notify": true,
