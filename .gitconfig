@@ -74,3 +74,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 
+# https://www.reddit.com/r/emacs/comments/4j4rle/i_figure_it_out_how_to_use_emacsclient_as_gits/
+# [merge]
+#     tool = emacsclient
+[mergetool "emacsclient"]
+    cmd = emacsclient -nw -c -a \"\" --eval \"(my/emerge \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" \\\"$OUTPUT\\\")\"
