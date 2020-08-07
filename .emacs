@@ -1324,6 +1324,12 @@ like newline-and-indent"
 
 ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; ===== Global auto revert mode =====
+;; Prevents emacs from constantly bugging about reverting files when you
+;; checkout a different git branch.
+
+(global-auto-revert-mode 1)
+
 ;; ===== Use four spaces instead of tabs ====
 
 (setq c-basic-offset 4)
