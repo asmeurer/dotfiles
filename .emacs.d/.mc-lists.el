@@ -9,9 +9,11 @@
         backward-kill-line-or-region
         buf-move-left
         end-of-buffer
+        end-of-visual-line
         fill-paragraph
         flycheck-next-error
         forward-sexp
+        goto-line
         indent-for-tab-command
         jedi:dot-complete
         just-one-space-with-newline
@@ -19,11 +21,13 @@
         kill-total-line
         markdown-electric-backquote
         markdown-enter-key
+        markdown-outdent-or-delete
         my-save-buffer-dtws
         newline-and-indent-conditionally
         osx-paste
         python-indent-electric-colon
         reverse-zap-up-to-char
+        vr/isearch-forward
         yaml-electric-dash-and-dot
         ))
 
@@ -33,6 +37,7 @@
         alternating-scroll-up-line
         beginning-of-buffer
         describe-key
+        ido-find-file
         kmacro-end-or-call-macro
         smex
         suspend-frame
