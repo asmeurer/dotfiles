@@ -427,6 +427,10 @@ Markdown" t)
   :bind
   ("M-=" . er/expand-region))
 
+;; ;; ==== didyoumean.el ====
+;;
+;; (use-package didyoumean)
+
 ;; ==== auto-package-update ====
 
 (use-package auto-package-update
@@ -1632,6 +1636,11 @@ is binary, activate `hexl-mode'."
 ;; (setq py-install-directory "~/.emacs.d/python-mode")
 ;; (require 'python-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+
+;; ;; https://gitlab.com/python-mode-devs/python-mode
+;; (setq py-install-directory "~/Documents/python-mode/")
+;; (add-to-list 'load-path py-install-directory)
+;; (require 'python-mode)
 
 ;; ;; ===== ipython ====
 ;; ;; Note, this is linked to in ~/.emacs.d/lisp from the ipython git repo, not
