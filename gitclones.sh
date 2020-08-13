@@ -55,7 +55,6 @@ git checkout customize
 git branch --set-upstream-to=haxney/customize customize
 cd ~/Documents/
 
-clone-or-pull git@github.com:defunkt/coffee-mode.git
 clone-or-pull git@github.com:fgallina/python.el.git
 # clone-or-pull git@gitlab.com:python-mode-devs/python-mode.git
 cd python.el
