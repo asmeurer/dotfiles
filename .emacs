@@ -412,8 +412,16 @@ Markdown" t)
   :bind
   ;; use visual-regexp-steroids's isearch instead of the built-in regexp
   ;; isearch
-  (("C-r"  . vr/isearch-backward) ;; C-M-r
-   ("C-s" . vr/isearch-forward)) ;; C-M-s
+
+  ;; Commented out because it makes C-x C-s not work inside of isearch. See
+  ;; https://github.com/benma/visual-regexp.el/issues/56. You can still use
+  ;; C-M-s and C-M-r to get the regexp isearch.
+
+  ;; (("C-r"  . vr/isearch-backward)
+  ;;  ("C-s" . vr/isearch-forward))
+
+  (("C-M-r"  . vr/isearch-backward)
+   ("C-M-s" . vr/isearch-forward))
 
   :config
   ;; Make vr--isearch always case insensitive
