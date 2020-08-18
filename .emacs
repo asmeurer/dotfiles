@@ -464,14 +464,16 @@ Markdown" t)
 (use-package ivy)
 
 (use-package dumb-jump
-  :bind (
-         ;; ("M-g o" . dumb-jump-go-other-window)
-         ("M-." . dumb-jump-go)
-         ("M-," . dumb-jump-back)
-         ;; ("M-g i" . dumb-jump-go-prompt)
-         ;; ("M-g x" . dumb-jump-go-prefer-external)
-         ;; ("M-g z" . dumb-jump-go-prefer-external-other-window)
-         )
+  :hook
+  (xref-backend-functions . 'dumb-jump-xref-activate)
+  ;; :bind (
+  ;;        ;; ("M-g o" . dumb-jump-go-other-window)
+  ;;        ("M-." . dumb-jump-go)
+  ;;        ("M-," . dumb-jump-back)
+  ;;        ;; ("M-g i" . dumb-jump-go-prompt)
+  ;;        ;; ("M-g x" . dumb-jump-go-prefer-external)
+  ;;        ;; ("M-g z" . dumb-jump-go-prefer-external-other-window)
+  ;;        )
   :config (setq dumb-jump-selector 'ivy) ;; (setq dumb-jump-selector 'helm)
   )
 
