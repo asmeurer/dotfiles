@@ -473,3 +473,5 @@ NotImplementedError
 feedstock
 representable
 canonicalizes
+broadcasted
+readonly
