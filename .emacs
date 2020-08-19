@@ -381,6 +381,13 @@ Markdown" t)
   (setq jedi:server-args
         '("--log-level" "DEBUG"
           "--log-traceback"))
+  ;; Make function signatures show up in the minibuffer instead of a popup
+  ;; tooltip. Can use
+  ;;
+  ;; (setq jedi:get-in-function-call-delay 100000)
+  ;;
+  ;; instead to disable it completely.
+  (setq jedi:tooltip-method nil)
   :custom
   (jedi:server-command
    `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))
