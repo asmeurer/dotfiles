@@ -1885,7 +1885,6 @@ is binary, activate `hexl-mode'."
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "~/.emacs.d/autosave/")
- '(coffee-tab-width 8)
  '(colon-double-space t)
  '(comment-column 0)
  '(comment-empty-lines ''eol)
@@ -1929,7 +1928,6 @@ is binary, activate `hexl-mode'."
  '(ido-ignore-files
    '("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/"))
  '(ido-mode 'both nil (ido))
- '(indent-tabs-mode nil)
  '(isearchp-drop-mismatch 'replace-last)
  '(ispell-highlight-face 'flyspell-incorrect)
  '(ispell-program-name "hunspell")
@@ -1973,7 +1971,6 @@ is binary, activate `hexl-mode'."
  '(split-height-threshold 80)
  '(split-width-threshold 50)
  '(split-window-keep-point t)
- '(tab-bar-mode t)
  '(tab-bar-show 1)
  '(tab-width 4)
  '(tags-case-fold-search t)
