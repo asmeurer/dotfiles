@@ -1973,6 +1973,8 @@ is binary, activate `hexl-mode'."
  '(split-height-threshold 80)
  '(split-width-threshold 50)
  '(split-window-keep-point t)
+ '(tab-bar-mode t)
+ '(tab-bar-show 1)
  '(tab-width 4)
  '(tags-case-fold-search t)
  '(undo-tree-auto-save-history t)
