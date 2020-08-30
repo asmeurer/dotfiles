@@ -80,3 +80,5 @@
 #     tool = emacsclient
 [mergetool "emacsclient"]
     cmd = emacsclient -nw -c -a \"\" --eval \"(my/emerge \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" \\\"$OUTPUT\\\")\"
+[pull]
+	rebase = false
