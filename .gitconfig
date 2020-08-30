@@ -35,6 +35,7 @@
     iff = diff
     idff = diff
     DIFF = diff
+    dff = diff
     pulll = pull
     pusho = push --set-upstream origin HEAD
     reset--hard = !git backup && git reset --hard
