@@ -580,6 +580,9 @@ fi
 
 export GPG_TTY=$(tty)
 
+# Disable any conda environments that may have been activated before sourcing.
+deact
+
 hash -r
 
 # added by travis gem
