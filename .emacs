@@ -381,13 +381,14 @@ Markdown" t)
   (setq jedi:server-args
         '("--log-level" "DEBUG"
           "--log-traceback"))
-  ;; Make function signatures show up in the minibuffer instead of a popup
-  ;; tooltip. Can use
+  ;; Disable Jedi function tooltips. Can use
   ;;
-  ;; (setq jedi:get-in-function-call-delay 100000)
+  ;; (setq jedi:tooltip-method nil)
   ;;
-  ;; instead to disable it completely.
-  (setq jedi:tooltip-method nil)
+  ;; instead to make it show up in the minibuffer (the default is a popup). We
+  ;; disable it because the tooltips are annoying, and the minibuffer stuff
+  ;; overwrites more useful things like flycheck.
+  (setq jedi:get-in-function-call-delay 100000)
   :custom
   (jedi:server-command
    `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))
