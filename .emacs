@@ -413,7 +413,7 @@ Markdown" t)
 (use-package visual-regexp
   :bind
   (("C-c r" . vr/replace)
-   ("C-c q" . vr/query-replace)
+   ("C-c q" . vr/select-query-replace)
    ;; if you use multiple-cursors, this is for you:
    ("C-c m" . vr/mc-mark)))
 
