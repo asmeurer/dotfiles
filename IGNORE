@@ -13,3 +13,4 @@ xonsh-blockers.md
 Linux-testing/*
 linux-testing/*
 root
+.xinitrc
