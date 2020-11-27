@@ -40,6 +40,7 @@
     pusho = push --set-upstream origin HEAD
     reset--hard = !git backup && git reset --hard
     res--hard = !git backup && git reset --hard
+    masteralias = symbolic-ref refs/heads/master refs/heads/main
 
 [i18n]
     commitEncoding = utf-8
