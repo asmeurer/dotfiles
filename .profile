@@ -572,7 +572,7 @@ complete -F _fab_completion fab
 # This line needs to stay at the bottom of the file.
 source ~/Documents/git/contrib/completion/git-completion.bash
 export GIT_PROMPT_FILE=~/Documents/git/contrib/completion/git-prompt.sh
-source GIT_PROMPT_FILE
+source $GIT_PROMPT_FILE
 source ~/Documents/hub/etc/hub.bash_completion.sh
 
 if [ -n "$MAC" ]; then
