@@ -346,10 +346,10 @@ export PS1='\[\e[1;30;40m\]$CONDA_DEFAULT_ENV\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(_
 # old PS1
 #export PS1="\[\e[31;40m\]\h:\W \u$\[\e[0m\]$"
 #GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_STATESEPARATOR=''
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_STATESEPARATOR=''
 PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
 PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
 PATH=$PATH:/usr/texbin
