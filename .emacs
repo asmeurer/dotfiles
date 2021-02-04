@@ -288,6 +288,10 @@
 ;; Formerly ido-ubiquitous
 
 (use-package ido-completing-read+)
+;; Increase the max number of allowed completions, so that it works with
+;; insert-char. See
+;; https://emacs.stackexchange.com/questions/3154/fuzzy-completion-when-inserting-unicode-characters
+(setq ido-cr+-max-items 50000)
 
 ;; ==== avy ====
 
