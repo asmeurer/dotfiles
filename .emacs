@@ -2051,6 +2051,7 @@ is binary, activate `hexl-mode'."
  '(vr/match-separator-use-custom-face t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
+ '(xterm-extra-capabilities (quote (modifyOtherKeys)))
  '(xterm-mouse-mode t)
  '(xterm-set-window-title t)
  '(xterm-title-frame-title-format "%b")
