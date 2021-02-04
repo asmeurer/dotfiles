@@ -99,24 +99,32 @@
 (use-package flycheck-pyflakes)
 
 
-;; ;; ===== ido-vertical-mode =====
-;;
-;; ;; This used to be done by this
-;; ;; Display ido results vertically, rather than horizontally
-;; ;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
-;; ;; (defun ido-disable-line-trucation () (set (make-local-variable
-;; ;;                                            'truncate-lines) nil))
-;; ;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
-;;
+;; ===== ido-vertical-mode =====
+
+;; This used to be done by this
+;; Display ido results vertically, rather than horizontally
+;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+;; (defun ido-disable-line-trucation () (set (make-local-variable
+;;                                            'truncate-lines) nil))
+;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+
 ;; Commented out because it's installed by use-package
-;;
+
 ;; (add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
 ;; (require 'ido-vertical-mode)
-;; ;(ido-mode 1)
+                                        ;(ido-mode 1)
 (use-package ido-vertical-mode
   :config
   (ido-vertical-mode 1))
 
+;; Alternate package to show results in a grid. Disabled because I can't
+;; figure out how to properly disable the wrapping scrolling. It also doesn't
+;; play well with highlight-trailing-whitespace.
+
+;; (use-package ido-grid-mode
+;;   :config
+;;   (ido-grid-mode 1)
+;;   (setq ido-grid-mode-scroll-wrap nil))
 
 ;; ==== Undo-tree ====
 ;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
