@@ -1938,6 +1938,9 @@ is binary, activate `hexl-mode'."
 ;; Define a keyboard macro with F3 and use it with F4. To save it, use C-x C-k
 ;; n and give it a name. Then use M-x insert-kbd-macro <name> here to save it
 
+(fset 'fix\ numpy\ stubs
+      (kmacro-lambda-form [?\C-s ?f ?r ?o ?m ?  ?. ?\C-m ?\C-a ?\C-k ?\C-? ?\C-s ?r ?e ?t ?u ?r ?n ?\C-m ?\C-\[ ?f ?\C-\[ ?b ?n ?p ?.] 0 "%d"))
+
 ;; =======================================
 ;; ===== Values set by M-x customize =====
 
