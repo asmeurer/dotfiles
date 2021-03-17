@@ -499,8 +499,8 @@ complete -o nospace -o default -F _python_argcomplete "conda"
 . $HOME/.bash_completion.d/python-argcomplete.sh
 
 
-alias act="source deactivate; source activate"
-alias deact="source deactivate"
+alias act="conda deactivate; conda activate"
+alias deact="conda deactivate"
 # # complete source activate. Thanks to Paul Kienzle from NIST for the
 # # suggestion.
 if [ -n "$MAC" ]; then
