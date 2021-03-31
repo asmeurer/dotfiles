@@ -1,6 +1,6 @@
 [Layout]
 DisplayNames=
-LayoutList=
+LayoutList=us
 LayoutLoopCount=-1
 Model=pc101
 Options=altwin:alt_win,caps:ctrl_modifier,numpad:mac
@@ -10,4 +10,4 @@ ShowLabel=true
 ShowLayoutIndicator=true
 ShowSingle=false
 SwitchMode=Global
-Use=false
+Use=true
