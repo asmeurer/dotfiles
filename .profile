@@ -582,7 +582,9 @@ fi
 export GPG_TTY=$(tty)
 
 # Disable any conda environments that may have been activated before sourcing.
-deact
+if [ -n "$CONDA_EXE" ]; then
+    deact
+fi
 
 hash -r
 
