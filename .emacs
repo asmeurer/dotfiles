@@ -836,44 +836,45 @@ cursor is already at the beginning, delete the newline.  Acts like the reverse
   is also yank-pop, it will be returned here first before this
   variable is incremented.")
 
-(defun current-kill (n)
-  "Replaces standard 'current-kill' function. This version tries
-to fix the increasing yank-pop problem.
+;; Disabled because it breaks Cmd-v
 
-TODO:
-- respect second argument of original function
-- deal with 'interprogram-{cut,paste}-function'
-"
-  (if (eq 0 n) ;; looks like we're doing a yank; reset
-      ;; kill-ring-yank-index to 0 to indicate that the
-      ;; current head of the list is useful to the user
-      (progn (setq kill-ring-yank-index 0)
-             (car kill-ring))
-
-    ;; otherwise put the head of kill-ring back where we had
-    ;; previously found it, and fetch the next element
-    (setq kill-ring
-          (list-insert-car-at kill-ring kill-ring-yank-index))
-    (setq kill-ring-yank-index (+ kill-ring-yank-index n))
-    (when (>= kill-ring-yank-index (- (length kill-ring) 1))
-      (setq kill-ring-yank-index (- (length kill-ring) 1))
-      (message "Reached end of kill-ring"))
-    (when (< kill-ring-yank-index 0)
-      (setq kill-ring-yank-index 0)
-      (message "Reached beginning of kill-ring"))
-    (setq kill-ring (list-prepend-nth kill-ring kill-ring-yank-index))
-    (car kill-ring)))
+;; (defun current-kill (n)
+;;   "Replaces standard 'current-kill' function. This version tries
+;; to fix the increasing yank-pop problem.
+;;
+;; TODO:
+;; - respect second argument of original function
+;; - deal with 'interprogram-{cut,paste}-function'
+;; "
+;;   (if (eq 0 n) ;; looks like we're doing a yank; reset
+;;       ;; kill-ring-yank-index to 0 to indicate that the
+;;       ;; current head of the list is useful to the user
+;;       (progn (setq kill-ring-yank-index 0)
+;;              (car kill-ring))
+;;
+;;     ;; otherwise put the head of kill-ring back where we had
+;;     ;; previously found it, and fetch the next element
+;;     (setq kill-ring
+;;           (list-insert-car-at kill-ring kill-ring-yank-index))
+;;     (setq kill-ring-yank-index (+ kill-ring-yank-index n))
+;;     (when (>= kill-ring-yank-index (- (length kill-ring) 1))
+;;       (setq kill-ring-yank-index (- (length kill-ring) 1))
+;;       (message "Reached end of kill-ring"))
+;;     (when (< kill-ring-yank-index 0)
+;;       (setq kill-ring-yank-index 0)
+;;       (message "Reached beginning of kill-ring"))
+;;     (setq kill-ring (list-prepend-nth kill-ring kill-ring-yank-index))
+;;     (car kill-ring)))
 
 ;; ----------------------------------------------------------------
 ;; new key binding
 
 ;; Here's an auxiliary function and key binding that makes it easy to
 ;; go back and forth in the kill-ring while we're yank-popping
-(defun yank-pop-back () "" (interactive "*")
-       (yank-pop -1))
 
-;; Disabled because this breaks Cmd-v for some reason.
-
+;; (defun yank-pop-back () "" (interactive "*")
+;;        (yank-pop -1))
+;;
 ;; (global-set-key "\C-\M-y" 'yank-pop-back)
 
 ;; You can still get the original meaning of C-u (universal-argument) with C-c
