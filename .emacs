@@ -872,7 +872,9 @@ TODO:
 (defun yank-pop-back () "" (interactive "*")
        (yank-pop -1))
 
-(global-set-key "\C-\M-y" 'yank-pop-back)
+;; Disabled because this breaks Cmd-v for some reason.
+
+;; (global-set-key "\C-\M-y" 'yank-pop-back)
 
 ;; You can still get the original meaning of C-u (universal-argument) with C-c
 ;; u.  Note, I was going to do C-S-u, but apparently terminals can't
