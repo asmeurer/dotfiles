@@ -62,6 +62,8 @@
     diff = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     branch = false
     tag = false
+[interactive]
+    diffFilter = ~/Documents/git/contrib/diff-highlight/diff-highlight
 [gpg]
 	program = krgpg
 [commit]
