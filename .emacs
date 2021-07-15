@@ -299,7 +299,8 @@
 
 (use-package avy
   :bind
-  ("C-x SPC" . avy-goto-char))
+  ("C-x SPC" . avy-goto-char)
+  ("C-'" . avy-goto-char-timer))
 
 ;; ==== Markdown mode =====
 
