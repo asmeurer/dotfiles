@@ -2080,6 +2080,7 @@ is binary, activate `hexl-mode'."
  '(jedi:server-command
    `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")) t)
  '(jedi:use-shortcuts t)
+ '(kill-do-not-save-duplicates t)
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
  '(linum-format "%d⎢")
