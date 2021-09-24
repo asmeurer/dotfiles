@@ -286,7 +286,7 @@ TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;green;brightness;7\a\033]6
 # PyData APIs - Pink
 DIR_ARRAY_API_TESTS="$HOME/Documents/array-api-tests"
 
-# ndindex
+# ndindex - Salmon
 DIR_NDINDEX="$HOME/Documents/ndindex"
 TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;114n\a"
 
@@ -294,6 +294,9 @@ TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\0
 DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5"
 TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255n\a"
 
+# Dask - Dark Green
+DIR_DASK="$HOME/Documents/dask"
+TAB_DARK_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;50\a\033]6;1;bg;blue;brightness;32\a"
 
 # Other - default (metal)
 # Can't actually get metal yet
@@ -309,7 +312,7 @@ set_tab_color () {
 
     # TODO: Is there a better way to do this?
     # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_VIOLET' '$DIR_STRUCT_RET $TAB_BLACK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_BLACK' '$DIR_NDINDEX $TAB_SALMON' '$DIR_VERSIONED_HDF5 $TAB_LIGHT_BLUE' '$DIR_ARRAY_API_TESTS $TAB_PINK'
+    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_VIOLET' '$DIR_STRUCT_RET $TAB_BLACK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_BLACK' '$DIR_NDINDEX $TAB_SALMON' '$DIR_VERSIONED_HDF5 $TAB_LIGHT_BLUE' '$DIR_ARRAY_API_TESTS $TAB_PINK' '$DIR_DASK $TAB_DARK_GREEN'
     do
         set -- $dir_tab
         # Dereference the variable name
