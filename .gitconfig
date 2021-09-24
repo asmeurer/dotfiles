@@ -65,8 +65,8 @@
 [interactive]
     diffFilter = ~/Documents/git/contrib/diff-highlight/diff-highlight
     singleKey = true
-[gpg]
-	program = krgpg
+# [gpg]
+# 	program = krgpg
 [commit]
 	gpgSign = true
 [tag]
