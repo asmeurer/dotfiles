@@ -7,7 +7,7 @@
  ;; TODO: Make this switch automatically.
  ;; '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#00f900" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "Menlo"))))
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "Menlo"))))
-
+ '(region ((t (:background "lightgoldenrod2" :extend t :distant-foreground "black"))))
  '(highlight-indent-face ((t (:background "color-233"))))
  '(font-lock-string-face ((t (:foreground "red"))))
  '(font-lock-comment-face ((t (:foreground "white"))))
