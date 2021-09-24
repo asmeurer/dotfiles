@@ -84,6 +84,12 @@
 
 ;; Install various packages
 
+;; ==== command-log-mode ====
+
+;; Provides a nicer way to show keyboard output for demos
+(use-package command-log-mode)
+(setq clm/log-command-exceptions* '(nil))
+
 ;; ==== flycheck ====
 
 (use-package flycheck
@@ -2024,6 +2030,7 @@ is binary, activate `hexl-mode'."
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "~/.emacs.d/autosave/")
  '(colon-double-space t)
+ '(command-log-mode-auto-show t)
  '(comment-column 0)
  '(comment-empty-lines ''eol)
  '(completion-ignored-extensions
