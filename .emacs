@@ -512,12 +512,6 @@ Markdown" t)
   :config (setq dumb-jump-selector 'ivy) ;; (setq dumb-jump-selector 'helm)
   )
 
-;; ==== imenu-list ====
-
-(use-package imenu-list
-  :config
-  (setq imenu-list-position "left"))
-
 ;; ==== Auto dim =====
 
 ;; (use-package auto-dim-other-buffers
