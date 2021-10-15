@@ -31,3 +31,5 @@ set enable-bracketed-paste on
 set colored-stats On
 # Color the common prefix
 set colored-completion-prefix On
+# Make history edits not persist across commands
+set revert-all-at-newline On
