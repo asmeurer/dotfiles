@@ -1652,6 +1652,8 @@ like newline-and-indent"
 (global-set-key (kbd "<left-margin> <mouse-movement>") 'mouse-set-region)
 (global-set-key (kbd "<left-margin> <mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<left-margin> <mouse-5>") 'alternating-scroll-up-line)
+(global-set-key (kbd "<mode-line> <mouse-4>") 'alternating-scroll-down-line)
+(global-set-key (kbd "<mode-line> <mouse-5>") 'alternating-scroll-up-line)
 
 
 ;; Use emacsclient as a mergetool
