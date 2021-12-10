@@ -143,8 +143,8 @@ alias sl=ls
 # dc is a real command, but it's just some useless calculator
 alias dc=cd
 
-PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
-test -r /opt/sw/bin/init.sh && . /opt/sw/bin/init.sh
+PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
+# test -r /opt/sw/bin/init.sh && . /opt/sw/bin/init.sh
 unset MANPATH
 
 alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
