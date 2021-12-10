@@ -73,6 +73,10 @@
 (add-to-list 'load-path "~/Documents/use-package")
 (require 'use-package)
 
+;; Keep the package repository certs up-to-date (otherwise it might fail to
+;; connect if they expire)
+(require 'gnu-elpa-keyring-update)
+
 (with-eval-after-load 'info
   (info-initialize)
   (add-to-list 'Info-directory-list
