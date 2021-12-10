@@ -7,6 +7,7 @@
         TeX-insert-backslash
         backward-kill-line-or-newline
         backward-kill-line-or-region
+        beginning-of-visual-line
         buf-move-left
         end-of-buffer
         end-of-visual-line
@@ -28,6 +29,7 @@
         python-indent-electric-colon
         reverse-zap-up-to-char
         vr/isearch-forward
+        xterm-paste
         yaml-electric-dash-and-dot
         ))
 
