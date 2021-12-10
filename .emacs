@@ -516,6 +516,18 @@ Markdown" t)
   :config (setq dumb-jump-selector 'ivy) ;; (setq dumb-jump-selector 'helm)
   )
 
+;; ;; ==== combobulate ====
+;;
+;; ;; https://github.com/mickeynp/combobulate
+;;
+;; (use-package combobulate
+;;   ;; Ensure `combobulate-mode` is activated when you launch a mode it supports
+;;   :hook ((python-mode . combobulate-mode))
+;;   ;; (js-mode . combobulate-mode)
+;;   ;; (typescript-mode . combobulate-mode))
+;;   :load-path "~/Documents/combobulate"
+;;   )
+
 ;; ==== Auto dim =====
 
 ;; (use-package auto-dim-other-buffers
@@ -2036,6 +2048,8 @@ is binary, activate `hexl-mode'."
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "~/.emacs.d/autosave/")
+ '(blink-cursor-delay 0.5)
+ '(blink-cursor-interval 0.5)
  '(colon-double-space t)
  '(command-log-mode-auto-show t)
  '(comment-column 0)
@@ -2092,7 +2106,7 @@ is binary, activate `hexl-mode'."
  '(jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
  '(jedi:install-imenu nil)
  '(jedi:server-command
-   `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))
+   `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")) t)
  '(jedi:use-shortcuts t)
  '(kill-do-not-save-duplicates t)
  '(large-file-warning-threshold nil)
@@ -2104,7 +2118,7 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(highlight-symbol avy flycheck-pyflakes use-package flycheck))
+   '(combobulate gnu-elpa-keyring-update highlight-symbol avy flycheck-pyflakes use-package flycheck))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
