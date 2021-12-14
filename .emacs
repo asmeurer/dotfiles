@@ -224,6 +224,10 @@
   :ensure auctex
   :defer t)
 
+;; ==== magit ===
+
+(use-package magit)
+
 ;; ==== cask-mode ====
 
 ;; We don't use cask any more but cask-mode can still be useful for editing
