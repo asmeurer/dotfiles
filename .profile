@@ -578,6 +578,8 @@ export GIT_PROMPT_FILE=~/Documents/git/contrib/completion/git-prompt.sh
 source $GIT_PROMPT_FILE
 source ~/Documents/hub/etc/hub.bash_completion.sh
 
+eval "$(gh completion -s bash)"
+
 if [ -n "$MAC" ]; then
     source $HOME/.iterm2_shell_integration.bash
 fi
