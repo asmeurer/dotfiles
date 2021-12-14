@@ -2108,7 +2108,7 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(highlight-symbol avy flycheck-pyflakes use-package flycheck))
+   '(magit highlight-symbol avy flycheck-pyflakes use-package flycheck))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
@@ -2122,7 +2122,7 @@ is binary, activate `hexl-mode'."
  '(show-paren-mode t)
  '(show-paren-style 'mixed)
  '(show-trailing-whitespace t)
- '(smart-comment-end-action 'smart-comment-end t)
+ '(smart-comment-end-action 'smart-comment-end)
  '(smex-mode t nil (smex))
  '(sml-modeline-len 17)
  '(sml-modeline-mode t)
