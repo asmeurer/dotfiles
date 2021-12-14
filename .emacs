@@ -224,9 +224,13 @@
   :ensure auctex
   :defer t)
 
-;; ==== magit ===
+;; ==== magit ====
 
 (use-package magit)
+
+;; ==== git-gutter ====
+
+(use-package git-gutter)
 
 ;; ==== cask-mode ====
 
@@ -2108,7 +2112,7 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(magit highlight-symbol avy flycheck-pyflakes use-package flycheck))
+   '(git-gutter magit highlight-symbol avy flycheck-pyflakes use-package flycheck))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
