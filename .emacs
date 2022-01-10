@@ -226,7 +226,7 @@
 
 ;; ==== magit ====
 
-(use-package magit)
+;; (use-package magit)
 
 ;; ==== git-gutter ====
 
@@ -2106,6 +2106,7 @@ is binary, activate `hexl-mode'."
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
  '(linum-format "%d⎢")
+ '(magit-diff-refine-hunk 'all)
  '(mark-even-if-inactive nil)
  '(markdown-gfm-use-electric-backquote nil)
  '(menu-bar-mode nil)
