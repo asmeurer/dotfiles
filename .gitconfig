@@ -75,6 +75,7 @@
 
 # [remote "origin"]
 # 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -91,3 +92,7 @@
 
 [stash]
     showPatch = true
+
+# Requires git 2.34
+# [help]
+#     autoCorrect = prompt
