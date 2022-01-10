@@ -290,12 +290,12 @@
   (flyspell-lazy-mode 1)
   :custom
   (flyspell-lazy-changes-threshold 10)
-  (flyspell-lazy-idle-seconds 1)
+  (flyspell-lazy-idle-seconds 0.1)
   (flyspell-lazy-less-feedback t)
   (flyspell-lazy-mode t)
   (flyspell-lazy-size-threshold 5)
   (flyspell-lazy-use-flyspell-word nil)
-  (flyspell-lazy-window-idle-seconds 3))
+  (flyspell-lazy-window-idle-seconds 1))
 
 ;; ==== cmake-font-lock ====
 ;; Enables syntax highlighting for cmake files
