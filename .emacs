@@ -232,7 +232,17 @@
 
 (use-package git-gutter)
 
-;; ==== cask-mode ====
+;; ;; ==== unmodified-buffer
+;;
+;; (use-package unmodified-buffer
+;;   :straight (:host github :repo "arthurcgusmao/unmodified-buffer")
+;;   :hook (after-init . unmodified-buffer-mode))
+
+;; ;; ==== filetree ====
+;;
+;; (use-package filetree)
+
+;; ==== cask-mode =====
 
 ;; We don't use cask any more but cask-mode can still be useful for editing
 ;; the Cask files
@@ -2113,7 +2123,7 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(git-gutter magit highlight-symbol avy flycheck-pyflakes use-package flycheck))
+   '(filetree git-gutter magit highlight-symbol avy flycheck-pyflakes use-package flycheck))
  '(pcomplete-ignore-case t)
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
