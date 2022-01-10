@@ -533,6 +533,8 @@ conda-remove-test() {
     rm -rf ~/anaconda/envs/test
 }
 
+alias conda=mamba
+
 PATH="$HOME/bin/:$PATH"
 
 export PATH
