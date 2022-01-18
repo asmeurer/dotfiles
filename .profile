@@ -533,8 +533,6 @@ conda-remove-test() {
     rm -rf ~/anaconda/envs/test
 }
 
-alias conda=mamba
-
 PATH="$HOME/bin/:$PATH"
 
 export PATH
@@ -618,3 +616,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Make conda actually call mamba
+export CONDA_EXE="$HOME/anaconda3/condabin/mamba"
