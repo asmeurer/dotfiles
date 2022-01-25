@@ -617,5 +617,25 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Make conda actually call mamba
-export CONDA_EXE="$HOME/anaconda3/condabin/mamba"
+# Make conda actually call mamba. We have to delete the function defined by
+# the conda init stuff above and redefine it so that it calls mamba except
+# when doing activate/deactivate
+
+unset conda
+
+conda ()
+{
+    \local cmd="${1-__missing__}";
+    case "$cmd" in
+        activate | deactivate)
+            __conda_activate "$@"
+            ;;
+        install | update | upgrade | remove | uninstall)
+            mamba "$@" || \return;
+            __conda_reactivate
+            ;;
+        *)
+            mamba "$@"
+            ;;
+    esac
+}
