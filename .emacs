@@ -1055,8 +1055,7 @@ Return an event vector."
 
 ;; Make M-S-[ and M-S-] *always* move paragraphs
 
-;; (global-set-key "\M-{" 'backward-paragraph)
-;; (global-set-key "\M-}" 'forward-paragraph)
+;; https://endlessparentheses.com/meta-binds-part-2-a-peeve-with-paragraphs.html
 
 (defun endless/forward-paragraph (&optional n)
   "Advance just past next blank line."
