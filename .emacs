@@ -1078,16 +1078,15 @@ Return an event vector."
            "\n[[:blank:]]*\n[[:blank:]]*" nil t (cl-signum n))
           (goto-char (match-end 0))
         (goto-char (if (> n 0) (point-max) (point-min)))))
-    ;; If mark wasn't active, I like to indent the line too.
-    (unless m
-      (indent-according-to-mode)
-      ;; This looks redundant, but it's surprisingly necessary.
-      (back-to-indentation))))
+    ))
 
 (defun endless/backward-paragraph (&optional n)
   "Go back up to previous blank line."
   (interactive "p")
   (endless/forward-paragraph (- n)))
+
+(global-set-key "\M-{" 'endless/backward-paragraph)
+(global-set-key "\M-}" 'endless/forward-paragraph)
 
 ;; Make C-U C-SPC work smarter. See
 ;; http://endlessparentheses.com/faster-pop-to-mark-command.html
