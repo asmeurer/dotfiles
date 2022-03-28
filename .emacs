@@ -356,14 +356,11 @@ Markdown" t)
   ("TAG_EDITMSG" . gfm-mode)
   :bind
   (:map markdown-mode-map
-        ;; ([remap forward-paragraph] . nil)
-        ;; ([remap backward-paragraph] . nil)
-        ("M-}" . (lambda (&optional arg) (interactive "P") (let ((paragraph-separate "[ 	]*$")
-                                                                 (paragraph-start "\\|[ 	]*$"))
-                                                             (forward-paragraph arg))))
-        ("M-{" . (lambda (&optional arg) (interactive "P") (let ((paragraph-separate "[ 	]*$")
-                                                                 (paragraph-start "\\|[ 	]*$"))
-                                                             (backward-paragraph arg))))
+        ;; ("M-q" . (lambda (&optional arg) (interactive "P")
+        ;;            (unwind-protect
+        ;;                (progn (text-mode)
+        ;;                       (fill-paragraph arg))
+        ;;              (markdown-mode))))
         ))
 
 ;; ==== YAML Mode ====
@@ -1064,37 +1061,20 @@ Return an event vector."
 
 ;; Make M-S-[ and M-S-] *always* move paragraphs
 
-;; https://endlessparentheses.com/meta-binds-part-2-a-peeve-with-paragraphs.html
+(defun basic-forward-paragraph (&optional arg)
+  "Go forward a paragraph"
+  (interactive "P") (let ((paragraph-separate "[ 	]*$")
+                          (paragraph-start "\\|[ 	]*$"))
+                      (forward-paragraph arg)))
 
-(defun endless/forward-paragraph (&optional n)
-  "Advance just past next blank line."
-  (interactive "p")
-  (let ((m (use-region-p))
-        (para-commands
-         '(endless/forward-paragraph endless/backward-paragraph)))
-    ;; Only push mark if it's not active and we're not repeating.
-    (or m
-        (not (member this-command para-commands))
-        (member last-command para-commands)
-        (push-mark))
-    ;; The actual movement.
-    (dotimes (_ (abs n))
-      (if (> n 0)
-          (skip-chars-forward "\n[:blank:]")
-        (skip-chars-backward "\n[:blank:]"))
-      (if (search-forward-regexp
-           "\n[[:blank:]]*\n[[:blank:]]*" nil t (cl-signum n))
-          (goto-char (match-end 0))
-        (goto-char (if (> n 0) (point-max) (point-min)))))
-    ))
+(defun basic-backward-paragraph (&optional arg)
+  "Go forward a paragraph"
+  (interactive "P") (let ((paragraph-separate "[ 	]*$")
+                          (paragraph-start "\\|[ 	]*$"))
+                      (backward-paragraph arg)))
 
-(defun endless/backward-paragraph (&optional n)
-  "Go back up to previous blank line."
-  (interactive "p")
-  (endless/forward-paragraph (- n)))
-
-(global-set-key "\M-{" 'endless/backward-paragraph)
-(global-set-key "\M-}" 'endless/forward-paragraph)
+(global-set-key "\M-{" 'basic-backward-paragraph)
+(global-set-key "\M-}" 'basic-forward-paragraph)
 
 ;; Make C-U C-SPC work smarter. See
 ;; http://endlessparentheses.com/faster-pop-to-mark-command.html
