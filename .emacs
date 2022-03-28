@@ -75,7 +75,8 @@
 
 ;; Keep the package repository certs up-to-date (otherwise it might fail to
 ;; connect if they expire)
-(require 'gnu-elpa-keyring-update)
+(use-package gnu-elpa-keyring-update
+  :config (gnu-elpa-keyring-update))
 
 (with-eval-after-load 'info
   (info-initialize)
