@@ -331,6 +331,14 @@
   ("C-x SPC" . avy-goto-char)
   ("C-'" . avy-goto-char-timer))
 
+;; ==== ace-window ====
+;; Like avy but for switching windows
+
+(use-package ace-window
+  :bind
+  ("M-o" . ace-window)
+  )
+
 ;; ==== Markdown mode =====
 
 (add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
