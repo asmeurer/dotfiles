@@ -1578,6 +1578,7 @@ like newline-and-indent"
 (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
 
 (add-hook 'makefile-mode-hook 'turn-off-auto-fill)
+(add-hook 'css-mode-hook 'turn-off-auto-fill)
 
 ;; Always softwrap at word boundaries
 (global-visual-line-mode t)
