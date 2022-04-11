@@ -1138,14 +1138,14 @@ This function ...
         (goto-char (cadr ska-isearch-window-configuration))))))
 
 (add-hook 'isearch-mode-hook
-          '(lambda ()
-             (setq ska-isearch-window-configuration
-                   (list (current-window-configuration) (point-marker)))))
+          #'(lambda ()
+              (setq ska-isearch-window-configuration
+                    (list (current-window-configuration) (point-marker)))))
 
 (add-hook 'isearch-mode-end-hook
-          '(lambda ()
-             (ska-isearch-maybe-remove-occur-buffer)
-             (setq ska-isearch-occur-opened nil)))
+          #'(lambda ()
+              (ska-isearch-maybe-remove-occur-buffer)
+              (setq ska-isearch-occur-opened nil)))
 
 (define-key isearch-mode-map (kbd "M-o") 'ska-isearch-occur)
 
