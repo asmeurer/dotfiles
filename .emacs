@@ -363,6 +363,37 @@ Markdown" t)
         ;;              (markdown-mode))))
         ))
 
+;; Enable spell checking in Markdown code blocks
+;; This is required to support spell checking inside of MyST directive blocks.
+
+(defun markdown-flyspell-check-word-myst-p ()
+  "Return t if `flyspell' should check word just before point.
+Used for `flyspell-generic-check-word-predicate'. Based on
+  `markdown-flyspell-check-word-p', but allows spelling inside of code blocks"
+  (save-excursion
+    (goto-char (1- (point)))
+    (not (or
+          ;; (markdown-code-block-at-point-p)
+          (markdown-inline-code-at-point-p)
+          ;; (markdown-in-comment-p)
+          (let ((faces (get-text-property (point) 'face)))
+            (if (listp faces)
+                (or (memq 'markdown-reference-face faces)
+                    (memq 'markdown-markup-face faces)
+                    (memq 'markdown-plain-url-face faces)
+                    (memq 'markdown-inline-code-face faces)
+                    (memq 'markdown-url-face faces))
+              (memq faces '(markdown-reference-face
+                            markdown-markup-face
+                            markdown-plain-url-face
+                            markdown-inline-code-face
+                            markdown-url-face))))))))
+
+(advice-add 'markdown-flyspell-check-word-p :override #'markdown-flyspell-check-word-myst-p)
+
+(setq flyspell-generic-check-word-predicate
+      #'markdown-flyspell-check-word-myst-p)
+
 ;; ==== YAML Mode ====
 
 (use-package yaml-mode)
