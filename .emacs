@@ -1219,6 +1219,22 @@ This function ...
 (define-key isearch-mode-map (kbd "DEL") 'isearch-delete-something)
 (define-key isearch-mode-map (kbd "<backspace>") 'isearch-delete-something)
 
+;; Use isearch-forward-word by default (treats a space as any whitespace or punctuation)
+(global-set-key (kbd "C-s") 'isearch-forward-word)
+;; This is the same isearch-forward-word except with the first argument to
+;; isesarch-mode set to nil to do reverse search
+(defun isearch-backward-word (&optional not-word no-recursive-edit)
+  "Do incremental search backward for a sequence of words.
+With a prefix argument, do a regular string search instead.
+Like ordinary incremental search except that your input is treated
+as a sequence of words without regard to how the words are separated.
+See the command `isearch-forward' for more information.
+This command does not support character folding, and lax space matching
+has no effect on it."
+  (interactive "P\np")
+  (isearch-mode nil nil nil (not no-recursive-edit) (null not-word)))
+(global-set-key (kbd "C-r") 'isearch-backward-word)
+
 ;; Better M-SPC behavior
 
 (defun cycle-spacing-with-newline ()
