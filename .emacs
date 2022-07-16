@@ -2138,6 +2138,8 @@ is binary, activate `hexl-mode'."
  '(ido-ignore-files
    '("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/"))
  '(ido-mode 'both nil (ido))
+ '(isearch-allow-motion t)
+ '(isearch-allow-scroll 'unlimited)
  '(isearchp-drop-mismatch 'replace-last)
  '(ispell-highlight-face 'flyspell-incorrect)
  '(ispell-program-name "hunspell")
