@@ -1678,13 +1678,17 @@ like newline-and-indent"
     (scroll-up-line))
   (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
-(global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
-(global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+;; This is no longer necessary in emacs 28.1
+;; (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
+;; (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+
+(global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+(global-set-key (kbd "<mouse-5>") 'scroll-up-line)
 
 ;; Make mouse 2 (three finger click in iTerm2) do a yank. The default doesn't
 ;; work in the terminal emacs.
 
-(global-set-key (kbd "<mouse-2>") 'mouse-yank-at-click)
+;; (global-set-key (kbd "<mouse-3>") 'mouse-yank-at-click)
 
 ;; Make clicking on line numbers work.
 
@@ -1692,9 +1696,12 @@ like newline-and-indent"
 ;; TODO: This doesn't actually work
 (global-set-key (kbd "<left-margin> <mouse-movement>") 'mouse-set-region)
 (global-set-key (kbd "<left-margin> <mouse-4>") 'alternating-scroll-down-line)
-(global-set-key (kbd "<left-margin> <mouse-5>") 'alternating-scroll-up-line)
-(global-set-key (kbd "<mode-line> <mouse-4>") 'alternating-scroll-down-line)
-(global-set-key (kbd "<mode-line> <mouse-5>") 'alternating-scroll-up-line)
+;; (global-set-key (kbd "<left-margin> <mouse-5>") 'alternating-scroll-up-line)
+;; (global-set-key (kbd "<mode-line> <mouse-4>") 'alternating-scroll-down-line)
+;; (global-set-key (kbd "<mode-line> <mouse-5>") 'alternating-scroll-up-line)
+(global-set-key (kbd "<left-margin> <mouse-5>") 'scroll-up-line)
+(global-set-key (kbd "<mode-line> <mouse-4>") 'scroll-down-line)
+(global-set-key (kbd "<mode-line> <mouse-5>") 'scroll-up-line)
 
 
 ;; Use emacsclient as a mergetool
