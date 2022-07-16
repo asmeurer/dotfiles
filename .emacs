@@ -343,6 +343,17 @@
 
 (add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
 
+
+(defun markdown-fill-paragraph-plain-text (&optional arg)
+  "Run `fill-paragraph' as if we were in `text-mode'.
+
+ARG is the same as with `fill-paragraph'."
+  (interactive "P")
+  (unwind-protect
+      (progn (text-mode)
+             (fill-paragraph arg))
+    (markdown-mode)))
+
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
 files" t)
 (autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
@@ -356,12 +367,12 @@ Markdown" t)
   ("TAG_EDITMSG" . gfm-mode)
   :bind
   (:map markdown-mode-map
-        ;; ("M-q" . (lambda (&optional arg) (interactive "P")
-        ;;            (unwind-protect
-        ;;                (progn (text-mode)
-        ;;                       (fill-paragraph arg))
-        ;;              (markdown-mode))))
-        ))
+        ("M-q" . markdown-fill-paragraph-plain-text)
+        ("M-p" . flycheck-previous-error)
+        ("M-n" . flycheck-next-error)))
+
+
+
 
 ;; Enable spell checking in Markdown code blocks
 ;; This is required to support spell checking inside of MyST directive blocks.
