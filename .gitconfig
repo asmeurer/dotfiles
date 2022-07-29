@@ -36,6 +36,7 @@
     idff = diff
     DIFF = diff
     dff = diff
+    pul = pull
     pulll = pull
     shwo = show
     how = show
