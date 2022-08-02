@@ -2095,6 +2095,7 @@ is binary, activate `hexl-mode'."
  '(command-log-mode-auto-show t)
  '(comment-column 0)
  '(comment-empty-lines ''eol)
+ '(completion-ignore-case t t)
  '(completion-ignored-extensions
    '(".o" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo" ".h5py" ".h5" ".lprof" ".DS_Store" "__pycache__/"))
  '(cua-enable-cua-keys nil)
@@ -2166,7 +2167,6 @@ is binary, activate `hexl-mode'."
  '(next-screen-context-lines 10)
  '(package-selected-packages
    '(ace-window web-mode jinja2-mode git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
- '(pcomplete-ignore-case t)
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
