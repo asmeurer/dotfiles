@@ -683,9 +683,10 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 
 ;; Commands to interact with the clipboard
 
-(defun osx-copy (beg end)
-  (interactive "r")
-  (call-process-region beg end  "pbcopy"))
+(defun osx-copy ()
+  (interactive)
+  (let ((deactivate-mark t))
+    (call-process-region (point) (mark) "pbcopy")))
 
 (defun osx-paste ()
   (interactive)
