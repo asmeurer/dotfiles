@@ -7,7 +7,7 @@
  ;; TODO: Make this switch automatically.
  ;; '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#00f900" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "Menlo"))))
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "Menlo"))))
- '(region ((t (:background "lightgoldenrod2" :extend t :distant-foreground "black"))))
+ '(region ((t (:background "lightgoldenrod2" :extend t :foreground "black"))))
  '(highlight-indent-face ((t (:background "color-233"))))
  '(font-lock-string-face ((t (:foreground "red"))))
  '(font-lock-comment-face ((t (:foreground "white"))))
@@ -42,7 +42,7 @@
  '(helm-selection ((t (:foreground "brightwhite"))))
  '(ido-first-match ((t (:underline t :weight bold))))
  '(match ((t (:inherit isearch))))
- '(show-paren-match ((t (:background "blue"))))
+ '(show-paren-match ((t (:background "blue" :foreground "white"))))
  '(vr/group-0 ((t (:background "darkred" :foreground "black"))))
  '(vr/group-1 ((t (:background "deep pink" :foreground "black"))))
  '(vr/group-2 ((t (:background "blueviolet" :foreground "white"))))
