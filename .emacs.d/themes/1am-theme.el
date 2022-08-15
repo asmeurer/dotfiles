@@ -50,6 +50,8 @@
  '(vr/match-1 ((t (:background "blue3" :foreground "white"))))
  '(font-latex-sectioning-5-face ((t (:foreground "blue1" :weight bold))))
  '(highlight-symbol-face ((t (:background "grey10"))))
+ '(highlight ((t (:underline t :weight bold))))
+ '(completions-common-part ((t (:foreground "DarkOrange"))))
  )
 
 (provide-theme '1am)
