@@ -187,10 +187,15 @@
    "\\.pxd\\'"
    "\\.pxi\\'"))
 
-;; ;; ==== ido-sort-mtime ====
-;; (use-package ido-sort-mtime
-;;   :config
-;;   (ido-sort-mtime-mode 1))
+;; ==== ido-sort-mtime ====
+
+(use-package ido-vertical-mode
+  :config
+  (ido-vertical-mode 1))
+
+(use-package ido-sort-mtime
+  :config
+  (ido-sort-mtime-mode 1))
 
 ;; ==== auctex ====
 (use-package tex
@@ -801,7 +806,7 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 
 ;; Make C-x f work like C-x C-f, since I always accidentally type the former
 ;; and never need set-fill-column.
-(global-set-key (kbd "C-x f") 'find-file)
+(global-set-key (kbd "C-x f") 'ido-find-file)
 
 ;; Make C-c C-x work the same as C-x C-c, since I always mistype them.
 (global-set-key (kbd "C-c C-x") 'save-buffers-kill-terminal)
@@ -1368,6 +1373,11 @@ This command does the reverse of `fill-region'."
 ;; ===== fido-vertical-mode ====
 
 (fido-vertical-mode 1)
+
+;; Use ido just for find-file, because of ido-sort-mtime, which I don't know
+;; how to reproduce with fido
+
+(ido-mode "files")
 
 ;; ==== Use ssh over tramp ====
 ;; See http://stackoverflow.com/a/4725727/161801
