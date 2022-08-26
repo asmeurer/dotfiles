@@ -20,6 +20,7 @@
     gr = grep -i --color -n -E
     backup = !git-backup.sh
     backups = !git fsck --unreachable | grep commit | cut -d' ' -f3 | xargs git log --merges --no-walk --grep='Backup Commit' --stat
+    back = backup
     fe = fetch --all
     weekreport = shortlog --since=1.weeks --author=asmeurer
     dayreport = shortlog --since=1.days --author=asmeurer
