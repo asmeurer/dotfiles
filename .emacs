@@ -1644,12 +1644,22 @@ like newline-and-indent"
     (scroll-up-line))
   (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
+;; The (interactive "@") makes this scroll the window under the mouse instead
+;; of the one where the cursor currently is.
+(defun scroll-up-line-this-window ()
+  (interactive "@")
+  (scroll-up-line))
+
+(defun scroll-down-line-this-window ()
+  (interactive "@")
+  (scroll-down-line))
+
 ;; This is no longer necessary in emacs 28.1
 ;; (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 ;; (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
 
-(global-set-key (kbd "<mouse-4>") 'scroll-down-line)
-(global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+(global-set-key (kbd "<mouse-4>") 'scroll-down-line-this-window)
+(global-set-key (kbd "<mouse-5>") 'scroll-up-line-this-window)
 
 ;; Make mouse 2 (three finger click in iTerm2) do a yank. The default doesn't
 ;; work in the terminal emacs.
