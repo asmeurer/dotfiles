@@ -75,7 +75,8 @@
 
 ;; Keep the package repository certs up-to-date (otherwise it might fail to
 ;; connect if they expire)
-(require 'gnu-elpa-keyring-update)
+;; (use-package gnu-elpa-keyring-update
+;;   :config (gnu-elpa-keyring-update))
 
 (with-eval-after-load 'info
   (info-initialize)
@@ -106,34 +107,6 @@
 ;; ===== flycheck-pyflakes ======
 
 (use-package flycheck-pyflakes)
-
-
-;; ===== ido-vertical-mode =====
-
-;; This used to be done by this
-;; Display ido results vertically, rather than horizontally
-;; (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
-;; (defun ido-disable-line-trucation () (set (make-local-variable
-;;                                            'truncate-lines) nil))
-;; (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
-
-;; Commented out because it's installed by use-package
-
-;; (add-to-list 'load-path "~/Documents/ido-vertical-mode.el")
-;; (require 'ido-vertical-mode)
-                                        ;(ido-mode 1)
-(use-package ido-vertical-mode
-  :config
-  (ido-vertical-mode 1))
-
-;; Alternate package to show results in a grid. Disabled because I can't
-;; figure out how to properly disable the wrapping scrolling. It also doesn't
-;; play well with highlight-trailing-whitespace.
-
-;; (use-package ido-grid-mode
-;;   :config
-;;   (ido-grid-mode 1)
-;;   (setq ido-grid-mode-scroll-wrap nil))
 
 ;; ==== Undo-tree ====
 ;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
@@ -215,6 +188,11 @@
    "\\.pxi\\'"))
 
 ;; ==== ido-sort-mtime ====
+
+(use-package ido-vertical-mode
+  :config
+  (ido-vertical-mode 1))
+
 (use-package ido-sort-mtime
   :config
   (ido-sort-mtime-mode 1))
@@ -310,16 +288,6 @@
 (use-package latex-extra
   :hook (LaTeX-mode . latex-extra-mode))
 
-;; ==== ido-completing-read+ ====
-
-;; Formerly ido-ubiquitous
-
-(use-package ido-completing-read+)
-;; Increase the max number of allowed completions, so that it works with
-;; insert-char. See
-;; https://emacs.stackexchange.com/questions/3154/fuzzy-completion-when-inserting-unicode-characters
-(setq ido-cr+-max-items 50000)
-
 ;; ==== avy ====
 
 ;; Replacement for ace-jump-mode. Type C-x SPC then some characters to
@@ -330,9 +298,28 @@
   ("C-x SPC" . avy-goto-char)
   ("C-'" . avy-goto-char-timer))
 
+;; ==== ace-window ====
+;; Like avy but for switching windows
+
+(use-package ace-window
+  :bind
+  ("M-o" . ace-window)
+  )
+
 ;; ==== Markdown mode =====
 
 (add-to-list 'load-path "~/Documents/markdown-mode") ;; The git clone
+
+
+(defun markdown-fill-paragraph-plain-text (&optional arg)
+  "Run `fill-paragraph' as if we were in `text-mode'.
+
+ARG is the same as with `fill-paragraph'."
+  (interactive "P")
+  (unwind-protect
+      (progn (text-mode)
+             (fill-paragraph arg))
+    (markdown-mode)))
 
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
 files" t)
@@ -347,15 +334,43 @@ Markdown" t)
   ("TAG_EDITMSG" . gfm-mode)
   :bind
   (:map markdown-mode-map
-        ;; ([remap forward-paragraph] . nil)
-        ;; ([remap backward-paragraph] . nil)
-        ("M-}" . (lambda (&optional arg) (interactive "P") (let ((paragraph-separate "[ 	]*$")
-                                                                 (paragraph-start "\\|[ 	]*$"))
-                                                             (forward-paragraph arg))))
-        ("M-{" . (lambda (&optional arg) (interactive "P") (let ((paragraph-separate "[ 	]*$")
-                                                                 (paragraph-start "\\|[ 	]*$"))
-                                                             (backward-paragraph arg))))
-        ))
+        ("M-q" . markdown-fill-paragraph-plain-text)
+        ("M-p" . flycheck-previous-error)
+        ("M-n" . flycheck-next-error)))
+
+
+
+
+;; Enable spell checking in Markdown code blocks
+;; This is required to support spell checking inside of MyST directive blocks.
+
+(defun markdown-flyspell-check-word-myst-p ()
+  "Return t if `flyspell' should check word just before point.
+Used for `flyspell-generic-check-word-predicate'. Based on
+  `markdown-flyspell-check-word-p', but allows spelling inside of code blocks"
+  (save-excursion
+    (goto-char (1- (point)))
+    (not (or
+          ;; (markdown-code-block-at-point-p)
+          (markdown-inline-code-at-point-p)
+          ;; (markdown-in-comment-p)
+          (let ((faces (get-text-property (point) 'face)))
+            (if (listp faces)
+                (or (memq 'markdown-reference-face faces)
+                    (memq 'markdown-markup-face faces)
+                    (memq 'markdown-plain-url-face faces)
+                    (memq 'markdown-inline-code-face faces)
+                    (memq 'markdown-url-face faces))
+              (memq faces '(markdown-reference-face
+                            markdown-markup-face
+                            markdown-plain-url-face
+                            markdown-inline-code-face
+                            markdown-url-face))))))))
+
+(advice-add 'markdown-flyspell-check-word-p :override #'markdown-flyspell-check-word-myst-p)
+
+(setq flyspell-generic-check-word-predicate
+      #'markdown-flyspell-check-word-myst-p)
 
 ;; ==== YAML Mode ====
 
@@ -635,9 +650,10 @@ Markdown" t)
 
 ;; Commands to interact with the clipboard
 
-(defun osx-copy (beg end)
-  (interactive "r")
-  (call-process-region beg end  "pbcopy"))
+(defun osx-copy ()
+  (interactive)
+  (let ((deactivate-mark t))
+    (call-process-region (point) (mark) "pbcopy")))
 
 (defun osx-paste ()
   (interactive)
@@ -1055,39 +1071,20 @@ Return an event vector."
 
 ;; Make M-S-[ and M-S-] *always* move paragraphs
 
-;; (global-set-key "\M-{" 'backward-paragraph)
-;; (global-set-key "\M-}" 'forward-paragraph)
+(defun basic-forward-paragraph (&optional arg)
+  "Go forward a paragraph"
+  (interactive "P") (let ((paragraph-separate "[ 	]*$")
+                          (paragraph-start "\\|[ 	]*$"))
+                      (forward-paragraph arg)))
 
-(defun endless/forward-paragraph (&optional n)
-  "Advance just past next blank line."
-  (interactive "p")
-  (let ((m (use-region-p))
-        (para-commands
-         '(endless/forward-paragraph endless/backward-paragraph)))
-    ;; Only push mark if it's not active and we're not repeating.
-    (or m
-        (not (member this-command para-commands))
-        (member last-command para-commands)
-        (push-mark))
-    ;; The actual movement.
-    (dotimes (_ (abs n))
-      (if (> n 0)
-          (skip-chars-forward "\n[:blank:]")
-        (skip-chars-backward "\n[:blank:]"))
-      (if (search-forward-regexp
-           "\n[[:blank:]]*\n[[:blank:]]*" nil t (cl-signum n))
-          (goto-char (match-end 0))
-        (goto-char (if (> n 0) (point-max) (point-min)))))
-    ;; If mark wasn't active, I like to indent the line too.
-    (unless m
-      (indent-according-to-mode)
-      ;; This looks redundant, but it's surprisingly necessary.
-      (back-to-indentation))))
+(defun basic-backward-paragraph (&optional arg)
+  "Go forward a paragraph"
+  (interactive "P") (let ((paragraph-separate "[ 	]*$")
+                          (paragraph-start "\\|[ 	]*$"))
+                      (backward-paragraph arg)))
 
-(defun endless/backward-paragraph (&optional n)
-  "Go back up to previous blank line."
-  (interactive "p")
-  (endless/forward-paragraph (- n)))
+(global-set-key "\M-{" 'basic-backward-paragraph)
+(global-set-key "\M-}" 'basic-forward-paragraph)
 
 ;; Make C-U C-SPC work smarter. See
 ;; http://endlessparentheses.com/faster-pop-to-mark-command.html
@@ -1151,14 +1148,14 @@ This function ...
         (goto-char (cadr ska-isearch-window-configuration))))))
 
 (add-hook 'isearch-mode-hook
-          '(lambda ()
-             (setq ska-isearch-window-configuration
-                   (list (current-window-configuration) (point-marker)))))
+          #'(lambda ()
+              (setq ska-isearch-window-configuration
+                    (list (current-window-configuration) (point-marker)))))
 
 (add-hook 'isearch-mode-end-hook
-          '(lambda ()
-             (ska-isearch-maybe-remove-occur-buffer)
-             (setq ska-isearch-occur-opened nil)))
+          #'(lambda ()
+              (ska-isearch-maybe-remove-occur-buffer)
+              (setq ska-isearch-occur-opened nil)))
 
 (define-key isearch-mode-map (kbd "M-o") 'ska-isearch-occur)
 
@@ -1373,11 +1370,14 @@ This command does the reverse of `fill-region'."
 ;; (keyfreq-mode 1)
 ;; (keyfreq-autosave-mode 1)
 
-;; ===== ido mode =====
+;; ===== fido-vertical-mode ====
 
-(if (locate-library "ido")
-        (autoload 'ido "ido" "Start ido" t))
-(require 'ido)
+(fido-vertical-mode 1)
+
+;; Use ido just for find-file, because of ido-sort-mtime, which I don't know
+;; how to reproduce with fido
+
+(ido-mode "files")
 
 ;; ==== Use ssh over tramp ====
 ;; See http://stackoverflow.com/a/4725727/161801
@@ -1402,22 +1402,6 @@ This command does the reverse of `fill-region'."
 ;;
 ;; (setq frame-title-format "Emacs - %b")  ; Window title
 ;; (setq icon-title-format "Emacs - %b")   ; Tab titleterm
-;; ==== smex (ido for M-x) ======
-
-;; We use a custom branch of smex
-;; (https://github.com/nonsequitur/smex/pull/12) that allows autoloading
-(add-to-list 'load-path "~/Documents/smex") ;; The git clone
-
-;; Commented out because it's in the customize section below
-
-;; (autoload 'smex "smex")
-;;(require 'smex)
-;; (smex-initialize)
-
-;; (global-set-key (kbd "M-x") 'smex)
-;; (global-set-key (kbd "C-x M-x") 'smex-major-mode-commands)
-;; ;; This is your old M-x.
-;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; ==== Buffer move ====
 ;; From http://www.emacswiki.org/cgi-bin/wiki/buffer-move.el
@@ -1591,6 +1575,7 @@ like newline-and-indent"
 (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
 
 (add-hook 'makefile-mode-hook 'turn-off-auto-fill)
+(add-hook 'css-mode-hook 'turn-off-auto-fill)
 
 ;; Always softwrap at word boundaries
 (global-visual-line-mode t)
@@ -1659,13 +1644,17 @@ like newline-and-indent"
     (scroll-up-line))
   (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
-(global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
-(global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+;; This is no longer necessary in emacs 28.1
+;; (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
+;; (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+
+(global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+(global-set-key (kbd "<mouse-5>") 'scroll-up-line)
 
 ;; Make mouse 2 (three finger click in iTerm2) do a yank. The default doesn't
 ;; work in the terminal emacs.
 
-(global-set-key (kbd "<mouse-2>") 'mouse-yank-at-click)
+;; (global-set-key (kbd "<mouse-3>") 'mouse-yank-at-click)
 
 ;; Make clicking on line numbers work.
 
@@ -1673,9 +1662,12 @@ like newline-and-indent"
 ;; TODO: This doesn't actually work
 (global-set-key (kbd "<left-margin> <mouse-movement>") 'mouse-set-region)
 (global-set-key (kbd "<left-margin> <mouse-4>") 'alternating-scroll-down-line)
-(global-set-key (kbd "<left-margin> <mouse-5>") 'alternating-scroll-up-line)
-(global-set-key (kbd "<mode-line> <mouse-4>") 'alternating-scroll-down-line)
-(global-set-key (kbd "<mode-line> <mouse-5>") 'alternating-scroll-up-line)
+;; (global-set-key (kbd "<left-margin> <mouse-5>") 'alternating-scroll-up-line)
+;; (global-set-key (kbd "<mode-line> <mouse-4>") 'alternating-scroll-down-line)
+;; (global-set-key (kbd "<mode-line> <mouse-5>") 'alternating-scroll-up-line)
+(global-set-key (kbd "<left-margin> <mouse-5>") 'scroll-up-line)
+(global-set-key (kbd "<mode-line> <mouse-4>") 'scroll-down-line)
+(global-set-key (kbd "<mode-line> <mouse-5>") 'scroll-up-line)
 
 
 ;; Use emacsclient as a mergetool
@@ -2058,6 +2050,7 @@ is binary, activate `hexl-mode'."
  '(command-log-mode-auto-show t)
  '(comment-column 0)
  '(comment-empty-lines ''eol)
+ '(completion-ignore-case t t)
  '(completion-ignored-extensions
    '(".o" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo" ".h5py" ".h5" ".lprof" ".DS_Store" "__pycache__/"))
  '(cua-enable-cua-keys nil)
@@ -2068,7 +2061,7 @@ is binary, activate `hexl-mode'."
  '(cua-paste-pop-rotate-temporarily t)
  '(custom-enabled-themes '(1am))
  '(custom-safe-themes
-   '("9d4cd0c4ecf753ba2008438680b2c168009b6c9477ed834cd1adaac5658c9ad9" "4d9935a887e72e35114fc4b4b702fd616bf6d0f6a433a1328add7d168107c265" "4fac3b63166615817cb1913e189d675189191688dac7cdc8dd2516db7c44c7d1" "9ac84d6ade4d20d9a079af263c4804b547b1e179db7e58b551dfef8c736d9f5f" "2fece19cf36c22fef90e432abb3c3bb5249fb3b15c8dcc7ae3e374e30e44f53d" "364149ff1ec800e7abeeb3d17d69fe255ed33a9092f8c09cf197daf1ba68b4c9" "91a352b95d37b2e56c8c7144dd0afd6e98f8f8362ba4887671a5519f6ae1ac35" "7ef4c58872c820f1512f4880c968b46fb7688c3eb7b6cada6e8e54e6f1d48eb8" "9fb46c19b162a0d72f58b68eb4623bb932fb71c89cfb11a8c3ab9b67902e1896" "397cfed5740b0c02bd4979f67785b12c9099398804dc473b31f39074d8a7bde9" "29fba31774979ef63d03963e230a475d02e144dae99d9cdee31bdaa48ea5cdc5" "b49c9ca043d1e9124a1dd81ab98530758618ca0e15b5f24feca7d5490c1deea2" "f52b1864cc0b8fdfbfd5fe8823a4b776e3becd57e0834318d714e21a6696b721" "7c26d530d061dd6549df8eee2a08c70f4438fa481f49673b37106e52bb0c14f7" "384f802ab7a5457b9b2688bac71bf9e7fc116477c0b42f8fef88e53e5b34ec08" "38d61fb5db711ec252c9f684357baafabc6b5490949844c3fe7460642dda050f" "fb81f47208097b78d4846833b48d2a505bcdaca75a83c5015e633d828dd5684b" "5b3815bb0f47c6e7cdd274ff8966d7cc28cfdfc59cfab275a861800a0a1e3685" "9ed4115588b5d0c4ee92a49e82c5e09ac79fad1156b355da61847437e76c8443" "9dc27d023016e67746a8300ce7803afc12db3a5f792e0c1149c678ee737cd393" "91c441fdebcb96e2a400099f5f4d1e3f7d0369ba3adfde2db85768fcbe8be36a" "a7a82ab073db1d67d8637f36b0ef00e7676a282d78053272a6ed35d12469b5cd" "12c47811b507f224f67a77980dcc549f480dd07f4833d4897807c8cf0cce1f18" "010ee97548807cda9fffed7987b6cd4411787d0021bcdcb1e6af4e9cb7ba242d" "baff1b8e7a57d2f305ec62a0192b8b5dd8e51dffc07397db995bbc9f44b6260d" "4aeaf5b2344a118525264d9f30fc7449674fe944f1b138eb3ae9316d708012bd" "8fae94af554271592cd9d6fc85e641f39b1c7bf079d7443ea310dff66846e6ea" "1d7d53c6b3c78148188d119d1ba5244ea10641c0dc58f3d039761a7d2894d651" "f65473c79835b5d109e94f56e7bdee90364331ccdc941ca3ffeeba904030bea9" "7f7317df88f49c02f5e92fc6f170649c2c60a708e643aa36945208f77052b8e2" "b88dad94b783f49880065d4165dc8495ce67d9cbb5b173c2c5889768a0a5092c" "64beff7d92ff58e4f36ea72562f6c7af1b64575cc261024e9a796706a4184f1b" "444384e2fb577b2feaa1d40b7623155d15a0daac1bde2101450ce44c06ae3cdf" "c2220bbdf1a461bb2f5db9518115bca588c3a28a54f077eaae33552e7ae5febf" "59b01ffe8606b179744cd932f7c6c325f10ecd6c8a4aad9f98fb7893a62cdc81" "fa3c930770e321864b5411cf4e753e62c67c02821f52f46330b075a873753dbd" "c823b85afed4fa75395f4f8f79dcd6f86543e69e46c513719ac78167490394a0" "dbbe1d9d8e0b19a2fcc730cb2c553bcabe6b9703a3c963f076f3ac080d2ebf7a" "2724e4d5017b2d5d47701d67c8261ad4e3860f5f496701cfab8bacd5b3989071" "5f881dabbfd8d93218e8e353a388399eea5e5c0174f39f5d6d6ee46eaaf39f13" "d61ca2a6102b47feeeccd0ef47f63fdeca3e193c1c7d6aed3d14bec7960c0ad7" "2fbe6f5c2ccb71cf888b2d9511af2d73d55b6f61d8587ddd22ac92c4cb159a5d" "2c945467e47365b6a721e3d91b7045f66fcd059c8e9611e8b1924a8aba4482f7" "e0b569c74dfcdb9c9cd0694a4f5580de8c77436b74c055197d3bdf856f50a969" "7dad3bf7c48c5250bb91dc70ac35a2899aea38ffff1731eaee759818737eb5a1" "793e990947d64992a749cb823fbc1bddaa56f8cf558c6fb4d0c679bc28b10015" "dced14ee177920d2ebac9b8e6af3dafc24bd00dfa21b81df4753a0a6dc0ffdc3" "f2f58047008edf991421378f85cb5c74c3b104153a179b67ac4b6e6b0f917fac" "a5c3290ffec11c14737f708a5a80e11533dba0214405d7a5b912f92bcd5ebf88" "f1f3e0873563e0929f45e5b832df4357208c0a99550b801d85170024afcf5293" "f2ee729c4f820f5f6a5c6a10d71ea540cff7d4faef82e80bfc98bb5217d91334" "33b831dbbb06d68cd6a085efd476d31a8161200e848abc11124420f44e94a0e5" "e7ae58a07d42168857c6ec4e8e43146fc363c4834156e7655512b09c394cbe0c" "b75f34d7bb2b240e0bff8e7cee2bc9d155b0ae3ea4f205ec219718428f21eacc" "c0f296362f1eb985e970e61a5475c892faa44ca245c59d087ee9b36b76b043e8" "e48dca04d05f441f1e46c758f01d9ae70d83eca04e6ca8ddd0d82f465ba17a34" "8276ddcf003d6389bdcfb5c2dd8fcdeae1a4ef84f82b68aa4eb3a39ced99229f" "6f7b04d2d3023459b4c8d5cc332a6f0011653da6c44c67ec7f9defa61d9d9702" "3afedf94b282d97db1bba88737d54997e8c3b5aca39af60ad8e0c99280f45468" "05b1b8e7a5b4ed97a9f3d90f80f849da026783d4f68030c14d1f17667382535f" "f71ecd126c6ba71d400e5252f5b83cb463a93da0376deeacf0e19029bde7da8b" "f1cff7b73cccc579c30b880c9f7f07672f4b61e65302f27d052d86dc61b2d15c" "deebfa6364832155c50b5d01a6203a1c0a947901af97ef0bb647bd63fc9986c8" "8dda88444892b832a80a59b0697d8e49c2a6f3487a5f38964d86fbdf3639363b" "94a0edf18f016a4be5b4c4f6207c048ecb6a7c2388578b361d7f405121dd5ddc" "09277acdebe128259f49b20e0cac0f167fc5d21bc0055e011afcbaedf4eee63b" "c1fc09025d628eea1b3fbbc51ca1297c61c689cc6c091a1be187fe1c075a4530" "ad1761ad53fea37fb45993ee3f8d655f52eee8249ea1c91195de702abc88f6b9" "76e393a1b358819802bd21c236d9dff8d2a8fe8295755227c0d85132aeba17c3" "3a930c799b42da0475035d545e34c290c50747e9bd327f007d6a6e2b7e32e8f3" "052e1cc4fe7eb51c63e1096bae6ba1552e2c6ef8b047077a3c1d6d3a5474470a" "2cdbd9a58bad15f1a1d2cbcdb65411d2a8ffe7277caee986f9f7e85ebf9f685d" "984c105aedff7f5d8bee9aae2ad70b7b547957b6a62665bc6de6af0488df6c09" "adf1beba5dd1dcec61c3e080cf0368efbf5e9045b7767e18b27fb9af8682ebc3" "2f54b8f1d15fd066721eb4249ec20cd675b94b34e1fc2721e76b7d5c8d61d2c3" "6f16b05a09588b3e6fcfd30ec258b02a729e581ebb674d2929ff517210694af5" "f81c3986426da442140cc03ff40b104263c6cee2d5b6660394bd3a59f3de7e80" "d97477c58646efd83b364b4614645b42645b12b4c2616ab451b4bcb55200c84d" "58b8232a96b1a6f6b3153ff2038a3c94b37230848c2094e902d555a414c4c293" "dc032b7a76890122b8f67bfccdcdd37cdf4bb505ee8025810535e188ff41b5a9" "b6820d3c35f05f9d4e72b48933141dbcaca5c3dcd04fee7aa3a14bf916d96f21" "94b148d58fe160cb829065dc32c40a254028fc2f6bded2ebcf83c844eb23dc49" "4935aebec6ce9b6b8345e1be34be1c2e321c6f283ddb2bd64f028aa7ce772b8c" "e81394a3cb1468b4e27c6bfd517f4d525694280acf0610ddefea902b9a558f81" "657bb4173efa15dbee1b3406bcacd9e8311983d9870506fad653a07fbe8fb7d2" "b80cd50a6e695872ff71c825dc7d41f457993e9e693ea3931141a02faf7fe646" "079894f67d56b12cfeaf3ae929dc7b486fcfac84127486e581de6e91462596ff" "7cc2ed6fc6b1d9ef1f245745ded639d934e28bb55f70add829ff6bc4bf337da2" default))
+   '("d4e701b16e06a089206e2e8c7f9ee96f149168ab193fbc57f5f96c55bcfd8dec" "7f238f10b769737a46c399029194a65dfdc910eb45047994e79bf3dd8c9ccea4" "fcc32f8f8de75a0b2c69c295325aff848cac4dcf0eff4ebf7e572a3b2c4f4857" "e35eaec838eb8b9c655f15e5a660224c5b3cf6c270246b6f74d8963ce98230c9" "18eeb480ddfa7d52736f6d3c7b47bba34c703aa3d79b675b16fc25d31dbb953e" "6ec3066c030a0e14d5178c0d9cba9c72b3ccb65e6cf02f69404b3fb60d0f30ec" "573edaffdad0b083a266767d80cab7bb55e4e677dbf1f5384a92909e5ec6b428" "2b84353a00aa1d56d2b226ca4b7e20979da8fc360adce5026d69507e60893131" "e03b7730bda16f97e2be4d95d6d4d3fd18263521326c8d5f81251b53515ef8d3" "d62640f79a6d3ac96447306d4db8a533308eb396d2a27f8f45e8bc7947a7306d" "eadc78d2eee6898c46392fdfea01494f9cc32032dcca1bf28420934ca28ab82a" "b8e71c08603747445ce5ed74a4ced4c7c04a1372ea26d8cb95fa1f0529b16e5c" "8518329e6248e61085b4bef4dac5d4f62076d2b177b48837795d1237b513e4bb" "8c4ff5658c49df50b212ea8429db66030e4dd2ec6d378d862a114a498ebc91ff" "919f4b755c69a7a6882d7c06d746362b81047e9d071cf088e1c33e8fc3cc0a00" "faff902b7e3d1bc88a2732d21f143797a73af75e85eb3e6425903a1c19fbde4d" "c6119d58d6fb3a4fa0bd6f7a2f5fd7d373a8c018cd052d5132666af106eaccd7" "4af3774f07329c90391689fbc875b61fe45a12594320e13b6ded22fad1a7b777" "f9fc0dbdab679e61faf1f41e17cdb4563db6c2f94a4a410b5af0508b357e3eb4" "b9a618f3d1db7253cc64cc50bc20717e26bbf4ad45e70c0ef88b8d49c3339a3c" "9d4cd0c4ecf753ba2008438680b2c168009b6c9477ed834cd1adaac5658c9ad9" "4d9935a887e72e35114fc4b4b702fd616bf6d0f6a433a1328add7d168107c265" "4fac3b63166615817cb1913e189d675189191688dac7cdc8dd2516db7c44c7d1" "9ac84d6ade4d20d9a079af263c4804b547b1e179db7e58b551dfef8c736d9f5f" "2fece19cf36c22fef90e432abb3c3bb5249fb3b15c8dcc7ae3e374e30e44f53d" "364149ff1ec800e7abeeb3d17d69fe255ed33a9092f8c09cf197daf1ba68b4c9" "91a352b95d37b2e56c8c7144dd0afd6e98f8f8362ba4887671a5519f6ae1ac35" "7ef4c58872c820f1512f4880c968b46fb7688c3eb7b6cada6e8e54e6f1d48eb8" "9fb46c19b162a0d72f58b68eb4623bb932fb71c89cfb11a8c3ab9b67902e1896" "397cfed5740b0c02bd4979f67785b12c9099398804dc473b31f39074d8a7bde9" "29fba31774979ef63d03963e230a475d02e144dae99d9cdee31bdaa48ea5cdc5" "b49c9ca043d1e9124a1dd81ab98530758618ca0e15b5f24feca7d5490c1deea2" "f52b1864cc0b8fdfbfd5fe8823a4b776e3becd57e0834318d714e21a6696b721" "7c26d530d061dd6549df8eee2a08c70f4438fa481f49673b37106e52bb0c14f7" "384f802ab7a5457b9b2688bac71bf9e7fc116477c0b42f8fef88e53e5b34ec08" "38d61fb5db711ec252c9f684357baafabc6b5490949844c3fe7460642dda050f" "fb81f47208097b78d4846833b48d2a505bcdaca75a83c5015e633d828dd5684b" "5b3815bb0f47c6e7cdd274ff8966d7cc28cfdfc59cfab275a861800a0a1e3685" "9ed4115588b5d0c4ee92a49e82c5e09ac79fad1156b355da61847437e76c8443" "9dc27d023016e67746a8300ce7803afc12db3a5f792e0c1149c678ee737cd393" "91c441fdebcb96e2a400099f5f4d1e3f7d0369ba3adfde2db85768fcbe8be36a" "a7a82ab073db1d67d8637f36b0ef00e7676a282d78053272a6ed35d12469b5cd" "12c47811b507f224f67a77980dcc549f480dd07f4833d4897807c8cf0cce1f18" "010ee97548807cda9fffed7987b6cd4411787d0021bcdcb1e6af4e9cb7ba242d" "baff1b8e7a57d2f305ec62a0192b8b5dd8e51dffc07397db995bbc9f44b6260d" "4aeaf5b2344a118525264d9f30fc7449674fe944f1b138eb3ae9316d708012bd" "8fae94af554271592cd9d6fc85e641f39b1c7bf079d7443ea310dff66846e6ea" "1d7d53c6b3c78148188d119d1ba5244ea10641c0dc58f3d039761a7d2894d651" "f65473c79835b5d109e94f56e7bdee90364331ccdc941ca3ffeeba904030bea9" "7f7317df88f49c02f5e92fc6f170649c2c60a708e643aa36945208f77052b8e2" "b88dad94b783f49880065d4165dc8495ce67d9cbb5b173c2c5889768a0a5092c" "64beff7d92ff58e4f36ea72562f6c7af1b64575cc261024e9a796706a4184f1b" "444384e2fb577b2feaa1d40b7623155d15a0daac1bde2101450ce44c06ae3cdf" "c2220bbdf1a461bb2f5db9518115bca588c3a28a54f077eaae33552e7ae5febf" "59b01ffe8606b179744cd932f7c6c325f10ecd6c8a4aad9f98fb7893a62cdc81" "fa3c930770e321864b5411cf4e753e62c67c02821f52f46330b075a873753dbd" "c823b85afed4fa75395f4f8f79dcd6f86543e69e46c513719ac78167490394a0" "dbbe1d9d8e0b19a2fcc730cb2c553bcabe6b9703a3c963f076f3ac080d2ebf7a" "2724e4d5017b2d5d47701d67c8261ad4e3860f5f496701cfab8bacd5b3989071" "5f881dabbfd8d93218e8e353a388399eea5e5c0174f39f5d6d6ee46eaaf39f13" "d61ca2a6102b47feeeccd0ef47f63fdeca3e193c1c7d6aed3d14bec7960c0ad7" "2fbe6f5c2ccb71cf888b2d9511af2d73d55b6f61d8587ddd22ac92c4cb159a5d" "2c945467e47365b6a721e3d91b7045f66fcd059c8e9611e8b1924a8aba4482f7" "e0b569c74dfcdb9c9cd0694a4f5580de8c77436b74c055197d3bdf856f50a969" "7dad3bf7c48c5250bb91dc70ac35a2899aea38ffff1731eaee759818737eb5a1" "793e990947d64992a749cb823fbc1bddaa56f8cf558c6fb4d0c679bc28b10015" "dced14ee177920d2ebac9b8e6af3dafc24bd00dfa21b81df4753a0a6dc0ffdc3" "f2f58047008edf991421378f85cb5c74c3b104153a179b67ac4b6e6b0f917fac" "a5c3290ffec11c14737f708a5a80e11533dba0214405d7a5b912f92bcd5ebf88" "f1f3e0873563e0929f45e5b832df4357208c0a99550b801d85170024afcf5293" "f2ee729c4f820f5f6a5c6a10d71ea540cff7d4faef82e80bfc98bb5217d91334" "33b831dbbb06d68cd6a085efd476d31a8161200e848abc11124420f44e94a0e5" "e7ae58a07d42168857c6ec4e8e43146fc363c4834156e7655512b09c394cbe0c" "b75f34d7bb2b240e0bff8e7cee2bc9d155b0ae3ea4f205ec219718428f21eacc" "c0f296362f1eb985e970e61a5475c892faa44ca245c59d087ee9b36b76b043e8" "e48dca04d05f441f1e46c758f01d9ae70d83eca04e6ca8ddd0d82f465ba17a34" "8276ddcf003d6389bdcfb5c2dd8fcdeae1a4ef84f82b68aa4eb3a39ced99229f" "6f7b04d2d3023459b4c8d5cc332a6f0011653da6c44c67ec7f9defa61d9d9702" "3afedf94b282d97db1bba88737d54997e8c3b5aca39af60ad8e0c99280f45468" "05b1b8e7a5b4ed97a9f3d90f80f849da026783d4f68030c14d1f17667382535f" "f71ecd126c6ba71d400e5252f5b83cb463a93da0376deeacf0e19029bde7da8b" "f1cff7b73cccc579c30b880c9f7f07672f4b61e65302f27d052d86dc61b2d15c" "deebfa6364832155c50b5d01a6203a1c0a947901af97ef0bb647bd63fc9986c8" "8dda88444892b832a80a59b0697d8e49c2a6f3487a5f38964d86fbdf3639363b" "94a0edf18f016a4be5b4c4f6207c048ecb6a7c2388578b361d7f405121dd5ddc" "09277acdebe128259f49b20e0cac0f167fc5d21bc0055e011afcbaedf4eee63b" "c1fc09025d628eea1b3fbbc51ca1297c61c689cc6c091a1be187fe1c075a4530" "ad1761ad53fea37fb45993ee3f8d655f52eee8249ea1c91195de702abc88f6b9" "76e393a1b358819802bd21c236d9dff8d2a8fe8295755227c0d85132aeba17c3" "3a930c799b42da0475035d545e34c290c50747e9bd327f007d6a6e2b7e32e8f3" "052e1cc4fe7eb51c63e1096bae6ba1552e2c6ef8b047077a3c1d6d3a5474470a" "2cdbd9a58bad15f1a1d2cbcdb65411d2a8ffe7277caee986f9f7e85ebf9f685d" "984c105aedff7f5d8bee9aae2ad70b7b547957b6a62665bc6de6af0488df6c09" "adf1beba5dd1dcec61c3e080cf0368efbf5e9045b7767e18b27fb9af8682ebc3" "2f54b8f1d15fd066721eb4249ec20cd675b94b34e1fc2721e76b7d5c8d61d2c3" "6f16b05a09588b3e6fcfd30ec258b02a729e581ebb674d2929ff517210694af5" "f81c3986426da442140cc03ff40b104263c6cee2d5b6660394bd3a59f3de7e80" "d97477c58646efd83b364b4614645b42645b12b4c2616ab451b4bcb55200c84d" "58b8232a96b1a6f6b3153ff2038a3c94b37230848c2094e902d555a414c4c293" "dc032b7a76890122b8f67bfccdcdd37cdf4bb505ee8025810535e188ff41b5a9" "b6820d3c35f05f9d4e72b48933141dbcaca5c3dcd04fee7aa3a14bf916d96f21" "94b148d58fe160cb829065dc32c40a254028fc2f6bded2ebcf83c844eb23dc49" "4935aebec6ce9b6b8345e1be34be1c2e321c6f283ddb2bd64f028aa7ce772b8c" "e81394a3cb1468b4e27c6bfd517f4d525694280acf0610ddefea902b9a558f81" "657bb4173efa15dbee1b3406bcacd9e8311983d9870506fad653a07fbe8fb7d2" "b80cd50a6e695872ff71c825dc7d41f457993e9e693ea3931141a02faf7fe646" "079894f67d56b12cfeaf3ae929dc7b486fcfac84127486e581de6e91462596ff" "7cc2ed6fc6b1d9ef1f245745ded639d934e28bb55f70add829ff6bc4bf337da2" default))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(custom-unlispify-tag-names nil)
  '(delete-selection-mode t)
@@ -2087,6 +2080,8 @@ is binary, activate `hexl-mode'."
  '(flyspell-lazy-size-threshold 5)
  '(flyspell-lazy-use-flyspell-word nil)
  '(flyspell-lazy-window-idle-seconds 3)
+ '(flyspell-prog-text-faces
+   '(font-lock-string-face font-lock-comment-face font-lock-doc-face markdown-pre-face))
  '(git-gutter:update-interval 2)
  '(global-aggressive-indent-mode t)
  '(global-flycheck-mode t nil (flycheck))
@@ -2095,12 +2090,8 @@ is binary, activate `hexl-mode'."
  '(global-undo-tree-mode t)
  '(gud-gdb-command-name "gdb --annotate=1")
  '(highlight-symbol-idle-delay 0)
- '(ido-enable-flex-matching t)
- '(ido-everywhere t)
- '(ido-ignore-directories '("\\`CVS/" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/"))
- '(ido-ignore-files
-   '("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/"))
- '(ido-mode 'both nil (ido))
+ '(isearch-allow-motion t)
+ '(isearch-allow-scroll 'unlimited)
  '(isearchp-drop-mismatch 'replace-last)
  '(ispell-highlight-face 'flyspell-incorrect)
  '(ispell-program-name "hunspell")
@@ -2124,8 +2115,7 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
- '(pcomplete-ignore-case t)
+   '(ace-window web-mode jinja2-mode git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
@@ -2139,7 +2129,6 @@ is binary, activate `hexl-mode'."
  '(show-paren-style 'mixed)
  '(show-trailing-whitespace t)
  '(smart-comment-end-action 'smart-comment-end)
- '(smex-mode t nil (smex))
  '(sml-modeline-len 17)
  '(sml-modeline-mode t)
  '(speedbar-visiting-tag-hook '(speedbar-highlight-one-tag-line speedbar-recenter))
@@ -2155,6 +2144,7 @@ is binary, activate `hexl-mode'."
  '(vr/default-regexp-modifiers '(:I t :M t :S nil :U t))
  '(vr/engine 'python)
  '(vr/match-separator-use-custom-face t)
+ '(web-mode-enable-css-colorization t)
  '(window-combination-limit nil)
  '(window-combination-resize t)
  '(xterm-extra-capabilities '(modifyOtherKeys))
@@ -2170,11 +2160,6 @@ is binary, activate `hexl-mode'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(TeX-fold-unfolded-face ((t nil)))
- '(region ((t (:extend t :background "lightgoldenrod2" :distant-foreground "black"))))
  '(sml-modeline-end-face ((t (:background "black" :foreground "white"))))
  '(sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area))))
  '(yascroll:thumb-text-area ((t (:background "slateblue" :foreground "white")))))
-
-;; Commands that are disabled by default (automatically created by emacs)
-
-(put 'ido-exit-minibuffer 'disabled nil)

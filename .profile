@@ -376,7 +376,7 @@ alias killemacs='pkill -SIGUSR2 emacs'
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 if [ -n "$MAC" ]; then
-    alias free="diskutil info / | GREP -iE 'Available|Free'"
+    alias free="osascript ~/Library/Scripts/Free\ Space.applescript"
 else
     alias free='df -h /'
 fi

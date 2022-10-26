@@ -249,23 +249,23 @@ c.TerminalInteractiveShell.autocall = 0
 # c.TerminalInteractiveShell.banner1 = 'Python 2.7.2 (default, Jul 31 2011, 01:52:32) \nType "copyright", "credits" or "license" for more information.\n\nIPython 0.11 -- An enhanced Interactive Python.\n?         -> Introduction and overview of IPython\'s features.\n%quickref -> Quick reference.\nhelp      -> Python\'s own help system.\nobject?   -> Details about \'object\', use \'object??\' for extra details.\n'
 
 #
-c.TerminalInteractiveShell.readline_parse_and_bind = [
-    'tab: complete',
-    '"\\C-l": clear-screen',
-    'set show-all-if-ambiguous on',
-    '"\\C-o": tab-insert',
-    '"\\C-r": reverse-search-history',
-    '"\\C-s": forward-search-history',
-    '"\\ep": history-search-backward',
-    '"\\eP": history-search-forward',
-    '"\\C-p": history-search-backward',
-    '"\\C-n": history-search-forward',
-    '"\\C-k": kill-line',
-    '"\\C-u": unix-line-discard',
-    '"\\C-P": history-search-forward',
-    '"\\C-d": "\\C-a\\C-k\\C-d"',
-    'set enable-bracketed-paste on',
-]
+# c.TerminalInteractiveShell.readline_parse_and_bind = [
+#     'tab: complete',
+#     '"\\C-l": clear-screen',
+#     'set show-all-if-ambiguous on',
+#     '"\\C-o": tab-insert',
+#     '"\\C-r": reverse-search-history',
+#     '"\\C-s": forward-search-history',
+#     '"\\ep": history-search-backward',
+#     '"\\eP": history-search-forward',
+#     '"\\C-p": history-search-backward',
+#     '"\\C-n": history-search-forward',
+#     '"\\C-k": kill-line',
+#     '"\\C-u": unix-line-discard',
+#     '"\\C-P": history-search-forward',
+#     '"\\C-d": "\\C-a\\C-k\\C-d"',
+#     'set enable-bracketed-paste on',
+# ]
 
 # The part of the banner to be printed after the profile
 # c.TerminalInteractiveShell.banner2 = ''

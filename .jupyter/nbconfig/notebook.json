@@ -10,6 +10,9 @@
   },
   "load_extensions": {
     "notify": true,
-    "jupyter_emacskeys/init": true
+    "jupyter_emacskeys/init": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "spellchecker/main": true
   }
 }
