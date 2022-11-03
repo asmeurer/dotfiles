@@ -1,6 +1,7 @@
 [user]
 	name = Aaron Meurer
 	email = asmeurer@gmail.com
+	# signingkey = ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBC9sqiYPO9pB5nO8or+0NBTS7ZYIZ1osb3Xp2tapsKQbXsNQG9LFbF1LpdW2++vIPJqgSH+B2HYs9rNbbNVb1sQ= GitHub@secretive.Aaron’s-16\"-MacBook-Pro.local
 
 [color]
     diff  = auto
@@ -98,3 +99,7 @@
 # Requires git 2.34
 # [help]
 #     autoCorrect = prompt
+
+# Requires git 2.34
+# [gpg]
+# 	format = ssh
