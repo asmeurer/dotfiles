@@ -24,7 +24,7 @@
     fe = fetch --all
     weekreport = shortlog --since=1.weeks --author=asmeurer
     dayreport = shortlog --since=1.days --author=asmeurer
-    br = branch --sort=committerdate
+    br = branch --sort=committerdate --list
     detach = !git checkout $(git rev-parse HEAD)
     bl = blame -CCC -M
     lg = log --graph --topo-order --use-mailmap --stat --decorate
