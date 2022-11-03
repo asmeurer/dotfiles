@@ -2084,7 +2084,7 @@ is binary, activate `hexl-mode'."
  '(flycheck-disabled-checkers '(python-flake8 python-pylint proselint))
  '(flyspell-issue-welcome-flag nil)
  '(flyspell-lazy-changes-threshold 10)
- '(flyspell-lazy-idle-seconds 1)
+ '(flyspell-lazy-idle-seconds 0)
  '(flyspell-lazy-less-feedback t)
  '(flyspell-lazy-mode t)
  '(flyspell-lazy-size-threshold 5)
