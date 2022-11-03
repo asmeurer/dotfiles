@@ -1371,8 +1371,8 @@ This command does the reverse of `fill-region'."
 ;; (keyfreq-autosave-mode 1)
 
 ;; ===== fido-vertical-mode ====
-
-(fido-vertical-mode 1)
+(if (>= emacs-major-version 28)
+    (fido-vertical-mode 1))
 
 ;; Use ido just for find-file, because of ido-sort-mtime, which I don't know
 ;; how to reproduce with fido
