@@ -1,5 +1,6 @@
-<!DOCTYPE kpartgui>
-<kpartgui version="11" name="konsole">
+<?xml version='1.0'?>
+<!DOCTYPE gui SYSTEM 'kpartgui.dtd'>
+<gui version="17" name="konsole">
  <MenuBar>
   <Menu name="file">
    <text>File</text>
@@ -26,10 +27,13 @@
     <Action name="close-other-views"/>
     <Action name="expand-active-view"/>
     <Action name="shrink-active-view"/>
+    <Action name="toggle-maximize-current-view"/>
    </Menu>
    <Separator/>
    <Action name="detach-tab"/>
    <Action name="detach-view"/>
+   <Action name="save-layout"/>
+   <Action name="load-layout"/>
    <Separator/>
    <DefineGroup name="session-view-operations"/>
   </Menu>
@@ -46,10 +50,24 @@
    <Action name="configure-notifications"/>
    <Action name="configure-settings"/>
   </Menu>
+  <Menu name="plugins">
+   <text>Plugins</text>
+   <ActionList name="plugin-submenu"/>
+  </Menu>
   <Menu name="help">
    <text>Help</text>
   </Menu>
  </MenuBar>
+ <ToolBar name="mainToolBar">
+  <text>Main Toolbar</text>
+  <index>0</index>
+  <Action name="new-tab"/>
+  <Action name="split-view-left-right"/>
+  <Action name="split-view-top-bottom"/>
+  <Action name="load-terminals-layout-2x2"/>
+  <Action name="load-terminals-layout-2x1"/>
+  <Action name="load-terminals-layout-1x2"/>
+ </ToolBar>
  <ActionProperties>
   <Action shortcut="" name="clone-tab"/>
   <Action shortcut="" name="help_contents"/>
@@ -57,5 +75,7 @@
   <Action shortcut="Ctrl+{; Ctrl+PgUp" name="previous-view"/>
   <Action shortcut="" name="split-view-left-right"/>
   <Action shortcut="" name="split-view-top-bottom"/>
+  <Action shortcut="Ctrl+}; Ctrl+PgDown" name="next-tab"/>
+  <Action shortcut="Ctrl+{; Ctrl+PgUp" name="previous-tab"/>
  </ActionProperties>
-</kpartgui>
+</gui>
