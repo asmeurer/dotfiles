@@ -85,12 +85,15 @@ if [[ $(uname) != "Darwin" ]]; then
     cd ~/Documents/
 fi
 
-CONDA_PKGS="emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash matplotlib pyinstrument pytest sympy pudb setproctitle mamba"
+conda install mamba
+
+CONDA_PKGS="--file=$HOME/Documents/mypython/requirements.txt emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash matplotlib pyinstrument pytest sympy pudb setproctitle mamba"
+
 if [[ $(uname) == "Darwin" ]]; then
     CONDA_PKGS="$CONDA_PKGS catimg fortune prefsync"
 fi
 
-conda install $CONDA_PKGS
+mamba install $CONDA_PKGS
 
 clone-or-pull git@github.com:jwiegley/use-package.git
 cd ~/Documents/use-package
