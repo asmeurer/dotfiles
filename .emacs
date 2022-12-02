@@ -549,6 +549,8 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   :config (setq dumb-jump-selector 'ivy) ;; (setq dumb-jump-selector 'helm)
   )
 
+(use-package jsonian)
+
 ;; ==== Auto dim =====
 
 ;; (use-package auto-dim-other-buffers
@@ -2052,7 +2054,8 @@ is binary, activate `hexl-mode'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
- '(aggressive-indent-excluded-modes '(markdown-mode python-mode makefile-mode c-mode c++-mode sass-mode))
+ '(aggressive-indent-excluded-modes
+   '(markdown-mode python-mode makefile-mode c-mode c++-mode sass-mode))
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "~/.emacs.d/autosave/")
@@ -2125,7 +2128,7 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(ace-window web-mode jinja2-mode git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
+   '(jsonian ace-window web-mode jinja2-mode git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
