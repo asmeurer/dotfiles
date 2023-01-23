@@ -233,77 +233,107 @@ alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integr
 # particular color on-screen that you want, you can use DigitalColor Meter in
 # /Applications/Utilities/
 
+# COLORS:
+TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255\a"
+TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
+TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;0\a"
+TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
+TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
+TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
+TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;128\a"
+TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
+TAB_VIOLET="\033]6;1;bg;red;brightness;170\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
+TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
+TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;green;brightness;7\a\033]6;1;bg;blue;brightness;152n\a"
+TAB_DARK_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;50\a\033]6;1;bg;blue;brightness;32\a"
+TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;114n\a"
+TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255n\a"
+# Can't actually get metal yet
+# (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
+# similar shade of gray
+TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;green;brightness;211\a\033]6;1;bg;blue;brightness;211\a"
+
+declare -A tab_colors
+
 # Directory codes are
 # sympy - Red
 DIR_SYMPY="$HOME/Documents/python/sympy/sympy"
-TAB_RED="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
+tab_colors[DIR_SYMPY]=$TAB_RED
+
 # sympy-scratch - Orange
 DIR_SYMPY_SCRATCH="$HOME/Documents/python/sympy/sympy-scratch"
-TAB_ORANGE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;0\a"
+tab_colors[DIR_SYMPY_SCRATCH]=$TAB_ORANGE
+
 # sympy-bot - Purple
 DIR_SYMPY_BOT="$HOME/Documents/python/sympy/sympy-bot"
-TAB_PURPLE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
-# conda-recipes - Purple
-export DIR_CONDA_RECIPES="$HOME/Documents/Continuum/conda-recipes"
+tab_colors[DIR_SYMPY_BOT]=$TAB_PURPLE
+
 # sympy other (like sympy-live or sympy.wiki) - Yellow
 # Note, this one must be tested after the above ones
 DIR_SYMPY_OTHER="$HOME/Documents/python/sympy"
-TAB_YELLOW="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
+tab_colors[DIR_SYMPY_OTHER]=$TAB_YELLOW
+
+# conda-recipes - Purple
+DIR_CONDA_RECIPES="$HOME/Documents/Continuum/conda-recipes"
+tab_colors[DIR_CONDA_RECIPES]=$TAB_PURPLE
+
 # dotfiles - Green
 DIR_DOTFILES="$HOME/Documents/dotfiles"
-TAB_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
-# Continuum - Black
-DIR_CONTINUUM="$HOME/Documents/Continuum"
-TAB_BLACK="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
-# Conda - White
-DIR_CONDA="$HOME/Documents/Continuum/conda"
-TAB_WHITE="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255\a"
-# transmutagen - White
-DIR_TRANSMUTAGEN="$HOME/Documents/transmutagen"
-# Conda-build - Teal
-DIR_CONDA_BUILD="$HOME/Documents/Continuum/conda-build"
+tab_colors[DIR_DOTFILES]=$TAB_GREEN
+
 # Blog - Teal
 DIR_BLOG="$HOME/Documents/blog"
-export TAB_TEAL="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;128\a"
+tab_colors[DIR_BLOG]=$TAB_TEAL
+
 # homework - Blue
 export DIR_HOMEWORK="$HOME/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
+tab_colors[DIR_MYPYTHON]=$TAB_BLUE
+
 # mypython - Blue
 DIR_MYPYTHON="$HOME/Documents/mypython"
-TAB_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
+tab_colors[DIR_HOMEWORK]=$TAB_BLUE
+
 # work directories
 
 # Pyflyby - Violet
 DIR_PYFLYBY="$HOME/Documents/pyflyby"
-TAB_VIOLET="\033]6;1;bg;red;brightness;170\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;255\a"
+tab_colors[DIR_PYFLYBY]=$TAB_VIOLET
 
 # Old - Black
 DIR_ZURICH="$HOME/Documents/zurich-full"
 DIR_STRUCT_RET="$HOME/Documents/struct-ret"
 DIR_DASK="$HOME/Documents/dask"
+DIR_CONTINUUM="$HOME/Documents/Continuum"
+DIR_CONDA="$HOME/Documents/Continuum/conda"
+DIR_TRANSMUTAGEN="$HOME/Documents/transmutagen"
+DIR_CONDA_BUILD="$HOME/Documents/Continuum/conda-build"
+tab_colors[DIR_ZURICH]=$TAB_BLACK
+tab_colors[DIR_STRUCT_RET]=$TAB_BLACK
+tab_colors[DIR_DASK]=$TAB_BLACK
+tab_colors[DIR_CONTINUUM]=$TAB_BLACK
+tab_colors[DIR_CONDA]=$TAB_BLACK
+tab_colors[DIR_TRANSMUTAGEN]=$TAB_BLACK
+tab_colors[DIR_CONDA_BUILD]=$TAB_BLACK
 
 # Numba - Pink
 DIR_NUMBA="$HOME/Documents/numba"
-TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;green;brightness;7\a\033]6;1;bg;blue;brightness;152n\a"
-# PyData APIs - Pink
+tab_colors[DIR_NUMBA]=$TAB_PINK
+
+# Array API Tests - Pink
 DIR_ARRAY_API_TESTS="$HOME/Documents/array-api-tests"
+tab_colors[DIR_ARRAY_API_TESTS]=$TAB_PINK
+
 # Array API Compat - Dark Green
 DIR_ARRAY_API_COMPAT="$HOME/Documents/array-api-compat"
-TAB_DARK_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;50\a\033]6;1;bg;blue;brightness;32\a"
+tab_colors[DIR_ARRAY_API_COMPAT]=$TAB_DARK_GREEN
 
 # ndindex - Salmon
 DIR_NDINDEX="$HOME/Documents/ndindex"
-TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;114n\a"
+tab_colors[DIR_NDINDEX]=$TAB_SALMON
 
 # versioned-hdf5 light blue
 DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5"
-TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255n\a"
-
-
-# Other - default (metal)
-# Can't actually get metal yet
-# (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
-# similar shade of gray
-TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;green;brightness;211\a\033]6;1;bg;blue;brightness;211\a"
+tab_colors[DIR_VERSIONED_HDF5]=$TAB_LIGHT_BLUE
 
 set_tab_color () {
     FOUND='no'
@@ -311,16 +341,12 @@ set_tab_color () {
     # To make this work correctly with subdirectories, put higher level
     # directories later in the list.
 
-    # TODO: Is there a better way to do this?
-    # Yes, using associative arrays
-    for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_VIOLET' '$DIR_STRUCT_RET $TAB_BLACK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_BLACK' '$DIR_DASK $TAB_BLACK' '$DIR_NDINDEX $TAB_SALMON' '$DIR_VERSIONED_HDF5 $TAB_LIGHT_BLUE' '$DIR_ARRAY_API_TESTS $TAB_PINK' '$DIR_ARRAY_API_COMPAT $TAB_DARK_GREEN'
+    for dir in "${!tab_colors[@]}";
+               # for dir_tab in '$DIR_SYMPY $TAB_RED' '$DIR_SYMPY_SCRATCH $TAB_ORANGE' '$DIR_SYMPY_BOT $TAB_PURPLE' '$DIR_SYMPY_OTHER $TAB_YELLOW' '$DIR_DOTFILES $TAB_GREEN' '$DIR_HOMEWORK $TAB_BLUE' '$DIR_CONDA $TAB_WHITE' '$DIR_CONDA_BUILD $TAB_TEAL' '$DIR_CONDA_RECIPES $TAB_PURPLE' '$DIR_CONTINUUM $TAB_BLACK' '$DIR_BLOG $TAB_TEAL' '$DIR_TRANSMUTAGEN $TAB_WHITE' '$DIR_MYPYTHON $TAB_BLUE' '$DIR_PYFLYBY $TAB_VIOLET' '$DIR_STRUCT_RET $TAB_BLACK' '$DIR_NUMBA $TAB_PINK' '$DIR_ZURICH $TAB_BLACK' '$DIR_DASK $TAB_BLACK' '$DIR_NDINDEX $TAB_SALMON' '$DIR_VERSIONED_HDF5 $TAB_LIGHT_BLUE' '$DIR_ARRAY_API_TESTS $TAB_PINK' '$DIR_ARRAY_API_COMPAT $TAB_DARK_GREEN'
     do
-        set -- $dir_tab
-        # Dereference the variable name
-        # We do things this way because set won't handle directories with
-        # spaces correctly, no matter what we do.
-        SEARCH_DIR=`eval echo $1`
-        COLOR=`eval echo $2`
+        # ${!var} is the value of the variable name in var
+        SEARCH_DIR=${!dir}
+        COLOR=${tab_colors[$dir]}
         if grep -q "$SEARCH_DIR/.*" <<< "$PWD/"
         then
             FOUND='yes'
