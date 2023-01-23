@@ -713,3 +713,6 @@ conda ()
             ;;
     esac
 }
+
+# Apply automatic environment activation to new tabs
+cd .
