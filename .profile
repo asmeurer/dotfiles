@@ -248,6 +248,8 @@ TAB_PINK="\033]6;1;bg;red;brightness;214\a\033]6;1;bg;green;brightness;7\a\033]6
 TAB_DARK_GREEN="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;50\a\033]6;1;bg;blue;brightness;32\a"
 TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;114n\a"
 TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255n\a"
+TAB_BROWN="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;64\a\033]6;1;bg;blue;brightness;0n\a"
+TAB_LIGHT_PINK="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;153\a\033]6;1;bg;blue;brightness;255n\a"
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
 # similar shade of gray
@@ -323,8 +325,13 @@ tab_colors[DIR_NUMBA]=$TAB_PINK
 DIR_ARRAY_API_TESTS="$HOME/Documents/array-api-tests"
 tab_colors[DIR_ARRAY_API_TESTS]=$TAB_PINK
 
+# Array API - Light Pink
 DIR_ARRAY_API="$HOME/Documents/array-api"
+tab_colors[DIR_ARRAY_API]=$TAB_LIGHT_PINK
+
+# NumPy - Brown
 DIR_NUMPY="$HOME/Documents/numpy"
+tab_colors[DIR_NUMPY]=$TAB_BROWN
 
 # Array API Compat - Dark Green
 DIR_ARRAY_API_COMPAT="$HOME/Documents/array-api-compat"
