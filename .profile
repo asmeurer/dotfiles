@@ -393,36 +393,8 @@ conda_envs[DIR_PYFLYBY]='pyflyby3'
 conda_envs[DIR_BLOG]='blog-nikola-pip310'
 
 function cd () {
-    PREV_DIR='no'
-    for dir in "${!conda_envs[@]}";
-    do
-        SEARCH_DIR=${!dir}
-        if grep -q "$SEARCH_DIR/.*" <<< "$PWD/"
-        then
-            PREV_DIR='yes'
-            conda deactivate;
-            break;
-        fi
-    done
-
-    for dir in "${!conda_envs[@]}";
-    do
-        builtin cd $@
-
-        SEARCH_DIR=${!dir}
-        ENV_NAME=${conda_envs[$dir]}
-        if grep -q "$SEARCH_DIR/.*" <<< "$PWD/"
-        then
-            FOUND='yes'
-            conda deactivate; conda activate $ENV_NAME;
-            break
-        fi
-    done
-
-    # if [[ $FOUND == 'no' && $PREV_DIR == 'yes' ]]
-    # then
-    #     conda deactivate;
-    # fi
+    . <(get_conda_env_for_cd.py $@)
+    builtin cd $@
 }
 
 # Date PS1
