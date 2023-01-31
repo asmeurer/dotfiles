@@ -1175,6 +1175,10 @@ This function ...
 ;; Make some of the isearch keybindings more sane
 
 (define-key isearch-mode-map (kbd "<tab>") 'isearch-complete)
+(define-key isearch-mode-map (kbd "C-v") 'scroll-up-command)
+(define-key isearch-mode-map (kbd "M-v") 'scroll-down-command)
+(define-key isearch-mode-map (kbd "M-<") 'beginning-of-buffer)
+(define-key isearch-mode-map (kbd "M->") 'end-of-buffer)
 
 ;; Make delete in isearch delete the failed portion completely.
 ;; http://emacs.stackexchange.com/a/10360/118
