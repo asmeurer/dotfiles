@@ -48,8 +48,11 @@ conda_envs[dirnames['DIR_PYFLYBY']] = 'pyflyby3'
 conda_envs[dirnames['DIR_BLOG']] = 'blog-nikola-pip310'
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) > 2:
         exit("Exactly one argument required")
+
+    if len(sys.argv) == 1:
+        return
 
     CDDIR = canon(sys.argv[1])
 
