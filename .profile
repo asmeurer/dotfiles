@@ -393,8 +393,8 @@ conda_envs[DIR_PYFLYBY]='pyflyby3'
 conda_envs[DIR_BLOG]='blog-nikola-pip310'
 
 function cd () {
-    . <(get_conda_env_for_cd.py $@)
-    builtin cd $@
+    . <(get_conda_env_for_cd.py "$@")
+    builtin cd "$@"
 }
 
 # Date PS1
