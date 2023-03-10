@@ -103,3 +103,6 @@
 # Requires git 2.34
 # [gpg]
 # 	format = ssh
+
+[mergetool]
+	keepBackup = false
