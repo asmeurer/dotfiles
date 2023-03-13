@@ -87,6 +87,20 @@
 (setq use-package-always-ensure t)
 ;; It doesn't seem to work for some reason, so we use :ensure t below.
 
+;; straight.el initialization code
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
 ;; Install various packages
 
 ;; ==== command-log-mode ====
@@ -196,6 +210,11 @@
 (use-package ido-sort-mtime
   :config
   (ido-sort-mtime-mode 1))
+
+;; ==== speedrect ====
+
+(use-package speedrect
+  :straight (speedrect :type git :host github :repo "jdtsmith/speedrect"))
 
 ;; ==== auctex ====
 (use-package tex
@@ -2195,7 +2214,7 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(jsonian ace-window web-mode jinja2-mode git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
+   '(speedrect jsonian ace-window web-mode jinja2-mode git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
