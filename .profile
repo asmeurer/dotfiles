@@ -3,7 +3,6 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 if [ -n "$MAC" ]; then
-    PYTHONPATH=~/Documents/catimg ~/anaconda/bin/catimg
     echo
     ~/anaconda/envs/fortune/bin/fortune
     echo

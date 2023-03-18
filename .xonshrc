@@ -6,7 +6,6 @@
 
 $PATH.insert(0, "/Users/aaronmeurer/anaconda/bin")
 
-catimg
 echo
 fortune
 echo
