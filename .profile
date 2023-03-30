@@ -394,6 +394,7 @@ conda_envs[DIR_BLOG]='blog-nikola-pip310'
 function cd () {
     . <(get_conda_env_for_cd.py "$@")
     builtin cd "$@"
+    export OLDPWD
 }
 
 # Date PS1
