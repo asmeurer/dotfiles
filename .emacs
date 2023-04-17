@@ -35,6 +35,20 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; straight.el initialization
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
 (setq inhibit-splash-screen t)
 
 ;; ========== Add a directory to the emacs load-path for extensions =========
@@ -391,12 +405,12 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 (use-package auto-complete
   :config
   (ac-config-default)
-  (ac-set-trigger-key "TAB")
   (ac-flyspell-workaround)
   (ac-linum-workaround)
   (setq ac-use-fuzzy nil)
   (setq ac-ignore-case nil)
   (setq ac-use-menu-map t)
+  (setq ac-auto-start nil)
   (substitute-key-definition 'ac-next 'next-line ac-menu-map)
   (substitute-key-definition 'ac-previous 'previous-line ac-menu-map)
   (substitute-key-definition 'ac-isearch 'isearch-forward ac-menu-map)
@@ -428,7 +442,7 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 (use-package jedi
   :config
   (setq jedi:use-shortcuts t)
-  (setq jedi:complete-on-dot t)
+  ;; (setq jedi:complete-on-dot t)
   (add-to-list 'ac-sources 'ac-source-jedi-direct)
   ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
   (setq jedi:install-imenu nil)
@@ -455,6 +469,48 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   ;;  ("C-M-i" . jedi:complete))
   :hook
   (python-mode . jedi:setup))
+
+;; ==== copilot ====
+
+(use-package copilot
+  :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
+  :ensure t
+  :diminish)
+
+(add-hook 'prog-mode-hook 'copilot-mode)
+
+;; complete by copilot first, then auto-complete
+(defun my-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (ac-expand nil)))
+
+(with-eval-after-load 'auto-complete
+  ;; disable inline preview
+  (setq ac-disable-inline t)
+  ;; show menu if have only one candidate
+  (setq ac-candidate-menu-min 0))
+
+;; From https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/
+(defun rk/copilot-complete-or-accept ()
+  "Command that either triggers a completion or accepts one if one
+is available. Useful if you tend to hammer your keys like I do."
+  (interactive)
+  (if (copilot--overlay-visible)
+      (progn
+        (copilot-accept-completion)
+        (open-line 1)
+        (next-line))
+    (copilot-complete)))
+
+;; TODO: Make TAB also activate auto-complete/jedi (for now, you can use C-TAB)
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+(define-key copilot-mode-map [C-down] #'copilot-next-completion)
+(define-key copilot-mode-map [C-up] #'copilot-previous-completion)
+(define-key copilot-mode-map [C-right] #'copilot-accept-completion-by-word)
+(define-key copilot-mode-map [C-M-right] #'copilot-accept-completion-by-line)
+(define-key global-map (kbd "C-<return>") #'rk/copilot-complete-or-accept)
 
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
