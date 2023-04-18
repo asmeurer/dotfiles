@@ -8,7 +8,7 @@
  ;; '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#00f900" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "Menlo"))))
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "Menlo"))))
  '(region ((t (:background "lightgoldenrod2" :extend t :foreground "black"))))
- '(highlight-indent-face ((t (:background "color-233"))))
+ '(highlight-indent-face ((t (:background "grey15"))))
  '(font-lock-string-face ((t (:foreground "red"))))
  '(font-lock-comment-face ((t (:foreground "white"))))
  '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground
