@@ -498,9 +498,7 @@ is available. Useful if you tend to hammer your keys like I do."
   (interactive)
   (if (copilot--overlay-visible)
       (progn
-        (copilot-accept-completion)
-        (open-line 1)
-        (next-line))
+        (copilot-accept-completion))
     (copilot-complete)))
 
 ;; TODO: Make TAB also activate auto-complete/jedi (for now, you can use C-TAB)
