@@ -16,7 +16,7 @@
     di = diff --color-words
     st = status
     co = checkout
-    pu = !sh -c \"git push -u github \\$(git rev-parse --abbrev-ref HEAD)\"
+    pu = "!f() { git push -u github \"$(git rev-parse --abbrev-ref HEAD)\" \"${@}\"; }; f"
     pu-all = push github :
     logl = log --pretty=oneline --abbrev-commit
     gr = grep -i --color -n -E
