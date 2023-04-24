@@ -1748,8 +1748,6 @@ like newline-and-indent"
 ;; switches buffers.  Figure out how to make it not switch.  See
 ;; https://stackoverflow.com/questions/11532149/emacs-make-custom-scrolling-function-follow-mouse-but-not-change-keyboard-focus.
 
-(setq mouse-wheel-follow-mouse 't)
-
 (defvar alternating-scroll-down-next t)
 (defvar alternating-scroll-up-next t)
 
@@ -1767,22 +1765,26 @@ like newline-and-indent"
     (scroll-up-line))
   (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
-;; The (interactive "@") makes this scroll the window under the mouse instead
-;; of the one where the cursor currently is.
-(defun scroll-up-line-this-window ()
-  (interactive "@")
-  (scroll-up-line))
+;; Make mouse wheel scroll the window under the cursor only, without moving
+;; the cursor to that window (unlike the behavior of mouse-wheel-follow-mouse)
+(defun my-mwheel-scroll-up (event)
+  (interactive "e")
+  (let ((curwin (selected-window))
+        (scroll-window (posn-window (event-start event))))
+    (select-window scroll-window)
+    (scroll-down-command 1)
+    (select-window curwin)))
 
-(defun scroll-down-line-this-window ()
-  (interactive "@")
-  (scroll-down-line))
+(defun my-mwheel-scroll-down (event)
+  (interactive "e")
+  (let ((curwin (selected-window))
+        (scroll-window (posn-window (event-start event))))
+    (select-window scroll-window)
+    (scroll-up-command 1)
+    (select-window curwin)))
 
-;; This is no longer necessary in emacs 28.1
-;; (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
-;; (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
-
-(global-set-key (kbd "<mouse-4>") 'scroll-down-line-this-window)
-(global-set-key (kbd "<mouse-5>") 'scroll-up-line-this-window)
+(global-set-key (kbd "<mouse-4>") 'my-mwheel-scroll-up)
+(global-set-key (kbd "<mouse-5>") 'my-mwheel-scroll-down)
 
 ;; Make mouse 2 (three finger click in iTerm2) do a yank. The default doesn't
 ;; work in the terminal emacs.
