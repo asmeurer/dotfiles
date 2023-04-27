@@ -494,9 +494,9 @@ is available."
         (copilot-accept-completion))
     (copilot-complete)))
 
-;; TODO: Make TAB also activate auto-complete/jedi (for now, you can use C-TAB)
-(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+;; Note: To complete with Jedi, use C-TAB
+;; (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+;; (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 (define-key copilot-mode-map [C-down] #'copilot-next-completion)
 (define-key copilot-mode-map [C-up] #'copilot-previous-completion)
 (define-key copilot-mode-map [C-right] #'copilot-accept-completion-by-word)
