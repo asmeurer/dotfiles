@@ -474,8 +474,7 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 
 (use-package copilot
   :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
-  :ensure t
-  :diminish)
+  :ensure t)
 
 (add-hook 'prog-mode-hook 'copilot-mode)
 
