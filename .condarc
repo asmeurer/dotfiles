@@ -3,10 +3,6 @@
 channels:
   - conda-forge
   - defaults
-  - asmeurer
-  - rapidsai
-  - nvidia
-  - numba
 
 # channel_priority: false
 
