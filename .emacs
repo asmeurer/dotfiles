@@ -484,10 +484,10 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   ;; show menu if have only one candidate
   (setq ac-candidate-menu-min 0))
 
-;; From https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/
-(defun rk/copilot-complete-or-accept ()
+;; Based on function from https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/
+(defun copilot-complete-or-accept ()
   "Command that either triggers a completion or accepts one if one
-is available. Useful if you tend to hammer your keys like I do."
+is available."
   (interactive)
   (if (copilot--overlay-visible)
       (progn
@@ -501,7 +501,7 @@ is available. Useful if you tend to hammer your keys like I do."
 (define-key copilot-mode-map [C-up] #'copilot-previous-completion)
 (define-key copilot-mode-map [C-right] #'copilot-accept-completion-by-word)
 (define-key copilot-mode-map [C-M-right] #'copilot-accept-completion-by-line)
-(define-key global-map (kbd "C-<return>") #'rk/copilot-complete-or-accept)
+(define-key global-map (kbd "C-<return>") #'copilot-complete-or-accept)
 
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
