@@ -555,6 +555,12 @@ is available."
   :bind
   ("M-=" . er/expand-region))
 
+;; ==== yank-indent ====
+
+(use-package yank-indent
+  :straight (:host github :repo "jimeh/yank-indent")
+  :config (global-yank-indent-mode t))
+
 ;; ;; ==== didyoumean.el ====
 ;;
 ;; (use-package didyoumean)
