@@ -634,6 +634,9 @@ source ~/Documents/hub/etc/hub.bash_completion.sh
 
 eval "$(gh completion -s bash)"
 
+# Add github copilot cli aliases (??, git?, gh?)
+eval "$(github-copilot-cli alias -- "$0")"
+
 if [ -n "$MAC" ]; then
     source $HOME/.iterm2_shell_integration.bash
 fi
