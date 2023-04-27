@@ -494,6 +494,15 @@ is available."
         (copilot-accept-completion))
     (copilot-complete)))
 
+(defun my-copilot-disable-predicates ()
+  "Disable Copilot display when the cursor is in a string or comment."
+  (or (nth 3 (syntax-ppss)) ;; check if cursor is in a string
+      (nth 4 (syntax-ppss)))) ;; check if cursor is in a comment
+
+;; Don't show copilot completions in strings or comments unless manually
+;; triggered with C-Enter.
+(add-hook 'copilot-disable-predicates #'my-copilot-disable-predicates)
+
 ;; Note: To complete with Jedi, use C-TAB
 ;; (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
 ;; (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
