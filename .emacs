@@ -479,12 +479,6 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 
 (add-hook 'prog-mode-hook 'copilot-mode)
 
-;; complete by copilot first, then auto-complete
-(defun my-tab ()
-  (interactive)
-  (or (copilot-accept-completion)
-      (ac-expand nil)))
-
 (with-eval-after-load 'auto-complete
   ;; disable inline preview
   (setq ac-disable-inline t)
