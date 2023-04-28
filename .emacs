@@ -426,7 +426,8 @@ Used for `flyspell-generic-check-word-predicate'. Based on
    ac-completing-map
    ("\r" . nil)
    ("<up>" . nil)
-   ("<down>" . nil))
+   ("<down>" . nil)
+   ("C-<tab>" . ac-expand))
   ;; :map
   ;; ac-mode-map ("M-TAB" . auto-complete)
   :hook
@@ -434,7 +435,6 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   (LaTeX-mode . auto-complete-mode)
   (prog-mode . auto-complete-mode)
   (text-mode . auto-complete-mode))
-
 
 ;; ==== Jedi ====
 ;; Python completion using Jedi and auto-complete-mode
