@@ -627,6 +627,8 @@ source $GIT_PROMPT_FILE
 
 eval "$(gh completion -s bash)"
 
+eval "$(maestral completion bash)"
+
 # Add github copilot cli aliases (??, git?, gh?)
 eval "$(github-copilot-cli alias -- "$0")"
 
