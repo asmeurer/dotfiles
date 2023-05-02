@@ -450,9 +450,6 @@ saydone () {
     ($@; say done)
 }
 
-hub_dir="$HOME/Documents/hub"
-PATH="$PATH:$hub_dir"
-
 recompile-emacs () {
     cd ~/Documents/emacs
     git reset --hard
@@ -517,9 +514,6 @@ PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
 # (anaconda is just a symlink). Otherwise, activate will not remove it from
 # the PATH.
 PATH="$HOME/anaconda3/bin:$PATH"
-
-# Alias git to hub
-eval "$(hub alias -s)"
 
 # This is the output of 'register-python-argcomplete conda'. We use this
 # instead of
@@ -630,7 +624,6 @@ complete -F _fab_completion fab
 source ~/Documents/git/contrib/completion/git-completion.bash
 export GIT_PROMPT_FILE=~/Documents/git/contrib/completion/git-prompt.sh
 source $GIT_PROMPT_FILE
-source ~/Documents/hub/etc/hub.bash_completion.sh
 
 eval "$(gh completion -s bash)"
 
