@@ -1266,6 +1266,16 @@ This function ...
 (define-key isearch-mode-map (kbd "DEL") 'isearch-delete-something)
 (define-key isearch-mode-map (kbd "<backspace>") 'isearch-delete-something)
 
+(defun my-isearch-ignore-whitespace-and-comments ()
+  "Ignore spaces, newlines, and comment characters in isearch."
+  (setq search-whitespace-regexp
+        (concat "\\("
+                (regexp-quote comment-start)
+                "\\|" "[[:space:]\n]"
+                "\\)+")))
+
+(add-hook 'isearch-mode-hook 'my-isearch-ignore-whitespace-and-comments)
+
 ;; Better M-SPC behavior
 
 (defun cycle-spacing-with-newline ()
