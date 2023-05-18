@@ -48,13 +48,16 @@ conda_envs[dirnames['DIR_PYFLYBY']] = 'pyflyby3'
 conda_envs[dirnames['DIR_BLOG']] = 'blog-nikola-pip310'
 
 def main():
+    # TODO: Support CDPATH
+
     if len(sys.argv) > 2:
         exit("Exactly one argument required")
-
-    if len(sys.argv) == 1:
-        return
-
-    CDDIR = canon(sys.argv[1])
+    elif len(sys.argv) == 1:
+        CDDIR = canon('~')
+    elif sys.argv[1] == '-':
+        CDDIR = canon(os.environ.get("OLDPWD", ''))
+    else:
+        CDDIR = canon(sys.argv[1])
 
     CONDA_DEFAULT_ENV = os.environ.get("CONDA_DEFAULT_ENV", "")
 

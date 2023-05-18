@@ -90,7 +90,7 @@ conda install mamba
 CONDA_PKGS="--file=$HOME/Documents/mypython/requirements.txt emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash matplotlib pyinstrument pytest sympy pudb setproctitle mamba"
 
 if [[ $(uname) == "Darwin" ]]; then
-    CONDA_PKGS="$CONDA_PKGS catimg fortune prefsync"
+    CONDA_PKGS="$CONDA_PKGS fortune prefsync"
 fi
 
 mamba install $CONDA_PKGS

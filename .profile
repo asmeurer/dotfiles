@@ -3,7 +3,6 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 if [ -n "$MAC" ]; then
-    PYTHONPATH=~/Documents/catimg ~/anaconda/bin/catimg
     echo
     ~/anaconda/envs/fortune/bin/fortune
     echo
@@ -393,8 +392,9 @@ conda_envs[DIR_PYFLYBY]='pyflyby3'
 conda_envs[DIR_BLOG]='blog-nikola-pip310'
 
 function cd () {
-    . <(get_conda_env_for_cd.py $@)
-    builtin cd $@
+    . <(get_conda_env_for_cd.py "$@")
+    builtin cd "$@"
+    export OLDPWD
 }
 
 # Date PS1
@@ -425,6 +425,7 @@ alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
 alias e="$EMACSCLIENT"
 alias m=mypython
 alias my=mypython
+alias mypy=mypython
 alias killemacs='pkill -SIGUSR2 emacs'
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
@@ -632,6 +633,9 @@ source $GIT_PROMPT_FILE
 source ~/Documents/hub/etc/hub.bash_completion.sh
 
 eval "$(gh completion -s bash)"
+
+# Add github copilot cli aliases (??, git?, gh?)
+eval "$(github-copilot-cli alias -- "$0")"
 
 if [ -n "$MAC" ]; then
     source $HOME/.iterm2_shell_integration.bash

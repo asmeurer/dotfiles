@@ -16,7 +16,8 @@
     di = diff --color-words
     st = status
     co = checkout
-    pu = push github :
+    pu = "!f() { git push -u github \"$(git rev-parse --abbrev-ref HEAD)\" \"${@}\"; }; f"
+    pu-all = push github :
     logl = log --pretty=oneline --abbrev-commit
     gr = grep -i --color -n -E
     backup = !git-backup.sh
@@ -103,3 +104,6 @@
 # Requires git 2.34
 # [gpg]
 # 	format = ssh
+
+[mergetool]
+	keepBackup = false
