@@ -72,8 +72,8 @@
     singleKey = true
 # [gpg]
 # 	program = krgpg
-# [commit]
-# 	gpgSign = true
+[commit]
+	gpgSign = true
 [tag]
 	forceSignAnnotated = true
 
