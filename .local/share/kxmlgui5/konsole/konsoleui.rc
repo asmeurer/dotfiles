@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <!DOCTYPE gui SYSTEM 'kpartgui.dtd'>
-<gui version="17" name="konsole">
+<gui name="konsole" version="17">
  <MenuBar>
   <Menu name="file">
    <text>File</text>
@@ -77,5 +77,6 @@
   <Action shortcut="" name="split-view-top-bottom"/>
   <Action shortcut="Ctrl+}; Ctrl+PgDown" name="next-tab"/>
   <Action shortcut="Ctrl+{; Ctrl+PgUp" name="previous-tab"/>
+  <Action name="open_kcommand_bar" shortcut=""/>
  </ActionProperties>
 </gui>
