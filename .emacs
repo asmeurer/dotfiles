@@ -348,7 +348,7 @@ Markdown" t)
   ("TAG_EDITMSG" . gfm-mode)
   :bind
   (:map markdown-mode-map
-        ("M-q" . markdown-fill-paragraph-plain-text)
+        ;; ("M-q" . markdown-fill-paragraph-plain-text)
         ("M-p" . flycheck-previous-error)
         ("M-n" . flycheck-next-error)))
 
