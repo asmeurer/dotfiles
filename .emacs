@@ -35,6 +35,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; Quelpa bootstrap
 (unless (package-installed-p 'quelpa)
   (with-temp-buffer
     (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
