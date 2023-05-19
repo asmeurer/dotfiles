@@ -834,9 +834,7 @@ is available."
 ;; See
 ;; http://stackoverflow.com/questions/1229142/how-can-i-save-my-mini-buffer-history-in-emacs
 (setq savehist-additional-variables
-      '(kill-ring search-ring regexp-search-ring))
-
-(setq savehist-file "~/.emacs.d/savehist")
+      '(kill-ring search-ring regexp-search-ring my-fido-command-completions-alist))
 
 (savehist-mode 1)
 
@@ -1511,9 +1509,6 @@ The weights are stored in `my-fido-command-completions-alist'."
   completions)
 
 (advice-add 'icomplete--sorted-completions :filter-return #'my-fido-sorted-completions)
-
-(require 'savehist)
-(customize-set-variable 'savehist-additional-variables (append savehist-additional-variables (list 'my-fido-command-completions-alist)))
 
 ;; Use ido just for find-file, because of ido-sort-mtime, which I don't know
 ;; how to reproduce with fido
