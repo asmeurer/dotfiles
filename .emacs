@@ -35,19 +35,18 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-;; straight.el initialization
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 6))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+(unless (package-installed-p 'quelpa)
+  (with-temp-buffer
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+(setq quelpa-upgrade-interval 7)
+(add-hook #'after-init-hook #'quelpa-upgrade-all-maybe)
 
 (setq inhibit-splash-screen t)
 
@@ -473,9 +472,11 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 ;; ==== copilot ====
 
 (use-package copilot
-  :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
+  :quelpa (copilot :fetcher github
+                   :repo "zerolfx/copilot.el"
+                   :branch "main"
+                   :files ("dist" "*.el"))
   :ensure t)
-
 (add-hook 'prog-mode-hook 'copilot-mode)
 
 (with-eval-after-load 'auto-complete
@@ -558,7 +559,7 @@ is available."
 ;; ==== yank-indent ====
 
 (use-package yank-indent
-  :straight (:host github :repo "jimeh/yank-indent")
+  :quelpa (:fetcher github :repo "jimeh/yank-indent")
   :config (global-yank-indent-mode t))
 
 ;; ;; ==== didyoumean.el ====
