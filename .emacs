@@ -556,11 +556,11 @@ is available."
   :bind
   ("M-=" . er/expand-region))
 
-;; ==== yank-indent ====
-
-(use-package yank-indent
-  :quelpa (:fetcher github :repo "jimeh/yank-indent")
-  :config (global-yank-indent-mode t))
+;; ;; ==== yank-indent ====
+;;
+;; (use-package yank-indent
+;;   :quelpa (yank-indent :fetcher github :repo "jimeh/yank-indent")
+;;   :config (global-yank-indent-mode t))
 
 ;; ;; ==== didyoumean.el ====
 ;;
