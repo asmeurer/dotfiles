@@ -7,6 +7,9 @@ DefaultProfile=Main.profile
 [Favorite Profiles]
 Favorites=Main.profile
 
+[General]
+CommandBarLastUsedActions=
+
 [KFileDialog Settings]
 listViewIconSize=0
 

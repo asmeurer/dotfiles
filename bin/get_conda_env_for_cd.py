@@ -32,6 +32,7 @@ dirnames = dict(
     DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5",
     DIR_PYFLYBY="$HOME/Documents/pyflyby",
     DIR_BLOG="$HOME/Documents/blog",
+    DIR_SCIPY="$HOME/Documents/scipy",
 )
 
 for d in dirnames:
@@ -48,6 +49,7 @@ conda_envs[dirnames['DIR_NDINDEX']] = 'ndindex'
 conda_envs[dirnames['DIR_VERSIONED_HDF5']] = 'versioned-hdf5'
 conda_envs[dirnames['DIR_PYFLYBY']] = 'pyflyby3'
 conda_envs[dirnames['DIR_BLOG']] = 'blog-nikola-pip310'
+conda_envs[dirnames['DIR_SCIPY']] = 'scipy-dev'
 
 def main():
     # TODO: Support CDPATH
