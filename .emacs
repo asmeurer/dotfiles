@@ -865,12 +865,10 @@ is available."
 ;; custom routine.
 
 (defun kill-total-line ()
-    (interactive)
-    (let ((kill-whole-line t))
-      (end-of-line)
-      (kill-line 0)
-      )
-    )
+  (interactive)
+  (let ((kill-whole-line t))
+    (end-of-line)
+    (kill-line 0)))
 
 (global-set-key [f7] 'kill-total-line)
 
