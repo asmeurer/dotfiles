@@ -832,6 +832,21 @@ is available."
 
 (savehist-mode 1)
 
+;; Prevent savehist from spamming messages about the history file being locked
+
+(defun steal-history-file-lock ()
+  "Steals the lock on `~/.emacs.d/history` file if present, after a short delay."
+  (let* ((history-file (expand-file-name "history" user-emacs-directory))
+         (lock-file (concat history-file ".lock"))
+         (wait-time 0.5)) ; Delay in seconds before attempting to steal the lock
+    (when (file-exists-p lock-file)
+      (run-with-timer wait-time nil
+                      (lambda ()
+                        (when (file-exists-p lock-file)
+                          (delete-file lock-file)))))))
+
+(add-hook 'savehist-save-hook 'steal-history-file-lock)
+
 ;; ==== Set F7 to delete whole line ====
 
 ;; iTerm2 doesn't send C-S-Backspace to emacs, so set it up as a keyboard
@@ -842,12 +857,10 @@ is available."
 ;; custom routine.
 
 (defun kill-total-line ()
-    (interactive)
-    (let ((kill-whole-line t))
-      (end-of-line)
-      (kill-line 0)
-      )
-    )
+  (interactive)
+  (let ((kill-whole-line t))
+    (end-of-line)
+    (kill-line 0)))
 
 (global-set-key [f7] 'kill-total-line)
 

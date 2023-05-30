@@ -73,6 +73,10 @@ alias systempython2.4="$SYSTEMPYTHON24"
 # Ignore duplicate entries in the command history
 HISTCONTROL=ignoredups:erasedups
 
+# Set a separate history file per tty
+mkdir -p ~/.bash_history_files/
+export HISTFILE=~/.bash_history_files/${TTY}_history
+
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
 # Prevents C-d from ending the Terminal session.
