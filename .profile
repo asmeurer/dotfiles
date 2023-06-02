@@ -74,8 +74,9 @@ alias systempython2.4="$SYSTEMPYTHON24"
 HISTCONTROL=ignoredups:erasedups
 
 # Set a separate history file per tty
+export TTY=$(basename `tty`)
 mkdir -p ~/.bash_history_files/
-export HISTFILE=~/.bash_history_files/$(TTY)_history
+export HISTFILE="~/.bash_history_files/${TTY}_history"
 
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
@@ -417,7 +418,6 @@ PATH=$PATH:$HOME/Documents/git-hg/bin
 PATH=$PATH:$HOME/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
-export TTY=$(basename `tty`)
 export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$TTY"
 export EDITOR="$EMACSCLIENT"
 # Make less search case insensitive, always use raw input mode (to show
