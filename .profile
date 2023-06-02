@@ -75,7 +75,7 @@ HISTCONTROL=ignoredups:erasedups
 
 # Set a separate history file per tty
 mkdir -p ~/.bash_history_files/
-export HISTFILE=~/.bash_history_files/${TTY}_history
+export HISTFILE=~/.bash_history_files/$(TTY)_history
 
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
