@@ -7,7 +7,7 @@ import os
 this_exe = sys.argv[0]
 
 def canon(p):
-    return os.path.realpath(os.path.expanduser(p))
+    return os.path.realpath(os.path.expanduser(p)) + os.path.sep
 
 def exit(m):
     sys.exit(f"{this_exe}: {m}")
