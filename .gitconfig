@@ -15,8 +15,8 @@
     ci = commit --interactive
     di = diff --color-words
     st = status
-	co = "!bash -c 'if [ \"$#\" -eq 1 ] && echo \"$1\" | grep -qE \"^[^/:]+:[^/:]+\\$\"; then IFS=: read -r remote branch <<<\"$1\"; origin_url=$(git remote get-url origin); repo_name=$(basename -s .git \"$origin_url\"); git remote get-url \"$remote\" 2>/dev/null || git remote add \"$remote\" \"git@github.com:$remote/$repo_name.git\"; if git fetch \"$remote\" \"$branch\"; then local_branch=\"$remote-$branch\"; git show-ref --verify --quiet \"refs/heads/$local_branch\" && git checkout \"$local_branch\" || git checkout -b \"$local_branch\" \"$remote/$branch\"; else echo \"Error: Remote branch $remote:$branch not found.\"; fi; else git checkout \"$@\"; fi' -"
-    pu = "!f() { git push -u github \"$(git rev-parse --abbrev-ref HEAD)\" \"${@}\"; }; f"
+    co = "!bash -c ': git checkout ; if [ \"$#\" -eq 1 ] && echo \"$1\" | grep -qE \"^[^/:]+:[^/:]+\\$\"; then IFS=: read -r remote branch <<<\"$1\"; origin_url=$(git remote get-url origin); repo_name=$(basename -s .git \"$origin_url\"); git remote get-url \"$remote\" 2>/dev/null || git remote add \"$remote\" \"git@github.com:$remote/$repo_name.git\"; if git fetch \"$remote\" \"$branch\"; then local_branch=\"$remote-$branch\"; git show-ref --verify --quiet \"refs/heads/$local_branch\" && git checkout \"$local_branch\" || git checkout -b \"$local_branch\" \"$remote/$branch\"; else echo \"Error: Remote branch $remote:$branch not found.\"; fi; else git checkout \"$@\"; fi' -"
+    pu = "!f() { : git checkout ; git push -u github \"$(git rev-parse --abbrev-ref HEAD)\" \"${@}\"; }; f"
     pu-all = push github :
     logl = log --pretty=oneline --abbrev-commit
     gr = grep -i --color -n -E
