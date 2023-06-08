@@ -626,6 +626,9 @@ complete -F _fab_completion fab
 
 # This line needs to stay at the bottom of the file.
 source ~/Documents/git/contrib/completion/git-completion.bash
+# Complete all git subcommands and flags
+export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
+export GIT_COMPLETION_SHOW_ALL=1
 export GIT_PROMPT_FILE=~/Documents/git/contrib/completion/git-prompt.sh
 source $GIT_PROMPT_FILE
 
