@@ -184,6 +184,16 @@ if [ -z "$MAC" ]; then
     alias open=xdg-open
 fi
 
+# conda environments
+# Automatically activate certain conda environments when cd-ing into or out of
+# the given directories
+
+function cd () {
+    . <(get_conda_env_for_cd.py "$@")
+    builtin cd "$@"
+    export OLDPWD
+}
+
 cdd () {
     cd "$HOME/Documents/$@" || return
 }
@@ -394,25 +404,6 @@ set_tab_color () {
 
 export PS1='\[\e[1;30;40m\]$CONDA_DEFAULT_ENV\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]\[$(set_tab_color)\]'
 #export PS1='\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]'
-
-# conda environments
-# Automatically activate certain conda environments when cd-ing into or out of
-# the given directories
-declare -A conda_envs
-conda_envs[DIR_ARRAY_API]='array-apis'
-conda_envs[DIR_ARRAY_API_TESTS]='array-apis'
-conda_envs[DIR_ARRAY_API_COMPAT]='array-apis'
-conda_envs[DIR_NUMPY]='array-apis'
-conda_envs[DIR_NDINDEX]='ndindex'
-conda_envs[DIR_VERSIONED_HDF5]='versioned-hdf5'
-conda_envs[DIR_PYFLYBY]='pyflyby3'
-conda_envs[DIR_BLOG]='blog-nikola-pip310'
-
-function cd () {
-    . <(get_conda_env_for_cd.py "$@")
-    builtin cd "$@"
-    export OLDPWD
-}
 
 # Date PS1
 #export PS1='\[\e[1;31;40m\]\h:\[\e[0m\]\[\e[1;34;40m\]\W\[\e[0m\]\[\e[1;31;40m\] \u\[\e[1;30;40m\]`date "+%Y"`\[\e[0m\]\[\e[1;37;40m\]`date "+%m"`\[\e[0m\]\[\e[1;30;40m\]`date "+%d"`\[\e[0m\]\[\e[1;37;40m\]`date "+%H"`\[\e[0m\]\[\e[1;30;40m\]`date "+%M"`\[\e[0m\]\[\e[1;37;40m\]`date "+%S"`\[\e[0m\]\[\e[0;33m\]$(__git_ps1 "(%s)")\[\e[31;40m\]\$\[\e[0m\]'
