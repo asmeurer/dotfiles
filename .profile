@@ -89,6 +89,8 @@ if [ -n "$MAC" ]; then
 else
     export PROMPT_COMMAND="history -a"
 fi
+# Save timestamps to the history file
+export HISTTIMEFORMAT="%F %T "
 
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
