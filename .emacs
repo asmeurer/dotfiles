@@ -293,14 +293,14 @@
 ;; Enables syntax highlighting for cmake files
 (use-package cmake-font-lock)
 
-;; ==== latex-extra ====
-
-;; https://github.com/Malabarba/latex-extra
-
-;; Enables content folding (hit TAB on section headers) and some other
-;; features as well.
-(use-package latex-extra
-  :hook (LaTeX-mode . latex-extra-mode))
+;; ;; ==== latex-extra ====
+;;
+;; ;; https://github.com/Malabarba/latex-extra
+;;
+;; ;; Enables content folding (hit TAB on section headers) and some other
+;; ;; features as well.
+;; (use-package latex-extra
+;;   :hook (LaTeX-mode . latex-extra-mode))
 
 ;; ==== avy ====
 
