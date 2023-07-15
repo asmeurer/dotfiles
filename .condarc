@@ -2,9 +2,10 @@
 
 channels:
   - conda-forge
-  - defaults
+  # - defaults
 
 # channel_priority: false
+# channel_priority: strict
 
 changeps1: no
 
@@ -14,6 +15,6 @@ binstar_personal: true
 
 show_channel_urls: yes
 
-# channel_priority: strict
-
 auto_activate_base: false
+
+# solver: libmamba
