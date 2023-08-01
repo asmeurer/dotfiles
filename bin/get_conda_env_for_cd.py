@@ -34,6 +34,7 @@ dirnames = dict(
     DIR_BLOG="$HOME/Documents/blog",
     DIR_SCIPY="$HOME/Documents/scipy",
     DIR_PAPYRI="$HOME/Documents/papyri",
+    DIR_CONDA_STORE_SERVER="$HOME/Documents/conda-store/conda-store-server",
 )
 
 for d in dirnames:
@@ -52,6 +53,7 @@ conda_envs[dirnames['DIR_PYFLYBY']] = 'pyflyby3'
 conda_envs[dirnames['DIR_BLOG']] = 'blog-nikola-pip310'
 conda_envs[dirnames['DIR_SCIPY']] = 'scipy-dev'
 conda_envs[dirnames['DIR_PAPYRI']] = 'papyri'
+conda_envs[dirnames['DIR_CONDA_STORE_SERVER']] = 'conda-store-server-dev'
 
 def main():
     # TODO: Support CDPATH
