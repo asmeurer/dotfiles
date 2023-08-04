@@ -329,6 +329,10 @@ tab_colors[DIR_HOMEWORK]=$TAB_BLUE
 DIR_PYFLYBY="$HOME/Documents/pyflyby"
 tab_colors[DIR_PYFLYBY]=$TAB_VIOLET
 
+# papyri - Purple
+DIR_PAPYRI="$HOME/Documents/papyri"
+tab_colors[DIR_PAPYRI]=$TAB_PURPLE
+
 # Old - Black
 DIR_ZURICH="$HOME/Documents/zurich-full"
 DIR_STRUCT_RET="$HOME/Documents/struct-ret"
