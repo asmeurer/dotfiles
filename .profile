@@ -349,6 +349,10 @@ tab_colors[DIR_CONDA]=$TAB_BLACK
 tab_colors[DIR_TRANSMUTAGEN]=$TAB_BLACK
 tab_colors[DIR_CONDA_BUILD]=$TAB_BLACK
 
+# conda-store - Black
+DIR_CONDA_STORE="$HOME/Documents/conda-store"
+tab_colors[DIR_CONDA_STORE]=$TAB_BLACK
+
 # Numba - Pink
 DIR_NUMBA="$HOME/Documents/numba"
 tab_colors[DIR_NUMBA]=$TAB_PINK
