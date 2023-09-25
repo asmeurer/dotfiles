@@ -103,6 +103,36 @@
 
 ;; Install various packages
 
+;; ==== lsp stuff ====
+
+(use-package lsp-mode
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  (setq lsp-keymap-prefix "C-c l")
+  :hook (
+         (python-mode . lsp)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+(use-package which-key
+  :config
+  (which-key-mode))
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+
+;; Use the jedi lsp mode
+(use-package lsp-jedi
+  :ensure t
+  :after lsp-mode
+  :config
+  (add-hook 'python-mode-hook 'lsp-jedi-enable))
+
+
+;; (use-package lsp-python-ms
+;;   :ensure t
+;;   :init (setq lsp-python-ms-auto-install-server t)
+;;   :hook (python-mode . (lambda ()
+;;                          (require 'lsp-python-ms)
+;;                          (lsp))))
+
 ;; ==== command-log-mode ====
 
 ;; Provides a nicer way to show keyboard output for demos
@@ -436,39 +466,39 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   (prog-mode . auto-complete-mode)
   (text-mode . auto-complete-mode))
 
-;; ==== Jedi ====
-;; Python completion using Jedi and auto-complete-mode
-
-(use-package jedi
-  :config
-  (setq jedi:use-shortcuts t)
-  ;; (setq jedi:complete-on-dot t)
-  (add-to-list 'ac-sources 'ac-source-jedi-direct)
-  ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
-  (setq jedi:install-imenu nil)
-  (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
-  (setq jedi:server-args
-        '("--log-level" "DEBUG"
-          "--log-traceback"))
-  ;; Disable Jedi function tooltips. Can use
-  ;;
-  ;; (setq jedi:tooltip-method nil)
-  ;;
-  ;; instead to make it show up in the minibuffer (the default is a popup). We
-  ;; disable it because the tooltips are annoying, and the minibuffer stuff
-  ;; overwrites more useful things like flycheck.
-  (setq jedi:get-in-function-call-delay 100000)
-  :custom
-  (jedi:server-command
-   `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))
-  ;; C-M-i is currently bound to flyspell-auto-correct-word
-  ;; :bind
-  ;; (:map
-  ;;  python-mode-map
-  ;;  ;; M-TAB
-  ;;  ("C-M-i" . jedi:complete))
-  :hook
-  (python-mode . jedi:setup))
+;; ;; ==== Jedi ====
+;; ;; Python completion using Jedi and auto-complete-mode
+;;
+;; (use-package jedi
+;;   :config
+;;   (setq jedi:use-shortcuts t)
+;;   ;; (setq jedi:complete-on-dot t)
+;;   (add-to-list 'ac-sources 'ac-source-jedi-direct)
+;;   ;; Doesn't work yet. See https://github.com/tkf/emacs-jedi/issues/53.
+;;   (setq jedi:install-imenu nil)
+;;   (setq jedi:imenu-create-index-function 'jedi:create-flat-imenu-index)
+;;   (setq jedi:server-args
+;;         '("--log-level" "DEBUG"
+;;           "--log-traceback"))
+;;   ;; Disable Jedi function tooltips. Can use
+;;   ;;
+;;   ;; (setq jedi:tooltip-method nil)
+;;   ;;
+;;   ;; instead to make it show up in the minibuffer (the default is a popup). We
+;;   ;; disable it because the tooltips are annoying, and the minibuffer stuff
+;;   ;; overwrites more useful things like flycheck.
+;;   (setq jedi:get-in-function-call-delay 100000)
+;;   :custom
+;;   (jedi:server-command
+;;    `("~/Documents/emacs-jedi/env/bin/python" ,(expand-file-name "~/Documents/emacs-jedi/jediepcserver.py")))
+;;   ;; C-M-i is currently bound to flyspell-auto-correct-word
+;;   ;; :bind
+;;   ;; (:map
+;;   ;;  python-mode-map
+;;   ;;  ;; M-TAB
+;;   ;;  ("C-M-i" . jedi:complete))
+;;   :hook
+;;   (python-mode . jedi:setup))
 
 ;; ==== copilot ====
 
@@ -2264,6 +2294,7 @@ is binary, activate `hexl-mode'."
  '(large-file-warning-threshold nil)
  '(latex/view-after-compile nil)
  '(linum-format "%d⎢")
+ '(lsp-headerline-breadcrumb-enable nil)
  '(magit-diff-refine-hunk 'all)
  '(mark-even-if-inactive nil)
  '(markdown-gfm-use-electric-backquote nil)
