@@ -106,8 +106,32 @@
 ;; ==== lsp stuff ====
 
 (use-package eglot)
-(add-to-list 'eglot-server-programs '((python-mode) "jedi-language-server"))
 (add-hook 'prog-mode-hook 'eglot-ensure)
+
+(add-to-list 'eglot-server-programs '((python-mode) "jedi-language-server"))
+
+(add-to-list 'eglot-server-programs
+             `(rst-mode . (,(executable-find "python3") "-m" "esbonio")))
+(add-hook 'rst-mode-hook 'eglot-ensure)
+
+;; ==== company ====
+
+(defun my-company-toggle-or-cycle ()
+  "Start company completion or cycle through candidates."
+  (interactive)
+  (if company-candidates
+      (company-select-next)
+    (company-manual-begin)))
+
+(use-package company
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode)
+  :config
+  ;; Disable automatic completion
+  (setq company-idle-delay nil)
+  (global-set-key (kbd "C-<tab>") 'my-company-toggle-or-cycle))
 
 ;; ==== which-key ====
 
