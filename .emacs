@@ -105,33 +105,15 @@
 
 ;; ==== lsp stuff ====
 
-(use-package lsp-mode
-  :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
-  :hook (
-         (python-mode . lsp)
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
+(use-package eglot)
+(add-to-list 'eglot-server-programs '((python-mode) "jedi-language-server"))
+(add-hook 'prog-mode-hook 'eglot-ensure)
+
+;; ==== which-key ====
+
 (use-package which-key
   :config
   (which-key-mode))
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-
-;; Use the jedi lsp mode
-(use-package lsp-jedi
-  :ensure t
-  :after lsp-mode
-  :config
-  (add-hook 'python-mode-hook 'lsp-jedi-enable))
-
-
-;; (use-package lsp-python-ms
-;;   :ensure t
-;;   :init (setq lsp-python-ms-auto-install-server t)
-;;   :hook (python-mode . (lambda ()
-;;                          (require 'lsp-python-ms)
-;;                          (lsp))))
 
 ;; ==== command-log-mode ====
 
