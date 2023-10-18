@@ -513,6 +513,7 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   :ensure t)
 
 (add-hook 'prog-mode-hook 'copilot-mode)
+(add-hook 'yaml-mode-hook 'copilot-mode)
 
 (with-eval-after-load 'auto-complete
   ;; disable inline preview
