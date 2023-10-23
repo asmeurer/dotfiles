@@ -278,6 +278,8 @@ TAB_SALMON="\033]6;1;bg;red;brightness;250\a\033]6;1;bg;green;brightness;128\a\0
 TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255n\a"
 TAB_BROWN="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;64\a\033]6;1;bg;blue;brightness;0n\a"
 TAB_LIGHT_PINK="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;153\a\033]6;1;bg;blue;brightness;255n\a"
+TAB_MAROON="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
+
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
 # similar shade of gray
@@ -332,6 +334,10 @@ tab_colors[DIR_PYFLYBY]=$TAB_VIOLET
 # papyri - Purple
 DIR_PAPYRI="$HOME/Documents/papyri"
 tab_colors[DIR_PAPYRI]=$TAB_PURPLE
+
+# pytorch - Maroon
+DIR_PYTORCH="$HOME/Documents/pytorch"
+tab_colors[DIR_PYTORCH]=$TAB_MAROON
 
 # Old - Black
 DIR_ZURICH="$HOME/Documents/zurich-full"
