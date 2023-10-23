@@ -285,6 +285,11 @@ TAB_MAROON="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;0\a\033
 # similar shade of gray
 TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;green;brightness;211\a\033]6;1;bg;blue;brightness;211\a"
 
+# Potential new colors
+TAB_OLIVE="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;0\a"
+TAB_LIME="\033]6;1;bg;red;brightness;191\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
+TAB_GOLD="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;223\a\033]6;1;bg;blue;brightness;0\a"
+
 declare -A tab_colors
 
 # Directory codes are
