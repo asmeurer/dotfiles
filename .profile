@@ -128,7 +128,16 @@ else
     alias ls='ls --color -AFlha'
 fi
 
-alias l=ls
+# Make l do ls when the input is a directory and less when it is a file
+l() {
+    if [[ -d "$1" ]]; then
+        ls "$@"
+    elif [[ -f "$1" ]]; then
+        less "$@"
+    else
+        echo "$1 is not a valid file or directory" >&2
+    fi
+}
 
 # Typos
 alias it='git'
