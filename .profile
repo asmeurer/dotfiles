@@ -130,13 +130,21 @@ fi
 
 # Make l do ls when the input is a directory and less when it is a file
 l() {
-    if [[ -d "$1" ]]; then
-        ls "$@"
-    elif [[ -f "$1" ]]; then
-        less "$@"
-    else
-        echo "$1 is not a valid file or directory" >&2
-    fi
+    local arg
+    for arg; do
+        if [[ ! $arg =~ ^- ]]; then
+            if [[ -d $arg ]]; then
+                ls "$@"
+                return
+            elif [[ -f $arg ]]; then
+                less "$@"
+                return
+            fi
+        fi
+    done
+
+    # If no non-flag arguments were found, or they weren't files/directories
+    echo "Usage: l [flags] <file or directory>"
 }
 
 # Typos
