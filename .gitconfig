@@ -107,3 +107,5 @@
 
 [mergetool]
 	keepBackup = false
+[submodule]
+	recurse = true
