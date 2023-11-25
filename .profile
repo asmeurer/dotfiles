@@ -143,8 +143,8 @@ l() {
         fi
     done
 
-    # If no non-flag arguments were found, or they weren't files/directories
-    echo "Usage: l [flags] <file or directory>"
+    # If no non-flag arguments were found defualt to ls .
+    ls
 }
 
 # Typos
