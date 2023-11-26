@@ -73,9 +73,6 @@ alias systempython2.4="$SYSTEMPYTHON24"
 # Ignore duplicate entries in the command history
 HISTCONTROL=ignoredups:erasedups
 
-if [ -n "$MAC" ]; then
-    source $HOME/.iterm2_shell_integration.bash
-fi
 
 # Set a separate history file per tty
 export TTY=$(basename `tty`)
@@ -84,13 +81,15 @@ export HISTFILE="$HOME/.bash_history_files/${TTY}_history"
 # Always append to the history file
 shopt -s histappend
 # Save the history after every command, instead of just when the shell exits
-if [ -n "$MAC" ]; then
-    export PROMPT_COMMAND="history -a; iterm2_preexec_invoke_cmd"
-else
-    export PROMPT_COMMAND="history -a"
-fi
+export PROMPT_COMMAND="history -a"
 # Save timestamps to the history file
 export HISTTIMEFORMAT="%F %T "
+
+# Enable iTerm2 shell integration. This needs to go below the above code that
+# sets PROMPT_COMMAND
+if [ -n "$MAC" ]; then
+    source $HOME/.iterm2_shell_integration.bash
+fi
 
 # Prevents overriding files with >.  Use >! to override.
 set -o noclobber
