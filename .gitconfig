@@ -109,3 +109,5 @@
 	keepBackup = false
 [submodule]
 	recurse = true
+[fetch]
+	parallel = 0
