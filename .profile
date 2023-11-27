@@ -145,7 +145,7 @@ l() {
         fi
     done
 
-    # If no non-flag arguments were found defualt to ls .
+    # If no non-flag arguments were found default to ls .
     ls
 }
 
