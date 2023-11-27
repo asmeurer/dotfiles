@@ -114,3 +114,6 @@
 	parallel = 0
 [gpg]
 	format = ssh
+[gpg "ssh"]
+# See https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally
+	allowedSignersFile = ~/.ssh/allowed_signers
