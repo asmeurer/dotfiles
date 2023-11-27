@@ -138,6 +138,9 @@ l() {
             elif [[ -f $arg ]]; then
                 less "$@"
                 return
+            else
+                file "$@"
+                return
             fi
         fi
     done
