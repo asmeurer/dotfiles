@@ -543,6 +543,11 @@ PATH="$PATH:$HOME/Documents/cask/bin"
 # GPGTools (put before /usr/local/bin/)
 PATH="/usr/local/MacGPG2/bin:$PATH"
 
+# SSH Signing (with Secretive)
+if [ -n  "$MAC" ]; then
+    SSH_AUTH_SOCK="$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
+fi
+
 # Haskell
 PATH="$HOME/Library/Haskell/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"

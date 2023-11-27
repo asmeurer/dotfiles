@@ -1,7 +1,8 @@
 [user]
 	name = Aaron Meurer
 	email = asmeurer@gmail.com
-	# signingkey = ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBC9sqiYPO9pB5nO8or+0NBTS7ZYIZ1osb3Xp2tapsKQbXsNQG9LFbF1LpdW2++vIPJqgSH+B2HYs9rNbbNVb1sQ= GitHub@secretive.Aaron’s-16\"-MacBook-Pro.local
+# For Secretive, this should be a symlink to the signing key
+	signingkey = /Users/aaronmeurer/.ssh/ssh_signing.pub
 
 [color]
     diff  = auto
@@ -111,3 +112,5 @@
 	recurse = true
 [fetch]
 	parallel = 0
+[gpg]
+	format = ssh
