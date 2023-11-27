@@ -181,7 +181,7 @@ alias sl=ls
 alias dc=cd
 
 # List processes running under Rosetta. https://apple.stackexchange.com/a/431166/6446
-alias rosettaprocesses= "ps -p `fuser /usr/libexec/rosetta/runtime 2> /dev/null`"
+alias rosettaprocesses="ps -p `fuser /usr/libexec/rosetta/runtime 2> /dev/null`"
 
 PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
 # test -r /opt/sw/bin/init.sh && . /opt/sw/bin/init.sh
