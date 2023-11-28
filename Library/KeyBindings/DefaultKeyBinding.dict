@@ -1,11 +1,8 @@
+/* https://developer.apple.com/documentation/appkit/nsstandardkeybindingresponding */
+/* https://github.com/amake/dotfiles/blob/master/prefs/Library/KeyBindings/DefaultKeyBinding.dict */
 /* https://github.com/fkchang/emacs-keybindings-in-osx/blob/master/DefaultKeybinding.dict */
-/* http://www.erasetotheleft.com/post/mac-os-x-key-bindings/ */
 /* http://www.gnufoo.org/macosx/ */
 /* ~/Library/KeyBindings/DefaultKeyBinding.dict */
-/* The original bindings are from Mike Ferris of lorax.com as shipped
- * with his TextExtras package.  They were further modified by Mishka Gorodnitzky
- * (misaka@pobox.com), Patrick Linskey, and Llew Mason.
- */
 {
     "~f"      = "moveWordForward:";              /* M-f */
     "~b"      = "moveWordBackward:";             /* M-b */
@@ -27,15 +24,24 @@
     "^\UF700" = "pageUp:";                       /* C-up */
     "^\UF701" = "pageDown:";                     /* C-down */
     "^/"      = "undo:";                         /* C-/ */
-    "~c"      = "capitalizeWord:";               /* M-c */
-    "~u"      = "uppercaseWord:";                /* M-u */
-    "~l"      = "lowercaseWord:";                /* M-l */
+    "^_"        = "undo:";                          /* C-_          Undo */
+    "~c"        = ( "capitalizeWord:",              /* M-c          Capitalize */
+                    "moveForward:",
+                    "moveForward:");
+    "~u"        = ( "uppercaseWord:",               /* M-u          Uppercase */
+                    "moveForward:",
+                    "moveForward:");
+    "~l"        = ( "lowercaseWord:",               /* M-l          Lowercase */
+                    "moveForward:",
+                    "moveForward:");
     "^t"      = "transpose:";                    /* C-t */
     "~t"      = "transposeWords:";               /* M-t */
     "~/"      = "complete:";                     /* M-/ */
     "^g"      = "_cancelKey:";                   /* C-g */
     "^a"      = "moveToBeginningOfLine:";        /* C-a */
     "^e"      = "moveToEndOfLine:";              /* C-e */
+"^l"        = "centerSelectionInVisibleArea:";  /* C-l          Recenter */
+
 "~w" = "copy:";
 "^w" = "cut:";
 "^y" = "paste:";
