@@ -84,7 +84,7 @@ conda install mamba
 CONDA_PKGS="--file=$HOME/Documents/mypython/requirements.txt emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash matplotlib pyinstrument pytest sympy pudb setproctitle mamba jedi-language-server esbonio"
 
 if [[ $(uname) == "Darwin" ]]; then
-    CONDA_PKGS="$CONDA_PKGS fortune prefsync"
+    CONDA_PKGS="$CONDA_PKGS prefsync"
 fi
 
 mamba install $CONDA_PKGS
@@ -98,7 +98,3 @@ activate-global-python-argcomplete --user
 
 # echo "Running prefsync"
 # prefsync ~/Library/Preferences/org.pqrs.Karabiner.plist ~/Documents/dotfiles/Library/Preferences/org.pqrs.Karabiner.plist
-
-if [[ $(uname) == "Darwin" ]]; then
-    conda install -m -n fortune fortune
-fi

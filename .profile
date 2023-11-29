@@ -2,11 +2,7 @@ if [[ $(uname) == "Darwin" ]]; then
     MAC=1
 fi
 
-if [ -n "$MAC" ]; then
-    echo
-    ~/anaconda/envs/fortune/bin/fortune
-    echo
-else
+if [ -z "$MAC" ]; then
     echo
     fortune
     echo

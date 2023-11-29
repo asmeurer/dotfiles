@@ -6,10 +6,6 @@
 
 $PATH.insert(0, "/Users/aaronmeurer/anaconda/bin")
 
-echo
-fortune
-echo
-
 from pprint import pprint
 
 try:
@@ -271,4 +267,3 @@ if !(test -f "/Users/aaronmeurer/miniconda3/bin/conda"):
     _sys.modules["xontrib.conda"] = _mod
     del _sys, _mod, _ModuleType
 # <<< conda initialize <<<
-
