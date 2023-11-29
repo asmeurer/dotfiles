@@ -79,15 +79,13 @@ if [[ $(uname) != "Darwin" ]]; then
     cd ~/Documents/
 fi
 
-conda install mamba
-
 CONDA_PKGS="--file=$HOME/Documents/mypython/requirements.txt emacs argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash matplotlib pyinstrument pytest sympy pudb setproctitle mamba jedi-language-server esbonio"
 
 if [[ $(uname) == "Darwin" ]]; then
     CONDA_PKGS="$CONDA_PKGS prefsync"
 fi
 
-mamba install $CONDA_PKGS
+conda install $CONDA_PKGS
 
 clone-or-pull git@github.com:jwiegley/use-package.git
 cd ~/Documents/use-package
