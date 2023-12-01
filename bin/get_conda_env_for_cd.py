@@ -53,7 +53,7 @@ conda_envs[dirnames['DIR_VERSIONED_HDF5']] = 'versioned-hdf5'
 conda_envs[dirnames['DIR_PYFLYBY']] = 'pyflyby3'
 conda_envs[dirnames['DIR_BLOG']] = 'blog-nikola-pip310'
 conda_envs[dirnames['DIR_SCIPY']] = 'scipy-dev'
-conda_envs[dirnames['DIR_PAPYRI']] = 'papyri'
+conda_envs[dirnames['DIR_PAPYRI']] = '~/anaconda3/envs/papyri'
 conda_envs[dirnames['DIR_CONDA_STORE_SERVER']] = 'conda-store-server-dev'
 conda_envs[dirnames['DIR_PYTORCH']] = 'pytorch'
 
