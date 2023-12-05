@@ -27,6 +27,36 @@ if [ $? -eq 1 ] ; then
     export PATH
 fi
 
+
+# This needs to be fairly high up so that anything below it can use stuff in
+# the miniconda base environment.
+
+# Automatically activate certain conda environments when cd-ing into or out of
+# the given directories
+function cd () {
+    . <($HOME/bin/get_conda_env_for_cd.py "$@")
+    builtin cd "$@"
+    export OLDPWD
+}
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/aaronmeurer/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/aaronmeurer/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# # Apply automatic environment activation to new tabs
+cd .
+
 export SUDO_PS1="\[\h:\w\] \u\$ "
 
 alias rm='rm -i'
@@ -204,15 +234,6 @@ if [ -z "$MAC" ]; then
     alias open=xdg-open
 fi
 
-# conda environments
-# Automatically activate certain conda environments when cd-ing into or out of
-# the given directories
-
-function cd () {
-    . <(get_conda_env_for_cd.py "$@")
-    builtin cd "$@"
-    export OLDPWD
-}
 
 cdd () {
     cd "$HOME/Documents/$@" || return
@@ -440,8 +461,11 @@ set_tab_color () {
     echo -n -e "\033]0;\007"
 }
 
-
-export PS1='\[\e[1;30;40m\]$CONDA_DEFAULT_ENV\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]\[$(set_tab_color)\]'
+# Note, ${CONDA_DEFAULT_ENV#base} is not quite right. It removes any leading
+# "base" from the environment name, but this will be wrong if there happens to
+# be an environment that starts with "base". As far as I can tell, there is no
+# way to replace only exact matches in parameter expansion.
+export PS1='\[\e[1;30;40m\]${CONDA_DEFAULT_ENV#base}\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]\[$(set_tab_color)\]'
 #export PS1='\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]'
 
 # Date PS1
@@ -560,11 +584,8 @@ PATH="$PATH:/usr/local/go/bin"
 # Hunspell
 PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
 
-# Anaconda
-# Note: we must us anaconda here, because that is the real directory name
-# (anaconda is just a symlink). Otherwise, activate will not remove it from
-# the PATH.
-PATH="$HOME/miniconda3/bin:$PATH"
+# Custom scripts
+PATH="$HOME/bin/:$PATH"
 
 # This is the output of 'register-python-argcomplete conda'. We use this
 # instead of
@@ -632,8 +653,6 @@ conda-remove-test() {
     rm -rf ~/anaconda/envs/test
 }
 
-PATH="$HOME/bin/:$PATH"
-
 export PATH
 
 export PATH=`~/uniqpath`
@@ -686,11 +705,6 @@ eval "$(github-copilot-cli alias -- "$0")"
 
 export GPG_TTY=$(tty)
 
-# Disable any conda environments that may have been activated before sourcing.
-if [ -n "$CONDA_EXE" ]; then
-    deact
-fi
-
 hash -r
 
 # added by travis gem
@@ -701,21 +715,3 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/D
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/Downloads/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/completion.bash.inc"; fi
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/aaronmeurer/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/aaronmeurer/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Apply automatic environment activation to new tabs
-cd .

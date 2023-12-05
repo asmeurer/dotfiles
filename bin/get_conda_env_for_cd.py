@@ -71,7 +71,7 @@ def main():
 
     CONDA_DEFAULT_ENV = os.environ.get("CONDA_DEFAULT_ENV", "")
 
-    envname = ''
+    envname = 'base'
     for dir in conda_envs:
         if CDDIR.startswith(dir):
             envname = conda_envs[dir]
@@ -80,11 +80,8 @@ def main():
     if envname == CONDA_DEFAULT_ENV:
         return
 
-    if envname == '':
-        print('conda deactivate;')
-    else:
-        print('conda deactivate;')
-        print(f'conda activate {envname};')
+    print('conda deactivate;')
+    print(f'conda activate {envname};')
 
 if __name__ == '__main__':
     main()
