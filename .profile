@@ -465,7 +465,7 @@ set_tab_color () {
 # "base" from the environment name, but this will be wrong if there happens to
 # be an environment that starts with "base". As far as I can tell, there is no
 # way to replace only exact matches in parameter expansion.
-export PS1='\[\e[1;30;40m\]${CONDA_DEFAULT_ENV#base}\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]\[$(set_tab_color)\]'
+export PS1='\[\e[1;30;40m\]$( [[ "${CONDA_DEFAULT_ENV}" == "base" ]] || printf "%s" ${CONDA_DEFAULT_ENV} )\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]\[$(set_tab_color)\]'
 #export PS1='\[\e[1;37;40m\]\W\[\e[1;36;40m\]$(__git_ps1 "%s")\[\e[1;31;40m\]\$\[\e[0m\]'
 
 # Date PS1
