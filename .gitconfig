@@ -2,7 +2,7 @@
 	name = Aaron Meurer
 	email = asmeurer@gmail.com
 # For Secretive, this should be a symlink to the signing key
-	signingkey = /Users/aaronmeurer/.ssh/ssh_signing.pub
+	signingkey = ~/.ssh/ssh_signing.pub
 
 [color]
     diff  = auto

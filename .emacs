@@ -549,6 +549,8 @@ is available."
 (define-key copilot-mode-map [C-right] #'copilot-accept-completion-by-word)
 (define-key copilot-mode-map [C-M-right] #'copilot-accept-completion-by-line)
 (define-key global-map (kbd "C-<return>") #'copilot-complete-or-accept)
+;; Alternate binding since C-Enter doesn't work on Linux
+(define-key global-map (kbd "<backtab>") #'copilot-complete-or-accept)
 
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
