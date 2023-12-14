@@ -54,8 +54,25 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# # Apply automatic environment activation to new tabs
-cd .
+alias act="conda deactivate; conda activate"
+alias deact="conda deactivate; conda activate base"
+# # complete source activate. Thanks to Paul Kienzle from NIST for the
+# # suggestion.
+if [ -n "$MAC" ]; then
+    _activate_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$(LS $HOME/anaconda/envs | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
+    }
+else
+    _activate_complete ()
+    {
+        local cur="${COMP_WORDS[COMP_CWORD]}";
+        COMPREPLY=($(compgen -W "$("ls" $HOME/anaconda/envs | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
+    }
+fi
+
+complete -F _activate_complete "act"
 
 export SUDO_PS1="\[\h:\w\] \u\$ "
 
@@ -621,27 +638,6 @@ complete -o nospace -o default -F _python_argcomplete "conda"
 
 . $HOME/.bash_completion.d/python-argcomplete.sh
 
-
-alias act="conda deactivate; conda activate"
-alias deact="conda deactivate"
-# # complete source activate. Thanks to Paul Kienzle from NIST for the
-# # suggestion.
-if [ -n "$MAC" ]; then
-    _activate_complete ()
-    {
-        local cur="${COMP_WORDS[COMP_CWORD]}";
-        COMPREPLY=($(compgen -W "$(LS $HOME/anaconda/envs | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
-    }
-else
-    _activate_complete ()
-    {
-        local cur="${COMP_WORDS[COMP_CWORD]}";
-        COMPREPLY=($(compgen -W "$("ls" $HOME/anaconda/envs | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
-    }
-fi
-
-complete -F _activate_complete "act"
-
 conda-build-all() {
     for CONDA_PY in 26 27 33 34; do
         export CONDA_PY
@@ -715,3 +711,8 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/D
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/Downloads/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/completion.bash.inc"; fi
+
+# Apply automatic environment activation to new tabs. At the end so that
+# miniconda3/bin is put at the front of the PATH.
+act base
+cd .
