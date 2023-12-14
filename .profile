@@ -703,9 +703,6 @@ export GPG_TTY=$(tty)
 
 hash -r
 
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/Downloads/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/path.bash.inc"; fi
 
