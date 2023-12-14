@@ -87,6 +87,8 @@ fi
 
 conda install $CONDA_PKGS
 
+conda create -n emacs emacs nodejs
+
 clone-or-pull git@github.com:jwiegley/use-package.git
 cd ~/Documents/use-package
 make elc

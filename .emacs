@@ -510,6 +510,7 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 
 (use-package copilot
   :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
+  :custom (copilot-node-executable "~/anaconda/envs/emacs/bin/node" "Set node executable.")
   :ensure t)
 
 (add-hook 'prog-mode-hook 'copilot-mode)
