@@ -106,6 +106,10 @@
 ;; ==== lsp stuff ====
 
 (use-package eglot)
+;; Enable eglot mode if it is supported
+(defun eglot-ensure ()
+  (when (eglot-current-server)
+    (eglot-ensure)))
 (add-hook 'prog-mode-hook 'eglot-ensure)
 
 (add-to-list 'eglot-server-programs '((python-mode) "jedi-language-server"))
