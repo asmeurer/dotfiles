@@ -118,6 +118,17 @@
              `(rst-mode . (,(executable-find "python3") "-m" "esbonio")))
 (add-hook 'rst-mode-hook 'eglot-ensure)
 
+;; ==== treesit-auto ====
+;; (requires emacs 29)
+
+(if (not (version< emacs-version "29"))
+    (use-package treesit-auto
+      :custom
+      (treesit-auto-install 'prompt)
+      :config
+      (treesit-auto-add-to-auto-mode-alist 'all)
+      (global-treesit-auto-mode)))
+
 ;; ==== company ====
 
 (defun my-company-toggle-or-cycle ()
