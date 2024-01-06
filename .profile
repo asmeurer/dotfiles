@@ -54,6 +54,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# condax
+export PATH="/home/aaronmeurer/.local/bin:$PATH"
+
 alias act="conda deactivate; conda activate"
 alias deact="conda deactivate; conda activate base"
 # # complete source activate. Thanks to Paul Kienzle from NIST for the
