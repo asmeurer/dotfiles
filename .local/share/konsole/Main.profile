@@ -25,3 +25,4 @@ HistorySize=10000
 
 [Terminal Features]
 FlowControlEnabled=false
+VerticalLine=false
