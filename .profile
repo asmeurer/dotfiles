@@ -41,14 +41,14 @@ function cd () {
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/aaronmeurer/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('~/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/aaronmeurer/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -694,7 +694,9 @@ export GIT_COMPLETION_SHOW_ALL=1
 export GIT_PROMPT_FILE=~/Documents/git/contrib/completion/git-prompt.sh
 source $GIT_PROMPT_FILE
 
-eval "$(maestral completion bash)"
+if [ -z "$MAC" ]; then
+    eval "$(maestral completion bash)"
+fi
 
 # Add github copilot cli aliases (??, git?, gh?)
 eval "$(github-copilot-cli alias -- "$0")"
