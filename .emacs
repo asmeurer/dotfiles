@@ -566,6 +566,10 @@ is available."
 (define-key global-map (kbd "C-<return>") #'copilot-complete-or-accept)
 ;; Alternate binding since C-Enter doesn't work on Linux
 (define-key global-map (kbd "<backtab>") #'copilot-complete-or-accept)
+;; Undefine backtab for Python-mode when python mode is loaded
+(add-hook 'python-mode-hook
+          (lambda ()
+            (define-key python-mode-map [backtab] nil)))
 
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
