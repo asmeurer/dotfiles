@@ -715,3 +715,16 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/completion.bash.inc" ]; then source "$
 # miniconda3/bin is put at the front of the PATH.
 act base
 cd .
+
+# Created by `pipx` on 2024-01-09 08:17:31
+export PATH="$PATH:/Users/aaronmeurer/.local/bin"
+# Shell-GPT integration BASH v0.1
+_sgpt_bash() {
+if [[ -n "$READLINE_LINE" ]]; then
+    history -s "# $READLINE_LINE"
+	READLINE_LINE=$(sgpt --shell <<< "$READLINE_LINE")
+    READLINE_POINT=${#READLINE_LINE}
+fi
+}
+bind -x '"\C-x\C-o": _sgpt_bash'
+# Shell-GPT integration BASH v0.1
