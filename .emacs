@@ -112,7 +112,7 @@
     (eglot-ensure)))
 (add-hook 'prog-mode-hook 'eglot-ensure)
 
-(add-to-list 'eglot-server-programs '((python-mode) "jedi-language-server"))
+;; (add-to-list 'eglot-server-programs '((python-mode) "jedi-language-server"))
 
 (add-to-list 'eglot-server-programs
              `(rst-mode . (,(executable-find "python3") "-m" "esbonio")))
