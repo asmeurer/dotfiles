@@ -701,9 +701,6 @@ if [ -z "$MAC" ]; then
     eval "$(maestral completion bash)"
 fi
 
-# Add github copilot cli aliases (??, git?, gh?)
-eval "$(github-copilot-cli alias -- "$0")"
-
 export GPG_TTY=$(tty)
 
 hash -r
