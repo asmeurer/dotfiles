@@ -721,6 +721,8 @@ export PATH="$PATH:/Users/aaronmeurer/.local/bin"
 # Shell-GPT integration BASH v0.1
 _sgpt_bash() {
 if [[ -n "$READLINE_LINE" ]]; then
+    # Remove any leading # and space characters
+    READLINE_LINE=${READLINE_LINE##\#*([[:space:]])}
     history -s "# $READLINE_LINE"
 	READLINE_LINE=$(sgpt --shell <<< "$READLINE_LINE")
     READLINE_POINT=${#READLINE_LINE}
