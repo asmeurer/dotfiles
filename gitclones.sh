@@ -95,7 +95,7 @@ fi
 # fi
 
 conda install $CONDA_PKGS
-pipx install sgpt
+pipx install shell-gpt
 
 clone-or-pull git@github.com:jwiegley/use-package.git
 cd ~/Documents/use-package
