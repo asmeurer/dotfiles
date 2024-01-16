@@ -10,7 +10,7 @@ def canon(p):
     return os.path.realpath(os.path.expanduser(p)) + os.path.sep
 
 def exit(m):
-    sys.exit(f"{this_exe}: {m}")
+    sys.exit(this_exe, m)
 
 HOME = os.environ.get('HOME')
 if not HOME:
@@ -81,7 +81,7 @@ def main():
         return
 
     print('conda deactivate;')
-    print(f'conda activate {envname};')
+    print('conda activate {envname};'.format(envname=envname))
 
 if __name__ == '__main__':
     main()
