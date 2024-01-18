@@ -2268,7 +2268,7 @@ is binary, activate `hexl-mode'."
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
  '(aggressive-indent-excluded-modes
-   '(markdown-mode python-mode python-ts-mode makefile-mode c-mode c++-mode sass-mode))
+   '(markdown-mode python-mode makefile-mode c-mode c++-mode sass-mode))
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-list-file-prefix "~/.emacs.d/autosave/")
