@@ -572,6 +572,21 @@ is available."
           (lambda ()
             (define-key python-mode-map [backtab] nil)))
 
+;; ==== chatgpt arcana ====
+
+;; To set the API key, add
+;;
+;; machine chat.openai.com login YOUR_CHATGPT_EMAIL_HERE password YOUR_API_KEY_HERE
+;;
+;; to ~/.authinfo
+
+(use-package request)
+(use-package chatgpt-arcana
+  :straight (:host github :repo "CarlQLange/ChatGPT-Arcana.el" :files
+                   ("*.el"))
+  :init (setq chatgpt-arcana-api-key (auth-source-pick-first-password
+                                      :host "chat.openai.com")))
+
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
 
