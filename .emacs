@@ -129,6 +129,16 @@
       (treesit-auto-add-to-auto-mode-alist 'all)
       (global-treesit-auto-mode)))
 
+;; ==== prescient ====
+
+(use-package prescient
+  :ensure t
+  :config
+  (prescient-persist-mode +1))
+
+;; (use-package ido-completing-read+
+;;   :ensure t)
+
 ;; ==== company ====
 
 (defun my-company-toggle-or-cycle ()
@@ -1532,6 +1542,16 @@ This command does the reverse of `fill-region'."
 ;; ===== fido-vertical-mode ====
 (if (>= emacs-major-version 28)
     (fido-vertical-mode 1))
+
+;; Save fido history across sessions
+
+;; Use prescient for sorting and filtering
+(setq fido-sort-function #'prescient-sort
+      fido-filter-function #'prescient-filter)
+;; Save prescient data between sessions
+(setq prescient-save-file "~/.emacs.d/prescient-save.el")
+
+(add-to-list 'savehist-additional-variables 'prescient-history)
 
 ;; Make fido-mode remember which completions are used. See
 ;; https://emacs.stackexchange.com/questions/74512/make-fido-mode-remember-which-command-i-chose/74524#74524
