@@ -906,6 +906,7 @@ is available."
       '(kill-ring search-ring regexp-search-ring my-fido-command-completions-alist))
 
 (savehist-mode 1)
+(setq history-length 1000) ; default is 100
 
 ;; Prevent savehist from spamming messages about the history file being locked
 
