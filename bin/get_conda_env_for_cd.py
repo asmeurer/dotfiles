@@ -23,11 +23,12 @@ if not PWD:
 PWD = canon(PWD)
 
 dirnames = dict(
-    DIR_ARRAY_API_TESTS="$HOME/Documents/array-api-tests",
     DIR_ARRAY_API="$HOME/Documents/array-api",
+    DIR_ARRAY_API_TESTS="$HOME/Documents/array-api-tests",
+    DIR_ARRAY_API_COMPAT="$HOME/Documents/array-api-compat",
+    DIR_ARRAY_API_STRICT="$HOME/Documents/array-api-strict",
     DIR_SCIPY_2023="$HOME/Documents/scipy-2023-presentation",
     DIR_NUMPY="$HOME/Documents/numpy",
-    DIR_ARRAY_API_COMPAT="$HOME/Documents/array-api-compat",
     DIR_NDINDEX="$HOME/Documents/ndindex",
     DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5",
     DIR_PYFLYBY="$HOME/Documents/pyflyby",
@@ -46,6 +47,7 @@ conda_envs = {}
 conda_envs[dirnames['DIR_ARRAY_API']] = 'array-apis'
 conda_envs[dirnames['DIR_ARRAY_API_TESTS']] = 'array-apis'
 conda_envs[dirnames['DIR_ARRAY_API_COMPAT']] = 'array-apis'
+conda_envs[dirnames['DIR_ARRAY_API_STRICT']] = 'array-apis'
 conda_envs[dirnames['DIR_SCIPY_2023']] = 'array-apis'
 conda_envs[dirnames['DIR_NUMPY']] = 'array-apis'
 conda_envs[dirnames['DIR_NDINDEX']] = 'ndindex'
