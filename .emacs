@@ -181,7 +181,23 @@
 
 ;; ===== flycheck-pyflakes ======
 
-(use-package flycheck-pyflakes)
+;; (use-package flycheck-pyflakes)
+
+;; copied from flycheck-pyflakes, but adding support for python-ts-mode
+
+(flycheck-define-checker python-pyflakes
+  "A Python syntax and style checker using the pyflakes utility.
+
+To override the path to the pyflakes executable, set
+`flycheck-python-pyflakes-executable'.
+
+See URL `http://pypi.python.org/pypi/pyflakes'."
+  :command ("pyflakes" source-inplace)
+  :error-patterns
+  ((error line-start (file-name) ":" line ":" (message) line-end))
+  :modes (python-mode python-ts-mode))
+
+(add-to-list 'flycheck-checkers 'python-pyflakes)
 
 ;; ==== Undo-tree ====
 ;; Git repo at http://www.dr-qubit.org/git/undo-tree.git
