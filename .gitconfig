@@ -27,7 +27,7 @@
     fe = fetch --all
     weekreport = shortlog --since=1.weeks --author=asmeurer
     dayreport = shortlog --since=1.days --author=asmeurer
-    br = branch --sort=committerdate
+    br = branch
     detach = !git checkout $(git rev-parse HEAD)
     bl = blame -CCC -M
     lg = log --graph --topo-order --use-mailmap --stat --decorate
@@ -49,6 +49,8 @@
     res--hard = !git backup && git reset --hard
     masteralias = symbolic-ref refs/heads/master refs/heads/main
 
+[branch]
+    sort = committerdate
 [i18n]
     commitEncoding = utf-8
 [push]
