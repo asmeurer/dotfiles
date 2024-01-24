@@ -48,6 +48,7 @@
     reset--hard = !git backup && git reset --hard
     res--hard = !git backup && git reset --hard
     masteralias = symbolic-ref refs/heads/master refs/heads/main
+    mainalias = symbolic-ref refs/heads/main refs/heads/master
 
 [branch]
     sort = committerdate
