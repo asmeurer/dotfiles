@@ -103,13 +103,8 @@
 [stash]
     showPatch = true
 
-# Requires git 2.34
-# [help]
-#     autoCorrect = prompt
-
-# Requires git 2.34
-# [gpg]
-# 	format = ssh
+[help]
+    autoCorrect = prompt
 
 [mergetool]
 	keepBackup = false
