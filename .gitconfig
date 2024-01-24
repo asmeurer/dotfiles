@@ -5,13 +5,14 @@
 	signingkey = ~/.ssh/ssh_signing.pub
 
 [color]
-    diff  = auto
-    status= auto
-    branch= auto
+    diff = auto
+    status = auto
+    branch = auto
     interactive = true
 
 [color "diff"]
     new = white
+
 [alias]
     ci = commit --interactive
     di = diff --color-words
@@ -37,6 +38,12 @@
     sw = show --color-words
     psh = !git pull --no-edit && git push
     com = commit
+    pusho = push --set-upstream origin HEAD
+    reset--hard = !git backup && git reset --hard
+    res--hard = !git backup && git reset --hard
+    masteralias = symbolic-ref refs/heads/master refs/heads/main
+    mainalias = symbolic-ref refs/heads/main refs/heads/master
+    # Typos
     dif = diff
     difff = diff
     iff = diff
@@ -47,41 +54,43 @@
     pulll = pull
     shwo = show
     how = show
-    pusho = push --set-upstream origin HEAD
-    reset--hard = !git backup && git reset --hard
-    res--hard = !git backup && git reset --hard
-    masteralias = symbolic-ref refs/heads/master refs/heads/main
-    mainalias = symbolic-ref refs/heads/main refs/heads/master
 
 [branch]
     # Sort most recent branches to the end
     sort = committerdate
+
 [i18n]
     commitEncoding = utf-8
+
 [push]
     default = tracking
+
 [github]
     user = asmeurer
+
 [rerere]
     enabled = true
 
 [credential]
 	helper = osxkeychain
+
 [core]
     precomposeunicode = true
+
 [pager]
     log = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     show = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     diff = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     branch = false
     tag = false
+
 [interactive]
     diffFilter = ~/Documents/git/contrib/diff-highlight/diff-highlight
     singleKey = true
-# [gpg]
-# 	program = krgpg
+
 [commit]
 	gpgSign = true
+
 [tag]
 	forceSignAnnotated = true
 
@@ -101,6 +110,8 @@
 #     tool = emacsclient
 [mergetool "emacsclient"]
     cmd = emacsclient -nw -c -a \"\" --eval \"(my/emerge \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" \\\"$OUTPUT\\\")\"
+	keepBackup = false
+
 [pull]
 	rebase = false
 
@@ -110,14 +121,15 @@
 [help]
     autoCorrect = prompt
 
-[mergetool]
-	keepBackup = false
 [submodule]
 	recurse = true
+
 [fetch]
 	parallel = 0
+
 [gpg]
 	format = ssh
+
 [gpg "ssh"]
 # See https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally
 	allowedSignersFile = ~/.ssh/allowed_signers
