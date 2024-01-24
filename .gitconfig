@@ -23,6 +23,7 @@
     pu-all = push github :
     logl = log --pretty=oneline --abbrev-commit
     gr = grep -i --color -n -E
+    # See bin/git-backup.sh
     backup = !git-backup.sh
     backups = !git fsck --unreachable | grep commit | cut -d' ' -f3 | xargs git log --merges --no-walk --grep='Backup Commit' --stat
     back = backup
@@ -53,6 +54,7 @@
     mainalias = symbolic-ref refs/heads/main refs/heads/master
 
 [branch]
+    # Sort most recent branches to the end
     sort = committerdate
 [i18n]
     commitEncoding = utf-8
@@ -83,6 +85,8 @@
 [tag]
 	forceSignAnnotated = true
 
+# Makes git fetch all PRs from GitHub. Not actually a good idea to do this
+# globally, but can be a good idea for some specific repos.
 # [remote "origin"]
 # 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 
