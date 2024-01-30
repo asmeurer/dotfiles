@@ -77,6 +77,9 @@
 [core]
     precomposeunicode = true
 
+[blame]
+    coloring = repeatedLines
+
 [pager]
     log = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     show = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
