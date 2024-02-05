@@ -34,8 +34,8 @@ fi
 # Automatically activate certain conda environments when cd-ing into or out of
 # the given directories
 function cd () {
-    . <($HOME/bin/get_conda_env_for_cd.py "$@")
     builtin cd "$@"
+    . <($HOME/bin/get_conda_env_for_cd.py "$@")
     export OLDPWD
 }
 

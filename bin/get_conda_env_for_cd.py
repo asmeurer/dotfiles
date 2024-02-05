@@ -69,7 +69,7 @@ def main():
     elif sys.argv[1] == '-':
         CDDIR = canon(os.environ.get("OLDPWD", ''))
     else:
-        CDDIR = canon(sys.argv[1])
+        CDDIR = canon(PWD)
 
     CONDA_DEFAULT_ENV = os.environ.get("CONDA_DEFAULT_ENV", "")
 
