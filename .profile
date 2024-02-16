@@ -554,6 +554,22 @@ recompile-emacs () {
     cd -
 }
 
+rebuild-numpy () {
+    if [[ "$PWD" != "$HOME/Documents/numpy" ]]; then
+        echo "You must be in ~/Documents/numpy to rebuild numpy"
+        return 1
+    fi
+    git clean -dfX
+    git clean -dfx numpy/
+    spin build -j16
+    /bin/cp -Rf build-install/usr/lib/python3.11/site-packages/numpy/ numpy
+
+    if ! python -c 'import numpy; print("Built NumPy", numpy.__version__)'; then
+        echo -e "\\033[0;31mError: Rebuilding numpy failed\\033[0m"
+        return 1
+    fi
+}
+
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
