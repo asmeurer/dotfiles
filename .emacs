@@ -469,6 +469,10 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 (use-package yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
+;; ==== TOML Mode ====
+
+(use-package toml-mode)
+
 ;; ===== Coffeescript ====
 
 (use-package coffee-mode)
