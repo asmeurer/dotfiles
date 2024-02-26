@@ -115,6 +115,9 @@
     cmd = emacsclient -nw -c -a \"\" --eval \"(my/emerge \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" \\\"$OUTPUT\\\")\"
     keepBackup = false
 
+[mergetool]
+    keepBackup = false
+
 [pull]
     rebase = false
 
