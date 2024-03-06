@@ -1,46 +1,29 @@
 #!/usr/bin/env python
 
-
 import sys
 import os
-
-this_exe = sys.argv[0]
 
 def canon(p):
     return os.path.realpath(os.path.expanduser(p)) + os.path.sep
 
-def exit(m):
-    sys.exit(this_exe, m)
-
-HOME = os.environ.get('HOME')
-if not HOME:
-    exit("Could not get $HOME")
-HOME = canon(HOME)
-
-PWD = os.environ.get("PWD")
-if not PWD:
-    exit("Could not get $PWD")
-PWD = canon(PWD)
+HOME = canon('~')
 
 dirnames = dict(
-    DIR_ARRAY_API="$HOME/Documents/array-api",
-    DIR_ARRAY_API_TESTS="$HOME/Documents/array-api-tests",
-    DIR_ARRAY_API_COMPAT="$HOME/Documents/array-api-compat",
-    DIR_ARRAY_API_STRICT="$HOME/Documents/array-api-strict",
-    DIR_SCIPY_2023="$HOME/Documents/scipy-2023-presentation",
-    DIR_NUMPY="$HOME/Documents/numpy",
-    DIR_NDINDEX="$HOME/Documents/ndindex",
-    DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5",
-    DIR_PYFLYBY="$HOME/Documents/pyflyby",
-    DIR_BLOG="$HOME/Documents/blog",
-    DIR_SCIPY="$HOME/Documents/scipy",
-    DIR_PAPYRI="$HOME/Documents/papyri",
-    DIR_CONDA_STORE_SERVER="$HOME/Documents/conda-store/conda-store-server",
-    DIR_PYTORCH="$HOME/Documents/pytorch",
+    DIR_ARRAY_API=f"{HOME}Documents/array-api",
+    DIR_ARRAY_API_TESTS=f"{HOME}Documents/array-api-tests",
+    DIR_ARRAY_API_COMPAT=f"{HOME}Documents/array-api-compat",
+    DIR_ARRAY_API_STRICT=f"{HOME}Documents/array-api-strict",
+    DIR_SCIPY_2023=f"{HOME}Documents/scipy-2023-presentation",
+    DIR_NUMPY=f"{HOME}Documents/numpy",
+    DIR_NDINDEX=f"{HOME}Documents/ndindex",
+    DIR_VERSIONED_HDF5=f"{HOME}Documents/versioned-hdf5",
+    DIR_PYFLYBY=f"{HOME}Documents/pyflyby",
+    DIR_BLOG=f"{HOME}Documents/blog",
+    DIR_SCIPY=f"{HOME}Documents/scipy",
+    DIR_PAPYRI=f"{HOME}Documents/papyri",
+    DIR_CONDA_STORE_SERVER=f"{HOME}Documents/conda-store/conda-store-server",
+    DIR_PYTORCH=f"{HOME}Documents/pytorch",
 )
-
-for d in dirnames:
-    dirnames[d] = canon(dirnames[d].replace("$HOME", HOME))
 
 conda_envs = {}
 
@@ -62,14 +45,12 @@ conda_envs[dirnames['DIR_PYTORCH']] = 'pytorch'
 def main():
     # TODO: Support CDPATH
 
-    if len(sys.argv) > 2:
-        exit("Exactly one argument required")
-    elif len(sys.argv) == 1:
-        CDDIR = canon('~')
-    elif sys.argv[1] == '-':
-        CDDIR = canon(os.environ.get("OLDPWD", ''))
-    else:
-        CDDIR = canon(PWD)
+    PWD = os.environ.get("PWD")
+    if not PWD:
+        sys.exit("Could not get $PWD")
+    PWD = canon(PWD)
+
+    CDDIR = canon(PWD)
 
     CONDA_DEFAULT_ENV = os.environ.get("CONDA_DEFAULT_ENV", "")
 
