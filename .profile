@@ -350,6 +350,11 @@ TAB_GRAY="\033]6;1;bg;red;brightness;211\a\033]6;1;bg;green;brightness;211\a\033
 TAB_OLIVE="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;128\a\033]6;1;bg;blue;brightness;0\a"
 TAB_LIME="\033]6;1;bg;red;brightness;191\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;0\a"
 TAB_GOLD="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;223\a\033]6;1;bg;blue;brightness;0\a"
+TAB_TAN="\033]6;1;bg;red;brightness;210\a\033]6;1;bg;green;brightness;180\a\033]6;1;bg;blue;brightness;140\a"
+TAB_AQUA="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;255\a"
+TAB_NAVY="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;128\a"
+TAB_BEIGE="\033]6;1;bg;red;brightness;245\a\033]6;1;bg;green;brightness;245\a\033]6;1;bg;blue;brightness;220\a"
+TAB_CORAL="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;127\a\033]6;1;bg;blue;brightness;80\a"
 
 declare -A tab_colors
 
