@@ -339,6 +339,7 @@ TAB_LIGHT_BLUE="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;255\a
 TAB_BROWN="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;64\a\033]6;1;bg;blue;brightness;0n\a"
 TAB_LIGHT_PINK="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;153\a\033]6;1;bg;blue;brightness;255n\a"
 TAB_MAROON="\033]6;1;bg;red;brightness;128\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
+TAB_MINT="\033]6;1;bg;red;brightness;152\a\033]6;1;bg;green;brightness;255\a\033]6;1;bg;blue;brightness;152\a"
 
 # Can't actually get metal yet
 # (http://code.google.com/p/iterm2/issues/detail?id=1904), so we just use a
@@ -443,6 +444,10 @@ tab_colors[DIR_NUMPY]=$TAB_BROWN
 # Array API Compat - Dark Green
 DIR_ARRAY_API_COMPAT="$HOME/Documents/array-api-compat"
 tab_colors[DIR_ARRAY_API_COMPAT]=$TAB_DARK_GREEN
+
+# Array API Strict - Mint
+DIR_ARRAY_API_STRICT="$HOME/Documents/array-api-strict"
+tab_colors[DIR_ARRAY_API_STRICT]=$TAB_MINT
 
 # ndindex - Salmon
 DIR_NDINDEX="$HOME/Documents/ndindex"
