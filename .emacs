@@ -569,10 +569,13 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   (setq ac-candidate-menu-min 0))
 
 ;; Based on function from https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/
+
 (defun copilot-complete-or-accept ()
   "Command that either triggers a completion or accepts one if one
-is available."
+is available. Enables copilot-mode if it isn't already."
   (interactive)
+  (unless (bound-and-true-p copilot-mode)
+    (copilot-mode 1))
   (if (copilot--overlay-visible)
       (progn
         (copilot-accept-completion))
