@@ -604,21 +604,41 @@ is available. Enables copilot-mode if it isn't already."
 (add-hook 'python-mode-hook
           (lambda ()
             (define-key python-mode-map [backtab] nil)))
+(add-hook 'python-ts-mode-hook
+          (lambda ()
+            (define-key python-mode-map [backtab] nil)))
 
-;; ==== chatgpt arcana ====
-
-;; To set the API key, add
+;; ;; ==== chatgpt arcana ====
 ;;
-;; machine chat.openai.com login YOUR_CHATGPT_EMAIL_HERE password YOUR_API_KEY_HERE
+;; ;; To set the API key, add
+;; ;;
+;; ;; machine chat.openai.com login YOUR_CHATGPT_EMAIL_HERE password YOUR_API_KEY_HERE
+;; ;;
+;; ;; to ~/.authinfo
 ;;
-;; to ~/.authinfo
+;; (use-package request)
+;; (use-package chatgpt-arcana
+;;   :straight (:host github :repo "CarlQLange/ChatGPT-Arcana.el" :files
+;;                    ("*.el"))
+;;   :init (setq chatgpt-arcana-api-key (auth-source-pick-first-password
+;;                                       :host "chat.openai.com")))
 
-(use-package request)
-(use-package chatgpt-arcana
-  :straight (:host github :repo "CarlQLange/ChatGPT-Arcana.el" :files
-                   ("*.el"))
-  :init (setq chatgpt-arcana-api-key (auth-source-pick-first-password
-                                      :host "chat.openai.com")))
+;; ==== ellama ====
+
+
+(use-package ellama
+  :init
+  ;; setup key bindings
+  (setopt ellama-keymap-prefix "C-c e")
+  (setq openai-key (auth-source-pick-first-password
+                    :host "chat.openai.com"))
+  (require 'llm-openai)
+  (setq ellama-provider
+        (make-llm-openai
+         :key openai-key
+         :chat-model "gpt-4-turbo-preview")
+        llm-warn-on-nonfree nil))
+
 
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
