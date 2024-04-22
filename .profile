@@ -751,7 +751,7 @@ _sgpt_bash() {
         # Remove any leading # and space characters
         READLINE_LINE=${READLINE_LINE##\#*([[:space:]])}
         history -s "# $READLINE_LINE"
-        READLINE_LINE=$(sgpt --shell <<< "$READLINE_LINE")
+        READLINE_LINE=$(sgpt --no-interaction --shell <<< "$READLINE_LINE")
         READLINE_POINT=${#READLINE_LINE}
     fi
 }
