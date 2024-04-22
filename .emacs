@@ -2299,7 +2299,7 @@ is binary, activate `hexl-mode'."
  '(flyspell-lazy-mode t)
  '(flyspell-lazy-size-threshold 5)
  '(flyspell-lazy-use-flyspell-word nil)
- '(flyspell-lazy-window-idle-seconds 3)
+ '(flyspell-lazy-window-idle-seconds 2)
  '(flyspell-prog-text-faces
    '(font-lock-string-face font-lock-comment-face font-lock-doc-face markdown-pre-face))
  '(git-gutter:update-interval 2)
