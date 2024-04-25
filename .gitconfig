@@ -52,6 +52,7 @@
     dff = diff
     pul = pull
     pulll = pull
+    tpull = pull
     shwo = show
     how = show
 
