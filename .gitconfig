@@ -23,7 +23,7 @@
     pu = "!: git branch ; f() {\\\n    branch=\"$(git rev-parse --abbrev-ref HEAD)\"; \\\n    remote=\"$(git config --get branch.$branch.remote)\"; \\\n    if [ -z \"$remote\" ]; then \\\n        git push -u github \"$branch\" \"${@}\"; \\\n    else \\\n        git push \"$remote\" \"$branch\" \"${@}\"; \\\n    fi; \\\n}; f"
     pu-all = push github :
     logl = log --pretty=oneline --abbrev-commit
-    gr = grep -i --color -n -E
+    gr = grep -i --color -n -E --no-recurse-submodules
     # See bin/git-backup.sh
     backup = !git-backup.sh
     backups = !git fsck --unreachable | grep commit | cut -d' ' -f3 | xargs git log --merges --no-walk --grep='Backup Commit' --stat
