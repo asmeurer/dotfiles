@@ -574,7 +574,7 @@ rebuild-numpy () (
     git clean -dfX
     git clean -dfx numpy/
     spin build -j16
-    /bin/cp -Rf build-install/usr/lib/python3.11/site-packages/numpy/ numpy
+    /bin/cp -Rf build-install/usr/lib/python3.*/site-packages/numpy/ numpy
 
     if ! python -c 'import numpy; print("Built NumPy", numpy.__version__)'; then
         return 1
