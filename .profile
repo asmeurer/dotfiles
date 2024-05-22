@@ -566,9 +566,9 @@ recompile-emacs () {
 
 rebuild-numpy () (
     set -e
-    trap 'echo -e "\\033[0;31mError: Rebuilding numpy failed\\033[0m"' EXIT
+    trap 'echo -e "\\033[0;31mError: Rebuilding numpy failed\\033[0m"' ERR
     if [[ "$PWD" != "$HOME/Documents/numpy" ]]; then
-        echo "You must be in ~/Documents/numpy to rebuild numpy"
+        echo -e "\\033[0;31mError: You must be in ~/Documents/numpy to rebuild numpy\\033[0m"
         return 1
     fi
     git clean -dfX
@@ -576,9 +576,7 @@ rebuild-numpy () (
     spin build -j16
     /bin/cp -Rf build-install/usr/lib/python3.*/site-packages/numpy/ numpy
 
-    if ! python -c 'import numpy; print("Built NumPy", numpy.__version__)'; then
-        return 1
-    fi
+    python -c 'import numpy; print("Built NumPy", numpy.__version__)'
 )
 
 # Setting PATH for Python 2.7
