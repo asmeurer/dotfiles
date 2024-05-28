@@ -571,8 +571,10 @@ rebuild-numpy () (
         echo -e "\\033[0;31mError: You must be in ~/Documents/numpy to rebuild numpy\\033[0m"
         return 1
     fi
+
     git clean -dfX
     git clean -dfx numpy/
+    git submodule update --init --recursive
     spin build -j16
     /bin/cp -Rf build-install/usr/lib/python3.*/site-packages/numpy/ numpy
 
