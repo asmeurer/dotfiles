@@ -482,6 +482,10 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 (use-package sass-mode
   :mode "\\.sass\\'")
 
+;; ===== Rust =====
+
+(use-package rust-mode)
+
 ;; ===== auto-complete-mode ====
 
 (use-package auto-complete
