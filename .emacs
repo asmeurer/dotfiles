@@ -699,6 +699,10 @@ is available. Enables copilot-mode if it isn't already."
   ;; (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
+;; Also update straight packages
+(add-hook 'auto-package-update-after-hook
+          'straight-pull-all)
+
 ;; ====== visible-mark =====
 (use-package visible-mark)
 
