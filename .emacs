@@ -482,6 +482,10 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 (use-package sass-mode
   :mode "\\.sass\\'")
 
+;; ===== Rust =====
+
+(use-package rust-mode)
+
 ;; ===== auto-complete-mode ====
 
 (use-package auto-complete
@@ -694,6 +698,10 @@ is available. Enables copilot-mode if it isn't already."
   (setq auto-package-update-delete-old-versions t)
   ;; (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
+
+;; Also update straight packages
+(add-hook 'auto-package-update-after-hook
+          'straight-pull-all)
 
 ;; ====== visible-mark =====
 (use-package visible-mark)
