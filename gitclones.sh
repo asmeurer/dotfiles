@@ -96,6 +96,7 @@ fi
 
 conda install $CONDA_PKGS
 pipx install shell-gpt
+pipx upgrade-all
 
 clone-or-pull git@github.com:jwiegley/use-package.git
 cd ~/Documents/use-package
