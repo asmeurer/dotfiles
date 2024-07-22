@@ -741,7 +741,7 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/completion.bash.inc" ]; then source "$
 
 # Apply automatic environment activation to new tabs. At the end so that
 # miniconda3/bin is put at the front of the PATH.
-act base
+deact
 cd .
 
 # Created by `pipx` on 2024-01-09 08:17:31
