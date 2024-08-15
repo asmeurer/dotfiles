@@ -279,6 +279,8 @@ See URL `http://pypi.python.org/pypi/pyflakes'."
    "\\.pxd\\'"
    "\\.pxi\\'"))
 
+(use-package flycheck-cython)
+
 ;; ==== ido-sort-mtime ====
 
 (use-package ido-vertical-mode
