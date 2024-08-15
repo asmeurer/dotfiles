@@ -617,6 +617,11 @@ PATH="$PATH:$HOME/Documents/cask/bin"
 # GPGTools (put before /usr/local/bin/)
 PATH="/usr/local/MacGPG2/bin:$PATH"
 
+# Homebrew
+if [ -n "$MAC" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # SSH Signing (with Secretive)
 if [ -n  "$MAC" ]; then
     SSH_AUTH_SOCK="$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
