@@ -527,7 +527,8 @@ alias e="$EMACSCLIENT"
 alias m=mypython
 alias my=mypython
 alias mypy=mypython
-alias killemacs='pkill -SIGUSR2 emacs'
+alias killemacs='pkill -SIGUSR2 -l emacs'
+alias kill9emacs="pkill -9 -f -l emacs-$TTY"
 alias homework='cd "$DIR_HOMEWORK"'
 alias fantasia='/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Commands/java -jar /Applications/Fantasia.jar'
 if [ -n "$MAC" ]; then
