@@ -21,6 +21,43 @@
     co = "!bash -c ': git branch ; if [ \"$#\" -eq 1 ] && echo \"$1\" | grep -qE \"^[^/:]+:.+\\$\"; then IFS=: read -r remote branch <<<\"$1\"; origin_url=$(git remote get-url origin); repo_name=$(basename -s .git \"$origin_url\"); git remote get-url \"$remote\" 2>/dev/null || git remote add \"$remote\" \"git@github.com:$remote/$repo_name.git\"; if git fetch \"$remote\" \"$branch\"; then local_branch=\"${remote}-${branch//\\//-}\"; git show-ref --verify --quiet \"refs/heads/$local_branch\" && git checkout \"$local_branch\" || git checkout -b \"$local_branch\" \"$remote/$branch\"; else echo \"Error: Remote branch $remote:$branch not found.\"; fi; else git checkout \"$@\"; fi' -"
     # Push the current branch. If remote is not set, set and track to github.
     pu = "!: git branch ; f() {\\\n    branch=\"$(git rev-parse --abbrev-ref HEAD)\"; \\\n    remote=\"$(git config --get branch.$branch.remote)\"; \\\n    if [ -z \"$remote\" ]; then \\\n        git push -u github \"$branch\" \"${@}\"; \\\n    else \\\n        git push \"$remote\" \"$branch\" \"${@}\"; \\\n    fi; \\\n}; f"
+    gh-diff = "!f() { \
+        if [ $# -eq 0 ] || [ $# -gt 2 ]; then \
+            echo \"Usage: git gh-diff [<base>] <compare>\"; \
+            return 1; \
+        fi; \
+        if [ $# -eq 1 ]; then \
+            base=$1; \
+            compare=$(git rev-parse --abbrev-ref HEAD); \
+        else \
+            base=$1; \
+            compare=$2; \
+        fi; \
+        remote=$(git remote get-url origin); \
+        if [[ $remote != *github.com* ]]; then \
+            echo \"This repository is not hosted on GitHub.\"; \
+            return 1; \
+        fi; \
+        base_remote=$(git config branch.$base.remote || echo \"origin\"); \
+        compare_remote=$(git config branch.$compare.remote || echo \"origin\"); \
+        base_repo=$(git remote get-url $base_remote | sed -e 's/.*github.com[:\\/]//; s/\\.git$//'); \
+        compare_repo=$(git remote get-url $compare_remote | sed -e 's/.*github.com[:\\/]//; s/\\.git$//'); \
+        if [ \"$base_repo\" = \"$compare_repo\" ]; then \
+            url=\"https://github.com/$base_repo/compare/$base...$compare\"; \
+        else \
+            base_user=$(echo $base_repo | cut -d'/' -f1); \
+            compare_user=$(echo $compare_repo | cut -d'/' -f1); \
+            repo_name=$(echo $base_repo | cut -d'/' -f2); \
+            url=\"https://github.com/$base_user/$repo_name/compare/$base_user:$base...$compare_user:$compare\"; \
+        fi; \
+        case \"$(uname -s)\" in \
+            Linux*) xdg-open $url ;; \
+            Darwin*) open $url ;; \
+            CYGWIN*|MINGW32*|MSYS*|MINGW*) start $url ;; \
+            *) echo \"Unsupported operating system. Please open the following URL manually:\"; \
+               echo $url ;; \
+        esac; \
+    }; f"
     pu-all = push github :
     logl = log --pretty=oneline --abbrev-commit
     gr = grep -i --color -n -E --no-recurse-submodules
