@@ -538,6 +538,7 @@ else
 fi
 alias rehash='hash -r'
 alias cdpwd='cd `pwd`'
+alias ollama_pull_all='for model in $(ollama list | awk '\''{print $1}'\''); do echo "Pulling $model"; ollama pull $model; done'
 
 sizeup () {
     if [[ -z "$1" ]]; then
