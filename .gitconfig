@@ -87,6 +87,8 @@
     idff = diff
     DIFF = diff
     dff = diff
+    fif = diff
+    diif = diff
     pul = pull
     pulll = pull
     tpull = pull
