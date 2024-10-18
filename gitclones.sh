@@ -88,6 +88,7 @@ if [[ $(uname) == "Darwin" ]]; then
 else
     conda create -n emacs nodejs hunspell-en
 fi
+conda update --all -n emacs
 
 # https://github.com/mariusvniekerk/condax/issues/73
 # if [[ $(uname) != "Darwin" ]]; then
