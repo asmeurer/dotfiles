@@ -539,6 +539,19 @@ fi
 alias rehash='hash -r'
 alias cdpwd='cd `pwd`'
 alias ollama_pull_all='for model in $(ollama list | awk '\''{print $1}'\''); do echo "Pulling $model"; ollama pull $model; done'
+alias ollama_list_by_size='(ollama list | head -n1 && ollama list | tail -n +2 | awk -F "[[:space:]]+" '\''{
+    size_num = $3
+    size_unit = $4
+    if (size_unit == "GB") {
+        size_mb = size_num * 1024
+    } else if (size_unit == "MB") {
+        size_mb = size_num
+    } else {
+        size_mb = 0
+    }
+    print size_mb "\t" $0
+}'\'' | sort -n | cut -f2-)'
+
 
 sizeup () {
     if [[ -z "$1" ]]; then
