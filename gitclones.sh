@@ -95,6 +95,8 @@ conda update --all -n emacs
 #     condax install git
 # fi
 
+condax install fd-find
+
 conda install $CONDA_PKGS
 pipx install shell-gpt
 pipx upgrade-all
