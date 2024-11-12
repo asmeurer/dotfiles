@@ -123,11 +123,16 @@
 
 (if (not (version< emacs-version "29"))
     (use-package treesit-auto
-      :custom
-      (treesit-auto-install t)
-      :config
-      (treesit-auto-add-to-auto-mode-alist 'all)
-      (global-treesit-auto-mode)))
+        :custom
+        (treesit-auto-install t)
+        :config
+        (treesit-auto-add-to-auto-mode-alist 'all)
+        (global-treesit-auto-mode)))
+
+;; Don't use Python with treesitter because it has bugs compared to the normal
+;; python-mode
+(delete 'python treesit-auto-langs)
+
 
 ;; ==== prescient ====
 
