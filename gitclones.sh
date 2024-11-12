@@ -84,9 +84,9 @@ CONDA_PKGS="--file=$HOME/Documents/mypython/requirements.txt argcomplete hunspel
 if [[ $(uname) == "Darwin" ]]; then
     # conda-forge emacs package is broken on linux
     CONDA_PKGS="$CONDA_PKGS prefsync emacs"
-    conda create -n emacs emacs nodejs hunspell-en
+    conda create -n emacs emacs nodejs hunspell-en pyflakes
 else
-    conda create -n emacs nodejs hunspell-en
+    conda create -n emacs nodejs hunspell-en pyflakes
 fi
 conda update --all -n emacs
 
