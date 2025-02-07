@@ -137,8 +137,8 @@ if [ -n "$MAC" ]; then
     source $HOME/.iterm2_shell_integration.bash
 fi
 
-# Prevents overriding files with >.  Use >! to override.
-set -o noclobber
+# # Prevents overriding files with >.  Use >! to override.
+# set -o noclobber
 # Prevents C-d from ending the Terminal session.
 set -o ignoreeof
 
