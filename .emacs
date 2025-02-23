@@ -214,12 +214,12 @@ See URL `http://pypi.python.org/pypi/pyflakes'."
 ;; C-S-/ has to pass through this escape code with iTerm2.
 
 (use-package undo-tree
-  :bind
-  ("C-[ [ a b" . undo-tree-redo)
-  :custom
-  ((global-undo-tree-mode t)
-   (undo-tree-auto-save-history t)
-   (undo-tree-history-directory-alist (quote ((".*" . "~/.emacs.d/undo-tree/"))))))
+    :bind
+    ("C-[ [ a b" . undo-tree-redo)
+    :custom
+    ((global-undo-tree-mode t)
+        (undo-tree-auto-save-history t)
+        (undo-tree-history-directory-alist (quote ((".*" . "~/.emacs.d/undo-tree/"))))))
 
 ;; ;; Compress saved undo files
 ;; (defadvice undo-tree-make-history-save-file-name
@@ -234,9 +234,9 @@ See URL `http://pypi.python.org/pypi/pyflakes'."
 ;; f5 and f6 are bound to C-< and C-> in iTerm 2, respectively
 
 (use-package multiple-cursors
-  :bind
-  (([f6] . mc/mark-next-like-this)
-   ([f5] . mc/mark-previous-like-this)))
+    :bind
+    (([f6] . mc/mark-next-like-this)
+        ([f5] . mc/mark-previous-like-this)))
 
 ;; ==== aggressive-indent-mode ====
 ;;
@@ -245,11 +245,11 @@ See URL `http://pypi.python.org/pypi/pyflakes'."
 ;; (add-to-list 'load-path "~/Documents/aggressive-indent-mode")
 ;; (require 'aggressive-indent)
 (use-package aggressive-indent
-  :config
-  (global-aggressive-indent-mode 1)
-  :custom
-  (aggressive-indent-excluded-modes '(markdown-mode python-mode python-ts-mode makefile-mode
-                                                    diff-mode)))
+    :config
+    (global-aggressive-indent-mode 1)
+    :custom
+    (aggressive-indent-excluded-modes '(markdown-mode python-mode python-ts-mode makefile-mode
+                                           diff-mode)))
 
 ;; ==== MediaWiki Mode ====
 
@@ -262,7 +262,7 @@ See URL `http://pypi.python.org/pypi/pyflakes'."
 ;; for now.
 
 (use-package mediawiki
-  :mode ("\\.mediawiki\\'" . mediawiki-mode))
+    :mode ("\\.mediawiki\\'" . mediawiki-mode))
 
 ;; === Anzu ====
 
@@ -279,27 +279,27 @@ See URL `http://pypi.python.org/pypi/pyflakes'."
 
 ;; ==== cython-mode ====
 (use-package cython-mode
-  :mode
-  ("\\.pyx\\'"
-   "\\.pxd\\'"
-   "\\.pxi\\'"))
+    :mode
+    ("\\.pyx\\'"
+        "\\.pxd\\'"
+        "\\.pxi\\'"))
 
 (use-package flycheck-cython)
 
 ;; ==== ido-sort-mtime ====
 
 (use-package ido-vertical-mode
-  :config
-  (ido-vertical-mode 1))
+    :config
+    (ido-vertical-mode 1))
 
 (use-package ido-sort-mtime
-  :config
-  (ido-sort-mtime-mode 1))
+    :config
+    (ido-sort-mtime-mode 1))
 
 ;; ==== auctex ====
 (use-package tex
-  :ensure auctex
-  :defer t)
+    :ensure auctex
+    :defer t)
 
 ;; ==== magit ====
 
@@ -330,9 +330,9 @@ See URL `http://pypi.python.org/pypi/pyflakes'."
 
 ;; https://emacs.stackexchange.com/questions/16792/easiest-way-to-check-if-current-line-is-empty-ignoring-whitespace
 (defun current-line-empty-p ()
-  (save-excursion
-    (beginning-of-line)
-    (looking-at "[[:space:]]*$")))
+    (save-excursion
+        (beginning-of-line)
+        (looking-at "[[:space:]]*$")))
 
 (defun smart-comment-end (arg)
   "Same as smart-comment-line but comments if the line is empty"
@@ -638,16 +638,16 @@ is available. Enables copilot-mode if it isn't already."
 
 
 (use-package ellama
-  :init
-  ;; setup key bindings
-  (setopt ellama-keymap-prefix "C-c e")
-  (setq openai-key (auth-source-pick-first-password
-                    :host "chat.openai.com"))
-  (require 'llm-openai)
-  (setq ellama-provider
+    :init
+    ;; setup key bindings
+    (setopt ellama-keymap-prefix "C-c e")
+    (setq openai-key (auth-source-pick-first-password
+                         :host "chat.openai.com"))
+    (require 'llm-openai)
+    (setq ellama-provider
         (make-llm-openai
-         :key openai-key
-         :chat-model "gpt-4-turbo-preview")
+            :key openai-key
+            :chat-model "gpt-4-turbo-preview")
         llm-warn-on-nonfree nil))
 
 
