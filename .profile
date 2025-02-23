@@ -700,6 +700,8 @@ conda-remove-test() {
     rm -rf ~/anaconda/envs/test
 }
 
+alias pp='pbpaste >'
+
 export PATH
 
 export PATH=`~/uniqpath`
