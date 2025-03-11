@@ -747,7 +747,7 @@ export GIT_COMPLETION_SHOW_ALL=1
 export GIT_PROMPT_FILE=~/Documents/git/contrib/completion/git-prompt.sh
 source $GIT_PROMPT_FILE
 
-if [ -z "$MAC" ]; then
+if [ -n "$MAC" ]; then
     eval "$(maestral completion bash)"
 fi
 
