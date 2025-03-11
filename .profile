@@ -41,14 +41,14 @@ function cd () {
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('~/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/aaronmeurer/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/miniconda3/bin:$PATH"
+        export PATH="/Users/aaronmeurer/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -65,13 +65,13 @@ if [ -n "$MAC" ]; then
     _activate_complete ()
     {
         local cur="${COMP_WORDS[COMP_CWORD]}";
-        COMPREPLY=($(compgen -W "$(LS $HOME/anaconda/envs | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
+        COMPREPLY=($(compgen -W "$(LS $HOME/miniconda3/envs | tr [:upper:] [:lower:] | lam -s \" - -s \")" -- "$cur" ));
     }
 else
     _activate_complete ()
     {
         local cur="${COMP_WORDS[COMP_CWORD]}";
-        COMPREPLY=($(compgen -W "$("ls" $HOME/anaconda/envs | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
+        COMPREPLY=($(compgen -W "$("ls" $HOME/miniconda3/envs | tr [:upper:] [:lower:] | paste -d \" - -d \")" -- "$cur" ));
     }
 fi
 
@@ -625,7 +625,7 @@ PATH="$HOME/Documents/emacs/src:$PATH"
 PATH="$HOME/Documents/emacs/lib-src:$PATH"
 
 # Don't use the git version of emacs
-PATH="$HOME/anaconda/envs/emacs/bin:$PATH"
+PATH="$HOME/miniconda3/envs/emacs/bin:$PATH"
 
 PATH="$PATH:$HOME/Documents/cask/bin"
 
@@ -650,7 +650,7 @@ PATH="$HOME/.cabal/bin:$PATH"
 PATH="$PATH:/usr/local/go/bin"
 
 # Hunspell
-PATH="$HOME/anaconda/envs/hunspell/bin:$PATH"
+PATH="$HOME/miniconda3/envs/hunspell/bin:$PATH"
 
 # Custom scripts
 PATH="$HOME/bin/:$PATH"
@@ -697,7 +697,7 @@ conda-build-all() {
 }
 
 conda-remove-test() {
-    rm -rf ~/anaconda/envs/test
+    rm -rf ~/miniconda3/envs/test
 }
 
 alias pp='pbpaste >'
