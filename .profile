@@ -782,3 +782,5 @@ bind -x '"\C-x\C-o": _sgpt_bash'
 # Shell-GPT integration BASH v0.1
 
 source /Users/aaronmeurer/.bash_completions/condax.sh
+
+export PATH="/Users/aaronmeurer/.pixi/bin:$PATH"
