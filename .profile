@@ -27,6 +27,7 @@ if [ $? -eq 1 ] ; then
     export PATH
 fi
 
+PATH="$HOME/miniconda3/bin:$PATH"
 
 # This needs to be fairly high up so that anything below it can use stuff in
 # the miniconda base environment.
