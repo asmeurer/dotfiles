@@ -561,7 +561,8 @@ Used for `flyspell-generic-check-word-predicate'. Based on
   ;;  ;; M-TAB
   ;;  ("C-M-i" . jedi:complete))
   :hook
-  (python-mode . jedi:setup))
+  (python-mode . jedi:setup)
+  (python-ts-mode . jedi:setup))
 
 ;; ==== copilot ====
 
