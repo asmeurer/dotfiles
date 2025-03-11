@@ -23,7 +23,7 @@ dirnames = dict(
     DIR_PAPYRI=f"{HOME}Documents/papyri",
     DIR_CONDA_STORE_SERVER=f"{HOME}Documents/conda-store/conda-store-server",
     DIR_PYTORCH=f"{HOME}Documents/pytorch",
-    DIR_RECIPES_CLEANUP=f"{HOME}Dropbox/Grandma's Recipes/recipes-cleanup",
+    DIR_RECIPES_CLEANUP=f"{HOME}Documents/recipes-cleanup",
 )
 
 conda_envs = {}
