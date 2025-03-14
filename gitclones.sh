@@ -79,7 +79,7 @@ if [[ $(uname) != "Darwin" ]]; then
     cd ~/Documents/
 fi
 
-CONDA_PKGS="--file=$HOME/Documents/mypython/requirements.txt argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash matplotlib pyinstrument pytest sympy pudb setproctitle mamba jedi-language-server esbonio condax pipx"
+CONDA_PKGS="--file=$HOME/Documents/mypython/requirements.txt argcomplete hunspell-en pyflakes mpmath ipython conda-build xonsh hub bash matplotlib pyinstrument pytest sympy pudb setproctitle mamba jedi-language-server esbonio pipx"
 
 if [[ $(uname) == "Darwin" ]]; then
     # conda-forge emacs package is broken on linux
@@ -90,12 +90,8 @@ else
 fi
 conda update --all -n emacs
 
-# https://github.com/mariusvniekerk/condax/issues/73
-# if [[ $(uname) != "Darwin" ]]; then
-#     condax install git
-# fi
-
-condax install fd-find
+pixi global install fd-find asitop
+pixi global update
 
 conda install $CONDA_PKGS
 pipx install shell-gpt
