@@ -90,7 +90,7 @@ else
 fi
 conda update --all -n emacs
 
-pixi global install fd-find asitop git-delta dust duf
+pixi global install fd-find asitop git-delta dust duf proc
 pixi global update
 
 conda install $CONDA_PKGS
