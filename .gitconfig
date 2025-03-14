@@ -116,17 +116,19 @@
 
 [core]
     precomposeunicode = true
-	pager = delta
 
 [blame]
     coloring = repeatedLines
 
 [pager]
+    log = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+    show = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
+    diff = ~/Documents/git/contrib/diff-highlight/diff-highlight | less
     branch = false
     tag = false
 
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = ~/Documents/git/contrib/diff-highlight/diff-highlight
     singleKey = true
 
 [commit]
@@ -177,9 +179,3 @@
 [gpg "ssh"]
 # See https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally
     allowedSignersFile = ~/.ssh/allowed_signers
-[delta]
-    navigate = true
-    hyperlinks = true
-    paging = always
-[merge]
-	conflictStyle = zdiff3
