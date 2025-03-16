@@ -650,9 +650,6 @@ PATH="$HOME/.cabal/bin:$PATH"
 # Go
 PATH="$PATH:/usr/local/go/bin"
 
-# Hunspell
-PATH="$HOME/miniconda3/envs/hunspell/bin:$PATH"
-
 # Custom scripts
 PATH="$HOME/bin/:$PATH"
 
