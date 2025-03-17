@@ -27,7 +27,14 @@ if [ $? -eq 1 ] ; then
     export PATH
 fi
 
-PATH="$HOME/miniconda3/bin:$PATH"
+function addtopath {
+    case ":$PATH:" in
+        *":$1:"*) :;; # already there
+        *) PATH="$1:$PATH";; # or PATH="$PATH:$1"
+    esac
+}
+
+addtopath "$HOME/miniconda3/bin"
 
 # Automatically activate certain conda environments when cd-ing into or out of
 # the given directories
@@ -46,14 +53,14 @@ else
     if [ -f "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh" ]; then
         . "/Users/aaronmeurer/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/aaronmeurer/miniconda3/bin:$PATH"
+        addtopath "/Users/aaronmeurer/miniconda3/bin"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
 # condax
-export PATH="/home/aaronmeurer/.local/bin:$PATH"
+addtopath "/home/aaronmeurer/.local/bin"
 
 alias act="conda deactivate; conda activate"
 alias deact="conda deactivate; conda activate base"
@@ -159,6 +166,8 @@ shopt -s no_empty_cmd_completion
 # Enable more advanced globbing
 shopt -s globstar
 shopt -s extglob
+
+shopt -s expand_aliases
 
 # Make commands of the same name resume a stopped job instead of starting a
 # new process when one exists. Useful if I accidentally suspend emacs and
@@ -619,16 +628,16 @@ PATH="${PATH}:/Applications/Sage-5.2-OSX-64bit-10.6.app/Contents/Resources/sage"
 export PATH
 
 # Use the git version of emacs
-PATH="$HOME/Documents/emacs/src:$PATH"
-PATH="$HOME/Documents/emacs/lib-src:$PATH"
+addtopath "$HOME/Documents/emacs/src"
+addtopath "$HOME/Documents/emacs/lib-src"
 
 # Don't use the git version of emacs
-PATH="$HOME/miniconda3/envs/emacs/bin:$PATH"
+addtopath "$HOME/miniconda3/envs/emacs/bin"
 
 PATH="$PATH:$HOME/Documents/cask/bin"
 
 # GPGTools (put before /usr/local/bin/)
-PATH="/usr/local/MacGPG2/bin:$PATH"
+addtopath "/usr/local/MacGPG2/bin"
 
 # Homebrew
 if [ -n "$MAC" ]; then
@@ -641,14 +650,14 @@ if [ -n  "$MAC" ]; then
 fi
 
 # Haskell
-PATH="$HOME/Library/Haskell/bin:$PATH"
-PATH="$HOME/.cabal/bin:$PATH"
+addtopath "$HOME/Library/Haskell/bin"
+addtopath "$HOME/.cabal/bin"
 
 # Go
 PATH="$PATH:/usr/local/go/bin"
 
 # Custom scripts
-PATH="$HOME/bin/:$PATH"
+addtopath "$HOME/bin/"
 
 # This is the output of 'register-python-argcomplete conda'. We use this
 # instead of
@@ -770,7 +779,7 @@ bind -x '"\C-x\C-o": _sgpt_bash'
 
 source /Users/aaronmeurer/.bash_completions/condax.sh
 
-export PATH="/Users/aaronmeurer/.pixi/bin:$PATH"
+addtopath "/Users/aaronmeurer/.pixi/bin"
 
 # This line needs to stay at the bottom of the file.
 source ~/Documents/git/contrib/completion/git-completion.bash
@@ -779,3 +788,6 @@ export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 export GIT_COMPLETION_SHOW_ALL=1
 export GIT_PROMPT_FILE=~/Documents/git/contrib/completion/git-prompt.sh
 source $GIT_PROMPT_FILE
+
+# deduplicate PATH entries
+export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':')
