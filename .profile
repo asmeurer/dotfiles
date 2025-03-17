@@ -132,13 +132,15 @@ export HISTFILE="$HOME/.bash_history_files/${TTY}_history"
 # Always append to the history file
 shopt -s histappend
 # Save the history after every command, instead of just when the shell exits
-export PROMPT_COMMAND="history -a"
+if [ -z "$PROMPT_COMMAND" ]; then
+    export PROMPT_COMMAND="history -a"
+fi
 # Save timestamps to the history file
 export HISTTIMEFORMAT="%F %T "
 
 # Enable iTerm2 shell integration. This needs to go below the above code that
-# sets PROMPT_COMMAND
-if [ -n "$MAC" ]; then
+# sets PROMPT_COMMAND. Only run if 'iterm2' is not already in PROMPT_COMMAND
+if [ -n "$MAC" ] && ! echo "$PROMPT_COMMAND" | grep -q iterm2; then
     source $HOME/.iterm2_shell_integration.bash
 fi
 
