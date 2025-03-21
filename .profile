@@ -188,12 +188,21 @@ l() {
     for arg; do
         if [[ ! $arg =~ ^- ]]; then
             if [[ -d $arg ]]; then
+                # directory
                 ls "$@"
                 return
             elif [[ -f $arg ]]; then
-                less "$@"
-                return
+                # file
+                if [[ $arg == *.json ]]; then
+                    # JSON file
+                    cat "$@" | jq . -C | less
+                    return
+                else
+                    less "$@"
+                    return
+                fi
             else
+                # something else
                 file "$@"
                 return
             fi
