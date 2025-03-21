@@ -670,6 +670,10 @@ PATH="$PATH:/usr/local/go/bin"
 # Custom scripts
 addtopath "$HOME/bin/"
 
+# Store huggingface models on external drive (unset this if the drive is not
+# present)
+export HF_HUB_CACHE=/Volumes/Crucial/huggingface/hub
+
 # This is the output of 'register-python-argcomplete conda'. We use this
 # instead of
 #
