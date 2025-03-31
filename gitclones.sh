@@ -90,7 +90,7 @@ else
 fi
 conda update --all -n emacs
 
-pixi global install bash fd-find asitop dust duf proc
+pixi global install bash fd-find asitop dust duf proc ripgrep
 pixi global install hunspell --with hunspell-en
 pixi global install --environment emacs emacs --with nodejs --with hunspell-en --with pyflakes --with ruff
 pixi global update
