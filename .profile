@@ -182,9 +182,12 @@ else
     alias ls='ls --color -AFlha'
 fi
 
-# Make l do ls when the input is a directory and less when it is a file
+
+# Make l do ls when the input is a directory and less when it is a file. Pass
+# json files to jq.
 l() {
     local arg
+
     for arg; do
         if [[ ! $arg =~ ^- ]]; then
             if [[ -d $arg ]]; then
@@ -194,8 +197,37 @@ l() {
             elif [[ -f $arg ]]; then
                 # file
                 if [[ $arg == *.json ]]; then
-                    # JSON file
-                    cat "$@" | jq . -C | less
+                    # JSON file - check if there are multiple JSON files
+                    local json_files=()
+                    local all_json=true
+
+                    for f in "$@"; do
+                        if [[ ! $f =~ ^- ]]; then
+                            if [[ ! -f $f || ! $f == *.json ]]; then
+                                all_json=false
+                                break
+                            fi
+                            json_files+=("$f")
+                        fi
+                    done
+
+                    if [[ $all_json == true && ${#json_files[@]} -gt 1 ]]; then
+                        # Multiple JSON files - create temporary files
+                        local tmpdir=$(mktemp -d)
+                        trap 'rm -rf "$tmpdir"' EXIT
+
+                        for json_file in "${json_files[@]}"; do
+                            local basename=$(basename "$json_file")
+                            jq . -C "$json_file" > "$tmpdir/$basename"
+                        done
+
+                        # Use less to view all temporary files
+                        (cd "$tmpdir" && less *)
+                    else
+                        # Single JSON file or mixed with non-JSON - just pass
+                        # straight to jq
+                        cat "$@" | jq . -C | less
+                    fi
                     return
                 else
                     less "$@"
@@ -208,7 +240,6 @@ l() {
             fi
         fi
     done
-
     # If no non-flag arguments were found default to ls .
     ls
 }
