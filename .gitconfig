@@ -95,6 +95,7 @@
     tpull = pull
     shwo = show
     how = show
+    sho = show
 
 [branch]
     # Sort most recent branches to the end

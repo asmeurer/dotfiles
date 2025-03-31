@@ -240,6 +240,7 @@ alias vgit='git'
 alias egit='git'
 alias qgit='git'
 alias gig='git'
+alias fgit='git'
 
 alias sl=ls
 # dc is a real command, but it's just some useless calculator
