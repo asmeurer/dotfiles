@@ -18,22 +18,23 @@ def parse_files_manually(text):
     files = []
 
     # Pattern for numbered files with backticks like "**1. `recipe_corrector/__init__.py`**"
-    pattern1 = re.compile(r'\*\*\d+\.\s+`([^`]+)`\*\*\s*\n+```(?:python|html|css|js|typescript)?\n(.*?)\n```', re.DOTALL)
+    pattern1 = re.compile(r'\*\*\d+\.\s+`([^`]+)`\*\*\s*\n+```(?:python|html|css|js|typescript|json)?\n(.*?)\n```', re.DOTALL)
 
     # Pattern for files without numbers but with backticks like "**`recipe_corrector/app.py`**"
-    pattern2 = re.compile(r'\*\*`([^`]+)`\*\*\s*\n+```(?:python|html|css|js|typescript)?\n(.*?)\n```', re.DOTALL)
+    pattern2 = re.compile(r'\*\*`([^`]+)`\*\*\s*\n+```(?:python|html|css|js|typescript|json)?\n(.*?)\n```', re.DOTALL)
 
     # Pattern for files with just a path like "**recipe_corrector/app.py**"
-    pattern3 = re.compile(r'\*\*([^*\n]+\.\w+)\*\*\s*\n+```(?:python|html|css|js|typescript)?\n(.*?)\n```', re.DOTALL)
+    pattern3 = re.compile(r'\*\*([^*\n]+\.\w+)\*\*\s*\n+```(?:python|html|css|js|typescript|json)?\n(.*?)\n```', re.DOTALL)
 
     # Pattern for filenames at the top of content blocks like "filename.py" followed by code
-    pattern4 = re.compile(r'([^*\n]+\.\w+)\s*\n+```(?:python|html|css|js|typescript)?\n(.*?)\n```', re.DOTALL)
+    # Excluding patterns that start with # to avoid duplicates with pattern6
+    pattern4 = re.compile(r'(?<!#)([^#*\n]+\.\w+)\s*\n+```(?:python|html|css|js|typescript|json)?\n(.*?)\n```', re.DOTALL)
 
     # Pattern for comments indicating filenames at the top of code blocks like "# filename.py" or "// filename.js"
-    pattern5 = re.compile(r'```(?:python|html|css|js|typescript)?\n(?:#+|//+|/\*+|\*+|<!--)\s*([^*\n]+\.\w+)(?:\s*-->|\s*\*/|)?\s*\n(.*?)\n```', re.DOTALL)
+    pattern5 = re.compile(r'```(?:python|html|css|js|typescript|json)?\n(?:#+|//+|/\*+|\*+|<!--)\s*([^*\n]+\.\w+)(?:\s*-->|\s*\*/|)?\s*\n(.*?)\n```', re.DOTALL)
 
     # Pattern for filenames with markdown header style above code blocks like "### src/fileUtils.ts"
-    pattern6 = re.compile(r'#{1,6}\s+([^#\n]+\.\w+)\s*\n+```(?:python|html|css|js|typescript)?\n(.*?)\n```', re.DOTALL)
+    pattern6 = re.compile(r'#{1,6}\s+([^#\n]+\.\w+)\s*\n+```(?:python|html|css|js|typescript|json)?\n(.*?)\n```', re.DOTALL)
 
     # Try each pattern and collect all matches
     all_files = []
