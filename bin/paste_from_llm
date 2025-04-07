@@ -1,0 +1,212 @@
+#!/usr/bin/env -S pixi exec --spec pyperclip --spec requests -- python3
+import pyperclip
+import os
+import re
+import requests
+import json
+import sys
+
+DEFAULT_OLLAMA_MODEL="qwen2.5"
+
+def get_clipboard_text():
+    """Get text from clipboard."""
+    return pyperclip.paste()
+
+def parse_files_manually(text):
+    """Parse files manually based on common markup patterns."""
+    files = []
+
+    # Pattern for numbered files with backticks like "**1. `recipe_corrector/__init__.py`**"
+    pattern1 = re.compile(r'\*\*\d+\.\s+`([^`]+)`\*\*\s*\n+```(?:python|html|css|js)?\n(.*?)\n```', re.DOTALL)
+
+    # Pattern for files without numbers but with backticks like "**`recipe_corrector/app.py`**"
+    pattern2 = re.compile(r'\*\*`([^`]+)`\*\*\s*\n+```(?:python|html|css|js)?\n(.*?)\n```', re.DOTALL)
+
+    # Pattern for files with just a path like "**recipe_corrector/app.py**"
+    pattern3 = re.compile(r'\*\*([^*\n]+\.\w+)\*\*\s*\n+```(?:python|html|css|js)?\n(.*?)\n```', re.DOTALL)
+
+    # Pattern for filenames at the top of content blocks like "filename.py" followed by code
+    pattern4 = re.compile(r'([^*\n]+\.\w+)\s*\n+```(?:python|html|css|js)?\n(.*?)\n```', re.DOTALL)
+
+    # Pattern for comments indicating filenames at the top of code blocks like "# filename.py" or "// filename.js"
+    pattern5 = re.compile(r'```(?:python|html|css|js)?\n(?:#+|//+|/\*+|\*+|<!--)\s*([^*\n]+\.\w+)(?:\s*-->|\s*\*/|)?\s*\n(.*?)\n```', re.DOTALL)
+
+    # Try each pattern and collect all matches
+    all_files = []
+    for pattern in [pattern1, pattern2, pattern3, pattern4, pattern5]:
+        matches = list(pattern.finditer(text))
+        for match in matches:
+            path = match.group(1).strip()
+            content = match.group(2)
+            all_files.append({
+                "path": path,
+                "content": content
+            })
+
+    # Remove potential duplicates by path
+    unique_paths = set()
+    for file_info in all_files:
+        if file_info["path"] not in unique_paths:
+            unique_paths.add(file_info["path"])
+            files.append(file_info)
+
+    return files
+
+def query_ollama(text, model=DEFAULT_OLLAMA_MODEL):
+    """Query Ollama model to extract file information."""
+    try:
+        prompt = f"""
+        Analyze the following text which contains descriptions of multiple files and their contents.
+        Identify each file path and its corresponding content.
+
+        Format your response as a JSON array of objects, where each object has 'path' and 'content' fields.
+
+        Example output format:
+        [
+            {{
+                "path": "recipe_corrector/__init__.py",
+                "content": "# This file can remain empty"
+            }},
+            {{
+                "path": "recipe_corrector/app.py",
+                "content": "from flask import Flask\\n\\napp = Flask(__name__)"
+            }}
+        ]
+
+        Only include the JSON array in your response, no other text.
+
+        Text to analyze:
+        {text}
+        """
+
+        response = requests.post(
+            "http://localhost:11434/api/generate",
+            json={
+                "model": model,
+                "prompt": prompt,
+                "stream": False
+            }
+        )
+        response.raise_for_status()
+        result = response.json()["response"]
+
+        # Try to extract JSON from the response
+        match = re.search(r'\[\s*\{.*\}\s*\]', result, re.DOTALL)
+        if match:
+            json_str = match.group(0)
+            return json.loads(json_str)
+        else:
+            try:
+                return json.loads(result)
+            except json.JSONDecodeError:
+                print("Failed to parse Ollama response as JSON. Raw response:")
+                print(result[:200] + "..." if len(result) > 200 else result)
+                return []
+    except Exception as e:
+        print(f"Error querying Ollama: {e}")
+        return []
+
+def write_files(files, base_dir=".", force=False):
+    """Write extracted files to disk."""
+    written_files = []
+    skipped_files = []
+
+    for file_info in files:
+        path = os.path.join(base_dir, file_info["path"])
+
+        # Check if file exists
+        if os.path.exists(path) and not force:
+            skipped_files.append(path)
+            continue
+
+        # Create directory if it doesn't exist
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+
+        # Write file
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(file_info["content"])
+
+        written_files.append(path)
+
+    return written_files, skipped_files
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Extract files from clipboard text and write them to disk.")
+    parser.add_argument("--model", "-m", default=DEFAULT_OLLAMA_MODEL, help=f"Model to use for Ollama (default: {DEFAULT_OLLAMA_MODEL})")
+    parser.add_argument("--output-dir", default=".", help="Base directory to write files to (default: current directory)")
+    parser.add_argument("--force", action="store_true", help="Overwrite existing files")
+    parser.add_argument("--use-ollama", action="store_true", help="Force using Ollama for parsing")
+    parser.add_argument("--input-file", help="Read from file instead of clipboard")
+    parser.add_argument("--dry-run", action="store_true", help="Show what would be done without writing files")
+
+    args = parser.parse_args()
+
+    # Get text from clipboard or file
+    if args.input_file:
+        try:
+            with open(args.input_file, "r", encoding="utf-8") as f:
+                text = f.read()
+            print(f"Read {len(text)} characters from {args.input_file}")
+        except Exception as e:
+            print(f"Error reading file: {e}")
+            sys.exit(1)
+    else:
+        print("Reading from clipboard...")
+        text = get_clipboard_text()
+        if not text:
+            print("Clipboard is empty.")
+            sys.exit(1)
+        print(f"Extracted {len(text)} characters from clipboard.")
+
+    # Try manual parsing first
+    files = []
+    if not args.use_ollama:
+        files = parse_files_manually(text)
+        print(f"Manual parsing found {len(files)} files.")
+
+    # If manual parsing found nothing or if --use-ollama is specified, use Ollama
+    if args.use_ollama:
+        print(f"Using Ollama model: {args.model} for parsing...")
+        ollama_files = query_ollama(text, args.model)
+        if ollama_files:
+            files = ollama_files
+            print(f"Ollama found {len(files)} files.")
+
+    if not files:
+        print("No files found in the text.")
+        sys.exit(1)
+
+    # Preview the extracted files
+    print("\nExtracted files:")
+    for file_info in files:
+        print(f"  - {file_info['path']} ({len(file_info['content'])} characters)")
+
+    if args.dry_run:
+        print("\nDry run - no files were written.")
+        sys.exit(0)
+
+    # Confirm before writing
+    if not args.force:
+        confirm = input("\nWrite these files to disk? (y/n): ")
+        if confirm.lower() != 'y':
+            print("Aborted.")
+            sys.exit(0)
+
+    written, skipped = write_files(files, args.output_dir, args.force)
+
+    if written:
+        print("\nCreated files:")
+        for path in written:
+            print(f"  - {path}")
+
+    if skipped:
+        print("\nSkipped existing files (use --force to overwrite):")
+        for path in skipped:
+            print(f"  - {path}")
+
+    print("\nDone!")
+
+if __name__ == "__main__":
+    main()
