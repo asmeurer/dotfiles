@@ -698,6 +698,7 @@ addtopath "$HOME/.cabal/bin"
 
 # Go
 PATH="$PATH:/usr/local/go/bin"
+PATH="$PATH:$HOME/go/bin"
 
 # Custom scripts
 addtopath "$HOME/bin/"
