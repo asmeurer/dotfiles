@@ -1,4 +1,5 @@
 #!/usr/bin/env -S pixi exec --spec pyperclip --spec requests -- python3
+# Emacs, this is -*-python-*-
 import pyperclip
 import os
 import re
