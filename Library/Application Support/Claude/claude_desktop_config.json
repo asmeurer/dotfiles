@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "artifact-saver": {
+      "command": "node",
+      "args": [
+        "/Users/aaronmeurer/Documents/artifact-saver-mcp/build/index.js"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/aaronmeurer/Documents"
+      ]
+    }
+  },
+  "globalShortcut": ""
+}
