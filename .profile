@@ -799,12 +799,6 @@ export GPG_TTY=$(tty)
 
 hash -r
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/Downloads/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/path.bash.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/Downloads/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/completion.bash.inc"; fi
-
 # Apply automatic environment activation to new tabs. At the end so that
 # miniconda3/bin is put at the front of the PATH.
 deact
