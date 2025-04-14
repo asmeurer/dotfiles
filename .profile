@@ -284,20 +284,21 @@ PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
 # test -r /opt/sw/bin/init.sh && . /opt/sw/bin/init.sh
 unset MANPATH
 
-alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
-alias grep='grep -i --color=always'
-alias mkdir='mkdir -p'
-alias cdsympy='cd ~/Documents/python/sympy/sympy'
-alias cds='cd ~/Documents/python/sympy/sympy'
-alias cdss='cd ~/Documents/python/sympy/sympy-scratch'
-alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
-alias isympy='mypython -c %sympy'
-if [ -z "$MAC" ]; then
-    alias top='top -o %CPU'
-else
-    alias top='top -o -cpu'
+if [[ -z "${CLAUDECODE}" ]]; then
+        alias rtf2latex='/usr/local/rtf2latex2e/rtf2latex2e.bin'
+        alias grep='grep -i --color=always'
+        alias mkdir='mkdir -p'
+        alias cdsympy='cd ~/Documents/python/sympy/sympy'
+        alias cds='cd ~/Documents/python/sympy/sympy'
+        alias cdss='cd ~/Documents/python/sympy/sympy-scratch'
+        alias cdsss='cd ~/Documents/python/sympy/sympy-scratch2'
+        alias isympy='mypython -c %sympy'
+        if [ -z "$MAC" ]; then
+            alias top='top -o %CPU'
+        else
+            alias top='top -o -cpu'
+        fi
 fi
-
 # Set breakpoint() in Python to call pudb
 export PYTHONBREAKPOINT="pudb.set_trace"
 
@@ -816,7 +817,9 @@ _sgpt_bash() {
         READLINE_POINT=${#READLINE_LINE}
     fi
 }
-bind -x '"\C-x\C-o": _sgpt_bash'
+if [[ -z "${CLAUDECODE}" ]]; then
+    bind -x '"\C-x\C-o": _sgpt_bash'
+fi
 # Shell-GPT integration BASH v0.1
 
 source /Users/aaronmeurer/.bash_completions/condax.sh
@@ -833,3 +836,5 @@ source $GIT_PROMPT_FILE
 
 # deduplicate PATH entries
 export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':')
+
+alias claude="/Users/aaronmeurer/.claude/local/claude"
