@@ -17,16 +17,6 @@ export TERM=xterm-256color-italic
 alias ssh='TERM=xterm-256color ssh'
 alias vagrant='TERM=xterm-256color vagrant'
 
-##
-# DELUXE-USR-LOCAL-BIN-INSERT
-# (do not remove this comment)
-##
-echo $PATH | grep -q -s "/usr/local/bin"
-if [ $? -eq 1 ] ; then
-    PATH=$PATH:/usr/local/bin
-    export PATH
-fi
-
 function addtopath {
     case ":$PATH:" in
         *":$1:"*) :;; # already there
@@ -651,22 +641,11 @@ complete -o nospace -o default -F _python_argcomplete "conda"
 
 . $HOME/.bash_completion.d/python-argcomplete.sh
 
-conda-build-all() {
-    for CONDA_PY in 26 27 33 34; do
-        export CONDA_PY
-        conda build $@
-    done
-}
-
 conda-remove-test() {
     rm -rf ~/miniconda3/envs/test
 }
 
 alias pp='pbpaste >'
-
-export PATH
-
-export PATH=`~/uniqpath`
 
 # export PYTHONPATH=${PYTHONPATH}:/sw/lib/qt4-x11/lib/python2.6/site-packages:/usr/local/lib/python
 MKL_NUM_THREADS=1
