@@ -838,3 +838,7 @@ source $GIT_PROMPT_FILE
 export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':')
 
 alias claude="/Users/aaronmeurer/.claude/local/claude"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/aaronmeurer/.cache/lm-studio/bin"
+# End of LM Studio CLI section
