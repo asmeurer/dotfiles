@@ -87,39 +87,6 @@ export SUDO_PS1="\[\h:\w\] \u\$ "
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-export SYSTEMPYTHON='/Library/Frameworks/Python.framework/Versions/Current/bin/python'
-export SYSTEMPYTHON_32='arch -i386 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
-export SYSTEMPYTHON_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/Current/bin/python'
-export SYSTEMPYTHON32='/Library/Frameworks/Python.framework/Versions/3.2/bin/python3.2'
-export SYSTEMPYTHON32_32='arch -i386 /Library/Frameworks/Python.framework/Versions/3.2/bin/python3.2'
-export SYSTEMPYTHON32_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/3.2/bin/python3.2'
-export SYSTEMPYTHON27='/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
-export SYSTEMPYTHON27_32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
-export SYSTEMPYTHON27_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7'
-export SYSTEMPYTHON26='/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
-export SYSTEMPYTHON26_32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
-export SYSTEMPYTHON26_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6'
-export SYSTEMPYTHON25='/Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
-export SYSTEMPYTHON25_32='arch -i386 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
-export SYSTEMPYTHON25_64='arch -x86_64 /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5'
-export SYSTEMPYTHON24='/Library/Frameworks/Python.framework/Versions/2.4/bin/python2.4'
-
-alias systempython="$SYSTEMPYTHON"
-alias systempython-32="$SYSTEMPYTHON_32"
-alias systempython-64="$SYSTEMPYTHON_64"
-alias systempython3.2="$SYSTEMPYTHON32"
-alias systempython3.2-32="$SYSTEMPYTHON32_32"
-alias systempython3.2-64="$SYSTEMPYTHON32_64"
-alias systempython2.7="$SYSTEMPYTHON27"
-alias systempython2.7-32="$SYSTEMPYTHON27_32"
-alias systempython2.7-64="$SYSTEMPYTHON27_64"
-alias systempython2.6="$SYSTEMPYTHON26"
-alias systempython2.6-32="$SYSTEMPYTHON26_32"
-alias systempython2.6-64="$SYSTEMPYTHON26_64"
-alias systempython2.5="$SYSTEMPYTHON25"
-alias systempython2.5-32="$SYSTEMPYTHON25_32"
-alias systempython2.5-64="$SYSTEMPYTHON25_64"
-alias systempython2.4="$SYSTEMPYTHON24"
 
 # Ignore duplicate entries in the command history
 HISTCONTROL=ignoredups:erasedups
@@ -347,18 +314,6 @@ fi
 
 complete -F _cdc_complete "cdc"
 
-alias doctestall='SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.7 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.6 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.5 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=python /sw/bin/python2.7 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=python /sw/bin/python2.6 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=python /sw/bin/python2.5 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 bin/doctest sympy/polys/; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 bin/doctest sympy/polys/'
-
-alias polytestall='SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.7 bin/test sympy/polys/; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.6 bin/test sympy/polys/; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.5 bin/test sympy/polys/; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 bin/test sympy/polys/; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 bin/test sympy/polys/; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 bin/test sympy/polys/; SYMPY_GROUND_TYPES=python /sw/bin/python2.7 bin/test sympy/polys/; SYMPY_GROUND_TYPES=python /sw/bin/python2.6 bin/test sympy/polys/; SYMPY_GROUND_TYPES=python /sw/bin/python2.5 bin/test sympy/polys/; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 bin/test sympy/polys/; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 bin/test sympy/polys/; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 bin/test sympy/polys/'
-
-alias oldalltestall='SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.5 setup.py test; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 setup.py test; SYMPY_GROUND_TYPES=python /sw/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=python /sw/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=python /sw/bin/python2.5 setup.py test; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 setup.py test'
-
-alias alltestall='SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.5 setup.py test; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 setup.py test; SYMPY_GROUND_TYPES=python /sw/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=python /sw/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=python /sw/bin/python2.5 setup.py test; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 setup.py test; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 setup.py test; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 setup.py test'
-
-alias alldoctestall='SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.7 ./bin/doctest; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.6 ./bin/doctest; SYMPY_GROUND_TYPES=gmpy /sw/bin/python2.5 ./bin/doctest; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 ./bin/doctest; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 ./bin/doctest; SYMPY_GROUND_TYPES=gmpy /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 ./bin/doctest; SYMPY_GROUND_TYPES=python /sw/bin/python2.7 ./bin/doctest; SYMPY_GROUND_TYPES=python /sw/bin/python2.6 ./bin/doctest; SYMPY_GROUND_TYPES=python /sw/bin/python2.5 ./bin/doctest; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 ./bin/doctest; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 ./bin/doctest; SYMPY_GROUND_TYPES=python /Library/Frameworks/Python.framework/Versions/2.5/bin/python2.5 ./bin/doctest'
-
-alias testrisch='./bin/doctest sympy/integrals/risch.py; ./bin/test sympy/integrals/tests/test_risch.py sympy/integrals/tests/test_rde.py sympy/integrals/tests/test_prde.py sympy/integrals/tests/test_cds.py'
-
 # Color tabs based on directories in iTerm 2
 
 # Colors are done as "\033]6;1;bg;red;brightness;NNN\a\033]6;1;bg;blue;brightness;NNN\a\033]6;1;bg;green;brightness;NNN\a"
@@ -559,11 +514,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_STATESEPARATOR=''
-PATH=$PATH:/usr/local/Trolltech/Qt-4.4.3/bin
-PATH=$PATH:/Library/Frameworks/Maple.framework/Versions/Current/bin
-PATH=$PATH:/usr/texbin
-PATH=$PATH:$HOME/Documents/git-hg/bin
-PATH=$PATH:$HOME/Documents/depot_tools # For building Chromium
 export LSCOLORS=eAfAcAdAbAegedabagacad
 export CLICOLOR_FORCE=1 # Always use colors with ls, even when piping to less
 export EMACSCLIENT="emacsclient -a 'emacs-server-start' -nw --socket-name=emacs-$TTY"
@@ -573,7 +523,6 @@ export EDITOR="$EMACSCLIENT"
 export LESS='-RIq'
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
-alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
 alias e="$EMACSCLIENT"
 alias m=mypython
 alias my=mypython
@@ -602,6 +551,7 @@ alias ollama-list-by-size='(ollama list | head -n1 && ollama list | tail -n +2 |
     }
     print size_mb "\t" $0
 }'\'' | sort -n | cut -f2-)'
+alias claude="/Users/aaronmeurer/.claude/local/claude"
 
 
 sizeup () {
@@ -647,41 +597,8 @@ rebuild-numpy () (
     python -c 'import numpy; print("Built NumPy", numpy.__version__)'
 )
 
-# Setting PATH for Python 2.7
-# The orginal version is saved in .profile.pysave
-PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
-
-# Setting PATH for MacPython 2.6
-# The orginal version is saved in .profile.pysave
-PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.6/bin"
-
-
-# Setting PATH for MacPython 2.5
-# The orginal version is saved in .profile.pysave
-PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.5/bin"
-
-PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.0/bin"
-
-# Setting PATH for Python 3.2
-# The orginal version is saved in .profile.pysave
-PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.2/bin"
-export PATH
-
-# Sage
-PATH="${PATH}:/Applications/Sage-5.2-OSX-64bit-10.6.app/Contents/Resources/sage"
-export PATH
-
-# Use the git version of emacs
-addtopath "$HOME/Documents/emacs/src"
-addtopath "$HOME/Documents/emacs/lib-src"
-
 # Don't use the git version of emacs
 addtopath "$HOME/miniconda3/envs/emacs/bin"
-
-PATH="$PATH:$HOME/Documents/cask/bin"
-
-# GPGTools (put before /usr/local/bin/)
-addtopath "/usr/local/MacGPG2/bin"
 
 # Homebrew
 if [ -n "$MAC" ]; then
@@ -692,14 +609,6 @@ fi
 if [ -n  "$MAC" ]; then
     SSH_AUTH_SOCK="$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
 fi
-
-# Haskell
-addtopath "$HOME/Library/Haskell/bin"
-addtopath "$HOME/.cabal/bin"
-
-# Go
-PATH="$PATH:/usr/local/go/bin"
-PATH="$PATH:$HOME/go/bin"
 
 # Custom scripts
 addtopath "$HOME/bin/"
@@ -826,6 +735,8 @@ source /Users/aaronmeurer/.bash_completions/condax.sh
 
 addtopath "/Users/aaronmeurer/.pixi/bin"
 
+addtopath "/Users/aaronmeurer/.cache/lm-studio/bin"
+
 # This line needs to stay at the bottom of the file.
 source ~/Documents/git/contrib/completion/git-completion.bash
 # Complete all git subcommands and flags
@@ -836,9 +747,3 @@ source $GIT_PROMPT_FILE
 
 # deduplicate PATH entries
 export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':')
-
-alias claude="/Users/aaronmeurer/.claude/local/claude"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/aaronmeurer/.cache/lm-studio/bin"
-# End of LM Studio CLI section
