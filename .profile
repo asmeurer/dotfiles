@@ -74,10 +74,6 @@ complete -F _activate_complete "act"
 
 export SUDO_PS1="\[\h:\w\] \u\$ "
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
 # Ignore duplicate entries in the command history
 HISTCONTROL=ignoredups:erasedups
 
@@ -255,6 +251,9 @@ if [[ -z "${CLAUDECODE}" ]]; then
         else
             alias top='top -o -cpu'
         fi
+        alias rm='rm -i'
+        alias cp='cp -i'
+        alias mv='mv -i'
 fi
 # Set breakpoint() in Python to call pudb
 export PYTHONBREAKPOINT="pudb.set_trace"
