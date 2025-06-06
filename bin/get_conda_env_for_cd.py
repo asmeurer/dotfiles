@@ -24,6 +24,7 @@ dirnames = dict(
     DIR_CONDA_STORE_SERVER=f"{HOME}Documents/conda-store/conda-store-server",
     DIR_PYTORCH=f"{HOME}Documents/pytorch",
     DIR_RECIPES_CLEANUP=f"{HOME}Documents/recipes-cleanup",
+    DIR_MATPLOTLIB=f"{HOME}Documents/matplotlib",
 )
 
 conda_envs = {}
@@ -43,6 +44,7 @@ conda_envs[dirnames['DIR_PAPYRI']] = '~/anaconda3/envs/papyri'
 conda_envs[dirnames['DIR_CONDA_STORE_SERVER']] = 'conda-store-server-dev'
 conda_envs[dirnames['DIR_PYTORCH']] = 'pytorch'
 conda_envs[dirnames['DIR_RECIPES_CLEANUP']] = 'recipes-cleanup'
+conda_envs[dirnames['DIR_MATPLOTLIB']] = 'mpl-dev'
 
 def main():
     # TODO: Support CDPATH
