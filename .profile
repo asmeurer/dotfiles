@@ -679,10 +679,6 @@ _fab_completion() {
 
 complete -F _fab_completion fab
 
-if [ -n "$MAC" ]; then
-    eval "$(maestral completion bash)"
-fi
-
 export GPG_TTY=$(tty)
 
 hash -r
