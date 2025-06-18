@@ -542,6 +542,22 @@ alias ollama-list-by-size='(ollama list | head -n1 && ollama list | tail -n +2 |
 }'\'' | sort -n | cut -f2-)'
 alias claude="/Users/aaronmeurer/.claude/local/claude"
 
+# Compare JSON files with proper formatting
+diff-json() {
+    if [[ $# -ne 2 ]]; then
+        echo "Usage: diff-json file1.json file2.json"
+        return 1
+    fi
+
+    local tmpdir=$(mktemp -d)
+    trap 'rm -rf "$tmpdir"' EXIT
+
+    jq . "$1" > "$tmpdir/file1.json" || { echo "Error: Failed to parse $1 as JSON"; return 1; }
+    jq . "$2" > "$tmpdir/file2.json" || { echo "Error: Failed to parse $2 as JSON"; return 1; }
+
+    git diff --no-index "$tmpdir/file1.json" "$tmpdir/file2.json"
+}
+
 
 sizeup () {
     if [[ -z "$1" ]]; then
