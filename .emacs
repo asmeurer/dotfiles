@@ -2480,13 +2480,14 @@ is binary, activate `hexl-mode'."
  '(mouse-wheel-scroll-amount '(1))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(jsonian ace-window web-mode jinja2-mode git-gutter highlight-symbol avy flycheck-pyflakes use-package flycheck))
+   '(jsonian ace-window web-mode jinja2-mode git-gutter highlight-symbol avy
+             flycheck-pyflakes use-package flycheck))
  '(python-fill-docstring-style 'onetwo)
  '(python-indent-guess-indent-offset nil)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
  '(require-final-newline t)
- '(safe-local-variable-values '((flycheck-mode) (encoding . utf-8)))
+ '(safe-local-variable-values '((auto-fill-mode) (flycheck-mode) (encoding . utf-8)))
  '(save-place-mode t)
  '(scroll-step 1)
  '(sentence-end-double-space nil)
