@@ -948,7 +948,7 @@ initial-command =
 # received.
 #
 # This is primarily useful for scripts or debugging.
-wait-after-command = false
+wait-after-command = true
 
 # The number of milliseconds of runtime below which we consider a process exit
 # to be abnormal. This is used to show an error message when the process exits
