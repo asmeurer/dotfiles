@@ -49,7 +49,7 @@
 #
 # Changing this configuration at runtime will only affect new terminals, i.e.
 # new windows, tabs, etc.
-font-family =
+font-family = Menlo
 
 font-family-bold =
 font-family-italic =
@@ -142,7 +142,7 @@ font-feature =
 # On Linux with GTK, font size is scaled according to both display-wide and
 # text-specific scaling factors, which are often managed by your desktop
 # environment (e.g. the GNOME display scale and large text settings).
-font-size = 13
+font-size = 16
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -401,11 +401,11 @@ theme =
 
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-background = #282c34
+background = #000000
 
 # Foreground color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-foreground = #ffffff
+foreground = #00ff00
 
 # The foreground and background color for selection. If this is not set, then
 # the selection color is just the inverted window background and foreground
