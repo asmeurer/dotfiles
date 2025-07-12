@@ -1313,6 +1313,7 @@ keybind = super+k=clear_screen
 keybind = super+physical:two=goto_tab:2
 keybind = super+physical:six=goto_tab:6
 keybind = super+v=paste_from_clipboard
+keybind = shift+enter=text:\n
 
 # Horizontal window padding. This applies padding between the terminal cells
 # and the left and right window borders. The value is in points, meaning that
