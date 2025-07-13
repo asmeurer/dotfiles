@@ -57,6 +57,12 @@
  '(highlight-symbol-face ((t (:background "grey10"))))
  '(highlight ((t (:underline t :weight bold))))
  '(completions-common-part ((t (:foreground "DarkOrange"))))
+ '(markdown-header-face-1 ((t (:foreground "#61afef" :weight bold :height 1.3))))
+ '(markdown-header-face-2 ((t (:foreground "#56b6c2" :weight bold :height 1.2))))
+ '(markdown-header-face-3 ((t (:foreground "#c678dd" :weight bold :height 1.1))))
+ '(markdown-header-face-4 ((t (:foreground "#e5c07b" :weight bold))))
+ '(markdown-header-face-5 ((t (:foreground "#98c379" :weight bold))))
+ '(markdown-header-face-6 ((t (:foreground "#d19a66" :weight bold))))
  )
 
 (provide-theme '1am)
