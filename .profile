@@ -704,6 +704,10 @@ hash -r
 deact
 cd .
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # Created by `pipx` on 2024-01-09 08:17:31
 export PATH="$PATH:/Users/aaronmeurer/.local/bin"
 # Shell-GPT integration BASH v0.1
