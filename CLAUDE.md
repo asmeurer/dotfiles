@@ -33,3 +33,8 @@ The principle files here are:
 
 - **Git Workflow**:
   - Small, focused commits with descriptive messages
+
+# Claude Code Tool Limitations
+- **LS Tool**: Does not show hidden files/directories (those starting with
+  `.`). Most files in this repository are hidden. You will need to use use `ls
+  -la` with the Bash tool instead to see hidden files.
