@@ -2529,6 +2529,12 @@ is binary, activate `hexl-mode'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(TeX-fold-unfolded-face ((t nil)))
+ '(markdown-header-face-1 ((t (:foreground "#61afef" :weight bold :height 1.3))))
+ '(markdown-header-face-2 ((t (:foreground "#56b6c2" :weight bold :height 1.2))))
+ '(markdown-header-face-3 ((t (:foreground "#c678dd" :weight bold :height 1.1))))
+ '(markdown-header-face-4 ((t (:foreground "#e5c07b" :weight bold))))
+ '(markdown-header-face-5 ((t (:foreground "#98c379" :weight bold))))
+ '(markdown-header-face-6 ((t (:foreground "#d19a66" :weight bold))))
  '(sml-modeline-end-face ((t (:background "black" :foreground "white"))))
  '(sml-modeline-vis-face ((t (:inherit yascroll:thumb-text-area))))
  '(yascroll:thumb-text-area ((t (:background "slateblue" :foreground "white")))))
