@@ -1333,7 +1333,7 @@ keybind = shift+enter=text:\n
 # left padding to 2 and the right padding to 4. If you want to set both
 # paddings to the same value, you can use a single value. For example,
 # `window-padding-x = 2` will set both paddings to 2.
-window-padding-x = 2
+# window-padding-x = 2
 
 # Vertical window padding. This applies padding between the terminal cells and
 # the top and bottom window borders. The value is in points, meaning that it
@@ -1352,7 +1352,7 @@ window-padding-x = 2
 # top padding to 2 and the bottom padding to 4. If you want to set both
 # paddings to the same value, you can use a single value. For example,
 # `window-padding-y = 2` will set both paddings to 2.
-window-padding-y = 2
+# window-padding-y = 2
 
 # The viewport dimensions are usually not perfectly divisible by the cell
 # size. In this case, some extra padding on the end of a column and the bottom
@@ -1366,7 +1366,7 @@ window-padding-y = 2
 # apply. The other padding is applied first and may affect how many grid cells
 # actually exist, and this is applied last in order to balance the padding
 # given a certain viewport size and grid cell size.
-window-padding-balance = false
+# window-padding-balance = false
 
 # The color of the padding area of the window. Valid values are:
 #
@@ -1388,7 +1388,7 @@ window-padding-balance = false
 # * The nearest row contains a perfect fit powerline character. These
 #   don't look good extended.
 #
-window-padding-color = background
+# window-padding-color = background
 
 # Synchronize rendering with the screen refresh rate. If true, this will
 # minimize tearing and align redraws with the screen but may cause input
@@ -1461,7 +1461,7 @@ window-inherit-font-size = false
 #
 # macOS: To hide the titlebar without removing the native window borders
 #        or rounded corners, use `macos-titlebar-style = hidden` instead.
-window-decoration = auto
+# window-decoration = auto
 
 # The font that will be used for the application's window and tab titles.
 #
@@ -1469,7 +1469,7 @@ window-decoration = auto
 #
 # Note: any font available on the system may be used, this font is not
 # required to be a fixed-width font.
-window-title-font-family =
+# window-title-font-family =
 
 # The text that will be displayed in the subtitle of the window. Valid values:
 #
@@ -1478,7 +1478,7 @@ window-title-font-family =
 #      surface.
 #
 # This feature is only supported on GTK with Adwaita enabled.
-window-subtitle = false
+# window-subtitle = false
 
 # The theme to use for the windows. Valid values:
 #
@@ -1499,7 +1499,7 @@ window-subtitle = false
 # non-terminal windows within Ghostty.
 #
 # This is currently only supported on macOS and Linux.
-window-theme = auto
+# window-theme = auto
 
 # The color space to use when interpreting terminal colors. "Terminal colors"
 # refers to colors specified in your configuration and colors produced by
@@ -1511,7 +1511,7 @@ window-theme = auto
 #   * `display-p3` - Interpret colors in the Display P3 color space.
 #
 # This setting is currently only supported on macOS.
-window-colorspace = srgb
+# window-colorspace = srgb
 
 # The initial window size. This size is in terminal grid cells by default.
 # Both values must be set to take effect. If only one value is set, it is
@@ -1540,9 +1540,9 @@ window-colorspace = srgb
 # `window-decoration`), then this will work as expected.
 #
 # Windows smaller than 10 wide by 4 high are not allowed.
-window-height = 0
+# window-height = 0
 
-window-width = 0
+# window-width = 0
 # The starting window position. This position is in pixels and is relative
 # to the top-left corner of the primary monitor. Both values must be set to take
 # effect. If only one value is set, it is ignored.
@@ -1566,9 +1566,9 @@ window-width = 0
 # Note: this is only supported on macOS and Linux GLFW builds. The GTK
 # runtime does not support setting the window position (this is a limitation
 # of GTK 4.0).
-window-position-x =
+# window-position-x =
 
-window-position-y =
+# window-position-y =
 # Whether to enable saving and restoring window state. Window state includes
 # their position, size, tabs, splits, etc. Some window state requires shell
 # integration, such as preserving working directories. See `shell-integration`
@@ -1604,7 +1604,7 @@ window-save-state = always
 # Resize the window in discrete increments of the focused surface's cell size.
 # If this is disabled, surfaces are resized in pixel increments. Currently
 # only supported on macOS.
-window-step-resize = false
+# window-step-resize = false
 
 # The position where new tabs are created. Valid values:
 #
@@ -1612,21 +1612,21 @@ window-step-resize = false
 #     or at the end if there are no focused tabs.
 #
 #   * `end` - Insert the new tab at the end of the tab list.
-window-new-tab-position = current
+# window-new-tab-position = current
 
 # Background color for the window titlebar. This only takes effect if
 # window-theme is set to ghostty. Currently only supported in the GTK app
 # runtime.
 #
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-window-titlebar-background =
+# window-titlebar-background =
 
 # Foreground color for the window titlebar. This only takes effect if
 # window-theme is set to ghostty. Currently only supported in the GTK app
 # runtime.
 #
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-window-titlebar-foreground =
+# window-titlebar-foreground =
 
 # This controls when resize overlays are shown. Resize overlays are a
 # transient popup that shows the size of the terminal while the surfaces are
@@ -1639,7 +1639,7 @@ window-titlebar-foreground =
 #                     subsequently resized.
 #
 # The default is `after-first`.
-resize-overlay = after-first
+# resize-overlay = after-first
 
 # If resize overlays are enabled, this controls the position of the overlay.
 # The possible options are:
@@ -1653,7 +1653,7 @@ resize-overlay = after-first
 #   * `bottom-right`
 #
 # The default is `center`.
-resize-overlay-position = center
+# resize-overlay-position = center
 
 # If resize overlays are enabled, this controls how long the overlay is
 # visible on the screen before it is hidden. The default is ¾ of a second or
@@ -1685,7 +1685,7 @@ resize-overlay-position = center
 #
 # The maximum value is `584y 49w 23h 34m 33s 709ms 551µs 615ns`. Any
 # value larger than this will be clamped to the maximum value.
-resize-overlay-duration = 750ms
+# resize-overlay-duration = 750ms
 
 # If true, when there are multiple split panes, the mouse selects the pane
 # that is focused. This only applies to the currently focused window; e.g.
@@ -1693,7 +1693,7 @@ resize-overlay-duration = 750ms
 # and bring the window to front.
 #
 # Default is false.
-focus-follows-mouse = false
+# focus-follows-mouse = false
 
 # Whether to allow programs running in the terminal to read/write to the
 # system clipboard (OSC 52, for googling). The default is to allow clipboard
@@ -1705,23 +1705,23 @@ focus-follows-mouse = false
 #   * `allow`
 #   * `deny`
 #
-clipboard-read = ask
+# clipboard-read = ask
 
-clipboard-write = allow
+# clipboard-write = allow
 # Trims trailing whitespace on data that is copied to the clipboard. This does
 # not affect data sent to the clipboard via `clipboard-write`.
-clipboard-trim-trailing-spaces = true
+# clipboard-trim-trailing-spaces = true
 
 # Require confirmation before pasting text that appears unsafe. This helps
 # prevent a "copy/paste attack" where a user may accidentally execute unsafe
 # commands by pasting text with newlines.
-clipboard-paste-protection = true
+# clipboard-paste-protection = true
 
 # If true, bracketed pastes will be considered safe. By default, bracketed
 # pastes are considered safe. "Bracketed" pastes are pastes while the running
 # program has bracketed paste mode enabled (a setting set by the running
 # program, not the terminal emulator).
-clipboard-paste-bracketed-safe = true
+# clipboard-paste-bracketed-safe = true
 
 # Enables or disabled title reporting (CSI 21 t). This escape sequence
 # allows the running program to query the terminal title. This is a common
@@ -1730,7 +1730,7 @@ clipboard-paste-bracketed-safe = true
 # Warning: This can expose sensitive information at best and enable
 # arbitrary code execution at worst (with a maliciously crafted title
 # and a minor amount of user interaction).
-title-report = false
+# title-report = false
 
 # The total amount of bytes that can be used for image data (e.g. the Kitty
 # image protocol) per terminal screen. The maximum value is 4,294,967,295
@@ -1739,7 +1739,7 @@ title-report = false
 #
 # This value is separate for primary and alternate screens so the effective
 # limit per surface is double.
-image-storage-limit = 320000000
+# image-storage-limit = 320000000
 
 # Whether to automatically copy selected text to the clipboard. `true`
 # will prefer to copy to the selection clipboard, otherwise it will copy to
@@ -1758,7 +1758,7 @@ copy-on-select = false
 # (double, triple, etc.) or an entirely new single click. A value of zero will
 # use a platform-specific default. The default on macOS is determined by the
 # OS settings. On every other platform it is 500ms.
-click-repeat-interval = 0
+# click-repeat-interval = 0
 
 # Additional configuration files to read. This configuration can be repeated
 # to read multiple configuration files. Configuration files themselves can
@@ -1787,7 +1787,7 @@ click-repeat-interval = 0
 # If "foo" contains `a = 2`, the final value of `a` will be 2, because
 # `foo` is loaded after the configuration file that configures the
 # nested `config-file` value.
-config-file =
+# config-file =
 
 # When this is true, the default configuration file paths will be loaded.
 # The default configuration file paths are currently only the XDG
@@ -1800,7 +1800,7 @@ config-file =
 # This is a CLI-only configuration. Setting this in a configuration file
 # will have no effect. It is not an error, but it will not do anything.
 # This configuration can only be set via CLI arguments.
-config-default-files = true
+# config-default-files = true
 
 # Confirms that a surface should be closed before closing it.
 #
@@ -1808,7 +1808,7 @@ config-default-files = true
 # any confirmation. This can also be set to `always`, which will always
 # confirm closing a surface, even if shell integration says a process isn't
 # running.
-confirm-close-surface = true
+# confirm-close-surface = true
 
 # Whether or not to quit after the last surface is closed.
 #
@@ -1860,14 +1860,14 @@ confirm-close-surface = true
 # `quit-after-last-window-closed` is `true`.
 #
 # Only implemented on Linux.
-quit-after-last-window-closed-delay =
+# quit-after-last-window-closed-delay =
 
 # This controls whether an initial window is created when Ghostty
 # is run. Note that if `quit-after-last-window-closed` is `true` and
 # `quit-after-last-window-closed-delay` is set, setting `initial-window` to
 # `false` will mean that Ghostty will quit after the configured delay if no
 # window is ever created. Only implemented on Linux and macOS.
-initial-window = true
+# initial-window = true
 
 # The position of the "quick" terminal window. To learn more about the
 # quick terminal, see the documentation for the `toggle_quick_terminal`
@@ -1885,7 +1885,7 @@ initial-window = true
 #
 # Note: There is no default keybind for toggling the quick terminal.
 # To enable this feature, bind the `toggle_quick_terminal` action to a key.
-quick-terminal-position = top
+# quick-terminal-position = top
 
 # The screen where the quick terminal should show up.
 #
@@ -1905,16 +1905,16 @@ quick-terminal-position = top
 #
 # The default value is `main` because this is the recommended screen
 # by the operating system.
-quick-terminal-screen = main
+# quick-terminal-screen = main
 
 # Duration (in seconds) of the quick terminal enter and exit animation.
 # Set it to 0 to disable animation completely. This can be changed at
 # runtime.
-quick-terminal-animation-duration = 0.2
+# quick-terminal-animation-duration = 0.2
 
 # Automatically hide the quick terminal when focus shifts to another window.
 # Set it to false for the quick terminal to remain open even when it loses focus.
-quick-terminal-autohide = true
+# quick-terminal-autohide = true
 
 # This configuration option determines the behavior of the quick terminal
 # when switching between macOS spaces. macOS spaces are virtual desktops
@@ -1931,7 +1931,7 @@ quick-terminal-autohide = true
 #    space.
 #
 # The default value is `move`.
-quick-terminal-space-behavior = move
+# quick-terminal-space-behavior = move
 
 # Whether to enable shell integration auto-injection or not. Shell integration
 # greatly enhances the terminal experience by enabling a number of features:
@@ -1957,7 +1957,7 @@ quick-terminal-space-behavior = move
 #   * `bash`, `elvish`, `fish`, `zsh` - Use this specific shell injection scheme.
 #
 # The default value is `detect`.
-shell-integration = detect
+# shell-integration = detect
 
 # Shell integration features to enable. These require our shell integration
 # to be loaded, either automatically via shell-integration or manually.
@@ -1995,7 +1995,7 @@ shell-integration-features = no-cursor,no-sudo,title
 #   * `16-bit` - Color components are returned scaled, e.g. `rrrr/gggg/bbbb`
 #
 # The default value is `16-bit`.
-osc-color-report-format = 16-bit
+# osc-color-report-format = 16-bit
 
 # If true, allows the "KAM" mode (ANSI mode 2) to be used within
 # the terminal. KAM disables keyboard input at the request of the
@@ -2003,7 +2003,7 @@ osc-color-report-format = 16-bit
 # to be enabled. This will not be documented further because
 # if you know you need KAM, you know. If you don't know if you
 # need KAM, you don't need it.
-vt-kam-allowed = false
+# vt-kam-allowed = false
 
 # Custom shaders to run after the default shaders. This is a file path
 # to a GLSL-syntax shader for all platforms.
@@ -2030,7 +2030,7 @@ vt-kam-allowed = false
 #
 # Changing this value at runtime and reloading the configuration will only
 # affect new windows, tabs, and splits.
-custom-shader =
+# custom-shader =
 
 # If `true` (default), the focused terminal surface will run an animation
 # loop when custom shaders are used. This uses slightly more CPU (generally
@@ -2049,7 +2049,7 @@ custom-shader =
 #
 # This value can be changed at runtime and will affect all currently
 # open terminals.
-custom-shader-animation = true
+# custom-shader-animation = true
 
 # Control the in-app notifications that Ghostty shows.
 #
@@ -2074,7 +2074,7 @@ custom-shader-animation = true
 # enable all notifications.
 #
 # This configuration only applies to GTK with Adwaita enabled.
-app-notifications = clipboard-copy
+# app-notifications = clipboard-copy
 
 # If anything other than false, fullscreen mode on macOS will not use the
 # native fullscreen, but make the window fullscreen without animations and
@@ -2100,7 +2100,7 @@ app-notifications = clipboard-copy
 # Changing this option at runtime works, but will only apply to the next
 # time the window is made fullscreen. If a window is already fullscreen,
 # it will retain the previous setting until fullscreen is exited.
-macos-non-native-fullscreen = false
+# macos-non-native-fullscreen = false
 
 # The style of the macOS titlebar. Available values are: "native",
 # "transparent", "tabs", and "hidden".
@@ -2142,7 +2142,7 @@ macos-non-native-fullscreen = false
 # most cases.
 #
 # Changing this option at runtime only applies to new windows.
-macos-titlebar-style = transparent
+# macos-titlebar-style = transparent
 
 # Whether the proxy icon in the macOS titlebar is visible. The proxy icon
 # is the icon that represents the folder of the current working directory.
@@ -2163,7 +2163,7 @@ macos-titlebar-style = transparent
 # Therefore, to make this work after changing the setting, you must
 # usually `cd` to a different directory, open a different file in an
 # editor, etc.
-macos-titlebar-proxy-icon = visible
+# macos-titlebar-proxy-icon = visible
 
 # macOS doesn't have a distinct "alt" key and instead has the "option"
 # key which behaves slightly differently. On macOS by default, the
@@ -2199,12 +2199,12 @@ macos-titlebar-proxy-icon = visible
 # key, respectively.
 #
 # This does not work with GLFW builds.
-macos-option-as-alt =
+# macos-option-as-alt =
 
 # Whether to enable the macOS window shadow. The default value is true.
 # With some window managers and window transparency settings, you may
 # find false more visually appealing.
-macos-window-shadow = true
+# macos-window-shadow = true
 
 # If true, Ghostty on macOS will automatically enable the "Secure Input"
 # feature when it detects that a password prompt is being displayed.
@@ -2222,7 +2222,7 @@ macos-window-shadow = true
 # with legitimate accessibility software (or software that uses the
 # accessibility APIs), since secure input prevents any application from
 # reading keyboard events.
-macos-auto-secure-input = true
+# macos-auto-secure-input = true
 
 # If true, Ghostty will show a graphical indication when secure input is
 # enabled. This indication is generally recommended to know when secure input
@@ -2232,7 +2232,7 @@ macos-auto-secure-input = true
 # or it is manually (and typically temporarily) enabled. However, if you
 # always have secure input enabled, the indication can be distracting and
 # you may want to disable it.
-macos-secure-input-indication = true
+# macos-secure-input-indication = true
 
 # Customize the macOS app icon.
 #
@@ -2266,7 +2266,7 @@ macos-secure-input-indication = true
 #     separate framework and cannot be customized without significant
 #     effort.
 #
-macos-icon = official
+# macos-icon = official
 
 # The material to use for the frame of the macOS app icon.
 #
@@ -2278,7 +2278,7 @@ macos-icon = official
 #  * `chrome` - A shiny chrome frame.
 #
 # This only has an effect when `macos-icon` is set to `custom-style`.
-macos-icon-frame = aluminum
+# macos-icon-frame = aluminum
 
 # The color of the ghost in the macOS app icon.
 #
@@ -2288,7 +2288,7 @@ macos-icon-frame = aluminum
 # This only has an effect when `macos-icon` is set to `custom-style`.
 #
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-macos-icon-ghost-color =
+# macos-icon-ghost-color =
 
 # The color of the screen in the macOS app icon.
 #
@@ -2300,7 +2300,7 @@ macos-icon-ghost-color =
 # `custom-style`.
 #
 # This only has an effect when `macos-icon` is set to `custom-style`.
-macos-icon-screen-color =
+# macos-icon-screen-color =
 
 # Put every surface (tab, split, window) into a dedicated Linux cgroup.
 #
@@ -2328,7 +2328,7 @@ macos-icon-screen-color =
 #   * `single-instance` - Enable cgroups only for Ghostty instances launched
 #     as single-instance applications (see gtk-single-instance).
 #
-linux-cgroup = single-instance
+# linux-cgroup = single-instance
 
 # Memory limit for any individual terminal process (tab, split, window,
 # etc.) in bytes. If this is unset then no memory limit will be set.
@@ -2337,14 +2337,14 @@ linux-cgroup = single-instance
 # controller, which is a soft limit. You should configure something like
 # systemd-oom to handle killing processes that have too much memory
 # pressure.
-linux-cgroup-memory-limit =
+# linux-cgroup-memory-limit =
 
 # Number of processes limit for any individual terminal process (tab, split,
 # window, etc.). If this is unset then no limit will be set.
 #
 # Note that this sets the "pids.max" configuration for the process number
 # controller, which is a hard limit.
-linux-cgroup-processes-limit =
+# linux-cgroup-processes-limit =
 
 # If this is false, then any cgroup initialization (for linux-cgroup)
 # will be allowed to fail and the failure is ignored. This is useful if
@@ -2357,17 +2357,17 @@ linux-cgroup-processes-limit =
 #
 # Note: This currently only affects cgroup initialization. Subprocesses
 # must always be able to move themselves into an isolated cgroup.
-linux-cgroup-hard-fail = false
+# linux-cgroup-hard-fail = false
 
 # Enable or disable GTK's OpenGL debugging logs. The default is `true` for
 # debug builds, `false` for all others.
-gtk-opengl-debug = false
+# gtk-opengl-debug = false
 
 # Obsolete configuration that should not be set. This was deprecated in
 # Ghostty 1.1.3 and no longer has any effect. The configuration key will
 # be fully removed in 1.2.0. You can manually override the GSK renderer
 # using standard environment variables such as `GSK_RENDERER` (from GTK).
-gtk-gsk-renderer = default
+# gtk-gsk-renderer = default
 
 # If `true`, the Ghostty GTK application will run in single-instance mode:
 # each new `ghostty` process launched will result in a new window if there is
@@ -2382,7 +2382,7 @@ gtk-gsk-renderer = default
 #
 # Note that debug builds of Ghostty have a separate single-instance ID
 # so you can test single instance without conflicting with release builds.
-gtk-single-instance = desktop
+# gtk-single-instance = desktop
 
 # When enabled, the full GTK titlebar is displayed instead of your window
 # manager's simple titlebar. The behavior of this option will vary with your
@@ -2393,7 +2393,7 @@ gtk-single-instance = desktop
 #
 # Changing this value at runtime and reloading the configuration will only
 # affect new windows.
-gtk-titlebar = true
+# gtk-titlebar = true
 
 # Determines the side of the screen that the GTK tab bar will stick to.
 # Top, bottom, left, right, and hidden are supported. The default is top.
@@ -2407,11 +2407,11 @@ gtk-titlebar = true
 # tab overview for displaying tabs. Alternatively, you can use the
 # `toggle_tab_overview` action in a keybind if your window doesn't have a
 # title bar, or you can switch tabs with keybinds.
-gtk-tabs-location = top
+# gtk-tabs-location = top
 
 # If this is `true`, the titlebar will be hidden when the window is maximized,
 # and shown when the titlebar is unmaximized. GTK only.
-gtk-titlebar-hide-when-maximized = false
+# gtk-titlebar-hide-when-maximized = false
 
 # Determines the appearance of the top and bottom bars when using the
 # Adwaita tab bar. This requires `gtk-adwaita` to be enabled (it is
@@ -2425,13 +2425,13 @@ gtk-titlebar-hide-when-maximized = false
 #    more subtle border.
 #
 # Changing this value at runtime will only affect new windows.
-adw-toolbar-style = raised
+# adw-toolbar-style = raised
 
 # If `true` (default), then the Ghostty GTK tabs will be "wide." Wide tabs
 # are the new typical Gnome style where tabs fill their available space.
 # If you set this to `false` then tabs will only take up space they need,
 # which is the old style.
-gtk-wide-tabs = true
+# gtk-wide-tabs = true
 
 # If `true` (default), Ghostty will enable Adwaita theme support. This
 # will make `window-theme` work properly and will also allow Ghostty to
@@ -2445,7 +2445,7 @@ gtk-wide-tabs = true
 #
 # This configuration only has an effect if Ghostty was built with
 # Adwaita support.
-gtk-adwaita = true
+# gtk-adwaita = true
 
 # Custom CSS files to be loaded.
 #
@@ -2454,11 +2454,11 @@ gtk-adwaita = true
 # not exist. If you want to include a file that begins with a literal ?
 # character, surround the file path in double quotes (").
 # The file size limit for a single stylesheet is 5MiB.
-gtk-custom-css =
+# gtk-custom-css =
 
 # If `true` (default), applications running in the terminal can show desktop
 # notifications using certain escape sequences such as OSC 9 or OSC 777.
-desktop-notifications = true
+# desktop-notifications = true
 
 # If `true`, the bold text will use the bright color palette.
 bold-is-bright = true
@@ -2469,11 +2469,11 @@ bold-is-bright = true
 # features. An option exists in vim to modify this: `:set
 # keyprotocol=ghostty:kitty`, however a bug in the implementation prevents it
 # from working properly. https://github.com/vim/vim/pull/13211 fixes this.
-term = xterm-ghostty
+# term = xterm-ghostty
 
 # String to send when we receive `ENQ` (`0x05`) from the command that we are
 # running. Defaults to an empty string if not set.
-enquiry-response =
+# enquiry-response =
 
 # Control the auto-update functionality of Ghostty. This is only supported
 # on macOS currently, since Linux builds are distributed via package
@@ -2498,7 +2498,7 @@ enquiry-response =
 # preference stored in the standard user defaults (`defaults(1)`).
 #
 # Changing this value at runtime works after a small delay.
-auto-update =
+# auto-update =
 
 # The release channel to use for auto-updates.
 #
@@ -2520,4 +2520,4 @@ auto-update =
 # Ghostty to take effect.
 #
 # This only works on macOS since only macOS has an auto-update feature.
-auto-update-channel =
+# auto-update-channel =
