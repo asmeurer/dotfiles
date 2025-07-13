@@ -1314,6 +1314,7 @@ wait-after-command = true
 # keybind = super+physical:six=goto_tab:6
 # keybind = super+v=paste_from_clipboard
 keybind = shift+enter=text:\n
+# keybind = middle_click=unconsumed:middle_click
 
 # Horizontal window padding. This applies padding between the terminal cells
 # and the left and right window borders. The value is in points, meaning that
@@ -1402,18 +1403,18 @@ window-padding-color = background
 # Changing this value at runtime will only affect new terminals.
 #
 # This setting is only supported currently on macOS.
-window-vsync = true
+# window-vsync = true
 
 # If true, new windows and tabs will inherit the working directory of the
 # previously focused window. If no window was previously focused, the default
 # working directory will be used (the `working-directory` option).
-window-inherit-working-directory = true
+# window-inherit-working-directory = true
 
 # If true, new windows and tabs will inherit the font size of the previously
 # focused window. If no window was previously focused, the default font size
 # will be used. If this is false, the default font size specified in the
 # configuration `font-size` will be used.
-window-inherit-font-size = true
+window-inherit-font-size = false
 
 # Configure a preference for window decorations. This setting specifies
 # a _preference_; the actual OS, desktop environment, window manager, etc.
@@ -1598,7 +1599,7 @@ window-position-y =
 # The default value is `default`.
 #
 # This is currently only supported on macOS. This has no effect on Linux.
-window-save-state = default
+window-save-state = always
 
 # Resize the window in discrete increments of the focused surface's cell size.
 # If this is disabled, surfaces are resized in pixel increments. Currently
@@ -2460,7 +2461,7 @@ gtk-custom-css =
 desktop-notifications = true
 
 # If `true`, the bold text will use the bright color palette.
-bold-is-bright = false
+bold-is-bright = true
 
 # This will be used to set the `TERM` environment variable.
 # HACK: We set this with an `xterm` prefix because vim uses that to enable key
