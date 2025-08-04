@@ -540,7 +540,6 @@ alias ollama-list-by-size='(ollama list | head -n1 && ollama list | tail -n +2 |
     }
     print size_mb "\t" $0
 }'\'' | sort -n | cut -f2-)'
-alias claude="/Users/aaronmeurer/.claude/local/claude"
 
 # Compare JSON files with proper formatting
 diff-json() {
