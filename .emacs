@@ -639,18 +639,30 @@ is available. Enables copilot-mode if it isn't already."
 
 
 (use-package ellama
-    :init
-    ;; setup key bindings
-    (setopt ellama-keymap-prefix "C-c e")
-    (setq openai-key (auth-source-pick-first-password
-                         :host "chat.openai.com"))
-    (require 'llm-openai)
-    (setq ellama-provider
+  :init
+  ;; setup key bindings
+  (setopt ellama-keymap-prefix "C-c e")
+  (setq openai-key (auth-source-pick-first-password
+                    :host "chat.openai.com"))
+  (require 'llm-openai)
+  (setq ellama-provider
         (make-llm-openai
-            :key openai-key
-            :chat-model "gpt-4-turbo-preview")
+         :key openai-key
+         :chat-model "gpt-4-turbo-preview")
         llm-warn-on-nonfree nil))
 
+
+;; === claude code ide ===
+
+(use-package claude-code-ide
+  :straight (:type git :host github :repo "manzaltu/claude-code-ide.el")
+  :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding
+  :config
+  (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
+
+(setq claude-code-ide-terminal-backend 'eat)
+
+(use-package eat)
 
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
