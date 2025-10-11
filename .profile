@@ -11,12 +11,6 @@ fi
 # Don't waste time doing mail checking
 unset MAILCHECK
 
-# Use italics supported terminfo
-/usr/bin/tic ~/Documents/gists/gist-3187620/xterm-256color-italic.terminfo
-export TERM=xterm-256color-italic
-alias ssh='TERM=xterm-256color ssh'
-alias vagrant='TERM=xterm-256color vagrant'
-
 function addtopath {
     case ":$PATH:" in
         *":$1:"*) :;; # already there
