@@ -19,8 +19,6 @@ print('$2' or '$1'.rsplit('.git', 1)[0].split('/')[-1])
 
 ln -sf ~/miniconda3 ~/anaconda
 mkdir -p ~/Documents/gists/
-cd ~/Documents/gists/
-clone-or-pull git@gist.github.com:3187620.git gist-3187620
 
 cd ~/Documents
 clone-or-pull git@github.com:git/git.git
@@ -90,7 +88,10 @@ else
 fi
 conda update --all -n emacs
 
-pixi global install bash fd-find asitop dust duf proc ripgrep
+pixi global install bash fd-find asitop dust duf ripgrep
+if [[ $(uname) == "Darwin" ]]; then
+    pixi glocal install proc
+fi
 pixi global install hunspell --with hunspell-en
 pixi global install --environment emacs emacs --with nodejs --with hunspell-en --with pyflakes --with ruff
 pixi global update
