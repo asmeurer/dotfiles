@@ -96,6 +96,7 @@
     shwo = show
     how = show
     sho = show
+    force-push = push --force-with-lease github HEAD
 
 [branch]
     # Sort most recent branches to the end
