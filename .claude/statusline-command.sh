@@ -6,6 +6,30 @@ input=$(cat)
 # Extract current directory from JSON
 current_dir=$(echo "$input" | jq -r '.workspace.current_dir')
 
+# Extract context window information
+tokens_used=$(echo "$input" | jq -r '.context.tokens_used // 0')
+tokens_total=$(echo "$input" | jq -r '.context.tokens_total // 0')
+
+# Format token counts (convert to k format if > 1000)
+format_tokens() {
+    local num=$1
+    if [[ $num -ge 1000 ]]; then
+        echo "$((num / 1000))k"
+    else
+        echo "$num"
+    fi
+}
+
+tokens_used_formatted=$(format_tokens "$tokens_used")
+tokens_total_formatted=$(format_tokens "$tokens_total")
+
+# Calculate percentage
+if [[ $tokens_total -gt 0 ]]; then
+    tokens_percentage=$((tokens_used * 100 / tokens_total))
+else
+    tokens_percentage=0
+fi
+
 # Get current directory basename (equivalent to \W in PS1)
 current_basename=$(basename "$current_dir")
 
@@ -66,6 +90,12 @@ status_line="${status_line}$(printf '\033[1;38;2;255;255;255m')${current_basenam
 # Add git status (cyan color)
 if [[ -n "$git_status_part" ]]; then
     status_line="${status_line}$(printf '\033[1;38;2;0;255;255m')${git_status_part}$(printf '\033[0m')"
+fi
+
+# Add context window information (yellow/orange color)
+if [[ $tokens_total -gt 0 ]]; then
+    context_info="[${tokens_used_formatted}/${tokens_total_formatted} ${tokens_percentage}%]"
+    status_line="${status_line}$(printf '\033[1;38;2;255;200;100m')${context_info}$(printf '\033[0m')"
 fi
 
 # Add prompt symbol (red color) - removed trailing $ as per instructions
