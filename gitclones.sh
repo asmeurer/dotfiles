@@ -62,7 +62,7 @@ clone-or-pull git@github.com:purcell/mmm-mode.git
 clone-or-pull git@github.com:tkf/emacs-jedi.git
 cd emacs-jedi
 echo "Creating conda environment for jedi"
-conda install -m -p env jedi epc
+conda install -p env jedi epc
 cd ~/Documents/
 clone-or-pull git@github.com:juergenhoetzel/profile-dotemacs.git
 

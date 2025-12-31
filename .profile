@@ -2,7 +2,7 @@ if [[ $(uname) == "Darwin" ]]; then
     MAC=1
 fi
 
-if [ -z "$MAC" ]; then
+if [[ -z "$MAC" && -z "${CLAUDECODE}" ]]; then
     echo
     fortune
     echo
