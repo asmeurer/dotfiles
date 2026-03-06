@@ -2444,7 +2444,8 @@ is binary, activate `hexl-mode'."
  '(diff-switches "-u")
  '(display-line-numbers t)
  '(doctest-optionflags '("NORMALIZE_WHITESPACE" "ELLIPSIS"))
- '(flycheck-disabled-checkers '(python-flake8 python-pylint proselint))
+ '(flycheck-disabled-checkers '(markdown-markdownlint-cli
+                                markdown-markdownlint-cli2 python-flake8 python-pylint proselint))
  '(flyspell-issue-welcome-flag nil)
  '(flyspell-lazy-changes-threshold 10)
  '(flyspell-lazy-idle-seconds 0)
