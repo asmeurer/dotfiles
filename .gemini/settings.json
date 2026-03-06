@@ -1,12 +1,4 @@
 {
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "playwright-mcp"
-      ],
-      "trust": true
-    }
-  }
+  "theme": "GitHub",
+  "selectedAuthType": "oauth-personal"
 }
