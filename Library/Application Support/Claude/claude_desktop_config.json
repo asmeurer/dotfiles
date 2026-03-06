@@ -1,4 +1,5 @@
 {
+  "globalShortcut": "",
   "mcpServers": {
     "filesystem": {
       "command": "npx",
@@ -9,5 +10,8 @@
       ]
     }
   },
-  "globalShortcut": ""
+  "preferences": {
+    "quickEntryShortcut": "off",
+    "menuBarEnabled": false
+  }
 }
