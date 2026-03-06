@@ -182,13 +182,7 @@
   (("M-n" . flycheck-next-error)
    ("M-p" . flycheck-previous-error))
   :custom
-  (flycheck-disabled-checkers '(python-flake8 python-pylint))
-  :config
-  (add-hook 'find-file-hook
-            (lambda ()
-              (when (and buffer-file-name
-                         (string-match-p "COMMIT_EDITMSG\\'" buffer-file-name))
-                (flycheck-mode -1)))))
+  (flycheck-disabled-checkers '(python-flake8 python-pylint)))
 
 ;; ===== flycheck-pyflakes ======
 
@@ -669,12 +663,6 @@ is available. Enables copilot-mode if it isn't already."
 (setq claude-code-ide-terminal-backend 'eat)
 
 (use-package eat)
-
-;; === efrit ===
-
-(straight-use-package
- '(efrit :type git :host github :repo "steveyegge/efrit"))
-(require 'efrit)
 
 ;; ==== popwin ====
 ;; Make annoying popup windows go away better
