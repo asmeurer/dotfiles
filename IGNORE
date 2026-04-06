@@ -16,3 +16,4 @@ linux-testing/*
 root
 .xinitrc
 CLAUDE.md
+AGENTS.md
