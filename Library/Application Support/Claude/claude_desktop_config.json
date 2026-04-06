@@ -11,7 +11,14 @@
     }
   },
   "preferences": {
+    "menuBarEnabled": false,
     "quickEntryShortcut": "off",
-    "menuBarEnabled": false
+    "coworkScheduledTasksEnabled": true,
+    "ccdScheduledTasksEnabled": true,
+    "sidebarMode": "task",
+    "coworkWebSearchEnabled": true,
+    "keepAwakeEnabled": true,
+    "coworkOnboardingResumeStep": null,
+    "chicagoEnabled": true
   }
 }
