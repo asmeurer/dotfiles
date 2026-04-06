@@ -2,7 +2,13 @@ if [[ $(uname) == "Darwin" ]]; then
     MAC=1
 fi
 
-if [[ -z "$MAC" && -z "${CLAUDECODE}" ]]; then
+case $- in
+    *i*) bash_is_interactive=1 ;;
+    *) bash_is_interactive=0 ;;
+esac
+bash_major_version=${BASH_VERSINFO[0]:-0}
+
+if (( bash_is_interactive )) && [[ -z "$MAC" && -z "${CLAUDECODE}" ]]; then
     echo
     fortune
     echo
@@ -19,6 +25,31 @@ function addtopath {
 }
 
 addtopath "$HOME/miniconda3/bin"
+addtopath "$HOME/miniconda3/condabin"
+addtopath "$HOME/.local/bin"
+addtopath "$HOME/bin"
+addtopath "$HOME/.pixi/bin"
+addtopath "$HOME/.cache/lm-studio/bin"
+
+export PYTHONBREAKPOINT="pudb.set_trace"
+export LESS='-RIq'
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+export HF_HUB_CACHE=/Volumes/Crucial/huggingface/hub
+export BUN_INSTALL="$HOME/.bun"
+export MKL_NUM_THREADS=1
+addtopath "$BUN_INSTALL/bin"
+
+if [ -n "$MAC" ]; then
+    addtopath "/opt/homebrew/bin"
+    addtopath "/opt/homebrew/sbin"
+    export SSH_AUTH_SOCK="$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
+fi
+
+export PATH=$(printf '%s' "$PATH" | tr ':' '\n' | awk 'NF && !seen[$0]++' | tr '\n' ':')
+
+if (( ! bash_is_interactive )) && [[ -z "${BASH_PROFILE_FULL}" ]]; then
+    return 0 2>/dev/null || true
+fi
 
 # Automatically activate certain conda environments when cd-ing into or out of
 # the given directories
@@ -44,7 +75,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # condax
-addtopath "/home/aaronmeurer/.local/bin"
+addtopath "$HOME/.local/bin"
 
 alias act="conda deactivate; conda activate"
 alias deact="conda deactivate; conda activate base"
@@ -101,7 +132,7 @@ shopt -s cdspell
 
 # Fix minor spelling errors on word completion if the given name does not exist
 # Requires bash 4 or greater
-if test $BASH_VERSINFO -ge 4;
+if (( bash_major_version >= 4 ));
 then
     shopt -s dirspell;
 fi
@@ -113,7 +144,9 @@ shopt -s hostcomplete
 shopt -s no_empty_cmd_completion
 
 # Enable more advanced globbing
-shopt -s globstar
+if (( bash_major_version >= 4 )); then
+    shopt -s globstar
+fi
 shopt -s extglob
 
 shopt -s expand_aliases
@@ -345,59 +378,65 @@ TAB_NAVY="\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1
 TAB_BEIGE="\033]6;1;bg;red;brightness;245\a\033]6;1;bg;green;brightness;245\a\033]6;1;bg;blue;brightness;220\a"
 TAB_CORAL="\033]6;1;bg;red;brightness;255\a\033]6;1;bg;green;brightness;127\a\033]6;1;bg;blue;brightness;80\a"
 
-declare -A tab_colors
+tab_color_dirs=()
+tab_color_values=()
+
+add_tab_color () {
+    tab_color_dirs+=("$1")
+    tab_color_values+=("$2")
+}
 
 # Directory codes are
 # sympy - Red
 DIR_SYMPY="$HOME/Documents/python/sympy/sympy"
-tab_colors[DIR_SYMPY]=$TAB_RED
+add_tab_color "$DIR_SYMPY" "$TAB_RED"
 
 # sympy-scratch - Orange
 DIR_SYMPY_SCRATCH="$HOME/Documents/python/sympy/sympy-scratch"
-tab_colors[DIR_SYMPY_SCRATCH]=$TAB_ORANGE
+add_tab_color "$DIR_SYMPY_SCRATCH" "$TAB_ORANGE"
 
 # sympy-bot - Purple
 DIR_SYMPY_BOT="$HOME/Documents/python/sympy/sympy-bot"
-tab_colors[DIR_SYMPY_BOT]=$TAB_PURPLE
+add_tab_color "$DIR_SYMPY_BOT" "$TAB_PURPLE"
 
 # sympy other (like sympy-live or sympy.wiki) - Yellow
 # Note, this one must be tested after the above ones
 DIR_SYMPY_OTHER="$HOME/Documents/python/sympy"
-tab_colors[DIR_SYMPY_OTHER]=$TAB_YELLOW
+add_tab_color "$DIR_SYMPY_OTHER" "$TAB_YELLOW"
 
 # conda-recipes - Purple
 DIR_CONDA_RECIPES="$HOME/Documents/Continuum/conda-recipes"
-tab_colors[DIR_CONDA_RECIPES]=$TAB_PURPLE
+add_tab_color "$DIR_CONDA_RECIPES" "$TAB_PURPLE"
 
 # dotfiles - Green
 DIR_DOTFILES="$HOME/Documents/dotfiles"
-tab_colors[DIR_DOTFILES]=$TAB_GREEN
+add_tab_color "$DIR_DOTFILES" "$TAB_GREEN"
 
 # Blog - Teal
 DIR_BLOG="$HOME/Documents/blog"
-tab_colors[DIR_BLOG]=$TAB_TEAL
+add_tab_color "$DIR_BLOG" "$TAB_TEAL"
 
 # homework - Blue
 export DIR_HOMEWORK="$HOME/Documents/Homework/Grad/Fall 2013" # Used later by homework alias
-tab_colors[DIR_MYPYTHON]=$TAB_BLUE
+add_tab_color "$DIR_HOMEWORK" "$TAB_BLUE"
 
 # mypython - Blue
 DIR_MYPYTHON="$HOME/Documents/mypython"
-tab_colors[DIR_HOMEWORK]=$TAB_BLUE
+add_tab_color "$DIR_MYPYTHON" "$TAB_BLUE"
 
 # work directories
 
 # Pyflyby - Violet
 DIR_PYFLYBY="$HOME/Documents/pyflyby"
-tab_colors[DIR_PYFLYBY]=$TAB_VIOLET
+add_tab_color "$DIR_PYFLYBY" "$TAB_VIOLET"
 
 # papyri - Purple
 DIR_PAPYRI="$HOME/Documents/papyri"
-tab_colors[DIR_PAPYRI]=$TAB_PURPLE
+add_tab_color "$DIR_PAPYRI" "$TAB_PURPLE"
 
 # pytorch - Maroon
 DIR_PYTORCH="$HOME/Documents/pytorch"
-tab_colors[DIR_PYTORCH]=$TAB_MAROON
+add_tab_color "$DIR_PYTORCH" "$TAB_MAROON"
 
 # Old - Black
 DIR_ZURICH="$HOME/Documents/zurich-full"
@@ -407,78 +446,71 @@ DIR_CONTINUUM="$HOME/Documents/Continuum"
 DIR_CONDA="$HOME/Documents/Continuum/conda"
 DIR_TRANSMUTAGEN="$HOME/Documents/transmutagen"
 DIR_CONDA_BUILD="$HOME/Documents/Continuum/conda-build"
-tab_colors[DIR_ZURICH]=$TAB_BLACK
-tab_colors[DIR_STRUCT_RET]=$TAB_BLACK
-tab_colors[DIR_DASK]=$TAB_BLACK
-tab_colors[DIR_CONTINUUM]=$TAB_BLACK
-tab_colors[DIR_CONDA]=$TAB_BLACK
-tab_colors[DIR_TRANSMUTAGEN]=$TAB_BLACK
-tab_colors[DIR_CONDA_BUILD]=$TAB_BLACK
+add_tab_color "$DIR_ZURICH" "$TAB_BLACK"
+add_tab_color "$DIR_STRUCT_RET" "$TAB_BLACK"
+add_tab_color "$DIR_DASK" "$TAB_BLACK"
+add_tab_color "$DIR_CONTINUUM" "$TAB_BLACK"
+add_tab_color "$DIR_CONDA" "$TAB_BLACK"
+add_tab_color "$DIR_TRANSMUTAGEN" "$TAB_BLACK"
+add_tab_color "$DIR_CONDA_BUILD" "$TAB_BLACK"
 
 # conda-store - Black
 DIR_CONDA_STORE="$HOME/Documents/conda-store"
-tab_colors[DIR_CONDA_STORE]=$TAB_BLACK
+add_tab_color "$DIR_CONDA_STORE" "$TAB_BLACK"
 
 # Numba - Pink
 DIR_NUMBA="$HOME/Documents/numba"
-tab_colors[DIR_NUMBA]=$TAB_PINK
+add_tab_color "$DIR_NUMBA" "$TAB_PINK"
 
 # Array API Tests - Pink
 DIR_ARRAY_API_TESTS="$HOME/Documents/array-api-tests"
-tab_colors[DIR_ARRAY_API_TESTS]=$TAB_PINK
+add_tab_color "$DIR_ARRAY_API_TESTS" "$TAB_PINK"
 
 # Array API - Light Pink
 DIR_ARRAY_API="$HOME/Documents/array-api"
-tab_colors[DIR_ARRAY_API]=$TAB_LIGHT_PINK
+add_tab_color "$DIR_ARRAY_API" "$TAB_LIGHT_PINK"
 
 # NumPy - Brown
 DIR_NUMPY="$HOME/Documents/numpy"
-tab_colors[DIR_NUMPY]=$TAB_BROWN
+add_tab_color "$DIR_NUMPY" "$TAB_BROWN"
 
 # Array API Compat - Dark Green
 DIR_ARRAY_API_COMPAT="$HOME/Documents/array-api-compat"
-tab_colors[DIR_ARRAY_API_COMPAT]=$TAB_DARK_GREEN
+add_tab_color "$DIR_ARRAY_API_COMPAT" "$TAB_DARK_GREEN"
 
 # Array API Strict - Mint
 DIR_ARRAY_API_STRICT="$HOME/Documents/array-api-strict"
-tab_colors[DIR_ARRAY_API_STRICT]=$TAB_MINT
+add_tab_color "$DIR_ARRAY_API_STRICT" "$TAB_MINT"
 
 # ndindex - Salmon
 DIR_NDINDEX="$HOME/Documents/ndindex"
-tab_colors[DIR_NDINDEX]=$TAB_SALMON
+add_tab_color "$DIR_NDINDEX" "$TAB_SALMON"
 
 # versioned-hdf5 light blue
 DIR_VERSIONED_HDF5="$HOME/Documents/versioned-hdf5"
-tab_colors[DIR_VERSIONED_HDF5]=$TAB_LIGHT_BLUE
+add_tab_color "$DIR_VERSIONED_HDF5" "$TAB_LIGHT_BLUE"
 
 set_tab_color () {
-    FOUND='no'
+    local i search_dir color
 
     # To make this work correctly with subdirectories, put higher level
     # directories later in the list.
 
-    for dir in "${!tab_colors[@]}";
+    for ((i=0; i<${#tab_color_dirs[@]}; i++));
     do
-        # ${!var} is the value of the variable name in var
-        SEARCH_DIR=${!dir}
-        COLOR=${tab_colors[$dir]}
-        if grep -q "$SEARCH_DIR/.*" <<< "$PWD/"
+        search_dir=${tab_color_dirs[$i]}
+        color=${tab_color_values[$i]}
+        if [[ "$PWD/" == "$search_dir/"* ]]
         then
-            FOUND='yes'
-            echo -n -e $COLOR
-        fi
-        if [[ $FOUND == 'yes' ]]
-        then
-            break
+            printf '%b' "$color"
+            printf '\033]0;\007'
+            return
         fi
     done
 
-    if [[ $FOUND == 'no' ]]
-    then
-        echo -n -e $TAB_GRAY
-    fi
+    printf '%b' "$TAB_GRAY"
     # Clear cruft from the tab title (http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#s3)
-    echo -n -e "\033]0;\007"
+    printf '\033]0;\007'
 }
 
 # Note, ${CONDA_DEFAULT_ENV#base} is not quite right. It removes any leading
@@ -647,7 +679,9 @@ complete -o nospace -o default -F _python_argcomplete "conda"
 # END output of 'register-python-argcomplete conda'
 
 
-. $HOME/.bash_completion.d/python-argcomplete.sh
+if (( bash_major_version >= 4 )) && [ -r "$HOME/.bash_completion.d/python-argcomplete.sh" ]; then
+    . "$HOME/.bash_completion.d/python-argcomplete.sh"
+fi
 
 conda-remove-test() {
     rm -rf ~/miniconda3/envs/test
