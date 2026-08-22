@@ -53,6 +53,15 @@
             "command": "python3 ~/.claude/hooks/claude-notify.py Notification"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py Notification",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "PermissionRequest": [
@@ -81,6 +90,15 @@
             "type": "command",
             "command": "python3 ~/.claude/hooks/auto-swap-on-low-usage.py",
             "timeout": 45
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py PostToolUse",
+            "timeout": 10
           }
         ]
       }
@@ -124,6 +142,15 @@
             "command": "python3 ~/.claude/hooks/claude-notify.py PreToolUse"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py PreToolUse",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "SessionEnd": [
@@ -142,6 +169,15 @@
             "command": "python3 ~/.claude/hooks/claude-notify.py SessionEnd"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py SessionEnd",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "SessionStart": [
@@ -158,6 +194,15 @@
           {
             "type": "command",
             "command": "python3 ~/.claude/hooks/cc-session-name.py"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py SessionStart",
+            "timeout": 10
           }
         ]
       }
@@ -186,6 +231,15 @@
             "command": "python3 ~/.claude/hooks/claude-notify.py Stop"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py Stop",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "StopFailure": [
@@ -203,6 +257,15 @@
             "type": "command",
             "command": "python3 ~/.claude/hooks/auto-swap-on-low-usage.py",
             "timeout": 45
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py StopFailure",
+            "timeout": 10
           }
         ]
       }
@@ -256,6 +319,15 @@
           {
             "type": "command",
             "command": "python3 ~/.claude/hooks/claude-notify.py UserPromptSubmit"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-keep-awake.py UserPromptSubmit",
+            "timeout": 10
           }
         ]
       }
