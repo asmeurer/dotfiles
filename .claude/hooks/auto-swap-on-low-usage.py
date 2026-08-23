@@ -150,9 +150,13 @@ from pathlib import Path
 
 # Master on/off switch. Flip to False to retire auto-swapping entirely (e.g.
 # when the fallback account is gone) without unwiring the hook from
-# settings.json -- the settings file is not tracked in dotfiles, so keeping the
-# switch here is what makes turning it off stick.
-ENABLED = True
+# settings.json -- keeping the switch in the script means everything the hook
+# needs in order to come back is still here, wired up and ready.
+#
+# Currently off: the aaronmeurer@gmail.com fallback account is no longer
+# active, so there is nothing to bridge to. Flip back to True if it is ever
+# reenabled; nothing else needs redoing.
+ENABLED = False
 
 SOURCE_EMAIL = "asmeurer@gmail.com"      # primary account
 TARGET_EMAIL = "aaronmeurer@gmail.com"   # fallback account
