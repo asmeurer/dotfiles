@@ -56,21 +56,38 @@ FOCUS_APPLESCRIPT = """
 on run argv
   set target to item 1 of argv
   tell application "iTerm2"
-    repeat with w in windows
-      repeat with t in tabs of w
-        repeat with s in sessions of t
+    -- Find the session, recording *stable* coordinates for it: the window's
+    -- id and the tab's position. Selecting a window reorders the `windows`
+    -- list (it is ordered front to back), and AppleScript resolves loop
+    -- references like `tab 6 of window 2` lazily, so selecting through the
+    -- loop variables would re-resolve them against the reshuffled list and
+    -- select the matching tab of some *other* window.
+    set winID to missing value
+    set tabIdx to 0
+    repeat with wi from 1 to count of windows
+      repeat with ti from 1 to count of tabs of window wi
+        repeat with s in sessions of (tab ti of window wi)
           if id of s is target then
-            select w
-            select t
-            select s
-            activate
-            return "focused"
+            set winID to id of window wi
+            set tabIdx to ti
+            exit repeat
           end if
         end repeat
+        if winID is not missing value then exit repeat
       end repeat
+      if winID is not missing value then exit repeat
     end repeat
+    if winID is missing value then
+      activate
+      return "not found"
+    end if
+    set targetWindow to (first window whose id is winID)
+    set targetTab to tab tabIdx of targetWindow
+    select targetTab
+    select (first session of targetTab whose id is target)
+    select targetWindow
     activate
-    return "not found"
+    return "focused"
   end tell
 end run
 """
