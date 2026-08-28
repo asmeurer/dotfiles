@@ -95,4 +95,7 @@ cask "karabiner-elements"  # keyboard customizer (.config/karabiner depends on i
 cask "font-hack-nerd-font"
 cask "codex"               # OpenAI coding agent
 cask "codexbar"            # menu-bar usage monitor for Codex/Claude
-cask "macdown-3000"        # Markdown editor; default handler for .md/.markdown
+# Markdown viewer: MDV (https://mowglii.com/mdv/) is the default handler for
+# .md/.markdown. It has no cask, so it is installed manually by dragging
+# MDV.app to /Applications; the handler is set with
+#     duti -s com.mowglii.MDV net.daringfireball.markdown all
