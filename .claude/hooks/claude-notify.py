@@ -217,11 +217,16 @@ def handle(event: str, data: dict) -> None:
     if event == "Notification":
         ntype = data.get("notification_type", "")
         message = data.get("message", "")
-        if ntype == "auth_success":
+        # idle_prompt is Claude Code nagging that the session has been sitting
+        # at the prompt for messageIdleNotifThresholdMs. It carries no detail
+        # ("Claude is waiting for your input") and, because it shares this
+        # session's group, it would replace the useful Stop/permission
+        # notification that is already sitting in Notification Center saying
+        # the same thing with specifics. Drop it.
+        if ntype in ("auth_success", "idle_prompt"):
             return
         kind = {
             "permission_prompt": "Needs permission",
-            "idle_prompt": "Waiting for input",
             "elicitation_dialog": "Needs input",
         }.get(ntype, data.get("title") or "Notification")
         notify(session_id, cwd, kind, squash(message))
