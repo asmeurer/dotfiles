@@ -639,6 +639,8 @@ rebuild-numpy () (
 # Homebrew
 if [ -n "$MAC" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    # Don't prompt y/n before `brew upgrade` (same as `brew upgrade --yes`)
+    export HOMEBREW_NO_ASK=1
 fi
 
 # SSH Signing (with Secretive)
