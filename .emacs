@@ -155,6 +155,37 @@
 ;; python-mode
 (delete 'python treesit-auto-langs)
 
+;; treesit-auto advises `set-auto-mode-0' to rebuild `major-mode-remap-alist'
+;; from scratch every time a major mode is chosen.  The rebuild calls
+;; `treesit-ready-p' for every language in `treesit-auto-langs', and each of
+;; those dlopen()s (or fails to dlopen) a grammar library, which comes to
+;; about 0.7s per rebuild with ~60 languages.  `set-auto-mode' triggers it
+;; twice, so every file visit paid ~1.5s, and so did every file byte-compiled
+;; by package.el (which runs `normal-mode' on each file it compiles).  That
+;; made auto-package-update take ~9 minutes for auctex and ~4 for lsp-mode.
+;;
+;; Cache the result instead.  The cache is keyed on the inputs that can
+;; change the answer (the language list and the global remap alist) and is
+;; cleared whenever a grammar gets installed.
+(defvar my-treesit-auto-remap-cache nil
+  "Cons of (KEY . ALIST) memoizing `treesit-auto--build-major-mode-remap-alist'.")
+
+(defun my-treesit-auto-remap-cached (orig-fun)
+  "Memoize ORIG-FUN, which is `treesit-auto--build-major-mode-remap-alist'."
+  (let ((key (list treesit-auto-langs (default-value 'major-mode-remap-alist))))
+    (unless (equal (car my-treesit-auto-remap-cache) key)
+      (setq my-treesit-auto-remap-cache (cons key (funcall orig-fun))))
+    (cdr my-treesit-auto-remap-cache)))
+
+(defun my-treesit-auto-remap-cache-clear (&rest _)
+  "Forget the cached remap alist so it gets rebuilt on next use."
+  (setq my-treesit-auto-remap-cache nil))
+
+(advice-add 'treesit-auto--build-major-mode-remap-alist :around
+            #'my-treesit-auto-remap-cached)
+(advice-add 'treesit-install-language-grammar :after
+            #'my-treesit-auto-remap-cache-clear)
+
 
 ;; ==== prescient ====
 
