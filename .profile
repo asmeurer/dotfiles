@@ -785,3 +785,16 @@ source $GIT_PROMPT_FILE
 
 # deduplicate PATH entries
 export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':')
+
+# Claude Code sessions in iTerm2 (see .claude/hooks/claude-session-restore.py):
+# idle sessions don't block quitting iTerm2 (so macOS can restart for
+# updates), and a session that was killed by the quit is resumed when iTerm2
+# restores its pane. claude-restore lists sessions iTerm2 didn't bring back;
+# claude-restore open --all (or open <session id>...) resumes them in new tabs.
+alias claude-restore='python3 ~/.claude/hooks/claude-session-restore.py'
+if [[ -n "$MAC" && -n "$ITERM_SESSION_ID" && -z "${CLAUDECODE}" && -z "$TMUX" ]] \
+       && (( bash_is_interactive )) \
+       && [[ -e "$HOME/.claude/session-restore/${ITERM_SESSION_ID#*:}.json" ]]; then
+    # This stays at the very end so claude starts with the full environment.
+    eval "$(python3 ~/.claude/hooks/claude-session-restore.py shell-resume)"
+fi
