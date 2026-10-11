@@ -332,6 +332,43 @@ fi
 
 complete -F _cdc_complete "cdc"
 
+# C-x C-d inserts the most recently downloaded file in ~/Downloads at the
+# cursor. Pressing it again right away replaces that with the next most recent
+# one, so you can cycle back through older downloads. With a numeric argument
+# (e.g., M-3 C-x C-d), it inserts the N most recent files instead.
+_insert_recent_download () {
+    local sortflags=-t count=${READLINE_ARGUMENT:-1} index=0 files text i
+    # On macOS, sort by creation time (i.e., when the file was downloaded),
+    # since some downloads keep the modification time from the server.
+    if [ -n "$MAC" ]; then
+        sortflags=-tU
+    fi
+    mapfile -t files < <(command ls $sortflags "$HOME/Downloads")
+    (( ${#files[@]} )) || return
+
+    if (( count == 1 )) && [[ "$READLINE_LINE" == "$_recent_download_line" && "$READLINE_POINT" == "$_recent_download_point" ]]; then
+        # Called again right after inserting a file: replace it with the next
+        # older one (wrapping around at the end).
+        index=$(( (_recent_download_index + 1) % ${#files[@]} ))
+        READLINE_LINE=${READLINE_LINE:0:_recent_download_start}${READLINE_LINE:READLINE_POINT}
+        READLINE_POINT=$_recent_download_start
+    fi
+
+    for (( i = index; i < index + count && i < ${#files[@]}; i++ )); do
+        text+="${text:+ }~/Downloads/$(printf %q "${files[i]}")"
+    done
+
+    _recent_download_start=$READLINE_POINT
+    READLINE_LINE=${READLINE_LINE:0:READLINE_POINT}$text${READLINE_LINE:READLINE_POINT}
+    READLINE_POINT=$(( READLINE_POINT + ${#text} ))
+    _recent_download_line=$READLINE_LINE
+    _recent_download_point=$READLINE_POINT
+    _recent_download_index=$index
+}
+if (( bash_major_version >= 4 )) && [[ $- == *i* ]]; then
+    bind -x '"\C-x\C-d": _insert_recent_download'
+fi
+
 # Color tabs based on directories in iTerm 2
 
 # Colors are done as "\033]6;1;bg;red;brightness;NNN\a\033]6;1;bg;blue;brightness;NNN\a\033]6;1;bg;green;brightness;NNN\a"
