@@ -46,6 +46,10 @@ ITERM2_BUNDLE_ID = "com.googlecode.iterm2"
 # for silent). Used for every notification kind.
 SOUND = "default"
 # Only this much of the transcript tail is read to find Claude's last message.
+# The transcript is only a fallback: Claude Code writes it asynchronously, so at
+# Stop time it often lacks the final message of the turn and the last text it
+# holds is whatever Claude said *before* its tool calls. The Stop hook input's
+# ``last_assistant_message`` field is the authoritative source.
 TRANSCRIPT_TAIL_BYTES = 256 * 1024
 MESSAGE_MAX_CHARS = 160
 # Hard cap on how long any terminal-notifier / osascript call may take, so a
@@ -122,7 +126,11 @@ def squash(text: str, limit: int = MESSAGE_MAX_CHARS) -> str:
 
 
 def last_assistant_text(transcript_path: str) -> str:
-    """Return the text of Claude's most recent message in the transcript."""
+    """Return the text of Claude's most recent message in the transcript.
+
+    Fallback for Claude Code versions whose Stop hook input lacks
+    ``last_assistant_message``; see the note at TRANSCRIPT_TAIL_BYTES.
+    """
     if not transcript_path or not os.path.isfile(transcript_path):
         return ""
     path = Path(transcript_path)
@@ -210,8 +218,12 @@ def handle(event: str, data: dict) -> None:
         # asked it to; the real end of the turn will fire another Stop.
         if data.get("stop_hook_active"):
             return
-        notify(session_id, cwd, "Done",
-               squash(last_assistant_text(data.get("transcript_path", ""))))
+        # Prefer the message Claude Code hands us directly. The transcript
+        # file lags the live conversation, so reading it here would usually
+        # yield the *first* thing Claude said this turn, not the last.
+        message = (data.get("last_assistant_message")
+                   or last_assistant_text(data.get("transcript_path", "")))
+        notify(session_id, cwd, "Done", squash(message))
         return
 
     if event == "Notification":
