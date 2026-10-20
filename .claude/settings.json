@@ -430,6 +430,14 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    }
+  },
   "advisorModel": "fable",
   "tui": "default",
   "voice": {
@@ -441,6 +449,7 @@
   "editorMode": "normal",
   "verbose": true,
   "preferredNotifChannel": "notifications_disabled",
+  "switchModelsOnFlag": true,
   "remoteControlAtStartup": true,
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
