@@ -42,16 +42,6 @@ The script should do this: \(ai.prompt)</string>
 	<true/>
 	<key>AnimateDimming</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>AutoCommandHistory</key>
 	<false/>
 	<key>AutoComposer</key>
@@ -845,7 +835,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x27-0x40000-0x27</key>
+		<key>0x27-0x40000-0x27-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -884,7 +874,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string>[17~</string>
 		</dict>
-		<key>0x3f-0x60000-0x2c</key>
+		<key>0x3f-0x60000-0x2c-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -898,7 +888,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string>[19~</string>
 		</dict>
-		<key>0x69-0xc0000-0x22</key>
+		<key>0x69-0xc0000-0x22-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -930,7 +920,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string>\n</string>
 		</dict>
-		<key>0xd-0x20000-0x24</key>
+		<key>0xd-0x20000-0x24-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>12</integer>
@@ -943,7 +933,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>
-		<key>0xf700-0x240000-0x7e</key>
+		<key>0xf700-0x240000-0x7e-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -956,7 +946,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Version</key>
 			<integer>2</integer>
 		</dict>
-		<key>0xf700-0x260000-0x7e</key>
+		<key>0xf700-0x260000-0x7e-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -970,7 +960,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf701-0x240000-0x7d</key>
+		<key>0xf701-0x240000-0x7d-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -983,7 +973,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Version</key>
 			<integer>2</integer>
 		</dict>
-		<key>0xf701-0x260000-0x7d</key>
+		<key>0xf701-0x260000-0x7d-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -997,14 +987,14 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf702-0x260000-0x7b</key>
+		<key>0xf702-0x260000-0x7b-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
 			<key>Text</key>
 			<string>[1;6D</string>
 		</dict>
-		<key>0xf702-0x300000-0x7b</key>
+		<key>0xf702-0x300000-0x7b-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -1024,7 +1014,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf703-0x240000-0x7c</key>
+		<key>0xf703-0x240000-0x7c-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -1037,7 +1027,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Version</key>
 			<integer>2</integer>
 		</dict>
-		<key>0xf703-0x260000-0x7c</key>
+		<key>0xf703-0x260000-0x7c-0x1</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
@@ -1568,7 +1558,7 @@ The script should do this: \(ai.prompt)</string>
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
-				<key>0xd-0x40000-0x24</key>
+				<key>0xd-0x40000-0x24-0x1</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
@@ -10220,7 +10210,7 @@ The script should do this: \(ai.prompt)</string>
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
-				<key>0xd-0x40000-0x24</key>
+				<key>0xd-0x40000-0x24-0x1</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
