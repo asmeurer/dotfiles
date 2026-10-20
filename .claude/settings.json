@@ -412,7 +412,8 @@
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true,
-    "claude-notifications-go@claude-notifications-go": false
+    "claude-notifications-go@claude-notifications-go": false,
+    "cc-plugin-you-should-know@builtin": true
   },
   "extraKnownMarketplaces": {
     "claude-notifications-go": {
