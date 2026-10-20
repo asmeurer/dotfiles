@@ -21,6 +21,13 @@ glob. An example IGNORE file might look like:
 .*~
 other
 
+Some top-level directories are linked under a different name, see RENAMES
+below. In particular, Claude Code's global config lives in ~/.claude, but is
+stored in this repo as claude/ (no leading dot). If it were stored as
+.claude/, Claude Code would also pick it up as *project* settings whenever it
+is run inside this repo, and on an unlinked machine the hooks it references
+under ~/.claude/hooks would not exist yet, which blocks every tool call.
+
 TODO:
 
 - Support linking directories
@@ -36,7 +43,7 @@ import argparse
 from itertools import chain
 from shutil import copy2
 
-from os import walk, symlink, makedirs
+from os import walk, symlink, makedirs, remove
 from os.path import (join, relpath, abspath, exists, lexists, expanduser,
                      split, islink, isfile)
 
@@ -48,6 +55,25 @@ def fullpath(path):
 COPY_FILES = [
     ".config/karabiner/karabiner.json",
 ]
+
+# Top-level directories in the repo that are linked under a different name in
+# the destination. Keys are the name in the repo, values are the name in the
+# destination (both relative to the source/destination roots).
+RENAMES = {
+    "claude": ".claude",
+}
+
+
+def rename_path(path):
+    """
+    Apply RENAMES to the first component of a path relative to the source.
+    """
+    if path == '.':
+        return path
+    parts = path.split('/')
+    if parts[0] in RENAMES:
+        parts[0] = RENAMES[parts[0]]
+    return join(*parts)
 
 
 def copy_file(source, destination, dry_run=False):
@@ -107,7 +133,10 @@ def main():
         for file in COPY_FILES)
 
     for dirpath, dirnames, filenames in walk(args.source):
-        dest_head = join(args.destination, relpath(dirpath, start=args.source))
+        # Never link Python bytecode caches (they are gitignored anyway)
+        dirnames[:] = [d for d in dirnames if d != '__pycache__']
+        dest_head = join(args.destination,
+            rename_path(relpath(dirpath, start=args.source)))
         for file in filenames:
             source = join(dirpath, file)
             if abspath(source) in copy_file_sources:
@@ -117,7 +146,21 @@ def main():
             else:
                 destination = join(dest_head, relpath(join(dirpath, file),
                     dirpath))
-                if not lexists(fullpath(destination)):
+                if islink(fullpath(destination)) and not exists(fullpath(destination)):
+                    # A dangling symlink, most likely left over from a file
+                    # that was moved or renamed in the repo (e.g. .claude/ ->
+                    # claude/). Replace it with a link to the new location.
+                    if args.dry_run:
+                        print("Would relink:", end=' ')
+                    else:
+                        print("Relinking:", end=' ')
+                    print(fullpath(source), "to", fullpath(destination),
+                        "(replacing dangling symlink)")
+
+                    if not args.dry_run:
+                        remove(fullpath(destination))
+                        symlink(fullpath(source), fullpath(destination))
+                elif not lexists(fullpath(destination)):
                     if args.dry_run:
                         print("Would link:", end=' ')
                     else:

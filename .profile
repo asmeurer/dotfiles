@@ -823,7 +823,7 @@ source $GIT_PROMPT_FILE
 # deduplicate PATH entries
 export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':')
 
-# Claude Code sessions in iTerm2 (see .claude/hooks/claude-session-restore.py):
+# Claude Code sessions in iTerm2 (see claude/hooks/claude-session-restore.py):
 # idle sessions don't block quitting iTerm2 (so macOS can restart for
 # updates), and a session that was killed by the quit is resumed when iTerm2
 # restores its pane. claude-restore lists sessions iTerm2 didn't bring back;
