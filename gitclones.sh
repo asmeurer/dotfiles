@@ -253,6 +253,24 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 ln -sf .hunspell_en_US "$HOME/.hunspell_en_US-large"
 
+# ==== iTerm2 preferences ====
+
+# Make iTerm2 load its settings from iterm2/ in this repo and write changes
+# back there ("Load settings from a custom folder or URL" in Settings >
+# General > Settings), so they are tracked in git. Pointing iTerm2 straight at
+# the repo folder means nothing needs to be symlinked, and anything else iTerm2
+# decides to write next to the plist (e.g. synced snippets) lands in the repo
+# too. The three NoSync* keys select "Save changes: Automatically" (0 = when quitting,
+# 1 = never, 2 = automatically; see iTermPreferenceSavePrefsMode in the iTerm2
+# source). iTerm2 only reads these at launch, so restart it after changing
+# them. The iterm2/ directory is listed in IGNORE so linkfiles.py skips it.
+if [[ "$(uname)" == "Darwin" ]]; then
+    defaults write com.googlecode.iterm2 PrefsCustomFolder -string '~/Documents/dotfiles/iterm2'
+    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+    defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+    defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -int 2
+fi
+
 # ==== Summary ====
 
 if (( ${#FAILURES[@]} )); then

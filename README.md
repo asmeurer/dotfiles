@@ -25,3 +25,11 @@ and then
 
 For Linux, some files that go in the root directory (`/`) are in `root/`.
 They aren't linked automatically yet.
+
+# iTerm2
+
+`iterm2/` holds the iTerm2 preferences (`com.googlecode.iterm2.plist`). It is
+not symlinked; instead iTerm2 is pointed at the folder directly ("Load
+settings from a custom folder") and writes changes back to it, so they can be
+committed. `gitclones.sh` configures this on macOS; restart iTerm2 after
+running it.
