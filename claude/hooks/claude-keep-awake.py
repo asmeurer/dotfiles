@@ -162,6 +162,8 @@ def release_all() -> None:
 
 def decide(event: str, data: dict):
     """Return "busy", "idle", or None (no change) for a hook event."""
+    if data.get("agent_id"):
+        return None
     if event == "PreToolUse":
         return "idle" if data.get("tool_name") in WAITING_TOOLS else "busy"
     if event in BUSY_EVENTS:
