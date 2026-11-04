@@ -548,9 +548,6 @@ Used for `flyspell-generic-check-word-predicate'. Based on
 
 (advice-add 'markdown-flyspell-check-word-p :override #'markdown-flyspell-check-word-myst-p)
 
-(setq flyspell-generic-check-word-predicate
-      #'markdown-flyspell-check-word-myst-p)
-
 ;; ==== YAML Mode ====
 
 (use-package yaml-mode)
@@ -2581,6 +2578,7 @@ is binary, activate `hexl-mode'."
                                 markdown-markdownlint-cli2 python-flake8 python-pylint proselint))
  '(flyspell-issue-welcome-flag nil)
  '(flyspell-lazy-changes-threshold 10)
+ '(flyspell-lazy-disallow-buffers '("\\` "))
  '(flyspell-lazy-idle-seconds 0)
  '(flyspell-lazy-less-feedback t)
  '(flyspell-lazy-mode t)
