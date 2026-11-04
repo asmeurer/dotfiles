@@ -481,6 +481,24 @@ ARG is the same as with `fill-paragraph'."
              (fill-paragraph arg))
     (markdown-mode)))
 
+(defun markdown-enter-key-no-list-indent ()
+  "Like `markdown-enter-key', but don't indent the new line after a list item.
+
+By default, RET on a (nested) list item indents the new line to match the
+item. Instead, start the new line at column 0. Other contexts (code blocks,
+tables, etc.) are handled by `markdown-enter-key' as usual."
+  (interactive)
+  (if (and (not (markdown-table-at-point-p))
+           (progn
+             ;; The list item text properties are applied lazily, so make
+             ;; sure they are up to date for the current line.
+             (syntax-propertize (line-end-position))
+             (markdown-cur-list-item-bounds)))
+      (progn
+        (delete-horizontal-space t)
+        (newline))
+    (markdown-enter-key)))
+
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown
 files" t)
 (autoload 'gfm-mode "markdown-mode.el" "Major mode for editing GitHub flavored
@@ -495,6 +513,7 @@ Markdown" t)
   :bind
   (:map markdown-mode-map
         ;; ("M-q" . markdown-fill-paragraph-plain-text)
+        ("RET" . markdown-enter-key-no-list-indent)
         ("M-p" . flycheck-previous-error)
         ("M-n" . flycheck-next-error)))
 
