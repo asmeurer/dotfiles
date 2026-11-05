@@ -12,11 +12,10 @@ terminal-notifier with a per-session ``-group``, so:
 - the notification is removed the moment you send a new message to that
   session (UserPromptSubmit) or the session ends (SessionEnd).
 
-No "Done" notification is posted when a turn ends while background work
-(subagents, workflows, background shells, monitors) is still in flight:
-Claude is not done, just waiting to be woken by it. One consequence is that a
-turn which leaves a long-lived background process running (e.g. a dev server)
-gets no "Done" notification.
+No "Done" notification is posted when a turn ends while background subagents
+or workflows are still running: Claude is not done, just waiting to be woken
+by them. Background shells and monitors do not suppress it, since those are
+often long-lived (e.g. a dev server) even when Claude is finished.
 
 Clicking a notification focuses the exact iTerm2 session the hook ran in
 (via AppleScript and the UUID in $ITERM_SESSION_ID), falling back to just
@@ -61,6 +60,9 @@ MESSAGE_MAX_CHARS = 160
 # Hard cap on how long any terminal-notifier / osascript call may take, so a
 # wedged notifier can never hold up Claude Code.
 SUBPROCESS_TIMEOUT = 10
+# ``type`` labels in the Stop hook's ``background_tasks`` for work that Claude
+# waits on: while any of these are running, a Stop is not the end of the task.
+WAITED_ON_TASK_TYPES = {"subagent", "workflow"}
 
 FOCUS_APPLESCRIPT = """
 on run argv
@@ -224,11 +226,14 @@ def handle(event: str, data: dict) -> None:
         # asked it to; the real end of the turn will fire another Stop.
         if data.get("stop_hook_active"):
             return
-        # The turn ended, but Claude is only pausing until background work
-        # (subagents, workflows, background shells, monitors) finishes and
-        # wakes it up again; that later turn fires its own Stop. Claude Code
-        # lists exactly this in-flight work in ``background_tasks``.
-        if data.get("background_tasks"):
+        # The turn ended, but Claude is only pausing until background
+        # subagents or workflows finish and wake it up again; that later turn
+        # fires its own Stop. Claude Code lists in-flight work in
+        # ``background_tasks``. Other kinds (background shells, monitors) are
+        # ignored, since they are often long-lived (e.g. a dev server) and
+        # Claude really is done.
+        if any(task.get("type") in WAITED_ON_TASK_TYPES
+               for task in data.get("background_tasks") or []):
             return
         # Prefer the message Claude Code hands us directly. The transcript
         # file lags the live conversation, so reading it here would usually
