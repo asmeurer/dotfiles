@@ -12,6 +12,12 @@ terminal-notifier with a per-session ``-group``, so:
 - the notification is removed the moment you send a new message to that
   session (UserPromptSubmit) or the session ends (SessionEnd).
 
+No "Done" notification is posted when a turn ends while background work
+(subagents, workflows, background shells, monitors) is still in flight:
+Claude is not done, just waiting to be woken by it. One consequence is that a
+turn which leaves a long-lived background process running (e.g. a dev server)
+gets no "Done" notification.
+
 Clicking a notification focuses the exact iTerm2 session the hook ran in
 (via AppleScript and the UUID in $ITERM_SESSION_ID), falling back to just
 activating iTerm2 when that is not available.
@@ -217,6 +223,12 @@ def handle(event: str, data: dict) -> None:
         # stop_hook_active means Claude is continuing because a Stop hook
         # asked it to; the real end of the turn will fire another Stop.
         if data.get("stop_hook_active"):
+            return
+        # The turn ended, but Claude is only pausing until background work
+        # (subagents, workflows, background shells, monitors) finishes and
+        # wakes it up again; that later turn fires its own Stop. Claude Code
+        # lists exactly this in-flight work in ``background_tasks``.
+        if data.get("background_tasks"):
             return
         # Prefer the message Claude Code hands us directly. The transcript
         # file lags the live conversation, so reading it here would usually
