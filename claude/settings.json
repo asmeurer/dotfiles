@@ -357,6 +357,15 @@
         "hooks": [
           {
             "type": "command",
+            "command": "python3 ~/.claude/hooks/claude-prompt-mark.py",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
             "command": "/Users/aaronmeurer/.config/iterm2/cc-status"
           }
         ]
