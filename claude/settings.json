@@ -445,6 +445,9 @@
     },
     "claude-fable-5-1": {
       "effortLevel": "high"
+    },
+    "claude-fable-5-2": {
+      "effortLevel": "high"
     }
   },
   "advisorModel": "fable",
@@ -458,10 +461,10 @@
   "editorMode": "normal",
   "verbose": true,
   "preferredNotifChannel": "notifications_disabled",
+  "idleCompaction": false,
   "switchModelsOnFlag": true,
   "remoteControlAtStartup": true,
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "voiceEnabled": true,
-  "idleCompaction": false
+  "voiceEnabled": true
 }
