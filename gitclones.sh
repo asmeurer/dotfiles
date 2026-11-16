@@ -271,6 +271,27 @@ if [[ "$(uname)" == "Darwin" ]]; then
     defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -int 2
 fi
 
+# ==== Touch ID for sudo ====
+
+# Let sudo authenticate with Touch ID instead of a password. macOS's
+# /etc/pam.d/sudo includes /etc/pam.d/sudo_local, which (unlike
+# /etc/pam.d/sudo itself) survives system updates, and ships
+# sudo_local.template with the pam_tid.so line commented out. Create
+# sudo_local from the template with that line enabled. This is skipped if
+# Touch ID is already enabled, and an existing sudo_local without pam_tid.so
+# is left alone, since a mistake in this file can break sudo.
+if [[ "$(uname)" == "Darwin" && -f /etc/pam.d/sudo_local.template ]] \
+       && ! grep -qE '^auth[[:space:]]+sufficient[[:space:]]+pam_tid\.so' /etc/pam.d/sudo_local 2>/dev/null; then
+    if [[ -e /etc/pam.d/sudo_local ]]; then
+        FAILURES+=("/etc/pam.d/sudo_local exists but does not enable pam_tid.so; edit it by hand")
+    else
+        { sed 's/^#auth/auth/' /etc/pam.d/sudo_local.template \
+              | sudo tee /etc/pam.d/sudo_local >/dev/null \
+              && sudo chmod 444 /etc/pam.d/sudo_local; } \
+            || FAILURES+=("enable Touch ID for sudo")
+    fi
+fi
+
 # ==== Summary ====
 
 if (( ${#FAILURES[@]} )); then
